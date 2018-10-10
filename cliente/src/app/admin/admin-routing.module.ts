@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { RubroComponent } from './rubro/rubro.component';
 import { AdminComponent } from './admin.component';
+import {RubroIndexComponent} from './rubro/rubro-index/rubro-index.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,11 @@ const routes: Routes = [
       {
         path: 'rubro',
         component: RubroComponent,
+        children: [{
+            path: '',
+            component: RubroIndexComponent,
+          },
+        ],
       },
       {
         path: '',
