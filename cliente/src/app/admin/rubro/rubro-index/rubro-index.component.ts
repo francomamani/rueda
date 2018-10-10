@@ -10,7 +10,7 @@ import {RubroService} from '../rubro.service';
 })
 export class RubroIndexComponent implements OnInit {
 
-  rubros: any = null;
+
 
   constructor(private rubroService: RubroService) {
     this.rubroService.index().subscribe((data: any[]) => {
@@ -19,12 +19,14 @@ export class RubroIndexComponent implements OnInit {
   }
 
   ngOnInit() {
+  
   }
   settings = {
     add: {
       addButtonContent: '<i class="nb-plus"></i>',
       createButtonContent: '<i class="nb-checkmark"></i>',
       cancelButtonContent: '<i class="nb-close"></i>',
+      confirmCreate: true
     },
     edit: {
       editButtonContent: '<i class="nb-edit"></i>',
@@ -47,12 +49,24 @@ export class RubroIndexComponent implements OnInit {
     },
   };
 
+  
+
   source: LocalDataSource = new LocalDataSource();
+
 
 
   onDeleteConfirm(event): void {
     if (window.confirm('Are you sure you want to delete?')) {
       event.confirm.resolve();
+    } else {
+      event.confirm.reject();
+    }
+  }
+
+  onCreateConfirm(event): void{
+    if (window.confirm('¿Esta seguro de crear?')) {
+      event.confirm.resolve();
+      console.log(event.newData);
     } else {
       event.confirm.reject();
     }
