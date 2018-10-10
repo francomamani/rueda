@@ -26,7 +26,6 @@ export class RubroIndexComponent implements OnInit {
       addButtonContent: '<i class="nb-plus"></i>',
       createButtonContent: '<i class="nb-checkmark"></i>',
       cancelButtonContent: '<i class="nb-close"></i>',
-      confirmCreate: true
     },
     edit: {
       editButtonContent: '<i class="nb-edit"></i>',
@@ -58,15 +57,6 @@ export class RubroIndexComponent implements OnInit {
   onDeleteConfirm(event): void {
     if (window.confirm('Are you sure you want to delete?')) {
       event.confirm.resolve();
-    } else {
-      event.confirm.reject();
-    }
-  }
-
-  onCreateConfirm(event): void{
-    if (window.confirm('¿Esta seguro de crear?')) {
-      event.confirm.resolve();
-      console.log(event.newData);
     } else {
       event.confirm.reject();
     }
