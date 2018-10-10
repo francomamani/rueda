@@ -14,7 +14,7 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json(Usuario::get(), 200);
     }
 
     /**
@@ -35,27 +35,28 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return response()->json(Usuario::create($request->all()), 201);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Usuario  $usuario
+     * @param  \App\Usuario  $tipoUsuario
      * @return \Illuminate\Http\Response
      */
-    public function show(Usuario $usuario)
+    public function show($id)
     {
-        //
+        return response()->json(Usuario::find($id));
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Usuario  $usuario
+     * @param  \App\Usuario  $tipoUsuario
      * @return \Illuminate\Http\Response
      */
-    public function edit(Usuario $usuario)
+    public function edit(Usuario $tipoUsuario)
     {
         //
     }
@@ -64,22 +65,28 @@ class UsuarioController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Usuario  $usuario
+     * @param  \App\Usuario  $tipoUsuario
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Usuario $usuario)
+    public function update(Request $request, $id)
     {
-        //
+        $usuario = Usuario::find($id);
+        $usuario->update($request->all());
+        return response()->json($usuario, 200);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Usuario  $usuario
+     * @param  \App\Usuario  $tipoUsuario
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Usuario $usuario)
+    public function destroy($id)
     {
-        //
+        $usuario = Usuario::find($id);
+        $usuario->delete();
+        return response()->json([
+            'mensaje' => 'Usuario: ' . $usuario->nombre . ' eliminado exitosamente'
+        ], 200);
     }
 }
