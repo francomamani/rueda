@@ -19,4 +19,5 @@ use Illuminate\Http\Request;
 
 Route::resource('tipo_usuarios', 'TipoUsuarioController');
 Route::resource('privilegios', 'PrivilegioController');
+Route::resource('usuarios', 'UsuarioController');
 Route::resource('rubros', 'RubroController');
