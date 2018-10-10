@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePrivilegiosTable extends Migration
+class CreateRubrosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreatePrivilegiosTable extends Migration
      */
     public function up()
     {
-        Schema::create('privilegios', function (Blueprint $table) {
-            $table->increments('privilegio_id');
-            $table->integer('tipo_usuario_id')->unsigned();
-            $table->string('ruta');
-            $table->boolean('activo')->default(true);
+        Schema::create('rubros', function (Blueprint $table) {
+            $table->increments('rubro_id');
+            $table->string('nombre');
+            $table->string('descripcion')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
@@ -30,6 +29,6 @@ class CreatePrivilegiosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('privilegios');
+        Schema::dropIfExists('rubros');
     }
 }

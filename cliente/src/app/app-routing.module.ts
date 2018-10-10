@@ -42,6 +42,10 @@ const routes: Routes = [
     ],
   },
   { path: '', redirectTo: 'auth', pathMatch: 'full' },
+  {
+    path: 'admin',
+    loadChildren: './admin/admin.module#AdminModule',
+  },
   { path: '**', redirectTo: 'auth' },
 ];
 

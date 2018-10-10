@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Privilegio;
+use App\Usuario;
 use Illuminate\Http\Request;
 
-class PrivilegioController extends Controller
+class UsuarioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class PrivilegioController extends Controller
      */
     public function index()
     {
-        return response()->json(Privilegio::get(), 200);
+        //
     }
 
     /**
@@ -35,28 +35,27 @@ class PrivilegioController extends Controller
      */
     public function store(Request $request)
     {
-        return response()->json(Privilegio::create($request->all()), 201);
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Privilegio  $tipoUsuario
+     * @param  \App\Usuario  $usuario
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Usuario $usuario)
     {
-        return response()->json(Privilegio::find($id));
-
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Privilegio  $tipoUsuario
+     * @param  \App\Usuario  $usuario
      * @return \Illuminate\Http\Response
      */
-    public function edit(Privilegio $tipoUsuario)
+    public function edit(Usuario $usuario)
     {
         //
     }
@@ -65,29 +64,22 @@ class PrivilegioController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Privilegio  $tipoUsuario
+     * @param  \App\Usuario  $usuario
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Usuario $usuario)
     {
-        $privilegio = Privilegio::find($id);
-        $privilegio->update($request->all());
-        return response()->json($privilegio, 200);
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Privilegio  $tipoUsuario
+     * @param  \App\Usuario  $usuario
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Usuario $usuario)
     {
-        $privilegio = Privilegio::find($id);
-        $privilegio->delete();
-        return response()->json([
-            'mensaje' => 'Privilegio: ' . $privilegio->ruta . ' eliminado exitosamente'
-        ], 200);
+        //
     }
-
 }
