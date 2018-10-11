@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Privilegio;
+use App\Mesa;
 use Illuminate\Http\Request;
 
-class PrivilegioController extends Controller
+class MesaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class PrivilegioController extends Controller
      */
     public function index()
     {
-        return response()->json(Privilegio::get(), 200);
+        return response()->json(Mesa::get(), 200);
     }
 
     /**
@@ -35,28 +35,28 @@ class PrivilegioController extends Controller
      */
     public function store(Request $request)
     {
-        return response()->json(Privilegio::create($request->all()), 201);
+        return response()->json(Mesa::create($request->all()), 201);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Privilegio  $tipoUsuario
+     * @param  \App\Mesa  $tipoUsuario
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        return response()->json(Privilegio::find($id));
+        return response()->json(Mesa::find($id));
 
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Privilegio  $tipoUsuario
+     * @param  \App\Mesa  $tipoUsuario
      * @return \Illuminate\Http\Response
      */
-    public function edit(Privilegio $tipoUsuario)
+    public function edit(Mesa $tipoUsuario)
     {
         //
     }
@@ -65,28 +65,28 @@ class PrivilegioController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Privilegio  $tipoUsuario
+     * @param  \App\Mesa  $tipoUsuario
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $privilegio = Privilegio::find($id);
-        $privilegio->update($request->all());
-        return response()->json($privilegio, 200);
+        $mesa = Mesa::find($id);
+        $mesa->update($request->all());
+        return response()->json($mesa, 200);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Privilegio  $tipoUsuario
+     * @param  \App\Mesa  $tipoUsuario
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $privilegio = Privilegio::find($id);
-        $privilegio->delete();
+        $mesa = Mesa::find($id);
+        $mesa->delete();
         return response()->json([
-            'mensaje' => 'Privilegio: ' . $privilegio->ruta . ' eliminado exitosamente'
+            'mensaje' => 'Mesa: ' . $mesa->numero . ' eliminado exitosamente'
         ], 200);
     }
 

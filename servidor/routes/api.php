@@ -17,7 +17,10 @@ use Illuminate\Http\Request;
     return $request->user();
 });*/
 
-Route::resource('tipo_usuarios', 'TipoUsuarioController');
-Route::resource('privilegios', 'PrivilegioController');
 Route::resource('usuarios', 'UsuarioController');
+Route::resource('empresas', 'EmpresaController');
+Route::resource('participantes', 'ParticipanteController');
 Route::resource('rubros', 'RubroController');
+Route::resource('horarios', 'HorarioController');
+Route::resource('mesas', 'MesaController');
+Route::resource('reuniones', 'ReunionController');

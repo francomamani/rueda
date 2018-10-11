@@ -12,12 +12,16 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $faker = Faker\Factory::create();
-        for ($i = 0; $i< 15; $i++) {
-            \App\TipoUsuario::create([
+        for ($i = 0; $i < 15; $i++) {
+            \App\Rubro::create([
                 'nombre' => $faker->word,
                 'descripcion' => $faker->sentence
             ]);
         }
-        // $this->call(UsersTableSeeder::class);
+        for ($i = 0; $i < 20; $i++) {
+            \App\Mesa::create([
+                'numero' => $i + 1
+            ]);
+        }
     }
 }

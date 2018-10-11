@@ -14,4 +14,8 @@ class Rubro extends Model
         'nombre',
         'descripcion'
     ];
+
+    public function empresas() {
+        return $this->hasMany(Empresa::class, 'rubro_id');
+    }
 }

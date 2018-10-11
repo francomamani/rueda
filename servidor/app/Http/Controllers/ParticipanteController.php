@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\TipoUsuario;
+use App\Participante;
 use Illuminate\Http\Request;
 
-class TipoUsuarioController extends Controller
+class ParticipanteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class TipoUsuarioController extends Controller
      */
     public function index()
     {
-        return response()->json(TipoUsuario::get(), 200);
+        return response()->json(Participante::get(), 200);
     }
 
     /**
@@ -35,28 +35,28 @@ class TipoUsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        return response()->json(TipoUsuario::create($request->all()), 201);
+        return response()->json(Participante::create($request->all()), 201);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\TipoUsuario  $tipoUsuario
+     * @param  \App\Participante  $tipoUsuario
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        return response()->json(TipoUsuario::find($id));
+        return response()->json(Participante::find($id));
 
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\TipoUsuario  $tipoUsuario
+     * @param  \App\Participante  $tipoUsuario
      * @return \Illuminate\Http\Response
      */
-    public function edit(TipoUsuario $tipoUsuario)
+    public function edit(Participante $tipoUsuario)
     {
         //
     }
@@ -65,28 +65,29 @@ class TipoUsuarioController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\TipoUsuario  $tipoUsuario
+     * @param  \App\Participante  $tipoUsuario
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $tipo_usuario = TipoUsuario::find($id);
-        $tipo_usuario->update($request->all());
-        return response()->json($tipo_usuario, 200);
+        $participante = Participante::find($id);
+        $participante->update($request->all());
+        return response()->json($participante, 200);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\TipoUsuario  $tipoUsuario
+     * @param  \App\Participante  $tipoUsuario
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $tipo_usuario = TipoUsuario::find($id);
-        $tipo_usuario->delete();
+        $participante = Participante::find($id);
+        $participante->delete();
         return response()->json([
-            'mensaje' => 'Tipo de usuario: ' . $tipo_usuario->nombre . ' eliminado exitosamente'
+            'mensaje' => 'Participante: ' . $participante->nombres . ' '. $participante->apellidos . ' eliminado exitosamente'
         ], 200);
     }
+
 }
