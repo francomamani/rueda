@@ -1,23 +1,24 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {LocalDataSource} from 'ng2-smart-table';
-import {SmartTableService} from '../../../@core/data/smart-table.service';
-import {RubroService} from '../rubro.service';
+import {TipoUsuarioService} from './tipo-usuario.service';
 
 @Component({
-    selector: 'ngx-rubro-index',
-    templateUrl: './rubro-index.component.html',
-    styleUrls: ['./rubro-index.component.scss'],
+  selector: 'ngx-tipo-usuario',
+  templateUrl: './tipo-usuario.component.html',
+  styleUrls: ['./tipo-usuario.component.scss'],
 })
-export class RubroIndexComponent implements OnInit {
+export class TipoUsuarioComponent implements OnInit {
 
+  constructor(private tipo_usuario: TipoUsuarioService) {
+      this.tipo_usuario.index().subscribe((data: any[]) => {
+        this.source.load(data);
+      });
+  }
 
-    ngOnInit() {
-    }
+  ngOnInit() {
+  }
 
     settings = {
-        actions: {
-            columnTitle: '',
-        },
         add: {
             addButtonContent: '<i class="nb-plus"></i>',
             createButtonContent: '<i class="nb-checkmark"></i>',
@@ -48,26 +49,19 @@ export class RubroIndexComponent implements OnInit {
 
     source: LocalDataSource = new LocalDataSource();
 
-    constructor(private rubroService: RubroService) {
-        this.rubroService.index().subscribe((data: any[]) => {
-            this.source.load(data);
-        });
-    }
-
 
     onDeleteConfirm(event): void {
         if (window.confirm('¿Esta seguro que quiere eliminar este registro?')) {
             event.confirm.resolve();
-            this.rubroService.destroy(event.data.rubro_id);
+            this.tipo_usuario.destroy(event.data.tipo_usuario_id).subscribe();
         } else {
             event.confirm.reject();
         }
     }
-
     store(event): void {
         if (window.confirm('¿Esta seguro de crear nuevo registro?')) {
             event.confirm.resolve();
-            this.rubroService.store(event.newData);
+            this.tipo_usuario.store(event.newData).subscribe();
         } else {
             event.confirm.reject();
         }
@@ -77,7 +71,7 @@ export class RubroIndexComponent implements OnInit {
     update(event): void {
         if (window.confirm('¿Esta seguro de cambiar los datos de este registro?')) {
             event.confirm.resolve();
-            this.rubroService.update(event.newData, event.data.rubro_id);
+            this.tipo_usuario.update(event.newData, event.data.tipo_usuario_id).subscribe();
         } else {
             event.confirm.reject();
         }
