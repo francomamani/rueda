@@ -8,6 +8,8 @@ import { RubroIndexComponent } from './rubro/rubro-index/rubro-index.component';
 import {ThemeModule} from '../@theme/theme.module';
 import {Ng2SmartTableModule} from 'ng2-smart-table';
 import {RubroService} from './rubro/rubro.service';
+import { TipoUsuarioComponent } from './tipo-usuario/tipo-usuario.component';
+import { EmpresaComponent } from './empresa/empresa.component';
 
 @NgModule({
   imports: [
@@ -16,7 +18,7 @@ import {RubroService} from './rubro/rubro.service';
     AdminRoutingModule,
     Ng2SmartTableModule,
   ],
-  declarations: [RubroComponent, AdminComponent, RubroIndexComponent],
+  declarations: [RubroComponent, AdminComponent, RubroIndexComponent, TipoUsuarioComponent, EmpresaComponent],
   providers: [ RubroService ],
 })
 export class AdminModule { }

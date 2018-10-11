@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { RubroComponent } from './rubro/rubro.component';
 import { AdminComponent } from './admin.component';
 import {RubroIndexComponent} from './rubro/rubro-index/rubro-index.component';
+import {EmpresaComponent} from './empresa/empresa.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
             component: RubroIndexComponent,
           },
         ],
+      },
+      {
+        path: 'empresa',
+        component: EmpresaComponent,
       },
       {
         path: '',
