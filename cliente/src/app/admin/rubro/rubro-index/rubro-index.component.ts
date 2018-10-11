@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {LocalDataSource} from 'ng2-smart-table';
 import {SmartTableService} from '../../../@core/data/smart-table.service';
@@ -86,4 +84,3 @@ export class RubroIndexComponent implements OnInit {
     }
 
 }
->>>>>>> 0d838a17b10fb4ef0985de3bb9784453af1ff199
