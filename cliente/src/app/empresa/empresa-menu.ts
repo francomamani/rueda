@@ -2,8 +2,8 @@ import { NbMenuItem } from '@nebular/theme';
 
 export const EMPRESA_ITEMS: NbMenuItem[] = [
   {
-    title: 'home',
-    icon: 'nb-gear',
+    title: 'Principal',
+    icon: 'nb-home',
     link: '/empresa/home',
   },
   /*{

@@ -20,14 +20,14 @@ import { StateService } from '../../../@core/data/state.service';
       <nb-layout-header fixed>
         <ngx-header [position]="sidebar.id === 'start' ? 'normal': 'inverse'"></ngx-header>
       </nb-layout-header>
-
       <nb-sidebar class="menu-sidebar"
                    tag="menu-sidebar"
                    responsive
                    [end]="sidebar.id === 'end'">
         <nb-sidebar-header *ngIf="currentTheme !== 'corporate'">
-          <a href="#" class="btn btn-hero-success main-btn">
-            <i class="ion ion-social-github"></i> <span>Support Us</span>
+          <a href="https://www.campoferial3dejulio.com/" target="_blank"
+             class="btn btn-hero-danger main-btn">
+            <span>Campo Ferial</span>
           </a>
         </nb-sidebar-header>
         <ng-content select="nb-menu"></ng-content>

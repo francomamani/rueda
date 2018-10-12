@@ -25,15 +25,15 @@ export class ThemeSwitcherListComponent {
 
   themes = [
     {
-      title: 'Light',
+      title: 'Claro',
       key: 'default',
     },
     {
-      title: 'Cosmic',
+      title: 'Oscuro',
       key: 'cosmic',
     },
     {
-      title: 'Corporate',
+      title: 'Corporativo',
       key: 'corporate',
     },
   ];
