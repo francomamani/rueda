@@ -4,6 +4,7 @@ import { NbMenuService, NbSidebarService } from '@nebular/theme';
 import { UserService } from '../../../@core/data/users.service';
 import { AnalyticsService } from '../../../@core/utils/analytics.service';
 import { LayoutService } from '../../../@core/data/layout.service';
+import {AuthService} from '../../../auth.service';
 
 @Component({
   selector: 'ngx-header',
@@ -14,9 +15,9 @@ export class HeaderComponent implements OnInit {
 
   @Input() position = 'normal';
 
-  user: any;
+  usuario = JSON.parse(atob(localStorage.getItem('rueda-usuario')));
 
-  userMenu = [{ title: 'Perfil' }, { title: 'Cerrar Sesion' }];
+  userMenu = [{ title: 'Perfil', link: '/empresa/perfil' }, { title: 'Cerrar Sesion' , link: '/auth/login/logout'}];
 
   constructor(private sidebarService: NbSidebarService,
               private menuService: NbMenuService,
@@ -26,8 +27,8 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userService.getUsers()
-      .subscribe((users: any) => this.user = users.nick);
+/*    this.userService.getUsers()
+      .subscribe((users: any) => this.user = users.nick);*/
   }
 
   toggleSidebar(): boolean {

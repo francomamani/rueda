@@ -75,6 +75,10 @@
       <path value="$PROJECT_DIR$/servidor/vendor/jakub-onderka/php-console-color" />
       <path value="$PROJECT_DIR$/servidor/vendor/psy/psysh" />
       <path value="$PROJECT_DIR$/servidor/vendor/erusev/parsedown" />
+      <path value="$PROJECT_DIR$/servidor/vendor/symfony/polyfill-php56" />
+      <path value="$PROJECT_DIR$/servidor/vendor/symfony/polyfill-util" />
+      <path value="$PROJECT_DIR$/servidor/vendor/namshi/jose" />
+      <path value="$PROJECT_DIR$/servidor/vendor/tymon/jwt-auth" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />

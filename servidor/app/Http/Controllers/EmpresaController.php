@@ -17,8 +17,10 @@ class EmpresaController extends Controller
     public function index()
     {
         $empresas = Empresa::join('usuarios', 'usuarios.usuario_id', 'empresas.empresa_id')
-                    ->orderBy('empresas.nombre', 'asc')
-                    ->get();
+                            ->join('rubros', 'rubros.rubro_id', 'empresas.rubro_id')
+                            ->orderBy('empresas.nombre', 'asc')
+                            ->selectRaw('empresas.*, usuarios.*, rubros.nombre as rubro')
+                            ->get();
         return response()->json($empresas, 200);
     }
 
@@ -48,13 +50,14 @@ class EmpresaController extends Controller
             'password' => Hash::make($request->input('nit')),
         ];
 
-        $usuario = Usuario::create($usuario);
         $empresa = [
             'rubro_id' => $request->input('rubro_id'),
-            'usuario_id' => $usuario->usuario_id,
+            'usuario_id' => Usuario::create($usuario)->usuario_id,
             'nombre' => $request->input('nombre'),
             'logo' => null,
             'direccion' => $request->input('direccion'),
+            'telefono' => $request->input('telefono'),
+            'pagina_web' => $request->input('pagina_web'),
             'ciudad_localidad' => $request->input('ciudad_localidad'),
             'nit' => $request->input('nit'),
             'representante_legal' => $request->input('representante_legal'),
@@ -64,10 +67,8 @@ class EmpresaController extends Controller
             'demanda' => $request->input('demanda'),
             'especial' => $request->input('especial'),
         ];
-
-        Empresa::create($empresa);
-
-        return response()->json(Empresa::create($request->all()), 201);
+        $empresaModel = Empresa::create($empresa);
+        return response()->json($empresaModel, 201);
     }
 
     /**

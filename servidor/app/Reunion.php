@@ -19,6 +19,7 @@ class Reunion extends Model
         'expositor1_asistio',
         'expositor2_asistio',
     ];
+    protected $dates = ['deleted_at'];
 
     public function horario() {
         return $this->belongsTo(Horario::class, 'horario_id');

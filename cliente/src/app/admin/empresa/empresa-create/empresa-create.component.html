@@ -1,0 +1,86 @@
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>Registrar Empresa</nb-card-header>
+      <nb-card-body>
+<!--        <form action="" role="form">
+          <div class="row">
+            <div class="col-md-10 form-group">
+                <input type="email" class="form-control" name="" placeholder="Buscar...">
+            </div>
+            <div class="col-md-2">
+              <button type="submit" class="btn btn-primary btn-full-width">
+                <i class="fa fa-search"></i> Buscar
+              </button>
+            </div>
+          </div>
+        </form>-->
+        <form (submit)="store()" role="form" [formGroup]="empresaGroup" *ngIf="rubros !== null">
+          <div class="row">
+            <div class="col-sm-4 form-group">
+              <select name="rubro_id" formControlName="rubro_id" class="form-control">
+                <option [value]="rubro.rubro_id" *ngFor="let rubro of rubros">{{ rubro.nombre }}</option>
+              </select>
+            </div>
+            <div class="col-sm-4 form-group">
+              <input type="text" class="form-control" formControlName="nombre" name="nombre" placeholder="Nombre">
+            </div>
+            <div class="col-sm-4 form-group">
+              <input type="text" class="form-control" formControlName="direccion" name="direccion" placeholder="Direccion">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 form-group">
+              <input type="text" class="form-control" formControlName="telefono" name="telefono" placeholder="Telefono">
+            </div>
+            <div class="col-sm-4 form-group">
+              <input type="url" class="form-control" formControlName="pagina_web" name="pagina_web" placeholder="Pagina Web">
+            </div>
+            <div class="col-sm-4 form-group">
+              <input type="text" class="form-control" formControlName="ciudad_localidad" name="ciudad_localidad" placeholder="Ciudad o Localidad">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 form-group">
+              <input type="text" class="form-control" formControlName="nit" name="nit" placeholder="NIT">
+            </div>
+            <div class="col-sm-4 form-group">
+              <input type="text" class="form-control" formControlName="representante_legal" name="representante_legal" placeholder="Representante Legal">
+            </div>
+            <div class="col-sm-4 form-group">
+              <input type="email" class="form-control" formControlName="email" name="email" placeholder="Correo Electronico">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 form-group">
+                <input type="number" class="form-control" formControlName="max_participantes" name="max_participantes" min="0" max="10" placeholder="Maximo de participantes">
+            </div>
+            <div class="col-sm-4 form-group">
+              <input type="text" class="form-control" formControlName="nombres" name="nombres" placeholder="Nombres">
+            </div>
+            <div class="col-sm-4 form-group">
+              <input type="text" class="form-control" formControlName="apellidos" name="apellidos" placeholder="Apellidos">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 form-group">
+              <nb-checkbox value=false formControlName="especial">Empresa especial</nb-checkbox>
+            </div>
+            <div class="col-sm-6 form-group">
+              <nb-checkbox value=true formControlName="habilitado">Habilitado</nb-checkbox>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <textarea formControlName="oferta" name="oferta" class="form-control" cols="30" rows="7" placeholder="Oferta"></textarea>
+            </div>
+            <div class="col-md-6 form-group">
+              <textarea formControlName="demanda" name="demanda" class="form-control" cols="30" rows="7" placeholder="Demanda"></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

@@ -18,4 +18,11 @@ class Rubro extends Model
     public function empresas() {
         return $this->hasMany(Empresa::class, 'rubro_id');
     }
+    public static function boot()
+    {
+        parent::boot();
+        static::deleting(function($padre) {
+            $padre->empresas()->delete();
+        });
+    }
 }

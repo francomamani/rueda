@@ -28,8 +28,10 @@ class CreateEmpresasTable extends Migration
             $table->string('nombre');
             $table->string('logo')->nullable();
             $table->string('direccion');
+            $table->string('telefono');
             $table->string('ciudad_localidad');
             $table->string('nit');
+            $table->string('pagina_web')->nullable();
             $table->string('representante_legal');
             $table->string('habilitado')->default(false);
             $table->integer('max_participantes')->unsigned()->default(2);

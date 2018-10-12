@@ -17,6 +17,7 @@ use Illuminate\Http\Request;
     return $request->user();
 });*/
 
+Route::post('login', 'AuthController@login');
 Route::resource('usuarios', 'UsuarioController');
 Route::resource('empresas', 'EmpresaController');
 Route::resource('participantes', 'ParticipanteController');

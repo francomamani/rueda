@@ -10,6 +10,18 @@ export const ADMIN_ITEMS: NbMenuItem[] = [
       title: 'Empresas',
       icon: 'nb-home',
       link: '/admin/empresa',
+      children: [
+        {
+          title: 'Busqueda',
+          icon: 'nb-search',
+          link: '/admin/empresa/listar',
+        },
+        {
+          title: 'Nuevo Registro',
+          icon: 'nb-plus',
+          link: '/admin/empresa/crear',
+        },
+      ],
     },
     {
     title: 'Auth',

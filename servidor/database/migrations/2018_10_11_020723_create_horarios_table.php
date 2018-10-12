@@ -14,7 +14,7 @@ class CreateHorariosTable extends Migration
     public function up()
     {
         Schema::create('horarios', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('horario_id');
             $table->dateTime('inicio');
             $table->dateTime('fin');
             $table->softDeletes();

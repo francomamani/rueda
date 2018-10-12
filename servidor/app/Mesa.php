@@ -13,6 +13,7 @@ class Mesa extends Model
     protected $fillable = [
         'numero'
     ];
+    protected $dates = ['deleted_at'];
 
     public function reuniones() {
         return $this->hasMany(Reunion::class, 'mesa_id');

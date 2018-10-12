@@ -14,6 +14,7 @@ class Horario extends Model
         'inicio',
         'fin'
     ];
+    protected $dates = ['deleted_at'];
 
     public function reuniones() {
         return $this->hasMany(Reunion::class, 'horario_id');
