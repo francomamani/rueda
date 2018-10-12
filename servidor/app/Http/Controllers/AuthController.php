@@ -36,13 +36,22 @@ class AuthController extends Controller
                 'mensaje' => 'Error durante la autenticacion, por favor intente nuevamente'],
                 500);
         }
-        $usuario = Usuario::where('email', request()->input('email'))->first();
+        $usuario = null;
+        $usuarioModel = Usuario::where('email', request()->input('email'))->first();
+        if($usuarioModel->tipo_usuario === 'administrador') {
+            $usuario = $usuarioModel;
+        } else {
+            $usuario = Usuario::join('empresas', 'empresas.usuario_id', '=','usuarios.usuario_id')
+                    ->join('rubros', 'rubros.rubro_id', '=','empresas.rubro_id')
+                    ->where('usuarios.email', request()->input('email'))
+                    ->selectRaw('usuarios.*, empresas.*, rubros.nombre as rubro')
+                    ->first();
+        }
         return response()->json([
             'autenticado' => true,
             'token' => $token,
             'usuario' => $usuario,
             'mensaje' => 'Usuario autenticado exitosamente'
         ], 200);
-
     }
 }
