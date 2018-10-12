@@ -1,0 +1,98 @@
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>
+        Cronograma de Actividades "Rueda de Negocios"
+      </nb-card-header>
+      <nb-card-body>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th>DIA</th>
+              <th>ACTIVIDAD</th>
+              <th>HORARIO</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td rowspan="4">Lunes 12 de noviembre</td>
+              <td>Ingreso De los participantes, acreditación y entrega de citas y materiales a los empresarios</td>
+              <td>14:00-14:30</td>
+            </tr>
+            <tr>
+              <td>Preámbulo (Cuerpo de baile)</td>
+              <td>14:30-14:40</td>
+            </tr>
+            <tr>
+              <td>Palabras de inauguración y explicación de las reglas</td>
+              <td>14:40-15:00</td>
+            </tr>
+            <tr>
+              <td>Inicio de reuniones 1ra jornada de la Rueda de negocios</td>
+              <td>15:00-18:00</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </nb-card-body>
+    </nb-card>
+    <nb-card>
+      <nb-card-header>
+        ¿Qué es la Rueda de Negocios?
+      </nb-card-header>
+      <nb-card-body>
+        <p>
+          La rueda de negocios es un Espacio de encuentros (20-30 minutos) que reúne a empresarios, emprendedores y a entidades de los diversos rubros, con la finalidad de establecer vínculos comerciales entre ellos y así crear una plataforma de difusión de productos y servicios.
+        </p>
+        <img src="../../../assets/images/rueda1.png" class="rueda-img">
+        <p>
+          Las citas se generan en función de las <strong>OFERTAS</strong> y <strong>DEMANDAS</strong> de cada empresa inscrita.
+        </p>
+      </nb-card-body>
+    </nb-card>
+    <nb-card>
+      <nb-card-header>
+        ¿Cúal es el coste?
+      </nb-card-header>
+      <nb-card-body>
+        <p>
+          Para el caso de los expositores en nuestra feria EXPOTECO 2018 el costo es totalmente gratuito.
+        </p>
+        <p>
+          Para otras empresas y emprendedores, se les da la opción de inscribirse con el 50% de descuento es decir sólo <strong>100 [Bs] hasta el 20 de octubre de 2018</strong>, pasado este plazo se cobrará el precio regular de <strong>200 [Bs]</strong>.
+        </p>
+      </nb-card-body>
+    </nb-card>
+    <nb-card>
+      <nb-card-header>
+        ¿Quienes pueden participar?
+      </nb-card-header>
+      <nb-card-body>
+        <p>
+          Todas las empresas o emprendedores de los siguientes rubros.
+        </p>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Rubro
+                  <input type="search"
+                         placeholder="Buscar..."
+                         [(ngModel)]="search" class="search-rubros">
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let rubro of rubros">
+                <td *ngIf="rubro.descripcion.toLowerCase().indexOf(search.toLowerCase()) !== -1">{{ rubro.numero }}</td>
+                <td *ngIf="rubro.descripcion.toLowerCase().indexOf(search.toLowerCase()) !== -1">{{ rubro.descripcion }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

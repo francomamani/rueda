@@ -5,5 +5,6 @@
  */
 export const environment = {
   production: true,
-  base: 'http://192.168.1.10:8000/api/',
+  base: 'http://127.0.0.1:8000/api/',
+
 };

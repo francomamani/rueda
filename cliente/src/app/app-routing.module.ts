@@ -46,6 +46,10 @@ const routes: Routes = [
     path: 'admin',
     loadChildren: './admin/admin.module#AdminModule',
   },
+  {
+    path: 'empresa',
+    loadChildren: './empresa/empresa.module#EmpresaModule',
+  },
   { path: '**', redirectTo: 'auth' },
 ];
 
