@@ -20,7 +20,7 @@ class EmpresaController extends Controller
                             ->join('rubros', 'rubros.rubro_id', 'empresas.rubro_id')
                             ->orderBy('empresas.nombre', 'asc')
                             ->selectRaw('empresas.*, usuarios.*, rubros.nombre as rubro')
-                            ->get();
+                            ->paginate(10);
         return response()->json($empresas, 200);
     }
 

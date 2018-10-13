@@ -3,10 +3,55 @@
     <nb-card>
       <nb-card-header>Empresas Registradas</nb-card-header>
       <nb-card-body>
-        <ng2-smart-table [settings]="settings" [source]="source"
-                         (deleteConfirm)="onDeleteConfirm($event)">
-        </ng2-smart-table>
-
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+            <tr>
+              <th>Acciones</th>
+              <th>N.</th>
+              <th>Habilitado</th>
+              <th>Especial</th>
+              <th>Rubro</th>
+              <th>Empresa</th>
+              <th>Max. Participantes</th>
+              <th>NIT</th>
+              <th>Representante Legal</th>
+              <th>Ciudad/Localidad</th>
+              <th>Dirección</th>
+              <th>Telefono</th>
+              <th>Página Web</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let empresa of empresas; let i = index">
+              <td class="btn-acciones">
+                <a class="text-warning"><i class="fa fa-camera"></i></a>
+                <a class="text-primary"><i class="fa fa-user"></i></a>
+                <a class="text-success"><i class="fa fa-edit"></i></a>
+                <a class="text-danger" (click)="onDeleteConfirm(empresa, index)"><i class="fa fa-trash"></i></a>
+              </td>
+              <td>{{ i + 1 }}</td>
+              <td class="text-center">
+                <span *ngIf="empresa.habilitado === 1" class="text-success">Habilitado</span>
+                <span *ngIf="empresa.habilitado === 0" class="text-danger">No habilitado</span>
+              </td>
+              <td class="text-center">
+                <span *ngIf="empresa.especial === 1" class="text-success">Si</span>
+                <span *ngIf="empresa.especial === 0" class="text-danger">No</span>
+              </td>
+              <td>{{empresa.rubro}}</td>
+              <td>{{empresa.nombre}}</td>
+              <td>{{empresa.max_participantes}}</td>
+              <td>{{empresa.nit}}</td>
+              <td>{{empresa.representante_legal}}</td>
+              <td>{{empresa.ciudad_localidad}}</td>
+              <td>{{empresa.direccion}}</td>
+              <td>{{empresa.telefono}}</td>
+              <td><a href="http://{{empresa.pagina_web}}" target="_blank">{{empresa.pagina_web}}</a></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
       </nb-card-body>
     </nb-card>
   </div>

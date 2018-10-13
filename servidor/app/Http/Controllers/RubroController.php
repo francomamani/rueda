@@ -14,7 +14,7 @@ class RubroController extends Controller
      */
     public function index()
     {
-        return response()->json(Rubro::get(), 200);
+        return response()->json(Rubro::orderBy('nombre', 'asc')->get(), 200);
     }
 
     /**

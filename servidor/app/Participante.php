@@ -20,7 +20,6 @@ class Participante extends Model
     protected $dates = ['deleted_at'];
 
     public function empresa() {
-        return $this->belongsTo(Empresa::class, 'empresa_id')
+        return $this->belongsTo(Empresa::class, 'empresa_id');
     }
-
 }

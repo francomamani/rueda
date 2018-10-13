@@ -33,7 +33,7 @@ class CreateEmpresasTable extends Migration
             $table->string('nit');
             $table->string('pagina_web')->nullable();
             $table->string('representante_legal');
-            $table->string('habilitado')->default(false);
+            $table->boolean('habilitado')->default(false);
             $table->integer('max_participantes')->unsigned()->default(2);
             $table->text('oferta');
             $table->text('demanda');
