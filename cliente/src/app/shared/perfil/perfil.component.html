@@ -5,7 +5,7 @@
         <img src="https://t3.ftcdn.net/jpg/01/71/05/64/240_F_171056472_EtbY5iv7f1lxLFZUHt1N68FFP09cE7LJ.jpg" alt="">
         <h4>{{ usuario.nombres }} {{ usuario.apellidos }}</h4>
         <button class="btn-perfil">Editar Usuario</button>
-        <button class="btn-perfil">Editar Empresa</button>
+        <button class="btn-perfil" *ngIf="usuario.tipo_usuario === 'empresa'">Editar Empresa</button>
       </nb-card-body>
     </nb-card>
   </div>
@@ -31,12 +31,58 @@
         </nb-card>
       </div>
     </div>
-    <div class="row">
+    <div class="row" *ngIf="usuario.tipo_usuario === 'empresa'">
       <div class="col-md-12">
         <nb-card>
           <nb-card-header>Perfil de Empresa</nb-card-header>
           <nb-card-body>
-
+            <table class="table">
+              <tbody>
+              <tr>
+                <td><strong>Estado</strong></td>
+                <td>
+                  <span *ngIf="usuario.habilitado === '1'" class="text-success">Habilitado para la rueda de negocios</span>
+                  <span *ngIf="usuario.habilitado === '0'" class="text-danger">No habilitado para la rueda de negocios</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Rubro</strong></td>
+                <td>{{usuario.rubro}}</td>
+              </tr>
+              <tr>
+                <td><strong>Empresa</strong></td>
+                <td>{{usuario.nombre}}</td>
+              </tr>
+              <tr>
+                <td><strong>NIT</strong></td>
+                <td>{{usuario.nit}}</td>
+              </tr>
+              <tr>
+                <td><strong>Representante Legal</strong></td>
+                <td>{{usuario.representante_legal}}</td>
+              </tr>
+              <tr>
+                <td><strong>Ciudad/Localidad</strong></td>
+                <td>{{usuario.ciudad_localidad}}</td>
+              </tr>
+              <tr>
+                <td><strong>Dirección</strong></td>
+                <td>{{usuario.direccion}}</td>
+              </tr>
+              <tr>
+                <td><strong>Telefono</strong></td>
+                <td>{{usuario.telefono}}</td>
+              </tr>
+              <tr>
+                <td><strong>Pagina Web</strong></td>
+                <td><a href="http://{{usuario.pagina_web}}" target="_blank">{{usuario.pagina_web}}</a></td>
+              </tr>
+              <tr>
+                <td><strong>Participantes Habilitados</strong></td>
+                <td>{{usuario.max_participantes}}</td>
+              </tr>
+              </tbody>
+            </table>
           </nb-card-body>
         </nb-card>
       </div>

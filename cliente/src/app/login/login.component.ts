@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {AuthService} from '../auth.service';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {NbToastrService} from '@nebular/theme';
@@ -10,6 +10,7 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
+  @ViewChild('email') email;
   loginGroup: FormGroup;
   constructor(private authService: AuthService,
               private toastr: NbToastrService,
@@ -36,7 +37,7 @@ export class LoginComponent {
   createForm() {
     this.loginGroup = this.fb.group({
       'email': new FormControl('', Validators.required),
-      'password': new FormControl('', Validators.required)
+      'password': new FormControl('', Validators.required),
     });
   }
 
@@ -49,6 +50,10 @@ export class LoginComponent {
         } else {
           this.router.navigate(['/empresa']);
         }
+      }, (error: any) => {
+          this.toastr.danger(error.error.mensaje, 'Error de Autenticación');
+          this.loginGroup.reset();
+          this.email.nativeElement.focus();
       });
   }
 }

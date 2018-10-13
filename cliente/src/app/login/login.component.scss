@@ -1,0 +1,31 @@
+.legend-login{
+  text-align: center;
+  color: #2a9055;
+  font-size: 5em;
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.legend-login h2 {
+  color: #2b2d34;
+}
+.legend-login span {
+  color: #1d643b;
+}
+.btn-login {
+  display: block;
+  width: 100%;
+  padding: 1em 0;
+  border: none;
+  margin-top: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #1d643b;
+  color: white;
+  text-transform: uppercase;
+  opacity: .9;
+  outline: none;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.btn-login:hover {
+  opacity: 1;
+}
