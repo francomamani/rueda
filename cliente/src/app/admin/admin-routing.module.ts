@@ -7,6 +7,13 @@ import {EmpresaComponent} from './empresa/empresa.component';
 import {EmpresaIndexComponent} from './empresa/empresa-index/empresa-index.component';
 import {EmpresaCreateComponent} from './empresa/empresa-create/empresa-create.component';
 import {PerfilComponent} from '../shared/perfil/perfil.component';
+import {HorarioComponent} from './horario/horario.component';
+import {HorarioCreateComponent} from './horario/horario-create/horario-create.component';
+import {HorarioIndexComponent} from './horario/horario-index/horario-index.component';
+import {MesaComponent} from './mesa/mesa.component';
+import {ReunionComponent} from './reunion/reunion.component';
+import {ReunionIndexComponent} from './reunion/reunion-index/reunion-index.component';
+import {ReunionCreateComponent} from './reunion/reunion-create/reunion-create.component';
 
 const routes: Routes = [
   {
@@ -39,6 +46,38 @@ const routes: Routes = [
           redirectTo: 'listar',
           pathMatch: 'full',
         }],
+      },
+      {
+        path: 'horario',
+        component: HorarioComponent,
+        children: [
+            {
+              path: 'listar',
+              component: HorarioIndexComponent,
+            },
+            {
+              path: 'crear',
+              component: HorarioCreateComponent,
+            },
+        ],
+      },
+      {
+          path: 'mesa',
+          component: MesaComponent,
+      },
+      {
+          path: 'reuniones',
+          component: ReunionComponent,
+          children: [
+              {
+                  path: 'listar',
+                  component: ReunionIndexComponent,
+              },
+              {
+                  path: 'crear',
+                  component: ReunionCreateComponent,
+              },
+          ],
       },
       {
         path: '',

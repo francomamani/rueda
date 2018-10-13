@@ -15,6 +15,17 @@ import { EmpresaCreateComponent } from './empresa/empresa-create/empresa-create.
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgAutoCompleteModule} from 'ng-auto-complete';
 import {SharedModule} from '../shared/shared.module';
+import { HorarioComponent } from './horario/horario.component';
+import { HorarioCreateComponent } from './horario/horario-create/horario-create.component';
+
+import { AngularDateTimePickerModule } from 'angular2-datetimepicker';
+import {DatePipe} from '@angular/common';
+import { HorarioIndexComponent } from './horario/horario-index/horario-index.component';
+import { MesaComponent } from './mesa/mesa.component';
+import { ReunionComponent } from './reunion/reunion.component';
+import { ReunionCreateComponent } from './reunion/reunion-create/reunion-create.component';
+import { ReunionIndexComponent } from './reunion/reunion-index/reunion-index.component';
+
 
 @NgModule({
   imports: [
@@ -26,6 +37,7 @@ import {SharedModule} from '../shared/shared.module';
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
+      AngularDateTimePickerModule,
   ],
   declarations: [RubroComponent,
                  AdminComponent,
@@ -34,7 +46,14 @@ import {SharedModule} from '../shared/shared.module';
                  EmpresaComponent,
                  EmpresaIndexComponent,
                  EmpresaCreateComponent,
+                 HorarioComponent,
+                 HorarioCreateComponent,
+                 HorarioIndexComponent,
+                 MesaComponent,
+                 ReunionComponent,
+                 ReunionCreateComponent,
+                 ReunionIndexComponent,
   ],
-  providers: [ RubroService ],
+  providers: [ RubroService, DatePipe],
 })
 export class AdminModule { }

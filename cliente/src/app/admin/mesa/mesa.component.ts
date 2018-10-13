@@ -1,18 +1,14 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {LocalDataSource} from 'ng2-smart-table';
-import {SmartTableService} from '../../../@core/data/smart-table.service';
-import {RubroService} from '../rubro.service';
+import {MesaService} from './mesa.service';
+import {NbToastrService} from '@nebular/theme';
 
 @Component({
-    selector: 'ngx-rubro-index',
-    templateUrl: './rubro-index.component.html',
-    styleUrls: ['./rubro-index.component.scss'],
+    selector: 'ngx-mesa',
+    templateUrl: './mesa.component.html',
+    styleUrls: ['./mesa.component.scss'],
 })
-export class RubroIndexComponent implements OnInit {
-
-
-    ngOnInit() {
-    }
+export class MesaComponent implements OnInit {
 
     settings = {
         actions: {
@@ -35,12 +31,8 @@ export class RubroIndexComponent implements OnInit {
             confirmDelete: true,
         },
         columns: {
-            nombre: {
-                title: 'Nombre',
-                type: 'string',
-            },
-            descripcion: {
-                title: 'Descripcion',
+            numero: {
+                title: 'Número de mesa',
                 type: 'string',
             },
         },
@@ -48,8 +40,12 @@ export class RubroIndexComponent implements OnInit {
 
     source: LocalDataSource = new LocalDataSource();
 
-    constructor(private rubroService: RubroService) {
-        this.rubroService.index().subscribe((data: any[]) => {
+    ngOnInit() {
+    }
+
+    constructor(private mesaService: MesaService,
+                private toastr: NbToastrService) {
+        this.mesaService.index().subscribe((data: any[]) => {
             this.source.load(data);
         });
     }
@@ -58,7 +54,9 @@ export class RubroIndexComponent implements OnInit {
     onDeleteConfirm(event): void {
         if (window.confirm('¿Esta seguro que quiere eliminar este registro?')) {
             event.confirm.resolve();
-            this.rubroService.destroy(event.data.rubro_id).subscribe();
+            this.mesaService.destroy(event.data.mesa_id).subscribe((res: any) => {
+                this.toastr.success(res.mensaje);
+            });
         } else {
             event.confirm.reject();
         }
@@ -67,7 +65,9 @@ export class RubroIndexComponent implements OnInit {
     store(event): void {
         if (window.confirm('¿Esta seguro de crear nuevo registro?')) {
             event.confirm.resolve();
-            this.rubroService.store(event.newData).subscribe();
+            this.mesaService.store(event.newData).subscribe((res: any) => {
+                this.toastr.success('Se guardo con éxito');
+            });
         } else {
             event.confirm.reject();
         }
@@ -77,10 +77,13 @@ export class RubroIndexComponent implements OnInit {
     update(event): void {
         if (window.confirm('¿Esta seguro de cambiar los datos de este registro?')) {
             event.confirm.resolve();
-            this.rubroService.update(event.newData, event.data.rubro_id).subscribe();
+            this.mesaService.update(event.newData, event.data.mesa_id).subscribe((res: any) => {
+                this.toastr.success('Se edito con éxito');
+            });
         } else {
             event.confirm.reject();
         }
     }
+
 
 }
