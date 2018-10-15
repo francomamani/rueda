@@ -15,6 +15,7 @@ export class EmpresaService {
     index() {
         return this.http.get(this.base + 'empresas');
     }
+
     empresasListar() {
         return this.http.get(this.base + 'empresas-listar');
     }
@@ -29,5 +30,22 @@ export class EmpresaService {
 
     destroy(id) {
         return this.http.delete(this.base + 'empresas/' + id);
+    }
+
+
+    indexParticipantes(id_empresa) {
+        return this.http.get(this.base + 'empresa/' + id_empresa + '/participantes');
+    }
+
+    storeParticipantes(req) {
+        return this.http.post(this.base + 'participantes', req);
+    }
+
+    updateParticipantes(req, id) {
+        return this.http.put(this.base + 'participantes/' + id, req);
+    }
+
+    destroyParticipantes(id) {
+        return this.http.delete(this.base + 'participantes/' + id);
     }
 }

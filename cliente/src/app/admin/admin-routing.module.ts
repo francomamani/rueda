@@ -14,6 +14,7 @@ import {MesaComponent} from './mesa/mesa.component';
 import {ReunionComponent} from './reunion/reunion.component';
 import {ReunionIndexComponent} from './reunion/reunion-index/reunion-index.component';
 import {ReunionCreateComponent} from './reunion/reunion-create/reunion-create.component';
+import {EmpresaParticipanteComponent} from './empresa/empresa-participante/empresa-participante.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,9 @@ const routes: Routes = [
         }, {
             path: 'perfil',
             component: PerfilComponent,
+        }, {
+            path: 'participantes/:empresa_id',
+            component: EmpresaParticipanteComponent,
         }, {
           path: '',
           redirectTo: 'listar',

@@ -25,6 +25,7 @@ import { MesaComponent } from './mesa/mesa.component';
 import { ReunionComponent } from './reunion/reunion.component';
 import { ReunionCreateComponent } from './reunion/reunion-create/reunion-create.component';
 import { ReunionIndexComponent } from './reunion/reunion-index/reunion-index.component';
+import { EmpresaParticipanteComponent } from './empresa/empresa-participante/empresa-participante.component';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { ReunionIndexComponent } from './reunion/reunion-index/reunion-index.com
                  ReunionComponent,
                  ReunionCreateComponent,
                  ReunionIndexComponent,
+                 EmpresaParticipanteComponent,
   ],
   providers: [ RubroService, DatePipe],
 })

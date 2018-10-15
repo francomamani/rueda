@@ -1,0 +1,13 @@
+<nb-card>
+  <nb-card-header>
+    Participantes
+  </nb-card-header>
+
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings" [source]="source"
+                     (createConfirm)="store($event)"
+                     (deleteConfirm)="onDeleteConfirm($event)"
+                     (editConfirm)="update($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>

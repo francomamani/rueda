@@ -26,7 +26,7 @@
             <tr *ngFor="let empresa of empresas; let i = index">
               <td class="btn-acciones">
                 <a class="text-warning"><i class="fa fa-camera"></i></a>
-                <a class="text-primary"><i class="fa fa-user"></i></a>
+                <a class="text-primary" [routerLink]="['/admin/empresa/participantes/', empresa.empresa_id]"><i class="fa fa-user"></i></a>
                 <a class="text-success"><i class="fa fa-edit"></i></a>
                 <a class="text-danger" (click)="onDeleteConfirm(empresa, index)"><i class="fa fa-trash"></i></a>
               </td>
