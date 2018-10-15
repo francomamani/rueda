@@ -6,14 +6,14 @@
         <form (submit)="store()" role="form" [formGroup]="reunionGroup" *ngIf="empresas !== null && horarios!=null && mesas!=null">
           <div class="row">
             <div class="col-sm-6 form-group">
-              <label>Empresa 1</label>
-              <select name="empresa1_id" formControlName="empresa1_id" class="form-control">
+              <label>Empresa Solicitante</label>
+              <select name="empresa_solicitante_id" formControlName="empresa_solicitante_id" class="form-control">
                 <option [value]="empresa.empresa_id" *ngFor="let empresa of empresas">{{ empresa.nombre }}</option>
               </select>
             </div>
             <div class="col-sm-6 form-group">
-              <label>Empresa 2</label>
-              <select name="empresa2_id" formControlName="empresa2_id" class="form-control">
+              <label>Empresa Demandada</label>
+              <select name="empresa_demandada_id" formControlName="empresa_demandada_id" class="form-control">
                 <option [value]="empresa.empresa_id" *ngFor="let empresa of empresas">{{ empresa.nombre }}</option>
               </select>
             </div>

@@ -11,13 +11,13 @@ class Reunion extends Model
     protected $table = 'reuniones';
     protected $primaryKey = 'reunion_id';
     protected $fillable = [
-        'empresa1_id',
-        'empresa2_id',
+        'empresa_solicitante_id',
+        'empresa_demandada_id',
         'mesa_id',
         'horario_id',
         'resultado',
-        'empresa1_asistio',
-        'empresa2_asistio',
+        'empresa_solicitante_asistio',
+        'empresa_demandada_asistio',
     ];
     protected $dates = ['deleted_at'];
 

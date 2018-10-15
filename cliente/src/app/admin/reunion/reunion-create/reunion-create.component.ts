@@ -41,8 +41,8 @@ export class ReunionCreateComponent implements OnInit {
 
     createForm() {
         this.reunionGroup = this.fb.group({
-            'empresa1_id': new FormControl(0, Validators.required),
-            'empresa2_id': new FormControl(0, Validators.required),
+            'empresa_solicitante_id': new FormControl(0, Validators.required),
+            'empresa_demandada_id': new FormControl(0, Validators.required),
             'horario_id': new FormControl(0, Validators.required),
             'mesa_id': new FormControl(0, Validators.required),
         });
@@ -53,8 +53,8 @@ export class ReunionCreateComponent implements OnInit {
 
     store() {
         this.reunionGroup.patchValue({
-          'empresa1_id': parseInt(this.reunionGroup.value.empresa1_id, 10),
-          'empresa2_id': parseInt(this.reunionGroup.value.empresa2_id, 10),
+          'empresa_solicitante_id': parseInt(this.reunionGroup.value.empresa_solicitante_id, 10),
+          'empresa_demandada_id': parseInt(this.reunionGroup.value.empresa_demandada_id, 10),
           'horario_id': parseInt(this.reunionGroup.value.horario_id, 10),
           'mesa_id': parseInt(this.reunionGroup.value.mesa_id, 10),
         });
