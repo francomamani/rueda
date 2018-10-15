@@ -19,11 +19,9 @@
             <tbody>
             <tr *ngFor="let reunion of reuniones">
               <td>
-                <a (click)="info(reunion.empresa_solicitante_id)" title="Información"><i class="fa fa-info"></i></a>
-                {{reunion.empresa_solicitante}}</td>
+                <a class="info" (click)="info(reunion.empresa_solicitante, reunion.fecha_hora_registro_reunion)">{{reunion.empresa_solicitante.nombre }}</a></td>
               <td>
-                <a (click)="info(reunion.empresa_demandada_id)" title="Información"><i class="fa fa-info"></i></a>
-                {{reunion.empresa_demandada}}
+                <a class="info" (click)="info(reunion.empresa_demandada, reunion.fecha_hora_registro_reunion)">{{ reunion.empresa_demandada.nombre }}</a>
               </td>
               <td>{{reunion.mesa}}</td>
               <td>{{reunion.inicio}} - {{reunion.fin}}</td>

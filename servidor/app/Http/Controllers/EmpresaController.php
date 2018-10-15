@@ -6,6 +6,7 @@ use App\Empresa;
 use App\Horario;
 use App\Mesa;
 use App\Reunion;
+use App\Rubro;
 use App\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -139,17 +140,16 @@ class EmpresaController extends Controller
         $data = [];
         foreach ($reuniones as $reunion) {
             $reunionItem = [
-                'empresa_solicitante' => Reunion::find($reunion->empresa_solicitante_id),
-                'empresa_demandada' => Reunion::find($reunion->empresa_demandada_id),
-                'empresa_solicitante_id' => $reunion->empresa_solicitante_id,
-                'empresa_demandada_id' => $reunion->empresa_demandada_id,
-                'mesa' => Mesa::find($reunion->mesa_id),
+                'empresa_solicitante' => Empresa::with('rubro')->find($reunion->empresa_solicitante_id),
+                'empresa_demandada' => Empresa::with('rubro')->find($reunion->empresa_demandada_id),
+                'mesa' => Mesa::find($reunion->mesa_id)->numero,
                 'inicio' => Horario::find($reunion->horario_id)->inicio,
                 'fin' => Horario::find($reunion->horario_id)->fin,
                 'resultado' => $reunion->resultado,
+                'fecha_hora_registro_reunion' => $reunion->created_at
             ];
             array_push($data, $reunionItem);
         }
-        return response()->json($reuniones, 200);
+        return response()->json($data, 200);
     }
 }

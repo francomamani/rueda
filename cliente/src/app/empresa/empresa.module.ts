@@ -10,6 +10,7 @@ import { AgendaComponent } from './agenda/agenda.component';
 import { SolicitudSalienteComponent } from './agenda/solicitud-saliente/solicitud-saliente.component';
 import { SolicitudEntranteComponent } from './agenda/solicitud-entrante/solicitud-entrante.component';
 import { ReunionesAgendadasComponent } from './agenda/reuniones-agendadas/reuniones-agendadas.component';
+import {EmpresaModalComponent} from '../shared/empresa-modal/empresa-modal.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,12 @@ import { ReunionesAgendadasComponent } from './agenda/reuniones-agendadas/reunio
     ThemeModule,
     SharedModule,
   ],
-  declarations: [HomeComponent, EmpresaComponent, AgendaComponent, SolicitudSalienteComponent, SolicitudEntranteComponent, ReunionesAgendadasComponent],
+  declarations: [HomeComponent,
+                EmpresaComponent,
+                AgendaComponent,
+                SolicitudSalienteComponent,
+                SolicitudEntranteComponent,
+                ReunionesAgendadasComponent],
+  entryComponents: [EmpresaModalComponent],
 })
 export class EmpresaModule { }

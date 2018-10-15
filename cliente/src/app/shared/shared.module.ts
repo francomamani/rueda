@@ -10,6 +10,7 @@ import { ParticipanteComponent } from './participante/participante.component';
 import {Ng2SmartTableModule} from 'ng2-smart-table';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AngularDateTimePickerModule} from 'angular2-datetimepicker';
+import { EmpresaModalComponent } from './empresa-modal/empresa-modal.component';
 
 @NgModule({
   imports: [
@@ -25,11 +26,13 @@ import {AngularDateTimePickerModule} from 'angular2-datetimepicker';
                   HorariosOcupadosComponent,
                   HorariosOcupadosIndexComponent,
                   HorariosOcupadosCreateComponent,
-                  ParticipanteComponent],
+                  ParticipanteComponent,
+                  EmpresaModalComponent],
   exports: [PerfilComponent,
             HorariosOcupadosComponent,
             HorariosOcupadosCreateComponent,
             HorariosOcupadosIndexComponent,
-            ParticipanteComponent],
+            ParticipanteComponent,
+            EmpresaModalComponent],
 })
 export class SharedModule { }

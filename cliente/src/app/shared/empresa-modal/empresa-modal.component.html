@@ -1,0 +1,61 @@
+<div class="modal-header">
+  <span>{{modalHeader}}</span>
+  <button class="close" aria-label="Close" (click)="closeModal()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <tbody>
+      <tr>
+        <td>Empresa</td>
+        <td><strong>{{empresa.nombre}}</strong></td>
+      </tr>
+      <tr>
+        <td>Rubro</td>
+        <td><strong>{{empresa.rubro.nombre}}</strong></td>
+      </tr>
+      <tr>
+        <td>Inscripción</td>
+        <td><strong>{{empresa.created_at | date: 'dd-MM-yyy HH:mm:ss'}}</strong></td>
+      </tr>
+      <tr>
+        <td>Registro de esta reunion</td>
+        <td><strong>{{fecha_hora_registro_reunion.date | date: 'dd-MM-yyy H:m:s'}}</strong></td>
+      </tr>
+      <tr>
+        <td>Representante Legal</td>
+        <td><strong>{{empresa.representante_legal}}</strong></td>
+      </tr>
+      <tr>
+        <td>NIT</td>
+        <td><strong>{{empresa.nit}}</strong></td>
+      </tr>
+      <tr>
+        <td>Ciudad/Localidad</td>
+        <td><strong>{{empresa.ciudad_localidad}}</strong></td>
+      </tr>
+      <tr>
+        <td>Direccion</td>
+        <td><strong>{{empresa.direccion}}</strong></td>
+      </tr>
+      <tr>
+        <td>Telefono</td>
+        <td><strong>{{empresa.telefono}}</strong></td>
+      </tr>
+      <tr>
+        <td>Oferta</td>
+        <td><strong>{{empresa.oferta}}</strong></td>
+      </tr>
+      <tr>
+        <td>Demanda</td>
+        <td><strong>{{empresa.demanda}}</strong></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-md btn-primary" (click)="closeModal()">Save changes</button>
+</div>
