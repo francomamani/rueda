@@ -1,31 +1,19 @@
 <div class="row">
   <div class="col-md-12">
     <nb-card>
-      <nb-card-header>Registrar Empresa</nb-card-header>
+      <nb-card-header>Registrar Reunion</nb-card-header>
       <nb-card-body>
-        <!--        <form action="" role="form">
-                  <div class="row">
-                    <div class="col-md-10 form-group">
-                        <input type="email" class="form-control" name="" placeholder="Buscar...">
-                    </div>
-                    <div class="col-md-2">
-                      <button type="submit" class="btn btn-primary btn-full-width">
-                        <i class="fa fa-search"></i> Buscar
-                      </button>
-                    </div>
-                  </div>
-                </form>-->
         <form (submit)="store()" role="form" [formGroup]="reunionGroup" *ngIf="empresas !== null && horarios!=null && mesas!=null">
           <div class="row">
             <div class="col-sm-6 form-group">
               <label>Empresa 1</label>
-              <select name="expositor1_id" formControlName="expositor1_id" class="form-control">
+              <select name="empresa1_id" formControlName="empresa1_id" class="form-control">
                 <option [value]="empresa.empresa_id" *ngFor="let empresa of empresas">{{ empresa.nombre }}</option>
               </select>
             </div>
             <div class="col-sm-6 form-group">
               <label>Empresa 2</label>
-              <select name="expositor2_id" formControlName="expositor2_id" class="form-control">
+              <select name="empresa2_id" formControlName="empresa2_id" class="form-control">
                 <option [value]="empresa.empresa_id" *ngFor="let empresa of empresas">{{ empresa.nombre }}</option>
               </select>
             </div>

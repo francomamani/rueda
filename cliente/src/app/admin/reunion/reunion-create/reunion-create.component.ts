@@ -41,8 +41,8 @@ export class ReunionCreateComponent implements OnInit {
 
     createForm() {
         this.reunionGroup = this.fb.group({
-            'expositor1_id': new FormControl(0, Validators.required),
-            'expositor2_id': new FormControl(0, Validators.required),
+            'empresa1_id': new FormControl(0, Validators.required),
+            'empresa2_id': new FormControl(0, Validators.required),
             'horario_id': new FormControl(0, Validators.required),
             'mesa_id': new FormControl(0, Validators.required),
         });
@@ -52,6 +52,12 @@ export class ReunionCreateComponent implements OnInit {
     }
 
     store() {
+        this.reunionGroup.patchValue({
+          'empresa1_id': parseInt(this.reunionGroup.value.empresa1_id, 10),
+          'empresa2_id': parseInt(this.reunionGroup.value.empresa2_id, 10),
+          'horario_id': parseInt(this.reunionGroup.value.horario_id, 10),
+          'mesa_id': parseInt(this.reunionGroup.value.mesa_id, 10),
+        });
         this.reunionService.store(this.reunionGroup.value)
             .subscribe((res: any) => {
                 this.toastr.success('Reunion registrada', 'Aviso');

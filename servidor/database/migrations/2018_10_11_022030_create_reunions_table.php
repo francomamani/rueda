@@ -25,10 +25,10 @@ class CreateReunionsTable extends Migration
                 ->references('horario_id')
                 ->on('horarios')
                 ->onDelete('cascade');
-            $table->integer('expositor1_id')->unsigned();
-            $table->integer('expositor2_id')->unsigned();
-            $table->boolean('expositor1_asistio')->default(false);
-            $table->boolean('expositor2_asistio')->default(false);
+            $table->integer('empresa1_id')->unsigned();
+            $table->integer('empresa2_id')->unsigned();
+            $table->boolean('empresa1_asistio')->default(false);
+            $table->boolean('empresa2_asistio')->default(false);
             $table->enum('resultado', ['satisfactoria', 'ausencia']);
             $table->softDeletes();
             $table->timestamps();
