@@ -20,4 +20,16 @@ class Horario extends Model
         return $this->hasMany(Reunion::class, 'horario_id');
     }
 
+    public function horariosOcupados() {
+        return $this->hasMany(HorarioOcupado::class, 'horario_id');
+    }
+
+    public static function boot()
+    {
+        parent::boot();
+        static::deleting(function($padre) {
+            $padre->reuniones()->delete();
+            $padre->horariosOcupados()->delete();
+        });
+    }
 }

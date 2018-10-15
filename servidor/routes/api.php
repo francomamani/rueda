@@ -24,7 +24,9 @@ Route::resource('empresas', 'EmpresaController');
 Route::resource('participantes', 'ParticipanteController');
 Route::resource('rubros', 'RubroController');
 Route::resource('horarios', 'HorarioController');
+Route::resource('horarios_ocupados', 'HorarioOcupadoController');
 Route::resource('mesas', 'MesaController');
 Route::resource('reuniones', 'ReunionController');
+Route::resource('agendas', 'AgendaController');
 Route::get('empresa/{empresa_id}/participantes', 'EmpresaController@participantes');
 

@@ -41,12 +41,16 @@ class Empresa extends Model
         return $this->hasMany(Participante::class, 'empresa_id');
     }
 
+    public function horariosOcupados() {
+        return $this->hasMany(HorarioOcupado::class, 'empresa_id');
+    }
+
     public static function boot()
     {
         parent::boot();
         static::deleting(function($padre) {
             $padre->participantes()->delete();
+            $padre->horariosOcupados()->delete();
         });
     }
-
 }

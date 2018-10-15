@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Mesa;
+use App\Agenda;
 use Illuminate\Http\Request;
 
-class MesaController extends Controller
+class AgendaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class MesaController extends Controller
      */
     public function index()
     {
-        return response()->json(Mesa::get(), 200);
+        return response()->json(Agenda::get(), 200);
     }
 
     /**
@@ -25,18 +25,18 @@ class MesaController extends Controller
      */
     public function store(Request $request)
     {
-        return response()->json(Mesa::create($request->all()), 201);
+        return response()->json(Agenda::create($request->all()), 201);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Mesa  $tipoUsuario
+     * @param  \App\Agenda  $tipoUsuario
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        return response()->json(Mesa::find($id));
+        return response()->json(Agenda::find($id));
 
     }
 
@@ -44,29 +44,28 @@ class MesaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Mesa  $tipoUsuario
+     * @param  \App\Agenda  $tipoUsuario
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $mesa = Mesa::find($id);
-        $mesa->update($request->all());
-        return response()->json($mesa, 200);
+        $agenda = Agenda::find($id);
+        $agenda->update($request->all());
+        return response()->json($agenda, 200);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Mesa  $tipoUsuario
+     * @param  \App\Agenda  $tipoUsuario
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $mesa = Mesa::find($id);
-        $mesa->delete();
+        $agenda = Agenda::find($id);
+        $agenda->delete();
         return response()->json([
-            'mensaje' => 'Mesa: ' . $mesa->numero . ' eliminado exitosamente'
+            'mensaje' => 'Agenda con id' . $agenda->agenda_id. ' eliminada exitosamente'
         ], 200);
     }
-
 }

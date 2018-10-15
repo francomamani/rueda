@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Mesa;
+use App\HorarioOcupado;
 use Illuminate\Http\Request;
 
-class MesaController extends Controller
+class HorarioOcupadoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class MesaController extends Controller
      */
     public function index()
     {
-        return response()->json(Mesa::get(), 200);
+        return response()->json(HorarioOcupado::get(), 200);
     }
 
     /**
@@ -25,48 +25,48 @@ class MesaController extends Controller
      */
     public function store(Request $request)
     {
-        return response()->json(Mesa::create($request->all()), 201);
+        return response()->json(HorarioOcupado::create($request->all()), 201);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Mesa  $tipoUsuario
+     * @param  \App\HorarioOcupado  $tipoUsuario
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        return response()->json(Mesa::find($id));
+        return response()->json(HorarioOcupado::find($id));
 
     }
+
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Mesa  $tipoUsuario
+     * @param  \App\HorarioOcupado  $tipoUsuario
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $mesa = Mesa::find($id);
-        $mesa->update($request->all());
-        return response()->json($mesa, 200);
+        $horarios_ocupados = HorarioOcupado::find($id);
+        $horarios_ocupados->update($request->all());
+        return response()->json($horarios_ocupados, 200);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Mesa  $tipoUsuario
+     * @param  \App\HorarioOcupado  $tipoUsuario
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $mesa = Mesa::find($id);
-        $mesa->delete();
+        $horarios_ocupados = HorarioOcupado::find($id);
+        $horarios_ocupados->delete();
         return response()->json([
-            'mensaje' => 'Mesa: ' . $mesa->numero . ' eliminado exitosamente'
+            'mensaje' => 'Horario ocupado con id: ' . $horarios_ocupados->horario_id. ' liberado exitosamente'
         ], 200);
     }
-
 }

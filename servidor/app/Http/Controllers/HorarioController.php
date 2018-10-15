@@ -18,16 +18,6 @@ class HorarioController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -48,17 +38,6 @@ class HorarioController extends Controller
     {
         return response()->json(Horario::find($id));
 
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Horario  $tipoUsuario
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Horario $tipoUsuario)
-    {
-        //
     }
 
     /**
