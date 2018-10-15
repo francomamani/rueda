@@ -18,8 +18,8 @@ class CreateAgendasTable extends Migration
             $table->integer('empresa_solicitante_id')->unsigned();
             $table->integer('empresa_demandada_id')->unsigned();
             $table->integer('horario_id')->unsigned();
-            $table->enum('estado', ['aceptado', 'rechazado', 'pendiente'])->unsigned();
-            $table->enum('tipo_asignacion', ['pre_agendado', 'administracion', 'cita_de_contingencia'])->unsigned();
+            $table->enum('estado', ['aceptado', 'rechazado', 'pendiente']);
+            $table->enum('tipo_asignacion', ['pre_agendado', 'administracion', 'cita_de_contingencia']);
             $table->softDeletes();
             $table->timestamps();
         });

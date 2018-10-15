@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class HorarioOcupado extends Model
 {
     use SoftDeletes;
-    protected $table = 'horarios';
-    protected $primaryKey = 'horario_id';
+    protected $table = 'horarios_ocupados';
+    protected $primaryKey = 'horario_ocupado_id';
     protected $fillable = [
         'empresa_id',
         'horario_id',

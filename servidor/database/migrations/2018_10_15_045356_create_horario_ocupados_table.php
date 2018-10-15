@@ -13,7 +13,7 @@ class CreateHorarioOcupadosTable extends Migration
      */
     public function up()
     {
-        Schema::create('horario_ocupados', function (Blueprint $table) {
+        Schema::create('horarios_ocupados', function (Blueprint $table) {
             $table->increments('horario_ocupado_id');
             $table->integer('empresa_id')->unsigned();
             $table->foreign('empresa_id')
@@ -37,6 +37,6 @@ class CreateHorarioOcupadosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('horario_ocupados');
+        Schema::dropIfExists('horarios_ocupados');
     }
 }

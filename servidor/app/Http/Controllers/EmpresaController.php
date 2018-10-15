@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Empresa;
+use App\Horario;
 use App\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -109,5 +110,19 @@ class EmpresaController extends Controller
     public function participantes($empresa_id){
         $participantes = Empresa::find($empresa_id)->participantes()->get();
         return response()->json($participantes, 200);
+    }
+
+    public function horariosDisponibles($empresa_solicitante_id, $empresa_demandada_id) {
+        $solicitante_horarios_ocupados = Empresa::find($empresa_solicitante_id)->horariosOcupados()->get();
+        $demandada_horarios_ocupados = Empresa::find($empresa_demandada_id)->horariosOcupados()->get();
+        $horarios_ocupados = [];
+        foreach ($solicitante_horarios_ocupados as $horario_ocupado) {
+            array_push($horarios_ocupados, $horario_ocupado->horario_id);
+        }
+        foreach ($demandada_horarios_ocupados as $horario_ocupado) {
+            array_push($horarios_ocupados, $horario_ocupado->horario_id);
+        }
+        $horarios_disponibles = Horario::all()->except($horarios_ocupados);
+        return response()->json($horarios_disponibles, 200);
     }
 }
