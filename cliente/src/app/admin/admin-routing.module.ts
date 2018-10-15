@@ -74,11 +74,11 @@ const routes: Routes = [
         component: HorariosOcupadosComponent,
         children: [
           {
-            path: 'listar',
+            path: 'listar/:tipo_ruta/:id_empresa',
             component: HorariosOcupadosIndexComponent,
           },
           {
-            path: 'crear',
+            path: 'crear/:tipo_ruta/:id_empresa',
             component: HorariosOcupadosCreateComponent,
           },
           {

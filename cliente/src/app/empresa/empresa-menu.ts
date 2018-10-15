@@ -8,7 +8,7 @@ export const EMPRESA_ITEMS: NbMenuItem[] = [
   }, {
     title: 'Horarios Ocupados',
     icon: 'nb-keypad',
-    link: '/empresa/horarios-ocupados',
+    link: '/empresa/horarios-ocupados/listar/empresa/' + JSON.parse(atob(localStorage.getItem('rueda-usuario'))).empresa.empresa_id,
   }, {
     title: 'Mis Participantes',
     icon: 'nb-person',

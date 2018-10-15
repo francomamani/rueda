@@ -28,7 +28,8 @@
                 <a class="text-warning"><i class="fa fa-camera"></i></a>
                 <a class="text-primary" [routerLink]="['/admin/empresa/participantes/', empresa.empresa_id]"><i class="fa fa-user"></i></a>
                 <a class="text-success"><i class="fa fa-edit"></i></a>
-                <a class="text-danger" (click)="onDeleteConfirm(empresa, index)"><i class="fa fa-trash"></i></a>
+                <a [routerLink]="['/admin/horarios-ocupados/listar/admin/', empresa.empresa_id]"><i class="fa fa-clock"></i></a>
+                <a class="text-danger" (click)="onDeleteConfirm(empresa, i)"><i class="fa fa-trash"></i></a>
               </td>
               <td>{{ i + 1 }}</td>
               <td class="text-center">

@@ -91,7 +91,7 @@ export class ParticipanteComponent implements OnInit {
         carnet: event.newData.carnet,
         celular: event.newData.celular,
         cargo: event.newData.cargo,
-      }
+      };
       this.empresaService.storeParticipantes(this.datos).subscribe();
     } else {
       event.confirm.reject();
@@ -109,7 +109,7 @@ export class ParticipanteComponent implements OnInit {
         carnet: event.newData.carnet,
         celular: event.newData.celular,
         cargo: event.newData.cargo,
-      }
+      };
       this.empresaService.updateParticipantes(event.newData, event.data.participante_id).subscribe();
     } else {
       event.confirm.reject();
