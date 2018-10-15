@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Empresa;
 use App\Horario;
+use App\Mesa;
+use App\Reunion;
 use App\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -127,7 +129,27 @@ class EmpresaController extends Controller
     }
 
     public function horariosOcupados($empresa_id) {
-        $horarios_ocupados = Empresa::find($empresa_id)->horariosOcupados()->get();
+        $horarios_ocupados = Empresa::find($empresa_id)->horariosOcupados()->with(['horario', 'empresa'])->get();
         return response()->json($horarios_ocupados, 200);
+    }
+    public function misReuniones($empresa_id) {
+        $reuniones = Reunion::where('empresa_solicitante_id', $empresa_id)
+                            ->orWhere('empresa_demandada_id', $empresa_id)
+                            ->get();
+        $data = [];
+        foreach ($reuniones as $reunion) {
+            $reunionItem = [
+                'empresa_solicitante' => Reunion::find($reunion->empresa_solicitante_id),
+                'empresa_demandada' => Reunion::find($reunion->empresa_demandada_id),
+                'empresa_solicitante_id' => $reunion->empresa_solicitante_id,
+                'empresa_demandada_id' => $reunion->empresa_demandada_id,
+                'mesa' => Mesa::find($reunion->mesa_id),
+                'inicio' => Horario::find($reunion->horario_id)->inicio,
+                'fin' => Horario::find($reunion->horario_id)->fin,
+                'resultado' => $reunion->resultado,
+            ];
+            array_push($data, $reunionItem);
+        }
+        return response()->json($reuniones, 200);
     }
 }

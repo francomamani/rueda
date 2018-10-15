@@ -6,6 +6,10 @@ import { HomeComponent } from './home/home.component';
 import { EmpresaComponent } from './empresa.component';
 import {ThemeModule} from '../@theme/theme.module';
 import {SharedModule} from '../shared/shared.module';
+import { AgendaComponent } from './agenda/agenda.component';
+import { SolicitudSalienteComponent } from './agenda/solicitud-saliente/solicitud-saliente.component';
+import { SolicitudEntranteComponent } from './agenda/solicitud-entrante/solicitud-entrante.component';
+import { ReunionesAgendadasComponent } from './agenda/reuniones-agendadas/reuniones-agendadas.component';
 
 @NgModule({
   imports: [
@@ -14,6 +18,6 @@ import {SharedModule} from '../shared/shared.module';
     ThemeModule,
     SharedModule,
   ],
-  declarations: [HomeComponent, EmpresaComponent],
+  declarations: [HomeComponent, EmpresaComponent, AgendaComponent, SolicitudSalienteComponent, SolicitudEntranteComponent, ReunionesAgendadasComponent],
 })
 export class EmpresaModule { }

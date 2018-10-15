@@ -13,6 +13,26 @@ export const EMPRESA_ITEMS: NbMenuItem[] = [
     title: 'Mis Participantes',
     icon: 'nb-person',
     link: '/empresa/mis-participantes/' + JSON.parse(atob(localStorage.getItem('rueda-usuario'))).empresa.empresa_id,
+  }, {
+    title: 'Mi Agenda',
+    icon: 'nb-tables',
+    children: [
+      {
+        title: 'Solicitudes Salientes',
+        icon: 'nb-paper-plane',
+        link: '/empresa/mi-agenda/solicitudes-salientes',
+      },
+      {
+        title: 'Solicitudes Entrantes',
+        icon: 'nb-notifications',
+        link: '/empresa/mi-agenda/solicitudes-entrantes',
+      },
+      {
+        title: 'Reuniones Agendadas',
+        icon: 'nb-star',
+        link: '/empresa/mi-agenda/reuniones-agendadas',
+      },
+    ],
   },
   /*{
     title: 'Auth',

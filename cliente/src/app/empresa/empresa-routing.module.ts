@@ -7,6 +7,10 @@ import {HorariosOcupadosComponent} from '../shared/horarios-ocupados/horarios-oc
 import {HorariosOcupadosIndexComponent} from '../shared/horarios-ocupados/horarios-ocupados-index/horarios-ocupados-index.component';
 import {HorariosOcupadosCreateComponent} from '../shared/horarios-ocupados/horarios-ocupados-create/horarios-ocupados-create.component';
 import {ParticipanteComponent} from '../shared/participante/participante.component';
+import {AgendaComponent} from './agenda/agenda.component';
+import {SolicitudEntranteComponent} from './agenda/solicitud-entrante/solicitud-entrante.component';
+import {SolicitudSalienteComponent} from './agenda/solicitud-saliente/solicitud-saliente.component';
+import {ReunionesAgendadasComponent} from './agenda/reuniones-agendadas/reuniones-agendadas.component';
 
 const routes: Routes = [
   {
@@ -16,6 +20,25 @@ const routes: Routes = [
       {
         path: 'home',
         component: HomeComponent,
+      }, {
+        path: 'mi-agenda',
+        component: AgendaComponent,
+        children: [
+          {
+            path: 'solicitudes-salientes',
+            component: SolicitudSalienteComponent,
+          }, {
+            path: 'solicitudes-entrantes',
+            component: SolicitudEntranteComponent,
+          }, {
+            path: 'reuniones-agendadas',
+            component: ReunionesAgendadasComponent,
+          }, {
+            path: '',
+            redirectTo: 'reuniones-agendadas',
+            pathMatch: 'full',
+          },
+        ],
       },
       {
         path: 'mis-participantes/:empresa_id',

@@ -30,4 +30,5 @@ Route::resource('reuniones', 'ReunionController');
 Route::resource('agendas', 'AgendaController');
 Route::get('empresa/{empresa_id}/participantes', 'EmpresaController@participantes');
 Route::get('horarios-disponibles/{empresa_solicitante_id}/{empresa_demandada_id}', 'EmpresaController@horariosDisponibles');
-Route::get('horarios-ocupados/{empresa_id}', 'EmpresaController@horariosOcupados');
+Route::get('mis-horarios-ocupados/{empresa_id}', 'EmpresaController@horariosOcupados');
+Route::get('mis-reuniones/{empresa_id}', 'EmpresaController@misReuniones');

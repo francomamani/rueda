@@ -48,4 +48,7 @@ export class EmpresaService {
     destroyParticipantes(id) {
         return this.http.delete(this.base + 'participantes/' + id);
     }
+    misReuniones(empresa_id) {
+      return this.http.get(this.base + 'mis-reuniones/' + empresa_id);
+    }
 }
