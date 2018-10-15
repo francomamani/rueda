@@ -125,4 +125,9 @@ class EmpresaController extends Controller
         $horarios_disponibles = Horario::all()->except($horarios_ocupados);
         return response()->json($horarios_disponibles, 200);
     }
+
+    public function horariosOcupados($empresa_id) {
+        $horarios_ocupados = Empresa::find($empresa_id)->horariosOcupados()->get();
+        return response()->json($horarios_ocupados, 200);
+    }
 }
