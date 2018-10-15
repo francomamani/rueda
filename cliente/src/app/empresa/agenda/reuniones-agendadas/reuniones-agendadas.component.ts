@@ -19,5 +19,8 @@ export class ReunionesAgendadasComponent implements OnInit {
 
   ngOnInit() {
   }
+  info() {
+    
+  }
 
 }
