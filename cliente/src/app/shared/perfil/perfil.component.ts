@@ -7,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilComponent implements OnInit {
 
+  participantes: any = null;
   usuario = JSON.parse(atob(localStorage.getItem('rueda-usuario')));
-  constructor() { }
+  constructor() {
+    if (this.usuario.tipo_usuario === 'empresa') {
+      this.participantes = this.usuario.empresa.participantes;
+    }
+  }
 
   ngOnInit() {
   }

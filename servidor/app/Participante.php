@@ -11,6 +11,7 @@ class Participante extends Model
     protected $table = 'participantes';
     protected $primaryKey = 'participante_id';
     protected $fillable = [
+        'empresa_id',
         'nombres',
         'apellidos',
         'carnet',

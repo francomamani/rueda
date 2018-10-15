@@ -43,6 +43,7 @@ class AuthController extends Controller
         } else {
             $usuario = Usuario::join('empresas', 'empresas.usuario_id', '=','usuarios.usuario_id')
                     ->join('rubros', 'rubros.rubro_id', '=','empresas.rubro_id')
+                    ->with('empresa.participantes')
                     ->where('usuarios.email', request()->input('email'))
                     ->selectRaw('usuarios.*, empresas.*, rubros.nombre as rubro')
                     ->first();

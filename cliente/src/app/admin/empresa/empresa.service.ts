@@ -15,6 +15,9 @@ export class EmpresaService {
     index() {
         return this.http.get(this.base + 'empresas');
     }
+    empresasListar() {
+        return this.http.get(this.base + 'empresas-listar');
+    }
 
     store(req) {
         return this.http.post(this.base + 'empresas', req);

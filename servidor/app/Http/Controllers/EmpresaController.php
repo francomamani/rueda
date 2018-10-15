@@ -24,6 +24,10 @@ class EmpresaController extends Controller
         return response()->json($empresas, 200);
     }
 
+    public function listar() {
+        return response()->json(Empresa::orderBy('nombre')->get(), 200);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -121,5 +125,10 @@ class EmpresaController extends Controller
         return response()->json([
             'mensaje' => 'Empresa: ' . $empresa->nombre . ' eliminado exitosamente'
         ], 200);
+    }
+
+    public function participantes($empresa_id){
+        $participantes = Empresa::find($empresa_id)->participantes()->get();
+        return response()->json($participantes, 200);
     }
 }

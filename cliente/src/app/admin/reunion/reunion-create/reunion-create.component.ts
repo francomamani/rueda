@@ -29,7 +29,7 @@ export class ReunionCreateComponent implements OnInit {
             .subscribe((res: any[]) => {
                 this.horarios = res;
             });
-        this.empresaService.index()
+        this.empresaService.empresasListar()
             .subscribe((res: any[]) => {
                 this.empresas = res;
             });
@@ -54,7 +54,7 @@ export class ReunionCreateComponent implements OnInit {
     store() {
         this.reunionService.store(this.reunionGroup.value)
             .subscribe((res: any) => {
-                this.toastr.success('Reunion en espera de confirmación');
+                this.toastr.success('Reunion registrada', 'Aviso');
             });
     }
 

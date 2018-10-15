@@ -18,6 +18,7 @@ use Illuminate\Http\Request;
 });*/
 
 Route::post('login', 'AuthController@login');
+Route::get('empresas-listar', 'EmpresaController@listar');
 Route::resource('usuarios', 'UsuarioController');
 Route::resource('empresas', 'EmpresaController');
 Route::resource('participantes', 'ParticipanteController');
@@ -25,3 +26,5 @@ Route::resource('rubros', 'RubroController');
 Route::resource('horarios', 'HorarioController');
 Route::resource('mesas', 'MesaController');
 Route::resource('reuniones', 'ReunionController');
+Route::get('empresa/{empresa_id}/participantes', 'EmpresaController@participantes');
+

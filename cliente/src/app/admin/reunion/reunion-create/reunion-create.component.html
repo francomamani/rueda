@@ -18,11 +18,13 @@
         <form (submit)="store()" role="form" [formGroup]="reunionGroup" *ngIf="empresas !== null && horarios!=null && mesas!=null">
           <div class="row">
             <div class="col-sm-6 form-group">
+              <label>Empresa 1</label>
               <select name="expositor1_id" formControlName="expositor1_id" class="form-control">
                 <option [value]="empresa.empresa_id" *ngFor="let empresa of empresas">{{ empresa.nombre }}</option>
               </select>
             </div>
             <div class="col-sm-6 form-group">
+              <label>Empresa 2</label>
               <select name="expositor2_id" formControlName="expositor2_id" class="form-control">
                 <option [value]="empresa.empresa_id" *ngFor="let empresa of empresas">{{ empresa.nombre }}</option>
               </select>
@@ -30,11 +32,13 @@
           </div>
           <div class="row">
             <div class="col-sm-6 form-group">
+              <label>Horario</label>
               <select name="horario_id" formControlName="horario_id" class="form-control">
                 <option [value]="horario.horario_id" *ngFor="let horario of horarios">{{ horario.inicio }} - {{horario.fin}}</option>
               </select>
             </div>
             <div class="col-sm-6 form-group">
+              <label>Mesa</label>
               <select name="mesa_id" formControlName="mesa_id" class="form-control">
                 <option [value]="mesa.mesa_id" *ngFor="let mesa of mesas">{{ mesa.numero }}</option>
               </select>

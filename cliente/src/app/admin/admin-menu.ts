@@ -25,7 +25,7 @@ export const ADMIN_ITEMS: NbMenuItem[] = [
     },
     {
         title: 'Horarios',
-        icon: 'nb-home',
+        icon: 'nb-email',
         link: '/admin/horario',
         children: [
             {
@@ -42,12 +42,13 @@ export const ADMIN_ITEMS: NbMenuItem[] = [
     },
     {
         title: 'Mesas',
-        icon: 'nb-home',
+        icon: 'nb-keypad' +
+          '',
         link: '/admin/mesa',
     },
     {
         title: 'Reuniones',
-        icon: 'nb-home',
+        icon: 'nb-heart',
         link: '/admin/reuniones',
         children: [
             {
@@ -62,26 +63,4 @@ export const ADMIN_ITEMS: NbMenuItem[] = [
             },
         ],
     },
-    {
-    title: 'Auth',
-    icon: 'nb-locked',
-    children: [
-      {
-        title: 'Login',
-        link: '/auth/login',
-      },
-      {
-        title: 'Register',
-        link: '/auth/register',
-      },
-      {
-        title: 'Request Password',
-        link: '/auth/request-password',
-      },
-      {
-        title: 'Reset Password',
-        link: '/auth/reset-password',
-      },
-    ],
-  },
 ];

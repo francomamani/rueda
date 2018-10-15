@@ -38,7 +38,7 @@ class Empresa extends Model
     }
 
     public function participantes() {
-        return $this->hasMany(Participante::class, 'participante_id');
+        return $this->hasMany(Participante::class, 'empresa_id');
     }
 
     public static function boot()

@@ -1,6 +1,10 @@
+$dark-primary: #00796B;
+$primary: #009688;
+$primary-text: #212121;
+$white: #eee;
 .legend-login{
   text-align: center;
-  color: #2a9055;
+  color: $primary;
   font-size: 5em;
   font-weight: bold;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -9,7 +13,7 @@
   color: #2b2d34;
 }
 .legend-login span {
-  color: #1d643b;
+  color: $primary;
 }
 .btn-login {
   display: block;
@@ -19,13 +23,18 @@
   margin-top: 1em;
   cursor: pointer;
   border-radius: 5px;
-  background-color: #1d643b;
-  color: white;
+  background-color: $primary;
+  color: $white;
   text-transform: uppercase;
-  opacity: .9;
   outline: none;
+  backface-visibility: hidden;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 2px;
+  box-shadow: 0 4px darken($primary,10%);
 }
 .btn-login:hover {
-  opacity: 1;
+  box-shadow: 0 2px darken($primary,10%);
+}
+.btn-login:active {
+  box-shadow: none;
 }

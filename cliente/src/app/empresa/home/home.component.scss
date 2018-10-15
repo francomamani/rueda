@@ -1,8 +1,36 @@
+$dark-primary: #00796B;
+$light-primary: #B2DFDB;
+$primary: #009688;
+$accent: #FF9800;
+$text: #ffffff;
+$primary-text: #212121;
+$secondary-text: #757575;
+$divider: #BDBDBD;
+
+table thead tr {
+  background-color: $dark-primary;
+  color: $text;
+}
+
 .rueda-img {
   display: block;
   margin: 0 auto;
 }
 .search-rubros {
   float: right;
-  width: 250px;
+  width: 200px;
+  border: none;
+  border-radius: 15px;
+  padding: .5em 1em;
+  outline: none;
+  background-color: $primary;
+  color: $text;
+  transition: all .2s;
+  &::-webkit-input-placeholder {
+    font-weight: 300;
+    color: $text;
+  }
+  &:focus {
+    width: 250px;
+  }
 }
