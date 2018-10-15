@@ -6,6 +6,7 @@ import {ADMIN_ITEMS} from './admin-menu';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.scss'],
 })
+
 export class AdminComponent implements OnInit {
 
   menu = ADMIN_ITEMS;

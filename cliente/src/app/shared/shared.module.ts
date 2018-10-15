@@ -6,20 +6,30 @@ import { HorariosOcupadosComponent } from './horarios-ocupados/horarios-ocupados
 import { HorariosOcupadosIndexComponent } from './horarios-ocupados/horarios-ocupados-index/horarios-ocupados-index.component';
 import { HorariosOcupadosCreateComponent } from './horarios-ocupados/horarios-ocupados-create/horarios-ocupados-create.component';
 import {RouterModule} from '@angular/router';
+import { ParticipanteComponent } from './participante/participante.component';
+import {Ng2SmartTableModule} from 'ng2-smart-table';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {AngularDateTimePickerModule} from 'angular2-datetimepicker';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     ThemeModule,
+    Ng2SmartTableModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AngularDateTimePickerModule,
   ],
   declarations: [ PerfilComponent,
                   HorariosOcupadosComponent,
                   HorariosOcupadosIndexComponent,
-                  HorariosOcupadosCreateComponent],
+                  HorariosOcupadosCreateComponent,
+                  ParticipanteComponent],
   exports: [PerfilComponent,
             HorariosOcupadosComponent,
             HorariosOcupadosCreateComponent,
-            HorariosOcupadosIndexComponent],
+            HorariosOcupadosIndexComponent,
+            ParticipanteComponent],
 })
 export class SharedModule { }

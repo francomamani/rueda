@@ -6,6 +6,7 @@ import {PerfilComponent} from '../shared/perfil/perfil.component';
 import {HorariosOcupadosComponent} from '../shared/horarios-ocupados/horarios-ocupados.component';
 import {HorariosOcupadosIndexComponent} from '../shared/horarios-ocupados/horarios-ocupados-index/horarios-ocupados-index.component';
 import {HorariosOcupadosCreateComponent} from '../shared/horarios-ocupados/horarios-ocupados-create/horarios-ocupados-create.component';
+import {ParticipanteComponent} from '../shared/participante/participante.component';
 
 const routes: Routes = [
   {
@@ -15,7 +16,12 @@ const routes: Routes = [
       {
         path: 'home',
         component: HomeComponent,
-      }, {
+      },
+      {
+        path: 'mis-participantes/:empresa_id',
+        component: ParticipanteComponent,
+      },
+      {
         path: 'perfil',
         component: PerfilComponent,
       }, {

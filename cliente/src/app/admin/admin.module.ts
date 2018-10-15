@@ -7,26 +7,25 @@ import { AdminComponent } from './admin.component';
 import { RubroIndexComponent } from './rubro/rubro-index/rubro-index.component';
 import {ThemeModule} from '../@theme/theme.module';
 import {Ng2SmartTableModule} from 'ng2-smart-table';
-import {RubroService} from './rubro/rubro.service';
-import { TipoUsuarioComponent } from './tipo-usuario/tipo-usuario.component';
-import { EmpresaComponent } from './empresa/empresa.component';
-import { EmpresaIndexComponent } from './empresa/empresa-index/empresa-index.component';
-import { EmpresaCreateComponent } from './empresa/empresa-create/empresa-create.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgAutoCompleteModule} from 'ng-auto-complete';
 import {SharedModule} from '../shared/shared.module';
-import { HorarioComponent } from './horario/horario.component';
-import { HorarioCreateComponent } from './horario/horario-create/horario-create.component';
-
 import { AngularDateTimePickerModule } from 'angular2-datetimepicker';
 import {DatePipe} from '@angular/common';
+
+import {RubroService} from './rubro/rubro.service';
+
+import { TipoUsuarioComponent } from './tipo-usuario/tipo-usuario.component';
+import { EmpresaIndexComponent } from './empresa/empresa-index/empresa-index.component';
+import { EmpresaCreateComponent } from './empresa/empresa-create/empresa-create.component';
+import { HorarioComponent } from './horario/horario.component';
+import { HorarioCreateComponent } from './horario/horario-create/horario-create.component';
 import { HorarioIndexComponent } from './horario/horario-index/horario-index.component';
 import { MesaComponent } from './mesa/mesa.component';
 import { ReunionComponent } from './reunion/reunion.component';
 import { ReunionCreateComponent } from './reunion/reunion-create/reunion-create.component';
 import { ReunionIndexComponent } from './reunion/reunion-index/reunion-index.component';
-import { EmpresaParticipanteComponent } from './empresa/empresa-participante/empresa-participante.component';
-
+import {EmpresaComponent} from './empresa/empresa.component';
 
 @NgModule({
   imports: [
@@ -38,7 +37,7 @@ import { EmpresaParticipanteComponent } from './empresa/empresa-participante/emp
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
-      AngularDateTimePickerModule,
+    AngularDateTimePickerModule,
   ],
   declarations: [RubroComponent,
                  AdminComponent,
@@ -54,7 +53,6 @@ import { EmpresaParticipanteComponent } from './empresa/empresa-participante/emp
                  ReunionComponent,
                  ReunionCreateComponent,
                  ReunionIndexComponent,
-                 EmpresaParticipanteComponent,
   ],
   providers: [ RubroService, DatePipe],
 })

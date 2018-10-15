@@ -14,10 +14,10 @@ import {MesaComponent} from './mesa/mesa.component';
 import {ReunionComponent} from './reunion/reunion.component';
 import {ReunionIndexComponent} from './reunion/reunion-index/reunion-index.component';
 import {ReunionCreateComponent} from './reunion/reunion-create/reunion-create.component';
-import {EmpresaParticipanteComponent} from './empresa/empresa-participante/empresa-participante.component';
 import {HorariosOcupadosComponent} from '../shared/horarios-ocupados/horarios-ocupados.component';
 import {HorariosOcupadosCreateComponent} from '../shared/horarios-ocupados/horarios-ocupados-create/horarios-ocupados-create.component';
 import {HorariosOcupadosIndexComponent} from '../shared/horarios-ocupados/horarios-ocupados-index/horarios-ocupados-index.component';
+import {ParticipanteComponent} from '../shared/participante/participante.component';
 
 const routes: Routes = [
   {
@@ -48,7 +48,7 @@ const routes: Routes = [
           component: EmpresaCreateComponent,
         }, {
             path: 'participantes/:empresa_id',
-            component: EmpresaParticipanteComponent,
+            component: ParticipanteComponent,
         }, {
           path: '',
           redirectTo: 'listar',
