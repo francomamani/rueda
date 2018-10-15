@@ -15,12 +15,19 @@ import {ReunionComponent} from './reunion/reunion.component';
 import {ReunionIndexComponent} from './reunion/reunion-index/reunion-index.component';
 import {ReunionCreateComponent} from './reunion/reunion-create/reunion-create.component';
 import {EmpresaParticipanteComponent} from './empresa/empresa-participante/empresa-participante.component';
+import {HorariosOcupadosComponent} from '../shared/horarios-ocupados/horarios-ocupados.component';
+import {HorariosOcupadosCreateComponent} from '../shared/horarios-ocupados/horarios-ocupados-create/horarios-ocupados-create.component';
+import {HorariosOcupadosIndexComponent} from '../shared/horarios-ocupados/horarios-ocupados-index/horarios-ocupados-index.component';
 
 const routes: Routes = [
   {
     path: '',
     component: AdminComponent,
     children: [
+      {
+        path: 'perfil',
+        component: PerfilComponent,
+      },
       {
         path: 'rubro',
         component: RubroComponent,
@@ -39,9 +46,6 @@ const routes: Routes = [
         }, {
           path: 'crear',
           component: EmpresaCreateComponent,
-        }, {
-            path: 'perfil',
-            component: PerfilComponent,
         }, {
             path: 'participantes/:empresa_id',
             component: EmpresaParticipanteComponent,
@@ -63,6 +67,24 @@ const routes: Routes = [
               path: 'crear',
               component: HorarioCreateComponent,
             },
+        ],
+      },
+      {
+        path: 'horarios-ocupados',
+        component: HorariosOcupadosComponent,
+        children: [
+          {
+            path: 'listar',
+            component: HorariosOcupadosIndexComponent,
+          },
+          {
+            path: 'crear',
+            component: HorariosOcupadosCreateComponent,
+          },
+          {
+            path: '',
+            redirectTo: 'listar',
+          },
         ],
       },
       {

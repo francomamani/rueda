@@ -16,14 +16,20 @@ export class HeaderComponent implements OnInit {
   @Input() position = 'normal';
 
   usuario = JSON.parse(atob(localStorage.getItem('rueda-usuario')));
-
-  userMenu = [{ title: 'Perfil', link: '/empresa/perfil' }, { title: 'Cerrar Sesion' , link: '/auth/login/logout'}];
+  userMenu: any = null;
 
   constructor(private sidebarService: NbSidebarService,
               private menuService: NbMenuService,
               private userService: UserService,
               private analyticsService: AnalyticsService,
               private layoutService: LayoutService) {
+    if ( this.usuario.tipo_usuario === 'administrador') {
+      this.userMenu = [ { title: 'Perfil', link: '/admin/perfil' },
+                        { title: 'Cerrar Sesion' , link: '/auth/login/logout'}];
+    } else {
+      this.userMenu = [ { title: 'Perfil', link: '/empresa/perfil' },
+                        { title: 'Cerrar Sesion' , link: '/auth/login/logout'}];
+    }
   }
 
   ngOnInit() {

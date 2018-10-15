@@ -5,6 +5,10 @@ export const EMPRESA_ITEMS: NbMenuItem[] = [
     title: 'Principal',
     icon: 'nb-home',
     link: '/empresa/home',
+  }, {
+    title: 'Horarios Ocupados',
+    icon: 'nb-home',
+    link: '/empresa/horarios-ocupados',
   },
   /*{
     title: 'Auth',
