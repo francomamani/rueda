@@ -3,9 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class HorarioOcupado extends Model
 {
+    use SoftDeletes;
     protected $table = 'horarios';
     protected $primaryKey = 'horario_id';
     protected $fillable = [

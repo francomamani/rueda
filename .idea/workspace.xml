@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab89094b-3109-471f-8ab0-f44ae9596c5a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/servidor/app/Empresa.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/app/Empresa.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servidor/app/Horario.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/app/Horario.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servidor/app/Http/Controllers/EmpresaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/app/Http/Controllers/EmpresaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servidor/app/Http/Controllers/HorarioController.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/app/Http/Controllers/HorarioController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servidor/app/Http/Controllers/MesaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/app/Http/Controllers/MesaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servidor/app/Http/Controllers/ParticipanteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/app/Http/Controllers/ParticipanteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servidor/app/Http/Controllers/ReunionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/app/Http/Controllers/ReunionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servidor/app/Http/Controllers/RubroController.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/app/Http/Controllers/RubroController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servidor/app/Http/Controllers/UsuarioController.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/app/Http/Controllers/UsuarioController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servidor/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servidor/app/HorarioOcupado.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/app/HorarioOcupado.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +84,7 @@
           <entry key="js" value="4" />
           <entry key="json" value="16" />
           <entry key="participantes" value="3" />
-          <entry key="php" value="184" />
+          <entry key="php" value="188" />
           <entry key="reuniones" value="2" />
           <entry key="rubros" value="1" />
           <entry key="scss" value="54" />
@@ -110,7 +101,7 @@
           <entry key="HTML" value="219" />
           <entry key="JSON" value="16" />
           <entry key="JavaScript" value="4" />
-          <entry key="PHP" value="184" />
+          <entry key="PHP" value="188" />
           <entry key="SCSS" value="54" />
           <entry key="Scratch" value="3" />
           <entry key="TypeScript" value="330" />
@@ -129,7 +120,7 @@
           <entry key="cell_2" value="5" />
           <entry key="html" value="5851" />
           <entry key="json" value="9" />
-          <entry key="php" value="3785" />
+          <entry key="php" value="3791" />
           <entry key="scss" value="1083" />
           <entry key="sql" value="21" />
           <entry key="ts" value="5005" />
@@ -140,7 +131,7 @@
         <counts>
           <entry key="HTML" value="5869" />
           <entry key="JSON" value="9" />
-          <entry key="PHP" value="3785" />
+          <entry key="PHP" value="3791" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="SCSS" value="1083" />
           <entry key="Scratch" value="48" />
@@ -157,10 +148,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/servidor/app/Http/Controllers/HorarioOcupadoController.php">
+        <entry file="file://$PROJECT_DIR$/servidor/database/migrations/2018_10_15_044311_create_agendas_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
+            <state relative-caret-position="429">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
@@ -246,7 +237,6 @@
         <option value="$PROJECT_DIR$/servidor/app/Agenda.php" />
         <option value="$PROJECT_DIR$/servidor/database/migrations/2018_10_15_045356_create_horario_ocupados_table.php" />
         <option value="$PROJECT_DIR$/servidor/app/Empresa.php" />
-        <option value="$PROJECT_DIR$/servidor/app/HorarioOcupado.php" />
         <option value="$PROJECT_DIR$/servidor/app/Horario.php" />
         <option value="$PROJECT_DIR$/servidor/app/Http/Controllers/HorarioController.php" />
         <option value="$PROJECT_DIR$/servidor/routes/api.php" />
@@ -258,6 +248,7 @@
         <option value="$PROJECT_DIR$/servidor/app/Http/Controllers/ReunionController.php" />
         <option value="$PROJECT_DIR$/servidor/app/Http/Controllers/RubroController.php" />
         <option value="$PROJECT_DIR$/servidor/app/Http/Controllers/UsuarioController.php" />
+        <option value="$PROJECT_DIR$/servidor/app/HorarioOcupado.php" />
       </list>
     </option>
   </component>
@@ -408,7 +399,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/HorarioOcupadoController.php&#10;horarioocup&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/HorarioOcupadoController.php&#10;api&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/routes/api.php&#10;horarioContro&#9;null&#9;null&#10;horarioco&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/HorarioOcupadoController.php&#10;rubr&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/RubroController.php&#10;horarioocupadocon&#9;null&#9;null&#10;horariooc&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/HorarioOcupado.php&#10;horario&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Horario.php&#10;empresa.php&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Empresa.php&#10;horario.php&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Horario.php&#10;horario_ocup&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_15_045356_create_horario_ocupados_table.php&#10;agendacontro&#9;null&#9;null&#10;rubrocontro&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/RubroController.php&#10;agenda.php&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Agenda.php&#10;agenda&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_15_044311_create_agendas_table.php&#10;reunioncreate&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/reunion/reunion-create/reunion-create.component.ts&#10;reunion&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Reunion.php&#10;reunioncrea&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/reunion/reunion-create/reunion-create.component.html&#10;reunions&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_11_022030_create_reunions_table.php&#10;reuniontab&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_11_022030_create_reunions_table.php&#10;reunioncontro&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/ReunionController.php&#10;reunion.php&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Reunion.php&#10;reunionstabl&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_11_022030_create_reunions_table.php&#10;data&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/seeds/DatabaseSeeder.php&#10;reunionst&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_11_022030_create_reunions_table.php&#10;empresacontro&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/EmpresaController.php&#10;login&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/Auth/LoginController.php&#10;home&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/home/home.component.scss&#10;perfil&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/perfil/perfil.component.ts&#10;empresastabl&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_11_001137_create_empresas_table.php&#10;particip&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_11_020040_create_participantes_table.php&#10;empresa.&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Empresa.php&#10;usuario.php&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Usuario.php&#10;authcon&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/AuthController.php&#10;logincont&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/Auth/LoginController.php&#10;database&#9;null&#9;null&#10;logincs&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/login/login.component.scss&#10;adminme&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/admin-menu.ts&#10;empresacompon&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/empresa.component.html&#10;empresacrea&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-create/empresa-create.component.ts&#10;empresa&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.ts&#10;empresamenu&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/empresa-menu.ts&#10;adminmenu&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/admin-menu.ts&#10;reunionc&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/reunion/reunion-create/reunion-create.component.html&#10;parti&#9;null&#9;null&#10;empresaindext&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.ts&#10;empresastable&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_11_001137_create_empresas_table.php&#10;empresainde&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.ts&#10;authco&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/AuthController.php" />
+    <property name="SearchEverywhereHistoryKey" value="agen&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_15_044311_create_agendas_table.php&#10;agend&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Agenda.php&#10;horario&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/HorarioOcupado.php&#10;horarioocup&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_15_045356_create_horario_ocupados_table.php&#10;api&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/routes/api.php&#10;horarioContro&#9;null&#9;null&#10;horarioco&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/HorarioOcupadoController.php&#10;rubr&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/RubroController.php&#10;horarioocupadocon&#9;null&#9;null&#10;horariooc&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/HorarioOcupado.php&#10;empresa.php&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Empresa.php&#10;horario.php&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Horario.php&#10;horario_ocup&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_15_045356_create_horario_ocupados_table.php&#10;agendacontro&#9;null&#9;null&#10;rubrocontro&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/RubroController.php&#10;agenda.php&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Agenda.php&#10;agenda&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_15_044311_create_agendas_table.php&#10;reunioncreate&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/reunion/reunion-create/reunion-create.component.ts&#10;reunion&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Reunion.php&#10;reunioncrea&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/reunion/reunion-create/reunion-create.component.html&#10;reunions&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_11_022030_create_reunions_table.php&#10;reuniontab&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_11_022030_create_reunions_table.php&#10;reunioncontro&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/ReunionController.php&#10;reunion.php&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Reunion.php&#10;reunionstabl&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_11_022030_create_reunions_table.php&#10;data&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/seeds/DatabaseSeeder.php&#10;reunionst&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_11_022030_create_reunions_table.php&#10;empresacontro&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/EmpresaController.php&#10;login&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/Auth/LoginController.php&#10;home&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/home/home.component.scss&#10;perfil&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/perfil/perfil.component.ts&#10;empresastabl&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_11_001137_create_empresas_table.php&#10;particip&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_11_020040_create_participantes_table.php&#10;empresa.&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Empresa.php&#10;usuario.php&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Usuario.php&#10;authcon&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/AuthController.php&#10;logincont&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/Auth/LoginController.php&#10;database&#9;null&#9;null&#10;logincs&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/login/login.component.scss&#10;adminme&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/admin-menu.ts&#10;empresacompon&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/empresa.component.html&#10;empresacrea&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-create/empresa-create.component.ts&#10;empresa&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.ts&#10;empresamenu&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/empresa-menu.ts&#10;adminmenu&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/admin-menu.ts&#10;reunionc&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/reunion/reunion-create/reunion-create.component.html&#10;parti&#9;null&#9;null&#10;empresaindext&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.ts&#10;empresastable&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_11_001137_create_empresas_table.php&#10;empresainde&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.ts" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="full.screen.before.presentation.mode" value="true" />
@@ -456,18 +447,18 @@
       <workItem from="1539434142404" duration="3840000" />
       <workItem from="1539562355543" duration="6660000" />
       <workItem from="1539570033015" duration="709000" />
-      <workItem from="1539571047687" duration="7963000" />
+      <workItem from="1539571047687" duration="8037000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68994000" />
+    <option name="totallyTimeSpent" value="69068000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25183016" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25183016" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24963397" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -799,30 +790,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/database/migrations/2018_10_15_044311_create_agendas_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/app/Agenda.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
-          <folding>
-            <element signature="e#23#62#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/database/migrations/2018_10_15_045356_create_horario_ocupados_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="679">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/servidor/app/Empresa.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="580">
@@ -834,13 +801,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="613">
           <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/app/HorarioOcupado.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -917,6 +877,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servidor/database/migrations/2018_10_15_045356_create_horario_ocupados_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="679">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servidor/app/HorarioOcupado.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servidor/app/Agenda.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="547">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#23#62#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servidor/database/migrations/2018_10_15_044311_create_agendas_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
