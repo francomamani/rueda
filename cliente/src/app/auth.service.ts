@@ -28,6 +28,9 @@ export class AuthService {
   getTipoUsuario() {
     return JSON.parse(atob(localStorage.getItem('rueda-usuario'))).tipo_usuario;
   }
+  getUsuario() {
+    return JSON.parse(atob(localStorage.getItem('rueda-usuario')));
+  }
   isLoggedIn() {
     if (localStorage.getItem('rueda-token')) {
       return true;

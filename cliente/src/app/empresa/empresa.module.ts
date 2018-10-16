@@ -14,6 +14,7 @@ import {EmpresaModalComponent} from '../shared/empresa-modal/empresa-modal.compo
 import { EvaluacionGeneralComponent } from './evaluacion-general/evaluacion-general.component';
 import {FormsModule} from '@angular/forms';
 import { EmpresasRegistradasComponent } from './agenda/empresas-registradas/empresas-registradas.component';
+import {AgendaService} from './agenda/agenda.service';
 
 @NgModule({
   imports: [
@@ -32,5 +33,6 @@ import { EmpresasRegistradasComponent } from './agenda/empresas-registradas/empr
                 EvaluacionGeneralComponent,
                 EmpresasRegistradasComponent],
   entryComponents: [EmpresaModalComponent],
+  providers: [AgendaService],
 })
 export class EmpresaModule { }

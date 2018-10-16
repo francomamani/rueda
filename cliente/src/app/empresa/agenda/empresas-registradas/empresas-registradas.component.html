@@ -7,7 +7,8 @@
       <nb-card-body class="card-body">
         <form (submit)="buscar()" class="rueda-search" [formGroup]="buscarGroup">
           <select formControlName="rubro_id" name="rubro_id">
-            <option [value]="rubro.rubro_id" *ngFor="let rubro of rubros">{{rubro.nombre}}</option>
+            <option [value]="rubro.rubro_id"
+                    *ngFor="let rubro of rubros">{{rubro.nombre}}</option>
           </select>
           <input type="search" formControlName="search" name="search" placeholder="buscar">
           <button> Buscar </button>

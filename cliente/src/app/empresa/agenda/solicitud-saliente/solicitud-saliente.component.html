@@ -3,7 +3,11 @@
     <nb-card>
       <nb-card-header>Solicitudes Salientes</nb-card-header>
       <nb-card-body>
-        <div class="table-responsive">
+        <div *ngIf="solicitudes !== null && solicitudes.length === 0" class="alerta">
+          No existen solicitudes salientes
+        </div>
+        <br><br>
+        <div class="table-responsive" *ngIf="solicitudes !== null && solicitudes.length > 0">
           <table class="table table-hover">
             <thead>
             <tr>
@@ -17,12 +21,12 @@
             </thead>
             <tbody>
             <tr *ngFor="let solicitud of solicitudes; let i = index">
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td>{{ i + 1 }}</td>
+              <td>{{ solicitud.nombre }}</td>
+              <td>{{ solicitud.rubro }}</td>
+              <td>{{ solicitud.inicio }} {{ solicitud.fin }}</td>
+              <td>{{ solicitud.tipo_asignacion }}</td>
+              <td>{{ solicitud.estado }}</td>
             </tr>
             </tbody>
           </table>
