@@ -11,6 +11,7 @@ import {AgendaComponent} from './agenda/agenda.component';
 import {SolicitudEntranteComponent} from './agenda/solicitud-entrante/solicitud-entrante.component';
 import {SolicitudSalienteComponent} from './agenda/solicitud-saliente/solicitud-saliente.component';
 import {ReunionesAgendadasComponent} from './agenda/reuniones-agendadas/reuniones-agendadas.component';
+import {EvaluacionGeneralComponent} from './evaluacion-general/evaluacion-general.component';
 
 const routes: Routes = [
   {
@@ -64,6 +65,9 @@ const routes: Routes = [
           },
         ],
       }, {
+          path: 'evaluacion-general',
+          component: EvaluacionGeneralComponent
+        }, {
         path: '',
         redirectTo: 'home',
         pathMatch: 'full',

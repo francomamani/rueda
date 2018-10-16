@@ -11,6 +11,8 @@ import { SolicitudSalienteComponent } from './agenda/solicitud-saliente/solicitu
 import { SolicitudEntranteComponent } from './agenda/solicitud-entrante/solicitud-entrante.component';
 import { ReunionesAgendadasComponent } from './agenda/reuniones-agendadas/reuniones-agendadas.component';
 import {EmpresaModalComponent} from '../shared/empresa-modal/empresa-modal.component';
+import { EvaluacionGeneralComponent } from './evaluacion-general/evaluacion-general.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -18,13 +20,15 @@ import {EmpresaModalComponent} from '../shared/empresa-modal/empresa-modal.compo
     EmpresaRoutingModule,
     ThemeModule,
     SharedModule,
+      FormsModule,
   ],
   declarations: [HomeComponent,
                 EmpresaComponent,
                 AgendaComponent,
                 SolicitudSalienteComponent,
                 SolicitudEntranteComponent,
-                ReunionesAgendadasComponent],
+                ReunionesAgendadasComponent,
+                EvaluacionGeneralComponent],
   entryComponents: [EmpresaModalComponent],
 })
 export class EmpresaModule { }

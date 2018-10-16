@@ -1,0 +1,158 @@
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>
+        <h3>Evaluación General</h3>
+      </nb-card-header>
+    </nb-card>
+    <form role="form" [formGroup]="evaluacionGroup">
+      <nb-card>
+        <nb-card-header>
+          Evaluación de la organización
+        </nb-card-header>
+        <nb-card-body>
+          <div class="row">
+            <div class="col-sm-6 form-group">
+              <label>1.- La atención brindada por los organizadores</label>
+              <select name="atencion" formControlName="atencion" class="form-control">
+                <option [value]="preg.id" *ngFor="let preg of evaluacionOrg">{{ preg.value }}</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 form-group">
+              <label>2.- El servicio de acreditación</label>
+              <select name="acreditacion" formControlName="acreditacion" class="form-control">
+                <option [value]="preg.id" *ngFor="let preg of evaluacionOrg">{{ preg.value }}</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 form-group">
+              <label>3.- La organización de las reuniones</label>
+              <select name="reuniones" formControlName="reuniones" class="form-control">
+                <option [value]="preg.id" *ngFor="let preg of evaluacionOrg">{{ preg.value }}</option>
+              </select>
+            </div>
+          </div>
+        </nb-card-body>
+      </nb-card>
+
+      <nb-card>
+        <nb-card-header>
+          Evaluación de la información recibida
+        </nb-card-header>
+        <nb-card-body>
+          <div class="row">
+            <div class="col-sm-6 form-group">
+              <label>1.- La calidad de la informción recibida antes del evento</label>
+              <select name="info_antes" formControlName="info_antes" class="form-control">
+                <option [value]="preg.id" *ngFor="let preg of evaluacionOrg">{{ preg.value }}</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 form-group">
+              <label>2.- La calidad de la informción recibida durante el evento</label>
+              <select name="info_durante" formControlName="info_durante" class="form-control">
+                <option [value]="preg.id" *ngFor="let preg of evaluacionOrg">{{ preg.value }}</option>
+              </select>
+            </div>
+          </div>
+        </nb-card-body>
+      </nb-card>
+
+      <nb-card>
+        <nb-card-header>
+          Su empresa es:
+        </nb-card-header>
+        <nb-card-body>
+          <div class="row">
+            <div class="col-sm-12 form-group">
+              <label class="form-check-inline">
+                <input formControlName="tipo_empresa" class="form-check-input" type="radio" name="tipo_empresa" checked value="Local">Local</label>
+              <label class="form-check-inline">
+                <input formControlName="tipo_empresa" class="form-check-input" type="radio" name="tipo_empresa" value="Nacional">Nacional</label>
+              <label class="form-check-inline">
+                <input formControlName="tipo_empresa" class="form-check-input" type="radio" name="tipo_empresa" value="Internacional">Internacional</label>
+            </div>
+          </div>
+        </nb-card-body>
+      </nb-card>
+
+      <nb-card>
+        <nb-card-header>
+          ¿A través de que medio de comunicación tomó conocimiento de la realización del evento?
+        </nb-card-header>
+        <nb-card-body>
+          <div class="row">
+            <div class="col-sm-12 form-group">
+              <label class="form-check-inline">
+                <input class="form-check-input" type="radio" name="optradio" checked [(ngModel)]="medio_comunic" value="Periodicos">Periodicos</label>
+              <label class="form-check-inline">
+                <input class="form-check-input" type="radio" name="optradio" [(ngModel)]="medio_comunic" value="Revista">Revistas</label>
+              <label class="form-check-inline">
+                <input class="form-check-input" type="radio" name="optradio" [(ngModel)]="medio_comunic" value="Invitacioón directa">Invitacioón directa</label>
+              <label class="form-check-inline">
+                <input class="form-check-input" type="radio" name="optradio" [(ngModel)]="medio_comunic" value="Mail">Mail</label>
+              <label class="form-check-inline">
+                <input class="form-check-input" type="radio" name="optradio" [(ngModel)]="medio_comunic" value="Web">Web</label>
+
+              <label class="form-check-inline">
+                <input class="form-check-input" type="radio" name="optradio" [(ngModel)]="medio_comunic" value="Tv">Tv</label>
+
+              <label class="form-check-inline">
+                <input class="form-check-input" type="radio" name="optradio" [(ngModel)]="medio_comunic" value="Radio">Radio</label>
+
+              <label class="form-check-inline">
+                <input class="form-check-input" type="radio" name="optradio" [(ngModel)]="medio_comunic" value="Whatsapp">Whatsapp</label>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 form-group">
+              <label class="form-check-inline">Otro, especifique</label>
+                <input formControlName="medio_com"  type="text" name="medio_com" value={{medio_comunic}}>
+            </div>
+          </div>
+        </nb-card-body>
+      </nb-card>
+
+      <nb-card>
+        <nb-card-header>
+          ¿Participaria nuevamente en un evento de este tipo?
+        </nb-card-header>
+        <nb-card-body>
+          <div class="row">
+            <div class="col-sm-12 form-group">
+              <label class="form-check-inline">
+                <input formControlName="volver_participar" class="form-check-input" type="radio" name="volver_participar" checked value="Si">Si</label>
+              <label class="form-check-inline">
+                <input formControlName="volver_participar" class="form-check-input" type="radio" name="volver_participar" value="No">No</label>
+            </div>
+          </div>
+        </nb-card-body>
+      </nb-card>
+
+      <nb-card>
+        <nb-card-header>
+          Comentarios
+        </nb-card-header>
+        <nb-card-body>
+          <div class="row">
+            <div class="col-sm-12 form-group">
+              <label>Su opinion es importante y nos ayuda a mejorar, por favor dejenos su comentario</label>
+            </div>
+            <div class="col-sm-12 form-group">
+              <textarea formControlName="opinion" name="opinion" style="width: 100%;"></textarea>
+            </div>
+          </div>
+        </nb-card-body>
+      </nb-card>
+
+      <button type="submit" class="btn btn-info">Enviar</button>
+    </form>
+
+
+  </div>
+</div>

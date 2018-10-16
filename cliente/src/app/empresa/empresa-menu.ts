@@ -34,6 +34,11 @@ export const EMPRESA_ITEMS: NbMenuItem[] = [
       },
     ],
   },
+  {
+    title: 'Evaluación',
+    icon: 'nb-tables',
+    link: '/empresa/evaluacion-general',
+  },
   /*{
     title: 'Auth',
     icon: 'nb-locked',
