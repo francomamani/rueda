@@ -20,7 +20,7 @@
         <td>Inscripción</td>
         <td><strong>{{empresa.created_at | date: 'dd-MM-yyy HH:mm:ss'}}</strong></td>
       </tr>
-      <tr>
+      <tr *ngIf="fecha_hora_registro_reunion !== null">
         <td>Registro de esta reunion</td>
         <td><strong>{{fecha_hora_registro_reunion.date | date: 'dd-MM-yyy H:m:s'}}</strong></td>
       </tr>
@@ -57,5 +57,5 @@
   </div>
 </div>
 <div class="modal-footer">
-  <button class="btn btn-md btn-primary" (click)="closeModal()">Save changes</button>
+  <button class="btn btn-md btn-primary" (click)="closeModal()">Cerrar</button>
 </div>

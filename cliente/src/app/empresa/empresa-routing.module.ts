@@ -12,6 +12,7 @@ import {SolicitudEntranteComponent} from './agenda/solicitud-entrante/solicitud-
 import {SolicitudSalienteComponent} from './agenda/solicitud-saliente/solicitud-saliente.component';
 import {ReunionesAgendadasComponent} from './agenda/reuniones-agendadas/reuniones-agendadas.component';
 import {EvaluacionGeneralComponent} from './evaluacion-general/evaluacion-general.component';
+import {EmpresasRegistradasComponent} from './agenda/empresas-registradas/empresas-registradas.component';
 
 const routes: Routes = [
   {
@@ -26,12 +27,18 @@ const routes: Routes = [
         component: AgendaComponent,
         children: [
           {
+            path: 'empresas-registradas',
+            component: EmpresasRegistradasComponent,
+          },
+          {
             path: 'solicitudes-salientes',
             component: SolicitudSalienteComponent,
-          }, {
+          },
+          {
             path: 'solicitudes-entrantes',
             component: SolicitudEntranteComponent,
-          }, {
+          },
+          {
             path: 'reuniones-agendadas',
             component: ReunionesAgendadasComponent,
           }, {

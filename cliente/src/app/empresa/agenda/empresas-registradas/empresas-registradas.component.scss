@@ -1,0 +1,71 @@
+$dark-primary: #00796B;
+$light-primary: #B2DFDB;
+$primary: #009688;
+$accent: #FF9800;
+$text: #ffffff;
+$primary-text: #212121;
+$secondary-text: #757575;
+$divider: #BDBDBD;
+
+.rueda-search {
+  display: flex;
+  flex-direction: row;
+}
+.rueda-search select {
+  min-width: 200px;
+  border: none;
+  outline: none;
+}
+.rueda-search input {
+  width: 250px;
+  padding: .5em .5em;
+  box-sizing: border-box;
+  border-top: 1px solid $divider;
+  border-bottom: 1px solid $divider;
+  border-left: 1px solid $divider;
+  outline: none;
+}
+.rueda-search button {
+  background-color: $primary;
+  color: $text;
+  padding: .5em 2em;
+  border: none;
+  border-radius: 0 100px 100px 0;
+  cursor: pointer;
+  outline: none;
+}
+a.info, a.info:hover, a.info:active{
+  color: #41c15d;
+  text-decoration: underline;
+  cursor: pointer;
+}
+table {
+  animation: up .4s ease-out;
+}
+table thead tr {
+  background-color: $dark-primary;
+  color: $text;
+}
+.card-body {
+  position: relative;
+  backface-visibility: hidden;
+}
+.sin-coincidencias {
+  text-transform: uppercase;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 2px;
+  animation: up .4s ease-out;
+}
+@keyframes up {
+  0% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}

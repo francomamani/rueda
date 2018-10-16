@@ -13,6 +13,7 @@ import { ReunionesAgendadasComponent } from './agenda/reuniones-agendadas/reunio
 import {EmpresaModalComponent} from '../shared/empresa-modal/empresa-modal.component';
 import { EvaluacionGeneralComponent } from './evaluacion-general/evaluacion-general.component';
 import {FormsModule} from '@angular/forms';
+import { EmpresasRegistradasComponent } from './agenda/empresas-registradas/empresas-registradas.component';
 
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import {FormsModule} from '@angular/forms';
                 SolicitudSalienteComponent,
                 SolicitudEntranteComponent,
                 ReunionesAgendadasComponent,
-                EvaluacionGeneralComponent],
+                EvaluacionGeneralComponent,
+                EmpresasRegistradasComponent],
   entryComponents: [EmpresaModalComponent],
 })
 export class EmpresaModule { }

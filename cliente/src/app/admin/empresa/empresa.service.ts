@@ -51,4 +51,7 @@ export class EmpresaService {
     misReuniones(empresa_id) {
       return this.http.get(this.base + 'mis-reuniones/' + empresa_id);
     }
+    buscar(req) {
+      return this.http.post(this.base + 'buscar-empresas', req);
+    }
 }

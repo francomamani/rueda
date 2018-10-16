@@ -32,3 +32,4 @@ Route::get('empresa/{empresa_id}/participantes', 'EmpresaController@participante
 Route::get('horarios-disponibles/{empresa_solicitante_id}/{empresa_demandada_id}', 'EmpresaController@horariosDisponibles');
 Route::get('mis-horarios-ocupados/{empresa_id}', 'EmpresaController@horariosOcupados');
 Route::get('mis-reuniones/{empresa_id}', 'EmpresaController@misReuniones');
+Route::post('buscar-empresas', 'EmpresaController@buscar');

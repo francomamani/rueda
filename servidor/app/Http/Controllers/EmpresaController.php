@@ -152,4 +152,23 @@ class EmpresaController extends Controller
         }
         return response()->json($data, 200);
     }
+
+    public function buscar() {
+        $rubro_id = request()->input('rubro_id');
+        $search = request()->input('search');
+        $empresas = Empresa::with('rubro')->where('rubro_id', (int)$rubro_id)
+                            ->where(function ($query) use ($search) {
+                                    $query->orWhere('nombre', 'like', '%'.$search.'%')
+                                    ->orWhere('direccion', 'like', '%'.$search.'%')
+                                    ->orWhere('telefono', 'like', '%'.$search.'%')
+                                    ->orWhere('pagina_web', 'like', '%'.$search.'%')
+                                    ->orWhere('ciudad_localidad', 'like', '%'.$search.'%')
+                                    ->orWhere('nit', 'like', '%'.$search.'%')
+                                    ->orWhere('representante_legal', 'like', '%'.$search.'%')
+                                    ->orWhere('oferta', 'like', '%'.$search.'%')
+                                    ->orWhere('demanda', 'like', '%'.$search.'%');
+                            })
+                            ->get();
+        return response()->json($empresas, 200);
+    }
 }
