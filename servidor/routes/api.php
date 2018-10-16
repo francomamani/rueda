@@ -33,3 +33,4 @@ Route::get('horarios-disponibles/{empresa_solicitante_id}/{empresa_demandada_id}
 Route::get('mis-horarios-ocupados/{empresa_id}', 'EmpresaController@horariosOcupados');
 Route::get('mis-reuniones/{empresa_id}', 'EmpresaController@misReuniones');
 Route::post('buscar-empresas', 'EmpresaController@buscar');
+Route::get('solicitudes-salientes/{empresa_id}', 'AgendaController@solicitudesSalientes');

@@ -68,4 +68,15 @@ class AgendaController extends Controller
             'mensaje' => 'Agenda con id' . $agenda->agenda_id. ' eliminada exitosamente'
         ], 200);
     }
+
+    public function solicitudesSalientes($empresa_id) {
+        $solicitudes = Agenda::join('empresas', 'empresas.empresa_id', '=', 'agendas.empresa_demandada_id')
+                                ->join('rubros', 'rubros.rubro_id', 'empresas.rubro_id')
+                                ->join('horarios', 'horarios.horario_id', '=', 'agendas.horario_id')
+                                ->where('empresa_solicitante_id', $empresa_id)
+                                ->selectRaw('empresas.*, horarios.*, rubros.nombre as rubro, agendas.estado, agendas.tipo_asignacion')
+                                ->orderBy('empresas.nombre', 'asc')
+                                ->get();
+        return response()->json($solicitudes, 200);
+    }
 }

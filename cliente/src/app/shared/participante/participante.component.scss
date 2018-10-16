@@ -1,0 +1,16 @@
+$dark-primary: #00796B;
+$light-primary: #B2DFDB;
+$primary: #009688;
+$accent: #FF9800;
+$text: #ffffff;
+$primary-text: #212121;
+$secondary-text: #757575;
+$divider: #BDBDBD;
+
+table {
+  animation: up .4s ease-out;
+}
+table thead tr {
+  background-color: $dark-primary;
+  color: $text;
+}

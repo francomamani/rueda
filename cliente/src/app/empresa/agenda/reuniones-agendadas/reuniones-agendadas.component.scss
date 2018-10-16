@@ -1,5 +1,27 @@
+$dark-primary: #00796B;
+$light-primary: #B2DFDB;
+$primary: #009688;
+$accent: #FF9800;
+$text: #ffffff;
+$primary-text: #212121;
+$secondary-text: #757575;
+$divider: #BDBDBD;
+
 a.info, a.info:hover, a.info:active{
   color: #41c15d;
   text-decoration: underline;
   cursor: pointer;
+}
+table {
+  animation: up .4s ease-out;
+}
+@keyframes up {
+  0% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }

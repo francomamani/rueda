@@ -13,7 +13,8 @@ $divider: #BDBDBD;
 }
 .rueda-search select {
   min-width: 200px;
-  border: none;
+  border: 1px solid $divider;
+  margin-right: 1em;
   outline: none;
 }
 .rueda-search input {
@@ -41,10 +42,6 @@ a.info, a.info:hover, a.info:active{
 }
 table {
   animation: up .4s ease-out;
-}
-table thead tr {
-  background-color: $dark-primary;
-  color: $text;
 }
 .card-body {
   position: relative;
