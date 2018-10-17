@@ -13,6 +13,7 @@ import { EvaluacionGeneralComponent } from './evaluacion-general/evaluacion-gene
 import {FormsModule} from '@angular/forms';
 import { EmpresasRegistradasComponent } from './agenda/empresas-registradas/empresas-registradas.component';
 import {AgendaService} from './agenda/agenda.service';
+import { AgendaCreateComponent } from './agenda/agenda-create/agenda-create.component';
 
 @NgModule({
   imports: [
@@ -27,7 +28,8 @@ import {AgendaService} from './agenda/agenda.service';
                 AgendaComponent,
                 ReunionesAgendadasComponent,
                 EvaluacionGeneralComponent,
-                EmpresasRegistradasComponent],
+                EmpresasRegistradasComponent,
+                AgendaCreateComponent],
   entryComponents: [EmpresaModalComponent],
   providers: [AgendaService],
 })
