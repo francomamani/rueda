@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="offset-3 col-md-6">
+    <nb-card>
+      <nb-card-header>Editar Usuario</nb-card-header>
+      <nb-card-body *ngIf="usuario !== null">
+        <form (submit)="update()"
+              [formGroup]="usuarioGroup">
+          <div class="form-group">
+            <label for="nombres">Nombres</label>
+            <input type="text" id="nombres" class="form-control" formControlName="nombres" name="nombres">
+          </div>
+          <div class="form-group">
+            <label for="apellidos">Apellidos</label>
+            <input type="text" id="apellidos" class="form-control" formControlName="apellidos" name="apellidos">
+          </div>
+          <div class="form-group">
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" class="form-control" formControlName="email" name="email">
+          </div>
+          <button class="btn btn-success" type="submit">Actualizar</button>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

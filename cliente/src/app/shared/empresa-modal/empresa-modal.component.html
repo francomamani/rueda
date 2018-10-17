@@ -10,7 +10,7 @@
       <tbody>
       <tr>
         <td>Empresa</td>
-        <td><strong>{{empresa.nombre}}</strong></td>
+        <td><strong>{{ empresa.nombre | uppercase }}</strong></td>
       </tr>
       <tr>
         <td>Inscripción</td>
@@ -39,6 +39,10 @@
       <tr>
         <td>Telefono</td>
         <td><strong>{{empresa.telefono}}</strong></td>
+      </tr>
+      <tr>
+        <td>Página Web</td>
+        <td><strong><a href="http://{{empresa.pagina_web}}" target="_blank">{{empresa.pagina_web}}</a></strong></td>
       </tr>
       <tr>
         <td>Oferta</td>

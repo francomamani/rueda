@@ -24,6 +24,7 @@ import {AgendaComponent} from './agenda/agenda.component';
 import {AgendaCreateComponent} from './agenda/agenda-create-admin/agenda-create.component';
 import {AgendaIndexComponent} from './agenda/agenda-index/agenda-index.component';
 import {AgendaCreateContingenciaComponent} from './agenda/agenda-create-contingencia/agenda-create-contingencia.component';
+import {UsuarioEditComponent} from '../shared/usuario-edit/usuario-edit.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
       {
         path: 'perfil',
         component: PerfilComponent,
+      },
+      {
+        path: 'actualizar-usuario/:usuario_id',
+        component: UsuarioEditComponent,
       },
       {
         path: 'rubro',

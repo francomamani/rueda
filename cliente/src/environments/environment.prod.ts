@@ -5,6 +5,7 @@
  */
 export const environment = {
   production: true,
-  base: 'http://127.0.0.1:8000/api/',
+  base: 'http://localhost:8000/api/',
+  base2: 'http://rueda.campoferial3dejulio.com/public/api/',
 
 };

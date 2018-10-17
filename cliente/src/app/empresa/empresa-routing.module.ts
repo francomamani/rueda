@@ -14,6 +14,7 @@ import {EvaluacionGeneralComponent} from './evaluacion-general/evaluacion-genera
 import {EmpresasRegistradasComponent} from './agenda/empresas-registradas/empresas-registradas.component';
 import {SolicitudSalienteComponent} from '../shared/solicitud-saliente/solicitud-saliente.component';
 import {AgendaCreateComponent} from './agenda/agenda-create/agenda-create.component';
+import {UsuarioEditComponent} from '../shared/usuario-edit/usuario-edit.component';
 
 const routes: Routes = [
   {
@@ -23,7 +24,12 @@ const routes: Routes = [
       {
         path: 'home',
         component: HomeComponent,
-      }, {
+      },
+      {
+        path: 'actualizar-usuario/:usuario_id',
+        component: UsuarioEditComponent,
+      },
+      {
         path: 'mi-agenda',
         component: AgendaComponent,
         children: [

@@ -50,8 +50,24 @@ class UsuarioController extends Controller
     public function update(Request $request, $id)
     {
         $usuario = Usuario::find($id);
-        $usuario->update($request->all());
-        return response()->json($usuario, 200);
+        $usuario->nombres = $request->input('nombres');
+        $usuario->apellidos = $request->input('apellidos');
+        $usuario->email = $request->input('email');
+        $usuario->save();
+
+        $response = null;
+        if($usuario->tipo_usuario === 'administrador') {
+            $response = $usuario;
+        } else {
+            $response = Usuario::join('empresas', 'empresas.usuario_id', '=','usuarios.usuario_id')
+                ->join('rubros', 'rubros.rubro_id', '=','empresas.rubro_id')
+                ->with('empresa.participantes')
+                ->where('usuarios.email', $usuario->email)
+                ->selectRaw('usuarios.*, empresas.*, rubros.nombre as rubro')
+                ->first();
+        }
+
+        return response()->json($response, 200);
     }
 
     /**

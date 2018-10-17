@@ -2,10 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab89094b-3109-471f-8ab0-f44ae9596c5a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/admin-menu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/admin-menu.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/admin-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/admin-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/empresa/empresa-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/empresa/empresa-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/shared/empresa-create/empresa-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/shared/empresa-create/empresa-create.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cliente/src/app/shared/empresa-modal/empresa-modal.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/shared/empresa-modal/empresa-modal.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/shared/solicitud-entrante/solicitud-entrante.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/shared/solicitud-entrante/solicitud-entrante.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servidor/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/shared/perfil/perfil.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/shared/perfil/perfil.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/shared/perfil/perfil.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/shared/perfil/perfil.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/shared/shared.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/shared/shared.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/environments/environment.prod.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servidor/app/Http/Controllers/EmpresaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/app/Http/Controllers/EmpresaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servidor/app/Http/Controllers/UsuarioController.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/app/Http/Controllers/UsuarioController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,15 +68,16 @@
           <entry key="project.closed" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.18" value="2" />
           <entry key="project.open.time.19" value="2" />
           <entry key="project.open.time.22" value="1" />
-          <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.23" value="2" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.31" value="1" />
           <entry key="project.open.time.6" value="2" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -70,41 +85,41 @@
           <entry key="SCHEMA:rueda" value="3" />
           <entry key="agendas" value="3" />
           <entry key="empresas" value="15" />
-          <entry key="env" value="3" />
+          <entry key="env" value="4" />
           <entry key="horarios" value="2" />
           <entry key="horarios_ocupados" value="3" />
-          <entry key="html" value="407" />
+          <entry key="html" value="451" />
           <entry key="js" value="4" />
-          <entry key="json" value="18" />
+          <entry key="json" value="20" />
           <entry key="participantes" value="3" />
-          <entry key="php" value="345" />
+          <entry key="php" value="364" />
           <entry key="reuniones" value="3" />
           <entry key="rubros" value="1" />
           <entry key="scss" value="163" />
           <entry key="sql" value="3" />
-          <entry key="ts" value="636" />
+          <entry key="ts" value="718" />
           <entry key="users" value="2" />
           <entry key="usuarios" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key=".env file" value="3" />
+          <entry key=".env file" value="4" />
           <entry key="Database Element" value="39" />
-          <entry key="HTML" value="407" />
-          <entry key="JSON" value="18" />
+          <entry key="HTML" value="451" />
+          <entry key="JSON" value="20" />
           <entry key="JavaScript" value="4" />
-          <entry key="PHP" value="345" />
+          <entry key="PHP" value="364" />
           <entry key="SCSS" value="163" />
           <entry key="Scratch" value="3" />
-          <entry key="TypeScript" value="636" />
+          <entry key="TypeScript" value="718" />
           <entry key="UML" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="Angular2LanguageService" value="13" />
-          <entry key="TsLintLanguageService" value="10" />
+          <entry key="Angular2LanguageService" value="15" />
+          <entry key="TsLintLanguageService" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -112,25 +127,25 @@
           <entry key="cell" value="22" />
           <entry key="cell_2" value="88" />
           <entry key="env" value="2" />
-          <entry key="html" value="9119" />
+          <entry key="html" value="10094" />
           <entry key="json" value="9" />
-          <entry key="php" value="8427" />
+          <entry key="php" value="8685" />
           <entry key="scss" value="2262" />
           <entry key="sql" value="21" />
-          <entry key="ts" value="10172" />
+          <entry key="ts" value="11761" />
           <entry key="txt" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="2" />
-          <entry key="HTML" value="9137" />
+          <entry key="HTML" value="10112" />
           <entry key="JSON" value="9" />
-          <entry key="PHP" value="8427" />
+          <entry key="PHP" value="8685" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="SCSS" value="2262" />
           <entry key="Scratch" value="131" />
-          <entry key="TypeScript" value="10154" />
+          <entry key="TypeScript" value="11743" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.composer.actions">
@@ -143,10 +158,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/servidor/config/app.php">
+        <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/perfil/perfil.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="566">
-              <caret line="67" column="33" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
+            <state relative-caret-position="335">
+              <caret line="11" column="25" lean-forward="true" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -155,16 +170,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>particip</find>
-      <find>horariosOcupados</find>
-      <find>.5s</find>
-      <find>400</find>
-      <find>table</find>
-      <find>eprmesa</find>
-      <find>empresa</find>
-      <find>entrante</find>
-      <find>saliente</find>
-      <find>font-size</find>
       <find>info</find>
       <find>mesa</find>
       <find>green</find>
@@ -185,6 +190,16 @@
       <find>miRe</find>
       <find>misREu</find>
       <find>timezone</find>
+      <find>reunion</find>
+      <find>max_par</find>
+      <find>number</find>
+      <find>telf</find>
+      <find>registradas</find>
+      <find>buscar</find>
+      <find>buscar-empresas</find>
+      <find>update</find>
+      <find>actualiza</find>
+      <find>editar</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -193,48 +208,29 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/cliente/src/app/pages/ui-features/modals/modals.component.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/shared/empresa-modal/empresa-modal.component.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/empresa/agenda/agenda.component.scss" />
-        <option value="$PROJECT_DIR$/servidor/app/Http/Controllers/RubroController.php" />
-        <option value="$PROJECT_DIR$/cliente/src/index.html" />
-        <option value="$PROJECT_DIR$/cliente/src/app/shared/participante/participante.component.scss" />
-        <option value="$PROJECT_DIR$/servidor/database/seeds/DatabaseSeeder.php" />
-        <option value="$PROJECT_DIR$/cliente/src/app/auth.service.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/empresa/empresa.service.ts" />
         <option value="$PROJECT_DIR$/cliente/src/app/empresa/agenda/solicitud-saliente/solicitud-saliente.component.scss" />
         <option value="$PROJECT_DIR$/cliente/src/app/empresa/agenda/solicitud-saliente/solicitud-saliente.component.html" />
         <option value="$PROJECT_DIR$/cliente/src/app/empresa/agenda/solicitud-saliente/solicitud-saliente.component.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/empresa/empresa-routing.module.ts" />
         <option value="$PROJECT_DIR$/cliente/src/app/shared/solicitud-saliente/solicitud-saliente.component.ts" />
         <option value="$PROJECT_DIR$/cliente/src/app/empresa/empresa.module.ts" />
         <option value="$PROJECT_DIR$/cliente/src/app/empresa/agenda/agenda.service.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/admin-routing.module.ts" />
         <option value="$PROJECT_DIR$/cliente/src/app/shared/solicitud-entrante/solicitud-entrante.component.scss" />
         <option value="$PROJECT_DIR$/cliente/src/app/shared/horarios-ocupados/horarios-ocupados.component.scss" />
         <option value="$PROJECT_DIR$/cliente/src/app/shared/horarios-ocupados/horarios-ocupados-index/horarios-ocupados-index.component.html" />
         <option value="$PROJECT_DIR$/cliente/src/app/shared/horarios-ocupados/horarios-ocupados-index/horarios-ocupados-index.component.scss" />
-        <option value="$PROJECT_DIR$/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.html" />
         <option value="$PROJECT_DIR$/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.scss" />
         <option value="$PROJECT_DIR$/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.scss" />
         <option value="$PROJECT_DIR$/servidor/database/migrations/2018_10_15_044311_create_agendas_table.php" />
         <option value="$PROJECT_DIR$/servidor/app/Agenda.php" />
         <option value="$PROJECT_DIR$/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.ts" />
         <option value="$PROJECT_DIR$/cliente/src/app/shared/solicitud-entrante/solicitud-entrante.component.html" />
         <option value="$PROJECT_DIR$/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.html" />
         <option value="$PROJECT_DIR$/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.html" />
         <option value="$PROJECT_DIR$/cliente/src/app/login/login.component.scss" />
         <option value="$PROJECT_DIR$/cliente/src/app/admin/agenda/agenda-create-admin/agenda-create.component.ts" />
         <option value="$PROJECT_DIR$/cliente/src/app/admin/admin.module.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/shared/shared.module.ts" />
         <option value="$PROJECT_DIR$/cliente/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/app-routing.module.ts" />
         <option value="$PROJECT_DIR$/cliente/src/app/login/login.component.html" />
-        <option value="$PROJECT_DIR$/servidor/app/Http/Controllers/EmpresaController.php" />
-        <option value="$PROJECT_DIR$/cliente/src/app/shared/empresa-create/empresa-create.component.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/shared/empresa-create/empresa-create.component.html" />
         <option value="$PROJECT_DIR$/cliente/src/app/empresa/empresa-menu.ts" />
         <option value="$PROJECT_DIR$/servidor/.env" />
         <option value="$PROJECT_DIR$/cliente/src/app/empresa/agenda/agenda-create/agenda-create.component.ts" />
@@ -242,8 +238,27 @@
         <option value="$PROJECT_DIR$/servidor/routes/api.php" />
         <option value="$PROJECT_DIR$/cliente/src/app/shared/solicitud-entrante/solicitud-entrante.component.ts" />
         <option value="$PROJECT_DIR$/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.scss" />
-        <option value="$PROJECT_DIR$/cliente/src/app/shared/empresa-modal/empresa-modal.component.html" />
         <option value="$PROJECT_DIR$/servidor/config/app.php" />
+        <option value="$PROJECT_DIR$/cliente/src/app/admin/admin-menu.ts" />
+        <option value="$PROJECT_DIR$/cliente/src/app/shared/empresa-modal/empresa-modal.component.html" />
+        <option value="$PROJECT_DIR$/cliente/src/index.html" />
+        <option value="$PROJECT_DIR$/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.ts" />
+        <option value="$PROJECT_DIR$/cliente/src/environments/environment.prod.ts" />
+        <option value="$PROJECT_DIR$/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.html" />
+        <option value="$PROJECT_DIR$/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.html" />
+        <option value="$PROJECT_DIR$/servidor/app/Http/Controllers/EmpresaController.php" />
+        <option value="$PROJECT_DIR$/cliente/src/app/shared/shared.module.ts" />
+        <option value="$PROJECT_DIR$/cliente/src/app/app-routing.module.ts" />
+        <option value="$PROJECT_DIR$/cliente/src/app/empresa/empresa-routing.module.ts" />
+        <option value="$PROJECT_DIR$/cliente/src/app/admin/admin-routing.module.ts" />
+        <option value="$PROJECT_DIR$/cliente/src/app/shared/perfil/perfil.component.ts" />
+        <option value="$PROJECT_DIR$/cliente/src/app/shared/empresa-create/empresa-create.component.html" />
+        <option value="$PROJECT_DIR$/cliente/src/app/shared/empresa-create/empresa-create.component.ts" />
+        <option value="$PROJECT_DIR$/cliente/src/app/shared/usuario-edit/usuario-edit.component.html" />
+        <option value="$PROJECT_DIR$/servidor/app/Http/Controllers/UsuarioController.php" />
+        <option value="$PROJECT_DIR$/cliente/src/app/auth.service.ts" />
+        <option value="$PROJECT_DIR$/cliente/src/app/shared/usuario-edit/usuario-edit.component.ts" />
+        <option value="$PROJECT_DIR$/cliente/src/app/shared/perfil/perfil.component.html" />
       </list>
     </option>
   </component>
@@ -383,7 +398,24 @@
               <item name="cliente" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="empresa" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rueda" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rueda" type="462c0819:PsiDirectoryNode" />
+              <item name="cliente" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="shared" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rueda" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rueda" type="462c0819:PsiDirectoryNode" />
+              <item name="cliente" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="shared" type="462c0819:PsiDirectoryNode" />
+              <item name="usuario-edit" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -394,7 +426,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="SearchEverywhereHistoryKey" value="app.php&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/config/app.php&#10;empresamodal&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/empresa-modal/empresa-modal.component.html&#10;empresarou&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/empresa-routing.module.ts&#10;api&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/routes/api.php&#10;reunion.php&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Reunion.php&#10;reuniontable&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_11_022030_create_reunions_table.php&#10;agendacontro&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/AgendaController.php&#10;emprecontr&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/EmpresaController.php&#10;empresacontro&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/EmpresaController.php&#10;.env&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/.env&#10;empresamenu&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/empresa-menu.ts&#10;agenda&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/AgendaController.php&#10;empresacr&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/empresa-create/empresa-create.component.html&#10;empresacreate&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/empresa-create/empresa-create.component.ts&#10;empresacrea&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/empresa-create/empresa-create.component.html&#10;share&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/shared.module.ts&#10;login&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/login/login.component.html&#10;empresatable&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_11_001137_create_empresas_table.php&#10;agendacreatets&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/agenda/agenda-create-admin/agenda-create.component.ts&#10;agendacreate&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/agenda/agenda-create-contingencia/agenda-create-contingencia.component.html&#10;empresainde&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.html&#10;empresamo&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/empresa-modal/empresa-modal.component.html&#10;empresare&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.html&#10;agendadats&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.ts&#10;saliente&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/solicitud-saliente/solicitud-saliente.component.ts&#10;reunione&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.html&#10;agendadacs&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.scss&#10;registradascss&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.scss&#10;reunion&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.html&#10;solicitudentra&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/solicitud-entrante/solicitud-entrante.component.html&#10;empre&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.ts&#10;regist&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.scss&#10;empremoda&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/empresa-modal/empresa-modal.component.html&#10;empresaregi&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.ts&#10;dat&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/seeds/DatabaseSeeder.php&#10;agenda.php&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Agenda.php&#10;agendastable&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_15_044311_create_agendas_table.php&#10;empresa&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.html&#10;empresregi&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.ts&#10;empresain&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.scss&#10;empresregistr&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.scss&#10;empresasregi&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.html&#10;empresaindexscs&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.scss&#10;registra&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.scss&#10;empresaindexhtml&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.html&#10;empresaindexts&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.ts&#10;agendastabl&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_15_044311_create_agendas_table.php&#10;horarioocupadoindexscss&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/horarios-ocupados/horarios-ocupados-index/horarios-ocupados-index.component.scss&#10;horarioindex&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/horario/horario-index/horario-index.component.scss&#10;horarioinde&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/horarios-ocupados/horarios-ocupados-index/horarios-ocupados-index.component.scss" />
+    <property name="SearchEverywhereHistoryKey" value="perf&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/perfil/perfil.component.html&#10;perfil&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/perfil/perfil.component.html&#10;usuarioedi&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/usuario-edit/usuario-edit.component.ts&#10;usuario&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/UsuarioController.php&#10;authcontr&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/AuthController.php&#10;authservi&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/auth.service.ts&#10;edit&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/usuario-edit/usuario-edit.component.ts&#10;authcontro&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/AuthController.php&#10;create&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/empresa-create/empresa-create.component.ts&#10;createts&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/empresa-create/empresa-create.component.ts&#10;usuarioeid&#9;null&#9;null&#10;creath&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/empresa-create/empresa-create.component.html&#10;empresacreate&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/empresa-create/empresa-create.component.ts&#10;empresacreateh&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/empresa-create/empresa-create.component.html&#10;usuarioe&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/usuario-edit/usuario-edit.component.html&#10;adminrou&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/admin-routing.module.ts&#10;authser&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/auth.service.ts&#10;usuariocontro&#9;null&#9;null&#10;empresainde&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.html&#10;empresa&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.ts&#10;envi&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/environments/environment.prod.ts&#10;empresacontro&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/EmpresaController.php&#10;api&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/routes/api.php&#10;empres&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/EmpresaController.php&#10;EMPRESASREGI&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.ts&#10;indexhtml&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/index.html&#10;empresarou&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/empresa-routing.module.ts&#10;empresamodal&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/empresa-modal/empresa-modal.component.html&#10;empresaindex&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.html&#10;empresarout&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/empresa-routing.module.ts&#10;empresacre&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/empresa-create/empresa-create.component.html&#10;empresata&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_11_001137_create_empresas_table.php&#10;adminmenu&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/admin-menu.ts&#10;enviro&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/environments/environment.prod.ts&#10;.env&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/.env&#10;app.php&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/config/app.php&#10;reunion.php&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Reunion.php&#10;reuniontable&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_11_022030_create_reunions_table.php&#10;agendacontro&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/AgendaController.php&#10;emprecontr&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/EmpresaController.php&#10;empresamenu&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/empresa-menu.ts&#10;agenda&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/AgendaController.php&#10;empresacr&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/empresa-create/empresa-create.component.html&#10;empresacrea&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/empresa-create/empresa-create.component.html&#10;share&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/shared.module.ts&#10;login&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/login/login.component.html&#10;empresatable&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_11_001137_create_empresas_table.php&#10;agendacreatets&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/agenda/agenda-create-admin/agenda-create.component.ts&#10;agendacreate&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/agenda/agenda-create-contingencia/agenda-create-contingencia.component.html&#10;empresamo&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/empresa-modal/empresa-modal.component.html" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="full.screen.before.presentation.mode" value="true" />
@@ -449,11 +481,13 @@
       <workItem from="1539655223759" duration="5516000" />
       <workItem from="1539711757665" duration="12392000" />
       <workItem from="1539731598913" duration="28241000" />
+      <workItem from="1539783768018" duration="4191000" />
+      <workItem from="1539792259594" duration="6100000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135881000" />
+    <option name="totallyTimeSpent" value="146172000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="0" />
@@ -473,7 +507,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="TypeScript" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.88671875" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.4361979" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.3294271" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -516,115 +550,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="44" column="16" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/database/migrations/2018_10_15_044311_create_agendas_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/app/Agenda.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/database/seeds/DatabaseSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="175" column="10" lean-forward="true" selection-start-line="175" selection-start-column="10" selection-end-line="175" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/solicitud-entrante/solicitud-entrante.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="53" column="9" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/solicitud-saliente/solicitud-saliente.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/solicitud-saliente/solicitud-saliente.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/solicitud-saliente/solicitud-saliente.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-          <folding>
-            <element signature="n#form#0;n#nb-card-body#0;n#nb-card#0;n#div#0;n#div#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="31" column="58" selection-start-line="31" selection-start-column="58" selection-end-line="31" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/agenda/agenda-create-contingencia/agenda-create-contingencia.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
@@ -636,23 +561,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
           <caret line="77" column="3" lean-forward="true" selection-start-line="77" selection-start-column="3" selection-end-line="77" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/database/migrations/2018_10_11_001137_create_empresas_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="35" column="28" lean-forward="true" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/admin-menu.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -674,26 +582,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="42" column="10" lean-forward="true" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/admin-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="45" column="7" lean-forward="true" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/app-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#69#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -732,40 +620,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/empresa-create/empresa-create.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cliente/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="580">
           <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
-          <folding>
-            <element signature="e#157#205#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/shared.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="24" column="16" lean-forward="true" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/empresa-create/empresa-create.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="25" column="113" selection-start-line="25" selection-start-column="113" selection-end-line="25" selection-end-column="113" />
         </state>
       </provider>
     </entry>
@@ -773,13 +631,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="302">
           <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -804,20 +655,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/empresa/empresa.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/app/Http/Controllers/EmpresaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="174" lean-forward="true" selection-start-line="174" selection-end-line="174" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/servidor/database/migrations/2018_10_11_022030_create_reunions_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="580">
@@ -839,27 +676,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="33" column="46" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cliente/src/app/empresa/agenda/agenda.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="438">
           <caret line="24" column="2" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/empresa/empresa-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="43" column="35" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -887,17 +707,230 @@
     <entry file="file://$PROJECT_DIR$/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.scss">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/empresa-modal/empresa-modal.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/servidor/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="566">
           <caret line="67" column="33" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servidor/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="6" column="17" lean-forward="true" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servidor/database/migrations/2018_10_11_001137_create_empresas_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="35" column="28" lean-forward="true" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/admin-menu.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="48" column="4" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/empresa-modal/empresa-modal.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/empresa/empresa.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="58" column="64" lean-forward="true" selection-start-line="58" selection-start-column="64" selection-end-line="58" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servidor/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/environments/environment.prod.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="10" column="41" lean-forward="true" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servidor/app/Http/Controllers/EmpresaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="184" column="25" selection-start-line="184" selection-start-column="25" selection-end-line="184" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/shared.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="49" column="41" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/empresa/empresa-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/app-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+          <folding>
+            <element signature="e#0#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/admin-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="35" column="29" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/empresa-create/empresa-create.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="81" column="14" selection-start-line="81" selection-start-column="14" selection-end-line="81" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/node_modules/@angular/forms/forms.metadata.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="25665" selection-start-column="25665" selection-end-column="25665" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/empresa-create/empresa-create.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="29" column="14" lean-forward="true" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/usuario-edit/usuario-edit.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servidor/app/Http/Controllers/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servidor/app/Http/Controllers/UsuarioController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="67" column="9" lean-forward="true" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/perfil/perfil.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/auth.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="33" column="15" lean-forward="true" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+            <element signature="n#!!block;n#logout#0;n#AuthService#0" />
+            <element signature="n#!!block;n#getTipoUsuario#0;n#AuthService#0" />
+            <element signature="n#!!block;n#getUsuario#0;n#AuthService#0" />
+            <element signature="n#!!block;n#isLoggedIn#0;n#AuthService#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/usuario-edit/usuario-edit.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/perfil/perfil.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="11" column="25" lean-forward="true" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
         </state>
       </provider>
     </entry>

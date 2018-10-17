@@ -47,23 +47,6 @@ export const ADMIN_ITEMS: NbMenuItem[] = [
         link: '/admin/mesa',
     },
     {
-        title: 'Reuniones',
-        icon: 'nb-heart',
-        link: '/admin/reuniones',
-        children: [
-            {
-                title: 'Lista de Reuniones',
-                icon: 'nb-search',
-                link: '/admin/reuniones/listar',
-            },
-            {
-                title: 'Nueva Reunion',
-                icon: 'nb-plus',
-                link: '/admin/reuniones/crear',
-            },
-        ],
-    },
-    {
         title: 'Agenda',
         icon: 'nb-heart',
         link: '/admin/agenda',

@@ -6,8 +6,9 @@
           <nb-card-body class="perfil-acciones">
             <img src="https://t3.ftcdn.net/jpg/01/71/05/64/240_F_171056472_EtbY5iv7f1lxLFZUHt1N68FFP09cE7LJ.jpg" alt="">
             <h4>{{ usuario.nombres }} {{ usuario.apellidos }}</h4>
-            <button class="btn-perfil">Editar Usuario</button>
-            <button class="btn-perfil" *ngIf="usuario.tipo_usuario === 'empresa'">Editar Empresa</button>
+            <button *ngIf="usuario.tipo_usuario === 'administrador'" class="btn-perfil" routerLink="/admin/actualizar-usuario/{{usuario.usuario_id}}">Editar Usuario</button>
+            <button *ngIf="usuario.tipo_usuario === 'empresa'" class="btn-perfil" routerLink="/empresa/actualizar-usuario/{{usuario.usuario_id}}">Editar Usuario</button>
+            <!--<button class="btn-perfil" *ngIf="usuario.tipo_usuario === 'empresa'">Editar Empresa</button>-->
           </nb-card-body>
         </nb-card>
       </div>

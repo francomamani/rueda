@@ -38,4 +38,15 @@ export class AuthService {
       return false;
     }
   }
+  setUsuario(req) {
+    const usuario = btoa(JSON.stringify(req));
+    localStorage.removeItem('rueda-usuario');
+    localStorage.setItem('rueda-usuario', usuario);
+  }
+  showUsuario(id) {
+    return this.http.get(this.base + 'usuarios/' + id);
+  }
+  updateUsuario(id, req) {
+    return this.http.put(this.base + 'usuarios/' + id, req);
+  }
 }

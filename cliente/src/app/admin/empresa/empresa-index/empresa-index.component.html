@@ -5,6 +5,7 @@
       <nb-card-body>
         <form (submit)="buscar()" class="rueda-search" [formGroup]="buscarGroup">
           <select formControlName="rubro_id" name="rubro_id">
+            <option value="0">TODOS LOS RUBROS</option>
             <option [value]="rubro.rubro_id"
                     *ngFor="let rubro of rubros">{{rubro.nombre}}</option>
           </select>
@@ -12,6 +13,7 @@
           <button> Buscar </button>
         </form>
         <br><br>
+
         <div class="table-responsive">
           <table class="table table-hover">
             <thead>
@@ -38,7 +40,7 @@
                 <a title="Eliminar empresa" class="text-danger" (click)="onDeleteConfirm(empresa, i)"><i class="fa fa-trash"></i></a>
               </td>
               <td>{{ i + 1 }}</td>
-              <td><a (click)="info(empresa)" class="info">{{empresa.nombre}}</a></td>
+              <td><a (click)="info(empresa)" class="info">{{empresa.nombre | uppercase }}</a></td>
               <td>{{empresa.nit}}</td>
               <td>{{empresa.telefono}}</td>
               <td>{{empresa.max_participantes}}</td>

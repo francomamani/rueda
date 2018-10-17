@@ -7,6 +7,7 @@
       <nb-card-body class="card-body">
         <form (submit)="buscar()" class="rueda-search" [formGroup]="buscarGroup">
           <select formControlName="rubro_id" name="rubro_id">
+            <option value="0">TODOS LOS RUBROS</option>
             <option [value]="rubro.rubro_id"
                     *ngFor="let rubro of rubros">{{rubro.nombre}}</option>
           </select>
@@ -31,7 +32,7 @@
             <tbody>
             <tr *ngFor="let empresa of empresas; let i = index">
               <td>{{ i + 1 }}</td>
-              <td><a (click)="info(empresa)" class="info">{{ empresa.nombre }}</a></td>
+              <td><a (click)="info(empresa)" class="info">{{ empresa.nombre | uppercase }}</a></td>
               <td>{{ empresa.nit }}</td>
               <td>{{ empresa.telefono }}</td>
               <td>{{ empresa.direccion}}</td>

@@ -15,7 +15,10 @@
             </div>
           </div>
         </form>-->
-        <form (submit)="store()" role="form" [formGroup]="empresaGroup" *ngIf="rubros !== null">
+        <form (submit)="store()"
+              role="form"
+              [formGroup]="empresaGroup"
+              *ngIf="rubros !== null">
           <div class="row">
             <div class="col-sm-4 form-group">
               <select name="rubro_id" formControlName="rubro_id" class="form-control">
@@ -52,7 +55,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-sm-4 form-group">
+            <div class="col-sm-4 form-group" *ngIf="router.url !== '/auth/signup'">
                 <input type="number" class="form-control" formControlName="max_participantes" name="max_participantes" min="0" max="10" placeholder="Maximo de participantes">
             </div>
             <div class="col-sm-4 form-group">

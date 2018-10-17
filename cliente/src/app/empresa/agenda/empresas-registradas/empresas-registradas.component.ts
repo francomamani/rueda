@@ -34,7 +34,7 @@ export class EmpresasRegistradasComponent implements OnInit {
 
   createForm() {
     this.buscarGroup = this.fb.group({
-      'rubro_id': new FormControl(1, [Validators.required]),
+      'rubro_id': new FormControl(0, [Validators.required]),
       'search': new FormControl('', [Validators.required]),
     });
   }
