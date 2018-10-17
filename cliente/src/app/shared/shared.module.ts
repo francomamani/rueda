@@ -14,6 +14,7 @@ import { EmpresaModalComponent } from './empresa-modal/empresa-modal.component';
 import { EvaluacionReunionesComponent } from './evaluacion-reuniones/evaluacion-reuniones.component';
 import {SolicitudSalienteComponent} from './solicitud-saliente/solicitud-saliente.component';
 import {SolicitudEntranteComponent} from './solicitud-entrante/solicitud-entrante.component';
+import {EmpresaCreateComponent} from './empresa-create/empresa-create.component';
 
 @NgModule({
   imports: [
@@ -31,6 +32,7 @@ import {SolicitudEntranteComponent} from './solicitud-entrante/solicitud-entrant
                   HorariosOcupadosCreateComponent,
                   ParticipanteComponent,
                   EmpresaModalComponent,
+                  EmpresaCreateComponent,
                   SolicitudSalienteComponent,
                   SolicitudEntranteComponent,
                   EvaluacionReunionesComponent],
@@ -40,6 +42,7 @@ import {SolicitudEntranteComponent} from './solicitud-entrante/solicitud-entrant
             HorariosOcupadosIndexComponent,
             ParticipanteComponent,
             EmpresaModalComponent,
+            EmpresaCreateComponent,
             SolicitudSalienteComponent,
             SolicitudEntranteComponent,
             EvaluacionReunionesComponent],

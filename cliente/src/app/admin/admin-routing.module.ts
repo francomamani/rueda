@@ -5,7 +5,7 @@ import { AdminComponent } from './admin.component';
 import {RubroIndexComponent} from './rubro/rubro-index/rubro-index.component';
 import {EmpresaComponent} from './empresa/empresa.component';
 import {EmpresaIndexComponent} from './empresa/empresa-index/empresa-index.component';
-import {EmpresaCreateComponent} from './empresa/empresa-create/empresa-create.component';
+import {EmpresaCreateComponent} from '../shared/empresa-create/empresa-create.component';
 import {PerfilComponent} from '../shared/perfil/perfil.component';
 import {HorarioComponent} from './horario/horario.component';
 import {HorarioCreateComponent} from './horario/horario-create/horario-create.component';

@@ -1,8 +1,9 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {RubroService} from '../../rubro/rubro.service';
+import {RubroService} from '../../admin/rubro/rubro.service';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {NbToastrService} from '@nebular/theme';
-import {EmpresaService} from '../empresa.service';
+import {EmpresaService} from '../../admin/empresa/empresa.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'ngx-empresa-create',
@@ -14,6 +15,7 @@ export class EmpresaCreateComponent implements OnInit {
   empresaGroup: FormGroup;
   constructor(private rubroService: RubroService,
               private empresaService: EmpresaService,
+              private router: Router,
               private fb: FormBuilder,
               private toastr: NbToastrService) {
     this.createForm();
@@ -50,7 +52,10 @@ export class EmpresaCreateComponent implements OnInit {
   store() {
     this.empresaService.store(this.empresaGroup.value)
       .subscribe((res: any) => {
-        this.toastr.success('La empresa ' + res.nombre + ' fue registrada', 'Exito');
+        this.toastr.success('La empresa ' + res.nombre + ' fue registrada', 'Registro exitoso');
+        if (this.router.url === '/auth/signup') {
+          this.router.navigate(['/auth/login']);
+        }
       });
   }
 }

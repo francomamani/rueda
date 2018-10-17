@@ -117,4 +117,13 @@ class AgendaController extends Controller
         $mesas_libres = Mesa::all()->except($mesas_ocupadas_id);
         return response()->json($mesas_libres, 200);
     }
+
+    public function cambiarEstado() {
+        $agenda_id = request()->input('agenda_id');
+        $estado = request()->input('estado');
+        $agenda = Agenda::find($agenda_id);
+        $agenda->estado = $estado;
+        $agenda->save();
+        return response()->json($agenda, 200);
+    }
 }

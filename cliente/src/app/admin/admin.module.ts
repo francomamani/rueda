@@ -17,7 +17,6 @@ import {RubroService} from './rubro/rubro.service';
 
 import { TipoUsuarioComponent } from './tipo-usuario/tipo-usuario.component';
 import { EmpresaIndexComponent } from './empresa/empresa-index/empresa-index.component';
-import { EmpresaCreateComponent } from './empresa/empresa-create/empresa-create.component';
 import { HorarioComponent } from './horario/horario.component';
 import { HorarioCreateComponent } from './horario/horario-create/horario-create.component';
 import { HorarioIndexComponent } from './horario/horario-index/horario-index.component';
@@ -49,7 +48,6 @@ import { AgendaCreateContingenciaComponent } from './agenda/agenda-create-contin
                  TipoUsuarioComponent,
                  EmpresaComponent,
                  EmpresaIndexComponent,
-                 EmpresaCreateComponent,
                  HorarioComponent,
                  HorarioCreateComponent,
                  HorarioIndexComponent,

@@ -44,7 +44,7 @@ class EmpresaController extends Controller
             'nombres' => $request->input('nombres'),
             'apellidos' => $request->input('apellidos'),
             'email' => $request->input('email'),
-            'tipo_usuario' => 'administrador',
+            'tipo_usuario' => 'empresa',
             'password' => Hash::make($request->input('nit')),
         ];
 

@@ -36,7 +36,7 @@ Route::post('buscar-empresas', 'EmpresaController@buscar');
 Route::get('solicitudes-salientes/{empresa_id}', 'AgendaController@solicitudesSalientes');
 Route::get('solicitudes-entrantes/{empresa_id}', 'AgendaController@solicitudesEntrantes');
 Route::get('mesas-disponibles/{horario_id}', 'AgendaController@mesasDisponibles');
-
+Route::post('cambiar-estado', 'AgendaController@cambiarEstado');
 
 
 
