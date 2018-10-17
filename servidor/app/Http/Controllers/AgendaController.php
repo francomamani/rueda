@@ -28,6 +28,7 @@ class AgendaController extends Controller
                 'fin' => Horario::find($agenda->horario_id)->fin,
                 'estado' => $agenda->estado,
                 'tipo_asignacion' => $agenda->tipo_asignacion,
+                'agenda_id' => $agenda->agenda_id,
             ]);
         }
         return response()->json($data, 200);

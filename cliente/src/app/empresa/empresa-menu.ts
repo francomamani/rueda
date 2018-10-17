@@ -21,7 +21,7 @@ export const EMPRESA_ITEMS: NbMenuItem[] = [
   },
   {
     title: 'Crear una cita',
-    icon: 'nb-paper-plane',
+    icon: 'nb-plus',
     link: '/empresa/mi-agenda/crear',
   },
   {
