@@ -18,7 +18,6 @@
             <tr>
               <th>Acciones</th>
               <th>N.</th>
-              <th>Rubro</th>
               <th>Empresa</th>
               <th>Telefono</th>
               <th><i class="fa fa-user" title="Maximo de Participantes"></i></th>
@@ -38,10 +37,6 @@
                 <a class="text-danger" (click)="onDeleteConfirm(empresa, i)"><i class="fa fa-trash"></i></a>
               </td>
               <td>{{ i + 1 }}</td>
-              <td>
-                <span *ngIf="empresa.rubro.nombre === undefined">{{empresa.rubro}}</span>
-                <span *ngIf="empresa.rubro.nombre !== undefined">{{empresa.rubro.nombre}}</span>
-              </td>
               <td><a (click)="info(empresa)" class="info">{{empresa.nombre}}</a></td>
               <td>{{empresa.telefono}}</td>
               <td>{{empresa.max_participantes}}</td>
