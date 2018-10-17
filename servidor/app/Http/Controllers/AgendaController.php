@@ -21,8 +21,8 @@ class AgendaController extends Controller
         $data = [];
         foreach ($agendas as $agenda) {
             array_push($data, [
-                'empresa_solicitante' => Empresa::find($agenda->empresa_solicitante_id)->nombre,
-                'empresa_demandada' => Empresa::find($agenda->empresa_demandada_id)->nombre,
+                'empresa_solicitante' => Empresa::find($agenda->empresa_solicitante_id),
+                'empresa_demandada' => Empresa::find($agenda->empresa_demandada_id),
                 'mesa' => Mesa::find($agenda->mesa_id)->numero,
                 'inicio' => Horario::find($agenda->horario_id)->inicio,
                 'fin' => Horario::find($agenda->horario_id)->fin,
