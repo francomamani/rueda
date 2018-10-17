@@ -18,6 +18,11 @@ $divider: #BDBDBD;
 table {
   animation: up .4s ease-out;
 }
+a.info, a.info:hover, a.info:active{
+  color: #41c15d;
+  text-decoration: underline;
+  cursor: pointer;
+}
 @keyframes up {
   0% {
     opacity: 0;
