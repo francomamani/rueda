@@ -23,7 +23,7 @@
               </select>
             </div>
             <div class="col-sm-4 form-group">
-              <input type="text" class="form-control" formControlName="nombre" name="nombre" placeholder="Nombre">
+              <input type="text" class="form-control" formControlName="nombre" name="nombre" placeholder="Empresa">
             </div>
             <div class="col-sm-4 form-group">
               <input type="text" class="form-control" formControlName="direccion" name="direccion" placeholder="Direccion">
@@ -62,12 +62,12 @@
               <input type="text" class="form-control" formControlName="apellidos" name="apellidos" placeholder="Apellidos">
             </div>
           </div>
-          <div class="row">
+          <div class="row" *ngIf="router.url !== '/auth/signup'">
             <div class="col-sm-6 form-group">
-              <nb-checkbox value=false formControlName="especial">Empresa especial</nb-checkbox>
+              <nb-checkbox value=false formControlName="especial" name="especial">Empresa especial</nb-checkbox>
             </div>
             <div class="col-sm-6 form-group">
-              <nb-checkbox value=true formControlName="habilitado">Habilitado</nb-checkbox>
+              <nb-checkbox value=true formControlName="habilitado" name="habilitado">Habilitado</nb-checkbox>
             </div>
           </div>
           <div class="row">

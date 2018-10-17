@@ -15,7 +15,7 @@ export class EmpresaCreateComponent implements OnInit {
   empresaGroup: FormGroup;
   constructor(private rubroService: RubroService,
               private empresaService: EmpresaService,
-              private router: Router,
+              public router: Router,
               private fb: FormBuilder,
               private toastr: NbToastrService) {
     this.createForm();

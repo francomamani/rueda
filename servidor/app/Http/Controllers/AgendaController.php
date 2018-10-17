@@ -90,7 +90,7 @@ class AgendaController extends Controller
                                 ->join('rubros', 'rubros.rubro_id', 'empresas.rubro_id')
                                 ->join('horarios', 'horarios.horario_id', '=', 'agendas.horario_id')
                                 ->where('empresa_solicitante_id', $empresa_id)
-                                ->selectRaw('empresas.*, horarios.*, rubros.nombre as rubro, agendas.estado, agendas.tipo_asignacion')
+                                ->selectRaw('empresas.*, horarios.*, rubros.nombre as rubro, agendas.estado, agendas.tipo_asignacion, agendas.agenda_id')
                                 ->orderBy('empresas.nombre', 'asc')
                                 ->get();
         return response()->json($solicitudes, 200);
@@ -101,7 +101,7 @@ class AgendaController extends Controller
             ->join('rubros', 'rubros.rubro_id', 'empresas.rubro_id')
             ->join('horarios', 'horarios.horario_id', '=', 'agendas.horario_id')
             ->where('empresa_demandada_id', $empresa_id)
-            ->selectRaw('empresas.*, horarios.*, rubros.nombre as rubro, agendas.estado, agendas.tipo_asignacion')
+            ->selectRaw('empresas.*, horarios.*, rubros.nombre as rubro, agendas.estado, agendas.tipo_asignacion, agendas.agenda_id')
             ->orderBy('empresas.nombre', 'asc')
             ->get();
         return response()->json($solicitudes, 200);
