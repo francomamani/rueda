@@ -6,6 +6,7 @@ use App\Agenda;
 use App\Empresa;
 use App\Horario;
 use App\Mesa;
+use App\Reunion;
 use Illuminate\Http\Request;
 
 class AgendaController extends Controller
@@ -127,6 +128,14 @@ class AgendaController extends Controller
         $agenda = Agenda::find($agenda_id);
         $agenda->estado = $estado;
         $agenda->save();
+        if ($estado === 'aceptado') {
+            Reunion::create([
+                'empresa_solicitante_id' => $agenda->empresa_solicitante_id,
+                'empresa_demandada_id' => $agenda->empresa_demandada_id,
+                'mesa_id' => $agenda->mesa_id,
+                'horario_id' => $agenda->horario_id,
+            ]);
+        }
         return response()->json($agenda, 200);
     }
 }
