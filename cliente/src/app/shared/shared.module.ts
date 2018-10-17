@@ -13,6 +13,7 @@ import {AngularDateTimePickerModule} from 'angular2-datetimepicker';
 import { EmpresaModalComponent } from './empresa-modal/empresa-modal.component';
 import { EvaluacionReunionesComponent } from './evaluacion-reuniones/evaluacion-reuniones.component';
 import {SolicitudSalienteComponent} from './solicitud-saliente/solicitud-saliente.component';
+import {SolicitudEntranteComponent} from './solicitud-entrante/solicitud-entrante.component';
 
 @NgModule({
   imports: [
@@ -31,6 +32,7 @@ import {SolicitudSalienteComponent} from './solicitud-saliente/solicitud-salient
                   ParticipanteComponent,
                   EmpresaModalComponent,
                   SolicitudSalienteComponent,
+                  SolicitudEntranteComponent,
                   EvaluacionReunionesComponent],
   exports: [PerfilComponent,
             HorariosOcupadosComponent,
@@ -39,6 +41,8 @@ import {SolicitudSalienteComponent} from './solicitud-saliente/solicitud-salient
             ParticipanteComponent,
             EmpresaModalComponent,
             SolicitudSalienteComponent,
+            SolicitudEntranteComponent,
             EvaluacionReunionesComponent],
+  entryComponents: [EmpresaModalComponent],
 })
 export class SharedModule { }

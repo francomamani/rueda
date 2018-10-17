@@ -13,4 +13,8 @@ export class AgendaService {
   solicitudesSalientes(empresa_id) {
     return this.http.get(this.base + 'solicitudes-salientes/' + empresa_id);
   }
+
+  solicitudesEntrantes(empresa_id) {
+    return this.http.get(this.base + 'solicitudes-entrantes/' + empresa_id);
+  }
 }

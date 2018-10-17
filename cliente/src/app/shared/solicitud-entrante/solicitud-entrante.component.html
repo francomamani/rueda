@@ -1,3 +1,38 @@
-<p>
-  solicitud-entrante works!
-</p>
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>Solicitudes Entrantes</nb-card-header>
+      <nb-card-body>
+        <h3>{{mi_empresa}}</h3>
+        <div *ngIf="solicitudes !== null && solicitudes.length === 0" class="alerta">
+          No existen solicitudes salientes
+          <br><br>
+        </div>
+        <div class="table-responsive" *ngIf="solicitudes !== null && solicitudes.length > 0">
+          <table class="table table-hover">
+            <thead>
+            <tr>
+              <th>N.</th>
+              <th>Empresa</th>
+              <th>Rubro</th>
+              <th>Horario</th>
+              <th>Tipo de Asignacion</th>
+              <th>Estado</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let solicitud of solicitudes; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td><a (click)="info(solicitud)" class="info">{{ solicitud.nombre }}</a></td>
+              <td>{{ solicitud.rubro }}</td>
+              <td>{{ solicitud.inicio }} {{ solicitud.fin }}</td>
+              <td>{{ solicitud.tipo_asignacion }}</td>
+              <td>{{ solicitud.estado }}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

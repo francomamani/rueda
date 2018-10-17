@@ -23,6 +23,10 @@ export class EmpresasRegistradasComponent implements OnInit {
     this.rubroService.index().subscribe(res => {
       this.rubros = res;
     });
+    this.empresaService.empresasListar()
+      .subscribe((res: any) => {
+        this.empresas = res;
+      });
   }
 
   ngOnInit() {

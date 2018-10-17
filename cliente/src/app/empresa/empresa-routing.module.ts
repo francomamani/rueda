@@ -8,7 +8,7 @@ import {HorariosOcupadosIndexComponent} from '../shared/horarios-ocupados/horari
 import {HorariosOcupadosCreateComponent} from '../shared/horarios-ocupados/horarios-ocupados-create/horarios-ocupados-create.component';
 import {ParticipanteComponent} from '../shared/participante/participante.component';
 import {AgendaComponent} from './agenda/agenda.component';
-import {SolicitudEntranteComponent} from './agenda/solicitud-entrante/solicitud-entrante.component';
+import {SolicitudEntranteComponent} from '../shared/solicitud-entrante/solicitud-entrante.component';
 import {ReunionesAgendadasComponent} from './agenda/reuniones-agendadas/reuniones-agendadas.component';
 import {EvaluacionGeneralComponent} from './evaluacion-general/evaluacion-general.component';
 import {EmpresasRegistradasComponent} from './agenda/empresas-registradas/empresas-registradas.component';

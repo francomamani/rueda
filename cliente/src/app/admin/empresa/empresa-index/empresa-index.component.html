@@ -3,23 +3,27 @@
     <nb-card>
       <nb-card-header>Empresas Registradas</nb-card-header>
       <nb-card-body>
+        <form (submit)="buscar()" class="rueda-search" [formGroup]="buscarGroup">
+          <select formControlName="rubro_id" name="rubro_id">
+            <option [value]="rubro.rubro_id"
+                    *ngFor="let rubro of rubros">{{rubro.nombre}}</option>
+          </select>
+          <input type="search" formControlName="search" name="search" placeholder="buscar">
+          <button> Buscar </button>
+        </form>
+        <br><br>
         <div class="table-responsive">
           <table class="table table-hover">
             <thead>
             <tr>
               <th>Acciones</th>
               <th>N.</th>
-              <th>Habilitado</th>
-              <th>Especial</th>
               <th>Rubro</th>
               <th>Empresa</th>
-              <th>Max. Participantes</th>
-              <th>NIT</th>
-              <th>Representante Legal</th>
-              <th>Ciudad/Localidad</th>
-              <th>Dirección</th>
               <th>Telefono</th>
-              <th>Página Web</th>
+              <th><i class="fa fa-user" title="Maximo de Participantes"></i></th>
+              <th>Especial</th>
+              <th>Habilitado</th>
             </tr>
             </thead>
             <tbody>
@@ -28,29 +32,31 @@
                 <a class="text-warning"><i class="fa fa-camera"></i></a>
                 <a class="text-primary" [routerLink]="['/admin/empresa/participantes/', empresa.empresa_id]"><i class="fa fa-user"></i></a>
                 <a class="text-success"><i class="fa fa-edit"></i></a>
-                <a class="text-primary"><i class="fa fa-arrow-circle-left"></i></a>
                 <a class="text-primary" [routerLink]="['/admin/empresa/solicitudes-salientes/'+empresa.empresa_id]"><i class="fa fa-arrow-circle-right"></i></a>
+                <a class="text-primary" [routerLink]="['/admin/empresa/solicitudes-entrantes/'+empresa.empresa_id]"><i class="fa fa-arrow-circle-left"></i></a>
                 <a [routerLink]="['/admin/horarios-ocupados/listar/admin/', empresa.empresa_id]"><i class="fa fa-clock"></i></a>
                 <a class="text-danger" (click)="onDeleteConfirm(empresa, i)"><i class="fa fa-trash"></i></a>
               </td>
               <td>{{ i + 1 }}</td>
-              <td class="text-center">
-                <span *ngIf="empresa.habilitado === 1" class="text-success">Habilitado</span>
-                <span *ngIf="empresa.habilitado === 0" class="text-danger">No habilitado</span>
+              <td>
+                <span *ngIf="empresa.rubro.nombre === undefined">{{empresa.rubro}}</span>
+                <span *ngIf="empresa.rubro.nombre !== undefined">{{empresa.rubro.nombre}}</span>
               </td>
-              <td class="text-center">
-                <span *ngIf="empresa.especial === 1" class="text-success">Si</span>
-                <span *ngIf="empresa.especial === 0" class="text-danger">No</span>
-              </td>
-              <td>{{empresa.rubro}}</td>
-              <td>{{empresa.nombre}}</td>
-              <td>{{empresa.max_participantes}}</td>
-              <td>{{empresa.nit}}</td>
-              <td>{{empresa.representante_legal}}</td>
-              <td>{{empresa.ciudad_localidad}}</td>
-              <td>{{empresa.direccion}}</td>
+              <td><a (click)="info(empresa)" class="info">{{empresa.nombre}}</a></td>
               <td>{{empresa.telefono}}</td>
-              <td><a href="http://{{empresa.pagina_web}}" target="_blank">{{empresa.pagina_web}}</a></td>
+              <td>{{empresa.max_participantes}}</td>
+              <td class="text-center">
+                <span *ngIf="empresa.especial === 1" class="text-success"><i class="fa fa-check"></i></span>
+                <span *ngIf="empresa.especial === 0" class="text-danger"><i class="fa fa-times"></i></span>
+              </td>
+              <td class="text-center">
+                <span *ngIf="empresa.habilitado === 1" class="text-success">
+                  <i class="fa fa-check"></i>
+                </span>
+                <span *ngIf="empresa.habilitado === 0" class="text-danger">
+                  <i class="fa fa-times"></i>
+                </span>
+              </td>
             </tr>
             </tbody>
           </table>
