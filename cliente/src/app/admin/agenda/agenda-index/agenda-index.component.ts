@@ -14,7 +14,7 @@ export class AgendaIndexComponent implements OnInit {
                 private toastr: NbToastrService) {
         this.agendaService.index()
             .subscribe((res: any) => {
-                this.agendas = res.data;
+                this.agendas = res;
             });
     }
   ngOnInit() {

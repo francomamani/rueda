@@ -11,6 +11,7 @@
               <th>Empresa Solicitante</th>
               <th>Empresa Solicitada</th>
               <th>Horario</th>
+              <th>Mesa</th>
               <th>Tipo</th>
               <th>Estado</th>
             </tr>
@@ -18,9 +19,10 @@
             <tbody>
             <tr *ngFor="let agenda of agendas; let i = index">
               <td>{{ i + 1 }}</td>
-              <td>{{agenda.empresa1.nombre}}</td>
-              <td>{{agenda.empresa2.nombre}}</td>
-              <td>{{aganda.horario}}</td>
+              <td>{{agenda.empresa_solicitante.nombre}}</td>
+              <td>{{agenda.empresa_demandada.nombre}}</td>
+              <td>{{agenda.inicio}} - {{agenda.inicio}}</td>
+              <td>{{agenda.mesa}}</td>
               <td class="text-center">
                 <span *ngIf="agenda.tipo_asignacion === 'pre_agendado'" class="text-success">Pre Agendado</span>
                 <span *ngIf="agenda.tipo_asignacion === 'administracion'" class="text-info">Administración</span>

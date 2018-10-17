@@ -55,6 +55,7 @@ export class AgendaCreateContingenciaComponent implements OnInit {
             'empresa_demandada_id': new FormControl(0, Validators.required),
             'horario_id': new FormControl(0, Validators.required),
             'mesa_id': new FormControl(0, Validators.required),
+            'estado': new FormControl('pendiente', Validators.required),
         });
     }
 

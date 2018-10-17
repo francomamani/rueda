@@ -46,6 +46,7 @@ export class AgendaCreateComponent implements OnInit {
       'empresa_demandada_id': new FormControl(0, Validators.required),
       'horario_id': new FormControl(0, Validators.required),
       'mesa_id': new FormControl(0, Validators.required),
+      'estado': new FormControl('pendiente', Validators.required),
     });
   }
 
@@ -74,6 +75,10 @@ export class AgendaCreateComponent implements OnInit {
         .subscribe((res: any[]) => {
           this.horarios = res;
         });
+    }
+    else{
+        this.horariosActive = false;
+        this.toastr.danger('No se puede conseguir los horarios disponibles', 'Error');
     }
   }
 
