@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ab89094b-3109-471f-8ab0-f44ae9596c5a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/shared/solicitud-entrante/solicitud-entrante.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/shared/solicitud-entrante/solicitud-entrante.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +71,7 @@
           <entry key="env" value="1" />
           <entry key="horarios" value="2" />
           <entry key="horarios_ocupados" value="3" />
-          <entry key="html" value="378" />
+          <entry key="html" value="381" />
           <entry key="js" value="4" />
           <entry key="json" value="16" />
           <entry key="participantes" value="3" />
@@ -81,7 +80,7 @@
           <entry key="rubros" value="1" />
           <entry key="scss" value="148" />
           <entry key="sql" value="3" />
-          <entry key="ts" value="576" />
+          <entry key="ts" value="578" />
           <entry key="users" value="2" />
           <entry key="usuarios" value="5" />
         </counts>
@@ -90,13 +89,13 @@
         <counts>
           <entry key=".env file" value="1" />
           <entry key="Database Element" value="35" />
-          <entry key="HTML" value="378" />
+          <entry key="HTML" value="381" />
           <entry key="JSON" value="16" />
           <entry key="JavaScript" value="4" />
           <entry key="PHP" value="317" />
           <entry key="SCSS" value="148" />
           <entry key="Scratch" value="3" />
-          <entry key="TypeScript" value="576" />
+          <entry key="TypeScript" value="578" />
           <entry key="UML" value="3" />
         </counts>
       </usages-collector>
@@ -110,24 +109,24 @@
         <counts>
           <entry key="cell" value="22" />
           <entry key="cell_2" value="81" />
-          <entry key="html" value="8729" />
+          <entry key="html" value="8730" />
           <entry key="json" value="9" />
           <entry key="php" value="7483" />
           <entry key="scss" value="2197" />
           <entry key="sql" value="21" />
-          <entry key="ts" value="9733" />
+          <entry key="ts" value="9820" />
           <entry key="txt" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="8747" />
+          <entry key="HTML" value="8748" />
           <entry key="JSON" value="9" />
           <entry key="PHP" value="7483" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="SCSS" value="2197" />
           <entry key="Scratch" value="124" />
-          <entry key="TypeScript" value="9715" />
+          <entry key="TypeScript" value="9802" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.composer.actions">
@@ -140,10 +139,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.scss">
+        <entry file="file://$PROJECT_DIR$/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+            <state relative-caret-position="547">
+              <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -152,7 +151,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getTipo</find>
       <find>edit</find>
       <find>Rubro</find>
       <find>h</find>
@@ -182,6 +180,7 @@
       <find>green</find>
       <find>alerta</find>
       <find>alert</find>
+      <find>mie</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -202,7 +201,6 @@
         <option value="$PROJECT_DIR$/cliente/src/app/empresa/agenda/agenda.component.html" />
         <option value="$PROJECT_DIR$/servidor/app/Http/Controllers/HorarioOcupadoController.php" />
         <option value="$PROJECT_DIR$/cliente/src/app/pages/ui-features/modals/modals.component.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.ts" />
         <option value="$PROJECT_DIR$/cliente/src/app/shared/empresa-modal/empresa-modal.component.ts" />
         <option value="$PROJECT_DIR$/cliente/src/app/empresa/empresa-menu.ts" />
         <option value="$PROJECT_DIR$/cliente/src/app/empresa/agenda/agenda.component.scss" />
@@ -239,8 +237,9 @@
         <option value="$PROJECT_DIR$/cliente/src/app/shared/empresa-modal/empresa-modal.component.html" />
         <option value="$PROJECT_DIR$/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.ts" />
         <option value="$PROJECT_DIR$/cliente/src/app/shared/solicitud-entrante/solicitud-entrante.component.html" />
-        <option value="$PROJECT_DIR$/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.html" />
         <option value="$PROJECT_DIR$/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.scss" />
+        <option value="$PROJECT_DIR$/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.html" />
+        <option value="$PROJECT_DIR$/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.ts" />
       </list>
     </option>
   </component>
@@ -418,7 +417,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="SearchEverywhereHistoryKey" value="agendadacs&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.scss&#10;saliente&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/solicitud-saliente/solicitud-saliente.component.scss&#10;registradascss&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.scss&#10;reunion&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.html&#10;solicitudentra&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/solicitud-entrante/solicitud-entrante.component.html&#10;empre&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.ts&#10;regist&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.scss&#10;empremoda&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/empresa-modal/empresa-modal.component.html&#10;empresaregi&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.ts&#10;empresainde&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.ts&#10;dat&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/seeds/DatabaseSeeder.php&#10;agendacontro&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/AgendaController.php&#10;agenda.php&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Agenda.php&#10;agendastable&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_15_044311_create_agendas_table.php&#10;api&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/routes/api.php&#10;empresa&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.html&#10;empresregi&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.ts&#10;empresacontro&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/EmpresaController.php&#10;empresain&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.scss&#10;empresregistr&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.scss&#10;empresasregi&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.html&#10;empresaindexscs&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.scss&#10;registra&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.scss&#10;empresaindexhtml&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.html&#10;empresaindexts&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.ts&#10;agendastabl&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_15_044311_create_agendas_table.php&#10;horarioocupadoindexscss&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/horarios-ocupados/horarios-ocupados-index/horarios-ocupados-index.component.scss&#10;horarioindex&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/horario/horario-index/horario-index.component.scss&#10;horarioinde&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/horarios-ocupados/horarios-ocupados-index/horarios-ocupados-index.component.scss&#10;horarioocupadoindexc&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/horarios-ocupados/horarios-ocupados-index/horarios-ocupados-index.component.scss&#10;horarioocupadocs&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/horarios-ocupados/horarios-ocupados.component.scss&#10;horarioocup&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/horarios-ocupados/horarios-ocupados.component.scss&#10;horarioocupadots&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/horarios-ocupados/horarios-ocupados.component.ts&#10;login&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/login/login.component.html&#10;logincompo&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/login/login.component.scss&#10;controller&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/EmpresaController.php&#10;empresamo&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/empresa.module.ts&#10;share&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/shared.module.ts&#10;entr&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/solicitud-entrante/solicitud-entrante.component.scss&#10;entrantehtml&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/solicitud-entrante/solicitud-entrante.component.html&#10;entran&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/solicitud-entrante/solicitud-entrante.component.ts&#10;registrad&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.html&#10;empresaindex&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.html&#10;agendacontr&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/AgendaController.php&#10;empresamodalcom&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/empresa-modal/empresa-modal.component.html&#10;homehtml&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/home/home.component.html&#10;empresahtml&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/empresa.component.html&#10;empresaind&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.html&#10;authcon&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/AuthController.php&#10;empresastable&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_11_001137_create_empresas_table.php" />
+    <property name="SearchEverywhereHistoryKey" value="agendadats&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.ts&#10;saliente&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/solicitud-saliente/solicitud-saliente.component.ts&#10;reunione&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.html&#10;agendadacs&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.scss&#10;registradascss&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.scss&#10;reunion&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.html&#10;solicitudentra&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/solicitud-entrante/solicitud-entrante.component.html&#10;empre&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.ts&#10;regist&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.scss&#10;empremoda&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/empresa-modal/empresa-modal.component.html&#10;empresaregi&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.ts&#10;empresainde&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.ts&#10;dat&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/seeds/DatabaseSeeder.php&#10;agendacontro&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/AgendaController.php&#10;agenda.php&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Agenda.php&#10;agendastable&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_15_044311_create_agendas_table.php&#10;api&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/routes/api.php&#10;empresa&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.html&#10;empresregi&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.ts&#10;empresacontro&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/EmpresaController.php&#10;empresain&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.scss&#10;empresregistr&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.scss&#10;empresasregi&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.html&#10;empresaindexscs&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.scss&#10;registra&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.scss&#10;empresaindexhtml&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.html&#10;empresaindexts&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.ts&#10;agendastabl&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_15_044311_create_agendas_table.php&#10;horarioocupadoindexscss&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/horarios-ocupados/horarios-ocupados-index/horarios-ocupados-index.component.scss&#10;horarioindex&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/horario/horario-index/horario-index.component.scss&#10;horarioinde&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/horarios-ocupados/horarios-ocupados-index/horarios-ocupados-index.component.scss&#10;horarioocupadoindexc&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/horarios-ocupados/horarios-ocupados-index/horarios-ocupados-index.component.scss&#10;horarioocupadocs&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/horarios-ocupados/horarios-ocupados.component.scss&#10;horarioocup&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/horarios-ocupados/horarios-ocupados.component.scss&#10;horarioocupadots&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/horarios-ocupados/horarios-ocupados.component.ts&#10;login&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/login/login.component.html&#10;logincompo&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/login/login.component.scss&#10;controller&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/EmpresaController.php&#10;empresamo&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/empresa.module.ts&#10;share&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/shared.module.ts&#10;entr&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/solicitud-entrante/solicitud-entrante.component.scss&#10;entrantehtml&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/solicitud-entrante/solicitud-entrante.component.html&#10;entran&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/solicitud-entrante/solicitud-entrante.component.ts&#10;registrad&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.html&#10;empresaindex&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.html&#10;agendacontr&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/AgendaController.php&#10;empresamodalcom&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/empresa-modal/empresa-modal.component.html&#10;homehtml&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/home/home.component.html&#10;empresahtml&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/empresa.component.html&#10;empresaind&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.html" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="full.screen.before.presentation.mode" value="true" />
@@ -472,12 +471,12 @@
       <workItem from="1539571047687" duration="28701000" />
       <workItem from="1539655223759" duration="5516000" />
       <workItem from="1539711757665" duration="12392000" />
-      <workItem from="1539731598913" duration="12237000" />
+      <workItem from="1539731598913" duration="12416000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119877000" />
+    <option name="totallyTimeSpent" value="120056000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="0" />
@@ -663,20 +662,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="302">
           <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/solicitud-saliente/solicitud-saliente.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="25" column="6" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/solicitud-saliente/solicitud-saliente.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
@@ -873,24 +858,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="53" column="9" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="7" column="74" selection-start-line="7" selection-start-column="74" selection-end-line="7" selection-end-column="74" />
         </state>
       </provider>
     </entry>
@@ -903,8 +874,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
+        <state relative-caret-position="12">
           <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/solicitud-saliente/solicitud-saliente.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/solicitud-saliente/solicitud-saliente.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/empresa/agenda/reuniones-agendadas/reuniones-agendadas.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="547">
+          <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
         </state>
       </provider>
     </entry>

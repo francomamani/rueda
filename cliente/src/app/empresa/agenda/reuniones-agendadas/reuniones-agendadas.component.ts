@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {EmpresaService} from '../../../admin/empresa/empresa.service';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {EmpresaModalComponent} from '../../../shared/empresa-modal/empresa-modal.component';
+import {ActivatedRoute} from '@angular/router';
+import {AuthService} from '../../../auth.service';
 
 @Component({
   selector: 'ngx-reuniones-agendadas',
@@ -11,9 +13,26 @@ import {EmpresaModalComponent} from '../../../shared/empresa-modal/empresa-modal
 export class ReunionesAgendadasComponent implements OnInit {
 
   reuniones: any = null;
-  empresa_id = JSON.parse(atob(localStorage.getItem('rueda-usuario'))).empresa.empresa_id;
+  empresa_id = null;
+  mi_empresa = null;
   constructor(private empresaService: EmpresaService,
+              private route: ActivatedRoute,
+              private authService: AuthService,
               private modalService: NgbModal) {
+    this.route.params.subscribe(params => {
+      if (params.empresa_id) {
+        this.empresa_id = parseInt(params.empresa_id, 10);
+        this.empresaService.show(parseInt(params.empresa_id, 10))
+          .subscribe((res: any) => {
+            this.mi_empresa = res.nombre;
+          });
+      } else {
+        this.empresa_id = this.authService.getUsuario().empresa_id;
+        this.mi_empresa = this.authService.getUsuario().nombre;
+      }
+    });
+
+
     this.empresaService.misReuniones(this.empresa_id)
       .subscribe((res: any) => {
         this.reuniones = res;
