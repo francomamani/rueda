@@ -18,6 +18,7 @@ import {HorariosOcupadosComponent} from '../shared/horarios-ocupados/horarios-oc
 import {HorariosOcupadosCreateComponent} from '../shared/horarios-ocupados/horarios-ocupados-create/horarios-ocupados-create.component';
 import {HorariosOcupadosIndexComponent} from '../shared/horarios-ocupados/horarios-ocupados-index/horarios-ocupados-index.component';
 import {ParticipanteComponent} from '../shared/participante/participante.component';
+import {SolicitudSalienteComponent} from '../shared/solicitud-saliente/solicitud-saliente.component';
 
 const routes: Routes = [
   {
@@ -49,7 +50,12 @@ const routes: Routes = [
         }, {
             path: 'participantes/:empresa_id',
             component: ParticipanteComponent,
-        }, {
+        },
+        {
+          path: 'solicitudes-salientes/:empresa_id',
+          component: SolicitudSalienteComponent,
+        },
+        {
           path: '',
           redirectTo: 'listar',
           pathMatch: 'full',

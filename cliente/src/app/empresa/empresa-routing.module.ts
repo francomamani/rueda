@@ -9,10 +9,10 @@ import {HorariosOcupadosCreateComponent} from '../shared/horarios-ocupados/horar
 import {ParticipanteComponent} from '../shared/participante/participante.component';
 import {AgendaComponent} from './agenda/agenda.component';
 import {SolicitudEntranteComponent} from './agenda/solicitud-entrante/solicitud-entrante.component';
-import {SolicitudSalienteComponent} from './agenda/solicitud-saliente/solicitud-saliente.component';
 import {ReunionesAgendadasComponent} from './agenda/reuniones-agendadas/reuniones-agendadas.component';
 import {EvaluacionGeneralComponent} from './evaluacion-general/evaluacion-general.component';
 import {EmpresasRegistradasComponent} from './agenda/empresas-registradas/empresas-registradas.component';
+import {SolicitudSalienteComponent} from '../shared/solicitud-saliente/solicitud-saliente.component';
 
 const routes: Routes = [
   {

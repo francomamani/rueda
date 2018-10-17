@@ -12,6 +12,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AngularDateTimePickerModule} from 'angular2-datetimepicker';
 import { EmpresaModalComponent } from './empresa-modal/empresa-modal.component';
 import { EvaluacionReunionesComponent } from './evaluacion-reuniones/evaluacion-reuniones.component';
+import {SolicitudSalienteComponent} from './solicitud-saliente/solicitud-saliente.component';
 
 @NgModule({
   imports: [
@@ -29,6 +30,7 @@ import { EvaluacionReunionesComponent } from './evaluacion-reuniones/evaluacion-
                   HorariosOcupadosCreateComponent,
                   ParticipanteComponent,
                   EmpresaModalComponent,
+                  SolicitudSalienteComponent,
                   EvaluacionReunionesComponent],
   exports: [PerfilComponent,
             HorariosOcupadosComponent,
@@ -36,6 +38,7 @@ import { EvaluacionReunionesComponent } from './evaluacion-reuniones/evaluacion-
             HorariosOcupadosIndexComponent,
             ParticipanteComponent,
             EmpresaModalComponent,
+            SolicitudSalienteComponent,
             EvaluacionReunionesComponent],
 })
 export class SharedModule { }

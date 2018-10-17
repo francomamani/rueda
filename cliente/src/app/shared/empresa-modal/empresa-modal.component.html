@@ -14,7 +14,8 @@
       </tr>
       <tr>
         <td>Rubro</td>
-        <td><strong>{{empresa.rubro.nombre}}</strong></td>
+        <td *ngIf="empresa.rubro.nombre !== undefined "><strong>{{empresa.rubro.nombre}}</strong></td>
+        <td *ngIf="empresa.rubro.nombre === undefined "><strong>{{empresa.rubro}}</strong></td>
       </tr>
       <tr>
         <td>Inscripción</td>

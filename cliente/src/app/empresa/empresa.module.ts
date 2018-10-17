@@ -7,7 +7,6 @@ import { EmpresaComponent } from './empresa.component';
 import {ThemeModule} from '../@theme/theme.module';
 import {SharedModule} from '../shared/shared.module';
 import { AgendaComponent } from './agenda/agenda.component';
-import { SolicitudSalienteComponent } from './agenda/solicitud-saliente/solicitud-saliente.component';
 import { SolicitudEntranteComponent } from './agenda/solicitud-entrante/solicitud-entrante.component';
 import { ReunionesAgendadasComponent } from './agenda/reuniones-agendadas/reuniones-agendadas.component';
 import {EmpresaModalComponent} from '../shared/empresa-modal/empresa-modal.component';
@@ -27,7 +26,6 @@ import {AgendaService} from './agenda/agenda.service';
   declarations: [HomeComponent,
                 EmpresaComponent,
                 AgendaComponent,
-                SolicitudSalienteComponent,
                 SolicitudEntranteComponent,
                 ReunionesAgendadasComponent,
                 EvaluacionGeneralComponent,

@@ -16,6 +16,10 @@ export class EmpresaService {
         return this.http.get(this.base + 'empresas');
     }
 
+    show(empresa_id) {
+        return this.http.get(this.base + 'empresas/' + empresa_id);
+    }
+
     empresasListar() {
         return this.http.get(this.base + 'empresas-listar');
     }
