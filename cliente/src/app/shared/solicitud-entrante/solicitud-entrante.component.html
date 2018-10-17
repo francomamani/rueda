@@ -16,8 +16,10 @@
               <th>Empresa</th>
               <th>Rubro</th>
               <th>Horario</th>
+              <th>Mesa</th>
               <th>Tipo de Asignacion</th>
               <th>Estado</th>
+              <th>Acciones</th>
             </tr>
             </thead>
             <tbody>
@@ -26,8 +28,18 @@
               <td><a (click)="info(solicitud)" class="info">{{ solicitud.nombre }}</a></td>
               <td>{{ solicitud.rubro }}</td>
               <td>{{ solicitud.inicio }} {{ solicitud.fin }}</td>
-              <td>{{ solicitud.tipo_asignacion }}</td>
-              <td>{{ solicitud.estado }}</td>
+              <td>{{ solicitud.mesa }}</td>
+              <td class="text-center">
+                <span *ngIf="solicitud.tipo_asignacion === 'pre_agendado'" class="text-success">Pre Agendado</span>
+                <span *ngIf="solicitud.tipo_asignacion === 'administracion'" class="text-info">Administración</span>
+                <span *ngIf="solicitud.tipo_asignacion === 'cita_de_contingencia'" class="text-danger">Cita de Contingencia</span>
+              </td>
+              <td class="text-center">
+                <span *ngIf="solicitud.estado === 'aceptado'" class="text-success">Aceptado</span>
+                <span *ngIf="solicitud.estado === 'rechazado'" class="text-danger">Rechazado</span>
+                <span *ngIf="solicitud.estado === 'pendiente'" class="text-warning">Pendiente</span>
+              </td>
+              <td *ngIf="solicitud.estado==='pendiente'"><a (click)="aceptar(solicitud.agenda_id)" class="btn btn-sm btn-success">Aceptar</a> <a (click)="rechazar(solicitud.agenda_id)" class="btn btn-sm btn-danger">Rechazar</a></td>
             </tr>
             </tbody>
           </table>

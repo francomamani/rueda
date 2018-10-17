@@ -21,4 +21,8 @@ export class AgendaService {
   store(req) {
       return this.http.post(this.base + 'agendas', req);
   }
+
+  cambiarEstado(req){
+      return this.http.post(this.base + 'cambiar-estado', req);
+  }
 }
