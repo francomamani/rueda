@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Agenda;
+use App\Empresa;
+use App\Horario;
 use App\Mesa;
 use Illuminate\Http\Request;
 
@@ -15,7 +17,20 @@ class AgendaController extends Controller
      */
     public function index()
     {
-        return response()->json(Agenda::get(), 200);
+        $agendas = Agenda::get();
+        $data = [];
+        foreach ($agendas as $agenda) {
+            array_push($data, [
+                'empresa_solicitante' => Empresa::find($agenda->empresa_solicitante_id)->nombre,
+                'empresa_demandada' => Empresa::find($agenda->empresa_demandada_id)->nombre,
+                'mesa' => Mesa::find($agenda->mesa_id)->numero,
+                'inicio' => Horario::find($agenda->horario_id)->inicio,
+                'fin' => Horario::find($agenda->horario_id)->fin,
+                'estado' => $agenda->estado,
+                'tipo_asignacion' => $agenda->tipo_asignacion,
+            ]);
+        }
+        return response()->json($data, 200);
     }
 
     /**

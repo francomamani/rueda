@@ -25,6 +25,10 @@ const routes: Routes = [
         component: LoginComponent,
       },
       {
+        path: 'signup',
+        component: LoginComponent,
+      },
+      {
         path: 'login/:logout',
         component: LoginComponent,
       },
