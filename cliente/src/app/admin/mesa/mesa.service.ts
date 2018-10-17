@@ -22,4 +22,8 @@ export class MesaService {
     destroy(id) {
         return this.http.delete(this.base + 'mesas/' + id);
     }
+
+    mesas_dis(id_h){
+        return this.http.get(this.base + 'mesas-disponibles/'+id_h);
+    }
 }

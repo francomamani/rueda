@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>Agenda</nb-card-header>
+      <nb-card-body>
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+            <tr>
+              <th>N.</th>
+              <th>Empresa Solicitante</th>
+              <th>Empresa Solicitada</th>
+              <th>Horario</th>
+              <th>Tipo</th>
+              <th>Estado</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let agenda of agendas; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{agenda.empresa1.nombre}}</td>
+              <td>{{agenda.empresa2.nombre}}</td>
+              <td>{{aganda.horario}}</td>
+              <td class="text-center">
+                <span *ngIf="agenda.tipo_asignacion === 'pre_agendado'" class="text-success">Pre Agendado</span>
+                <span *ngIf="agenda.tipo_asignacion === 'administracion'" class="text-info">Administración</span>
+                <span *ngIf="agenda.tipo_asignacion === 'cita_de_contingencia'" class="text-danger">Cita de Contingencia</span>
+              </td>
+              <td class="text-center">
+                <span *ngIf="agenda.estado === 'aceptado'" class="text-success">Aceptado</span>
+                <span *ngIf="agenda.estado === 'rechazado'" class="text-danger">Rechazado</span>
+                <span *ngIf="agenda.estado === 'pendiente'" class="text-warning">Pendiente</span>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

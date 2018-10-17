@@ -20,6 +20,10 @@ import {HorariosOcupadosIndexComponent} from '../shared/horarios-ocupados/horari
 import {ParticipanteComponent} from '../shared/participante/participante.component';
 import {SolicitudSalienteComponent} from '../shared/solicitud-saliente/solicitud-saliente.component';
 import {SolicitudEntranteComponent} from '../shared/solicitud-entrante/solicitud-entrante.component';
+import {AgendaComponent} from './agenda/agenda.component';
+import {AgendaCreateComponent} from './agenda/agenda-create-admin/agenda-create.component';
+import {AgendaIndexComponent} from './agenda/agenda-index/agenda-index.component';
+import {AgendaCreateContingenciaComponent} from './agenda/agenda-create-contingencia/agenda-create-contingencia.component';
 
 const routes: Routes = [
   {
@@ -116,6 +120,25 @@ const routes: Routes = [
               },
           ],
       },
+
+    {
+        path: 'agenda',
+        component: AgendaComponent,
+        children: [
+            {
+                path: 'listar',
+                component: AgendaIndexComponent,
+            },
+            {
+                path: 'crear-admin',
+                component: AgendaCreateComponent,
+            },
+            {
+                path: 'crear-contingencia',
+                component: AgendaCreateContingenciaComponent,
+            },
+        ],
+    },
       {
         path: '',
         redirectTo: 'rubro',

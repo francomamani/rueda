@@ -26,6 +26,10 @@ import { ReunionComponent } from './reunion/reunion.component';
 import { ReunionCreateComponent } from './reunion/reunion-create/reunion-create.component';
 import { ReunionIndexComponent } from './reunion/reunion-index/reunion-index.component';
 import {EmpresaComponent} from './empresa/empresa.component';
+import { AgendaComponent } from './agenda/agenda.component';
+import { AgendaIndexComponent } from './agenda/agenda-index/agenda-index.component';
+import { AgendaCreateComponent } from './agenda/agenda-create-admin/agenda-create.component';
+import { AgendaCreateContingenciaComponent } from './agenda/agenda-create-contingencia/agenda-create-contingencia.component';
 
 @NgModule({
   imports: [
@@ -53,6 +57,10 @@ import {EmpresaComponent} from './empresa/empresa.component';
                  ReunionComponent,
                  ReunionCreateComponent,
                  ReunionIndexComponent,
+                 AgendaComponent,
+                 AgendaIndexComponent,
+                 AgendaCreateComponent,
+                 AgendaCreateContingenciaComponent,
   ],
   providers: [ RubroService, DatePipe],
 })

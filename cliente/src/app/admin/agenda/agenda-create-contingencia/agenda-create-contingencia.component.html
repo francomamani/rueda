@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>Nueva Cita de Contingencia</nb-card-header>
+      <nb-card-body>
+        <form (submit)="store()" role="form" [formGroup]="agendaGroup" *ngIf="empresas !== null && horarios!=null && mesas!=null">
+          <div class="row">
+            <div class="col-sm-6 form-group">
+              <label>Empresa Solicitante</label>
+              <select name="empresa_solicitante_id" formControlName="empresa_solicitante_id" class="form-control">
+                <option [value]="empresa.empresa_id" *ngFor="let empresa of empresas">{{ empresa.nombre }}</option>
+              </select>
+            </div>
+            <div class="col-sm-6 form-group">
+              <label>Empresa Demandada</label>
+              <select name="empresa_demandada_id" formControlName="empresa_demandada_id" class="form-control">
+                <option [value]="empresa.empresa_id" *ngFor="let empresa of empresas">{{ empresa.nombre }}</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 form-group">
+              <label>Horarios</label>
+              <select name="horario_id" formControlName="horario_id" class="form-control">
+                <option [value]="horario.horario_id" *ngFor="let horario of horarios">{{ horario.inicio }} - {{horario.fin}}</option>
+              </select>
+            </div>
+            <div class="col-sm-6 form-group">
+              <label>Mesas</label>
+              <select name="mesa_id" formControlName="mesa_id" class="form-control">
+                <option [value]="mesa.mesa_id" *ngFor="let mesa of mesas">{{ mesa.numero }}</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

@@ -1,14 +1,16 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environments/environment.prod';
 
 @Injectable({
-  providedIn: 'root',
+    providedIn: 'root',
 })
 export class HorarioService {
 
-  base = environment.base;
-  constructor(private http: HttpClient) { }
+    base = environment.base;
+
+    constructor(private http: HttpClient) {
+    }
 
     index() {
         return this.http.get(this.base + 'horarios');
@@ -21,7 +23,12 @@ export class HorarioService {
     update(req, id) {
         return this.http.put(this.base + 'horarios/' + id, req);
     }
+
     destroy(id) {
         return this.http.delete(this.base + 'horarios/' + id);
+    }
+
+    horarios_disponibles(id1, id2) {
+        return this.http.get(this.base + 'horarios-disponibles/' + id1 + '/' + id2);
     }
 }

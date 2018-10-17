@@ -63,4 +63,26 @@ export const ADMIN_ITEMS: NbMenuItem[] = [
             },
         ],
     },
+    {
+        title: 'Agenda',
+        icon: 'nb-heart',
+        link: '/admin/agenda',
+        children: [
+            {
+                title: 'Lista de Agenda',
+                icon: 'nb-search',
+                link: '/admin/agenda/listar',
+            },
+            {
+                title: 'Crear Cita de Administración',
+                icon: 'nb-plus',
+                link: '/admin/agenda/crear-admin',
+            },
+            {
+                title: 'Crear Cita de Contingencia',
+                icon: 'nb-plus',
+                link: '/admin/agenda/crear-contingencia',
+            },
+        ],
+    },
 ];
