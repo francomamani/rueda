@@ -13,11 +13,6 @@
         <td><strong>{{empresa.nombre}}</strong></td>
       </tr>
       <tr>
-        <td>Rubro</td>
-        <td *ngIf="empresa.rubro.nombre !== undefined "><strong>{{empresa.rubro.nombre}}</strong></td>
-        <td *ngIf="empresa.rubro.nombre === undefined "><strong>{{empresa.rubro}}</strong></td>
-      </tr>
-      <tr>
         <td>Inscripción</td>
         <td><strong>{{empresa.created_at | date: 'dd-MM-yyy HH:mm:ss'}}</strong></td>
       </tr>
