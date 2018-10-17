@@ -19,6 +19,7 @@
               <th>Acciones</th>
               <th>N.</th>
               <th>Empresa</th>
+              <th>NIT</th>
               <th>Telefono</th>
               <th><i class="fa fa-user" title="Maximo de Participantes"></i></th>
               <th>Especial</th>
@@ -38,6 +39,7 @@
               </td>
               <td>{{ i + 1 }}</td>
               <td><a (click)="info(empresa)" class="info">{{empresa.nombre}}</a></td>
+              <td>{{empresa.nit}}</td>
               <td>{{empresa.telefono}}</td>
               <td>{{empresa.max_participantes}}</td>
               <td class="text-center">
