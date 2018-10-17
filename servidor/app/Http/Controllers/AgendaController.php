@@ -97,7 +97,7 @@ class AgendaController extends Controller
         $agendas = Agenda::where('horario_id', $horario_id)->get();
         $mesas_ocupadas_id = [];
         foreach ($agendas as $agenda) {
-            array_push($mesas_ocupadas_id, $agendas->mesa_id);
+            array_push($mesas_ocupadas_id, $agenda->mesa_id);
         }
         $mesas_libres = Mesa::all()->except($mesas_ocupadas_id);
         return response()->json($mesas_libres, 200);

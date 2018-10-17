@@ -38,3 +38,15 @@ $white: #eee;
 .btn-login:active {
   box-shadow: none;
 }
+a.create-account {
+  display: block;
+  margin-top: 1em;
+  padding: .5em 1em;
+  color: $dark-primary;
+  text-decoration: underline;
+  cursor: pointer;
+  text-align: right;
+}
+a.create-account:hover {
+  color: $primary;
+}
