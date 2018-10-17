@@ -48,7 +48,7 @@ export const ADMIN_ITEMS: NbMenuItem[] = [
     },
     {
         title: 'Agenda',
-        icon: 'nb-heart',
+        icon: 'nb-compose',
         link: '/admin/agenda',
         children: [
             {
@@ -67,5 +67,10 @@ export const ADMIN_ITEMS: NbMenuItem[] = [
                 link: '/admin/agenda/crear-contingencia',
             },
         ],
+    },
+    {
+        title: 'Reporte',
+        icon: 'nb-bar-chart',
+        link: '/admin/reportes',
     },
 ];

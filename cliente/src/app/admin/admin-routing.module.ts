@@ -24,6 +24,7 @@ import {AgendaComponent} from './agenda/agenda.component';
 import {AgendaCreateComponent} from './agenda/agenda-create-admin/agenda-create.component';
 import {AgendaIndexComponent} from './agenda/agenda-index/agenda-index.component';
 import {AgendaCreateContingenciaComponent} from './agenda/agenda-create-contingencia/agenda-create-contingencia.component';
+import {ReportesComponent} from './reportes/reportes.component';
 import {UsuarioEditComponent} from '../shared/usuario-edit/usuario-edit.component';
 
 const routes: Routes = [
@@ -143,6 +144,10 @@ const routes: Routes = [
                 component: AgendaCreateContingenciaComponent,
             },
         ],
+    },
+    {
+        path: 'reportes',
+        component: ReportesComponent,
     },
       {
         path: '',
