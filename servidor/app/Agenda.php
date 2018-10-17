@@ -13,6 +13,7 @@ class Agenda extends Model
     protected $fillable = [
         'empresa_solicitante_id',
         'empresa_demandada_id',
+        'mesa_id',
         'horario_id',
         'estado',
         'tipo_asignacion',
