@@ -5,7 +5,11 @@
         Reuniones Agendadas
       </nb-card-header>
       <nb-card-body>
-        <div class="table-responsive">
+        <div *ngIf="reuniones !== null && reuniones.length === 0" class="alerta">
+          No existen reuniones agendadas
+          <br><br>
+        </div>
+        <div class="table-responsive" *ngIf="reuniones !== null && reuniones.length > 0">
           <table class="table table-hover">
             <thead>
             <tr>
