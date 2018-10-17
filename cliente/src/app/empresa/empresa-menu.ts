@@ -20,6 +20,11 @@ export const EMPRESA_ITEMS: NbMenuItem[] = [
     link: '/empresa/mi-agenda/empresas-registradas',
   },
   {
+    title: 'Crear una cita',
+    icon: 'nb-paper-plane',
+    link: '/empresa/mi-agenda/crear',
+  },
+  {
     title: 'Solicitudes Salientes',
     icon: 'nb-paper-plane',
     link: '/empresa/mi-agenda/solicitudes-salientes',

@@ -17,4 +17,8 @@ export class AgendaService {
   solicitudesEntrantes(empresa_id) {
     return this.http.get(this.base + 'solicitudes-entrantes/' + empresa_id);
   }
+
+  store(req) {
+      return this.http.post(this.base + 'agendas', req);
+  }
 }

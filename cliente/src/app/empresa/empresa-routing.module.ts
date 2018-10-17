@@ -13,6 +13,7 @@ import {ReunionesAgendadasComponent} from './agenda/reuniones-agendadas/reunione
 import {EvaluacionGeneralComponent} from './evaluacion-general/evaluacion-general.component';
 import {EmpresasRegistradasComponent} from './agenda/empresas-registradas/empresas-registradas.component';
 import {SolicitudSalienteComponent} from '../shared/solicitud-saliente/solicitud-saliente.component';
+import {AgendaCreateComponent} from './agenda/agenda-create/agenda-create.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
           {
             path: 'reuniones-agendadas',
             component: ReunionesAgendadasComponent,
+          },
+          {
+              path: 'crear',
+              component: AgendaCreateComponent,
           }, {
             path: '',
             redirectTo: 'reuniones-agendadas',
