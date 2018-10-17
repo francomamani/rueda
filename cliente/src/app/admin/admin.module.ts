@@ -29,6 +29,11 @@ import { AgendaComponent } from './agenda/agenda.component';
 import { AgendaIndexComponent } from './agenda/agenda-index/agenda-index.component';
 import { AgendaCreateComponent } from './agenda/agenda-create-admin/agenda-create.component';
 import { AgendaCreateContingenciaComponent } from './agenda/agenda-create-contingencia/agenda-create-contingencia.component';
+import { ReportesComponent } from './reportes/reportes.component';
+import {ChartModule} from 'angular2-chartjs';
+import {NgxEchartsModule} from 'ngx-echarts';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
+import {LeafletModule} from '@asymmetrik/ngx-leaflet';
 
 @NgModule({
   imports: [
@@ -41,6 +46,10 @@ import { AgendaCreateContingenciaComponent } from './agenda/agenda-create-contin
     ReactiveFormsModule,
     SharedModule,
     AngularDateTimePickerModule,
+      ChartModule,
+      NgxEchartsModule,
+      NgxChartsModule,
+      LeafletModule,
   ],
   declarations: [RubroComponent,
                  AdminComponent,
@@ -59,6 +68,7 @@ import { AgendaCreateContingenciaComponent } from './agenda/agenda-create-contin
                  AgendaIndexComponent,
                  AgendaCreateComponent,
                  AgendaCreateContingenciaComponent,
+                 ReportesComponent,
   ],
   providers: [ RubroService, DatePipe],
 })

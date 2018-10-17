@@ -20,7 +20,7 @@ export class SolicitudEntranteComponent implements OnInit {
               private modalService: NgbModal,
               private empresaService: EmpresaService,
               private route: ActivatedRoute,
-              private authService: AuthService,) {
+              private authService: AuthService ) {
 
     this.route.params.subscribe(params => {
       if (params.empresa_id) {
@@ -58,7 +58,7 @@ export class SolicitudEntranteComponent implements OnInit {
       this.datos = {
         agenda_id: id_agenda,
         estado: 'aceptado',
-      }
+      };
       this.agendaService.cambiarEstado(this.datos)
         .subscribe((res: any) => {
           this.cargar();
