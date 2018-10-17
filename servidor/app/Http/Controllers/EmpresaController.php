@@ -182,7 +182,7 @@ class EmpresaController extends Controller
                         ->orWhere('oferta', 'like', '%'.$search.'%')
                         ->orWhere('demanda', 'like', '%'.$search.'%');
                 })
-                ->get();1
+                ->get();
         }
         return response()->json($empresas, 200);
     }
