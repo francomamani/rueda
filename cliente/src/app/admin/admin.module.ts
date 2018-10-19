@@ -34,6 +34,9 @@ import {ChartModule} from 'angular2-chartjs';
 import {NgxEchartsModule} from 'ngx-echarts';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 import {LeafletModule} from '@asymmetrik/ngx-leaflet';
+import { EvaluacionGeneralComponent } from './reportes/evaluacion-general/evaluacion-general.component';
+import { ReunionesComponent } from './reportes/reuniones/reuniones.component';
+import {GoogleChartsModule} from 'angular-google-charts';
 
 @NgModule({
   imports: [
@@ -50,6 +53,7 @@ import {LeafletModule} from '@asymmetrik/ngx-leaflet';
       NgxEchartsModule,
       NgxChartsModule,
       LeafletModule,
+      GoogleChartsModule,
   ],
   declarations: [RubroComponent,
                  AdminComponent,
@@ -69,6 +73,8 @@ import {LeafletModule} from '@asymmetrik/ngx-leaflet';
                  AgendaCreateComponent,
                  AgendaCreateContingenciaComponent,
                  ReportesComponent,
+                 EvaluacionGeneralComponent,
+                 ReunionesComponent,
   ],
   providers: [ RubroService, DatePipe],
 })

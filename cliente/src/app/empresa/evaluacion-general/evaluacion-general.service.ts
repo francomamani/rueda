@@ -17,4 +17,8 @@ export class EvaluacionGeneralService {
   evaluacionRegistrada(empresa_id) {
     return this.http.get(this.base + 'evaluacion-registrada/' + empresa_id);
   }
+
+  reporteGeneral(parametro) {
+    return this.http.get(this.base + 'reporte-general/' + parametro);
+  }
 }

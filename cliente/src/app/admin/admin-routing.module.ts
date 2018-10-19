@@ -26,6 +26,8 @@ import {AgendaIndexComponent} from './agenda/agenda-index/agenda-index.component
 import {AgendaCreateContingenciaComponent} from './agenda/agenda-create-contingencia/agenda-create-contingencia.component';
 import {ReportesComponent} from './reportes/reportes.component';
 import {UsuarioEditComponent} from '../shared/usuario-edit/usuario-edit.component';
+import {ReunionesComponent} from './reportes/reuniones/reuniones.component';
+import {EvaluacionGeneralComponent} from './reportes/evaluacion-general/evaluacion-general.component';
 
 const routes: Routes = [
   {
@@ -148,6 +150,13 @@ const routes: Routes = [
     {
         path: 'reportes',
         component: ReportesComponent,
+        children: [{
+          path: 'reuniones',
+          component: ReunionesComponent,
+        }, {
+          path: 'evaluaciones-generales',
+          component: EvaluacionGeneralComponent,
+        }],
     },
       {
         path: '',

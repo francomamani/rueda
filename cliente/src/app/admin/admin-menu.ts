@@ -71,6 +71,15 @@ export const ADMIN_ITEMS: NbMenuItem[] = [
     {
         title: 'Reporte',
         icon: 'nb-bar-chart',
-        link: '/admin/reportes',
+        children: [
+        {
+          title: 'Reuniones',
+          icon: 'nb-bar-chart',
+          link: '/admin/reportes/reuniones',
+        }, {
+          title: 'Evaluaciones Generales',
+          icon: 'nb-bar-chart',
+          link: '/admin/reportes/evaluaciones-generales',
+        }],
     },
 ];

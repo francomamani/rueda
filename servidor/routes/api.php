@@ -43,8 +43,7 @@ Route::get('empresa-logo/{empresa_id}', 'EmpresaController@logo');
 Route::get('usuario-logo', 'UsuarioController@logo');
 Route::get('load-logo/{tipo}', 'UsuarioController@loadLogo');
 
-
-
+Route::get('reporte-general/{parametro}', 'EvaluacionGeneralController@reporteGeneral');
 
 
 

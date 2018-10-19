@@ -3,6 +3,7 @@ import {FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms';
 import {EvaluacionGeneralService} from './evaluacion-general.service';
 import {NbToastrService} from '@nebular/theme';
 import {AuthService} from '../../auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'ngx-evaluacion-general',
@@ -41,6 +42,7 @@ export class EvaluacionGeneralComponent implements OnInit {
   constructor(private fb: FormBuilder,
               private toastr: NbToastrService,
               private authService: AuthService,
+              private router: Router,
               private evaluacionGeneralService: EvaluacionGeneralService) {
     this.empresa_id = this.authService.getUsuario().empresa_id;
     this.evaluacionGeneralService.evaluacionRegistrada(this.empresa_id)
@@ -71,11 +73,12 @@ export class EvaluacionGeneralComponent implements OnInit {
   store() {
     this.evaluacionGeneralService.store(this.evaluacionGroup.value)
       .subscribe((res: any) => {
-        if (res.data === null) {
+        if (res.mensaje === 'La empresa ya lleno la evaluacion general') {
           this.toastr.danger(res.mensaje, 'Error');
         } else {
           this.toastr.success(res.mensaje, 'Registro exitoso');
         }
+        this.router.navigate(['/empresa']);
       });
   }
 }
