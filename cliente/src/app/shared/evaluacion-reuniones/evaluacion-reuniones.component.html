@@ -23,7 +23,7 @@
           <div class="row">
             <div class="col-sm-6 form-group">
               <select name="uno" formControlName="uno" class="form-control">
-                <option [value]="empresa.empresa_id" *ngFor="let empresa of empresas">{{ empresa.nombre }}</option>
+                <option [value]="empresa.nombre" *ngFor="let empresa of empresas">{{ empresa.nombre }}</option>
               </select>
             </div>
           </div>
@@ -37,7 +37,6 @@
                 <input formControlName="dos" class="form-check-input" type="radio" name="dos" value="si">Si</label>
               <label class="form-check-inline">
                 <input formControlName="dos" class="form-check-input" type="radio" name="dos" value="no">No</label>
-
             </div>
           </div>
         </nb-card-body>
@@ -78,46 +77,13 @@
           <div class="row">
             <div class="col-sm-4 form-group">
               <label class="form-check-inline">
-                <input formControlName="cuatro" class="form-check-input" type="radio" name="cuatro" value="Exportacion">Exportación</label>
+                <input formControlName="cuatro" class="form-check-input" type="radio" name="cuatro" value="Productos">Productos</label>
             </div>
             <div class="col-sm-4 form-group">
               <label class="form-check-inline">
-                <input formControlName="cuatro" class="form-check-input" type="radio" name="cuatro" value="Importacion">Importacion</label>
-            </div>
-            <div class="col-sm-4 form-group">
-              <label class="form-check-inline">
-                <input formControlName="cuatro" class="form-check-input" type="radio" name="cuatro" value="Joint Venture">Joint Venture</label>
+                <input formControlName="cuatro" class="form-check-input" type="radio" name="cuatro" value="Servicios">Servicios</label>
             </div>
           </div>
-          <div class="row">
-            <div class="col-sm-4 form-group">
-              <label class="form-check-inline">
-                <input formControlName="cuatro" class="form-check-input" type="radio" name="cuatro" value="Representacion/Distribucion">Representación / Distribución</label>
-            </div>
-            <div class="col-sm-4 form-group">
-              <label class="form-check-inline">
-                <input formControlName="cuatro" class="form-check-input" type="radio" name="cuatro" value="Sociedad">Sociedad</label>
-            </div>
-            <div class="col-sm-4 form-group">
-              <label class="form-check-inline">
-                <input formControlName="cuatro" class="form-check-input" type="radio" name="cuatro" value="Asesoramiento y Asistencia Tecnica">Asesoramiento y Asistencia Técnica</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-4 form-group">
-              <label class="form-check-inline">
-                <input formControlName="cuatro" class="form-check-input" type="radio" name="cuatro" value="Produccion">Producción</label>
-            </div>
-            <div class="col-sm-4 form-group">
-              <label class="form-check-inline">
-                <input formControlName="cuatro" class="form-check-input" type="radio" name="cuatro" value="Servicio">Servicio</label>
-            </div>
-            <div class="col-sm-4 form-group">
-              <label class="form-check-inline">
-                <input formControlName="cuatro" class="form-check-input" type="radio" name="cuatro" value="Otro">Otro</label>
-            </div>
-          </div>
-            <br>
           <div class="row">
             <div class="col-sm-12 form-group">
               <label><b>3.2. Monto estimado de la operación (en dólares americanos)</b></label>

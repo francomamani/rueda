@@ -29,4 +29,16 @@ class Reunion extends Model
         return $this->belongsTo(Mesa::class, 'mesa_id');
     }
 
+    public function evaluacionReuniones() {
+        return $this->hasMany(EvaluacionReunion::class, 'reunion_id');
+    }
+
+    public static function boot()
+    {
+        parent::boot();
+        static::deleting(function($padre) {
+            $padre->evaluacionReuniones()->delete();
+        });
+    }
+
 }

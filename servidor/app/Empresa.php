@@ -49,6 +49,9 @@ class Empresa extends Model
         return $this->hasOne(EvaluacionGeneral::class, 'empresa_id');
     }
 
+    public function evaluacionReuniones() {
+        return $this->hasMany(EvaluacionGeneral::class, 'empresa_id');
+    }
     public static function boot()
     {
         parent::boot();
@@ -56,6 +59,8 @@ class Empresa extends Model
             $padre->participantes()->delete();
             $padre->horariosOcupados()->delete();
             $padre->evaluacionGeneral()->delete();
+            $padre->evaluacionGeneral()->delete();
+            $padre->evaluacionReuniones()->delete();
         });
     }
 }

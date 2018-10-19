@@ -33,7 +33,11 @@
               <td>{{reunion.inicio}} - {{reunion.fin}}</td>
               <td>{{reunion.resultado}}</td>
               <td>
-                <button (click)="go(reunion.reunion_id)">Reunion</button>
+                <button
+                  class="btn btn-sm btn-success"
+                  (click)="go(reunion.reunion_id)">
+                  <i class="fa fa-list"></i>
+                </button>
               </td>
             </tr>
             </tbody>
