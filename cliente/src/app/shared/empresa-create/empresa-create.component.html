@@ -31,7 +31,7 @@
                 </div>
               </div>
               <div class="col-sm-4 form-group">
-                <label for="nit">NIT</label>
+                <label for="nit">NIT (Se usará también como tu contraseña)</label>
                 <input type="text" id="nit" class="form-control" formControlName="nit" name="nit" placeholder="NIT">
                 <div class="alert alert-danger"
                      *ngIf="empresaGroup.get('nit').status === 'INVALID'&& empresaGroup.get('nit').dirty">

@@ -5,9 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ab89094b-3109-471f-8ab0-f44ae9596c5a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/login/login.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cliente/src/app/shared/empresa-create/empresa-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/shared/empresa-create/empresa-create.component.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -121,7 +118,7 @@
           <entry key="cell" value="22" />
           <entry key="cell_2" value="88" />
           <entry key="env" value="2" />
-          <entry key="html" value="13654" />
+          <entry key="html" value="13754" />
           <entry key="json" value="9" />
           <entry key="php" value="9588" />
           <entry key="scss" value="2481" />
@@ -133,7 +130,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="2" />
-          <entry key="HTML" value="13672" />
+          <entry key="HTML" value="13772" />
           <entry key="JSON" value="9" />
           <entry key="PHP" value="9588" />
           <entry key="PLAIN_TEXT" value="5" />
@@ -154,8 +151,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/empresa-create/empresa-create.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="60" selection-start-column="60" selection-end-column="60" />
+            <state relative-caret-position="269">
+              <caret line="33" column="53" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#nb-card-body#0;n#nb-card#1;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" />
               </folding>
@@ -167,7 +164,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>reunion</find>
       <find>max_par</find>
       <find>number</find>
       <find>telf</find>
@@ -197,6 +193,7 @@
       <find>oferta</find>
       <find>img</find>
       <find>emrpesa</find>
+      <find>nit</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -465,12 +462,12 @@
       <workItem from="1539792259594" duration="6743000" />
       <workItem from="1539813182487" duration="1611000" />
       <workItem from="1539891127220" duration="14150000" />
-      <workItem from="1539956180129" duration="7640000" />
+      <workItem from="1539956180129" duration="7823000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170216000" />
+    <option name="totallyTimeSpent" value="170399000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="0" />
@@ -929,8 +926,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/empresa-create/empresa-create.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="60" selection-start-column="60" selection-end-column="60" />
+        <state relative-caret-position="269">
+          <caret line="33" column="53" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
           <folding>
             <element signature="n#div#0;n#div#0;n#nb-card-body#0;n#nb-card#1;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" />
           </folding>
