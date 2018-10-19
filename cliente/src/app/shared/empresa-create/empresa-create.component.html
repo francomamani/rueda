@@ -1,4 +1,4 @@
-<div class="empresa-container">
+<div [class.empresa-container]="router.url === '/auth/signup'">
   <div class="row">
     <div class="col-md-12">
       <form (submit)="store()"

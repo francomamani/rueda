@@ -26,7 +26,7 @@ export class LoginComponent {
           if (authService.isLoggedIn()) {
             if (param.logout === 'logout') {
               this.authService.logout();
-              this.router.navigate(['/login']);
+              this.router.navigate(['/auth']);
             } else {
               if (authService.getTipoUsuario() === 'administrador') {
                 this.router.navigate(['/admin']);
