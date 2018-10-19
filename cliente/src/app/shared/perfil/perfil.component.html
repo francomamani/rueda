@@ -4,7 +4,8 @@
       <div class="col-md-12">
         <nb-card>
           <nb-card-body class="perfil-acciones">
-            <img src="https://t3.ftcdn.net/jpg/01/71/05/64/240_F_171056472_EtbY5iv7f1lxLFZUHt1N68FFP09cE7LJ.jpg" alt="">
+            <img src="{{logo}}{{usuario.empresa_id}}" [alt]="usuario.nombre" *ngIf="usuario.tipo_usuario === 'empresa'">
+            <img src="{{usuarioLogo}}" alt="{{usuario.nombres}} {{usuario.apellidos}}" *ngIf="usuario.tipo_usuario === 'administrador'">
             <h4>{{ usuario.nombres }} {{ usuario.apellidos }}</h4>
             <button *ngIf="usuario.tipo_usuario === 'administrador'" class="btn-perfil" routerLink="/admin/actualizar-usuario/{{usuario.usuario_id}}">Editar Usuario</button>
             <button *ngIf="usuario.tipo_usuario === 'empresa'" class="btn-perfil" routerLink="/empresa/actualizar-usuario/{{usuario.usuario_id}}">Editar Usuario</button>

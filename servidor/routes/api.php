@@ -37,9 +37,9 @@ Route::get('solicitudes-salientes/{empresa_id}', 'AgendaController@solicitudesSa
 Route::get('solicitudes-entrantes/{empresa_id}', 'AgendaController@solicitudesEntrantes');
 Route::get('mesas-disponibles/{horario_id}', 'AgendaController@mesasDisponibles');
 Route::post('cambiar-estado', 'AgendaController@cambiarEstado');
-
-
-
+Route::get('empresa-logo/{empresa_id}', 'EmpresaController@logo');
+Route::get('usuario-logo', 'UsuarioController@logo');
+Route::get('load-logo/{tipo}', 'UsuarioController@loadLogo');
 
 
 

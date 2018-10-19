@@ -18,9 +18,10 @@ import {NbToastrModule} from '@nebular/theme';
 import { LoginComponent } from './login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SharedModule} from './shared/shared.module';
+import { AutenticacionComponent } from './autenticacion/autenticacion.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent],
+  declarations: [AppComponent, LoginComponent, AutenticacionComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

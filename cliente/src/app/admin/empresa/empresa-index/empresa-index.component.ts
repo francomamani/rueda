@@ -5,6 +5,7 @@ import {EmpresaModalComponent} from '../../../shared/empresa-modal/empresa-modal
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {RubroService} from '../../rubro/rubro.service';
+import {environment} from '../../../../environments/environment.prod';
 
 @Component({
   selector: 'ngx-empresa-index',
@@ -16,6 +17,7 @@ export class EmpresaIndexComponent implements OnInit {
   buscarGroup: FormGroup;
   empresas: any = null;
   rubros: any = null;
+  logo = environment.base + environment.empresa_logo;
   constructor(private empresaService: EmpresaService,
               private rubroService: RubroService,
               private modalService: NgbModal,

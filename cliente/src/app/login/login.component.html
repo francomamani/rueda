@@ -1,18 +1,22 @@
+<img [src]="campo_ferial" alt="Campo Ferial" height="72" class="logo-left-top">
+<img [src]="expoteco" alt="Expoteco" height="72" class="logo-right-top">
 <div class="row">
-  <div class="offset-md-2 col-md-8 col-sm-12">
+  <div class="col-sm-12">
     <form (submit)="login()" [formGroup]="loginGroup" role="form">
       <legend class="legend-login">
         <h2><span>RUEDA</span>LOGIN</h2>
-        <i class="fa fa-user"></i>
+        <img [src]="logo" alt="Rueda de Negocios" height="94">
       </legend>
       <div class="form-group">
-        <input type="email" #email class="form-control" formControlName="email" name="email" id="email" placeholder="Correo Electrónico">
+        <label for="email">Correo Electronico</label>
+        <input type="email" id="email" #email class="form-control" formControlName="email" name="email" id="email" placeholder="Correo Electrónico">
       </div>
       <div class="form-group">
-        <input type="password" class="form-control" formControlName="password" name="password" id="password" placeholder="Contraseña">
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" class="form-control" formControlName="password" name="password" id="password" placeholder="Contraseña">
       </div>
       <div class="text-center">
-        <button type="submit" class="btn-login">Ingresar</button>
+        <button type="submit" [disabled]="loginGroup.status === 'INVALID'" class="btn-login">Ingresar</button>
         <a routerLink="/auth/signup" class="create-account">No tengo una cuenta</a>
       </div>
     </form>

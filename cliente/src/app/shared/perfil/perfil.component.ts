@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {environment} from '../../../environments/environment.prod';
 
 @Component({
   selector: 'ngx-perfil',
@@ -8,6 +9,8 @@ import {Router} from '@angular/router';
 })
 export class PerfilComponent implements OnInit {
 
+  logo = environment.base + environment.empresa_logo;
+  usuarioLogo = environment.base + environment.usuario_logo;
   participantes: any = null;
   usuario = JSON.parse(atob(localStorage.getItem('rueda-usuario')));
   constructor(public router: Router) {

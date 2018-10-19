@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use App\Empresa;
 use App\Horario;
 use App\Mesa;
+use App\Participante;
 use App\Reunion;
 use App\Rubro;
 use App\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use phpDocumentor\Reflection\DocBlock\Tags\Return_;
 
 class EmpresaController extends Controller
 {
@@ -48,24 +50,66 @@ class EmpresaController extends Controller
             'password' => Hash::make($request->input('nit')),
         ];
 
-        $empresa = [
-            'rubro_id' => $request->input('rubro_id'),
-            'usuario_id' => Usuario::create($usuario)->usuario_id,
-            'nombre' => $request->input('nombre'),
-            'logo' => null,
-            'direccion' => $request->input('direccion'),
-            'telefono' => $request->input('telefono'),
-            'pagina_web' => $request->input('pagina_web'),
-            'ciudad_localidad' => $request->input('ciudad_localidad'),
-            'nit' => $request->input('nit'),
-            'representante_legal' => $request->input('representante_legal'),
-            'habilitado' => $request->input('habilitado'),
-            'max_participantes' => $request->input('max_participantes'),
-            'oferta' => $request->input('oferta'),
-            'demanda' => $request->input('demanda'),
-            'especial' => $request->input('especial'),
-        ];
+        if ($request->hasFile('logo')){
+            $path_logo = $request->file('logo')->store('logos');
+            $empresa = [
+                'rubro_id' => $request->input('rubro_id'),
+                'usuario_id' => Usuario::create($usuario)->usuario_id,
+                'nombre' => $request->input('nombre'),
+                'logo' => $path_logo,
+                'direccion' => $request->input('direccion'),
+                'telefono' => $request->input('telefono'),
+                'pagina_web' => $request->input('pagina_web'),
+                'ciudad_localidad' => $request->input('ciudad_localidad'),
+                'nit' => $request->input('nit'),
+                'representante_legal' => $request->input('representante_legal'),
+                'habilitado' => $request->input('habilitado'),
+                'max_participantes' => $request->input('max_participantes'),
+                'oferta' => $request->input('oferta'),
+                'demanda' => $request->input('demanda'),
+                'especial' => $request->input('especial'),
+            ];
+        } else {
+            $empresa = [
+                'rubro_id' => $request->input('rubro_id'),
+                'usuario_id' => Usuario::create($usuario)->usuario_id,
+                'nombre' => $request->input('nombre'),
+                'logo' => null,
+                'direccion' => $request->input('direccion'),
+                'telefono' => $request->input('telefono'),
+                'pagina_web' => $request->input('pagina_web'),
+                'ciudad_localidad' => $request->input('ciudad_localidad'),
+                'nit' => $request->input('nit'),
+                'representante_legal' => $request->input('representante_legal'),
+                'habilitado' => $request->input('habilitado'),
+                'max_participantes' => $request->input('max_participantes'),
+                'oferta' => $request->input('oferta'),
+                'demanda' => $request->input('demanda'),
+                'especial' => $request->input('especial'),
+            ];
+        }
         $empresaModel = Empresa::create($empresa);
+        $participante1 = [
+            'empresa_id' => $empresaModel->empresa_id,
+            'nombres' => $request->input('p1_nombres'),
+            'apellidos' => $request->input('p1_apellidos'),
+            'carnet' => $request->input('p1_carnet'),
+            'celular' => $request->input('p1_celular'),
+            'cargo' => $request->input('p1_cargo'),
+        ];
+        Participante::create($participante1);
+        $p2_nombres =$request->input('p2_nombres');
+        if (strlen($p2_nombres) > 0) {
+            $participante2 = [
+                'empresa_id' => $empresaModel->empresa_id,
+                'nombres' => $request->input('p2_nombres'),
+                'apellidos' => $request->input('p2_apellidos'),
+                'carnet' => $request->input('p2_carnet'),
+                'celular' => $request->input('p2_celular'),
+                'cargo' => $request->input('p2_cargo'),
+            ];
+            Participante::create($participante2);
+        }
         return response()->json($empresaModel, 201);
     }
 
@@ -185,5 +229,14 @@ class EmpresaController extends Controller
                 ->get();
         }
         return response()->json($empresas, 200);
+    }
+
+    public function logo($empresa_id) {
+        $logo_url = Empresa::find($empresa_id)->logo;
+        if(strlen($logo_url) > 0) {
+            return response()->file(storage_path('app/' . $logo_url));
+        } else {
+            return response()->file(storage_path('app/logos/empresa.png'));
+        }
     }
 }

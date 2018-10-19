@@ -84,4 +84,20 @@ class UsuarioController extends Controller
             'mensaje' => 'Usuario: ' . $usuario->nombre . ' eliminado exitosamente'
         ], 200);
     }
+
+    public function logo() {
+        return response()->file(storage_path('app/logos/usuario.png'));
+    }
+    public function loadLogo($tipo) {
+        $file = null;
+        switch ($tipo) {
+            case 'expoteco' :
+                $file = storage_path('app/logos/expoteco.png');
+                break;
+            case 'campo_ferial' :
+                $file = storage_path('app/logos/campo_ferial.png');
+                break;
+        }
+        return response()->file($file);
+    }
 }

@@ -3,6 +3,7 @@ import {AuthService} from '../auth.service';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {NbToastrService} from '@nebular/theme';
 import {ActivatedRoute, Router} from '@angular/router';
+import {environment} from '../../environments/environment.prod';
 
 @Component({
   selector: 'ngx-login',
@@ -12,6 +13,9 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class LoginComponent {
   @ViewChild('email') email;
   loginGroup: FormGroup;
+  logo = environment.base + environment.usuario_logo;
+  expoteco = environment.base + environment.load_logo + 'expoteco';
+  campo_ferial = environment.base + environment.load_logo + 'campo_ferial';
   constructor(private authService: AuthService,
               private toastr: NbToastrService,
               private router: Router,
@@ -22,7 +26,7 @@ export class LoginComponent {
           if (authService.isLoggedIn()) {
             if (param.logout === 'logout') {
               this.authService.logout();
-              this.router.navigate(['/auth/login']);
+              this.router.navigate(['/login']);
             } else {
               if (authService.getTipoUsuario() === 'administrador') {
                 this.router.navigate(['/admin']);

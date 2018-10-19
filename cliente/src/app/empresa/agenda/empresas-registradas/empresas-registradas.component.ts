@@ -4,6 +4,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {EmpresaService} from '../../../admin/empresa/empresa.service';
 import {EmpresaModalComponent} from '../../../shared/empresa-modal/empresa-modal.component';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {environment} from '../../../../environments/environment.prod';
 
 @Component({
   selector: 'ngx-empresas-registradas',
@@ -15,6 +16,7 @@ export class EmpresasRegistradasComponent implements OnInit {
   rubros: any = null;
   buscarGroup: FormGroup;
   empresas: any = null;
+  logo = environment.base + environment.empresa_logo;
   constructor(private rubroService: RubroService,
               private empresaService: EmpresaService,
               private modalService: NgbModal,

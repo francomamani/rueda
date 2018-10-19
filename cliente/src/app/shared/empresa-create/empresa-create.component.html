@@ -1,89 +1,238 @@
-<div class="row">
-  <div class="col-md-12">
-    <nb-card>
-      <nb-card-header>Registrar Empresa</nb-card-header>
-      <nb-card-body>
-<!--        <form action="" role="form">
-          <div class="row">
-            <div class="col-md-10 form-group">
-                <input type="email" class="form-control" name="" placeholder="Buscar...">
+<div class="empresa-container">
+  <div class="row">
+    <div class="col-md-12">
+      <form (submit)="store()"
+            role="form"
+            [formGroup]="empresaGroup"
+            *ngIf="rubros !== null">
+        <h1 class="signup-title">Registro de Empresa</h1>
+        <nb-card>
+          <nb-card-header>
+            Datos de la Empresa
+          </nb-card-header>
+          <nb-card-body>
+            <div class="row">
+              <div class="col-sm-4 form-group">
+                <label for="rubro_id">Lista de rubros</label>
+                <select name="rubro_id" id="rubro_id" formControlName="rubro_id" class="form-control">
+                  <option [value]="rubro.rubro_id" *ngFor="let rubro of rubros">{{ rubro.nombre }}</option>
+                </select>
+                <div class="alert alert-danger"
+                     *ngIf="empresaGroup.get('rubro_id').status === 'INVALID' && empresaGroup.get('rubro_id').dirty">
+                  <strong>Elija un rubro</strong>
+                </div>
+              </div>
+              <div class="col-sm-4 form-group">
+                <label for="nombre">Nombre de la empresa</label>
+                <input type="text" id="nombre" class="form-control" formControlName="nombre" name="nombre" placeholder="Empresa">
+                <div class="alert alert-danger"
+                     *ngIf="empresaGroup.get('nombre').status === 'INVALID' && empresaGroup.get('nombre').dirty">
+                  <strong>El nombre de la empresa es obligatorio</strong>
+                </div>
+              </div>
+              <div class="col-sm-4 form-group">
+                <label for="nit">NIT</label>
+                <input type="text" id="nit" class="form-control" formControlName="nit" name="nit" placeholder="NIT">
+                <div class="alert alert-danger"
+                     *ngIf="empresaGroup.get('nit').status === 'INVALID'&& empresaGroup.get('nit').dirty">
+                  <strong>Registrar el NIT es obligatorio</strong>
+                </div>
+              </div>
             </div>
-            <div class="col-md-2">
-              <button type="submit" class="btn btn-primary btn-full-width">
-                <i class="fa fa-search"></i> Buscar
-              </button>
+            <div class="row">
+              <div class="col-sm-4 form-group">
+                <label for="telefono">Telefono</label>
+                <input type="text" id="telefono" class="form-control" formControlName="telefono" name="telefono" placeholder="Telefono">
+                <div class="alert alert-danger"
+                     *ngIf="empresaGroup.get('telefono').status === 'INVALID' && empresaGroup.get('telefono').dirty">
+                  <strong>El numero de telefono es obligatorio</strong>
+                </div>
+              </div>
+              <div class="col-sm-4 form-group">
+                <label for="pagina_web">Pagina web (Opcional)</label>
+                <input type="url" id="pagina_web" class="form-control" formControlName="pagina_web" name="pagina_web" placeholder="Pagina Web">
+              </div>
+              <div class="col-sm-4 form-group">
+                <label for="ciudad_localidad">Ciudad/Localidad</label>
+                <input type="text" id="ciudad_localidad" class="form-control" formControlName="ciudad_localidad" name="ciudad_localidad" placeholder="Ciudad o Localidad">
+                <div class="alert alert-danger"
+                     *ngIf="empresaGroup.get('ciudad_localidad').status === 'INVALID' && empresaGroup.get('ciudad_localidad').dirty">
+                  <strong>Ingresa la ciudad o localidad de la empresa</strong>
+                </div>
+              </div>
             </div>
-          </div>
-        </form>-->
-        <form (submit)="store()"
-              role="form"
-              [formGroup]="empresaGroup"
-              *ngIf="rubros !== null">
-          <div class="row">
-            <div class="col-sm-4 form-group">
-              <select name="rubro_id" formControlName="rubro_id" class="form-control">
-                <option [value]="rubro.rubro_id" *ngFor="let rubro of rubros">{{ rubro.nombre }}</option>
-              </select>
+            <div class="row">
+              <div class="col-sm-6 form-group">
+                <label for="direccion">Direccion</label>
+                <input type="text" id="direccion" class="form-control" formControlName="direccion" name="direccion" placeholder="Direccion">
+                <div class="alert alert-danger"
+                     *ngIf="empresaGroup.get('direccion').status === 'INVALID' && empresaGroup.get('direccion').dirty">
+                  <strong>La direccion de la empresa es obligatoria</strong>
+                </div>
+              </div>
+              <div class="col-sm-6 form-group">
+                <label for="representante_legal">Representante legal</label>
+                <input type="text" id="representante_legal" class="form-control" formControlName="representante_legal" name="representante_legal" placeholder="Representante Legal">
+                <div class="alert alert-danger"
+                     *ngIf="empresaGroup.get('nombres').status === 'INVALID' && empresaGroup.get('nombres').dirty">
+                  <strong>El representante legal de la empresa es obligatoria</strong>
+                </div>
+              </div>
             </div>
-            <div class="col-sm-4 form-group">
-              <input type="text" class="form-control" formControlName="nombre" name="nombre" placeholder="Empresa">
+          </nb-card-body>
+        </nb-card>
+        <nb-card>
+          <nb-card-header>
+            Datos de Usuario
+          </nb-card-header>
+          <nb-card-body>
+            <div class="row">
+              <div class="col-sm-4 form-group">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" class="form-control" formControlName="email" name="email" placeholder="Correo Electronico">
+              </div>
+              <div class="col-sm-4 form-group" *ngIf="router.url !== '/auth/signup'">
+                <label for="max_participantes">Maximo de participantes</label>
+                <input type="number" id="max_participantes" class="form-control" formControlName="max_participantes" name="max_participantes" min="0" max="10" placeholder="Maximo de participantes">
+              </div>
+              <div class="col-sm-4 form-group">
+                <label for="nombres">Nombres del usuario</label>
+                <input type="text" id="nombres" class="form-control" formControlName="nombres" name="nombres" placeholder="Nombres">
+              </div>
+              <div class="col-sm-4 form-group">
+                <label for="apellidos">Apellidos del usuario</label>
+                <input type="text" id="apellidos" class="form-control" formControlName="apellidos" name="apellidos" placeholder="Apellidos">
+              </div>
             </div>
-            <div class="col-sm-4 form-group">
-              <input type="text" class="form-control" formControlName="direccion" name="direccion" placeholder="Direccion">
+          </nb-card-body>
+        </nb-card>
+        <nb-card>
+          <nb-card-header>
+            <span *ngIf="router.url !== '/auth/signup'">Tipo de Empresa y Habilitación</span>
+            <span *ngIf="router.url === '/auth/signup'">Subir logo (Opcional)</span>
+          </nb-card-header>
+          <nb-card-body>
+            <div class="row">
+              <div class="col-sm-4 form-group">
+                <input type="file" #logo title="Subir logo">
+              </div>
+              <div class="col-sm-4 form-group" *ngIf="router.url !== '/auth/signup'">
+                <nb-checkbox value=0 formControlName="especial" name="especial">Empresa Especial</nb-checkbox>
+              </div>
+              <div class="col-sm-4 form-group" *ngIf="router.url !== '/auth/signup'">
+                <nb-checkbox value=1 formControlName="habilitado" name="habilitado">Empresa Habilitada</nb-checkbox>
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-4 form-group">
-              <input type="text" class="form-control" formControlName="telefono" name="telefono" placeholder="Telefono">
+          </nb-card-body>
+        </nb-card>
+        <nb-card>
+          <nb-card-header>
+            Ofertas y Demandas Empresariales
+          </nb-card-header>
+          <nb-card-body>
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <label for="oferta">Oferta</label>
+                <textarea formControlName="oferta" id="oferta" name="oferta" class="form-control" cols="30" rows="7"
+                          placeholder="Que productos o servicios ofrece su empresa"></textarea>
+                <div class="alert alert-danger"
+                     *ngIf="empresaGroup.get('oferta').status === 'INVALID' && empresaGroup.get('oferta').dirty">
+                  <strong>La oferta de su producto es obligatoria</strong>
+                </div>
+              </div>
+              <div class="col-md-6 form-group">
+                <label for="demanda">Demanda</label>
+                <textarea formControlName="demanda" id="demanda" name="demanda" class="form-control" cols="30" rows="7"
+                          placeholder="Que productos o servicios necesita su empresa"></textarea>
+                <div class="alert alert-danger"
+                     *ngIf="empresaGroup.get('demanda').status === 'INVALID' && empresaGroup.get('demanda').dirty">
+                  <strong>La demanda de su producto es obligatoria</strong>
+                </div>
+              </div>
             </div>
-            <div class="col-sm-4 form-group">
-              <input type="url" class="form-control" formControlName="pagina_web" name="pagina_web" placeholder="Pagina Web">
+          </nb-card-body>
+        </nb-card>
+        <nb-card>
+          <nb-card-header>Registrar Participante 1 (Obligatorio)</nb-card-header>
+          <nb-card-body>
+            <div class="row">
+              <div class="col-sm-6 form-group">
+                <label for="p1_nombres">Nombres</label>
+                <input type="text" class="form-control" id="p1_nombres" formControlName="p1_nombres">
+                <div class="alert alert-danger"
+                     *ngIf="empresaGroup.get('p1_nombres').status === 'INVALID' && empresaGroup.get('p1_nombres').dirty">
+                  <strong>Los nombres son obligatorios</strong>
+                </div>
+              </div>
+              <div class="col-sm-6 form-group">
+                <label for="p1_apellidos">Apellidos</label>
+                <input type="text" class="form-control" id="p1_apellidos" formControlName="p1_apellidos">
+                <div class="alert alert-danger"
+                     *ngIf="empresaGroup.get('p1_apellidos').status === 'INVALID' && empresaGroup.get('p1_apellidos').dirty">
+                  <strong>Los apellidos son obligatorios</strong>
+                </div>
+              </div>
             </div>
-            <div class="col-sm-4 form-group">
-              <input type="text" class="form-control" formControlName="ciudad_localidad" name="ciudad_localidad" placeholder="Ciudad o Localidad">
+            <div class="row">
+              <div class="col-sm-4 form-group">
+                <label for="p1_carnet">Carnet</label>
+                <input type="text" class="form-control" id="p1_carnet" formControlName="p1_carnet">
+                <div class="alert alert-danger"
+                     *ngIf="empresaGroup.get('p1_carnet').status === 'INVALID' && empresaGroup.get('p1_carnet').dirty">
+                  <strong>El carnet del participante es obligatorio</strong>
+                </div>
+              </div>
+              <div class="col-sm-4 form-group">
+                <label for="p1_celular">Celular</label>
+                <input type="text" class="form-control" id="p1_celular" formControlName="p1_celular">
+                <div class="alert alert-danger"
+                     *ngIf="empresaGroup.get('p1_celular').status === 'INVALID' && empresaGroup.get('p1_celular').dirty">
+                  <strong>El celular del participante es obligatorio</strong>
+                </div>
+              </div>
+              <div class="col-sm-4 form-group">
+                <label for="p1_cargo">Cargo</label>
+                <input type="text" class="form-control" id="p1_cargo" formControlName="p1_cargo">
+                <div class="alert alert-danger"
+                     *ngIf="empresaGroup.get('p1_cargo').status === 'INVALID' && empresaGroup.get('p1_cargo').dirty">
+                  <strong>El cargo del participante es obligatorio</strong>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-4 form-group">
-              <input type="text" class="form-control" formControlName="nit" name="nit" placeholder="NIT">
+          </nb-card-body>
+        </nb-card>
+        <nb-card>
+          <nb-card-header>Registrar Participante 2 (Opcional)</nb-card-header>
+          <nb-card-body>
+            <div class="row">
+              <div class="col-sm-6 form-group">
+                <label for="p2_nombres">Nombres</label>
+                <input type="text" class="form-control" id="p2_nombres" formControlName="p2_nombres">
+              </div>
+              <div class="col-sm-6">
+                <label for="p2_apellidos">Apellidos</label>
+                <input type="text" class="form-control" id="p2_apellidos" formControlName="p2_apellidos">
+              </div>
             </div>
-            <div class="col-sm-4 form-group">
-              <input type="text" class="form-control" formControlName="representante_legal" name="representante_legal" placeholder="Representante Legal">
+            <div class="row">
+              <div class="col-sm-4 form-group">
+                <label for="p2_carnet">Carnet</label>
+                <input type="text" class="form-control" id="p2_carnet" formControlName="p2_carnet">
+              </div>
+              <div class="col-sm-4 form-group">
+                <label for="p2_celular">Celular</label>
+                <input type="text" class="form-control" id="p2_celular" formControlName="p2_celular">
+              </div>
+              <div class="col-sm-4">
+                <label for="p2_cargo">Cargo</label>
+                <input type="text" class="form-control" id="p2_cargo" formControlName="p2_cargo">
+              </div>
             </div>
-            <div class="col-sm-4 form-group">
-              <input type="email" class="form-control" formControlName="email" name="email" placeholder="Correo Electronico">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-4 form-group" *ngIf="router.url !== '/auth/signup'">
-                <input type="number" class="form-control" formControlName="max_participantes" name="max_participantes" min="0" max="10" placeholder="Maximo de participantes">
-            </div>
-            <div class="col-sm-4 form-group">
-              <input type="text" class="form-control" formControlName="nombres" name="nombres" placeholder="Nombres">
-            </div>
-            <div class="col-sm-4 form-group">
-              <input type="text" class="form-control" formControlName="apellidos" name="apellidos" placeholder="Apellidos">
-            </div>
-          </div>
-          <div class="row" *ngIf="router.url !== '/auth/signup'">
-            <div class="col-sm-6 form-group">
-              <nb-checkbox value=false formControlName="especial" name="especial">Empresa especial</nb-checkbox>
-            </div>
-            <div class="col-sm-6 form-group">
-              <nb-checkbox value=true formControlName="habilitado" name="habilitado">Habilitado</nb-checkbox>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 form-group">
-              <textarea formControlName="oferta" name="oferta" class="form-control" cols="30" rows="7" placeholder="Oferta"></textarea>
-            </div>
-            <div class="col-md-6 form-group">
-              <textarea formControlName="demanda" name="demanda" class="form-control" cols="30" rows="7" placeholder="Demanda"></textarea>
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary">Guardar</button>
-        </form>
-      </nb-card-body>
-    </nb-card>
+          </nb-card-body>
+        </nb-card>
+        <button type="submit" [disabled]="empresaGroup.status === 'INVALID' || empresaGroup.untouched" class="btn btn-success">Registrar usuario</button>&nbsp;&nbsp;
+        <a routerLink="login" class="btn btn-danger" *ngIf="router.url === '/auth/signup'">Cancelar</a>
+      </form>
+    </div>
   </div>
 </div>

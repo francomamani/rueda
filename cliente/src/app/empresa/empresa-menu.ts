@@ -8,7 +8,8 @@ export const EMPRESA_ITEMS: NbMenuItem[] = [
   }, {
     title: 'Horarios Ocupados',
     icon: 'nb-keypad',
-    link: '/empresa/horarios-ocupados/listar/empresa/' + JSON.parse(atob(localStorage.getItem('rueda-usuario'))).empresa.empresa_id,
+    link: '/empresa/horarios-ocupados/listar/empresa/'
+      + JSON.parse(atob(localStorage.getItem('rueda-usuario'))).empresa.empresa_id,
   }, {
     title: 'Mis Participantes',
     icon: 'nb-person',
@@ -43,27 +44,4 @@ export const EMPRESA_ITEMS: NbMenuItem[] = [
     title: 'Evaluación',
     icon: 'nb-tables',
     link: '/empresa/evaluacion-general',
-  },
-  /*{
-    title: 'Auth',
-    icon: 'nb-locked',
-    children: [
-      {
-        title: 'Login',
-        link: '/auth/login',
-      },
-      {
-        title: 'Register',
-        link: '/auth/register',
-      },
-      {
-        title: 'Request Password',
-        link: '/auth/request-password',
-      },
-      {
-        title: 'Reset Password',
-        link: '/auth/reset-password',
-      },
-    ],
-  },*/
-];
+  }];
