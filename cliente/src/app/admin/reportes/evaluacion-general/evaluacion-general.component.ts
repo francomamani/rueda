@@ -73,5 +73,4 @@ export class EvaluacionGeneralComponent implements OnInit {
         this.chart.data = res;
       });
   }
-
 }

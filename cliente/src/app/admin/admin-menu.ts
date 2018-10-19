@@ -80,6 +80,10 @@ export const ADMIN_ITEMS: NbMenuItem[] = [
           title: 'Evaluaciones Generales',
           icon: 'nb-bar-chart',
           link: '/admin/reportes/evaluaciones-generales',
+        }, {
+            title: 'Evaluaciones de Reuniones',
+            icon: 'nb-bar-chart',
+            link: '/admin/reportes/evaluaciones-reuniones',
         }],
     },
 ];

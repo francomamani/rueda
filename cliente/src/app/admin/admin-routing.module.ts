@@ -28,6 +28,7 @@ import {ReportesComponent} from './reportes/reportes.component';
 import {UsuarioEditComponent} from '../shared/usuario-edit/usuario-edit.component';
 import {ReunionesComponent} from './reportes/reuniones/reuniones.component';
 import {EvaluacionGeneralComponent} from './reportes/evaluacion-general/evaluacion-general.component';
+import {EvaluacionReunionComponent} from './reportes/evaluacion-reunion/evaluacion-reunion.component';
 
 const routes: Routes = [
   {
@@ -156,6 +157,9 @@ const routes: Routes = [
         }, {
           path: 'evaluaciones-generales',
           component: EvaluacionGeneralComponent,
+        }, {
+          path: 'evaluaciones-reuniones',
+          component: EvaluacionReunionComponent,
         }],
     },
       {

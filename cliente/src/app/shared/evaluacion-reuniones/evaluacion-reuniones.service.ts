@@ -16,4 +16,7 @@ export class EvaluacionReunionesService {
   registrado(reunion_id, empresa_id) {
     return this.http.get(this.base + 'evaluacion-reunion-registrada/' + reunion_id + '/' + empresa_id);
   }
+  reporteReunion(parametro) {
+    return this.http.get(this.base + 'reporte-reunion/' + parametro);
+  }
 }

@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>Reporte de Evaluaciones de Reuniones</nb-card-header>
+      <nb-card-body>
+        <form>
+          <label for="pregunta">Seleccione la pregunta: </label>
+          <select id="pregunta" (change)="loadChart(parametro)"
+                  name="parametro"
+                  [(ngModel)]="parametro">
+            <option [value]="pregunta.key"
+                    *ngFor="let pregunta of preguntas">
+              {{pregunta.value}}
+            </option>
+          </select>
+        </form>
+        <google-chart
+          *ngIf="chart.data.length !== 0"
+          [width]="chart.width"
+          [title]="chart.title"
+          [type]="chart.type"
+          [data]="chart.data"
+          [columnNames]="chart.columnNames"
+          [options]="chart.options">
+        </google-chart>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

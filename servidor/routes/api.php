@@ -46,6 +46,7 @@ Route::get('load-logo/{tipo}', 'UsuarioController@loadLogo');
 
 Route::get('evaluacion-reunion-registrada/{reunion_id}/{empresa_id}/', 'EvaluacionReunionController@registrado');
 Route::get('reporte-general/{parametro}', 'EvaluacionGeneralController@reporteGeneral');
+Route::get('reporte-reunion/{parametro}', 'EvaluacionReunionController@reporteReunion');
 
 
 

@@ -37,6 +37,7 @@ import {LeafletModule} from '@asymmetrik/ngx-leaflet';
 import { EvaluacionGeneralComponent } from './reportes/evaluacion-general/evaluacion-general.component';
 import { ReunionesComponent } from './reportes/reuniones/reuniones.component';
 import {GoogleChartsModule} from 'angular-google-charts';
+import { EvaluacionReunionComponent } from './reportes/evaluacion-reunion/evaluacion-reunion.component';
 
 @NgModule({
   imports: [
@@ -75,6 +76,7 @@ import {GoogleChartsModule} from 'angular-google-charts';
                  ReportesComponent,
                  EvaluacionGeneralComponent,
                  ReunionesComponent,
+                 EvaluacionReunionComponent,
   ],
   providers: [ RubroService, DatePipe],
 })
