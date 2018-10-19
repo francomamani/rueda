@@ -16,6 +16,7 @@ import {SolicitudSalienteComponent} from './solicitud-saliente/solicitud-salient
 import {SolicitudEntranteComponent} from './solicitud-entrante/solicitud-entrante.component';
 import {EmpresaCreateComponent} from './empresa-create/empresa-create.component';
 import { UsuarioEditComponent } from './usuario-edit/usuario-edit.component';
+import { EmpresaEditComponent } from './empresa-edit/empresa-edit.component';
 
 @NgModule({
   imports: [
@@ -37,7 +38,8 @@ import { UsuarioEditComponent } from './usuario-edit/usuario-edit.component';
                   SolicitudSalienteComponent,
                   SolicitudEntranteComponent,
                   EvaluacionReunionesComponent,
-                  UsuarioEditComponent],
+                  UsuarioEditComponent,
+                  EmpresaEditComponent],
   exports: [PerfilComponent,
             HorariosOcupadosComponent,
             HorariosOcupadosCreateComponent,
@@ -48,7 +50,8 @@ import { UsuarioEditComponent } from './usuario-edit/usuario-edit.component';
             SolicitudSalienteComponent,
             SolicitudEntranteComponent,
             EvaluacionReunionesComponent,
-            UsuarioEditComponent],
+            UsuarioEditComponent,
+            EmpresaEditComponent],
   entryComponents: [EmpresaModalComponent],
 })
 export class SharedModule { }

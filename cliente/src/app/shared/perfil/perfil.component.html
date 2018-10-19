@@ -9,7 +9,7 @@
             <h4>{{ usuario.nombres }} {{ usuario.apellidos }}</h4>
             <button *ngIf="usuario.tipo_usuario === 'administrador'" class="btn-perfil" routerLink="/admin/actualizar-usuario/{{usuario.usuario_id}}">Editar Usuario</button>
             <button *ngIf="usuario.tipo_usuario === 'empresa'" class="btn-perfil" routerLink="/empresa/actualizar-usuario/{{usuario.usuario_id}}">Editar Usuario</button>
-            <!--<button class="btn-perfil" *ngIf="usuario.tipo_usuario === 'empresa'">Editar Empresa</button>-->
+            <button class="btn-perfil" *ngIf="usuario.tipo_usuario === 'empresa'" [routerLink]="['/empresa/editar/'+usuario.empresa_id]">Editar Empresa</button>
           </nb-card-body>
         </nb-card>
       </div>

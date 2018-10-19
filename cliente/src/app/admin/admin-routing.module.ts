@@ -28,6 +28,7 @@ import {ReportesComponent} from './reportes/reportes.component';
 import {UsuarioEditComponent} from '../shared/usuario-edit/usuario-edit.component';
 import {ReunionesComponent} from './reportes/reuniones/reuniones.component';
 import {EvaluacionGeneralComponent} from './reportes/evaluacion-general/evaluacion-general.component';
+import {EmpresaEditComponent} from '../shared/empresa-edit/empresa-edit.component';
 
 const routes: Routes = [
   {
@@ -71,6 +72,10 @@ const routes: Routes = [
         {
           path: 'solicitudes-entrantes/:empresa_id',
           component: SolicitudEntranteComponent,
+        },
+        {
+            path: 'editar/:empresa_id',
+            component: EmpresaEditComponent,
         },
         {
           path: '',
