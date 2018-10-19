@@ -45,12 +45,17 @@ class Empresa extends Model
         return $this->hasMany(HorarioOcupado::class, 'empresa_id');
     }
 
+    public function evaluacionGeneral() {
+        return $this->hasOne(EvaluacionGeneral::class, 'empresa_id');
+    }
+
     public static function boot()
     {
         parent::boot();
         static::deleting(function($padre) {
             $padre->participantes()->delete();
             $padre->horariosOcupados()->delete();
+            $padre->evaluacionGeneral()->delete();
         });
     }
 }

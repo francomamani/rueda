@@ -84,7 +84,7 @@ const routes: Routes = [
         ],
       }, {
           path: 'evaluacion-general',
-          component: EvaluacionGeneralComponent
+          component: EvaluacionGeneralComponent,
         }, {
         path: '',
         redirectTo: 'home',
