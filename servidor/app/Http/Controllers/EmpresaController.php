@@ -190,7 +190,8 @@ class EmpresaController extends Controller
                 'inicio' => Horario::find($reunion->horario_id)->inicio,
                 'fin' => Horario::find($reunion->horario_id)->fin,
                 'resultado' => $reunion->resultado,
-                'fecha_hora_registro_reunion' => $reunion->created_at
+                'fecha_hora_registro_reunion' => $reunion->created_at,
+                'reunion_id' => $reunion->reunion_id,
             ];
             array_push($data, $reunionItem);
         }

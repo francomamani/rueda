@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {EmpresaService} from '../../../admin/empresa/empresa.service';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {EmpresaModalComponent} from '../../../shared/empresa-modal/empresa-modal.component';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {AuthService} from '../../../auth.service';
 
 @Component({
@@ -17,6 +17,7 @@ export class ReunionesAgendadasComponent implements OnInit {
   mi_empresa = null;
   constructor(private empresaService: EmpresaService,
               private route: ActivatedRoute,
+              private router: Router,
               private authService: AuthService,
               private modalService: NgbModal) {
     this.route.params.subscribe(params => {
@@ -47,6 +48,10 @@ export class ReunionesAgendadasComponent implements OnInit {
     activeModal.componentInstance.modalHeader = 'Empresa: ' + empresa.nombre;
     activeModal.componentInstance.empresa = empresa;
     activeModal.componentInstance.fecha_hora_registro_reunion = fecha_hora_registro_reunion;
+  }
+
+  go(reunion_id) {
+    this.router.navigate(['/empresa/evaluacion-reunion/' + reunion_id + '/' + this.empresa_id]);
   }
 
 }

@@ -106,7 +106,7 @@ export class ReunionesComponent implements OnInit {
         title: 'Citas Rechazadas',
         value: this.rechazados,
         activeProgress: (this.rechazados / this.citas * 100),
-        description: 'Cantidad de citas REchazadas',
+        description: 'Cantidad de citas Rechazadas',
       },
     ];
   }

@@ -3,6 +3,7 @@ import {FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms';
 import {AuthService} from '../../auth.service';
 import {NbToastrService} from '@nebular/theme';
 import {EmpresaService} from '../../admin/empresa/empresa.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'ngx-evaluacion-reuniones',
@@ -16,12 +17,17 @@ export class EvaluacionReunionesComponent implements OnInit {
     evaluacionGroup: FormGroup;
 
     empresa_id = 0;
+    reunion_id = 0;
     registrado = false;
     constructor(private fb: FormBuilder,
                 private toastr: NbToastrService,
                 private authService: AuthService,
+                private route: ActivatedRoute,
                 private empresaService: EmpresaService) {
-        this.empresa_id = this.authService.getUsuario().empresa_id;
+        this.route.params.subscribe((params: any) => {
+          this.empresa_id = params.empresa_id;
+          this.reunion_id = params.reunion_id;
+        });
         this.empresaService.empresasListar()
             .subscribe((res: any[]) => {
                 this.empresas = res;
@@ -32,6 +38,7 @@ export class EvaluacionReunionesComponent implements OnInit {
     createForm() {
         this.evaluacionGroup = this.fb.group({
             'empresa_id': this.authService.getUsuario().empresa_id,
+            'reunion_id': this.reunion_id,
             'uno': new FormControl('', Validators.required),
             'dos': new FormControl('', Validators.required),
             'tres': new FormControl('', Validators.required),

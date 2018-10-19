@@ -15,6 +15,7 @@ import {EmpresasRegistradasComponent} from './agenda/empresas-registradas/empres
 import {SolicitudSalienteComponent} from '../shared/solicitud-saliente/solicitud-saliente.component';
 import {AgendaCreateComponent} from './agenda/agenda-create/agenda-create.component';
 import {UsuarioEditComponent} from '../shared/usuario-edit/usuario-edit.component';
+import {EvaluacionReunionesComponent} from '../shared/evaluacion-reuniones/evaluacion-reuniones.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
       {
         path: 'actualizar-usuario/:usuario_id',
         component: UsuarioEditComponent,
+      },
+      {
+        path: 'evaluacion-reunion/:reunion_id/:empresa_id',
+        component: EvaluacionReunionesComponent,
       },
       {
         path: 'mi-agenda',
@@ -66,7 +71,8 @@ const routes: Routes = [
       {
         path: 'perfil',
         component: PerfilComponent,
-      }, {
+      },
+      {
         path: 'horarios-ocupados',
         component: HorariosOcupadosComponent,
         children: [
@@ -82,10 +88,12 @@ const routes: Routes = [
             pathMatch: 'full',
           },
         ],
-      }, {
+      },
+      {
           path: 'evaluacion-general',
           component: EvaluacionGeneralComponent,
-        }, {
+        },
+      {
         path: '',
         redirectTo: 'home',
         pathMatch: 'full',
