@@ -1,3 +1,212 @@
-<p>
-  evaluacion-reuniones works!
-</p>
+<div class="row sin-coincidencias" *ngIf="registrado">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-body>
+        <h4>Su evaluación de la reunion ya fue llenada exitosamente</h4>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+<div class="row" *ngIf="!registrado">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>
+        <h3>Evaluación de la reunion</h3>
+      </nb-card-header>
+    </nb-card>
+    <form (submit)="store()" role="form" [formGroup]="evaluacionGroup">
+      <nb-card>
+        <nb-card-header>
+          1.- Reunion con la empresa:
+        </nb-card-header>
+        <nb-card-body>
+          <div class="row">
+            <div class="col-sm-6 form-group">
+              <select name="uno" formControlName="uno" class="form-control">
+                <option [value]="empresa.empresa_id" *ngFor="let empresa of empresas">{{ empresa.nombre }}</option>
+              </select>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-sm-3 form-group">
+              <label><b>La reunión se ejecuto:</b></label>
+            </div>
+            <div class="col-sm-6 form-group">
+              <label class="form-check-inline">
+                <input formControlName="dos" class="form-check-input" type="radio" name="dos" value="si">Si</label>
+              <label class="form-check-inline">
+                <input formControlName="dos" class="form-check-input" type="radio" name="dos" value="no">No</label>
+
+            </div>
+          </div>
+        </nb-card-body>
+      </nb-card>
+
+      <nb-card>
+        <nb-card-header>
+          2.- La Probabilidad de concretar operaciones comerciales con la empresa es:
+        </nb-card-header>
+        <nb-card-body>
+          <div class="row">
+            <div class="col-sm-3 form-group">
+              <label class="form-check-inline">
+                <input formControlName="tres" class="form-check-input" type="radio" name="tres" value="Buena">Buena</label>
+            </div>
+            <div class="col-sm-3 form-group">
+              <label class="form-check-inline">
+                <input formControlName="tres" class="form-check-input" type="radio" name="tres" value="Probable">Probable</label>
+            </div>
+            <div class="col-sm-3 form-group">
+              <label class="form-check-inline">
+                <input formControlName="tres" class="form-check-input" type="radio" name="tres" value="Nula">Nula</label>
+            </div>
+          </div>
+        </nb-card-body>
+      </nb-card>
+
+      <nb-card>
+        <nb-card-header>
+          3. Si la respuesta es buena o probable, porfavor indique la siguiente información
+        </nb-card-header>
+        <nb-card-body>
+          <div class="row">
+            <div class="col-sm-12 form-group">
+              <label><b>3.1. Caracteristicas de la operación</b></label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 form-group">
+              <label class="form-check-inline">
+                <input formControlName="cuatro" class="form-check-input" type="radio" name="cuatro" value="Exportacion">Exportación</label>
+            </div>
+            <div class="col-sm-4 form-group">
+              <label class="form-check-inline">
+                <input formControlName="cuatro" class="form-check-input" type="radio" name="cuatro" value="Importacion">Importacion</label>
+            </div>
+            <div class="col-sm-4 form-group">
+              <label class="form-check-inline">
+                <input formControlName="cuatro" class="form-check-input" type="radio" name="cuatro" value="Joint Venture">Joint Venture</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 form-group">
+              <label class="form-check-inline">
+                <input formControlName="cuatro" class="form-check-input" type="radio" name="cuatro" value="Representacion/Distribucion">Representación / Distribución</label>
+            </div>
+            <div class="col-sm-4 form-group">
+              <label class="form-check-inline">
+                <input formControlName="cuatro" class="form-check-input" type="radio" name="cuatro" value="Sociedad">Sociedad</label>
+            </div>
+            <div class="col-sm-4 form-group">
+              <label class="form-check-inline">
+                <input formControlName="cuatro" class="form-check-input" type="radio" name="cuatro" value="Asesoramiento y Asistencia Tecnica">Asesoramiento y Asistencia Técnica</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 form-group">
+              <label class="form-check-inline">
+                <input formControlName="cuatro" class="form-check-input" type="radio" name="cuatro" value="Produccion">Producción</label>
+            </div>
+            <div class="col-sm-4 form-group">
+              <label class="form-check-inline">
+                <input formControlName="cuatro" class="form-check-input" type="radio" name="cuatro" value="Servicio">Servicio</label>
+            </div>
+            <div class="col-sm-4 form-group">
+              <label class="form-check-inline">
+                <input formControlName="cuatro" class="form-check-input" type="radio" name="cuatro" value="Otro">Otro</label>
+            </div>
+          </div>
+            <br>
+          <div class="row">
+            <div class="col-sm-12 form-group">
+              <label><b>3.2. Monto estimado de la operación (en dólares americanos)</b></label>
+            </div>
+            <div class="col-sm-4 form-group">
+              <label class="form-check-inline">
+                <input formControlName="cinco" class="form-check-input" type="radio" name="cinco" value="1000">de 0 a 1000</label>
+            </div>
+            <div class="col-sm-4 form-group">
+              <label class="form-check-inline">
+                <input formControlName="cinco" class="form-check-input" type="radio" name="cinco" value="10000">de 1000 a 10000</label>
+            </div>
+            <div class="col-sm-4 form-group">
+              <label class="form-check-inline">
+                <input formControlName="cinco" class="form-check-input" type="radio" name="cinco" value="50000">de 11000 a 50000</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 form-group">
+              <label class="form-check-inline">
+                <input formControlName="cinco" class="form-check-input" type="radio" name="cinco" value="100000">de 51000 a 100000</label>
+            </div>
+            <div class="col-sm-4 form-group">
+              <label class="form-check-inline">
+                <input formControlName="cinco" class="form-check-input" type="radio" name="cinco" value="500000">de 101000 a 500000</label>
+            </div>
+            <div class="col-sm-4 form-group">
+              <label class="form-check-inline">
+                <input formControlName="cinco" class="form-check-input" type="radio" name="cinco" value="1000000">de 501000 a 1000000</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 form-group">
+              <label class="form-check-inline">
+                <input formControlName="cinco" class="form-check-input" type="radio" name="cinco" value="1001000">más de 1000000</label>
+            </div>
+          </div>
+            <br>
+          <div class="row">
+            <div class="col-sm-12 form-group">
+              <label><b>3.3. Plazo estimado de realización del negocio</b></label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 form-group">
+              <label class="form-check-inline">
+                <input formControlName="seis" class="form-check-input" type="radio" name="seis" value="3">3 meses</label>
+            </div>
+            <div class="col-sm-4 form-group">
+              <label class="form-check-inline">
+                <input formControlName="seis" class="form-check-input" type="radio" name="seis" value="6">6 meses</label>
+            </div>
+            <div class="col-sm-4 form-group">
+              <label class="form-check-inline">
+                <input formControlName="seis" class="form-check-input" type="radio" name="seis" value="9">9 meses</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 form-group">
+              <label class="form-check-inline">
+                <input formControlName="seis" class="form-check-input" type="radio" name="seis" value="12">un año</label>
+            </div>
+            <div class="col-sm-4 form-group">
+              <label class="form-check-inline">
+                <input formControlName="seis" class="form-check-input" type="radio" name="seis" value="13">más de un año</label>
+            </div>
+          </div>
+        </nb-card-body>
+      </nb-card>
+
+      <nb-card>
+        <nb-card-header>
+          Comentarios
+        </nb-card-header>
+        <nb-card-body>
+          <div class="row">
+            <div class="col-sm-12 form-group">
+              <label>Su opinion es importante y nos ayuda a mejorar, por favor dejenos su comentario</label>
+            </div>
+            <div class="col-sm-12 form-group">
+              <textarea formControlName="siete" name="siete" style="width: 100%;"></textarea>
+            </div>
+          </div>
+        </nb-card-body>
+      </nb-card>
+
+      <button type="submit" class="btn btn-info" [disabled]="evaluacionGroup.status === 'INVALID'">Enviar</button>
+    </form>
+
+
+  </div>
+</div>
