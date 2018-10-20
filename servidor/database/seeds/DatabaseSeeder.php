@@ -168,30 +168,30 @@ class DatabaseSeeder extends Seeder
             ]);
         }
         $usuarioAdmin = [
-            'nombres' => 'Melvin',
-            'apellidos' => 'Callisaya',
-            'email' => 'admin@admin.com',
+            'nombres' => 'Rocio Jimena',
+            'apellidos' => 'Villca Quispe',
+            'email' => 'rvillca@campoferial3dejulio.com',
             'tipo_usuario' => 'administrador',
-            'password' => Hash::make('123456789')
+            'password' => Hash::make('rvillca2018$$')
         ];
         Usuario::create($usuarioAdmin);
 
         $usuario = [
-            'nombres' => 'Franco',
-            'apellidos' => 'Mamani',
-            'email' => 'empresa@empresa.com',
+            'nombres' => 'Pamela',
+            'apellidos' => 'León Mamani',
+            'email' => 'pleon@campoferial3dejulio.com',
             'tipo_usuario' => 'empresa',
-            'password' => Hash::make('123456789')
+            'password' => Hash::make('pleon2018$$')
         ];
 
         $empresa = [
             'rubro_id' => 3,
             'usuario_id' => Usuario::create($usuario)->usuario_id,
-            'nombre' => 'Coda',
+            'nombre' => 'Campo Ferial 3 de Julio',
             'logo' => null,
-            'direccion' => 'calle Hugo Bohero #650',
+            'direccion' => 'Calle Hugo Bohero #650',
             'telefono' => '52-87551',
-            'pagina_web' => 'www.codasrl.com',
+            'pagina_web' => 'www.campoferial3dejulio.com',
             'ciudad_localidad' => 'Oruro',
             'nit' => '7275047016',
             'representante_legal' => 'El Representante Legal',
@@ -204,18 +204,18 @@ class DatabaseSeeder extends Seeder
         $empresaModel = Empresa::create($empresa);
         Participante::create([
             'empresa_id' => $empresaModel->empresa_id,
-            'nombres' => 'Megan',
-            'apellidos' => 'Lafuente Rocha',
-            'carnet' => '72754552',
-            'celular' => '72963512',
-            'cargo' => 'Gerente',
+            'nombres' => 'Marcelo',
+            'apellidos' => 'Zenteno Rafael',
+            'carnet' => '123456789',
+            'celular' => '69586290',
+            'cargo' => 'Admnistrador Gerente',
         ]);
         Participante::create([
             'empresa_id' => $empresaModel->empresa_id,
-            'nombres' => 'Maria Cristina',
-            'apellidos' => 'Pozo Andia',
-            'carnet' => '7275623',
-            'celular' => '72465245',
+            'nombres' => 'Pamela',
+            'apellidos' => 'León Mamani',
+            'carnet' => '123456789',
+            'celular' => '74464355',
             'cargo' => 'Administrativo',
         ]);
     }
