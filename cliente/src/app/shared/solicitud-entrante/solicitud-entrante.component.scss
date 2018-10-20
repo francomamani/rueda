@@ -25,10 +25,17 @@ a.info, a.info:hover, a.info:active{
 
 
 a.info1, a.info1:hover, a.info1:active{
-   color: #66c170;
-   cursor: pointer;
+  background-color: #66c170;
+  color: whitesmoke;
+  cursor: pointer;
+  padding: .25em 1em;
+  margin-right: .5em;
+  border-radius: 5px;
 }
 a.info2, a.info2:hover, a.info2:active{
-  color: #c17067;
+  background-color: rgba(230,40,71,1);
+  color: whitesmoke;
   cursor: pointer;
+  padding: .25em 1em;
+  border-radius: 5px;
 }
