@@ -28,11 +28,8 @@ import {ReportesComponent} from './reportes/reportes.component';
 import {UsuarioEditComponent} from '../shared/usuario-edit/usuario-edit.component';
 import {ReunionesComponent} from './reportes/reuniones/reuniones.component';
 import {EvaluacionGeneralComponent} from './reportes/evaluacion-general/evaluacion-general.component';
-<<<<<<< HEAD
 import {EvaluacionReunionComponent} from './reportes/evaluacion-reunion/evaluacion-reunion.component';
-=======
 import {EmpresaEditComponent} from '../shared/empresa-edit/empresa-edit.component';
->>>>>>> 51df1fc429ab5a10fdbc5a1ccb00cee6b6296446
 
 const routes: Routes = [
   {

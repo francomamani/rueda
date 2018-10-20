@@ -136,7 +136,13 @@ class EmpresaController extends Controller
     {
         $empresa = Empresa::find($id);
         $empresa->update($request->all());
-        return response()->json($empresa, 200);
+        $usuario = Usuario::join('empresas', 'empresas.usuario_id', '=','usuarios.usuario_id')
+            ->join('rubros', 'rubros.rubro_id', '=','empresas.rubro_id')
+            ->with('empresa.participantes')
+            ->where('usuarios.usuario_id', $empresa->usuario_id)
+            ->selectRaw('usuarios.*, empresas.*, rubros.nombre as rubro')
+            ->first();
+        return response()->json($usuario, 200);
     }
 
     /**

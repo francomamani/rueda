@@ -4,11 +4,12 @@ import {RubroService} from '../../admin/rubro/rubro.service';
 import {EmpresaService} from '../../admin/empresa/empresa.service';
 import {Router, ActivatedRoute} from '@angular/router';
 import {NbToastrService} from '@nebular/theme';
+import {AuthService} from '../../auth.service';
 
 @Component({
     selector: 'ngx-empresa-edit',
     templateUrl: './empresa-edit.component.html',
-    styleUrls: ['./empresa-edit.component.scss']
+    styleUrls: ['./empresa-edit.component.scss'],
 })
 export class EmpresaEditComponent implements OnInit {
 
@@ -17,19 +18,19 @@ export class EmpresaEditComponent implements OnInit {
     emp: any = null;
     empresa_id: any;
 
-    ruta_admin='';
+    ruta_admin = '';
 
     constructor(private rubroService: RubroService,
                 private empresaService: EmpresaService,
                 public router: Router,
                 public route: ActivatedRoute,
+                private authService: AuthService,
                 private fb: FormBuilder,
                 private toastr: NbToastrService) {
 
         this.empresa_id = this.route.snapshot.paramMap.get('empresa_id');
-        this.ruta_admin='/admin/empresa/editar/'+this.empresa_id;
+        this.ruta_admin = '/admin/empresa/editar/' + this.empresa_id;
 
-        console.log(this.router.url);
         this.rubroService.index()
             .subscribe((res: any[]) => {
                 this.rubros = res;
@@ -37,10 +38,8 @@ export class EmpresaEditComponent implements OnInit {
         this.empresaService.show(this.empresa_id)
             .subscribe((res: any) => {
                 this.emp = res;
-
                 this.createForm();
-            })
-
+            });
     }
 
     createForm() {
@@ -72,16 +71,17 @@ export class EmpresaEditComponent implements OnInit {
                 if (this.router.url === this.ruta_admin) {
                     this.router.navigate(['/admin/empresa/listar']);
                 } else {
-                    this.router.navigate(['/empresa']);
+                  this.authService.setUsuario(res);
+                  this.router.navigate(['/empresa/perfil']);
                 }
             });
 
     }
-    cancelar(){
+    cancelar() {
         if (this.router.url === this.ruta_admin) {
             this.router.navigate(['/admin/empresa/listar']);
         } else {
-            this.router.navigate(['/empresa']);
+            this.router.navigate(['/empresa/perfil']);
         }
     }
 
