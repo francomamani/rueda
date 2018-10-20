@@ -246,4 +246,24 @@ class EmpresaController extends Controller
             return response()->file(storage_path('app/logos/empresa.png'));
         }
     }
+
+    public function cambiarLogo($empresa_id) {
+        $empresa = Empresa::find($empresa_id);
+        if(request()->hasFile('logo')) {
+            $path_logo = request()->file('logo')->store('logos');
+            $empresa->logo = $path_logo;
+            $empresa->save();
+        }
+        $usuario = Usuario::join('empresas', 'empresas.usuario_id', '=','usuarios.usuario_id')
+            ->join('rubros', 'rubros.rubro_id', '=','empresas.rubro_id')
+            ->with('empresa.participantes')
+            ->where('usuarios.usuario_id', $empresa->usuario_id)
+            ->selectRaw('usuarios.*, empresas.*, rubros.nombre as rubro')
+            ->first();
+
+        return response()->json($usuario, 200);
+    }
+    public function mostrarLogo($logo_path) {
+        return response()->file(storage_path('app/logos/' . $logo_path));
+    }
 }

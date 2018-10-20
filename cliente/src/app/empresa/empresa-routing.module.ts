@@ -16,6 +16,7 @@ import {SolicitudSalienteComponent} from '../shared/solicitud-saliente/solicitud
 import {AgendaCreateComponent} from './agenda/agenda-create/agenda-create.component';
 import {UsuarioEditComponent} from '../shared/usuario-edit/usuario-edit.component';
 import {EmpresaEditComponent} from '../shared/empresa-edit/empresa-edit.component';
+import {EvaluacionReunionesComponent} from '../shared/evaluacion-reuniones/evaluacion-reuniones.component';
 
 const routes: Routes = [
   {
@@ -87,6 +88,10 @@ const routes: Routes = [
         {
           path: 'evaluacion-general',
           component: EvaluacionGeneralComponent,
+        },
+        {
+          path: 'evaluacion-reunion/:reunion_id/:empresa_id',
+          component: EvaluacionReunionesComponent,
         },
         {
           path: 'editar/:empresa_id',

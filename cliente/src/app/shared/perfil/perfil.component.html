@@ -4,9 +4,11 @@
       <div class="col-md-12">
         <nb-card>
           <nb-card-body class="perfil-acciones">
-            <img src="{{logo}}{{usuario.empresa_id}}" [alt]="usuario.nombre" *ngIf="usuario.tipo_usuario === 'empresa'">
+            <input type="file" #logoFile (change)="cambiarLogo()">
+            <img [src]="logo" [alt]="usuario.nombre" *ngIf="usuario.tipo_usuario === 'empresa'">
             <img src="{{usuarioLogo}}" alt="{{usuario.nombres}} {{usuario.apellidos}}" *ngIf="usuario.tipo_usuario === 'administrador'">
-            <h4>{{ usuario.nombres }} {{ usuario.apellidos }}</h4>
+            <h4 *ngIf="usuario.tipo_usuario === 'administrador'">{{ usuario.nombres }} {{ usuario.apellidos }}</h4>
+            <h4 *ngIf="usuario.tipo_usuario === 'empresa'">{{ usuario.nombre }}</h4>
             <button *ngIf="usuario.tipo_usuario === 'administrador'" class="btn-perfil" routerLink="/admin/actualizar-usuario/{{usuario.usuario_id}}">Editar Usuario</button>
             <button *ngIf="usuario.tipo_usuario === 'empresa'" class="btn-perfil" routerLink="/empresa/actualizar-usuario/{{usuario.usuario_id}}">Editar Usuario</button>
             <button class="btn-perfil" *ngIf="usuario.tipo_usuario === 'empresa'" [routerLink]="['/empresa/editar/'+usuario.empresa_id]">Editar Empresa</button>

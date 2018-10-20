@@ -48,6 +48,7 @@ Route::get('evaluacion-reunion-registrada/{reunion_id}/{empresa_id}/', 'Evaluaci
 Route::get('reporte-general/{parametro}', 'EvaluacionGeneralController@reporteGeneral');
 Route::get('reporte-reunion/{parametro}', 'EvaluacionReunionController@reporteReunion');
 
-
+Route::post('cambiar-logo/{empresa_id}', 'EmpresaController@cambiarLogo');
+Route::get('mostrar-logo/{logo_path}', 'EmpresaController@mostrarLogo');
 
 

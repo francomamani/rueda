@@ -32,7 +32,7 @@
             <tbody>
             <tr *ngFor="let empresa of empresas; let i = index">
               <td class="btn-acciones">
-                <a class="text-warning" title="Subir logo"><i class="fa fa-camera"></i></a>
+<!--                <a class="text-warning" title="Subir logo"><i class="fa fa-camera"></i></a>-->
                 <a class="text-primary" title="Listar de participantes" [routerLink]="['/admin/empresa/participantes/', empresa.empresa_id]"><i class="fa fa-user"></i></a>
                 <a class="text-success" title="Editar empresa" [routerLink]="['/admin/empresa/editar/'+empresa.empresa_id]"><i class="fa fa-edit"></i></a>
                 <a class="text-primary" title="Solicitudes salientes" [routerLink]="['/admin/empresa/solicitudes-salientes/'+empresa.empresa_id]"><i class="fa fa-arrow-circle-right"></i></a>
