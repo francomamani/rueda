@@ -4,7 +4,10 @@
       <div class="col-md-12">
         <nb-card>
           <nb-card-body class="perfil-acciones">
-            <input type="file" #logoFile (change)="cambiarLogo()">
+            <label for="logo-file" class="logo-file-label">
+              <i class="nb-edit"></i>
+            </label>
+            <input type="file" id="logo-file" #logoFile (change)="cambiarLogo()">
             <img [src]="logo" [alt]="usuario.nombre" *ngIf="usuario.tipo_usuario === 'empresa'">
             <img src="{{usuarioLogo}}" alt="{{usuario.nombres}} {{usuario.apellidos}}" *ngIf="usuario.tipo_usuario === 'administrador'">
             <h4 *ngIf="usuario.tipo_usuario === 'administrador'">{{ usuario.nombres }} {{ usuario.apellidos }}</h4>

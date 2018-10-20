@@ -21,3 +21,28 @@
   background-color: #e63e5c;
   color: white;
 }
+#logo-file {
+  display: none;
+}
+.logo-file-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  opacity: 0.8;
+  background-color: #e63e5c;
+  color: whitesmoke;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.logo-file-label:hover {
+  opacity: 1;
+}
+.logo-file-label i{
+  font-size: 1.5em;
+  font-weight: 800;
+}
