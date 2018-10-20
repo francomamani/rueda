@@ -35,8 +35,8 @@
                 <span *ngIf="agenda.estado === 'pendiente'" class="text-warning">Pendiente</span>
               </td>
               <td *ngIf="agenda.estado==='pendiente'">
-                <a (click)="aceptar(agenda.agenda_id)" class="btn-option-success">Aceptar</a>
-                <a (click)="rechazar(agenda.agenda_id)" class="btn-option-danger">Rechazar</a>
+                <a (click)="aceptar(agenda.agenda_id)" class="info1">Aceptar</a>
+                <a (click)="rechazar(agenda.agenda_id)" class="info2">Rechazar</a>
               </td>
             </tr>
             </tbody>

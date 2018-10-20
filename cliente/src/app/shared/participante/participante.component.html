@@ -1,6 +1,6 @@
 <nb-card>
   <nb-card-header>
-    Participantes
+    <span *ngIf="empresa !== null">Participantes de {{empresa.nombre}}</span>
   </nb-card-header>
 
   <nb-card-body>

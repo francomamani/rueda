@@ -1,7 +1,7 @@
 
 <nb-card style="height: 100%;">
   <nb-card-header>
-    Añadir nuevo horario
+    Añadir Nuevo Horario
   </nb-card-header>
 
   <nb-card-body>
@@ -16,6 +16,6 @@
           <angular2-date-picker (onDateSelect)="onFin($event)" [(ngModel)]="fi" [settings]="settings"></angular2-date-picker>
         </div>
       </div>
-      <button class="btn btn-primary" (click)="store()">Guardar</button>
+      <button class="btn btn-sm btn-success" (click)="store()">Guardar</button>
   </nb-card-body>
 </nb-card>

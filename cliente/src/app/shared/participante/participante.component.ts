@@ -56,11 +56,15 @@ export class ParticipanteComponent implements OnInit {
 
   source: LocalDataSource = new LocalDataSource();
   id_empresa: any;
-
+  empresa: any = null;
   constructor(private empresaService: EmpresaService,
               private route: ActivatedRoute) {
 
     this.id_empresa = this.route.snapshot.paramMap.get('empresa_id');
+    this.empresaService.show(this.id_empresa)
+      .subscribe((res: any) => {
+        this.empresa = res;
+      });
     this.empresaService.indexParticipantes(this.id_empresa).subscribe((data: any[]) => {
       this.source.load(data);
     });

@@ -5,7 +5,7 @@ import {NbToastrService} from '@nebular/theme';
 @Component({
   selector: 'ngx-agenda-index',
   templateUrl: './agenda-index.component.html',
-  styleUrls: ['./agenda-index.component.scss']
+  styleUrls: ['./agenda-index.component.scss'],
 })
 export class AgendaIndexComponent implements OnInit {
 

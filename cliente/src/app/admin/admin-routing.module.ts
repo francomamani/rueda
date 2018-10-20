@@ -174,7 +174,7 @@ const routes: Routes = [
     },
       {
         path: '',
-        redirectTo: 'rubro',
+        redirectTo: 'empresa',
         pathMatch: 'full',
       },
     ],
