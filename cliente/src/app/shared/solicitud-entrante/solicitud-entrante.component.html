@@ -39,7 +39,7 @@
                 <span *ngIf="solicitud.estado === 'rechazado'" class="text-danger">Rechazado</span>
                 <span *ngIf="solicitud.estado === 'pendiente'" class="text-warning">Pendiente</span>
               </td>
-              <td *ngIf="solicitud.estado==='pendiente'"><a (click)="aceptar(solicitud.agenda_id)" class="btn btn-sm btn-success">Aceptar</a> <a (click)="rechazar(solicitud.agenda_id)" class="btn btn-sm btn-danger">Rechazar</a></td>
+              <td *ngIf="solicitud.estado==='pendiente'"><a (click)="aceptar(solicitud.agenda_id)" class="info1">Aceptar</a>  -- <a (click)="rechazar(solicitud.agenda_id)" class="info2">Rechazar</a></td>
             </tr>
             </tbody>
           </table>

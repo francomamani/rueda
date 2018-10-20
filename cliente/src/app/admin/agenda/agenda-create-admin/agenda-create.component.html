@@ -7,20 +7,28 @@
           <div class="row">
             <div class="col-sm-6 form-group">
               <label>Empresa Solicitante</label>
-              <select name="empresa_solicitante_id" formControlName="empresa_solicitante_id" class="form-control">
+              <select name="empresa_solicitante_id" formControlName="empresa_solicitante_id" class="form-control" (change)="onChange1($event.target.value)">
                 <option [value]="empresa.empresa_id" *ngFor="let empresa of empresas">{{ empresa.nombre }}</option>
               </select>
             </div>
             <div class="col-sm-6 form-group">
               <label>Empresa Demandada</label>
-              <select name="empresa_demandada_id" formControlName="empresa_demandada_id" class="form-control">
+              <select name="empresa_demandada_id" formControlName="empresa_demandada_id" class="form-control" (change)="onChange2($event.target.value)">
                 <option [value]="empresa.empresa_id" *ngFor="let empresa of empresas">{{ empresa.nombre }}</option>
               </select>
             </div>
           </div>
           <div class="row">
+            <div class="col-sm-6 form-group" *ngIf="existe_empresa1">
+              <a class="info" (click)="masinfo1()">Más información de la empresa</a>
+            </div>
+            <div class="col-sm-6 form-group" *ngIf="existe_empresa2">
+              <a class="info" (click)="masinfo2()">Más información de la empresa</a>
+            </div>
+          </div>
+          <div class="row">
             <div class="col-sm-4 col-sm-offset-8">
-              <a class="btn btn-info" (click)="buscarHorarios()">Buscar horarios disponibles</a>
+              <a class="btn btn-info btn-xs" (click)="buscarHorarios()">Buscar horarios disponibles</a>
             </div>
           </div>
           <br>

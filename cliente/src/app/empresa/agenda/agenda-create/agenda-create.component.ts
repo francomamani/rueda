@@ -6,91 +6,119 @@ import {EmpresaService} from '../../../admin/empresa/empresa.service';
 import {MesaService} from '../../../admin/mesa/mesa.service';
 import {NbToastrService} from '@nebular/theme';
 import {AuthService} from '../../../auth.service';
+import {EmpresaModalComponent} from '../../../shared/empresa-modal/empresa-modal.component';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'ngx-agenda-create',
-  templateUrl: './agenda-create.component.html',
-  styleUrls: ['./agenda-create.component.scss'],
+    selector: 'ngx-agenda-create',
+    templateUrl: './agenda-create.component.html',
+    styleUrls: ['./agenda-create.component.scss'],
 })
 export class AgendaCreateComponent implements OnInit {
 
-  tipo_asignacion = 'administracion';
-  empresas: any = null;
-  horarios: any = null;
-  mesas: any = null;
-  agendaGroup: FormGroup;
+    tipo_asignacion = 'administracion';
+    empresas: any[] = null;
+    horarios: any = null;
+    mesas: any = null;
+    agendaGroup: FormGroup;
 
-  horariosActive = false;
-  mesasActive = false;
+    horariosActive = false;
+    mesasActive = false;
 
-  id1: any;
-  id2: any;
+    id1: any;
+    id2: any;
+    existe_empresa = false;
+    emp: any;
 
-  constructor(private agendaService: AgendaService,
-              private horarioService: HorarioService,
-              private empresaService: EmpresaService,
-              private mesaService: MesaService,
-              private fb: FormBuilder,
-              private toastr: NbToastrService,
-              private authService: AuthService) {
-    this.createForm();
-    this.empresaService.empresasListar()
-      .subscribe((res: any[]) => {
-        this.empresas = res;
-      });
+    aux: any[] = [];
 
-    this.id1 = this.authService.getUsuario().empresa_id;
+    constructor(private agendaService: AgendaService,
+                private horarioService: HorarioService,
+                private empresaService: EmpresaService,
+                private mesaService: MesaService,
+                private fb: FormBuilder,
+                private toastr: NbToastrService,
+                private authService: AuthService,
+                private modalService: NgbModal) {
+        this.createForm();
+        this.id1 = this.authService.getUsuario().empresa_id;
+        this.empresaService.empresasListar()
+            .subscribe((res: any[]) => {
+                this.empresas = res;
+                this.empresas.forEach((item, index) => {
+                    if (this.id1 != item.empresa_id) {
+                        this.aux.push(item);
+                    }
+                });
+                this.empresas = this.aux;
+            });
 
-  }
 
-  createForm() {
-    this.agendaGroup = this.fb.group({
-      'tipo_asignacion': new FormControl('pre_agendado', Validators.required),
-      'empresa_solicitante_id': new FormControl(this.authService.getUsuario().empresa_id, Validators.required),
-      'empresa_demandada_id': new FormControl(0, Validators.required),
-      'horario_id': new FormControl(0, Validators.required),
-      'mesa_id': new FormControl(0, Validators.required),
-      'estado': new FormControl('pendiente', Validators.required),
-    });
-  }
+    }
 
-  ngOnInit() {
-  }
-
-  store() {
-    this.agendaGroup.patchValue({
-      'empresa_solicitante_id': parseInt(this.agendaGroup.value.empresa_solicitante_id, 10),
-      'empresa_demandada_id': parseInt(this.agendaGroup.value.empresa_demandada_id, 10),
-      'horario_id': parseInt(this.agendaGroup.value.horario_id, 10),
-      'mesa_id': parseInt(this.agendaGroup.value.mesa_id, 10),
-    });
-    this.agendaService.store(this.agendaGroup.value)
-      .subscribe((res: any) => {
-        this.toastr.success('Registro en la agenda registrada', 'Aviso');
-      });
-  }
-
-  buscarHorarios() {
-    this.id2 = this.agendaGroup.value.empresa_demandada_id;
-    if (this.id1 !== 0 && this.id2 !== 0 && this.id1 !== this.id2) {
-      this.horariosActive = true;
-      this.horarioService.horarios_disponibles(this.id1, this.id2)
-        .subscribe((res: any[]) => {
-          this.horarios = res;
+    createForm() {
+        this.agendaGroup = this.fb.group({
+            'tipo_asignacion': new FormControl('pre_agendado', Validators.required),
+            'empresa_solicitante_id': new FormControl(this.authService.getUsuario().empresa_id, Validators.required),
+            'empresa_demandada_id': new FormControl(0, Validators.required),
+            'horario_id': new FormControl(0, Validators.required),
+            'mesa_id': new FormControl(0, Validators.required),
+            'estado': new FormControl('pendiente', Validators.required),
         });
     }
-    else {
-      this.horariosActive = false;
-      this.toastr.danger('No se puede conseguir los horarios disponibles', 'Error');
-    }
-  }
 
-  horarioChange(value) {
-    this.mesasActive = true;
-    this.mesaService.mesas_dis(value)
-      .subscribe((res: any[]) => {
-        this.mesas = res;
-      });
-  }
+    ngOnInit() {
+    }
+
+    store() {
+        this.agendaGroup.patchValue({
+            'empresa_solicitante_id': parseInt(this.agendaGroup.value.empresa_solicitante_id, 10),
+            'empresa_demandada_id': parseInt(this.agendaGroup.value.empresa_demandada_id, 10),
+            'horario_id': parseInt(this.agendaGroup.value.horario_id, 10),
+            'mesa_id': parseInt(this.agendaGroup.value.mesa_id, 10),
+        });
+        this.agendaService.store(this.agendaGroup.value)
+            .subscribe((res: any) => {
+                this.toastr.success('Registro en la agenda registrada', 'Aviso');
+            });
+    }
+
+    buscarHorarios() {
+        this.id2 = this.agendaGroup.value.empresa_demandada_id;
+        if (this.id1 !== 0 && this.id2 !== 0 && this.id1 !== this.id2) {
+            this.horariosActive = true;
+            this.horarioService.horarios_disponibles(this.id1, this.id2)
+                .subscribe((res: any[]) => {
+                    this.horarios = res;
+                });
+        } else {
+            this.horariosActive = false;
+            this.toastr.danger('No se puede conseguir los horarios disponibles', 'Error');
+        }
+    }
+
+    horarioChange(value) {
+        this.mesasActive = true;
+        this.mesaService.mesas_dis(value)
+            .subscribe((res: any[]) => {
+                this.mesas = res;
+            });
+    }
+
+    onChange(id) {
+        this.existe_empresa = true;
+        this.empresas.forEach((item, index) => {
+            if (id == item.empresa_id) {
+                this.emp = item;
+            }
+        });
+
+    }
+
+    masinfo() {
+        const activeModal = this.modalService.open(EmpresaModalComponent, {size: 'lg', container: 'nb-layout'});
+        activeModal.componentInstance.modalHeader = 'Empresa: ' + this.emp.nombre;
+        activeModal.componentInstance.empresa = this.emp;
+    }
 
 }
