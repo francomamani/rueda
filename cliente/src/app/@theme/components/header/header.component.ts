@@ -25,9 +25,11 @@ export class HeaderComponent implements OnInit {
               private layoutService: LayoutService) {
     if ( this.usuario.tipo_usuario === 'administrador') {
       this.userMenu = [ { title: 'Perfil', link: '/admin/perfil' },
-                        { title: 'Cerrar Sesion' , link: '/auth/login/logout'}];
+                        { title: 'Cambiar Contraseña', link: '/admin/cambiar-password' },
+                        { title: 'Cerrar Sesion' , link: '/auth/login/logout' }];
     } else {
       this.userMenu = [ { title: 'Perfil', link: '/empresa/perfil' },
+                        { title: 'Cambiar Contraseña', link: '/empresa/cambiar-password' },
                         { title: 'Cerrar Sesion' , link: '/auth/login/logout'}];
     }
   }

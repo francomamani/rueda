@@ -12,6 +12,7 @@ import {environment} from '../../environments/environment.prod';
 })
 export class LoginComponent {
   @ViewChild('email') email;
+  mensaje = '';
   loginGroup: FormGroup;
   logo = environment.base + environment.usuario_logo;
   expoteco = environment.base + environment.load_logo + 'expoteco';
@@ -56,6 +57,7 @@ export class LoginComponent {
           this.router.navigate(['/empresa']);
         }
       }, (error: any) => {
+          this.mensaje = 'Las credenciales son incorrectas';
           this.toastr.danger(error.error.mensaje, 'Error de Autenticación');
           this.loginGroup.reset();
           this.email.nativeElement.focus();

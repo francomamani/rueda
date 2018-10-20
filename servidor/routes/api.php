@@ -50,5 +50,5 @@ Route::get('reporte-reunion/{parametro}', 'EvaluacionReunionController@reporteRe
 
 Route::post('cambiar-logo/{empresa_id}', 'EmpresaController@cambiarLogo');
 Route::get('mostrar-logo/{logo_path}', 'EmpresaController@mostrarLogo');
-
+Route::post('cambiar-password/{usuario_id}', 'AuthController@cambiarPassword');
 

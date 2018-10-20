@@ -18,8 +18,10 @@ export class PerfilComponent implements OnInit {
   constructor(public router: Router,
               private authService: AuthService,
               private empresaService: EmpresaService) {
-    const logo_path = environment.base  +'mostrar-logo/' + this.usuario.logo.split('/')[1];
-    this.logo = logo_path;
+    if (this.usuario.logo) {
+      const logo_path = environment.base  +'mostrar-logo/' + this.usuario.logo.split('/')[1];
+      this.logo = logo_path;
+    }
     if (this.usuario.tipo_usuario === 'empresa') {
       this.participantes = this.usuario.empresa.participantes;
     }

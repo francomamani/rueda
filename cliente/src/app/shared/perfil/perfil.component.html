@@ -4,7 +4,7 @@
       <div class="col-md-12">
         <nb-card>
           <nb-card-body class="perfil-acciones">
-            <label for="logo-file" class="logo-file-label">
+            <label for="logo-file" class="logo-file-label" *ngIf="usuario.tipo_usuario === 'empresa'">
               <i class="nb-edit"></i>
             </label>
             <input type="file" id="logo-file" #logoFile (change)="cambiarLogo()">

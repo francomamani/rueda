@@ -30,6 +30,7 @@ import {ReunionesComponent} from './reportes/reuniones/reuniones.component';
 import {EvaluacionGeneralComponent} from './reportes/evaluacion-general/evaluacion-general.component';
 import {EvaluacionReunionComponent} from './reportes/evaluacion-reunion/evaluacion-reunion.component';
 import {EmpresaEditComponent} from '../shared/empresa-edit/empresa-edit.component';
+import {CambiarPasswordComponent} from '../shared/cambiar-password/cambiar-password.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,10 @@ const routes: Routes = [
       {
         path: 'perfil',
         component: PerfilComponent,
+      },
+      {
+        path: 'cambiar-password',
+        component: CambiarPasswordComponent,
       },
       {
         path: 'actualizar-usuario/:usuario_id',

@@ -49,4 +49,7 @@ export class AuthService {
   updateUsuario(id, req) {
     return this.http.put(this.base + 'usuarios/' + id, req);
   }
+  cambiarPassword(usuario_id, req) {
+    return this.http.post(this.base + 'cambiar-password/' + usuario_id, req);
+  }
 }

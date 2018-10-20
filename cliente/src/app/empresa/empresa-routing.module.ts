@@ -17,6 +17,7 @@ import {AgendaCreateComponent} from './agenda/agenda-create/agenda-create.compon
 import {UsuarioEditComponent} from '../shared/usuario-edit/usuario-edit.component';
 import {EmpresaEditComponent} from '../shared/empresa-edit/empresa-edit.component';
 import {EvaluacionReunionesComponent} from '../shared/evaluacion-reuniones/evaluacion-reuniones.component';
+import {CambiarPasswordComponent} from '../shared/cambiar-password/cambiar-password.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
       {
         path: 'home',
         component: HomeComponent,
+      },
+      {
+        path: 'cambiar-password',
+        component: CambiarPasswordComponent,
       },
       {
         path: 'actualizar-usuario/:usuario_id',

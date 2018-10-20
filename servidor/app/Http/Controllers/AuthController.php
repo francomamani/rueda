@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Usuario;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use Validator;
@@ -54,5 +55,27 @@ class AuthController extends Controller
             'usuario' => $usuario,
             'mensaje' => 'Usuario autenticado exitosamente'
         ], 200);
+    }
+
+    public function cambiarPassword($usuario_id) {
+        $current_password = request()->input('current_password');
+        $new_password = request()->input('new_password');
+        $repeat_new_password = request()->input('repeat_new_password');
+
+        $usuario = Usuario::find($usuario_id);
+        $mensaje = "";
+        if (Hash::check($current_password, $usuario->password)) {
+            if ($new_password === $repeat_new_password) {
+                $usuario->password = Hash::make($new_password);
+                $usuario->save();
+                $mensaje  = "Contraseña actualizada exitosamente";
+            } else {
+                $mensaje  = "Las nuevas contraseñas no coinciden";
+            }
+        } else {
+            $mensaje = "Por favor ingresa nuevamente su contraseña actual";
+        }
+
+        return response()->json(['mensaje' => $mensaje], 200);
     }
 }
