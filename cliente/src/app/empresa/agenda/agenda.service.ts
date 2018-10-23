@@ -22,7 +22,16 @@ export class AgendaService {
       return this.http.post(this.base + 'agendas', req);
   }
 
-  cambiarEstado(req){
+  cambiarEstado(req) {
       return this.http.post(this.base + 'cambiar-estado', req);
   }
+
+  destroy(agenda_id) {
+    return this.http.delete(this.base + 'agendas', agenda_id);
+  }
+
+  cancelarCita(agenda_id) {
+    return this.http.post(this.base + 'cancelar-cita/' + agenda_id, agenda_id);
+  }
+
 }

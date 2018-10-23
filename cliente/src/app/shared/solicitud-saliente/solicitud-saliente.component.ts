@@ -5,6 +5,7 @@ import {AgendaService} from '../../empresa/agenda/agenda.service';
 import {EmpresaService} from '../../admin/empresa/empresa.service';
 import {AuthService} from '../../auth.service';
 import {EmpresaModalComponent} from '../empresa-modal/empresa-modal.component';
+import {NbToastrService} from '@nebular/theme';
 
 @Component({
   selector: 'ngx-solicitud-saliente',
@@ -17,6 +18,7 @@ export class SolicitudSalienteComponent implements OnInit {
   empresa_id = null;
   constructor(private agendaService: AgendaService,
               private modalService: NgbModal,
+              private toastr: NbToastrService,
               private empresaService: EmpresaService,
               private route: ActivatedRoute,
               private authService: AuthService) {
@@ -48,6 +50,23 @@ export class SolicitudSalienteComponent implements OnInit {
     const activeModal = this.modalService.open(EmpresaModalComponent, { size: 'lg', container: 'nb-layout' });
     activeModal.componentInstance.modalHeader = 'Empresa: ' + empresa.nombre;
     activeModal.componentInstance.empresa = empresa;
+  }
+
+  reload() {
+    this.agendaService
+      .solicitudesSalientes(this.empresa_id)
+      .subscribe((res: any) => {
+        this.solicitudes = res;
+      });
+  }
+  cancelar(agenda_id) {
+    if (window.confirm('¿Esta seguro de cancelar la cita?')) {
+      this.agendaService.cancelarCita(agenda_id)
+        .subscribe((response: any) => {
+          this.toastr.success('Cita cancelada con exito', '¡Exito!')
+          this.reload();
+        });
+    }
   }
 
 }

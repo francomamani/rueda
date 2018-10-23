@@ -138,4 +138,9 @@ class AgendaController extends Controller
         }
         return response()->json($agenda, 200);
     }
+
+    public function cancelarCita($agenda_id) {
+        Agenda::destroy($agenda_id);
+        return response()->json(['mensaje' => 'Cita eliminada con id: ' . $agenda_id], 200);
+    }
 }

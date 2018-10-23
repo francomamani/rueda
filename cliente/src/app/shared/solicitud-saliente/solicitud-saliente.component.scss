@@ -12,6 +12,15 @@ a.info, a.info:hover, a.info:active{
   text-decoration: underline;
   cursor: pointer;
 }
+.cancelar {
+  border: none;
+  background-color: #e62847;
+  color: whitesmoke;
+  padding: .25em .5em;
+  border-radius: 5px;
+  margin-left: .5em;
+  cursor: pointer;
+}
 @keyframes up {
   0% {
     opacity: 0;

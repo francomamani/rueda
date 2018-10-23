@@ -69,7 +69,7 @@ export class EmpresaEditComponent implements OnInit {
             .subscribe((res: any) => {
                 this.toastr.success(
                            'Los datos de la empresa '
-                                  + res.nombre + ' fueron actualizadas',
+                              + res.nombre + ' fueron actualizadas',
                               'Actualización exitoss');
                 if (this.router.url === this.ruta_admin) {
                     this.router.navigate(['/admin/empresa/listar']);

@@ -37,6 +37,7 @@
                 <span *ngIf="solicitud.estado === 'aceptado'" class="text-success">Aceptado</span>
                 <span *ngIf="solicitud.estado === 'rechazado'" class="text-danger">Rechazado</span>
                 <span *ngIf="solicitud.estado === 'pendiente'" class="text-warning">Pendiente</span>
+                <button (click)="cancelar(solicitud.agenda_id)" class="cancelar">Cancelar</button>
               </td>
 
             </tr>

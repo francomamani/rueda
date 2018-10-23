@@ -70,6 +70,10 @@ export class EmpresaCreateComponent implements OnInit {
   }
 
   store() {
+    this.empresaGroup.patchValue({
+      'habilitado' : this.empresaGroup.value.habilitado === 1 ? '1' : '0',
+      'especial' : this.empresaGroup.value.especial === 1 ? '1' : '0',
+    });
 
     if (this.logo.nativeElement.files[0]) {
         const formData = new FormData();
@@ -82,11 +86,11 @@ export class EmpresaCreateComponent implements OnInit {
         formData.append('ciudad_localidad', this.empresaGroup.value.ciudad_localidad);
         formData.append('nit', this.empresaGroup.value.nit);
         formData.append('representante_legal', this.empresaGroup.value.representante_legal);
-        formData.append('habilitado', this.empresaGroup.value.habilitado === true ? '1' : '0');
+        formData.append('habilitado', this.empresaGroup.value.habilitado);
         formData.append('max_participantes', this.empresaGroup.value.max_participantes);
         formData.append('oferta', this.empresaGroup.value.oferta);
         formData.append('demanda', this.empresaGroup.value.demanda);
-        formData.append('especial', this.empresaGroup.value.especial === true ? '1' : '0');
+        formData.append('especial', this.empresaGroup.value.especial);
         formData.append('nombres', this.empresaGroup.value.nombres);
         formData.append('apellidos', this.empresaGroup.value.apellidos);
         formData.append('email', this.empresaGroup.value.email);
@@ -109,7 +113,37 @@ export class EmpresaCreateComponent implements OnInit {
           .subscribe((res: any) => {
             this.mensaje = 'La empresa ' + res.nombre + ' fue registrada exitosamente';
             this.toastr.success('La empresa ' + res.nombre + ' fue registrada', 'Registro exitoso');
+            const credenciales = {
+              email: this.empresaGroup.value.email,
+              password: this.empresaGroup.value.password,
+            };
             if (this.router.url === '/auth/signup') {
+              if ( !this.authService.isLoggedIn()) {
+                this.authService.login(credenciales)
+                  .subscribe((resLogin: any) => {
+                  this.toastr.success(resLogin.mensaje, 'Iniciando Sesion');
+                  if (resLogin.usuario.tipo_usuario === 'administrador') {
+                    this.router.navigate(['/admin']);
+                  } else {
+                    this.router.navigate(['/empresa']);
+                  }
+                });
+              } else {
+                this.router.navigate(['/empresa']);
+              }
+            } else {
+              this.router.navigate(['/admin/empresa/listar']);
+            }
+            this.empresaGroup.reset();
+          });
+    } else {
+      this.empresaService.store(this.empresaGroup.value)
+        .subscribe((res: any) => {
+          if (this.router.url === '/auth/signup') {
+            if ( this.empresaGroup.value.password === this.empresaGroup.value.repeated_password) {
+              this.mensaje = 'La empresa ' + res.nombre + ' fue registrada';
+              this.error = '';
+              this.toastr.success('La empresa ' + res.nombre + ' fue registrada', 'Registro exitoso');
               if ( !this.authService.isLoggedIn()) {
                 this.authService.login({
                   email: this.empresaGroup.value.email,
@@ -127,40 +161,13 @@ export class EmpresaCreateComponent implements OnInit {
                 this.empresaGroup.reset();
                 this.router.navigate(['/empresa']);
               }
-            }
-          });
-    } else {
-      this.empresaGroup.patchValue({
-        'habilitado' : this.empresaGroup.value.habilitado === true ? '1' : '0',
-        'especial' : this.empresaGroup.value.especial === true ? '1' : '0',
-      });
-      this.empresaService.store(this.empresaGroup.value)
-        .subscribe((res: any) => {
-          if ( this.empresaGroup.value.password === this.empresaGroup.value.repeated_password) {
-            this.mensaje = 'La empresa ' + res.nombre + ' fue registrada';
-            this.error = '';
-            this.toastr.success('La empresa ' + res.nombre + ' fue registrada', 'Registro exitoso');
-            if ( !this.authService.isLoggedIn()) {
-              this.authService.login({
-                email: this.empresaGroup.value.email,
-                password: this.empresaGroup.value.password,
-              }).subscribe((resLogin: any) => {
-                this.toastr.success(resLogin.mensaje, 'Iniciando Sesion');
-                if (resLogin.usuario.tipo_usuario === 'administrador') {
-                  this.router.navigate(['/admin']);
-                } else {
-                  this.router.navigate(['/empresa']);
-                }
-              });
-              this.empresaGroup.reset();
             } else {
-              this.empresaGroup.reset();
-              this.router.navigate(['/empresa']);
+              this.mensaje = '';
+              this.error = 'Las contraseñas no coinciden';
+              this.toastr.danger('Las contraseñas no coinciden', 'Error de Registro');
             }
           } else {
-            this.mensaje = '';
-            this.error = 'Las contraseñas no coinciden';
-            this.toastr.danger('Las contraseñas no coinciden', 'Error de Registro');
+            this.router.navigate(['/admin/empresa/listar']);
           }
         });
     }
