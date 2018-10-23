@@ -107,9 +107,26 @@ export class EmpresaCreateComponent implements OnInit {
 
         this.empresaService.store(formData)
           .subscribe((res: any) => {
+            this.mensaje = 'La empresa ' + res.nombre + ' fue registrada exitosamente';
             this.toastr.success('La empresa ' + res.nombre + ' fue registrada', 'Registro exitoso');
-            if (this.router.url === '/signup') {
-              this.router.navigate(['/login']);
+            if (this.router.url === '/auth/signup') {
+              if ( !this.authService.isLoggedIn()) {
+                this.authService.login({
+                  email: this.empresaGroup.value.email,
+                  password: this.empresaGroup.value.password,
+                }).subscribe((resLogin: any) => {
+                  this.toastr.success(resLogin.mensaje, 'Iniciando Sesion');
+                  if (resLogin.usuario.tipo_usuario === 'administrador') {
+                    this.router.navigate(['/admin']);
+                  } else {
+                    this.router.navigate(['/empresa']);
+                  }
+                });
+                this.empresaGroup.reset();
+              } else {
+                this.empresaGroup.reset();
+                this.router.navigate(['/empresa']);
+              }
             }
           });
     } else {

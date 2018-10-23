@@ -49,7 +49,7 @@ export class EmpresaEditComponent implements OnInit {
             'logo': new FormControl(this.emp.logo),
             'direccion': new FormControl(this.emp.direccion, Validators.required),
             'telefono': new FormControl(this.emp.telefono, Validators.required),
-            'pagina_web': new FormControl(this.emp.pagina_web, Validators.required),
+            'pagina_web': new FormControl(this.emp.pagina_web),
             'ciudad_localidad': new FormControl(this.emp.ciudad_localidad, Validators.required),
             'nit': new FormControl(this.emp.nit, Validators.required),
             'representante_legal': new FormControl(this.emp.representante_legal, Validators.required),
@@ -67,7 +67,10 @@ export class EmpresaEditComponent implements OnInit {
     store() {
         this.empresaService.update(this.empresaGroup.value, this.empresa_id)
             .subscribe((res: any) => {
-                this.toastr.success('Los datos de la empresa ' + res.nombre + ' fueron actualizadas', 'Actualización exitoss');
+                this.toastr.success(
+                           'Los datos de la empresa '
+                                  + res.nombre + ' fueron actualizadas',
+                              'Actualización exitoss');
                 if (this.router.url === this.ruta_admin) {
                     this.router.navigate(['/admin/empresa/listar']);
                 } else {
