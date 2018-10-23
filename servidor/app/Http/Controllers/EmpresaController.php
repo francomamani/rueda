@@ -47,7 +47,7 @@ class EmpresaController extends Controller
             'apellidos' => $request->input('apellidos'),
             'email' => $request->input('email'),
             'tipo_usuario' => 'empresa',
-            'password' => Hash::make($request->input('nit')),
+            'password' => Hash::make($request->input('password')),
         ];
 
         if ($request->hasFile('logo')){

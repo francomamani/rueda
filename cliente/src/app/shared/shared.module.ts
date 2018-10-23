@@ -18,6 +18,7 @@ import {EmpresaCreateComponent} from './empresa-create/empresa-create.component'
 import { UsuarioEditComponent } from './usuario-edit/usuario-edit.component';
 import { EmpresaEditComponent } from './empresa-edit/empresa-edit.component';
 import { CambiarPasswordComponent } from './cambiar-password/cambiar-password.component';
+import { RegistroExitosoComponent } from './registro-exitoso/registro-exitoso.component';
 
 @NgModule({
   imports: [
@@ -41,7 +42,8 @@ import { CambiarPasswordComponent } from './cambiar-password/cambiar-password.co
                   EvaluacionReunionesComponent,
                   UsuarioEditComponent,
                   EmpresaEditComponent,
-                  CambiarPasswordComponent],
+                  CambiarPasswordComponent,
+                  RegistroExitosoComponent],
   exports: [PerfilComponent,
             HorariosOcupadosComponent,
             HorariosOcupadosCreateComponent,

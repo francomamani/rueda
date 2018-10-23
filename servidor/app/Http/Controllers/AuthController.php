@@ -13,7 +13,7 @@ class AuthController extends Controller
     public function login() {
         $credentials = request()->only('email', 'password');
         $rules = [
-            'email' => 'required|email',
+            'email' => 'required',
             'password' => 'required|min:8',
         ];
         $validator = Validator::make($credentials, $rules);

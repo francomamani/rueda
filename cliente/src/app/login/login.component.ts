@@ -50,15 +50,16 @@ export class LoginComponent {
   login() {
     this.authService.login(this.loginGroup.value)
       .subscribe((res: any) => {
-        this.toastr.success(res.mensaje, 'Iniciando Sesion');
         if (res.usuario.tipo_usuario === 'administrador') {
+          this.toastr.success(res.mensaje, 'Iniciando Sesion');
           this.router.navigate(['/admin']);
         } else {
+          this.toastr.success(res.mensaje, 'Iniciando Sesion');
           this.router.navigate(['/empresa']);
         }
       }, (error: any) => {
           this.mensaje = 'Las credenciales son incorrectas';
-          this.toastr.danger(error.error.mensaje, 'Error de Autenticación');
+          this.toastr.danger('Credenciales inválidas', 'Error de Autenticación');
           this.loginGroup.reset();
           this.email.nativeElement.focus();
       });

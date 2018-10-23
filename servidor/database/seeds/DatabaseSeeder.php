@@ -168,20 +168,20 @@ class DatabaseSeeder extends Seeder
             ]);
         }
         $usuarioAdmin = [
-            'nombres' => 'Rocio Jimena',
-            'apellidos' => 'Villca Quispe',
-            'email' => 'rvillca@campoferial3dejulio.com',
+            'nombres' => 'Franco Jesus',
+            'apellidos' => 'Mamani Pozo',
+            'email' => 'admin@admin.com',
             'tipo_usuario' => 'administrador',
-            'password' => Hash::make('rvillca2018$$')
+            'password' => Hash::make('123456789')
         ];
         Usuario::create($usuarioAdmin);
 
         $usuario = [
-            'nombres' => 'Pamela',
-            'apellidos' => 'León Mamani',
-            'email' => 'pleon@campoferial3dejulio.com',
+            'nombres' => 'Andrea Megan',
+            'apellidos' => 'Lafuente Rocha',
+            'email' => 'empresa@empresa.com',
             'tipo_usuario' => 'empresa',
-            'password' => Hash::make('pleon2018$$')
+            'password' => Hash::make('123456789')
         ];
 
         $empresa = [
@@ -190,11 +190,11 @@ class DatabaseSeeder extends Seeder
             'nombre' => 'Campo Ferial 3 de Julio',
             'logo' => null,
             'direccion' => 'Calle Hugo Bohero #650',
-            'telefono' => '52-87551',
-            'pagina_web' => 'www.campoferial3dejulio.com',
+            'telefono' => '(591) 761 37653',
+            'pagina_web' => 'www.francomamani.com',
             'ciudad_localidad' => 'Oruro',
             'nit' => '7275047016',
-            'representante_legal' => 'El Representante Legal',
+            'representante_legal' => 'Franco Jesus Mamani Pozo',
             'habilitado' => true,
             'max_participantes' => 2,
             'oferta' => 'Servicios Software',

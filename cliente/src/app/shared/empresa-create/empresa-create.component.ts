@@ -4,6 +4,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {NbToastrService} from '@nebular/theme';
 import {EmpresaService} from '../../admin/empresa/empresa.service';
 import {Router} from '@angular/router';
+import {AuthService} from '../../auth.service';
 
 @Component({
   selector: 'ngx-empresa-create',
@@ -14,8 +15,11 @@ export class EmpresaCreateComponent implements OnInit {
   @ViewChild('logo') logo;
   rubros: any = null;
   empresaGroup: FormGroup;
+  mensaje = '';
+  error = '';
   constructor(private rubroService: RubroService,
               private empresaService: EmpresaService,
+              private authService: AuthService,
               public router: Router,
               private fb: FormBuilder,
               private toastr: NbToastrService) {
@@ -33,7 +37,7 @@ export class EmpresaCreateComponent implements OnInit {
       'logo': new FormControl(''),
       'direccion': new FormControl('', Validators.required),
       'telefono': new FormControl('', Validators.required),
-      'pagina_web': new FormControl('', Validators.required),
+      'pagina_web': new FormControl(''),
       'ciudad_localidad': new FormControl('', Validators.required),
       'nit': new FormControl('', Validators.required),
       'representante_legal': new FormControl('', Validators.required),
@@ -45,6 +49,8 @@ export class EmpresaCreateComponent implements OnInit {
       'nombres': new FormControl('', Validators.required),
       'apellidos': new FormControl('', Validators.required),
       'email': new FormControl('', Validators.required),
+      'password': new FormControl('', Validators.required),
+      'repeated_password': new FormControl('', Validators.required),
 
       'p1_nombres': new FormControl('', Validators.required),
       'p1_apellidos': new FormControl('', Validators.required),
@@ -84,6 +90,8 @@ export class EmpresaCreateComponent implements OnInit {
         formData.append('nombres', this.empresaGroup.value.nombres);
         formData.append('apellidos', this.empresaGroup.value.apellidos);
         formData.append('email', this.empresaGroup.value.email);
+        formData.append('password', this.empresaGroup.value.password);
+        formData.append('repeated_password', this.empresaGroup.value.repeated_password);
 
         formData.append('p1_nombres', this.empresaGroup.value.p1_nombres);
         formData.append('p1_apellidos', this.empresaGroup.value.p1_apellidos);
@@ -111,11 +119,31 @@ export class EmpresaCreateComponent implements OnInit {
       });
       this.empresaService.store(this.empresaGroup.value)
         .subscribe((res: any) => {
-          this.toastr.success('La empresa ' + res.nombre + ' fue registrada', 'Registro exitoso');
-          if (this.router.url === '/auth/signup') {
-            this.router.navigate(['/login']);
+          if ( this.empresaGroup.value.password === this.empresaGroup.value.repeated_password) {
+            this.mensaje = 'La empresa ' + res.nombre + ' fue registrada';
+            this.error = '';
+            this.toastr.success('La empresa ' + res.nombre + ' fue registrada', 'Registro exitoso');
+            if ( !this.authService.isLoggedIn()) {
+              this.authService.login({
+                email: this.empresaGroup.value.email,
+                password: this.empresaGroup.value.password,
+              }).subscribe((resLogin: any) => {
+                this.toastr.success(resLogin.mensaje, 'Iniciando Sesion');
+                if (resLogin.usuario.tipo_usuario === 'administrador') {
+                  this.router.navigate(['/admin']);
+                } else {
+                  this.router.navigate(['/empresa']);
+                }
+              });
+              this.empresaGroup.reset();
+            } else {
+              this.empresaGroup.reset();
+              this.router.navigate(['/empresa']);
+            }
           } else {
-            this.router.navigate(['/empresa']);
+            this.mensaje = '';
+            this.error = 'Las contraseñas no coinciden';
+            this.toastr.danger('Las contraseñas no coinciden', 'Error de Registro');
           }
         });
     }
