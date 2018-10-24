@@ -50,7 +50,10 @@ Route::get('reporte-reunion/{parametro}', 'EvaluacionReunionController@reporteRe
 
 Route::post('cambiar-logo/{empresa_id}', 'EmpresaController@cambiarLogo');
 Route::get('mostrar-logo/{logo_path}', 'EmpresaController@mostrarLogo');
-Route::post('cambiar-password/{usuario_id}', 'AuthController@cambiarPassword');
 
 Route::post('cancelar-cita/{agenda_id}', 'AgendaController@cancelarCita');
+
+Route::post('cambiar-password/{usuario_id}', 'AuthController@cambiarPassword');
 Route::get('reset-password/{usuario_id}', 'UsuarioController@resetPassword');
+Route::get('comentarios-generales', 'EvaluacionGeneralController@comentarios');
+Route::get('comentarios-reuniones', 'EvaluacionReunionController@comentarios');

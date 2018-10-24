@@ -37,4 +37,13 @@ class EvaluacionReunionController extends Controller
         }
         return response()->json($responses, 200);
     }
+
+    public function comentarios () {
+        $comentarios = EvaluacionReunion::join('empresas', 'empresas.empresa_id', '=', 'evaluacion_reuniones.empresa_id')
+            ->selectRaw('empresas.nombre as empresa, empresas.empresa_id, uno as reunion_con, siete as comentario')
+            ->orderBy('empresas.nombre', 'asc')
+            ->get();
+        return response()->json($comentarios, 200);
+    }
+
 }

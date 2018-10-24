@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\EvaluacionGeneral;
+use App\EvaluacionReunion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -48,5 +49,12 @@ class EvaluacionGeneralController extends Controller
             ]);
         }
         return response()->json($responses, 200);
+    }
+    public function comentarios () {
+        $comentarios = EvaluacionGeneral::join('empresas', 'empresas.empresa_id', '=', 'evaluaciones_generales.empresa_id')
+                            ->selectRaw('empresas.nombre, empresas.empresa_id, nueve as comentario')
+                            ->orderBy('empresas.nombre', 'asc')
+                            ->get();
+        return response()->json($comentarios, 200);
     }
 }

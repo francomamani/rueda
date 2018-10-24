@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {EvaluacionGeneralService} from '../../../empresa/evaluacion-general/evaluacion-general.service';
 import {EvaluacionReunionesService} from '../../../shared/evaluacion-reuniones/evaluacion-reuniones.service';
 
 @Component({
   selector: 'ngx-evaluacion-reunion',
   templateUrl: './evaluacion-reunion.component.html',
-  styleUrls: ['./evaluacion-reunion.component.scss']
+  styleUrls: ['./evaluacion-reunion.component.scss'],
 })
 export class EvaluacionReunionComponent implements OnInit {
   preguntas = [
