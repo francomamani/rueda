@@ -24,6 +24,23 @@ export const ADMIN_ITEMS: NbMenuItem[] = [
       ],
     },
     {
+        title: 'Usuarios',
+        icon: 'nb-person',
+        link: '/admin/usuario',
+        children: [
+            {
+                title: 'Busqueda',
+                icon: 'nb-search',
+                link: '/admin/usuario/listar',
+            },
+            {
+                title: 'Nuevo usuario',
+                icon: 'nb-plus',
+                link: '/admin/usuario/crear',
+            },
+        ],
+    },
+    {
         title: 'Horarios',
         icon: 'nb-email',
         link: '/admin/horario',

@@ -47,8 +47,11 @@ export class UsuarioEditComponent implements OnInit {
         this.authService.setUsuario(res);
         if ( this.router.url === '/admin/actualizar-usuario/' + this.usuario_id ) {
           this.router.navigate(['/admin/perfil']);
-        } else {
-          this.router.navigate(['/empresa/perfil']);
+        } else if (this.router.url === '/admin/usuario/actualizar-usuario/' + this.usuario_id ) {
+            this.router.navigate(['/admin/usuario/listar']);
+        }
+         else {
+             this.router.navigate(['/empresa/perfil']);
         }
         this.toastr.success(res.nombres  + ' ' + res.apellidos +
                       ' fue actualizado exitosamente', 'Usuario actualizado');

@@ -31,6 +31,9 @@ import {EvaluacionGeneralComponent} from './reportes/evaluacion-general/evaluaci
 import {EvaluacionReunionComponent} from './reportes/evaluacion-reunion/evaluacion-reunion.component';
 import {EmpresaEditComponent} from '../shared/empresa-edit/empresa-edit.component';
 import {CambiarPasswordComponent} from '../shared/cambiar-password/cambiar-password.component';
+import {UsuarioComponent} from './usuario/usuario.component';
+import {UsuarioIndexComponent} from './usuario/usuario-index/usuario-index.component';
+import {UsuarioCreateComponent} from './usuario/usuario-create/usuario-create.component';
 
 const routes: Routes = [
   {
@@ -89,6 +92,26 @@ const routes: Routes = [
           pathMatch: 'full',
         }],
       },
+        {
+          path: 'usuario',
+          component: UsuarioComponent,
+            children: [{
+                path: 'listar',
+                component: UsuarioIndexComponent,
+            }, {
+                path: 'crear',
+                component: UsuarioCreateComponent,
+            },
+            {
+                path: 'actualizar-usuario/:usuario_id',
+                component: UsuarioEditComponent,
+            },
+            {
+                path: '',
+                redirectTo: 'listar',
+                pathMatch: 'full',
+            }],
+        },
       {
         path: 'horario',
         component: HorarioComponent,

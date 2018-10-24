@@ -38,6 +38,9 @@ import { EvaluacionGeneralComponent } from './reportes/evaluacion-general/evalua
 import { ReunionesComponent } from './reportes/reuniones/reuniones.component';
 import {GoogleChartsModule} from 'angular-google-charts';
 import { EvaluacionReunionComponent } from './reportes/evaluacion-reunion/evaluacion-reunion.component';
+import { UsuarioComponent } from './usuario/usuario.component';
+import { UsuarioIndexComponent } from './usuario/usuario-index/usuario-index.component';
+import { UsuarioCreateComponent } from './usuario/usuario-create/usuario-create.component';
 
 @NgModule({
   imports: [
@@ -77,6 +80,9 @@ import { EvaluacionReunionComponent } from './reportes/evaluacion-reunion/evalua
                  EvaluacionGeneralComponent,
                  ReunionesComponent,
                  EvaluacionReunionComponent,
+                 UsuarioComponent,
+                 UsuarioIndexComponent,
+                 UsuarioCreateComponent,
   ],
   providers: [ RubroService, DatePipe],
 })

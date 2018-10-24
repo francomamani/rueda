@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>Usuarios registrados</nb-card-header>
+      <nb-card-body>
+        <form (submit)="buscar()" class="rueda-search" [formGroup]="buscarGroup">
+          <input type="search" formControlName="search" name="search" placeholder="buscar">
+          <button> Buscar </button>
+        </form>
+        <br><br>
+
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+            <tr>
+              <th>N.</th>
+              <th>Cuenta</th>
+              <th>Empresa</th>
+              <th>Nombres</th>
+              <th>Apellidos</th>
+              <th>Tipo de Usuario</th>
+              <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let usuario of usuarios; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{usuario.email}}</td>
+              <td><a *ngIf="usuario.empresa != null" (click)="info(usuario.empresa)" class="info">{{usuario.empresa.nombre | uppercase }}</a></td>
+              <td>{{usuario.nombres}}</td>
+              <td>{{usuario.apellidos}}</td>
+              <td class="text-center">
+                <span *ngIf="usuario.tipo_usuario === 'administrador'" class="text-info">Administrador</span>
+                <span *ngIf="usuario.tipo_usuario === 'empresa'" class="text-primary">Empresa</span>
+              </td>
+              <td class="btn-acciones">
+                <a class="text-primary" title="Resetear contraseña" (click)="onResetConfirm(usuario)"  ><i class="fa fa-lock"></i></a>
+                <a class="text-success" title="Editar usuario" [routerLink]="['/admin/usuario/actualizar-usuario/', usuario.usuario_id]"><i class="fa fa-edit"></i></a>
+                <a  *ngIf="usuario.tipo_usuario === 'administrador'" title="Eliminar usuario" class="text-danger" (click)="onDeleteConfirm(usuario, i)"><i class="fa fa-trash"></i></a>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
