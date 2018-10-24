@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Usuario;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UsuarioController extends Controller
 {
@@ -14,7 +15,7 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        return response()->json(Usuario::get(), 200);
+        return response()->json(Usuario::orderBy('email')->get(), 200);
     }
 
     /**
@@ -25,6 +26,13 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
+        $usuario = new Usuario();
+        $usuario->nombres = $request->input('nombres');
+        $usuario->apellidos = $request->input('apellidos');
+        $usuario->email = $request->input('email');
+        $usuario->tipo_usuario = 'administrador';
+        $usuario->password = Hash::make($request->input('password'));
+
         return response()->json(Usuario::create($request->all()), 201);
     }
 
@@ -99,5 +107,14 @@ class UsuarioController extends Controller
                 break;
         }
         return response()->file($file);
+    }
+
+    public function resetPassword($usuario_id) {
+        $usuario = Usuario::find($usuario_id);
+        $usuario->password = Hash::make($usuario->email);
+        $usuario->save();
+        return response()->json([
+            'mensaje' => 'Contraseña actualizada exitosamente'
+        ], 200);
     }
 }

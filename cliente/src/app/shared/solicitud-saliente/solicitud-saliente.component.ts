@@ -59,9 +59,9 @@ export class SolicitudSalienteComponent implements OnInit {
         this.solicitudes = res;
       });
   }
-  cancelar(agenda_id) {
-    if (window.confirm('¿Esta seguro de cancelar la cita?')) {
-      this.agendaService.cancelarCita(agenda_id)
+  cancelar(solicitud) {
+    if (window.confirm('¿Esta seguro de cancelar la cita con ' + solicitud.nombre + '?')) {
+      this.agendaService.cancelarCita(solicitud.agenda_id)
         .subscribe((response: any) => {
           this.toastr.success('Cita cancelada con exito', '¡Exito!')
           this.reload();

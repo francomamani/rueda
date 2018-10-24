@@ -176,6 +176,7 @@ class DatabaseSeeder extends Seeder
         ];
         Usuario::create($usuarioAdmin);
 
+
         $usuario = [
             'nombres' => 'Andrea Megan',
             'apellidos' => 'Lafuente Rocha',

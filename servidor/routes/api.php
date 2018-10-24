@@ -53,3 +53,4 @@ Route::get('mostrar-logo/{logo_path}', 'EmpresaController@mostrarLogo');
 Route::post('cambiar-password/{usuario_id}', 'AuthController@cambiarPassword');
 
 Route::post('cancelar-cita/{agenda_id}', 'AgendaController@cancelarCita');
+Route::get('reset-password/{usuario_id}', 'UsuarioController@resetPassword');
