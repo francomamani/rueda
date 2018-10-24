@@ -154,7 +154,9 @@ class EmpresaController extends Controller
     public function destroy($id)
     {
         $empresa = Empresa::find($id);
+        Usuario::destroy($empresa->usuario_id);
         $empresa->delete();
+
         return response()->json([
             'mensaje' => 'Empresa: ' . $empresa->nombre . ' eliminado exitosamente'
         ], 200);
