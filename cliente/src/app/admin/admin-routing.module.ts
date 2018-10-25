@@ -34,6 +34,8 @@ import {CambiarPasswordComponent} from '../shared/cambiar-password/cambiar-passw
 import {UsuarioComponent} from './usuario/usuario.component';
 import {UsuarioIndexComponent} from './usuario/usuario-index/usuario-index.component';
 import {UsuarioCreateComponent} from './usuario/usuario-create/usuario-create.component';
+import {OpinionGeneralComponent} from './reportes/opinion-general/opinion-general.component';
+import {OpinionReunionComponent} from './reportes/opinion-reunion/opinion-reunion.component';
 
 const routes: Routes = [
   {
@@ -193,6 +195,12 @@ const routes: Routes = [
         }, {
           path: 'evaluaciones-reuniones',
           component: EvaluacionReunionComponent,
+        }, {
+            path: 'opiniones-generales',
+            component: OpinionGeneralComponent,
+        }, {
+            path: 'opiniones-reuniones',
+            component: OpinionReunionComponent,
         }],
     },
       {

@@ -34,9 +34,11 @@ export class EvaluacionReunionesComponent implements OnInit {
               .registrado(params.reunion_id, params.empresa_id)
               .subscribe((res: any) => {
                 this.registrado = res.registrado;
-                setTimeout(() => {
-                  this.router.navigate(['/empresa/mi-agenda/reuniones-agendadas']);
-                }, 3500);
+                if(this.registrado) {
+                    setTimeout(() => {
+                        this.router.navigate(['/empresa/mi-agenda/reuniones-agendadas']);
+                    }, 3500);
+                }
               });
         });
         this.empresaService.empresasListar()

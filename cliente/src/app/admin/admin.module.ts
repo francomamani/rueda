@@ -41,6 +41,8 @@ import { EvaluacionReunionComponent } from './reportes/evaluacion-reunion/evalua
 import { UsuarioComponent } from './usuario/usuario.component';
 import { UsuarioIndexComponent } from './usuario/usuario-index/usuario-index.component';
 import { UsuarioCreateComponent } from './usuario/usuario-create/usuario-create.component';
+import { OpinionGeneralComponent } from './reportes/opinion-general/opinion-general.component';
+import { OpinionReunionComponent } from './reportes/opinion-reunion/opinion-reunion.component';
 
 @NgModule({
   imports: [
@@ -83,6 +85,8 @@ import { UsuarioCreateComponent } from './usuario/usuario-create/usuario-create.
                  UsuarioComponent,
                  UsuarioIndexComponent,
                  UsuarioCreateComponent,
+                 OpinionGeneralComponent,
+                 OpinionReunionComponent,
   ],
   providers: [ RubroService, DatePipe],
 })

@@ -101,6 +101,14 @@ export const ADMIN_ITEMS: NbMenuItem[] = [
             title: 'Evaluaciones de Reuniones',
             icon: 'nb-bar-chart',
             link: '/admin/reportes/evaluaciones-reuniones',
+        }, {
+            title: 'Opiniones Generales',
+            icon: 'nb-bar-chart',
+            link: '/admin/reportes/opiniones-generales',
+        }, {
+            title: 'Opiniones por Reunión',
+            icon: 'nb-bar-chart',
+            link: '/admin/reportes/opiniones-reuniones',
         }],
     },
 ];
