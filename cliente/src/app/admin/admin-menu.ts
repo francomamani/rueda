@@ -102,13 +102,13 @@ export const ADMIN_ITEMS: NbMenuItem[] = [
             icon: 'nb-bar-chart',
             link: '/admin/reportes/evaluaciones-reuniones',
         }, {
-            title: 'Opiniones Generales',
+            title: 'Comentarios Generales',
             icon: 'nb-bar-chart',
-            link: '/admin/reportes/opiniones-generales',
+            link: '/admin/reportes/comentarios-generales',
         }, {
-            title: 'Opiniones por Reunión',
+            title: 'Comentarios por Reunión',
             icon: 'nb-bar-chart',
-            link: '/admin/reportes/opiniones-reuniones',
+            link: '/admin/reportes/comentarios-reuniones',
         }],
     },
 ];

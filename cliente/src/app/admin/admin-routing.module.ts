@@ -196,10 +196,10 @@ const routes: Routes = [
           path: 'evaluaciones-reuniones',
           component: EvaluacionReunionComponent,
         }, {
-            path: 'opiniones-generales',
+            path: 'comentarios-generales',
             component: OpinionGeneralComponent,
         }, {
-            path: 'opiniones-reuniones',
+            path: 'comentarios-reuniones',
             component: OpinionReunionComponent,
         }],
     },
