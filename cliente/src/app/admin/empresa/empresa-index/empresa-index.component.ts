@@ -17,7 +17,8 @@ export class EmpresaIndexComponent implements OnInit {
   buscarGroup: FormGroup;
   empresas: any = null;
   rubros: any = null;
-  logo = environment.base + environment.empresa_logo;
+  logo = environment.base + 'mostrar-logo/';
+  logo_default = environment.base + environment.empresa_logo;
   constructor(private empresaService: EmpresaService,
               private rubroService: RubroService,
               private modalService: NgbModal,
@@ -49,23 +50,27 @@ export class EmpresaIndexComponent implements OnInit {
         this.empresas = res;
       });
   }
+  reload() {
+    this.empresaService.empresasListar()
+      .subscribe((res: any) => {
+        this.empresas = res;
+      });
+  }
   info(empresa) {
     const activeModal = this.modalService.open(EmpresaModalComponent, { size: 'lg', container: 'nb-layout' });
     activeModal.componentInstance.modalHeader = 'Empresa: ' + empresa.nombre;
     activeModal.componentInstance.empresa = empresa;
   }
-  cambiarLogo(empresa) {
-/*    const empresa_logo = document.getElementById(empresa.empresa_id);
-    console.log(empresa_logo);
+  cambiarLogo(event, empresa) {
     const formData = new FormData();
-    if (empresa_logo.files[0]) {
-      formData.append('logo', empresa_logo.files[0]);
+    if (event.srcElement.files[0]) {
+      formData.append('logo', event.srcElement.files[0]);
     }
     this.empresaService
         .cambiarLogo(empresa.empresa_id, formData)
       .subscribe(res => {
-        console.log(res);
-      });*/
+        this.reload();
+      });
   }
   onDeleteConfirm(empresa, index): void {
     if (window.confirm('¿Esta seguro que quiere eliminar este registro?')) {

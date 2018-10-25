@@ -32,7 +32,16 @@
             <tbody>
             <tr *ngFor="let empresa of empresas; let i = index">
               <td>{{ i + 1 }}</td>
-              <td><img height="48" src="{{logo}}{{empresa.empresa_id}}" alt="{{empresa.nombre}}"></td>
+              <td>
+                <img *ngIf="empresa.logo !== null"
+                     height="48"
+                     src="{{logo}}{{empresa.logo.split('/')[1]}}"
+                     alt="{{empresa.nombre}}">
+                <img *ngIf="empresa.logo === null"
+                     height="48"
+                     src="{{logo_default}}{{empresa.empresa_id}}"
+                     alt="{{empresa.nombre}}">
+              </td>
               <td><a (click)="info(empresa)" class="info">{{empresa.nombre | uppercase }}</a></td>
               <td>{{empresa.nit}}</td>
               <td>{{empresa.telefono}}</td>
@@ -51,11 +60,14 @@
               </td>
               <td class="btn-acciones">
                 <label [for]="empresa.empresa_id"
-                       class="logo-upload"
-                       (click)="cambiarLogo(empresa)">
+                       title="Subir logo"
+                       class="logo-upload">
                   <i class="fa fa-upload"></i>
                 </label>
-                <input type="file" [id]="empresa.empresa_id" class="hidden">
+                <input type="file"
+                       (change)="cambiarLogo($event, empresa)"
+                       [id]="empresa.empresa_id"
+                       class="hidden">
                 <a class="text-primary" title="Listar de participantes" [routerLink]="['/admin/empresa/participantes/', empresa.empresa_id]"><i class="fa fa-user"></i></a>
                 <a class="text-success" title="Editar empresa" [routerLink]="['/admin/empresa/editar/'+empresa.empresa_id]"><i class="fa fa-edit"></i></a>
                 <a class="text-primary" title="Solicitudes salientes" [routerLink]="['/admin/empresa/solicitudes-salientes/'+empresa.empresa_id]"><i class="fa fa-arrow-circle-right"></i></a>
