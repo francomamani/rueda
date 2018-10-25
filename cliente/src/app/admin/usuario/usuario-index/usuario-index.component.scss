@@ -50,6 +50,11 @@ a.info, a.info:hover, a.info:active{
   text-decoration: underline;
   cursor: pointer;
 }
+.btn-acciones-2 a{
+  display: inline-block;
+  margin-right: .5em;
+  cursor: pointer;
+}
 table {
   animation: up .4s ease-out;
 }

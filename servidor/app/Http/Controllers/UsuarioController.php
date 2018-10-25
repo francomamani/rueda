@@ -15,7 +15,7 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        return response()->json(Usuario::orderBy('email')->get(), 200);
+        return response()->json(Usuario::with('empresa')->orderBy('email')->get(), 200);
     }
 
     /**
@@ -32,8 +32,8 @@ class UsuarioController extends Controller
         $usuario->email = $request->input('email');
         $usuario->tipo_usuario = 'administrador';
         $usuario->password = Hash::make($request->input('password'));
-
-        return response()->json(Usuario::create($request->all()), 201);
+        $usuario->save();
+        return response()->json($usuario, 201);
     }
 
     /**

@@ -49,8 +49,7 @@ export class UsuarioEditComponent implements OnInit {
           this.router.navigate(['/admin/perfil']);
         } else if (this.router.url === '/admin/usuario/actualizar-usuario/' + this.usuario_id ) {
             this.router.navigate(['/admin/usuario/listar']);
-        }
-         else {
+        } else {
              this.router.navigate(['/empresa/perfil']);
         }
         this.toastr.success(res.nombres  + ' ' + res.apellidos +

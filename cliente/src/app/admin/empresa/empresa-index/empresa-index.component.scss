@@ -53,6 +53,18 @@ a.info, a.info:hover, a.info:active{
 table {
   animation: up .4s ease-out;
 }
+.hidden {
+  display: none;
+}
+.logo-upload {
+  color: #ffc345;
+  cursor: pointer;
+  font-size: 1.2em;
+  margin: 0 .25em;
+}
+.logo-upload:hover {
+  color: #e69c3f;
+}
 @keyframes up {
   0% {
     opacity: 0;

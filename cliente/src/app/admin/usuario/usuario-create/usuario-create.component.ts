@@ -7,14 +7,14 @@ import {UsuarioService} from '../usuario.service';
 @Component({
   selector: 'ngx-usuario-create',
   templateUrl: './usuario-create.component.html',
-  styleUrls: ['./usuario-create.component.scss']
+  styleUrls: ['./usuario-create.component.scss'],
 })
 export class UsuarioCreateComponent implements OnInit {
 
     usuarioGroup: FormGroup;
     mensaje = '';
     error = '';
-    usuario:any = null;
+    usuario: any = null;
     constructor(public usuarioService: UsuarioService,
                 public router: Router,
                 private fb: FormBuilder,
@@ -30,7 +30,6 @@ export class UsuarioCreateComponent implements OnInit {
             'email': new FormControl('', Validators.required),
             'password': new FormControl('', Validators.required),
             'repeated_password': new FormControl('', Validators.required),
-
         });
     }
     ngOnInit() {

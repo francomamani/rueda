@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {EmpresaService} from '../empresa.service';
 import {NbToastrService} from '@nebular/theme';
 import {EmpresaModalComponent} from '../../../shared/empresa-modal/empresa-modal.component';
@@ -53,6 +53,19 @@ export class EmpresaIndexComponent implements OnInit {
     const activeModal = this.modalService.open(EmpresaModalComponent, { size: 'lg', container: 'nb-layout' });
     activeModal.componentInstance.modalHeader = 'Empresa: ' + empresa.nombre;
     activeModal.componentInstance.empresa = empresa;
+  }
+  cambiarLogo(empresa) {
+/*    const empresa_logo = document.getElementById(empresa.empresa_id);
+    console.log(empresa_logo);
+    const formData = new FormData();
+    if (empresa_logo.files[0]) {
+      formData.append('logo', empresa_logo.files[0]);
+    }
+    this.empresaService
+        .cambiarLogo(empresa.empresa_id, formData)
+      .subscribe(res => {
+        console.log(res);
+      });*/
   }
   onDeleteConfirm(empresa, index): void {
     if (window.confirm('¿Esta seguro que quiere eliminar este registro?')) {

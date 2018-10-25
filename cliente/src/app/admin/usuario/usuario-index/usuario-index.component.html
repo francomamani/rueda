@@ -29,12 +29,12 @@
               <td><a *ngIf="usuario.empresa != null" (click)="info(usuario.empresa)" class="info">{{usuario.empresa.nombre | uppercase }}</a></td>
               <td>{{usuario.nombres}}</td>
               <td>{{usuario.apellidos}}</td>
-              <td class="text-center">
+              <td>
                 <span *ngIf="usuario.tipo_usuario === 'administrador'" class="text-info">Administrador</span>
                 <span *ngIf="usuario.tipo_usuario === 'empresa'" class="text-primary">Empresa</span>
               </td>
-              <td class="btn-acciones">
-                <a class="text-primary" title="Resetear contraseña" (click)="onResetConfirm(usuario)"  ><i class="fa fa-lock"></i></a>
+              <td class="btn-acciones-2">
+                <a class="text-primary" title="Restablecer contraseña a nombre de cuenta" (click)="onResetConfirm(usuario)"  ><i class="fa fa-lock"></i></a>
                 <a class="text-success" title="Editar usuario" [routerLink]="['/admin/usuario/actualizar-usuario/', usuario.usuario_id]"><i class="fa fa-edit"></i></a>
                 <a  *ngIf="usuario.tipo_usuario === 'administrador'" title="Eliminar usuario" class="text-danger" (click)="onDeleteConfirm(usuario, i)"><i class="fa fa-trash"></i></a>
               </td>

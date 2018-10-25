@@ -15,13 +15,13 @@ export class UsuarioService {
     index() {
         return this.http.get(this.base + 'usuarios');
     }
-    store(req){
-        return this.http.post(this.base + 'usuarios',req);
+    store(req) {
+        return this.http.post(this.base + 'usuarios', req);
     }
-    destroy(usuario_id){
-        return this.http.delete(this.base + 'usuarios/'+usuario_id);
+    destroy(usuario_id) {
+        return this.http.delete(this.base + 'usuarios/' + usuario_id);
     }
-    reset(id){
-        return this.http.get(this.base + 'reset-password/'+id);
+    reset(id) {
+        return this.http.get(this.base + 'reset-password/' + id);
     }
 }

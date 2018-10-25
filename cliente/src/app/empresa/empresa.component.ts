@@ -4,7 +4,7 @@ import {EMPRESA_ITEMS} from './empresa-menu';
 @Component({
   selector: 'ngx-empresa',
   templateUrl: './empresa.component.html',
-  styleUrls: ['./empresa.component.scss']
+  styleUrls: ['./empresa.component.scss'],
 })
 export class EmpresaComponent implements OnInit {
 

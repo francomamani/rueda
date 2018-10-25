@@ -37,18 +37,17 @@ export class UsuarioIndexComponent implements OnInit {
     }
     word:String;
     buscar() {
-        this.word =this.buscarGroup.value.search;
-        this.word=this.word.toLowerCase();
-        if(this.buscarGroup.value.search ==''){
-            this.usuarios=this.usuariosAux;
-        }
-        else{
-            this.usuarios=[];
+        this.word = this.buscarGroup.value.search;
+        this.word = this.word.toLowerCase();
+        if ( this.buscarGroup.value.search == '' ) {
+            this.usuarios = this.usuariosAux;
+        }  else {
+            this.usuarios = [];
             this.usuariosAux.forEach((item, index) => {
                 if (item.nombres.toLowerCase().includes(this.word) ||
                     item.email.toLowerCase().includes(this.word) ||
                     item.apellidos.toLowerCase().includes(this.word) ||
-                    (item.empresa!=null && item.empresa.nombre.toLowerCase().includes(this.word))) {
+                    (item.empresa != null && item.empresa.nombre.toLowerCase().includes(this.word))) {
                     this.usuarios.push(item);
                 }
             });
@@ -60,7 +59,7 @@ export class UsuarioIndexComponent implements OnInit {
         activeModal.componentInstance.empresa = empresa;
     }
     onDeleteConfirm(usuario, index): void {
-        if (window.confirm('¿Esta seguro que quiere eliminar este registro?')) {
+        if (window.confirm('¿Esta seguro que quiere eliminar a ' + usuario.email + '?')) {
             this.usuarioService.destroy(usuario.usuario_id)
                 .subscribe((res: any) => {
                     this.usuarios.splice(index, 1);
@@ -69,10 +68,10 @@ export class UsuarioIndexComponent implements OnInit {
         }
     }
     onResetConfirm(usuario): void {
-        if (window.confirm('¿Esta seguro que quiere resetar la contraseña de '+usuario.email+'?')) {
+        if (window.confirm('¿Esta seguro que desea restablecer la contraseña de ' + usuario.email + '?')) {
               this.usuarioService.reset(usuario.usuario_id)
                   .subscribe((res: any) => {
-                      this.toastr.success(res.mensaje, 'Exito');
+                      this.toastr.success('La nueva contraseña es su nombre de cuenta', res.mensaje);
                   });
         }
     }

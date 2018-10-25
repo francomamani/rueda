@@ -34,7 +34,7 @@ export const ADMIN_ITEMS: NbMenuItem[] = [
                 link: '/admin/usuario/listar',
             },
             {
-                title: 'Nuevo usuario',
+                title: 'Nuevo admin',
                 icon: 'nb-plus',
                 link: '/admin/usuario/crear',
             },

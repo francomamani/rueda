@@ -3,11 +3,10 @@
     <div class="col-md-12">
       <form (submit)="store()"
             role="form"
-            [formGroup]="usuarioGroup"
-            *ngIf="rubros !== null">
+            [formGroup]="usuarioGroup">
         <nb-card>
           <nb-card-header>
-            <h3 class="signup-title">Registro de Usuario</h3>
+            <h3 class="signup-title">Registro de Administradores</h3>
             <div class="alert alert-success" *ngIf="mensaje.length > 0">
               <strong>{{mensaje}}</strong>
             </div>
@@ -23,11 +22,11 @@
           <nb-card-body>
             <div class="row">
               <div class="col-sm-4 form-group">
-                <label for="email">Cuenta (no debe contener espacios y estar en minúscula)</label>
+                <label for="email">Cuenta <br>(no debe contener espacios y estar en minúscula)</label>
                 <input type="email" id="email" class="form-control" formControlName="email" name="email" placeholder="Cuenta">
               </div>
               <div class="col-sm-4 form-group">
-                <label for="password">Contraseña (no debe contener espacios)</label>
+                <label for="password">Contraseña <br>(no debe contener espacios)</label>
                 <input type="password"
                        id="password"
                        class="form-control"
@@ -36,7 +35,7 @@
                        placeholder="Contraseña">
               </div>
               <div class="col-sm-4 form-group">
-                <label for="password">Re ingrese su contraseña (no debe contener espacios)</label>
+                <label for="password">Re ingrese su contraseña <br>(no debe contener espacios)</label>
                 <input type="password"
                        id="repeated_password"
                        class="form-control"
