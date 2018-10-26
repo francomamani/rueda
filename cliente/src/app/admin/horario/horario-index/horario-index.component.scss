@@ -1,0 +1,46 @@
+$dark-primary: #00796B;
+$light-primary: #B2DFDB;
+$primary: #009688;
+$accent: #FF9800;
+$text: #ffffff;
+$primary-text: #212121;
+$secondary-text: #757575;
+$divider: #BDBDBD;
+
+.rueda-search {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2em;
+}
+.rueda-search select {
+  min-width: 200px;
+  border: 1px solid $divider;
+  margin-right: 1em;
+  outline: none;
+}
+.rueda-search input {
+  width: 250px;
+  padding: .5em .5em;
+  box-sizing: border-box;
+  border-top: 1px solid $divider;
+  border-bottom: 1px solid $divider;
+  border-left: 1px solid $divider;
+  outline: none;
+}
+.rueda-search button {
+  background-color: $primary;
+  color: $text;
+  padding: .5em 2em;
+  border: none;
+  border-radius: 0 100px 100px 0;
+  cursor: pointer;
+  outline: none;
+}
+.acciones {
+  text-align: left;
+}
+.acciones a {
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: .5em;
+}

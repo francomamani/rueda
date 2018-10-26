@@ -3,9 +3,44 @@
     <nb-card>
       <nb-card-header>Horarios Registrados</nb-card-header>
       <nb-card-body>
-        <ng2-smart-table [settings]="settings" [source]="source"
-                         (deleteConfirm)="onDeleteConfirm($event)">
-        </ng2-smart-table>
+        <form (submit)="buscar()" class="rueda-search" [formGroup]="buscarGroup">
+          <input type="search" formControlName="search" name="search" placeholder="Buscar horarios">
+          <button> Buscar </button>
+        </form>
+
+        <table class="table table-hover">
+          <thead>
+          <tr>
+            <th>Inicio</th>
+            <th>Fin</th>
+            <th>Acciones</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let horario of horarios; let i = index">
+            <td>
+              <span *ngIf="!horario.edit"> {{ horario.inicio | date: 'dd LLL HH:mm' }} </span>
+              <input *ngIf="horario.edit" type="datetime-local" [(ngModel)]="horario.inicio">
+            </td>
+            <td>
+              <span *ngIf="!horario.edit"> {{ horario.fin | date: 'dd LLL HH:mm'}} </span>
+              <input *ngIf="horario.edit" type="datetime-local" [(ngModel)]="horario.fin">
+            </td>
+            <td class="acciones">
+              <a class="text-success" title="Editar horario"
+                 *ngIf="!horario.edit"
+                 (click)="horario.edit = !horario.edit"><i class="fa fa-edit"></i></a>
+              <a class="text-success" title="Editar horario"
+                 *ngIf="horario.edit"
+                 title="Actualizar horario"
+                 (click)="update(horario)"><i class="fa fa-save"></i></a>
+              <a class="text-danger"
+                 *ngIf="!horario.edit"
+                 title="Eliminar horario" (click)="destroy(horario, i)"><i class="fa fa-trash"></i></a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
       </nb-card-body>
     </nb-card>
   </div>

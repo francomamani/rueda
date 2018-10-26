@@ -35,11 +35,11 @@ export class UsuarioIndexComponent implements OnInit {
             'search': new FormControl('', [Validators.required]),
         });
     }
-    word:String;
+    word: string;
     buscar() {
         this.word = this.buscarGroup.value.search;
         this.word = this.word.toLowerCase();
-        if ( this.buscarGroup.value.search == '' ) {
+        if ( this.buscarGroup.value.search === '' ) {
             this.usuarios = this.usuariosAux;
         }  else {
             this.usuarios = [];

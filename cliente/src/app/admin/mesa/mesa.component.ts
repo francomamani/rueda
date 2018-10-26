@@ -84,6 +84,4 @@ export class MesaComponent implements OnInit {
             event.confirm.reject();
         }
     }
-
-
 }

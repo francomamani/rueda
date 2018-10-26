@@ -30,6 +30,7 @@
 
   .header-container {
     display: flex;
+    justify-content: center;
     align-items: center;
     width: auto;
 
@@ -43,6 +44,14 @@
         display: block;
       }
 
+    }
+
+    .menu-logo {
+      width: 150px;
+      height: 80%;
+      margin: 0 2.5rem;
+      user-select: none;
+      -moz-user-select: none;
     }
 
     .logo {
