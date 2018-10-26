@@ -1,21 +1,38 @@
-
-<nb-card style="height: 100%;">
-  <nb-card-header>
-    Añadir Nuevo Horario
-  </nb-card-header>
-
-  <nb-card-body>
-      <div class="row">
-        <div class="col-sm-6 form-group">
-          Inicio
-          <angular2-date-picker (onDateSelect)="onInicio($event)" [(ngModel)]="ini" [settings]="settings"></angular2-date-picker>
-
-        </div>
-        <div class="col-sm-6 form-group">
-          Fin
-          <angular2-date-picker (onDateSelect)="onFin($event)" [(ngModel)]="fi" [settings]="settings"></angular2-date-picker>
-        </div>
-      </div>
-      <button class="btn btn-sm btn-success" (click)="store()">Guardar</button>
-  </nb-card-body>
-</nb-card>
+<div class="row">
+  <div class="offset-3 col-md-6">
+    <nb-card style="height: 550px;">
+      <nb-card-header>
+        Añadir Nuevo Horario de Reunión
+      </nb-card-header>
+      <nb-card-body>
+        <form>
+          <div class="row">
+            <div class="col-md-6">
+              <label for="inicio">Inicio</label>
+              <angular2-date-picker
+                id="inicio"
+                (onDateSelect)="onInicio($event)"
+                name="ini"
+                [(ngModel)]="ini"
+                [settings]="settings"></angular2-date-picker>
+            </div>
+            <div class="col-md-6">
+              <label for="fin">Fin</label>
+              <angular2-date-picker
+                id="fin"
+                (onDateSelect)="onFin($event)"
+                [(ngModel)]="fi"
+                name="fi"
+                [settings]="settings"></angular2-date-picker>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <button class="btn btn-sm btn-success group" (click)="store()">Guardar</button>
+            </div>
+          </div>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

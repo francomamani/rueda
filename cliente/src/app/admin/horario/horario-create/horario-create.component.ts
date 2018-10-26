@@ -20,7 +20,7 @@ export class HorarioCreateComponent implements OnInit {
     settings = {
         bigBanner: true,
         timePicker: true,
-        format: 'dd/MM/yyyy hh:mm a',
+        format: 'dd/MM/yyyy HH:mm',
         defaultOpen: false,
         closeOnSelect: false,
     };
@@ -33,25 +33,18 @@ export class HorarioCreateComponent implements OnInit {
     ngOnInit() {
     }
 
-    /*createForm() {
-        this.horarioGroup = this.fb.group({
-            'inicio': new FormControl('', Validators.required),
-            'fin': new FormControl('', Validators.required),
-        });
-    }*/
-    datos: any;
     store() {
         if (this.iii.getTime() > this.fff.getTime()) {
             this.toastr.warning('La fecha de inicio debe ser menor a la fecha final');
             return;
         }
         this.datos = {
-            inicio: this.datePipe.transform(this.ini, 'yyyy-MM-dd hh:mm:ss'),
-            fin: this.datePipe.transform(this.fi, 'yyyy-MM-dd hh:mm:ss'),
+            inicio: this.datePipe.transform(this.ini, 'yyyy-MM-dd HH:mm:ss'),
+            fin: this.datePipe.transform(this.fi, 'yyyy-MM-dd HH:mm:ss'),
         };
         this.horarioService.store(this.datos)
             .subscribe((res: any) => {
-                this.toastr.success('Se registro el nuevo horario');
+                this.toastr.success('Se registró el nuevo horario', 'Éxito');
                 this.ini = new Date();
                 this.fi = new Date();
                 this.iii = this.ini;
