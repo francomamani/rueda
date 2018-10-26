@@ -43,7 +43,26 @@ class AgendaController extends Controller
      */
     public function store(Request $request)
     {
-        return response()->json(Agenda::create($request->all()), 201);
+        $agendadas = Agenda::where('empresa_solicitante_id', $request->empresa_solicitante_id)
+                          ->where('empresa_demandada_id', $request->empresa_demandada_id)
+                          ->where('estado','pendiente')
+                          ->count();
+        $response = null;
+        if ($agendadas > 0 )
+        {
+            $response = [
+                'message' => 'La reunión con la empresa ya fue agendada con anterioridad',
+                'title' => 'Error'
+            ];
+        } else {
+            Agenda::create($request->all());
+            $response = [
+                'message' => 'La reunión fue agendada exitosamente',
+                'title' => 'Éxito'
+            ];
+
+        }
+        return response()->json($response, 201);
     }
 
     /**

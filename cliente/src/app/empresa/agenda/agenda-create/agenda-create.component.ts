@@ -79,7 +79,16 @@ export class AgendaCreateComponent implements OnInit {
         });
         this.agendaService.store(this.agendaGroup.value)
             .subscribe((res: any) => {
-                this.toastr.success('Registro en la agenda registrada', 'Aviso');
+                if ( res.title === 'Error' ) {
+                  this.agendaGroup.patchValue({
+                    'empresa_demandada_id' : 0,
+                    'horario_id' : 0,
+                    'mesa_id' : 0,
+                  });
+                  this.toastr.danger(res.message, res.title);
+                } else {
+                  this.toastr.success(res.message, res.title);
+                }
             });
     }
 
