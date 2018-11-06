@@ -17,6 +17,7 @@ export class HorarioCreateComponent implements OnInit {
     fi: Date = new Date();
     iii: Date = this.ini;
     fff: Date = this.fi;
+    datos = null;
     settings = {
         bigBanner: true,
         timePicker: true,

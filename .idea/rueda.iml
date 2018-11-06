@@ -4,6 +4,14 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/servidor/app" isTestSource="false" packagePrefix="App\" />
       <sourceFolder url="file://$MODULE_DIR$/servidor/tests" isTestSource="true" packagePrefix="Tests\" />
+      <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/aws/aws-sdk-php" />
+      <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/guzzlehttp/guzzle" />
+      <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/guzzlehttp/promises" />
+      <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/guzzlehttp/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/league/flysystem-aws-s3-v3" />
+      <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/mtdowling/jmespath.php" />
+      <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/paulvl/backup" />
+      <excludeFolder url="file://$MODULE_DIR$/servidor/vendor/psr/http-message" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

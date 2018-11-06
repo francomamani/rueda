@@ -4,6 +4,12 @@
   <div class="logo-containter">
     <a (click)="toggleSidebar()" href="#" class="navigation"><i class="nb-menu"></i></a>
     <div class="logo" (click)="goToHome()">Rueda</div>
+    <a [href]="url"
+       *ngIf="usuario.tipo_usuario === 'administrador'"
+       title="Descargar Backup"
+       class="text-success backup">
+      <i class="fa fa-download"></i>
+    </a>
   </div>
   <ngx-theme-switcher></ngx-theme-switcher>
   <img class="menu-logo" src="../../../../assets/images/rueda.png" alt="Rueda de negocios">
@@ -19,6 +25,5 @@
     <nb-action *nbIsGranted="['view', 'user']" >
       <nb-user [nbContextMenu]="userMenu" [name]="usuario?.email"></nb-user>
     </nb-action>
-
   </nb-actions>
 </div>

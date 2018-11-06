@@ -52,4 +52,7 @@ export class AuthService {
   cambiarPassword(usuario_id, req) {
     return this.http.post(this.base + 'cambiar-password/' + usuario_id, req);
   }
+  generarBackup() {
+    return this.base + 'generar-backup';
+  }
 }

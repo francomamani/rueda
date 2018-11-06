@@ -57,3 +57,5 @@ Route::post('cambiar-password/{usuario_id}', 'AuthController@cambiarPassword');
 Route::get('reset-password/{usuario_id}', 'UsuarioController@resetPassword');
 Route::get('comentarios-generales', 'EvaluacionGeneralController@comentarios');
 Route::get('comentarios-reuniones', 'EvaluacionReunionController@comentarios');
+
+Route::get('generar-backup', 'BackupController@generarBackup');

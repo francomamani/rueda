@@ -5,6 +5,7 @@ import { UserService } from '../../../@core/data/users.service';
 import { AnalyticsService } from '../../../@core/utils/analytics.service';
 import { LayoutService } from '../../../@core/data/layout.service';
 import {AuthService} from '../../../auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'ngx-header',
@@ -17,12 +18,16 @@ export class HeaderComponent implements OnInit {
 
   usuario = JSON.parse(atob(localStorage.getItem('rueda-usuario')));
   userMenu: any = null;
-
+  url = null;
   constructor(private sidebarService: NbSidebarService,
               private menuService: NbMenuService,
               private userService: UserService,
+              private router: Router,
+              private authService: AuthService,
               private analyticsService: AnalyticsService,
               private layoutService: LayoutService) {
+
+    this.url = this.authService.generarBackup();
     if ( this.usuario.tipo_usuario === 'administrador') {
       this.userMenu = [ { title: 'Perfil', link: '/admin/perfil' },
                         { title: 'Cambiar Contraseña', link: '/admin/cambiar-password' },
