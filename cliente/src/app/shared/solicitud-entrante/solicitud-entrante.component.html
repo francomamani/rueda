@@ -27,7 +27,7 @@
               <td>{{ i + 1 }}</td>
               <td><a (click)="info(solicitud)" class="info">{{ solicitud.nombre }}</a></td>
               <td>{{ solicitud.rubro }}</td>
-              <td>{{ solicitud.inicio }} {{ solicitud.fin }}</td>
+              <td>{{ solicitud.inicio | date: 'd MMM. yyyy HH:mm'}} {{ solicitud.fin | date: 'HH:mm'}}</td>
               <td>{{ solicitud.mesa }}</td>
               <td class="text-center">
                 <span *ngIf="solicitud.tipo_asignacion === 'pre_agendado'" class="text-success">Pre Agendado</span>

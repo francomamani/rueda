@@ -36,7 +36,12 @@ export class EvaluacionReunionesComponent implements OnInit {
                 this.registrado = res.registrado;
                 if(this.registrado) {
                     setTimeout(() => {
+                      if (this.router.url === '/empresa/evaluacion-reunion/' +
+                          this.reunion_id + '/' + this.empresa_id) {
                         this.router.navigate(['/empresa/mi-agenda/reuniones-agendadas']);
+                      } else {
+                        this.router.navigate(['/admin/empresa/reuniones-agendadas/' + this.empresa_id]);
+                      }
                     }, 3500);
                 }
               });
@@ -71,6 +76,8 @@ export class EvaluacionReunionesComponent implements OnInit {
           this.toastr.success('Se registro exitosamente su evaluacion', '¡Gracias!');
           if (this.router.url === '/empresa/evaluacion-reunion/' + this.reunion_id + '/' + this.empresa_id) {
             this.router.navigate(['/empresa']);
+          } else {
+            this.router.navigate(['/admin/empresa/reuniones-agendadas/' + this.empresa_id]);
           }
         });
       }

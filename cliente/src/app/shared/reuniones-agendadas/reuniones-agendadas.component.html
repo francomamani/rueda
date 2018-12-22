@@ -1,4 +1,15 @@
-<div class="row">
+<div class="row" *ngIf="habilitado === 0">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-body>
+        <div *ngIf="habilitado !== null && habilitado === 0" class="alerta">
+          Su empresa no esta habilitada, por favor pague su voucher.
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+<div class="row" *ngIf="habilitado === 1">
   <div class="col-md-12">
     <nb-card>
       <nb-card-header>
@@ -30,7 +41,7 @@
                 <a class="info" (click)="info(reunion.empresa_demandada, reunion.fecha_hora_registro_reunion)">{{ reunion.empresa_demandada.nombre }}</a>
               </td>
               <td>{{reunion.mesa}}</td>
-              <td>{{reunion.inicio}} - {{reunion.fin}}</td>
+              <td>{{reunion.inicio | date: 'dd MMM. yyy HH:mm'}} - {{reunion.fin | date: 'HH:mm'}}</td>
               <td>{{reunion.resultado}}</td>
               <td>
                 <button
@@ -42,6 +53,9 @@
             </tr>
             </tbody>
           </table>
+        </div>
+        <div class="text-center" *ngIf="admin">
+          <a [routerLink]="['/admin/empresa/listar']"> <i class="fa fa-arrow-left"></i> Volver al listado de empresas registradas</a>
         </div>
       </nb-card-body>
     </nb-card>

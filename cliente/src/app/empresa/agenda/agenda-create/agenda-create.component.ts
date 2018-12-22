@@ -8,6 +8,7 @@ import {NbToastrService} from '@nebular/theme';
 import {AuthService} from '../../../auth.service';
 import {EmpresaModalComponent} from '../../../shared/empresa-modal/empresa-modal.component';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'ngx-agenda-create',
@@ -36,6 +37,7 @@ export class AgendaCreateComponent implements OnInit {
                 private horarioService: HorarioService,
                 private empresaService: EmpresaService,
                 private mesaService: MesaService,
+                private router: Router,
                 private fb: FormBuilder,
                 private toastr: NbToastrService,
                 private authService: AuthService,
@@ -52,8 +54,6 @@ export class AgendaCreateComponent implements OnInit {
                 });
                 this.empresas = this.aux;
             });
-
-
     }
 
     createForm() {
@@ -85,9 +85,14 @@ export class AgendaCreateComponent implements OnInit {
                     'horario_id' : 0,
                     'mesa_id' : 0,
                   });
+                  this.existe_empresa = false;
+                  this.mesasActive = false;
+                  this.mesas = null;
+                  this.horarios = null;
                   this.toastr.danger(res.message, res.title);
                 } else {
                   this.toastr.success(res.message, res.title);
+                  this.router.navigate(['/empresa/mi-agenda/solicitudes-salientes']);
                 }
             });
     }
@@ -115,8 +120,15 @@ export class AgendaCreateComponent implements OnInit {
     }
 
     onChange(id) {
+        this.existe_empresa = false;
+        this.mesasActive = false;
+        this.mesas = null;
+        this.horarios = null;
         this.existe_empresa = true;
-        this.empresas.forEach((item, index) => {
+        this.agendaGroup.patchValue({
+          mesa_id : 0,
+        });
+      this.empresas.forEach((item, index) => {
             if (id == item.empresa_id) {
                 this.emp = item;
             }

@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Agenda;
 use App\Empresa;
 use App\Horario;
 use App\Mesa;
 use App\Participante;
 use App\Reunion;
-use App\Rubro;
 use App\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use phpDocumentor\Reflection\DocBlock\Tags\Return_;
 
 class EmpresaController extends Controller
 {
@@ -24,6 +23,7 @@ class EmpresaController extends Controller
     {
         $empresas = Empresa::join('usuarios', 'usuarios.usuario_id', 'empresas.empresa_id')
                             ->join('rubros', 'rubros.rubro_id', 'empresas.rubro_id')
+                            ->whereNull('empresas.deleted_at')
                             ->orderBy('empresas.nombre', 'asc')
                             ->selectRaw('empresas.*, usuarios.*, rubros.nombre as rubro')
                             ->paginate(10);
@@ -170,6 +170,9 @@ class EmpresaController extends Controller
     public function horariosDisponibles($empresa_solicitante_id, $empresa_demandada_id) {
         $solicitante_horarios_ocupados = Empresa::find($empresa_solicitante_id)->horariosOcupados()->get();
         $demandada_horarios_ocupados = Empresa::find($empresa_demandada_id)->horariosOcupados()->get();
+        $solicitante_horarios_agendados = $this->misHorariosAgendados($empresa_solicitante_id);
+        $demandada_horarios_agendados = $this->misHorariosAgendados($empresa_demandada_id);
+
         $horarios_ocupados = [];
         foreach ($solicitante_horarios_ocupados as $horario_ocupado) {
             array_push($horarios_ocupados, $horario_ocupado->horario_id);
@@ -177,6 +180,17 @@ class EmpresaController extends Controller
         foreach ($demandada_horarios_ocupados as $horario_ocupado) {
             array_push($horarios_ocupados, $horario_ocupado->horario_id);
         }
+        foreach ($demandada_horarios_ocupados as $horario_ocupado) {
+            array_push($horarios_ocupados, $horario_ocupado->horario_id);
+        }
+
+        foreach ($solicitante_horarios_agendados as $horario_agendado) {
+            array_push($horarios_ocupados, $horario_agendado->horario_id);
+        }
+        foreach ($demandada_horarios_agendados as $horario_agendado) {
+            array_push($horarios_ocupados, $horario_agendado->horario_id);
+        }
+
         $horarios_disponibles = Horario::all()->except($horarios_ocupados);
         return response()->json($horarios_disponibles, 200);
     }
@@ -185,9 +199,21 @@ class EmpresaController extends Controller
         $horarios_ocupados = Empresa::find($empresa_id)->horariosOcupados()->with(['horario', 'empresa'])->get();
         return response()->json($horarios_ocupados, 200);
     }
+
+    private function misHorariosAgendados($empresa_id) {
+        $horarios = Agenda::where('empresa_solicitante_id', $empresa_id)
+                        ->orWhere('empresa_demandada_id', $empresa_id)
+                        ->where('estado', '!=', 'rechazado')
+                        ->get();
+        return $horarios;
+    }
+
     public function misReuniones($empresa_id) {
-        $reuniones = Reunion::where('empresa_solicitante_id', $empresa_id)
+        $reuniones = Reunion::join('horarios', 'horarios.horario_id', '=', 'reuniones.horario_id')
+                            ->where('empresa_solicitante_id', $empresa_id)
                             ->orWhere('empresa_demandada_id', $empresa_id)
+                            ->orderBy('horarios.inicio')
+                            ->selectRaw('reuniones.*')
                             ->get();
         $data = [];
         foreach ($reuniones as $reunion) {

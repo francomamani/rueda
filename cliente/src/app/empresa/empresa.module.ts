@@ -7,9 +7,7 @@ import { EmpresaComponent } from './empresa.component';
 import {ThemeModule} from '../@theme/theme.module';
 import {SharedModule} from '../shared/shared.module';
 import { AgendaComponent } from './agenda/agenda.component';
-import { ReunionesAgendadasComponent } from './agenda/reuniones-agendadas/reuniones-agendadas.component';
 import {EmpresaModalComponent} from '../shared/empresa-modal/empresa-modal.component';
-import { EvaluacionGeneralComponent } from './evaluacion-general/evaluacion-general.component';
 import {FormsModule} from '@angular/forms';
 import { EmpresasRegistradasComponent } from './agenda/empresas-registradas/empresas-registradas.component';
 import {AgendaService} from './agenda/agenda.service';
@@ -21,13 +19,11 @@ import { AgendaCreateComponent } from './agenda/agenda-create/agenda-create.comp
     EmpresaRoutingModule,
     ThemeModule,
     SharedModule,
-      FormsModule,
+    FormsModule,
   ],
   declarations: [HomeComponent,
                 EmpresaComponent,
                 AgendaComponent,
-                ReunionesAgendadasComponent,
-                EvaluacionGeneralComponent,
                 EmpresasRegistradasComponent,
                 AgendaCreateComponent],
   entryComponents: [EmpresaModalComponent],

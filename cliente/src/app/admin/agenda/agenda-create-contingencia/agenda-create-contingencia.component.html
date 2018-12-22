@@ -8,13 +8,13 @@
             <div class="col-sm-6 form-group">
               <label>Empresa Solicitante</label>
               <select name="empresa_solicitante_id" formControlName="empresa_solicitante_id" class="form-control" (change)="onChange1($event.target.value)">
-                <option [value]="empresa.empresa_id" *ngFor="let empresa of empresas">{{ empresa.nombre }}</option>
+                <option [value]="empresa.empresa_id" *ngFor="let empresa of empresas">{{ empresa.nombre | uppercase }}</option>
               </select>
             </div>
             <div class="col-sm-6 form-group">
               <label>Empresa Demandada</label>
               <select name="empresa_demandada_id" formControlName="empresa_demandada_id" class="form-control" (change)="onChange2($event.target.value)">
-                <option [value]="empresa.empresa_id" *ngFor="let empresa of empresas">{{ empresa.nombre }}</option>
+                <option [value]="empresa.empresa_id" *ngFor="let empresa of empresas">{{ empresa.nombre | uppercase }}</option>
               </select>
             </div>
           </div>
@@ -30,7 +30,7 @@
             <div class="col-sm-6 form-group">
               <label>Horarios</label>
               <select name="horario_id" formControlName="horario_id" class="form-control">
-                <option [value]="horario.horario_id" *ngFor="let horario of horarios">{{ horario.inicio }} - {{horario.fin}}</option>
+                <option [value]="horario.horario_id" *ngFor="let horario of horarios">{{ horario.inicio | date: 'dd LLL yyyy HH:mm' }} - {{ horario.fin | date: 'dd LLL yyyy HH:mm' }}</option>
               </select>
             </div>
             <div class="col-sm-6 form-group">

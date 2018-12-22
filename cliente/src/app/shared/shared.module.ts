@@ -7,18 +7,20 @@ import { HorariosOcupadosIndexComponent } from './horarios-ocupados/horarios-ocu
 import { HorariosOcupadosCreateComponent } from './horarios-ocupados/horarios-ocupados-create/horarios-ocupados-create.component';
 import {RouterModule} from '@angular/router';
 import { ParticipanteComponent } from './participante/participante.component';
-import {Ng2SmartTableModule} from 'ng2-smart-table';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {AngularDateTimePickerModule} from 'angular2-datetimepicker';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularDateTimePickerModule } from 'angular2-datetimepicker';
 import { EmpresaModalComponent } from './empresa-modal/empresa-modal.component';
-import { EvaluacionReunionesComponent } from './evaluacion-reuniones/evaluacion-reuniones.component';
-import {SolicitudSalienteComponent} from './solicitud-saliente/solicitud-saliente.component';
-import {SolicitudEntranteComponent} from './solicitud-entrante/solicitud-entrante.component';
-import {EmpresaCreateComponent} from './empresa-create/empresa-create.component';
+import { SolicitudSalienteComponent } from './solicitud-saliente/solicitud-saliente.component';
+import { SolicitudEntranteComponent } from './solicitud-entrante/solicitud-entrante.component';
+import { EmpresaCreateComponent } from './empresa-create/empresa-create.component';
 import { UsuarioEditComponent } from './usuario-edit/usuario-edit.component';
 import { EmpresaEditComponent } from './empresa-edit/empresa-edit.component';
 import { CambiarPasswordComponent } from './cambiar-password/cambiar-password.component';
 import { RegistroExitosoComponent } from './registro-exitoso/registro-exitoso.component';
+import {ReunionesAgendadasComponent} from './reuniones-agendadas/reuniones-agendadas.component';
+import {EvaluacionReunionesComponent} from './evaluacion-reuniones/evaluacion-reuniones.component';
+import {EvaluacionGeneralEmpresaComponent} from './evaluacion-general/evaluacion-general.component';
 
 @NgModule({
   imports: [
@@ -40,9 +42,11 @@ import { RegistroExitosoComponent } from './registro-exitoso/registro-exitoso.co
                   SolicitudSalienteComponent,
                   SolicitudEntranteComponent,
                   EvaluacionReunionesComponent,
+                  EvaluacionGeneralEmpresaComponent,
                   UsuarioEditComponent,
                   EmpresaEditComponent,
                   CambiarPasswordComponent,
+                  ReunionesAgendadasComponent,
                   RegistroExitosoComponent],
   exports: [PerfilComponent,
             HorariosOcupadosComponent,
@@ -54,8 +58,10 @@ import { RegistroExitosoComponent } from './registro-exitoso/registro-exitoso.co
             SolicitudSalienteComponent,
             SolicitudEntranteComponent,
             EvaluacionReunionesComponent,
+            EvaluacionGeneralEmpresaComponent,
             UsuarioEditComponent,
             EmpresaEditComponent,
+            ReunionesAgendadasComponent,
             CambiarPasswordComponent],
   entryComponents: [EmpresaModalComponent],
 })

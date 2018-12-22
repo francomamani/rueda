@@ -21,16 +21,18 @@ class AgendaController extends Controller
         $agendas = Agenda::get();
         $data = [];
         foreach ($agendas as $agenda) {
-            array_push($data, [
-                'empresa_solicitante' => Empresa::find($agenda->empresa_solicitante_id),
-                'empresa_demandada' => Empresa::find($agenda->empresa_demandada_id),
-                'mesa' => Mesa::find($agenda->mesa_id)->numero,
-                'inicio' => Horario::find($agenda->horario_id)->inicio,
-                'fin' => Horario::find($agenda->horario_id)->fin,
-                'estado' => $agenda->estado,
-                'tipo_asignacion' => $agenda->tipo_asignacion,
-                'agenda_id' => $agenda->agenda_id,
-            ]);
+            if($agenda->mesa_id !== 0 && $agenda->horario_id !== 0){
+                array_push($data, [
+                    'empresa_solicitante' => Empresa::find($agenda->empresa_solicitante_id),
+                    'empresa_demandada' => Empresa::find($agenda->empresa_demandada_id),
+                    'mesa' => Mesa::find($agenda->mesa_id)->numero,
+                    'inicio' => Horario::find($agenda->horario_id)->inicio,
+                    'fin' => Horario::find($agenda->horario_id)->fin,
+                    'estado' => $agenda->estado,
+                    'tipo_asignacion' => $agenda->tipo_asignacion,
+                    'agenda_id' => $agenda->agenda_id,
+                ]);
+            }
         }
         return response()->json($data, 200);
     }

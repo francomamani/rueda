@@ -36,6 +36,9 @@ import {UsuarioIndexComponent} from './usuario/usuario-index/usuario-index.compo
 import {UsuarioCreateComponent} from './usuario/usuario-create/usuario-create.component';
 import {OpinionGeneralComponent} from './reportes/opinion-general/opinion-general.component';
 import {OpinionReunionComponent} from './reportes/opinion-reunion/opinion-reunion.component';
+import {ReunionesAgendadasComponent} from '../shared/reuniones-agendadas/reuniones-agendadas.component';
+import {EvaluacionReunionesComponent} from '../shared/evaluacion-reuniones/evaluacion-reuniones.component';
+import { EvaluacionGeneralEmpresaComponent } from '../shared/evaluacion-general/evaluacion-general.component';
 
 const routes: Routes = [
   {
@@ -64,6 +67,10 @@ const routes: Routes = [
         ],
       },
       {
+        path: 'evaluacion-reunion/:reunion_id/:empresa_id',
+        component: EvaluacionReunionesComponent,
+      },
+      {
         path: 'empresa',
         component: EmpresaComponent,
         children: [{
@@ -85,8 +92,20 @@ const routes: Routes = [
           component: SolicitudEntranteComponent,
         },
         {
+          path: 'reuniones-agendadas/:empresa_id',
+          component: ReunionesAgendadasComponent,
+        },
+        {
             path: 'editar/:empresa_id',
             component: EmpresaEditComponent,
+        },
+        {
+          path: 'evaluacion-general/:empresa_id',
+          component: EvaluacionGeneralComponent,
+        },
+        {
+          path: 'evaluacion-general-empresa/:empresa_id',
+          component: EvaluacionGeneralEmpresaComponent,
         },
         {
           path: '',

@@ -1,5 +1,41 @@
+$dark-primary: #00796B;
+$primary: #009688;
+$primary-text: #212121;
+$white: #eee;
+
+.btn-green {
+  margin-top: 10px;
+  display: block;
+  padding: 1em 1.3em;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: $primary;
+  color: $white;
+  text-transform: uppercase;
+  outline: none;
+  backface-visibility: hidden;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: .8em;
+  box-shadow: 0 4px darken($primary,10%);
+}
+.btn-green:hover {
+  box-shadow: 0 2px darken($primary,10%);
+}
+.btn-green:active {
+  box-shadow: none;
+}
+a.buscar, a.buscar:hover {
+  text-decoration: none;
+  color: $white;
+  background-color: $primary;
+  padding: .5em 1em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 a.info, a.info:hover, a.info:active{
-  color: #65a7c1;
+  color: $primary;
   text-decoration: underline;
   cursor: pointer;
 }

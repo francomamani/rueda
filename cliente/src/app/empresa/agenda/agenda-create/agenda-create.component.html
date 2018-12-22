@@ -8,7 +8,7 @@
             <div class="col-sm-6 form-group">
               <label>Empresa Demandada</label>
               <select name="empresa_demandada_id" formControlName="empresa_demandada_id" class="form-control" (change)="onChange($event.target.value)">
-                <option [value]="empresa.empresa_id" *ngFor="let empresa of empresas" >{{ empresa.nombre }}</option>
+                <option [value]="empresa.empresa_id" *ngFor="let empresa of empresas" >{{ empresa.nombre | uppercase }}</option>
               </select>
             </div>
           </div>
@@ -17,17 +17,20 @@
               <a class="info" (click)="masinfo()">Más información de la empresa</a>
             </div>
           </div>
-          <div class="row">
+          <div class="row" *ngIf="existe_empresa">
             <div class="col-sm-4 form-group">
-              <a class="btn btn-info btn-xs horarios" (click)="buscarHorarios()">Buscar horarios disponibles</a>
+              <a class="buscar" (click)="buscarHorarios()">
+                <i class="fa fa-clock-o"></i>
+                Buscar horarios disponibles
+              </a>
             </div>
           </div>
 
-          <div class="row">
+          <div class="row" *ngIf="existe_empresa">
             <div class="col-sm-6 form-group" *ngIf="horariosActive">
               <label>Horarios disponibles</label>
               <select name="horario_id" formControlName="horario_id" class="form-control" (change)="horarioChange($event.target.value)">
-                <option [value]="horario.horario_id" *ngFor="let horario of horarios">{{ horario.inicio }} - {{horario.fin}}</option>
+                <option [value]="horario.horario_id" *ngFor="let horario of horarios">{{ horario.inicio | date: 'dd MMM yyyy HH:mm' }} - {{ horario.fin | date: 'dd MMM yyyy HH:mm' }}</option>
               </select>
             </div>
             <div class="col-sm-6 form-group" *ngIf="mesasActive">
@@ -37,7 +40,7 @@
               </select>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary">Solicitar</button>
+          <button type="submit" class="btn-green" *ngIf="agendaGroup.value.mesa_id !== 0">Solicitar</button>
         </form>
       </nb-card-body>
     </nb-card>

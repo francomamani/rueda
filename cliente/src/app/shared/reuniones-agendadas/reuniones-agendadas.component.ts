@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {EmpresaService} from '../../../admin/empresa/empresa.service';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {EmpresaModalComponent} from '../../../shared/empresa-modal/empresa-modal.component';
 import {ActivatedRoute, Router} from '@angular/router';
-import {AuthService} from '../../../auth.service';
+import {EmpresaService} from '../../admin/empresa/empresa.service';
+import {AuthService} from '../../auth.service';
+import {EmpresaModalComponent} from '../empresa-modal/empresa-modal.component';
 
 @Component({
   selector: 'ngx-reuniones-agendadas',
@@ -15,6 +15,8 @@ export class ReunionesAgendadasComponent implements OnInit {
   reuniones: any = null;
   empresa_id = null;
   mi_empresa = null;
+  habilitado = null;
+  admin: boolean = null;
   constructor(private empresaService: EmpresaService,
               private route: ActivatedRoute,
               private router: Router,
@@ -26,10 +28,14 @@ export class ReunionesAgendadasComponent implements OnInit {
         this.empresaService.show(parseInt(params.empresa_id, 10))
           .subscribe((res: any) => {
             this.mi_empresa = res.nombre;
+            this.habilitado  = res.habilitado;
+            this.admin = true;
           });
       } else {
         this.empresa_id = this.authService.getUsuario().empresa_id;
         this.mi_empresa = this.authService.getUsuario().nombre;
+        this.habilitado = this.authService.getUsuario().habilitado;
+        this.admin = false;
       }
     });
 
@@ -51,7 +57,11 @@ export class ReunionesAgendadasComponent implements OnInit {
   }
 
   go(reunion_id) {
-    this.router.navigate(['/empresa/evaluacion-reunion/' + reunion_id + '/' + this.empresa_id]);
+    if (this.admin) {
+      this.router.navigate(['/admin/evaluacion-reunion/' + reunion_id + '/' + this.empresa_id]);
+    } else {
+      this.router.navigate(['/empresa/evaluacion-reunion/' + reunion_id + '/' + this.empresa_id]);
+    }
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {EvaluacionGeneralService} from '../../../empresa/evaluacion-general/evaluacion-general.service';
+import {EvaluacionGeneralService} from '../../../shared/evaluacion-general/evaluacion-general.service';
 
 @Component({
   selector: 'ngx-evaluacion-general',

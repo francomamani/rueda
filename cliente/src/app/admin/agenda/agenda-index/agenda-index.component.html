@@ -4,7 +4,7 @@
       <nb-card-header>Agenda</nb-card-header>
       <nb-card-body>
         <div class="table-responsive">
-          <table class="table table-hover">
+          <table class="table table-hover" *ngIf="agendas !== null">
             <thead>
             <tr>
               <th>N.</th>
@@ -22,7 +22,7 @@
               <td>{{ i + 1 }}</td>
               <td>{{agenda.empresa_solicitante.nombre}}</td>
               <td>{{agenda.empresa_demandada.nombre}}</td>
-              <td>{{agenda.inicio}} - {{agenda.inicio}}</td>
+              <td>{{agenda.inicio | date: 'dd MMM. yyyy HH:mm'}} - {{agenda.inicio | date: 'HH:mm'}}</td>
               <td>{{agenda.mesa}}</td>
               <td class="text-center">
                 <span *ngIf="agenda.tipo_asignacion === 'pre_agendado'" class="text-success">Pre Agendado</span>
