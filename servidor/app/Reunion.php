@@ -14,16 +14,13 @@ class Reunion extends Model
         'empresa_solicitante_id',
         'empresa_demandada_id',
         'mesa_id',
-        'horario_id',
         'resultado',
         'empresa_solicitante_asistio',
         'empresa_demandada_asistio',
+        'desde',
+        'hasta',
     ];
     protected $dates = ['deleted_at'];
-
-    public function horario() {
-        return $this->belongsTo(Horario::class, 'horario_id');
-    }
 
     public function mesa() {
         return $this->belongsTo(Mesa::class, 'mesa_id');

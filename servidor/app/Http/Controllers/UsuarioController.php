@@ -31,6 +31,9 @@ class UsuarioController extends Controller
         $usuario->apellidos = $request->input('apellidos');
         $usuario->email = $request->input('email');
         $usuario->tipo_usuario = 'administrador';
+        $usuario->cuenta = $request->input('cuenta');
+        $usuario->telefono_celular = $request->input('telefono_celular');
+        $usuario->whatsapp = $request->input('whatsapp');
         $usuario->password = Hash::make($request->input('password'));
         $usuario->save();
         return response()->json($usuario, 201);
@@ -61,6 +64,9 @@ class UsuarioController extends Controller
         $usuario->nombres = $request->input('nombres');
         $usuario->apellidos = $request->input('apellidos');
         $usuario->email = $request->input('email');
+        $usuario->cuenta = $request->input('cuenta');
+        $usuario->telefono_celular = $request->input('telefono_celular');
+        $usuario->whatsapp = $request->input('whatsapp');
         $usuario->save();
 
         $response = null;

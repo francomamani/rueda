@@ -59,3 +59,7 @@ Route::get('comentarios-generales', 'EvaluacionGeneralController@comentarios');
 Route::get('comentarios-reuniones', 'EvaluacionReunionController@comentarios');
 
 Route::get('generar-backup', 'BackupController@generarBackup');
+
+
+Route::post('update-horario-ocupado', 'HorarioOcupadoController@updateHorarioOcupado');
+Route::post('agendar', 'EmpresaController@agendar');

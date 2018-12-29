@@ -20,16 +20,13 @@ class CreateReunionsTable extends Migration
                     ->references('mesa_id')
                     ->on('mesas')
                     ->onDelete('cascade');
-            $table->integer('horario_id')->unsigned();
-            $table->foreign('horario_id')
-                ->references('horario_id')
-                ->on('horarios')
-                ->onDelete('cascade');
             $table->integer('empresa_solicitante_id')->unsigned();
             $table->integer('empresa_demandada_id')->unsigned();
             $table->boolean('empresa_solicitante_asistio')->default(false);
             $table->boolean('empresa_demandada_asistio')->default(false);
             $table->enum('resultado', ['satisfactoria', 'ausencia', 'cronogramado'])->default('cronogramado');
+            $table->dateTime('desde');
+            $table->dateTime('hasta');
             $table->softDeletes();
             $table->timestamps();
         });

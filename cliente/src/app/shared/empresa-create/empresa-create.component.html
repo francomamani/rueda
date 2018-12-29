@@ -98,8 +98,8 @@
           <nb-card-body>
             <div class="row">
               <div class="col-sm-4 form-group">
-                <label for="email">Cuenta (no debe contener espacios y estar en minúscula)</label>
-                <input type="email" id="email" class="form-control" formControlName="email" name="email" placeholder="Cuenta">
+                <label for="cuenta">Cuenta (no debe contener espacios y estar en minúscula)</label>
+                <input type="cuenta" id="cuenta" class="form-control" formControlName="cuenta" name="cuenta" placeholder="Cuenta">
               </div>
               <div class="col-sm-4 form-group">
                 <label for="password">Contraseña (no debe contener espacios)</label>
@@ -119,6 +119,10 @@
                        name="repeated_password"
                        placeholder="Re ingrese contraseña">
               </div>
+              <div class="col-sm-4 form-group">
+                <label for="email">Correo Electrónico (Opcional)</label>
+                <input type="email" id="email" class="form-control" formControlName="email" name="email" placeholder="Correo Electronico">
+              </div>
               <div class="col-sm-4 form-group" *ngIf="router.url !== '/auth/signup'">
                 <label for="max_participantes">Maximo de participantes</label>
                 <input type="number" id="max_participantes" class="form-control" formControlName="max_participantes" name="max_participantes" min="0" max="10" placeholder="Maximo de participantes">
@@ -130,6 +134,14 @@
               <div class="col-sm-4 form-group">
                 <label for="apellidos">Apellidos del usuario</label>
                 <input type="text" id="apellidos" class="form-control" formControlName="apellidos" name="apellidos" placeholder="Apellidos">
+              </div>
+              <div class="col-sm-4 form-group">
+                <label for="telefono_celular">Telefono/celular</label>
+                <input type="text" id="telefono_celular" class="form-control" formControlName="telefono_celular" name="apellidos" placeholder="Telefono/Celular">
+              </div>
+              <div class="col-sm-4 form-group">
+                <label for="whatsapp">Whatsapp</label>
+                <input type="text" id="whatsapp" class="form-control" formControlName="whatsapp" name="apellidos" placeholder="Whatsapp">
               </div>
             </div>
           </nb-card-body>

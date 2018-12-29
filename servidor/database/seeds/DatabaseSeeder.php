@@ -171,7 +171,9 @@ class DatabaseSeeder extends Seeder
             'nombres' => 'Franco Jesus',
             'apellidos' => 'Mamani Pozo',
             'email' => 'admin@admin.com',
-            'tipo_usuario' => 'administrador',
+            'cuenta' => 'admin',
+            'telefono_celular' => '76137653',
+            'whatsapp' => '76137653',
             'password' => Hash::make('123456789')
         ];
         Usuario::create($usuarioAdmin);
@@ -182,6 +184,9 @@ class DatabaseSeeder extends Seeder
             'apellidos' => 'Lafuente Rocha',
             'email' => 'empresa@empresa.com',
             'tipo_usuario' => 'empresa',
+            'cuenta' => 'empresa',
+            'telefono_celular' => '76137653',
+            'whatsapp' => '76137653',
             'password' => Hash::make('123456789')
         ];
 

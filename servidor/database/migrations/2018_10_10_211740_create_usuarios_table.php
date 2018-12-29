@@ -17,7 +17,10 @@ class CreateUsuariosTable extends Migration
             $table->increments('usuario_id');
             $table->string('nombres');
             $table->string('apellidos');
-            $table->string('email')->unique();
+            $table->string('cuenta')->unique();
+            $table->string('email')->nullable();
+            $table->string('telefono_celular');
+            $table->string('whatsapp');
             $table->enum('tipo_usuario', ['administrador', 'empresa']);
             $table->string('password');
             $table->softDeletes();

@@ -58,7 +58,11 @@ export class EmpresaService {
     buscar(req) {
       return this.http.post(this.base + 'buscar-empresas', req);
     }
+
     cambiarLogo(empresa_id, req) {
       return this.http.post(this.base + 'cambiar-logo/' + empresa_id, req);
+    }
+    agendar(req) {
+      return this.http.post(this.base + 'agendar', req);
     }
 }

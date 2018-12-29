@@ -5,6 +5,7 @@ import {EmpresaService} from '../../../admin/empresa/empresa.service';
 import {EmpresaModalComponent} from '../../../shared/empresa-modal/empresa-modal.component';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {environment} from '../../../../environments/environment.prod';
+import {AuthService} from '../../../auth.service';
 
 @Component({
   selector: 'ngx-empresas-registradas',
@@ -20,6 +21,7 @@ export class EmpresasRegistradasComponent implements OnInit {
   constructor(private rubroService: RubroService,
               private empresaService: EmpresaService,
               private modalService: NgbModal,
+              private authService: AuthService,
               private fb: FormBuilder) {
     this.createForm();
     this.rubroService.index().subscribe(res => {
@@ -51,6 +53,17 @@ export class EmpresasRegistradasComponent implements OnInit {
     const activeModal = this.modalService.open(EmpresaModalComponent, { size: 'lg', container: 'nb-layout' });
     activeModal.componentInstance.modalHeader = 'Empresa: ' + empresa.nombre;
     activeModal.componentInstance.empresa = empresa;
+  }
+
+  agendar(empresa_id) {
+    const data = {
+      empresa_solicitante_id : this.authService.getUsuario().empresa_id,
+      empresa_demandada_id : empresa_id,
+    };
+    this.empresaService.agendar(data)
+      .subscribe(res => {
+      console.log(res);
+    });
   }
 
 }

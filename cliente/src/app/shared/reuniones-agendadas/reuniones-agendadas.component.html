@@ -31,17 +31,18 @@
               <th>Horario</th>
               <th>Estado de Reunión</th>
               <th>Evaluacion</th>
+              <th>Cancelar Reunion</th>
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let reunion of reuniones">
+            <tr *ngFor="let reunion of reuniones; let i = index">
               <td>
                 <a class="info" (click)="info(reunion.empresa_solicitante, reunion.fecha_hora_registro_reunion)">{{reunion.empresa_solicitante.nombre }}</a></td>
               <td>
                 <a class="info" (click)="info(reunion.empresa_demandada, reunion.fecha_hora_registro_reunion)">{{ reunion.empresa_demandada.nombre }}</a>
               </td>
               <td>{{reunion.mesa}}</td>
-              <td>{{reunion.inicio | date: 'dd MMM. yyy HH:mm'}} - {{reunion.fin | date: 'HH:mm'}}</td>
+              <td>{{reunion.desde | date: 'dd MMM. yyy HH:mm'}} - {{reunion.hasta | date: 'HH:mm'}}</td>
               <td>{{reunion.resultado}}</td>
               <td>
                 <button
@@ -49,6 +50,9 @@
                   (click)="go(reunion.reunion_id)">
                   <i class="fa fa-list"></i>
                 </button>
+              </td>
+              <td>
+                <button class="btn btn-sm btn-danger" (click)="cancelar(i)">Cancelar</button>
               </td>
             </tr>
             </tbody>

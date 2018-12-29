@@ -17,6 +17,9 @@ class Usuario extends  Authenticatable
         'nombres',
         'apellidos',
         'email',
+        'cuenta',
+        'telefono_celular',
+        'whatsapp',
         'tipo_usuario',
         'password',
     ];

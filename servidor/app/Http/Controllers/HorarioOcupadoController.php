@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Horario;
 use App\HorarioOcupado;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class HorarioOcupadoController extends Controller
      */
     public function index()
     {
-        return response()->json(HorarioOcupado::get(), 200);
+      return response()->json(HorarioOcupado::get(), 200);
     }
 
     /**
@@ -67,6 +68,28 @@ class HorarioOcupadoController extends Controller
         $horarios_ocupados->delete();
         return response()->json([
             'mensaje' => 'Horario ocupado con id: ' . $horarios_ocupados->horario_id. ' liberado exitosamente'
+        ], 200);
+    }
+
+    public function updateHorarioOcupado() {
+        $horario_id = request()->input('horario_id');
+        $empresa_id = request()->input('empresa_id');
+        $existe = HorarioOcupado::where('horario_id', $horario_id)
+                                ->where('empresa_id', $empresa_id)
+                                ->count();
+        if ($existe > 0) {
+            $horario_ocupado = HorarioOcupado::where('horario_id', $horario_id)
+                                                ->where('empresa_id', $empresa_id)
+                                                ->first();
+            $horario_ocupado->delete();
+        } else {
+            HorarioOcupado::create([
+                'horario_id' => $horario_id,
+                'empresa_id' => $empresa_id
+            ]);
+        }
+        return response()->json([
+            'mensaje' => 'Horario ocupado actualizado'
         ], 200);
     }
 }

@@ -48,7 +48,10 @@ export class EmpresaCreateComponent implements OnInit {
       'especial': new FormControl(0, Validators.required),
       'nombres': new FormControl('', Validators.required),
       'apellidos': new FormControl('', Validators.required),
-      'email': new FormControl('', Validators.required),
+      'email': new FormControl(''),
+      'cuenta': new FormControl('', Validators.required),
+      'telefono_celular': new FormControl('', Validators.required),
+      'whatsapp': new FormControl('', Validators.required),
       'password': new FormControl('', Validators.required),
       'repeated_password': new FormControl('', Validators.required),
 

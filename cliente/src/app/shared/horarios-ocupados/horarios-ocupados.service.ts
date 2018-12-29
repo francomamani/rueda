@@ -24,4 +24,8 @@ export class HorariosOcupadosService {
     destroy(id) {
         return this.http.delete(this.base + 'horarios-ocupados/' + id);
     }
+
+    updateHorarioOcupado(data) {
+      return this.http.post(this.base + 'update-horario-ocupado', data);
+    }
 }

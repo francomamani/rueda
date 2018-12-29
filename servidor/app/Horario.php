@@ -16,10 +16,6 @@ class Horario extends Model
     ];
     protected $dates = ['deleted_at'];
 
-    public function reuniones() {
-        return $this->hasMany(Reunion::class, 'horario_id');
-    }
-
     public function horariosOcupados() {
         return $this->hasMany(HorarioOcupado::class, 'horario_id');
     }

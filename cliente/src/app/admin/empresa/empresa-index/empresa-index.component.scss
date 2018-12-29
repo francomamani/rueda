@@ -26,7 +26,7 @@ $divider: #BDBDBD;
   border-left: 1px solid $divider;
   outline: none;
 }
-.rueda-search button {
+.rueda-search button.search {
   background-color: $primary;
   color: $text;
   padding: .5em 2em;
@@ -34,6 +34,15 @@ $divider: #BDBDBD;
   border-radius: 0 100px 100px 0;
   cursor: pointer;
   outline: none;
+}
+.rueda-search button.download {
+  background-color: $primary;
+  color: $text;
+  padding: .5em 2em;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  margin-right: 1em;
 }
 .btn-acciones {
   text-align: center;

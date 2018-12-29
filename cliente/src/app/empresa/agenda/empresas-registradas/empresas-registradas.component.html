@@ -12,7 +12,7 @@
                     *ngFor="let rubro of rubros">{{rubro.nombre}}</option>
           </select>
           <input type="search" formControlName="search" name="search" placeholder="buscar">
-          <button> Buscar </button>
+          <button class="search"> Buscar </button>
         </form>
         <br><br>
         <div *ngIf="empresas !== null && empresas.length === 0" class="sin-coincidencias">
@@ -28,6 +28,7 @@
               <th>NIT</th>
               <th>Telefono</th>
               <th>Direccion</th>
+              <th>Acciones</th>
             </tr>
             </thead>
             <tbody>
@@ -38,6 +39,9 @@
               <td>{{ empresa.nit }}</td>
               <td>{{ empresa.telefono }}</td>
               <td>{{ empresa.direccion}}</td>
+              <td>
+                <button class="asignar" (click)="agendar(empresa.empresa_id)">Agendar Reunión</button>
+              </td>
             </tr>
             </tbody>
           </table>

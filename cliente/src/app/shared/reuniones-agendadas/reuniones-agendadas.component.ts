@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {EmpresaService} from '../../admin/empresa/empresa.service';
 import {AuthService} from '../../auth.service';
 import {EmpresaModalComponent} from '../empresa-modal/empresa-modal.component';
+import {ReunionService} from '../../admin/reunion/reunion.service';
 
 @Component({
   selector: 'ngx-reuniones-agendadas',
@@ -19,6 +20,7 @@ export class ReunionesAgendadasComponent implements OnInit {
   admin: boolean = null;
   constructor(private empresaService: EmpresaService,
               private route: ActivatedRoute,
+              private reunionService: ReunionService,
               private router: Router,
               private authService: AuthService,
               private modalService: NgbModal) {
@@ -64,4 +66,16 @@ export class ReunionesAgendadasComponent implements OnInit {
     }
   }
 
+  cancelar(index) {
+    /*console.log(reunion_id);*/
+    this.reuniones.splice(1, index);
+/*    this.reunionService.destroy(reunion_id)
+      .subscribe(res => {
+        console.log(res);
+        this.empresaService.misReuniones(this.empresa_id)
+          .subscribe((res2: any) => {
+            this.reuniones = res2;
+          });
+      });*/
+  }
 }

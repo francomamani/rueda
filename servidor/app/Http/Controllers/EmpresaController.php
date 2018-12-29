@@ -46,6 +46,9 @@ class EmpresaController extends Controller
             'nombres' => $request->input('nombres'),
             'apellidos' => $request->input('apellidos'),
             'email' => $request->input('email'),
+            'cuenta' => $request->input('cuenta'),
+            'telefono_celular' => $request->input('telefono_celular'),
+            'whatsapp' => $request->input('whatsapp'),
             'tipo_usuario' => 'empresa',
             'password' => Hash::make($request->input('password')),
         ];
@@ -196,8 +199,37 @@ class EmpresaController extends Controller
     }
 
     public function horariosOcupados($empresa_id) {
-        $horarios_ocupados = Empresa::find($empresa_id)->horariosOcupados()->with(['horario', 'empresa'])->get();
-        return response()->json($horarios_ocupados, 200);
+        $horarios_boolean = [];
+/*        $horarios_ocupados = Empresa::find($empresa_id)->horariosOcupados()->with(['horario', 'empresa'])->get();*/
+        $horarios_ocupados = Empresa::find($empresa_id)->horariosOcupados()->get();
+/*        $horarios_ocupados = HorarioOcupado::get();*/
+        $horarios= Horario::get();
+        $found = false;
+        foreach ($horarios as $horario) {
+            foreach ($horarios_ocupados as $horario_ocupado) {
+                if ($horario->horario_id === $horario_ocupado->horario_id) {
+                    array_push($horarios_boolean, [
+                        'horario_id' => $horario->horario_id,
+                        'ocupado' => true,
+                        'inicio' => $horario->inicio,
+                        'fin' => $horario->fin,
+                    ]);
+                    $found = true;
+                }
+            }
+            if ($found === false) {
+                array_push($horarios_boolean, [
+                    'horario_id' => $horario->horario_id,
+                    'ocupado' => false,
+                    'inicio' => $horario->inicio,
+                    'fin' => $horario->fin,
+                ]);
+            } else {
+                $found = false;
+            }
+        }
+        return response()->json($horarios_boolean, 200);
+/*        return response()->json($horarios_ocupados, 200);*/
     }
 
     private function misHorariosAgendados($empresa_id) {
@@ -209,10 +241,9 @@ class EmpresaController extends Controller
     }
 
     public function misReuniones($empresa_id) {
-        $reuniones = Reunion::join('horarios', 'horarios.horario_id', '=', 'reuniones.horario_id')
-                            ->where('empresa_solicitante_id', $empresa_id)
+        $reuniones = Reunion::where('empresa_solicitante_id', $empresa_id)
                             ->orWhere('empresa_demandada_id', $empresa_id)
-                            ->orderBy('horarios.inicio')
+                            ->orderBy('reuniones.desde')
                             ->selectRaw('reuniones.*')
                             ->get();
         $data = [];
@@ -221,11 +252,10 @@ class EmpresaController extends Controller
                 'empresa_solicitante' => Empresa::with('rubro')->find($reunion->empresa_solicitante_id),
                 'empresa_demandada' => Empresa::with('rubro')->find($reunion->empresa_demandada_id),
                 'mesa' => Mesa::find($reunion->mesa_id)->numero,
-                'inicio' => Horario::find($reunion->horario_id)->inicio,
-                'fin' => Horario::find($reunion->horario_id)->fin,
                 'resultado' => $reunion->resultado,
                 'fecha_hora_registro_reunion' => $reunion->created_at,
-                'reunion_id' => $reunion->reunion_id,
+                'desde' => $reunion->desde,
+                'hasta' => $reunion->hasta,
             ];
             array_push($data, $reunionItem);
         }
@@ -293,5 +323,42 @@ class EmpresaController extends Controller
     }
     public function mostrarLogo($logo_path) {
         return response()->file(storage_path('app/logos/' . $logo_path));
+    }
+    /*
+     * agendar reunion entre empresas
+     * */
+    public function agendar() {
+        $empresa_solicitante_id = request()->input('empresa_solicitante_id');
+        $empresa_demandada_id = request()->input('empresa_demandada_id');
+        $mesas = Mesa::get();
+        $cantidad_mesas = Mesa::count();
+        $aleatorio = rand(1, $cantidad_mesas);
+        $count = 1;
+        $aleatorio_dates = rand(0, 4);
+        $dates = [
+            ['2018-12-11 08:30:00', '2018-12-11 08:50:00'],
+            ['2018-12-11 09:00:00', '2018-12-11 09:20:00'],
+            ['2018-12-11 09:30:00', '2018-12-11 09:50:00'],
+            ['2018-12-11 10:00:00', '2018-12-11 10:20:00'],
+            ['2018-12-11 10:30:00', '2018-12-11 10:50:00'],
+        ];
+        foreach ($mesas as $mesa) {
+            if ($count === $aleatorio) {
+                $mesa_id = $mesa->mesa_id;
+            }
+            $count++;
+        }
+        $data = [
+            'empresa_solicitante_id' => $empresa_solicitante_id,
+            'empresa_demandada_id' => $empresa_demandada_id,
+            'mesa_id' => $mesa_id,
+            'resultado' => 'cronogramado',
+            'empresa_solicitante_asistio' => false,
+            'empresa_demandada_asistio' => false,
+            'desde' => $dates[$aleatorio_dates][0],
+            'hasta' => $dates[$aleatorio_dates][1],
+        ];
+        $reunion = Reunion::create($data);
+        return response()->json($reunion, 200);
     }
 }

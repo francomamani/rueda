@@ -11,9 +11,9 @@ use Validator;
 class AuthController extends Controller
 {
     public function login() {
-        $credentials = request()->only('email', 'password');
+        $credentials = request()->only('cuenta', 'password');
         $rules = [
-            'email' => 'required',
+            'cuenta' => 'required',
             'password' => 'required|min:3',
         ];
         $validator = Validator::make($credentials, $rules);
@@ -38,14 +38,14 @@ class AuthController extends Controller
                 500);
         }
         $usuario = null;
-        $usuarioModel = Usuario::where('email', request()->input('email'))->first();
+        $usuarioModel = Usuario::where('cuenta', request()->input('cuenta'))->first();
         if($usuarioModel->tipo_usuario === 'administrador') {
             $usuario = $usuarioModel;
         } else {
             $usuario = Usuario::with('empresa.participantes')
                     ->join('empresas', 'empresas.usuario_id', '=','usuarios.usuario_id')
                     ->join('rubros', 'rubros.rubro_id', '=','empresas.rubro_id')
-                    ->where('usuarios.email', request()->input('email'))
+                    ->where('usuarios.cuenta', request()->input('cuenta'))
                     ->selectRaw('usuarios.*, empresas.*, rubros.nombre as rubro')
                     ->first();
         }

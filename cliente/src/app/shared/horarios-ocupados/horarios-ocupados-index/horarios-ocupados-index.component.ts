@@ -44,4 +44,19 @@ export class HorariosOcupadosIndexComponent implements OnInit {
     crear() {
         this._router.navigate([this.ruta]);
     }
+
+    updateHorario(horario) {
+      const data = {
+        horario_id: horario.horario_id,
+        empresa_id: this.id_empresa
+      };
+      this.horarioOcService.updateHorarioOcupado(data).subscribe(res => {
+        console.log(res);
+        this.horarioOcService.index(this.id_empresa)
+          .subscribe((res2: any) => {
+            this.horarios = res2;
+          });
+      });
+    }
+
 }

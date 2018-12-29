@@ -34,7 +34,7 @@ export class EvaluacionReunionesComponent implements OnInit {
               .registrado(params.reunion_id, params.empresa_id)
               .subscribe((res: any) => {
                 this.registrado = res.registrado;
-                if(this.registrado) {
+                if (this.registrado) {
                     setTimeout(() => {
                       if (this.router.url === '/empresa/evaluacion-reunion/' +
                           this.reunion_id + '/' + this.empresa_id) {

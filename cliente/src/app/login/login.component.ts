@@ -11,7 +11,7 @@ import {environment} from '../../environments/environment.prod';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  @ViewChild('email') email;
+  @ViewChild('cuenta') cuenta;
   mensaje = '';
   loginGroup: FormGroup;
   logo = environment.base + environment.usuario_logo;
@@ -42,7 +42,7 @@ export class LoginComponent {
   }
   createForm() {
     this.loginGroup = this.fb.group({
-      'email': new FormControl('', Validators.required),
+      'cuenta': new FormControl('', Validators.required),
       'password': new FormControl('', Validators.required),
     });
   }
@@ -61,7 +61,7 @@ export class LoginComponent {
           this.mensaje = 'Las credenciales son incorrectas';
           this.toastr.danger('Credenciales inválidas', 'Error de Autenticación');
           this.loginGroup.reset();
-          this.email.nativeElement.focus();
+          this.cuenta.nativeElement.focus();
       });
   }
 }

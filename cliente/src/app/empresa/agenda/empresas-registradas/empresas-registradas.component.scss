@@ -26,7 +26,7 @@ $divider: #BDBDBD;
   border-left: 1px solid $divider;
   outline: none;
 }
-.rueda-search button {
+.rueda-search button.search {
   background-color: $primary;
   color: $text;
   padding: .5em 2em;
@@ -35,6 +35,16 @@ $divider: #BDBDBD;
   cursor: pointer;
   outline: none;
 }
+button.asignar {
+  background-color: $primary;
+  color: $text;
+  padding: .5em 2em;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  outline: none;
+}
+
 a.info, a.info:hover, a.info:active{
   color: #41c15d;
   text-decoration: underline;
