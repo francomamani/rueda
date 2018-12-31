@@ -50,6 +50,18 @@ a.create-account {
 a.create-account:hover {
   color: $primary;
 }
+a.ayuda {
+  display: block;
+  margin-top: 1em;
+  padding: .5em 1em;
+  color: $dark-primary;
+  text-decoration: underline;
+  cursor: pointer;
+  text-align: left;
+}
+a.ayuda:hover {
+  color: $primary;
+}
 .logo-left-top {
   position: absolute;
   left: 72px;

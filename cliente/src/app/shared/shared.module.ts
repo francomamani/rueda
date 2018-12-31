@@ -21,6 +21,8 @@ import { RegistroExitosoComponent } from './registro-exitoso/registro-exitoso.co
 import {ReunionesAgendadasComponent} from './reuniones-agendadas/reuniones-agendadas.component';
 import {EvaluacionReunionesComponent} from './evaluacion-reuniones/evaluacion-reuniones.component';
 import {EvaluacionGeneralEmpresaComponent} from './evaluacion-general/evaluacion-general.component';
+import { LoadModalComponent } from './load-modal/load-modal.component';
+import { LottieAnimationViewModule } from 'ng-lottie';
 
 @NgModule({
   imports: [
@@ -31,6 +33,7 @@ import {EvaluacionGeneralEmpresaComponent} from './evaluacion-general/evaluacion
     FormsModule,
     ReactiveFormsModule,
     AngularDateTimePickerModule,
+    LottieAnimationViewModule.forRoot(),
   ],
   declarations: [ PerfilComponent,
                   HorariosOcupadosComponent,
@@ -47,7 +50,8 @@ import {EvaluacionGeneralEmpresaComponent} from './evaluacion-general/evaluacion
                   EmpresaEditComponent,
                   CambiarPasswordComponent,
                   ReunionesAgendadasComponent,
-                  RegistroExitosoComponent],
+                  RegistroExitosoComponent,
+                  LoadModalComponent],
   exports: [PerfilComponent,
             HorariosOcupadosComponent,
             HorariosOcupadosCreateComponent,

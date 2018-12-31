@@ -4,6 +4,7 @@ import {HorarioService} from '../horario.service';
 import {NbToastrService} from '@nebular/theme';
 import { DateFormatter } from 'gb-date-formatter';
 import {DatePipe} from '@angular/common';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -13,10 +14,10 @@ import {DatePipe} from '@angular/common';
 })
 export class HorarioCreateComponent implements OnInit {
 
-    ini: Date = new Date();
-    fi: Date = new Date();
-    iii: Date = this.ini;
-    fff: Date = this.fi;
+    ini: string= this.datePipe.transform(new Date(), 'yyyy-MM-ddThh:mm');
+    fi: string= this.datePipe.transform(new Date(), 'yyyy-MM-ddThh:mm');
+    iii: Date;
+    fff: Date;
     datos = null;
     settings = {
         bigBanner: true,
@@ -28,28 +29,28 @@ export class HorarioCreateComponent implements OnInit {
 
     constructor(private horarioService: HorarioService,
                 private toastr: NbToastrService,
-                private datePipe: DatePipe) {
+                private datePipe: DatePipe,
+                public router: Router) {
     }
 
     ngOnInit() {
     }
 
     store() {
+        this.iii = new Date(this.ini);
+        this.fff = new Date(this.fi);
         if (this.iii.getTime() > this.fff.getTime()) {
             this.toastr.warning('La fecha de inicio debe ser menor a la fecha final');
             return;
         }
         this.datos = {
-            inicio: this.datePipe.transform(this.ini, 'yyyy-MM-dd HH:mm:ss'),
-            fin: this.datePipe.transform(this.fi, 'yyyy-MM-dd HH:mm:ss'),
+            inicio: this.datePipe.transform(this.iii, 'yyyy-MM-dd HH:mm:ss'),
+            fin: this.datePipe.transform(this.fff, 'yyyy-MM-dd HH:mm:ss'),
         };
         this.horarioService.store(this.datos)
             .subscribe((res: any) => {
                 this.toastr.success('Se registró el nuevo horario', 'Éxito');
-                this.ini = new Date();
-                this.fi = new Date();
-                this.iii = this.ini;
-                this.fff = this.fi;
+                this.router.navigate(['/admin/horario/listar']);
             });
     }
 

@@ -9,21 +9,15 @@
           <div class="row">
             <div class="col-md-6">
               <label for="inicio">Desde</label>
-              <angular2-date-picker
-                id="inicio"
-                (onDateSelect)="onInicio($event)"
-                name="ini"
-                [(ngModel)]="ini"
-                [settings]="settings"></angular2-date-picker>
+              <br>
+              <input type="datetime-local" id="inicio" [value]="ini" (change)="ini=$event.target.value"/>
+
             </div>
             <div class="col-md-6">
               <label for="fin">Hasta</label>
-              <angular2-date-picker
-                id="fin"
-                (onDateSelect)="onFin($event)"
-                [(ngModel)]="fi"
-                name="fi"
-                [settings]="settings"></angular2-date-picker>
+              <br>
+              <input type="datetime-local" id="fin" [value]="fi" (change)="fi=$event.target.value"/>
+
             </div>
           </div>
           <div class="row">

@@ -19,6 +19,7 @@ import { LoginComponent } from './login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SharedModule} from './shared/shared.module';
 import { AutenticacionComponent } from './autenticacion/autenticacion.component';
+import {LoadModalComponent} from './shared/load-modal/load-modal.component';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, AutenticacionComponent],
@@ -33,9 +34,11 @@ import { AutenticacionComponent } from './autenticacion/autenticacion.component'
     CoreModule.forRoot(),
     SharedModule,
     FormsModule,
+      SharedModule,
     ReactiveFormsModule,
   ],
   bootstrap: [AppComponent],
+    entryComponents: [LoadModalComponent],
   providers: [
     { provide: APP_BASE_HREF, useValue: '/' },
   ],

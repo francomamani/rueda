@@ -2,11 +2,16 @@
   <div class="col-md-12">
     <nb-card>
       <nb-card-header>
-        Horarios no disponibles
+        <h4>Horarios no disponibles</h4>
 <!--        <button class="btn-green" (click)="crear()">ACTUALIZAR</button>-->
 <!--        <button class="btn-green" (click)="updateHorariosOcupados()">ACTUALIZAR</button>-->
       </nb-card-header>
       <nb-card-body class="bg-white">
+        <h5 class="texto-ayuda">Aqui puede ver los horarios habilitados para reuniones<br>
+        Elija los horarios en los que no pueda asistir a las reunioes para que no se agenden reuniones en estos horarios<br></h5>
+        <h5 class="disponible">Si el horario esta en color verde, ese horario esta disponible para que se le agenden reuniones<br></h5>
+        <h5 class="ocupado">Si el horario esta de color rojo, ese horario se considera ocupado, el cual no se tomara en cuenta al agendar reunioes</h5>
+
         <div class="layout bg-white">
           <div class="schedule-card"
                [class.busy]="horario.ocupado"

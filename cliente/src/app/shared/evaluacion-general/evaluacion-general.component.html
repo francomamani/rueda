@@ -3,6 +3,7 @@
     <nb-card>
       <nb-card-body>
         <h4>Su evaluación general ya fue llenada exitosamente</h4>
+
       </nb-card-body>
     </nb-card>
   </div>
@@ -12,6 +13,9 @@
     <nb-card>
       <nb-card-header>
         <h3>Evaluación General</h3>
+        <h5 class="texto-ayuda">
+          En esta sección, usted puede llenar una evaluación general de la rueda de negocios
+        </h5>
       </nb-card-header>
     </nb-card>
     <form (submit)="store()" role="form" [formGroup]="evaluacionGroup">

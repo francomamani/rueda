@@ -4,6 +4,11 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {NbToastrService} from '@nebular/theme';
 import {ActivatedRoute, Router} from '@angular/router';
 import {environment} from '../../environments/environment.prod';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {LoadModalComponent} from '../shared/load-modal/load-modal.component';
+
+
+
 
 @Component({
   selector: 'ngx-login',
@@ -21,7 +26,8 @@ export class LoginComponent {
               private toastr: NbToastrService,
               private router: Router,
               private route: ActivatedRoute,
-              private fb: FormBuilder) {
+              private fb: FormBuilder,
+              private modalService: NgbModal) {
     this.route.params
       .subscribe((param: any) => {
           if (authService.isLoggedIn()) {
@@ -48,6 +54,7 @@ export class LoginComponent {
   }
 
   login() {
+      const activeModal = this.modalService.open(LoadModalComponent, { size: 'sm', container: 'nb-layout' });
     this.authService.login(this.loginGroup.value)
       .subscribe((res: any) => {
         if (res.usuario.tipo_usuario === 'administrador') {
@@ -57,11 +64,16 @@ export class LoginComponent {
           this.toastr.success(res.mensaje, 'Iniciando Sesion');
           this.router.navigate(['/empresa']);
         }
+        activeModal.dismiss();
       }, (error: any) => {
           this.mensaje = 'Las credenciales son incorrectas';
           this.toastr.danger('Credenciales inválidas', 'Error de Autenticación');
           this.loginGroup.reset();
           this.cuenta.nativeElement.focus();
+          activeModal.dismiss();
       });
   }
+
+
+
 }

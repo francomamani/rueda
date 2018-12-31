@@ -24,4 +24,10 @@
     transform: translate(0);
   }
 }
+$dark-primary: #00796B;
 
+.texto-ayuda{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: $dark-primary;
+}

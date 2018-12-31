@@ -2,9 +2,11 @@
   <div class="col-md-12">
     <nb-card>
       <nb-card-header>
-        Empresas Registradas
+        <h4>Empresas Registradas</h4>
       </nb-card-header>
       <nb-card-body class="card-body">
+        <h5 class="texto-ayuda">En esta sección, puede agendar reuniones con las distintas empresas participes de la rueda de negocios<br>
+            Puede realizar la busqueda de una empresa mediante el rurbo al que pertenece y/o nombre, caracteristicas de la empresa</h5>
         <form (submit)="buscar()" class="rueda-search" [formGroup]="buscarGroup">
           <select formControlName="rubro_id" name="rubro_id">
             <option value="0">TODOS LOS RUBROS</option>

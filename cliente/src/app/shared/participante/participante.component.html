@@ -1,9 +1,14 @@
 <nb-card>
   <nb-card-header>
-    <span *ngIf="empresa !== null">Participantes de {{empresa.nombre}}</span>
+    <h4><span *ngIf="empresa !== null">Participantes de {{empresa.nombre}}</span></h4>
   </nb-card-header>
 
   <nb-card-body>
+
+    <h5 class="texto-ayuda">
+      Registre a sus participantes, que asistiran a la rueda de negocios en representación de su empresa.<br>
+      Solo puede registrar un máximo de 2 participantes, si desea registrar mas, comuniquese con el Campo ferial 3 de julio
+    </h5>
     <ng2-smart-table [settings]="settings" [source]="source"
                      (createConfirm)="store($event)"
                      (deleteConfirm)="onDeleteConfirm($event)"

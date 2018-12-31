@@ -13,10 +13,13 @@
   <div class="col-md-12">
     <nb-card>
       <nb-card-header>
-        Reuniones Agendadas
+        <h4>Reuniones Agendadas</h4>
       </nb-card-header>
       <nb-card-body>
-        <h3>{{mi_empresa}}</h3>
+        <h5 class="texto-ayuda">En esta sección, puede ver todas sus reuniones agendadas, evaluar la reunión y cancelar una reunion agendada<br>
+          </h5>
+
+        <h5><b>{{mi_empresa}}</b></h5>
         <div *ngIf="reuniones !== null && reuniones.length === 0" class="alerta">
           No existen reuniones agendadas
           <br><br>

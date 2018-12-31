@@ -73,8 +73,8 @@
                        class="hidden">
                 <a class="text-primary" title="Listar de participantes" [routerLink]="['/admin/empresa/participantes/', empresa.empresa_id]"><i class="fa fa-user"></i></a>
                 <a class="text-success" title="Editar empresa" [routerLink]="['/admin/empresa/editar/'+empresa.empresa_id]"><i class="fa fa-edit"></i></a>
-                <a class="text-primary" title="Solicitudes salientes" [routerLink]="['/admin/empresa/solicitudes-salientes/'+empresa.empresa_id]"><i class="fa fa-arrow-circle-right"></i></a>
-                <a class="text-primary" title="Solicitudes entrantes" [routerLink]="['/admin/empresa/solicitudes-entrantes/'+empresa.empresa_id]"><i class="fa fa-arrow-circle-left"></i></a>
+              <!--  <a class="text-primary" title="Solicitudes salientes" [routerLink]="['/admin/empresa/solicitudes-salientes/'+empresa.empresa_id]"><i class="fa fa-arrow-circle-right"></i></a>
+                <a class="text-primary" title="Solicitudes entrantes" [routerLink]="['/admin/empresa/solicitudes-entrantes/'+empresa.empresa_id]"><i class="fa fa-arrow-circle-left"></i></a>-->
                 <a class="text-info"    title="Evaluacion General" [routerLink]="['/admin/empresa/evaluacion-general-empresa/'+empresa.empresa_id]"><i class="fa fa-home"></i></a>
                 <a class="text-default" title="Reuniones Agendadas" [routerLink]="['/admin/empresa/reuniones-agendadas/'+empresa.empresa_id]"><i class="fa fa-list"></i></a>
                 <a title="Horarios no disponibles" [routerLink]="['/admin/horarios-ocupados/listar/admin/', empresa.empresa_id]"><i class="fa fa-clock"></i></a>

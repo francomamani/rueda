@@ -43,19 +43,7 @@ export const ADMIN_ITEMS: NbMenuItem[] = [
     {
         title: 'Horarios',
         icon: 'nb-email',
-        link: '/admin/horario',
-        children: [
-            {
-                title: 'Horarios habilitados',
-                icon: 'nb-search',
-                link: '/admin/horario/listar',
-            },
-            {
-                title: 'Nuevo Horario',
-                icon: 'nb-plus',
-                link: '/admin/horario/crear',
-            },
-        ],
+        link: '/admin/horario/listar',
     },
     {
         title: 'Mesas',

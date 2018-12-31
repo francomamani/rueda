@@ -139,3 +139,16 @@ $accent: #E91E63;
   right: 20px;
   z-index: 10000;
 }
+
+.texto-ayuda{
+  margin-bottom: 10px;
+  color: $dark-primary;
+}
+
+.disponible{
+  color: $dark-primary;
+}
+.ocupado{
+  margin-bottom: 30px;
+  color: $accent;
+}
