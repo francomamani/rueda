@@ -26,12 +26,21 @@ export const EMPRESA_ITEMS: NbMenuItem[] = [
   {
     title: 'Horarios Ocupados',
     icon: 'nb-keypad',
+<<<<<<< HEAD
     link: '/empresa/horarios-ocupados/listar/empresa/' + empresa_id,
+=======
+    link: '/empresa/horarios-ocupados/listar/empresa/'
+      + JSON.parse(atob(localStorage.getItem('rueda-usuario'))).empresa_id,
+>>>>>>> 5c808488cdf37ae602d6345357ad070d6f0a8f16
   },
   {
     title: 'Mis Participantes',
     icon: 'nb-person',
+<<<<<<< HEAD
     link: '/empresa/mis-participantes/' + empresa_id,
+=======
+    link: '/empresa/mis-participantes/' + JSON.parse(atob(localStorage.getItem('rueda-usuario'))).empresa_id,
+>>>>>>> 5c808488cdf37ae602d6345357ad070d6f0a8f16
   },
 /*  {
     title: 'Solicitudes Salientes',

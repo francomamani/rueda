@@ -6,7 +6,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {environment} from '../../environments/environment.prod';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {LoadModalComponent} from '../shared/load-modal/load-modal.component';
-import {AyudaModalComponent} from "../shared/ayuda-modal/ayuda-modal.component";
+import {AyudaModalComponent} from '../shared/ayuda-modal/ayuda-modal.component';
 
 
 
@@ -61,15 +61,21 @@ export class LoginComponent {
   }
 
   login() {
-      const activeModal = this.modalService.open(LoadModalComponent, { size: 'sm', container: 'nb-layout' });
+    const activeModal = this.modalService.open(LoadModalComponent, { size: 'sm', container: 'nb-layout' });
     this.authService.login(this.loginGroup.value)
       .subscribe((res: any) => {
         if (res.usuario.tipo_usuario === 'administrador') {
           this.toastr.success(res.mensaje, 'Iniciando Sesion');
           this.router.navigate(['/admin']);
         } else {
-          this.toastr.success(res.mensaje, 'Iniciando Sesion');
-          this.router.navigate(['/empresa']);
+            if(res.usuario.habilitado){
+                this.toastr.success(res.mensaje, 'Iniciando Sesion');
+                this.router.navigate(['/empresa']);
+            }else {
+                this.toastr.warning(res.mensaje, 'No esta habilitado');
+                this.router.navigate(['/auth/comprobante/' + res.usuario.empresa_id]);
+                this.authService.logout();
+            }
         }
         activeModal.dismiss();
       }, (error: any) => {

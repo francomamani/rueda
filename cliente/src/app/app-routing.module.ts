@@ -10,6 +10,7 @@ import {
 } from '@nebular/auth';
 import {LoginComponent} from './login/login.component';
 import {EmpresaCreateComponent} from './shared/empresa-create/empresa-create.component';
+import {ComprobanteComponent} from "./comprobante/comprobante.component";
 const routes: Routes = [
   { path: 'pages', loadChildren: 'app/pages/pages.module#PagesModule' },
   {
@@ -24,6 +25,10 @@ const routes: Routes = [
         path: 'login',
         component: LoginComponent,
       },
+        {
+          path: 'comprobante/:id_e',
+            component: ComprobanteComponent,
+        },
       {
         path: 'signup',
         component: EmpresaCreateComponent,

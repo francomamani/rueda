@@ -12,6 +12,7 @@ import {FormsModule} from '@angular/forms';
 import { EmpresasRegistradasComponent } from './agenda/empresas-registradas/empresas-registradas.component';
 import {AgendaService} from './agenda/agenda.service';
 import { AgendaCreateComponent } from './agenda/agenda-create/agenda-create.component';
+import {LoadModalComponent} from '../shared/load-modal/load-modal.component';
 
 @NgModule({
   imports: [
@@ -26,7 +27,7 @@ import { AgendaCreateComponent } from './agenda/agenda-create/agenda-create.comp
                 AgendaComponent,
                 EmpresasRegistradasComponent,
                 AgendaCreateComponent],
-  entryComponents: [EmpresaModalComponent],
+  entryComponents: [EmpresaModalComponent, LoadModalComponent],
   providers: [AgendaService],
 })
 export class EmpresaModule { }
