@@ -20,7 +20,7 @@
       </legend>
       <div class="form-group">
         <label for="comprobante">Comprobante</label>
-        <input type="file" class="form-control" formControlName="comprobante" name="comprobante" id="comprobante">
+        <input type="file" #comprobante class="form-control" formControlName="comprobante" name="comprobante" id="comprobante">
       </div>
       <div class="text-center">
         <button type="submit" [disabled]="compGroup.status === 'INVALID'" class="btn-login">Subir</button>

@@ -72,4 +72,7 @@ export class EmpresaService {
     agendar(req) {
       return this.http.post(this.base + 'agendar', req);
     }
+    subirComprobante(empresa_id, req) {
+      return this.http.post(this.base + 'subir-comprobante/' + empresa_id, req);
+    }
 }

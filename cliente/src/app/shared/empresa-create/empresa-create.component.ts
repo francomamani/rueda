@@ -13,6 +13,7 @@ import {AuthService} from '../../auth.service';
 })
 export class EmpresaCreateComponent implements OnInit {
   @ViewChild('logo') logo;
+  @ViewChild('voucher') voucher;
   rubros: any = null;
   empresaGroup: FormGroup;
   mensaje = '';
@@ -35,6 +36,7 @@ export class EmpresaCreateComponent implements OnInit {
       'rubro_id': new FormControl(0, Validators.required),
       'nombre': new FormControl('', Validators.required),
       'logo': new FormControl(''),
+      'voucher': new FormControl(''),
       'direccion': new FormControl('', Validators.required),
       'telefono': new FormControl('', Validators.required),
       'pagina_web': new FormControl(''),
@@ -79,8 +81,13 @@ export class EmpresaCreateComponent implements OnInit {
               'especial': this.empresaGroup.value.especial === 1 ? '1' : '0',
           });
 
-          if (this.logo.nativeElement.files[0]) {
-              const formData = new FormData();
+        if (this.logo.nativeElement.files[0]) {
+          const formData = new FormData();
+          if (this.voucher.nativeElement.files[0]) {
+            formData.append('voucher', this.voucher.nativeElement.files[0]);
+          } else {
+            formData.append('voucher', this.empresaGroup.value.voucher);
+          }
               formData.append('rubro_id', this.empresaGroup.value.rubro_id);
               formData.append('nombre', this.empresaGroup.value.nombre);
               formData.append('logo', this.logo.nativeElement.files[0]);

@@ -149,12 +149,17 @@
         <nb-card>
           <nb-card-header>
             <span *ngIf="router.url !== '/auth/signup'">Tipo de Empresa y Habilitación</span>
-            <span *ngIf="router.url === '/auth/signup'">Subir logo (Opcional)</span>
+            <span *ngIf="router.url === '/auth/signup'">Subir Logo (Opcional) y Voucher</span>
           </nb-card-header>
           <nb-card-body>
             <div class="row">
               <div class="col-sm-4 form-group">
-                <input type="file" #logo title="Subir logo">
+                <label for="logo">Subir Logo (Opcional)</label>
+                <input type="file" id="logo" #logo title="Subir logo">
+              </div>
+              <div class="col-sm-4 form-group">
+                <label for="voucher">Subir Voucher</label>
+                <input type="file" id="voucher" #voucher title="Subir voucher">
               </div>
               <div class="col-sm-4 form-group" *ngIf="router.url !== '/auth/signup'">
                 <nb-checkbox value=0 formControlName="especial" name="especial">Empresa Especial</nb-checkbox>

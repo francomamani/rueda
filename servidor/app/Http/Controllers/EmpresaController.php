@@ -605,4 +605,18 @@ class EmpresaController extends Controller
         $empresa = Empresa::find($empresa_id);
         return response()->file(storage_path('app/' . $empresa->voucher));
     }
+
+    public function subirComprobante($empresa_id) {
+        $response = [
+            'status' => false
+        ];
+        if(request()->hasFile('comprobante')) {
+            $path_voucher = request()->file('comprobante')->store('vouchers');
+            $empresa = Empresa::find($empresa_id);
+            $empresa->voucher = $path_voucher;
+            $empresa->save();
+            $response['status'] = true;
+        }
+        return response()->json($response, 200);
+    }
 }
