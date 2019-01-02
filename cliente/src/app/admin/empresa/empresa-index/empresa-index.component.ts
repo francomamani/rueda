@@ -6,7 +6,7 @@ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {RubroService} from '../../rubro/rubro.service';
 import {environment} from '../../../../environments/environment.prod';
-import {VoucherModalComponent} from "../../voucher-modal/voucher-modal.component";
+import {VoucherModalComponent} from '../../voucher-modal/voucher-modal.component';
 
 @Component({
   selector: 'ngx-empresa-index',
@@ -86,7 +86,11 @@ export class EmpresaIndexComponent implements OnInit {
   comprobante(empresa) {
       const compModal = this.modalService.open(VoucherModalComponent, { size: 'lg', container: 'nb-layout' });
       compModal.componentInstance.id_empresa = empresa.empresa_id;
-      compModal.componentInstance.comp = environment.base + 'voucher/' + empresa.empresa_id;
+      if (empresa.voucher !== null)
+        compModal.componentInstance.comp = environment.base + 'voucher/' + empresa.empresa_id;
+      compModal.result.then(() => {
+        this.reload();
+      });
   }
 
 }

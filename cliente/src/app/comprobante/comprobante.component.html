@@ -3,7 +3,10 @@
     <form (submit)="subir()" [formGroup]="compGroup" role="form">
       <legend class="legend-login">
 
-        <h4><div class="alert-danger">Debe subir una foto el comprobante de pago en la cuenta del banco</div></h4>
+        <h4 *ngIf="voucher!==null"><div class="alert-success">Ya subió su comprobante, se lo esta revisando para su habilitación en el sistema</div></h4>
+        <h5 *ngIf="voucher!==null"><div>Si usted cree que subió otra imagen y no su comprobante, puede volver a subirlo</div></h5>
+        <h5 *ngIf="voucher!==null"><div>Si usted ya lleva esperando mucho tiempo su habilitación, puede comunicarse con la administración al 52 66111</div></h5>
+        <h4 *ngIf="voucher===null"><div class="alert-danger">Debe subir una foto del comprobante de pago en la cuenta del banco</div></h4>
         <nb-card>
           <nb-card-header>
             ¿Cúal es el coste?

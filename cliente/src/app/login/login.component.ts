@@ -74,7 +74,7 @@ export class LoginComponent {
             }else {
                 this.toastr.warning(res.mensaje, 'No esta habilitado');
                 this.router.navigate(['/auth/comprobante/' + res.usuario.empresa_id]);
-                this.authService.logout();
+              //  this.authService.logout();
             }
         }
         activeModal.dismiss();

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {EmpresaService} from '../empresa/empresa.service';
 import {NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {RubroService} from "../rubro/rubro.service";
-import {LoadModalComponent} from "../../shared/load-modal/load-modal.component";
-import {AyudaModalComponent} from "../../shared/ayuda-modal/ayuda-modal.component";
+import {RubroService} from '../rubro/rubro.service';
+import {LoadModalComponent} from '../../shared/load-modal/load-modal.component';
+import {AyudaModalComponent} from '../../shared/ayuda-modal/ayuda-modal.component';
 
 @Component({
   selector: 'ngx-voucher-modal',
@@ -13,7 +13,7 @@ import {AyudaModalComponent} from "../../shared/ayuda-modal/ayuda-modal.componen
 export class VoucherModalComponent implements OnInit {
 
   id_empresa: any;
-  comp=null;
+  comp = null;
   constructor(private empresaService: EmpresaService,
               private activeModal: NgbActiveModal,
               private modalService: NgbModal) {
@@ -23,7 +23,7 @@ export class VoucherModalComponent implements OnInit {
   }
   habilitar() {
       const loadModal = this.modalService.open(LoadModalComponent, { size: 'sm', container: 'nb-layout' });
-    this.empresaService.empresaHabilitar(this.id_empresa).subscribe(res=>{
+    this.empresaService.empresaHabilitar(this.id_empresa).subscribe(res => {
       loadModal.dismiss();
       this.activeModal.close();
     }, error1 => {

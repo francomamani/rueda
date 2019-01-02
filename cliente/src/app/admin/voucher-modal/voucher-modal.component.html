@@ -6,7 +6,7 @@
 </div>
 <div class="modal-body">
 
-  <img *ngIf="comp !== null" [src]="comp" height="70%">
-
+  <h5 *ngIf="comp === null"><div class="alert-warning">Esta empresa no subió su comprobante</div></h5>
+  <img *ngIf="comp !== null" [src]="comp" height="70%" width="100%">
   <button (click)="habilitar()" class="btn-login">HABILITAR</button>
 </div>
