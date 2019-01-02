@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from "../../auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'ngx-home',
@@ -194,7 +196,8 @@ export class HomeComponent implements OnInit {
     },
   ];
   search = '';
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

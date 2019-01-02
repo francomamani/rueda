@@ -1,0 +1,74 @@
+$dark-primary: #00796B;
+$primary: #009688;
+$primary-text: #212121;
+$white: #eee;
+.legend-login{
+  text-align: center;
+  color: $primary;
+  font-size: 5em;
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.legend-login h2 {
+  color: #2b2d34;
+}
+.legend-login span {
+  color: $primary;
+}
+.btn-login {
+  display: block;
+  width: 100%;
+  padding: 1em 0;
+  border: none;
+  margin-top: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: $primary;
+  color: $white;
+  text-transform: uppercase;
+  outline: none;
+  backface-visibility: hidden;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 2px;
+  box-shadow: 0 4px darken($primary,10%);
+}
+.btn-login:hover {
+  box-shadow: 0 2px darken($primary,10%);
+}
+.btn-login:active {
+  box-shadow: none;
+}
+a.create-account {
+  display: block;
+  margin-top: 1em;
+  padding: .5em 1em;
+  color: $dark-primary;
+  text-decoration: underline;
+  cursor: pointer;
+  text-align: right;
+}
+a.create-account:hover {
+  color: $primary;
+}
+a.ayuda {
+  display: block;
+  margin-top: 1em;
+  padding: .5em 1em;
+  color: $dark-primary;
+  text-decoration: underline;
+  cursor: pointer;
+  text-align: left;
+}
+a.ayuda:hover {
+  color: $primary;
+}
+.logo-left-top {
+  position: absolute;
+  left: 72px;
+  top: 0;
+}
+.logo-right-top {
+  position: absolute;
+  right: 72px;
+  top: 0;
+}

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AyudaModalComponent } from './ayuda-modal.component';
+import { ComprobanteComponent } from './comprobante.component';
 
-describe('AyudaModalComponent', () => {
-  let component: AyudaModalComponent;
-  let fixture: ComponentFixture<AyudaModalComponent>;
+describe('ComprobanteComponent', () => {
+  let component: ComprobanteComponent;
+  let fixture: ComponentFixture<ComprobanteComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AyudaModalComponent ],
+      declarations: [ ComprobanteComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AyudaModalComponent);
+    fixture = TestBed.createComponent(ComprobanteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

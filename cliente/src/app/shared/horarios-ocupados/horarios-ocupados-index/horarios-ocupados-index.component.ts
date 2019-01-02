@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {NbToastrService} from '@nebular/theme';
 import {HorariosOcupadosService} from '../horarios-ocupados.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {AuthService} from "../../../auth.service";
 
 @Component({
     selector: 'ngx-horarios-ocupados-index',
@@ -18,8 +19,13 @@ export class HorariosOcupadosIndexComponent implements OnInit {
     constructor(private horarioOcService: HorariosOcupadosService,
                 private toastr: NbToastrService,
                 private route: ActivatedRoute,
-                private _router: Router) {
-        this.id_empresa = this.route.snapshot.paramMap.get('id_empresa');
+                private _router: Router,
+                private authService: AuthService) {
+        if (this.authService.getTipoUsuario() === 'administrador') {
+            this.id_empresa = this.route.snapshot.paramMap.get('id_empresa');
+        } else{
+            this.id_empresa = this.authService.getUsuario().empresa_id;
+        }
         this.tipo_ruta = this.route.snapshot.paramMap.get('tipo_ruta');
         this.ruta = '/' + this.tipo_ruta + '/horarios-ocupados/crear/'+this.tipo_ruta+'/' + this.id_empresa;
         this.horarioOcService.index(this.id_empresa)

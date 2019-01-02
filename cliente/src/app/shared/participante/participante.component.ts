@@ -5,6 +5,7 @@ import {EmpresaService} from '../../admin/empresa/empresa.service';
 import {AyudaModalComponent} from "../ayuda-modal/ayuda-modal.component";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {LoadModalComponent} from "../load-modal/load-modal.component";
+import {AuthService} from "../../auth.service";
 
 @Component({
   selector: 'ngx-participante',
@@ -63,9 +64,14 @@ export class ParticipanteComponent implements OnInit {
   participantes: any = null;
   constructor(private empresaService: EmpresaService,
               private route: ActivatedRoute,
-              private modalService: NgbModal) {
+              private modalService: NgbModal,
+              private authService: AuthService) {
 
-    this.id_empresa = this.route.snapshot.paramMap.get('empresa_id');
+      if (this.authService.getTipoUsuario() === 'administrador') {
+          this.id_empresa = this.route.snapshot.paramMap.get('empresa_id');
+      } else {
+          this.id_empresa = this.authService.getUsuario().empresa_id;
+      }
     this.empresaService.show(this.id_empresa)
       .subscribe((res: any) => {
         this.empresa = res;
