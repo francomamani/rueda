@@ -38,6 +38,7 @@ class CreateEmpresasTable extends Migration
             $table->text('oferta');
             $table->text('demanda');
             $table->boolean('especial')->default(false);
+            $table->string('voucher')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

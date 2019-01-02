@@ -26,6 +26,7 @@ class Empresa extends Model
         'oferta',
         'demanda',
         'especial',
+        'voucher',
     ];
     protected $dates = ['deleted_at'];
 

@@ -19,6 +19,7 @@ use Illuminate\Http\Request;
 
 Route::post('login', 'AuthController@login');
 Route::get('empresas-listar', 'EmpresaController@listar');
+Route::get('empresas-listar-habilitados', 'EmpresaController@listarHabilitados');
 Route::resource('usuarios', 'UsuarioController');
 Route::resource('empresas', 'EmpresaController');
 Route::resource('participantes', 'ParticipanteController');
@@ -63,3 +64,7 @@ Route::get('generar-backup', 'BackupController@generarBackup');
 
 Route::post('update-horario-ocupado', 'HorarioOcupadoController@updateHorarioOcupado');
 Route::post('agendar', 'EmpresaController@agendar');
+
+
+Route::get('habilitar/{empresa_id}', 'EmpresaController@habilitar');
+Route::get('voucher/{empresa_id}', 'EmpresaController@voucher');

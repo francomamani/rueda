@@ -33,6 +33,10 @@ class EmpresaController extends Controller
         return response()->json($empresas, 200);
     }
 
+    public function listarHabilitados() {
+        return response()->json(Empresa::where('habilitado', true)->orderBy('nombre')->get(), 200);
+    }
+
     public function listar() {
         return response()->json(Empresa::orderBy('nombre')->get(), 200);
     }
@@ -58,23 +62,46 @@ class EmpresaController extends Controller
 
         if ($request->hasFile('logo')){
             $path_logo = $request->file('logo')->store('logos');
-            $empresa = [
-                'rubro_id' => $request->input('rubro_id'),
-                'usuario_id' => Usuario::create($usuario)->usuario_id,
-                'nombre' => $request->input('nombre'),
-                'logo' => $path_logo,
-                'direccion' => $request->input('direccion'),
-                'telefono' => $request->input('telefono'),
-                'pagina_web' => $request->input('pagina_web'),
-                'ciudad_localidad' => $request->input('ciudad_localidad'),
-                'nit' => $request->input('nit'),
-                'representante_legal' => $request->input('representante_legal'),
-                'habilitado' => $request->input('habilitado'),
-                'max_participantes' => $request->input('max_participantes'),
-                'oferta' => $request->input('oferta'),
-                'demanda' => $request->input('demanda'),
-                'especial' => $request->input('especial'),
-            ];
+            if ($request->hasFile('voucher')) {
+                $path_voucher = $request->file('voucher')->store('vouchers');
+                $empresa = [
+                    'rubro_id' => $request->input('rubro_id'),
+                    'usuario_id' => Usuario::create($usuario)->usuario_id,
+                    'nombre' => $request->input('nombre'),
+                    'logo' => $path_logo,
+                    'direccion' => $request->input('direccion'),
+                    'telefono' => $request->input('telefono'),
+                    'pagina_web' => $request->input('pagina_web'),
+                    'ciudad_localidad' => $request->input('ciudad_localidad'),
+                    'nit' => $request->input('nit'),
+                    'representante_legal' => $request->input('representante_legal'),
+                    'habilitado' => $request->input('habilitado'),
+                    'max_participantes' => $request->input('max_participantes'),
+                    'oferta' => $request->input('oferta'),
+                    'demanda' => $request->input('demanda'),
+                    'especial' => $request->input('especial'),
+                    'voucher' => $path_voucher,
+                ];
+            } else {
+                $empresa = [
+                    'rubro_id' => $request->input('rubro_id'),
+                    'usuario_id' => Usuario::create($usuario)->usuario_id,
+                    'nombre' => $request->input('nombre'),
+                    'logo' => $path_logo,
+                    'direccion' => $request->input('direccion'),
+                    'telefono' => $request->input('telefono'),
+                    'pagina_web' => $request->input('pagina_web'),
+                    'ciudad_localidad' => $request->input('ciudad_localidad'),
+                    'nit' => $request->input('nit'),
+                    'representante_legal' => $request->input('representante_legal'),
+                    'habilitado' => $request->input('habilitado'),
+                    'max_participantes' => $request->input('max_participantes'),
+                    'oferta' => $request->input('oferta'),
+                    'demanda' => $request->input('demanda'),
+                    'especial' => $request->input('especial'),
+                    'voucher' => null,
+                ];
+            }
         } else {
             $empresa = [
                 'rubro_id' => $request->input('rubro_id'),
@@ -92,6 +119,7 @@ class EmpresaController extends Controller
                 'oferta' => $request->input('oferta'),
                 'demanda' => $request->input('demanda'),
                 'especial' => $request->input('especial'),
+                'voucher' => null,
             ];
         }
         $empresaModel = Empresa::create($empresa);
@@ -343,27 +371,45 @@ class EmpresaController extends Controller
         $status_solicitante = null;
         $status_demandada = null;
         $reuniones_por_empresa = $this->reunionesPorEmpresa();
+
+        $es_ed = Reunion::where('empresa_solicitante_id', $empresa_solicitante_id)
+            ->where('empresa_demandada_id', $empresa_demandada_id)
+            ->count();
+
+        $ed_es = Reunion::where('empresa_solicitante_id', $empresa_demandada_id)
+            ->where('empresa_demandada_id', $empresa_solicitante_id)
+            ->count();
+
         $reuniones_solicitante = Reunion::where('empresa_solicitante_id', $empresa_solicitante_id)
                 ->orWhere('empresa_demandada_id', $empresa_solicitante_id)
                 ->count();
         $reuniones_demandada = Reunion::where('empresa_solicitante_id', $empresa_demandada_id)
                 ->orWhere('empresa_demandada_id', $empresa_demandada_id)
                 ->count();
-        if ($reuniones_solicitante < $reuniones_por_empresa) {
-            $status_solicitante = true;
+        if($es_ed + $ed_es === 0) {
+            if ($reuniones_solicitante < $reuniones_por_empresa) {
+                $status_solicitante = true;
+            } else {
+                array_push($messages, 'Tu empresa ya tiene el maximo de reuniones posibles');
+            }
+            if ($reuniones_demandada < $reuniones_por_empresa) {
+                $status_demandada = true;
+            } else {
+                array_push($messages, 'La empresa con quien quiere agendar ya tiene a tope sus reuniones agendadas');
+            }
+            $status = $status_solicitante && $status_demandada;
+            $response = [
+                'status' => $status,
+                'message' => $messages,
+            ];
         } else {
-            array_push($messages, 'Tu empresa ya tiene el maximo de reuniones posibles');
+            $response = [
+                'status' => false,
+                'message' => [
+                    'Ya se agendó una reunión con anterioridad con esta empresa'
+                ]
+            ];
         }
-        if ($reuniones_demandada < $reuniones_por_empresa) {
-            $status_demandada = true;
-        } else {
-            array_push($messages, 'La empresa con quien quiere agendar ya tiene a tope sus reuniones agendadas');
-        }
-        $status = $status_solicitante && $status_demandada;
-        $response = [
-            'status' => $status,
-            'message' => $messages,
-        ];
         return $response;
     }
     private function reunionesPorEmpresa() {
@@ -475,22 +521,42 @@ class EmpresaController extends Controller
             /*
              * si algun de las empresas esta ocupada en ese horario
              * */
-            $reuniones1 = Reunion::where('desde', $dates[$aleatorio_dates][0])
-                                 ->where('hasta', $dates[$aleatorio_dates][1])
-                                 ->where('empresa_solicitante_id', $empresa_solicitante_id)
-                                 ->orWhere('empresa_solicitante_id', $empresa_demandada_id)
-                                 ->orWhere('empresa_demandada_id', $empresa_solicitante_id)
-                                 ->orWhere('empresa_demandada_id', $empresa_demandada_id)
-                                 ->count();
+            $es_s = Reunion::where('desde', $dates[$aleatorio_dates][0])
+                             ->where('hasta', $dates[$aleatorio_dates][1])
+                             ->where('empresa_solicitante_id', $empresa_solicitante_id)
+                             ->count();
+
+            $es_d = Reunion::where('desde', $dates[$aleatorio_dates][0])
+                             ->where('hasta', $dates[$aleatorio_dates][1])
+                             ->where('empresa_demandada_id', $empresa_solicitante_id)
+                             ->count();
+
+            $ed_s = Reunion::where('desde', $dates[$aleatorio_dates][0])
+                             ->where('hasta', $dates[$aleatorio_dates][1])
+                             ->where('empresa_solicitante_id', $empresa_demandada_id)
+                             ->count();
+
+            $ed_d = Reunion::where('desde', $dates[$aleatorio_dates][0])
+                             ->where('hasta', $dates[$aleatorio_dates][1])
+                             ->where('empresa_demandada_id', $empresa_demandada_id)
+                             ->count();
+
+/*            $es_ed = Reunion::where('empresa_solicitante_id', $empresa_solicitante_id)
+                            ->where('empresa_demandada_id', $empresa_demandada_id)
+                            ->count();
+
+            $ed_es = Reunion::where('empresa_solicitante_id', $empresa_demandada_id)
+                            ->where('empresa_demandada_id', $empresa_solicitante_id)
+                            ->count();*/
             /*
              * si la mesa ya fue asignada a otra reunion
              * */
-            $reuniones2 = Reunion::where('mesa_id', $mesa_id)
+            $reuniones = Reunion::where('mesa_id', $mesa_id)
                                 ->where('desde', $dates[$aleatorio_dates][0])
                                 ->where('hasta', $dates[$aleatorio_dates][1])
                                 ->count();
 
-        } while($reuniones1 + $reuniones2 > 0);
+        } while(($es_s + $es_d + $ed_s + $ed_d + $reuniones) > 0);
         return [
             'mesa_id' => $mesa_id,
             'desde' => $dates[$aleatorio_dates][0],
@@ -526,5 +592,17 @@ class EmpresaController extends Controller
         } else {
             return response()->json($response, 200);
         }
+    }
+
+    public function habilitar($empresa_id) {
+        $empresa = Empresa::find($empresa_id);
+        $empresa->habilitado = true;
+        $empresa->save();
+        return response()->json($empresa, 200);
+    }
+
+    public function voucher($empresa_id) {
+        $empresa = Empresa::find($empresa_id);
+        return response()->file(storage_path('app/' . $empresa->voucher));
     }
 }
