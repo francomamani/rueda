@@ -43,6 +43,10 @@ import { UsuarioIndexComponent } from './usuario/usuario-index/usuario-index.com
 import { UsuarioCreateComponent } from './usuario/usuario-create/usuario-create.component';
 import { OpinionGeneralComponent } from './reportes/opinion-general/opinion-general.component';
 import { OpinionReunionComponent } from './reportes/opinion-reunion/opinion-reunion.component';
+import { VoucherModalComponent } from './voucher-modal/voucher-modal.component';
+import {EmpresaModalComponent} from "../shared/empresa-modal/empresa-modal.component";
+import {LoadModalComponent} from "../shared/load-modal/load-modal.component";
+import {AyudaModalComponent} from "../shared/ayuda-modal/ayuda-modal.component";
 
 @NgModule({
   imports: [
@@ -87,7 +91,9 @@ import { OpinionReunionComponent } from './reportes/opinion-reunion/opinion-reun
                  UsuarioCreateComponent,
                  OpinionGeneralComponent,
                  OpinionReunionComponent,
+                 VoucherModalComponent,
   ],
   providers: [ RubroService, DatePipe],
+    entryComponents: [EmpresaModalComponent, LoadModalComponent,AyudaModalComponent,VoucherModalComponent],
 })
 export class AdminModule { }

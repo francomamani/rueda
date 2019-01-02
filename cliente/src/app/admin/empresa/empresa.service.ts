@@ -27,6 +27,10 @@ export class EmpresaService {
         return this.http.get(this.base + 'empresas-listar-habilitados');
     }
 
+    empresaHabilitar(id_e) {
+        return this.http.get(this.base + 'habilitar/' + id_e);
+    }
+
     store(req) {
         return this.http.post(this.base + 'empresas', req);
     }
