@@ -83,10 +83,24 @@ class HorarioOcupadoController extends Controller
                                                 ->first();
             $horario_ocupado->delete();
         } else {
-            HorarioOcupado::create([
-                'horario_id' => $horario_id,
-                'empresa_id' => $empresa_id
-            ]);
+            $existehorarioOcupado = HorarioOcupado::onlyTrashed()
+                            ->where([
+                                'horario_id' => $horario_id,
+                                'empresa_id' => $empresa_id
+                            ])->count();
+            if ($existehorarioOcupado > 0) {
+                $registro = HorarioOcupado::onlyTrashed()
+                    ->where([
+                        'horario_id' => $horario_id,
+                        'empresa_id' => $empresa_id
+                    ])->first();
+                $registro->restore();
+            } else {
+                HorarioOcupado::create([
+                    'horario_id' => $horario_id,
+                    'empresa_id' => $empresa_id
+                ]);
+            }
         }
         return response()->json([
             'mensaje' => 'Horario ocupado actualizado'

@@ -24,7 +24,7 @@ class CreateReunionsTable extends Migration
             $table->integer('empresa_demandada_id')->unsigned();
             $table->boolean('empresa_solicitante_asistio')->default(false);
             $table->boolean('empresa_demandada_asistio')->default(false);
-            $table->enum('resultado', ['satisfactoria', 'ausencia', 'cronogramado'])->default('cronogramado');
+            $table->enum('resultado', ['satisfactoria', 'ausencia', 'agendado'])->default('agendado');
             $table->dateTime('desde');
             $table->dateTime('hasta');
             $table->softDeletes();

@@ -1,4 +1,6 @@
 import { NbMenuItem } from '@nebular/theme';
+let empresa_id = 0;
+empresa_id = JSON.parse(atob(localStorage.getItem('rueda-usuario'))).empresa_id;
 
 export const EMPRESA_ITEMS: NbMenuItem[] = [
   {
@@ -24,13 +26,12 @@ export const EMPRESA_ITEMS: NbMenuItem[] = [
   {
     title: 'Horarios Ocupados',
     icon: 'nb-keypad',
-    link: '/empresa/horarios-ocupados/listar/empresa/'
-      + JSON.parse(atob(localStorage.getItem('rueda-usuario'))).empresa.empresa_id,
+    link: '/empresa/horarios-ocupados/listar/empresa/' + empresa_id,
   },
   {
     title: 'Mis Participantes',
     icon: 'nb-person',
-    link: '/empresa/mis-participantes/' + JSON.parse(atob(localStorage.getItem('rueda-usuario'))).empresa.empresa_id,
+    link: '/empresa/mis-participantes/' + empresa_id,
   },
 /*  {
     title: 'Solicitudes Salientes',

@@ -41,7 +41,7 @@ export class EmpresaCreateComponent implements OnInit {
       'ciudad_localidad': new FormControl('', Validators.required),
       'nit': new FormControl('', Validators.required),
       'representante_legal': new FormControl('', Validators.required),
-      'habilitado': new FormControl(1, Validators.required),
+      'habilitado': new FormControl(0, Validators.required),
       'max_participantes': new FormControl(2, Validators.required),
       'oferta': new FormControl('', Validators.required),
       'demanda': new FormControl('', Validators.required),
