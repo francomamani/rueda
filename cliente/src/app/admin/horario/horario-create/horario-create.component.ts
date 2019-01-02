@@ -5,9 +5,9 @@ import {NbToastrService} from '@nebular/theme';
 import { DateFormatter } from 'gb-date-formatter';
 import {DatePipe} from '@angular/common';
 import {Router} from '@angular/router';
-import {LoadModalComponent} from "../../../shared/load-modal/load-modal.component";
-import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {AyudaModalComponent} from "../../../shared/ayuda-modal/ayuda-modal.component";
+import {LoadModalComponent} from '../../../shared/load-modal/load-modal.component';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {AyudaModalComponent} from '../../../shared/ayuda-modal/ayuda-modal.component';
 
 
 @Component({
@@ -65,8 +65,8 @@ export class HorarioCreateComponent implements OnInit {
     }
 
     ayuda(tit, mes, mesi) {
-        const modalAyuda=this.modalService.open(AyudaModalComponent, { size: 'sm', container: 'nb-layout' });
-        modalAyuda.componentInstance.titulo= tit;
+        const modalAyuda = this.modalService.open(AyudaModalComponent, { size: 'sm', container: 'nb-layout' });
+        modalAyuda.componentInstance.titulo = tit;
         modalAyuda.componentInstance.mensaje = mes;
         modalAyuda.componentInstance.mensaje_importante = mesi;
     }

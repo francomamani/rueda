@@ -1,0 +1,12 @@
+<div class="modal-header">
+  <span>Comprobante de pago</span>
+  <button class="close" aria-label="Close" (click)="closeModal()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+
+  <img *ngIf="comp !== null" src="" height="80%">
+
+  <button (click)="habilitar()" class="btn-login">Subir</button>
+</div>
