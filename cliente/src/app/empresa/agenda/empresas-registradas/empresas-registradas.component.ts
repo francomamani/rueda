@@ -27,7 +27,7 @@ export class EmpresasRegistradasComponent implements OnInit {
     this.rubroService.index().subscribe(res => {
       this.rubros = res;
     });
-    this.empresaService.empresasListar()
+    this.empresaService.empresasListarHabilitados()
       .subscribe((res: any) => {
         this.empresas = res;
       });

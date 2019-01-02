@@ -23,6 +23,9 @@ export class EmpresaService {
     empresasListar() {
         return this.http.get(this.base + 'empresas-listar');
     }
+    empresasListarHabilitados() {
+        return this.http.get(this.base + 'empresas-listar-habilitados');
+    }
 
     store(req) {
         return this.http.post(this.base + 'empresas', req);
