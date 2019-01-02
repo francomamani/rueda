@@ -6,6 +6,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {environment} from '../../environments/environment.prod';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {LoadModalComponent} from '../shared/load-modal/load-modal.component';
+import {AyudaModalComponent} from "../shared/ayuda-modal/ayuda-modal.component";
 
 
 
@@ -51,6 +52,12 @@ export class LoginComponent {
       'cuenta': new FormControl('', Validators.required),
       'password': new FormControl('', Validators.required),
     });
+  }
+  ayuda() {
+      const modalAyuda=this.modalService.open(AyudaModalComponent, { size: 'lg', container: 'nb-layout' });
+      modalAyuda.componentInstance.titulo="Olvide mi contraseña";
+      modalAyuda.componentInstance.mensaje="Para reestablecer su contraseña comuniquese con la administración del campo ferial al número de teléfono";
+      modalAyuda.componentInstance.mensaje_importante="52 66111";
   }
 
   login() {

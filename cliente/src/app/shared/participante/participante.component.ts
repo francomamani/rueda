@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {LocalDataSource} from 'ng2-smart-table';
 import {ActivatedRoute} from '@angular/router';
 import {EmpresaService} from '../../admin/empresa/empresa.service';
+import {AyudaModalComponent} from "../ayuda-modal/ayuda-modal.component";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {LoadModalComponent} from "../load-modal/load-modal.component";
 
 @Component({
   selector: 'ngx-participante',
@@ -57,8 +60,10 @@ export class ParticipanteComponent implements OnInit {
   source: LocalDataSource = new LocalDataSource();
   id_empresa: any;
   empresa: any = null;
+  participantes: any = null;
   constructor(private empresaService: EmpresaService,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private modalService: NgbModal) {
 
     this.id_empresa = this.route.snapshot.paramMap.get('empresa_id');
     this.empresaService.show(this.id_empresa)
@@ -66,6 +71,7 @@ export class ParticipanteComponent implements OnInit {
         this.empresa = res;
       });
     this.empresaService.indexParticipantes(this.id_empresa).subscribe((data: any[]) => {
+      this.participantes = data.length;
       this.source.load(data);
     });
   }
@@ -77,7 +83,12 @@ export class ParticipanteComponent implements OnInit {
   onDeleteConfirm(event): void {
     if (window.confirm('¿Esta seguro que quiere eliminar este registro?')) {
       event.confirm.resolve();
-      this.empresaService.destroyParticipantes(event.data.participante_id).subscribe();
+      this.empresaService.destroyParticipantes(event.data.participante_id).subscribe(res=>{
+          this.empresaService.indexParticipantes(this.id_empresa).subscribe((data: any[]) => {
+              this.participantes = data.length;
+              this.source.load(data);
+          });
+      });
     } else {
       event.confirm.reject();
     }
@@ -86,23 +97,42 @@ export class ParticipanteComponent implements OnInit {
   datos: any;
 
   store(event): void {
-    if (window.confirm('¿Esta seguro de crear nuevo registro?')) {
-      event.confirm.resolve();
-      this.datos = {
-        empresa_id: this.id_empresa,
-        nombres: event.newData.nombres,
-        apellidos: event.newData.apellidos,
-        carnet: event.newData.carnet,
-        celular: event.newData.celular,
-        cargo: event.newData.cargo,
-      };
-      this.empresaService.storeParticipantes(this.datos).subscribe();
-    } else {
-      event.confirm.reject();
+    if(this.participantes < this.empresa.max_participantes) {
+        if (window.confirm('¿Esta seguro de crear nuevo registro?')) {
+            event.confirm.resolve();
+            const loadModal = this.modalService.open(LoadModalComponent, { size: 'sm', container: 'nb-layout' });
+            this.datos = {
+                empresa_id: this.id_empresa,
+                nombres: event.newData.nombres,
+                apellidos: event.newData.apellidos,
+                carnet: event.newData.carnet,
+                celular: event.newData.celular,
+                cargo: event.newData.cargo,
+            };
+            this.empresaService.storeParticipantes(this.datos).subscribe(res => {
+             /* console.log(res);
+              this.participantes++;*/
+                this.empresaService.indexParticipantes(this.id_empresa).subscribe((data: any[]) => {
+                    this.participantes = data.length;
+                    this.source.load(data);
+                });
+                loadModal.dismiss();
+            }, error1 => {
+                loadModal.dismiss();
+            });
+        } else {
+            event.confirm.reject();
+        }
+    }
+    else{
+        const modalAyuda=this.modalService.open(AyudaModalComponent, { size: 'lg', container: 'nb-layout' });
+        modalAyuda.componentInstance.titulo="Cantidad de participantes";
+        modalAyuda.componentInstance.mensaje="El número de participantes excedió su límite de "+this.empresa.max_participantes
+            + " participantes, Para incrementar la cantidad de participantes comuniquese con la administración del campo ferial al número de teléfono";
+        modalAyuda.componentInstance.mensaje_importante="52 66111";
     }
 
   }
-
   update(event): void {
     if (window.confirm('¿Esta seguro de cambiar los datos de este registro?')) {
       event.confirm.resolve();

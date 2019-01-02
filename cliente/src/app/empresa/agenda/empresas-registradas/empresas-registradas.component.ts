@@ -62,7 +62,6 @@ export class EmpresasRegistradasComponent implements OnInit {
     };
     this.empresaService.agendar(data)
       .subscribe(res => {
-      console.log(res);
     });
   }
 
