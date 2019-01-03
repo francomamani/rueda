@@ -13,13 +13,14 @@ import {ReunionesAgendadasComponent} from '../shared/reuniones-agendadas/reunion
 import {
   EvaluacionGeneralEmpresaComponent
 } from '../shared/evaluacion-general/evaluacion-general.component';
-import {EmpresasRegistradasComponent} from './agenda/empresas-registradas/empresas-registradas.component';
+//import {EmpresasRegistradasComponent} from './agenda/empresas-registradas/empresas-registradas.component';
 import {SolicitudSalienteComponent} from '../shared/solicitud-saliente/solicitud-saliente.component';
 import {AgendaCreateComponent} from './agenda/agenda-create/agenda-create.component';
 import {UsuarioEditComponent} from '../shared/usuario-edit/usuario-edit.component';
 import {EmpresaEditComponent} from '../shared/empresa-edit/empresa-edit.component';
 import {EvaluacionReunionesComponent} from '../shared/evaluacion-reuniones/evaluacion-reuniones.component';
 import {CambiarPasswordComponent} from '../shared/cambiar-password/cambiar-password.component';
+import {EmpresasRegistradasComponent} from "../shared/empresas-registradas/empresas-registradas.component";
 
 const routes: Routes = [
   {

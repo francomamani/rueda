@@ -39,6 +39,7 @@ import {OpinionReunionComponent} from './reportes/opinion-reunion/opinion-reunio
 import {ReunionesAgendadasComponent} from '../shared/reuniones-agendadas/reuniones-agendadas.component';
 import {EvaluacionReunionesComponent} from '../shared/evaluacion-reuniones/evaluacion-reuniones.component';
 import { EvaluacionGeneralEmpresaComponent } from '../shared/evaluacion-general/evaluacion-general.component';
+import {EmpresasRegistradasComponent} from "../shared/empresas-registradas/empresas-registradas.component";
 
 const routes: Routes = [
   {
@@ -95,6 +96,10 @@ const routes: Routes = [
           path: 'reuniones-agendadas/:empresa_id',
           component: ReunionesAgendadasComponent,
         },
+            {
+                path: 'crear-agenda/:empresa_id',
+                component: EmpresasRegistradasComponent,
+            },
         {
             path: 'editar/:empresa_id',
             component: EmpresaEditComponent,

@@ -9,7 +9,7 @@
             <option [value]="rubro.rubro_id"
                     *ngFor="let rubro of rubros">{{rubro.nombre}}</option>
           </select>
-          <button class="btn btn-xs btn-primary download" title="Descargar">
+          <button class="btn btn-xs btn-primary download" title="Descargar" (click)="descargar()">
             <i class="fa fa-download"></i>
           </button>
           <input type="search" formControlName="search" name="search" placeholder="buscar">
@@ -78,6 +78,7 @@
               <!--  <a class="text-primary" title="Solicitudes salientes" [routerLink]="['/admin/empresa/solicitudes-salientes/'+empresa.empresa_id]"><i class="fa fa-arrow-circle-right"></i></a>
                 <a class="text-primary" title="Solicitudes entrantes" [routerLink]="['/admin/empresa/solicitudes-entrantes/'+empresa.empresa_id]"><i class="fa fa-arrow-circle-left"></i></a>-->
                 <a class="text-info"    title="Evaluacion General" [routerLink]="['/admin/empresa/evaluacion-general-empresa/'+empresa.empresa_id]"><i class="fa fa-home"></i></a>
+                <a class="text-info" title="Agendar reuniones" [routerLink]="['/admin/empresa/crear-agenda/'+empresa.empresa_id]"><i class="fa fa-clipboard-list"></i></a>
                 <a class="text-default" title="Reuniones Agendadas" [routerLink]="['/admin/empresa/reuniones-agendadas/'+empresa.empresa_id]"><i class="fa fa-list"></i></a>
                 <a title="Horarios no disponibles" [routerLink]="['/admin/horarios-ocupados/listar/admin/', empresa.empresa_id]"><i class="fa fa-clock"></i></a>
                 <a title="Eliminar empresa" class="text-danger" (click)="onDeleteConfirm(empresa, i)"><i class="fa fa-trash"></i></a>

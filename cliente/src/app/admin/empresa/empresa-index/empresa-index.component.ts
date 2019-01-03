@@ -7,6 +7,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {RubroService} from '../../rubro/rubro.service';
 import {environment} from '../../../../environments/environment.prod';
 import {VoucherModalComponent} from '../../voucher-modal/voucher-modal.component';
+import {ExcelServiceService} from "./excel-service.service";
 
 @Component({
   selector: 'ngx-empresa-index',
@@ -24,7 +25,8 @@ export class EmpresaIndexComponent implements OnInit {
               private rubroService: RubroService,
               private modalService: NgbModal,
               private fb: FormBuilder,
-              private toastr: NbToastrService) {
+              private toastr: NbToastrService,
+              private excelService: ExcelServiceService) {
     this.createForm();
     this.empresaService.empresasListar()
       .subscribe((res: any) => {
@@ -92,5 +94,9 @@ export class EmpresaIndexComponent implements OnInit {
         this.reload();
       });
   }
+
+    descargar(){
+      this.excelService.exportAsExcelFile(this.empresas,"EmpresaRegistadasCampoFerial");
+    }
 
 }

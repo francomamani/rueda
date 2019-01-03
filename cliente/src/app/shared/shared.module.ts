@@ -24,6 +24,7 @@ import {EvaluacionGeneralEmpresaComponent} from './evaluacion-general/evaluacion
 import { LoadModalComponent } from './load-modal/load-modal.component';
 import { LottieAnimationViewModule } from 'ng-lottie';
 import { AyudaModalComponent } from './ayuda-modal/ayuda-modal.component';
+import { EmpresasRegistradasComponent } from './empresas-registradas/empresas-registradas.component';
 
 @NgModule({
   imports: [
@@ -53,7 +54,8 @@ import { AyudaModalComponent } from './ayuda-modal/ayuda-modal.component';
                   ReunionesAgendadasComponent,
                   RegistroExitosoComponent,
                   LoadModalComponent,
-                  AyudaModalComponent],
+                  AyudaModalComponent,
+                  EmpresasRegistradasComponent],
   exports: [PerfilComponent,
             HorariosOcupadosComponent,
             HorariosOcupadosCreateComponent,
@@ -68,7 +70,8 @@ import { AyudaModalComponent } from './ayuda-modal/ayuda-modal.component';
             UsuarioEditComponent,
             EmpresaEditComponent,
             ReunionesAgendadasComponent,
-            CambiarPasswordComponent],
+            CambiarPasswordComponent,
+            EmpresasRegistradasComponent],
   entryComponents: [EmpresaModalComponent, AyudaModalComponent],
 })
 export class SharedModule { }

@@ -47,6 +47,7 @@ import { VoucherModalComponent } from './voucher-modal/voucher-modal.component';
 import {EmpresaModalComponent} from "../shared/empresa-modal/empresa-modal.component";
 import {LoadModalComponent} from "../shared/load-modal/load-modal.component";
 import {AyudaModalComponent} from "../shared/ayuda-modal/ayuda-modal.component";
+import {EmpresasRegistradasComponent} from "../shared/empresas-registradas/empresas-registradas.component";
 
 @NgModule({
   imports: [
