@@ -7,8 +7,8 @@ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {AuthService} from '../../auth.service';
 import {EmpresaModalComponent} from '../empresa-modal/empresa-modal.component';
 import {ActivatedRoute} from '@angular/router';
-import {AyudaModalComponent} from "../ayuda-modal/ayuda-modal.component";
-import {LoadModalComponent} from "../load-modal/load-modal.component";
+import {AyudaModalComponent} from '../ayuda-modal/ayuda-modal.component';
+import {LoadModalComponent} from '../load-modal/load-modal.component';
 
 @Component({
   selector: 'ngx-empresas-registradas',
@@ -20,6 +20,7 @@ export class EmpresasRegistradasComponent implements OnInit {
     rubros: any = null;
     buscarGroup: FormGroup;
     empresas: any = null;
+    empresasBK: any = null;
     empresa_id: any;
     emp: any = null;
     logo = environment.base + environment.empresa_logo;
@@ -42,10 +43,12 @@ export class EmpresasRegistradasComponent implements OnInit {
         this.rubroService.index().subscribe(res => {
             this.rubros = res;
         });
-        this.empresaService.empresasListarHabilitados()
-            .subscribe((res: any) => {
-                this.empresas = res;
-            });
+        const empresa_id = this.authService.getUsuario().empresa_id;
+        this.empresaService.miListaHabilitados(empresa_id)
+          .subscribe((res: any) => {
+            this.empresas = res;
+            this.empresasBK = this.empresas;
+          });
     }
 
     ngOnInit() {
@@ -58,12 +61,43 @@ export class EmpresasRegistradasComponent implements OnInit {
         });
     }
 
-    buscar() {
+/*    buscar() {
         this.empresaService.buscar(this.buscarGroup.value)
             .subscribe((res: any) => {
                 this.empresas = res;
             });
+    }*/
+    buscar() {
+      const search = this.buscarGroup.value.search;
+      const rubro_id = Number(this.buscarGroup.value.rubro_id);
+      this.empresas = this.empresasBK;
+      if (search === '') {
+        if (rubro_id === 0) {
+          this.empresas = this.empresasBK;
+        } else {
+          this.empresas = this.empresas.filter((empresa) => {
+            return empresa.rubro_id === rubro_id;
+          });
+        }
+      } else {
+        if (rubro_id === 0) {
+          this.empresas = this.empresas.filter((empresa) => {
+            return empresa.nombre.toLowerCase().indexOf(search) > -1 ||
+              empresa.direccion.toLowerCase().indexOf(search) > -1 ||
+              empresa.nit.toLowerCase().indexOf(search) > -1 ||
+              empresa.telefono.toLowerCase().indexOf(search) > -1;
+          });
+        } else {
+          this.empresas = this.empresas.filter((empresa) => {
+            return (empresa.nombre.toLowerCase().indexOf(search) > -1 && empresa.rubro_id === rubro_id ) ||
+              (empresa.direccion.toLowerCase().indexOf(search) > -1 && empresa.rubro_id === rubro_id) ||
+              (empresa.nit.toLowerCase().indexOf(search) > -1 && empresa.rubro_id === rubro_id) ||
+              (empresa.telefono.toLowerCase().indexOf(search) > -1 && empresa.rubro_id === rubro_id);
+          });
+        }
+      }
     }
+
     info(empresa) {
         const activeModal = this.modalService.open(EmpresaModalComponent, { size: 'lg', container: 'nb-layout' });
         activeModal.componentInstance.modalHeader = 'Empresa: ' + empresa.nombre;
@@ -77,13 +111,27 @@ export class EmpresasRegistradasComponent implements OnInit {
             empresa_demandada_id : empresa_id,
         };
         this.empresaService.agendar(data)
-            .subscribe(res => {
+            .subscribe((res: any) => {
                 loadModal.dismiss();
-                this.ayuda('Se agendo con exito', 'La reunion se agendo con exito, revise su agenda' +
-                    ' para comprobar', '');
-            }, error1 => {
-                    this.ayuda('No se puedo agendar', 'No se pudo agendar la reunión con esta empresa', '');
+                let message = '';
+                res.message.forEach(m => {
+                  message = m + '. ';
                 });
+                if (res.status) {
+                  this.ayuda('Reunión agendada', res.message, '');
+                  const mi_empresa_id = this.authService.getUsuario().empresa_id;
+                  this.empresaService.miListaHabilitados(mi_empresa_id)
+                    .subscribe((response: any) => {
+                      this.empresas = response;
+                      this.empresasBK = this.empresas;
+                    });
+                } else {
+                  this.ayuda('No fue posible agendar', message, '');
+                }
+            }, (error: any) => {
+                    this.ayuda('No se puedo agendar',
+                                  'No se pudo agendar la reunión con esta empresa', '');
+            });
     }
 
     ayuda(tit, mess, mess_i) {

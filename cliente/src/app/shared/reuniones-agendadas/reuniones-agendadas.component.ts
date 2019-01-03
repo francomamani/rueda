@@ -66,16 +66,15 @@ export class ReunionesAgendadasComponent implements OnInit {
     }
   }
 
-  cancelar(index) {
-    /*console.log(reunion_id);*/
-    this.reuniones.splice(1, index);
-/*    this.reunionService.destroy(reunion_id)
-      .subscribe(res => {
-        console.log(res);
-        this.empresaService.misReuniones(this.empresa_id)
-          .subscribe((res2: any) => {
-            this.reuniones = res2;
-          });
-      });*/
+  cancelar(reunion_id, index) {
+    if ( confirm('¿Esta seguro de eliminar esta reunión?') ) {
+      this.reunionService.destroy(reunion_id)
+        .subscribe(res => {
+          this.empresaService.misReuniones(this.empresa_id)
+            .subscribe((res2: any) => {
+              this.reuniones = res2;
+            });
+        });
+    }
   }
 }

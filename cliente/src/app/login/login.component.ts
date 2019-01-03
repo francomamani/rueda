@@ -83,7 +83,7 @@ export class LoginComponent {
         activeModal.dismiss();
       }, (error: any) => {
           this.mensaje = 'Las credenciales son incorrectas';
-          this.toastr.danger('Credenciales inválidas', 'Error de Autenticación');
+/*          this.toastr.danger('Credenciales inválidas', 'Error de Autenticación');*/
           this.loginGroup.reset();
           this.cuenta.nativeElement.focus();
           activeModal.dismiss();

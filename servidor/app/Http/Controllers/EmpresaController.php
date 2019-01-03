@@ -300,6 +300,7 @@ class EmpresaController extends Controller
         $data = [];
         foreach ($reuniones as $reunion) {
             $reunionItem = [
+                'reunion_id' => $reunion->reunion_id,
                 'empresa_solicitante' => Empresa::with('rubro')->find($reunion->empresa_solicitante_id),
                 'empresa_demandada' => Empresa::with('rubro')->find($reunion->empresa_demandada_id),
                 'mesa' => Mesa::find($reunion->mesa_id)->numero,
@@ -450,13 +451,11 @@ class EmpresaController extends Controller
         $es_posible = $solicitante && $demandada;
         if ($es_posible) {
             if($es_ed + $ed_es === 0) {
-                /*agregar fix aqui*/
                 if ($reuniones_solicitante < $reuniones_por_empresa) {
                     $status_solicitante = true;
                 } else {
                     array_push($messages, 'Tu empresa ya tiene el maximo de reuniones posibles');
                 }
-                /*agregar fix aqui*/
                 if ($reuniones_demandada < $reuniones_por_empresa) {
                     $status_demandada = true;
                 } else {
@@ -476,10 +475,35 @@ class EmpresaController extends Controller
                 ];
             }
         } else {
-          $response = [
-              'status' => false,
-              'message' => 'Todos sus horarios estan llenos'
-          ];
+            if ($solicitante == false && $demandada == false) {
+                $response = [
+                    'status' => false,
+                    'message' => [
+                        'Todos los horarios disponibles en su empresa y en la demandada estan ocupadas'
+                    ]
+                ];
+            } else {
+                if($solicitante == false) {
+                    $response = [
+                        'status' => false,
+                        'message' => [
+                            'Todos sus horarios estan ocupados. Si quiere agregar a "' .
+                            Empresa::find($empresa_demandada_id)->nombre
+                            .'" cancele una de sus reuniones previamente agendadas'
+                        ]
+                    ];
+                }
+                if($demandada == false) {
+                    $response = [
+                        'status' => false,
+                        'message' => [
+                            'Todos los horarios de la empresa "' .
+                            Empresa::find($empresa_demandada_id)->nombre
+                            .'" estan ocupadas, elija a otra empresa por favor'
+                        ]
+                    ];
+                }
+            }
         }
         return $response;
     }
@@ -664,7 +688,10 @@ class EmpresaController extends Controller
             $reunion = Reunion::create($data);
             return response()->json([
                 'status' => true,
-                'message' => 'reunion agendada',
+                'message' => [
+                    'La reunión con "' . Empresa::find($empresa_demandada_id)->nombre .
+                    '" se agendó con éxito, revise su agenda para comprobar'
+                ],
                 'reunion' => $reunion
             ], 200);
         } else {
