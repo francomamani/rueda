@@ -59,10 +59,16 @@ export class ComprobanteComponent implements OnInit {
       }
     }
 
-    ayuda(tit, mess, mess_i) {
-        const modalAyuda=this.modalService.open(AyudaModalComponent, { size: 'sm', container: 'nb-layout' });
+  /**
+   * titulo
+   * mensaje
+   * mensaje importante
+   */
+
+  ayuda(tit, mess, mess_i) {
+        const modalAyuda = this.modalService.open(AyudaModalComponent, { size: 'sm', container: 'nb-layout' });
         modalAyuda.componentInstance.titulo = tit;
         modalAyuda.componentInstance.mensaje = mess;
         modalAyuda.componentInstance.mensaje_importante = mess_i;
-    }
+  }
 }

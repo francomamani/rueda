@@ -25,7 +25,7 @@
             <tbody>
             <tr *ngFor="let usuario of usuarios; let i = index">
               <td>{{ i + 1 }}</td>
-              <td>{{usuario.email}}</td>
+              <td>{{usuario.cuenta}}</td>
               <td><a *ngIf="usuario.empresa != null" (click)="info(usuario.empresa)" class="info">{{usuario.empresa.nombre | uppercase }}</a></td>
               <td>{{usuario.nombres}}</td>
               <td>{{usuario.apellidos}}</td>

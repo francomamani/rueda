@@ -5,6 +5,9 @@ import {NbToastrService} from '@nebular/theme';
 import {EmpresaService} from '../../admin/empresa/empresa.service';
 import {Router} from '@angular/router';
 import {AuthService} from '../../auth.service';
+import {LoadModalComponent} from '../load-modal/load-modal.component';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {AyudaModalComponent} from '../ayuda-modal/ayuda-modal.component';
 
 @Component({
   selector: 'ngx-empresa-create',
@@ -23,7 +26,8 @@ export class EmpresaCreateComponent implements OnInit {
               private authService: AuthService,
               public router: Router,
               private fb: FormBuilder,
-              private toastr: NbToastrService) {
+              private toastr: NbToastrService,
+              private modalService: NgbModal) {
     this.createForm();
     this.rubroService.index()
       .subscribe((res: any[]) => {
@@ -43,7 +47,7 @@ export class EmpresaCreateComponent implements OnInit {
       'ciudad_localidad': new FormControl('', Validators.required),
       'nit': new FormControl('', Validators.required),
       'representante_legal': new FormControl('', Validators.required),
-      'habilitado': new FormControl(0, Validators.required),
+      'habilitado': new FormControl(false, Validators.required),
       'max_participantes': new FormControl(2, Validators.required),
       'oferta': new FormControl('', Validators.required),
       'demanda': new FormControl('', Validators.required),
@@ -75,6 +79,7 @@ export class EmpresaCreateComponent implements OnInit {
   }
 
   store() {
+      const activeModal = this.modalService.open(LoadModalComponent, { size: 'sm', container: 'nb-layout' });
       if ( this.empresaGroup.value.password === this.empresaGroup.value.repeated_password) {
           this.empresaGroup.patchValue({
               'habilitado': this.empresaGroup.value.habilitado === 1 ? '1' : '0',
@@ -104,6 +109,9 @@ export class EmpresaCreateComponent implements OnInit {
               formData.append('especial', this.empresaGroup.value.especial);
               formData.append('nombres', this.empresaGroup.value.nombres);
               formData.append('apellidos', this.empresaGroup.value.apellidos);
+              formData.append('cuenta', this.empresaGroup.value.cuenta);
+              formData.append('telefono_celular', this.empresaGroup.value.telefono_celular);
+              formData.append('whatsapp', this.empresaGroup.value.whatsapp);
               formData.append('email', this.empresaGroup.value.email);
               formData.append('password', this.empresaGroup.value.password);
               formData.append('repeated_password', this.empresaGroup.value.repeated_password);
@@ -125,14 +133,17 @@ export class EmpresaCreateComponent implements OnInit {
                       this.mensaje = 'La empresa ' + res.nombre + ' fue registrada exitosamente';
                       this.toastr.success('La empresa ' + res.nombre + ' fue registrada', 'Registro exitoso');
                       const credenciales = {
-                          email: this.empresaGroup.value.email,
+                          cuenta: this.empresaGroup.value.cuenta,
                           password: this.empresaGroup.value.password,
                       };
                       if (this.router.url === '/auth/signup') {
-                          if (!this.authService.isLoggedIn()) {
+                        this.router.navigate(['/auth']);
+                        this.ayuda('Usuario creado',
+                          'La cuenta para su empresa fue creada exitosamente', '');
+/*                          if (!this.authService.isLoggedIn()) {
                               this.authService.login(credenciales)
                                   .subscribe((resLogin: any) => {
-                                      this.toastr.success(resLogin.mensaje, 'Iniciando Sesion');
+                                    this.toastr.success(resLogin.mensaje, 'Iniciando Sesion');
                                       if (resLogin.usuario.tipo_usuario === 'administrador') {
                                           this.router.navigate(['/admin']);
                                       } else {
@@ -141,11 +152,12 @@ export class EmpresaCreateComponent implements OnInit {
                                   });
                           } else {
                               this.router.navigate(['/empresa']);
-                          }
+                          }*/
                       } else {
                           this.router.navigate(['/admin/empresa/listar']);
                       }
                       this.empresaGroup.reset();
+                      activeModal.dismiss();
                   });
           } else {
               this.empresaService.store(this.empresaGroup.value)
@@ -154,12 +166,15 @@ export class EmpresaCreateComponent implements OnInit {
                           this.mensaje = 'La empresa ' + res.nombre + ' fue registrada';
                           this.error = '';
                           this.toastr.success('La empresa ' + res.nombre + ' fue registrada', 'Registro exitoso');
-                          if (!this.authService.isLoggedIn()) {
+                          this.router.navigate(['/auth']);
+                          this.ayuda('Usuario creado',
+                            'La cuenta para su empresa fue creada exitosamente', '');
+                          /*if (!this.authService.isLoggedIn()) {
                               this.authService.login({
-                                  email: this.empresaGroup.value.email,
+                                  cuenta: this.empresaGroup.value.cuenta,
                                   password: this.empresaGroup.value.password,
                               }).subscribe((resLogin: any) => {
-                                  this.toastr.success(resLogin.mensaje, 'Iniciando Sesion');
+                                this.toastr.success(resLogin.mensaje, 'Iniciando Sesion');
                                   if (resLogin.usuario.tipo_usuario === 'administrador') {
                                       this.router.navigate(['/admin']);
                                   } else {
@@ -170,18 +185,24 @@ export class EmpresaCreateComponent implements OnInit {
                           } else {
                               this.empresaGroup.reset();
                               this.router.navigate(['/empresa']);
-                          }
+                          }*/
                       } else {
                           this.router.navigate(['/admin/empresa/listar']);
                       }
-
+                      activeModal.dismiss();
                   });
           }
       }else {
           this.mensaje = '';
           this.error = 'Las contraseñas no coinciden';
           this.toastr.danger('Las contraseñas no coinciden', 'Error de Registro');
-
+          activeModal.dismiss();
       }
+  }
+  ayuda(tit, mess, mess_i) {
+    const modalAyuda = this.modalService.open(AyudaModalComponent, { size: 'sm', container: 'nb-layout' });
+    modalAyuda.componentInstance.titulo = tit;
+    modalAyuda.componentInstance.mensaje = mess;
+    modalAyuda.componentInstance.mensaje_importante = mess_i;
   }
 }
