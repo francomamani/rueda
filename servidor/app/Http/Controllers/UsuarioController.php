@@ -64,7 +64,6 @@ class UsuarioController extends Controller
         $usuario->nombres = $request->input('nombres');
         $usuario->apellidos = $request->input('apellidos');
         $usuario->email = $request->input('email');
-        $usuario->cuenta = $request->input('cuenta');
         $usuario->telefono_celular = $request->input('telefono_celular');
         $usuario->whatsapp = $request->input('whatsapp');
         $usuario->save();
@@ -80,7 +79,6 @@ class UsuarioController extends Controller
                 ->selectRaw('usuarios.*, empresas.*, rubros.nombre as rubro')
                 ->first();
         }
-
         return response()->json($response, 200);
     }
 

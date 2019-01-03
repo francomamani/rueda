@@ -37,7 +37,9 @@ export class UsuarioEditComponent implements OnInit {
     this.usuarioGroup = this.fb.group({
       'nombres' : new FormControl(usuario.nombres, Validators.required),
       'apellidos' : new FormControl(usuario.apellidos, Validators.required),
-      'email' : new FormControl(usuario.email, Validators.required),
+      'email' : new FormControl(usuario.email),
+      'telefono_celular' : new FormControl(usuario.telefono_celular, Validators.required),
+      'whatsapp' : new FormControl(usuario.whatsapp, Validators.required),
     });
   }
 
