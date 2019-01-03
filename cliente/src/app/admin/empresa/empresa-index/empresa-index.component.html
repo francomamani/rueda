@@ -24,6 +24,7 @@
               <th>N.</th>
               <th>Logo</th>
               <th>Empresa</th>
+              <th>Cuenta</th>
               <th>NIT</th>
               <th>Telefono</th>
               <th><i class="fa fa-user" title="Maximo de Participantes"></i></th>
@@ -46,6 +47,7 @@
                      alt="{{empresa.nombre}}">
               </td>
               <td><a (click)="info(empresa)" class="info">{{empresa.nombre | uppercase }}</a></td>
+              <td>{{empresa.usuario.cuenta}}</td>
               <td>{{empresa.nit}}</td>
               <td>{{empresa.telefono}}</td>
               <td>{{empresa.max_participantes}}</td>

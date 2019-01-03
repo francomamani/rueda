@@ -38,7 +38,7 @@ class EmpresaController extends Controller
     }
 
     public function listar() {
-        return response()->json(Empresa::orderBy('nombre')->get(), 200);
+        return response()->json(Empresa::with('usuario')->orderBy('nombre')->get(), 200);
     }
 
     /**
@@ -434,7 +434,7 @@ class EmpresaController extends Controller
     private function existe($item, $array) {
         $res = false;
         foreach ($array as $record) {
-            if ($item === $record) {
+            if ($item == $record) {
                 $res = true;
             }
         }
