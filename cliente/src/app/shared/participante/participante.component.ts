@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {LocalDataSource} from 'ng2-smart-table';
 import {ActivatedRoute} from '@angular/router';
 import {EmpresaService} from '../../admin/empresa/empresa.service';
-import {AyudaModalComponent} from "../ayuda-modal/ayuda-modal.component";
-import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {LoadModalComponent} from "../load-modal/load-modal.component";
-import {AuthService} from "../../auth.service";
+import {AyudaModalComponent} from '../ayuda-modal/ayuda-modal.component';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {LoadModalComponent} from '../load-modal/load-modal.component';
+import {AuthService} from '../../auth.service';
 
 @Component({
   selector: 'ngx-participante',

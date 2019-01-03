@@ -26,7 +26,10 @@ export class PerfilComponent implements OnInit {
         const logo_path = environment.base  + 'mostrar-logo/empresa.png';
         this.logo = logo_path;
       }
-      this.participantes = this.usuario.empresa.participantes;
+      this.empresaService.indexParticipantes(this.usuario.empresa.empresa_id)
+        .subscribe(res => {
+          this.participantes = res;
+        });
     }
   }
 

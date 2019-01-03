@@ -29,7 +29,7 @@
               <th>NIT</th>
               <th>Telefono</th>
               <th><i class="fa fa-user" title="Maximo de Participantes"></i></th>
-              <th>Especial</th>
+<!--              <th>Especial</th>-->
               <th>Habilitado</th>
               <th>Acciones</th>
             </tr>
@@ -52,10 +52,10 @@
               <td>{{empresa.nit}}</td>
               <td>{{empresa.telefono}}</td>
               <td>{{empresa.max_participantes}}</td>
-              <td class="text-center">
+<!--              <td class="text-center">
                 <span *ngIf="empresa.especial === 1" class="text-success"><i class="fa fa-check"></i></span>
                 <span *ngIf="empresa.especial === 0" class="text-danger"><i class="fa fa-times"></i></span>
-              </td>
+              </td>-->
               <td class="text-center">
                 <span *ngIf="empresa.habilitado === 1" class="text-success">
                   <i class="fa fa-check"></i>

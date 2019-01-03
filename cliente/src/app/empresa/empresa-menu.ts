@@ -8,7 +8,7 @@ export const EMPRESA_ITEMS: NbMenuItem[] = [
   },
   {
     title: 'Crear Reuniones',
-    icon: 'nb-home',
+    icon: 'nb-plus',
     link: '/empresa/mi-agenda/empresas-registradas',
   },
 /*  {

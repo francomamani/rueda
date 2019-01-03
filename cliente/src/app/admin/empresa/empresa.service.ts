@@ -46,7 +46,6 @@ export class EmpresaService {
         return this.http.delete(this.base + 'empresas/' + id);
     }
 
-
     indexParticipantes(id_empresa) {
         return this.http.get(this.base + 'empresa/' + id_empresa + '/participantes');
     }
