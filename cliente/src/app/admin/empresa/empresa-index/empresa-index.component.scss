@@ -40,6 +40,12 @@ $divider: #BDBDBD;
   cursor: pointer;
   text-decoration: underline;
 }
+.download-pdf {
+  color: $primary;
+  cursor: pointer;
+  float: right;
+  text-decoration: underline;
+}
 .btn-acciones {
   text-align: center;
   width: 220px;

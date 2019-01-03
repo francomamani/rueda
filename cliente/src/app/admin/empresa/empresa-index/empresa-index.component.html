@@ -5,6 +5,10 @@
         <a class="download" title="Descargar en excel" (click)="descargar()">
           ( Descargar en excel <i class="fa fa-download"></i> )
         </a>
+
+        <a class="download-pdf" title="Descargar Agendas" (click)="pdf_agendas()">
+          Descargar Agendas <i class="fa fa-download"></i>
+        </a>
       </nb-card-header>
       <nb-card-body>
         <form (submit)="buscar()" class="rueda-search" [formGroup]="buscarGroup">

@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild, Inject} from '@angular/core';
 import {EmpresaService} from '../empresa.service';
 import {NbToastrService} from '@nebular/theme';
 import {EmpresaModalComponent} from '../../../shared/empresa-modal/empresa-modal.component';
@@ -8,11 +8,15 @@ import {RubroService} from '../../rubro/rubro.service';
 import {environment} from '../../../../environments/environment.prod';
 import {VoucherModalComponent} from '../../voucher-modal/voucher-modal.component';
 import {ExcelServiceService} from './excel-service.service';
+import * as jsPDF from 'jspdf'
 
 @Component({
   selector: 'ngx-empresa-index',
   templateUrl: './empresa-index.component.html',
   styleUrls: ['./empresa-index.component.scss'],
+    providers: [
+        { provide: 'Window',  useValue: window }
+    ]
 })
 export class EmpresaIndexComponent implements OnInit {
 
@@ -27,7 +31,8 @@ export class EmpresaIndexComponent implements OnInit {
               private modalService: NgbModal,
               private fb: FormBuilder,
               private toastr: NbToastrService,
-              private excelService: ExcelServiceService) {
+              private excelService: ExcelServiceService,
+              @Inject('Window') private window: Window,) {
     this.createForm();
     this.empresaService.empresasListar()
       .subscribe((res: any) => {
@@ -131,6 +136,17 @@ export class EmpresaIndexComponent implements OnInit {
     descargar() {
       const copia = this.empresas;
       this.excelService.exportAsExcelFile(copia, 'empresas-registradas');
+    }
+
+    pdf_agendas() {
+
+        var doc = new jsPDF();
+        doc.text(20, 20, 'Hola Mundo');
+        doc.text(20, 30, 'Esto es una prueba.');
+        doc.addPage();
+        doc.text(20, 20, 'Esto es otra pagina');
+
+        doc.save('agendas.pdf');
     }
 
 }
