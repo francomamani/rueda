@@ -14,7 +14,7 @@ class HorarioController extends Controller
      */
     public function index()
     {
-        return response()->json(Horario::get(), 200);
+        return response()->json(Horario::orderBy('inicio')->get(), 200);
     }
 
     /**
@@ -65,7 +65,7 @@ class HorarioController extends Controller
         $horario = Horario::find($id);
         $horario->delete();
         return response()->json([
-            'mensaje' => 'Horario del: ' . $horario->inicio . ' hasta '. $horario->hasta . ' eliminado exitosamente'
+            'mensaje' => 'Horario del: ' . $horario->inicio . ' hasta '. $horario->fin . ' eliminado exitosamente'
         ], 200);
     }
 

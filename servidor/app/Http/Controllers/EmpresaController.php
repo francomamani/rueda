@@ -33,6 +33,26 @@ class EmpresaController extends Controller
         return response()->json($empresas, 200);
     }
 
+    public function miListaHabilitados($empresa_id) {
+        $empresas_agendadas = [];
+        $r_solicitante = Reunion::where('empresa_solicitante_id', $empresa_id)->get();
+        $r_demandada = Reunion::where('empresa_demandada_id', $empresa_id)->get();
+        foreach ($r_solicitante as $record) {
+            array_push($empresas_agendadas, $record->empresa_demandada_id);
+        }
+        foreach ($r_demandada as $record) {
+            array_push($empresas_agendadas, $record->empresa_solicitante_id);
+        }
+        array_push($empresas_agendadas, $empresa_id);
+        $empresas = Empresa::all()->except($empresas_agendadas);
+        $habilitados = [];
+        foreach ($empresas as $empresa) {
+            if ($empresa->habilitado == true) {
+                array_push($habilitados, $empresa);
+            }
+        }
+        return response()->json($habilitados, 200);
+    }
     public function listarHabilitados() {
         return response()->json(Empresa::where('habilitado', true)->orderBy('nombre')->get(), 200);
     }
@@ -234,7 +254,7 @@ class EmpresaController extends Controller
 /*        $horarios_ocupados = Empresa::find($empresa_id)->horariosOcupados()->with(['horario', 'empresa'])->get();*/
         $horarios_ocupados = Empresa::find($empresa_id)->horariosOcupados()->get();
 /*        $horarios_ocupados = HorarioOcupado::get();*/
-        $horarios= Horario::get();
+        $horarios= Horario::orderBy('inicio')->get();
         $found = false;
         foreach ($horarios as $horario) {
             foreach ($horarios_ocupados as $horario_ocupado) {
@@ -355,6 +375,40 @@ class EmpresaController extends Controller
     public function mostrarLogo($logo_path) {
         return response()->file(storage_path('app/logos/' . $logo_path));
     }
+
+    /*
+    * agregar la restriccion de subhorarios disponibles para
+    * una nueva agenda
+    * reuniones_agendadas < num_subhorarios_posibles(solicitante y demandada)
+    */
+    private function meEsPosibleAgendar($empresa_id) {
+        /*
+         * Cantidad máxima de subhorarios
+         * */
+        $cantidad_subhorarios = 0;
+        $ocupados_id = [];
+        $horarios_ocupados = HorarioOcupado::where('empresa_id', $empresa_id)->get();
+        foreach ($horarios_ocupados as $registro) {
+            if (!$this->existe($registro->horario_id, $ocupados_id)) {
+                array_push($ocupados_id, $registro->horario_id);
+            }
+        }
+        $horarios_libres = Horario::all()->except($ocupados_id);
+        foreach ($horarios_libres as $horario_libre) {
+            $subhorarios = $this->generarSubhorarios($horario_libre->inicio, $horario_libre->fin);
+            $cantidad_subhorarios += sizeof($subhorarios);;
+        }
+        /*
+         * Reuniones ya agendadas con la empresa
+         * c_r_s Cantidad de reuniones como solicitante
+         * c_r_d Cantidad de reuniones como empresa demandada
+         * */
+        $c_r_s = Reunion::where('empresa_solicitante_id', $empresa_id)->count();
+        $c_r_d = Reunion::where('empresa_demandada_id', $empresa_id)->count();
+
+        $reuniones_agendadas = $c_r_s + $c_r_d;
+        return $reuniones_agendadas < $cantidad_subhorarios;
+    }
     /*
      * Es posible agendar la reunion en el horario
      * para las dos empresas de acuerdo al numero
@@ -366,11 +420,16 @@ class EmpresaController extends Controller
          * res1 => tu empresa ya tiene el maximo de reuniones posibles
          * res2 => la empresa con quien quiere agendar ya tiene a tope sus
          * reuniones agendadas
+         *
+         * agregar la restriccion de subhorarios disponibles para
+         * una nueva agenda
+         * reuniones_agendadas < num_subhorarios_posibles(solicitante y demandada)
          * */
         $messages = [];
         $status_solicitante = null;
         $status_demandada = null;
         $reuniones_por_empresa = $this->reunionesPorEmpresa();
+
 
         $es_ed = Reunion::where('empresa_solicitante_id', $empresa_solicitante_id)
             ->where('empresa_demandada_id', $empresa_demandada_id)
@@ -386,29 +445,41 @@ class EmpresaController extends Controller
         $reuniones_demandada = Reunion::where('empresa_solicitante_id', $empresa_demandada_id)
                 ->orWhere('empresa_demandada_id', $empresa_demandada_id)
                 ->count();
-        if($es_ed + $ed_es === 0) {
-            if ($reuniones_solicitante < $reuniones_por_empresa) {
-                $status_solicitante = true;
+        $solicitante = $this->meEsPosibleAgendar($empresa_solicitante_id);
+        $demandada = $this->meEsPosibleAgendar($empresa_demandada_id);
+        $es_posible = $solicitante && $demandada;
+        if ($es_posible) {
+            if($es_ed + $ed_es === 0) {
+                /*agregar fix aqui*/
+                if ($reuniones_solicitante < $reuniones_por_empresa) {
+                    $status_solicitante = true;
+                } else {
+                    array_push($messages, 'Tu empresa ya tiene el maximo de reuniones posibles');
+                }
+                /*agregar fix aqui*/
+                if ($reuniones_demandada < $reuniones_por_empresa) {
+                    $status_demandada = true;
+                } else {
+                    array_push($messages, 'La empresa con quien quiere agendar ya tiene a tope sus reuniones agendadas');
+                }
+                $status = $status_solicitante && $status_demandada;
+                $response = [
+                    'status' => $status,
+                    'message' => $messages,
+                ];
             } else {
-                array_push($messages, 'Tu empresa ya tiene el maximo de reuniones posibles');
+                $response = [
+                    'status' => false,
+                    'message' => [
+                        'Ya se agendó una reunión con anterioridad con esta empresa'
+                    ]
+                ];
             }
-            if ($reuniones_demandada < $reuniones_por_empresa) {
-                $status_demandada = true;
-            } else {
-                array_push($messages, 'La empresa con quien quiere agendar ya tiene a tope sus reuniones agendadas');
-            }
-            $status = $status_solicitante && $status_demandada;
-            $response = [
-                'status' => $status,
-                'message' => $messages,
-            ];
         } else {
-            $response = [
-                'status' => false,
-                'message' => [
-                    'Ya se agendó una reunión con anterioridad con esta empresa'
-                ]
-            ];
+          $response = [
+              'status' => false,
+              'message' => 'Todos sus horarios estan llenos'
+          ];
         }
         return $response;
     }
@@ -485,18 +556,25 @@ class EmpresaController extends Controller
                 array_push($ocupados_id, $registro->horario_id);
             }
         }
-        $horarios = Horario::orderBy('inicio', 'asc')->get();
+/*        $horarios = Horario::orderBy('inicio', 'asc')->get();*/
+        $horarios_libres = Horario::all()->except($ocupados_id);
         $libres = [];
         /*
          * crear subhorarios
          *
          * */
-        foreach ($horarios as $horario) {
+/*        foreach ($horarios as $horario) {
             if (!$this->existe($horario->horario_id, $ocupados_id)) {
                 $subhorarios = $this->generarSubhorarios($horario->inicio, $horario->fin);
                 foreach ($subhorarios as $subhorario) {
                     array_push($libres, $subhorario);
                 }
+            }
+        }*/
+        foreach ($horarios_libres as $horario_libre) {
+            $subhorarios = $this->generarSubhorarios($horario_libre->inicio, $horario_libre->fin);
+            foreach ($subhorarios as $subhorario) {
+                array_push($libres, $subhorario);
             }
         }
         return $libres;
@@ -566,8 +644,8 @@ class EmpresaController extends Controller
     public function agendar() {
         $empresa_solicitante_id = request()->input('empresa_solicitante_id');
         $empresa_demandada_id = request()->input('empresa_demandada_id');
-        $ocupadosSolicitante = HorarioOcupado::where('empresa_id', $empresa_solicitante_id);
-        $ocupadosDemanda = HorarioOcupado::where('empresa_id', $empresa_demandada_id);
+        $ocupadosSolicitante = HorarioOcupado::where('empresa_id', $empresa_solicitante_id)->get();
+        $ocupadosDemanda = HorarioOcupado::where('empresa_id', $empresa_demandada_id)->get();
         $dates = $this->horariosLibres($ocupadosSolicitante, $ocupadosDemanda);
 
         $response = $this->esPosibleAgendar($empresa_solicitante_id, $empresa_demandada_id);

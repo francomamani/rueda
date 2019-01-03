@@ -35,14 +35,10 @@ $divider: #BDBDBD;
   cursor: pointer;
   outline: none;
 }
-.rueda-search button.download {
-  background-color: $primary;
-  color: $text;
-  padding: .5em 2em;
-  border: none;
+.download {
+  color: $primary;
   cursor: pointer;
-  outline: none;
-  margin-right: 1em;
+  text-decoration: underline;
 }
 .btn-acciones {
   text-align: center;

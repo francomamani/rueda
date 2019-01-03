@@ -24,7 +24,6 @@ class Horario extends Model
     {
         parent::boot();
         static::deleting(function($padre) {
-            $padre->reuniones()->delete();
             $padre->horariosOcupados()->delete();
         });
     }

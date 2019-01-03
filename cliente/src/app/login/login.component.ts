@@ -55,9 +55,13 @@ export class LoginComponent {
   }
   ayuda() {
       const modalAyuda=this.modalService.open(AyudaModalComponent, { size: 'lg', container: 'nb-layout' });
-      modalAyuda.componentInstance.titulo="Olvide mi contraseña";
-      modalAyuda.componentInstance.mensaje="Para reestablecer su contraseña comuniquese con la administración del campo ferial al número de teléfono";
-      modalAyuda.componentInstance.mensaje_importante="52 66111";
+      modalAyuda
+            .componentInstance
+            .titulo = 'Olvide mi contraseña';
+      modalAyuda
+            .componentInstance
+            .mensaje='Para reestablecer su contraseña comuniquese con la administración del campo ferial al número de teléfono';
+      modalAyuda.componentInstance.mensaje_importante = '52 66111';
   }
 
   login() {
@@ -68,13 +72,12 @@ export class LoginComponent {
           this.toastr.success(res.mensaje, 'Iniciando Sesion');
           this.router.navigate(['/admin']);
         } else {
-            if(res.usuario.habilitado){
+            if ( res.usuario.habilitado ) {
                 this.toastr.success(res.mensaje, 'Iniciando Sesion');
                 this.router.navigate(['/empresa']);
-            }else {
+            } else {
                 this.toastr.warning(res.mensaje, 'No esta habilitado');
                 this.router.navigate(['/auth/comprobante/' + res.usuario.empresa_id]);
-              //  this.authService.logout();
             }
         }
         activeModal.dismiss();

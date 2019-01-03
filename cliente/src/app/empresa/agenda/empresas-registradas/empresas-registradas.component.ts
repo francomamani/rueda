@@ -17,6 +17,7 @@ export class EmpresasRegistradasComponent implements OnInit {
   rubros: any = null;
   buscarGroup: FormGroup;
   empresas: any = null;
+  empresasBK: any = null;
   logo = environment.base + environment.empresa_logo;
   constructor(private rubroService: RubroService,
               private empresaService: EmpresaService,
@@ -27,9 +28,11 @@ export class EmpresasRegistradasComponent implements OnInit {
     this.rubroService.index().subscribe(res => {
       this.rubros = res;
     });
-    this.empresaService.empresasListarHabilitados()
+    const empresa_id = this.authService.getUsuario().empresa_id;
+    this.empresaService.miListaHabilitados(empresa_id)
       .subscribe((res: any) => {
         this.empresas = res;
+        this.empresasBK = this.empresas;
       });
   }
 
@@ -44,10 +47,34 @@ export class EmpresasRegistradasComponent implements OnInit {
   }
 
   buscar() {
-    this.empresaService.buscar(this.buscarGroup.value)
-      .subscribe((res: any) => {
-        this.empresas = res;
-      });
+    const search = this.buscarGroup.value.search;
+    const rubro_id = Number(this.buscarGroup.value.rubro_id);
+    this.empresas = this.empresasBK;
+    if (search === '') {
+      if (rubro_id === 0) {
+        this.empresas = this.empresasBK;
+      } else {
+        this.empresas = this.empresas.filter((empresa) => {
+          return empresa.rubro_id === rubro_id;
+        });
+      }
+    } else {
+      if (rubro_id === 0) {
+        this.empresas = this.empresas.filter((empresa) => {
+          return empresa.nombre.toLowerCase().indexOf(search) > -1 ||
+                 empresa.direccion.toLowerCase().indexOf(search) > -1 ||
+                 empresa.nit.toLowerCase().indexOf(search) > -1 ||
+                 empresa.telefono.toLowerCase().indexOf(search) > -1;
+        });
+      } else {
+        this.empresas = this.empresas.filter((empresa) => {
+          return (empresa.nombre.toLowerCase().indexOf(search) > -1 && empresa.rubro_id === rubro_id ) ||
+            (empresa.direccion.toLowerCase().indexOf(search) > -1 && empresa.rubro_id === rubro_id) ||
+            (empresa.nit.toLowerCase().indexOf(search) > -1 && empresa.rubro_id === rubro_id) ||
+            (empresa.telefono.toLowerCase().indexOf(search) > -1 && empresa.rubro_id === rubro_id);
+        });
+      }
+    }
   }
   info(empresa) {
     const activeModal = this.modalService.open(EmpresaModalComponent, { size: 'lg', container: 'nb-layout' });

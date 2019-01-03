@@ -7,7 +7,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {RubroService} from '../../rubro/rubro.service';
 import {environment} from '../../../../environments/environment.prod';
 import {VoucherModalComponent} from '../../voucher-modal/voucher-modal.component';
-import {ExcelServiceService} from "./excel-service.service";
+import {ExcelServiceService} from './excel-service.service';
 
 @Component({
   selector: 'ngx-empresa-index',
@@ -18,6 +18,7 @@ export class EmpresaIndexComponent implements OnInit {
 
   buscarGroup: FormGroup;
   empresas: any = null;
+  empresasBK: any = null;
   rubros: any = null;
   logo = environment.base + 'mostrar-logo/';
   logo_default = environment.base + environment.empresa_logo;
@@ -31,6 +32,7 @@ export class EmpresaIndexComponent implements OnInit {
     this.empresaService.empresasListar()
       .subscribe((res: any) => {
         this.empresas = res;
+        this.empresasBK = this.empresas;
       });
     this.rubroService.index()
       .subscribe((res: any) => {
@@ -47,12 +49,43 @@ export class EmpresaIndexComponent implements OnInit {
       'search': new FormControl('', [Validators.required]),
     });
   }
-  buscar() {
+/*  buscar() {
     this.empresaService.buscar(this.buscarGroup.value)
       .subscribe((res: any) => {
         this.empresas = res;
       });
+  }*/
+  buscar() {
+    const search = this.buscarGroup.value.search;
+    const rubro_id = Number(this.buscarGroup.value.rubro_id);
+    this.empresas = this.empresasBK;
+    if (search === '') {
+      if (rubro_id === 0) {
+        this.empresas = this.empresasBK;
+      } else {
+        this.empresas = this.empresas.filter((empresa) => {
+          return empresa.rubro_id === rubro_id;
+        });
+      }
+    } else {
+      if (rubro_id === 0) {
+        this.empresas = this.empresas.filter((empresa) => {
+          return empresa.nombre.toLowerCase().indexOf(search) > -1 ||
+            empresa.direccion.toLowerCase().indexOf(search) > -1 ||
+            empresa.nit.toLowerCase().indexOf(search) > -1 ||
+            empresa.telefono.toLowerCase().indexOf(search) > -1;
+        });
+      } else {
+        this.empresas = this.empresas.filter((empresa) => {
+          return (empresa.nombre.toLowerCase().indexOf(search) > -1 && empresa.rubro_id === rubro_id ) ||
+            (empresa.direccion.toLowerCase().indexOf(search) > -1 && empresa.rubro_id === rubro_id) ||
+            (empresa.nit.toLowerCase().indexOf(search) > -1 && empresa.rubro_id === rubro_id) ||
+            (empresa.telefono.toLowerCase().indexOf(search) > -1 && empresa.rubro_id === rubro_id);
+        });
+      }
+    }
   }
+
   reload() {
     this.empresaService.empresasListar()
       .subscribe((res: any) => {
@@ -95,8 +128,9 @@ export class EmpresaIndexComponent implements OnInit {
       });
   }
 
-    descargar(){
-      this.excelService.exportAsExcelFile(this.empresas,"EmpresaRegistadasCampoFerial");
+    descargar() {
+      const copia = this.empresas;
+      this.excelService.exportAsExcelFile(copia, 'empresas-registradas');
     }
 
 }
