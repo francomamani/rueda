@@ -14,13 +14,14 @@ import * as jsPDF from 'jspdf'
   selector: 'ngx-empresa-index',
   templateUrl: './empresa-index.component.html',
   styleUrls: ['./empresa-index.component.scss'],
-    providers: [
-        { provide: 'Window',  useValue: window }
-    ]
+  providers: [
+      { provide: 'Window',  useValue: window },
+  ],
 })
 export class EmpresaIndexComponent implements OnInit {
 
   buscarGroup: FormGroup;
+  agendas: any = null;
   empresas: any = null;
   empresasBK: any = null;
   rubros: any = null;
@@ -138,15 +139,82 @@ export class EmpresaIndexComponent implements OnInit {
       this.excelService.exportAsExcelFile(copia, 'empresas-registradas');
     }
 
+    formatDate(date) {
+      let dia = date.getDate();
+      let mes = date.getMonth() + 1;
+      const anio = date.getFullYear();
+      if (mes < 10) {
+        mes = '0' + mes;
+      }
+      if (dia < 10) {
+        dia = '0' + dia;
+      }
+      return dia + '/' + mes + '/' + anio;
+    }
+
+    formatTime(time) {
+      let horas = time.getHours();
+      let minutos = time.getMinutes();
+      if (horas < 10) {
+        horas = '0' + horas;
+      }
+      if (minutos < 10) {
+        minutos = '0' + minutos;
+      }
+      return horas + ':' + minutos;
+    }
+
     pdf_agendas() {
+        this.empresaService.agendas()
+          .subscribe(res => {
+            this.agendas = res;
+            const doc = new jsPDF();
+            const lista = this.agendas.agendas;
+            lista.forEach(( agenda: any ) => {
+              doc.setFontSize(11);
+              doc.setFontStyle('bold');
+              doc.text('AGENDA', 100, 20);
+              doc.text('EMPRESA', 25, 30);
+              doc.setFontStyle('normal');
+              doc.text(agenda.empresa.nombre.toUpperCase(), 50, 30);
+              doc.setFontStyle('bold');
+              doc.text('RUBRO', 25, 40);
+              doc.setFontStyle('normal');
+              if (agenda.empresa.rubro.length < 50) {
+                doc.text(agenda.empresa.rubro.toUpperCase(), 50, 40);
+              }  else {
+                const parte1 = agenda.empresa.rubro.toUpperCase().substring(0, 53);
+                const parte2 = agenda.empresa.rubro.toUpperCase().substring(53);
+                doc.text(parte1, 50, 40);
+                doc.text(parte2, 50, 48);
+              }
 
-        var doc = new jsPDF();
-        doc.text(20, 20, 'Hola Mundo');
-        doc.text(20, 30, 'Esto es una prueba.');
-        doc.addPage();
-        doc.text(20, 20, 'Esto es otra pagina');
+              doc.setFontStyle('bold');
+              doc.line(25, 55, 200, 55);
+              doc.text('HORARIO', 30, 60);
+              doc.text('MESA', 90, 60);
+              doc.text('EMPRESA', 120, 60);
+              doc.line(25, 65, 200, 65);
+              const x = 30;
+              let y = 70;
+              doc.setFontStyle('normal');
+              agenda.reuniones.forEach((reunion: any) => {
+                doc.line(x - 5, y - 5, 200, y - 5);
+                doc.text(this.formatDate(new Date(reunion.desde)) + ' ' +
+                  this.formatTime(new Date(reunion.desde)) + '-' +
+                  this.formatTime(new Date(reunion.hasta)) , x, y);
+                doc.text(reunion.mesa, x + 60, y);
+                doc.text(reunion.empresa.toUpperCase(), x + 90, y);
+                doc.line(x - 5, y + 5, 200, y + 5);
+                y += 10;
+              });
 
-        doc.save('agendas.pdf');
+              doc.addPage();
+            });
+
+            doc.save('agendas.pdf');
+            /*end subscribe*/
+          });
     }
 
 }

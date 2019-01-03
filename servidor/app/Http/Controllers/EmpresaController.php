@@ -724,4 +724,34 @@ class EmpresaController extends Controller
         }
         return response()->json($response, 200);
     }
+
+    public function agendas() {
+        $empresas = Empresa::join('rubros', 'rubros.rubro_id', '=', 'empresas.rubro_id')
+                            ->where('habilitado', true)
+                            ->orderBy('nombre')
+                            ->selectRaw('empresas.empresa_id, empresas.nombre, rubros.nombre as rubro, rubros.rubro_id')
+                            ->get();
+        $agendas = [];
+        foreach ($empresas as $empresa) {
+            $data = Reunion::join('mesas', 'mesas.mesa_id', '=', 'reuniones.mesa_id')
+                    ->join('empresas', 'empresas.empresa_id', '=', 'reuniones.empresa_demandada_id')
+                    ->join('rubros', 'rubros.rubro_id', '=', 'empresas.rubro_id')
+                    ->where('reuniones.empresa_solicitante_id', $empresa->empresa_id)
+                    ->selectRaw('empresas.nombre as empresa, 
+                                    mesas.numero as mesa, 
+                                   reuniones.desde, 
+                                   reuniones.hasta,
+                                   rubros.nombre as rubro')
+                    ->orderBy('reuniones.desde')
+                    ->get();
+            array_push($agendas, [
+                'empresa' => $empresa,
+                'reuniones' => $data
+            ]);
+        }
+        return response()->json([
+            'empresas' => sizeof($empresas),
+            'agendas' => $agendas
+        ], 200);
+    }
 }

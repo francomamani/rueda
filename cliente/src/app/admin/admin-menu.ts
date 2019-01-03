@@ -51,7 +51,7 @@ export const ADMIN_ITEMS: NbMenuItem[] = [
           '',
         link: '/admin/mesa',
     },
-    {
+/*    {
         title: 'Agenda',
         icon: 'nb-compose',
         link: '/admin/agenda',
@@ -72,7 +72,7 @@ export const ADMIN_ITEMS: NbMenuItem[] = [
                 link: '/admin/agenda/crear-contingencia',
             },
         ],
-    },
+    },*/
     {
         title: 'Reporte',
         icon: 'nb-bar-chart',
