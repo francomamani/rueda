@@ -37,3 +37,9 @@ a.info, a.info:hover, a.info:active{
   margin-bottom: 30px;
   color: $dark-primary;
 }
+.download-pdf {
+  color: $primary;
+  cursor: pointer;
+  float: right;
+  text-decoration: underline;
+}

@@ -4,6 +4,7 @@ import {UsuarioService} from '../usuario.service';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {NbToastrService} from '@nebular/theme';
 import {EmpresaModalComponent} from '../../../shared/empresa-modal/empresa-modal.component';
+import {LoadModalComponent} from '../../../shared/load-modal/load-modal.component';
 
 @Component({
   selector: 'ngx-usuario-index',
@@ -20,9 +21,13 @@ export class UsuarioIndexComponent implements OnInit {
                 private fb: FormBuilder,
                 private toastr: NbToastrService) {
         this.createForm();
+        const loadModal = this.modalService.open(LoadModalComponent, { size: 'sm', container: 'nb-layout' });
         this.usuarioService.index().subscribe((res:any[])=>{
             this.usuarios=res;
             this.usuariosAux=res;
+            loadModal.dismiss();
+        },error => {
+            loadModal.dismiss();
         });
 
     }

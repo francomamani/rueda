@@ -11,9 +11,7 @@ export class ReunionesComponent implements OnInit {
 
   empresas = 0;
   citas = 0;
-  pendientes = 0;
-  aceptados = 0;
-  rechazados = 0;
+  reuniones = 0;
 
   colorN = '{.progress-value { height: 0.6rem; background: #fff;}';
   colorA = '';
@@ -26,15 +24,9 @@ export class ReunionesComponent implements OnInit {
       this.empresas = res.length;
       this.change();
     });
-    this.agendaService.index().subscribe((res: any[]) => {
-      this.citas = res.length;
-      for (const a of res) {
-        if (a.estado === 'aceptado')
-          this.aceptados++;
-        else if (a.estado === 'rechazado')
-          this.rechazados++;
-        else if (a.estado === 'pendiente')
-          this.pendientes++;
+    this.agendaService.index().subscribe((res: any) => {
+      for (const a of res.agendas) {
+        this.reuniones = this.reuniones + a.reuniones.length;
       }
       this.change();
     });
@@ -51,28 +43,10 @@ export class ReunionesComponent implements OnInit {
       description: 'Cantidad de empresas participantes de la rueda de negocios',
     },
     {
-      title: 'Citas',
-      value: this.citas,
+      title: 'Reuniones agendadas',
+      value: this.reuniones,
       activeProgress: 100,
       description: 'Cantidad de citas realizadas en total',
-    },
-    {
-      title: 'Citas pendientes',
-      value: this.pendientes,
-      activeProgress: (this.pendientes / this.citas * 100),
-      description: 'Cantidad de citas Pendientes',
-    },
-    {
-      title: 'Citas Aceptadas',
-      value: this.aceptados,
-      activeProgress: (this.aceptados / this.citas * 100),
-      description: 'Cantidad de citas Aceptadas',
-    },
-    {
-      title: 'Citas Rechazadas',
-      value: this.rechazados,
-      activeProgress: (this.rechazados / this.citas * 100),
-      description: 'Cantidad de citas REchazadas',
     },
   ];
 
@@ -85,29 +59,12 @@ export class ReunionesComponent implements OnInit {
         description: 'Cantidad de empresas participantes de la rueda de negocios',
       },
       {
-        title: 'Citas',
-        value: this.citas,
+        title: 'Reuniones agendadas',
+        value: this.reuniones,
         activeProgress: 100,
         description: 'Cantidad de citas realizadas en total',
       },
-      {
-        title: 'Citas pendientes',
-        value: this.pendientes,
-        activeProgress: (this.pendientes / this.citas * 100),
-        description: 'Cantidad de citas Pendientes',
-      },
-      {
-        title: 'Citas Aceptadas',
-        value: this.aceptados,
-        activeProgress: (this.aceptados / this.citas * 100),
-        description: 'Cantidad de citas Aceptadas',
-      },
-      {
-        title: 'Citas Rechazadas',
-        value: this.rechazados,
-        activeProgress: (this.rechazados / this.citas * 100),
-        description: 'Cantidad de citas Rechazadas',
-      },
+
     ];
   }
 

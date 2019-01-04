@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {LocalDataSource} from 'ng2-smart-table';
 import {MesaService} from './mesa.service';
 import {NbToastrService} from '@nebular/theme';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {LoadModalComponent} from '../../shared/load-modal/load-modal.component';
 
 @Component({
     selector: 'ngx-mesa',
@@ -44,7 +46,8 @@ export class MesaComponent implements OnInit {
     }
 
     constructor(private mesaService: MesaService,
-                private toastr: NbToastrService) {
+                private toastr: NbToastrService,
+                private modalService: NgbModal) {
         this.mesaService.index().subscribe((data: any[]) => {
             this.source.load(data);
         });
@@ -52,10 +55,14 @@ export class MesaComponent implements OnInit {
 
 
     onDeleteConfirm(event): void {
+        const loadModal = this.modalService.open(LoadModalComponent, { size: 'sm', container: 'nb-layout' });
         if (window.confirm('¿Esta seguro que quiere eliminar este registro?')) {
             event.confirm.resolve();
             this.mesaService.destroy(event.data.mesa_id).subscribe((res: any) => {
                 this.toastr.success(res.mensaje);
+                loadModal.dismiss();
+            }, error => {
+                loadModal.dismiss();
             });
         } else {
             event.confirm.reject();
@@ -63,10 +70,14 @@ export class MesaComponent implements OnInit {
     }
 
     store(event): void {
+        const loadModal = this.modalService.open(LoadModalComponent, { size: 'sm', container: 'nb-layout' });
         if (window.confirm('¿Esta seguro de crear nuevo registro?')) {
             event.confirm.resolve();
             this.mesaService.store(event.newData).subscribe((res: any) => {
                 this.toastr.success('Se guardo con éxito');
+                loadModal.dismiss();
+            }, error => {
+                loadModal.dismiss();
             });
         } else {
             event.confirm.reject();
@@ -75,10 +86,14 @@ export class MesaComponent implements OnInit {
     }
 
     update(event): void {
+        const loadModal = this.modalService.open(LoadModalComponent, { size: 'sm', container: 'nb-layout' });
         if (window.confirm('¿Esta seguro de cambiar los datos de este registro?')) {
             event.confirm.resolve();
             this.mesaService.update(event.newData, event.data.mesa_id).subscribe((res: any) => {
                 this.toastr.success('Se edito con éxito');
+                loadModal.dismiss();
+            }, error => {
+                loadModal.dismiss();
             });
         } else {
             event.confirm.reject();

@@ -9,6 +9,7 @@ import {environment} from '../../../../environments/environment.prod';
 import {VoucherModalComponent} from '../../voucher-modal/voucher-modal.component';
 import {ExcelServiceService} from './excel-service.service';
 import * as jsPDF from 'jspdf'
+import {LoadModalComponent} from '../../../shared/load-modal/load-modal.component';
 
 @Component({
   selector: 'ngx-empresa-index',
@@ -35,10 +36,14 @@ export class EmpresaIndexComponent implements OnInit {
               private excelService: ExcelServiceService,
               @Inject('Window') private window: Window,) {
     this.createForm();
+      const loadModal = this.modalService.open(LoadModalComponent, { size: 'sm', container: 'nb-layout' });
     this.empresaService.empresasListar()
       .subscribe((res: any) => {
         this.empresas = res;
         this.empresasBK = this.empresas;
+        loadModal.dismiss()
+      },error => {
+        loadModal.dismiss();
       });
     this.rubroService.index()
       .subscribe((res: any) => {
@@ -164,13 +169,28 @@ export class EmpresaIndexComponent implements OnInit {
       return horas + ':' + minutos;
     }
 
+    lista:any[];
+    cont=0;
     pdf_agendas() {
+      this.lista=[];
+      this.cont=0;
         this.empresaService.agendas()
           .subscribe(res => {
+
             this.agendas = res;
             const doc = new jsPDF();
-            const lista = this.agendas.agendas;
-            lista.forEach(( agenda: any ) => {
+            const ll = this.agendas.agendas;
+            ll.forEach( (l : any)=>{
+                this.empresas.forEach(( em : any ) => {
+                  if(l.empresa.empresa_id==em.empresa_id) {
+                      this.lista.push(l);
+                      return true;
+                  }
+                });
+            });
+            this.lista.forEach(( agenda: any ) => {
+              if(this.cont>0)
+                  doc.addPage();
               doc.setFontSize(11);
               doc.setFontStyle('bold');
               doc.text('AGENDA', 100, 20);
@@ -209,7 +229,7 @@ export class EmpresaIndexComponent implements OnInit {
                 y += 10;
               });
 
-              doc.addPage();
+              this.cont++;
             });
 
             doc.save('agendas.pdf');

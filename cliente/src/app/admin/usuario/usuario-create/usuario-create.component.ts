@@ -3,6 +3,8 @@ import {FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms';
 import {Router, ActivatedRoute} from '@angular/router';
 import {NbToastrService} from '@nebular/theme';
 import {UsuarioService} from '../usuario.service';
+import {LoadModalComponent} from '../../../shared/load-modal/load-modal.component';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'ngx-usuario-create',
@@ -18,7 +20,8 @@ export class UsuarioCreateComponent implements OnInit {
     constructor(public usuarioService: UsuarioService,
                 public router: Router,
                 private fb: FormBuilder,
-                private toastr: NbToastrService) {
+                private toastr: NbToastrService,
+                private modalService: NgbModal) {
         this.createForm();
 
     }
@@ -37,15 +40,19 @@ export class UsuarioCreateComponent implements OnInit {
 
     store() {
         if ( this.usuarioGroup.value.password === this.usuarioGroup.value.repeated_password) {
-        this.usuarioService.store(this.usuarioGroup.value)
-            .subscribe((res: any) => {
+            const loadModal = this.modalService.open(LoadModalComponent, { size: 'sm', container: 'nb-layout' });
+            this.usuarioService.store(this.usuarioGroup.value)
+                .subscribe((res: any) => {
 
-                    this.mensaje = 'El usuario ' + res.email + ' fue registrado';
-                    this.error = '';
-                    this.toastr.success('El usuario ' + res.email + ' fue registrado', 'Registro exitoso');
-                    this.router.navigate(['/admin/usuario/listar']);
+                        this.mensaje = 'El usuario ' + res.email + ' fue registrado';
+                        this.error = '';
+                        this.toastr.success('El usuario ' + res.email + ' fue registrado', 'Registro exitoso');
+                        this.router.navigate(['/admin/usuario/listar']);
+                        loadModal.dismiss();
 
-            });
+                }, error1 => {
+                    loadModal.dismiss();
+                });
         } else {
             this.mensaje = '';
             this.error = 'Las contraseñas no coinciden';

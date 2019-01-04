@@ -1,7 +1,11 @@
 <div class="row">
   <div class="col-md-12">
     <nb-card>
-      <nb-card-header>Reporte de Evaluaciones de Reuniones</nb-card-header>
+      <nb-card-header>Reporte de Evaluaciones de Reuniones
+        <a class="download" title="Descargar en excel" (click)="descargar()">
+          ( Descargar en excel <i class="fa fa-download"></i> )
+        </a>
+      </nb-card-header>
       <nb-card-body>
         <form>
           <label for="pregunta">Seleccione la pregunta: </label>

@@ -2,6 +2,8 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {LocalDataSource} from 'ng2-smart-table';
 import {SmartTableService} from '../../../@core/data/smart-table.service';
 import {RubroService} from '../rubro.service';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {LoadModalComponent} from '../../../shared/load-modal/load-modal.component';
 
 @Component({
     selector: 'ngx-rubro-index',
@@ -48,7 +50,8 @@ export class RubroIndexComponent implements OnInit {
 
     source: LocalDataSource = new LocalDataSource();
 
-    constructor(private rubroService: RubroService) {
+    constructor(private rubroService: RubroService,
+                private modalService: NgbModal) {
         this.rubroService.index().subscribe((data: any[]) => {
             this.source.load(data);
         });
@@ -56,18 +59,29 @@ export class RubroIndexComponent implements OnInit {
 
 
     onDeleteConfirm(event): void {
+        const loadModal = this.modalService.open(LoadModalComponent, { size: 'sm', container: 'nb-layout' });
+
         if (window.confirm('¿Esta seguro que quiere eliminar este registro?')) {
             event.confirm.resolve();
-            this.rubroService.destroy(event.data.rubro_id).subscribe();
+            this.rubroService.destroy(event.data.rubro_id).subscribe(res=>{
+                loadModal.dismiss();
+            }, error => {
+                loadModal.dismiss();
+            });
         } else {
             event.confirm.reject();
         }
     }
 
     store(event): void {
+        const loadModal = this.modalService.open(LoadModalComponent, { size: 'sm', container: 'nb-layout' });
         if (window.confirm('¿Esta seguro de crear nuevo registro?')) {
             event.confirm.resolve();
-            this.rubroService.store(event.newData).subscribe();
+            this.rubroService.store(event.newData).subscribe(res=>{
+                loadModal.dismiss();
+            }, error => {
+                loadModal.dismiss();
+            });
         } else {
             event.confirm.reject();
         }
@@ -75,9 +89,14 @@ export class RubroIndexComponent implements OnInit {
     }
 
     update(event): void {
+        const loadModal = this.modalService.open(LoadModalComponent, { size: 'sm', container: 'nb-layout' });
         if (window.confirm('¿Esta seguro de cambiar los datos de este registro?')) {
             event.confirm.resolve();
-            this.rubroService.update(event.newData, event.data.rubro_id).subscribe();
+            this.rubroService.update(event.newData, event.data.rubro_id).subscribe(res=>{
+                loadModal.dismiss();
+            }, error => {
+                loadModal.dismiss()
+            });
         } else {
             event.confirm.reject();
         }

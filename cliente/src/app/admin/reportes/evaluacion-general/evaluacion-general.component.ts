@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {EvaluacionGeneralService} from '../../../shared/evaluacion-general/evaluacion-general.service';
+import { ReportesService } from '../reportes.service';
 
 @Component({
   selector: 'ngx-evaluacion-general',
@@ -62,7 +63,8 @@ export class EvaluacionGeneralComponent implements OnInit {
   };
   parametro = null;
 
-  constructor(private evaluacionGeneralService: EvaluacionGeneralService) { }
+  constructor(private evaluacionGeneralService: EvaluacionGeneralService,
+              private reportesService: ReportesService) { }
 
   ngOnInit() {
   }
@@ -72,5 +74,10 @@ export class EvaluacionGeneralComponent implements OnInit {
       .subscribe((res: any) => {
         this.chart.data = res;
       });
+  }
+
+    json : any;
+  descargar(){
+    this.reportesService.exportAsExcelFile(this.json,'Evaluacion General');
   }
 }
