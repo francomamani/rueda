@@ -9,27 +9,26 @@ import {LoadModalComponent} from '../../../shared/load-modal/load-modal.componen
 @Component({
   selector: 'ngx-usuario-index',
   templateUrl: './usuario-index.component.html',
-  styleUrls: ['./usuario-index.component.scss']
+  styleUrls: ['./usuario-index.component.scss'],
 })
 export class UsuarioIndexComponent implements OnInit {
 
     buscarGroup: FormGroup;
     usuarios: any;
-    usuariosAux : any;
+    usuariosBK: any;
     constructor(private usuarioService: UsuarioService,
                 private modalService: NgbModal,
                 private fb: FormBuilder,
                 private toastr: NbToastrService) {
         this.createForm();
         const loadModal = this.modalService.open(LoadModalComponent, { size: 'sm', container: 'nb-layout' });
-        this.usuarioService.index().subscribe((res:any[])=>{
-            this.usuarios=res;
-            this.usuariosAux=res;
+        this.usuarioService.index().subscribe((res: any) => {
+            this.usuarios = res;
+            this.usuariosBK = this.usuarios;
             loadModal.dismiss();
-        },error => {
+        },(error: any) => {
             loadModal.dismiss();
         });
-
     }
 
     ngOnInit() {
@@ -40,23 +39,26 @@ export class UsuarioIndexComponent implements OnInit {
             'search': new FormControl('', [Validators.required]),
         });
     }
-    word: string;
     buscar() {
-        this.word = this.buscarGroup.value.search;
-        this.word = this.word.toLowerCase();
-        if ( this.buscarGroup.value.search === '' ) {
-            this.usuarios = this.usuariosAux;
-        }  else {
-            this.usuarios = [];
-            this.usuariosAux.forEach((item, index) => {
-                if (item.nombres.toLowerCase().includes(this.word) ||
-                    item.email.toLowerCase().includes(this.word) ||
-                    item.apellidos.toLowerCase().includes(this.word) ||
-                    (item.empresa != null && item.empresa.nombre.toLowerCase().includes(this.word))) {
-                    this.usuarios.push(item);
-                }
-            });
-        }
+      this.usuarios = this.usuariosBK;
+      console.log(this.usuarios);
+      const search = this.buscarGroup.value.search.toLowerCase();
+      if ( search !== '') {
+          this.usuarios = this.usuarios.filter((usuario: any) => {
+            if (usuario.tipo_usuario === 'empresa') {
+              return  usuario.nombres.toLowerCase().indexOf(search) >  -1 ||
+                usuario.cuenta.toLowerCase().indexOf(search) >  -1 ||
+                usuario.apellidos.toLowerCase().indexOf(search) >  -1 ||
+                usuario.tipo_usuario.toLowerCase().indexOf(search) >  -1 ||
+                usuario.empresa.nombre.toLowerCase().indexOf(search) >  -1;
+            } else {
+              return  usuario.nombres.toLowerCase().indexOf(search) >  -1 ||
+                usuario.cuenta.toLowerCase().indexOf(search) >  -1 ||
+                usuario.apellidos.toLowerCase().indexOf(search) >  -1 ||
+                usuario.tipo_usuario.toLowerCase().indexOf(search) >  -1;
+            }
+          });
+      }
     }
     info(empresa) {
         const activeModal = this.modalService.open(EmpresaModalComponent, { size: 'lg', container: 'nb-layout' });

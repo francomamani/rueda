@@ -8,7 +8,7 @@ import {RubroService} from '../../rubro/rubro.service';
 import {environment} from '../../../../environments/environment.prod';
 import {VoucherModalComponent} from '../../voucher-modal/voucher-modal.component';
 import {ExcelServiceService} from './excel-service.service';
-import * as jsPDF from 'jspdf'
+import * as jsPDF from 'jspdf';
 import {LoadModalComponent} from '../../../shared/load-modal/load-modal.component';
 
 @Component({
@@ -60,12 +60,7 @@ export class EmpresaIndexComponent implements OnInit {
       'search': new FormControl('', [Validators.required]),
     });
   }
-/*  buscar() {
-    this.empresaService.buscar(this.buscarGroup.value)
-      .subscribe((res: any) => {
-        this.empresas = res;
-      });
-  }*/
+
   buscar() {
     const search = this.buscarGroup.value.search;
     const rubro_id = Number(this.buscarGroup.value.rubro_id);
@@ -141,7 +136,30 @@ export class EmpresaIndexComponent implements OnInit {
 
     descargar() {
       const copia = this.empresas;
-      this.excelService.exportAsExcelFile(copia, 'empresas-registradas');
+      const empresas = [];
+      let i = 1;
+      copia.forEach((empresa: any) => {
+        empresas.push({
+          n: i,
+          rubro: empresa.rubro,
+          empresa: empresa.nombre,
+          cuenta: empresa.usuario.cuenta,
+          direccion: empresa.direccion,
+          telefono: empresa.telefono,
+          ciudad_localidad: empresa.ciudad_localidad,
+          nit: empresa.nit,
+          pagina_web: empresa.pagina_web,
+          representante_legal: empresa.representante_legal,
+          habilitado: empresa.habilitado === 1 ? 'si' : 'no',
+          max_participantes: empresa.max_participantes,
+          oferta: empresa.oferta,
+          demanda: empresa.demanda,
+          fecha_hora_registro: empresa.created_at,
+          fecha_hora_edicion_registro: empresa.updated_at,
+        });
+        i++;
+      });
+      this.excelService.exportAsExcelFile(empresas, 'empresas-registradas');
     }
 
     formatDate(date) {
@@ -169,28 +187,28 @@ export class EmpresaIndexComponent implements OnInit {
       return horas + ':' + minutos;
     }
 
-    lista:any[];
-    cont=0;
+    lista: any[];
+    cont = 0;
     pdf_agendas() {
-      this.lista=[];
-      this.cont=0;
+      this.lista = [];
+      this.cont = 0;
         this.empresaService.agendas()
           .subscribe(res => {
 
             this.agendas = res;
             const doc = new jsPDF();
             const ll = this.agendas.agendas;
-            ll.forEach( (l : any)=>{
-                this.empresas.forEach(( em : any ) => {
-                  if(l.empresa.empresa_id==em.empresa_id) {
+            ll.forEach( (l: any) => {
+                this.empresas.forEach(( em: any ) => {
+                  if (l.empresa.empresa_id === em.empresa_id) {
                       this.lista.push(l);
                       return true;
                   }
                 });
             });
             this.lista.forEach(( agenda: any ) => {
-              if(this.cont>0)
-                  doc.addPage();
+              if ( this.cont > 0 )
+              doc.addPage();
               doc.setFontSize(11);
               doc.setFontStyle('bold');
               doc.text('AGENDA', 100, 20);
@@ -212,9 +230,11 @@ export class EmpresaIndexComponent implements OnInit {
               doc.setFontStyle('bold');
               doc.line(25, 55, 200, 55);
               doc.text('HORARIO', 30, 60);
-              doc.text('MESA', 90, 60);
-              doc.text('EMPRESA', 120, 60);
+              doc.text('MESA', 75, 60);
+              doc.text('SOLICITANTE', 95, 60);
+              doc.text('DEMANDADA', 150, 60);
               doc.line(25, 65, 200, 65);
+
               const x = 30;
               let y = 70;
               doc.setFontStyle('normal');
@@ -223,8 +243,9 @@ export class EmpresaIndexComponent implements OnInit {
                 doc.text(this.formatDate(new Date(reunion.desde)) + ' ' +
                   this.formatTime(new Date(reunion.desde)) + '-' +
                   this.formatTime(new Date(reunion.hasta)) , x, y);
-                doc.text(reunion.mesa, x + 60, y);
-                doc.text(reunion.empresa.toUpperCase(), x + 90, y);
+                doc.text(reunion.mesa, x + 45, y);
+                doc.text(reunion.empresa_solicitante, x + 65, y);
+                doc.text(reunion.empresa_demandada, x + 120, y);
                 doc.line(x - 5, y + 5, 200, y + 5);
                 y += 10;
               });
@@ -236,5 +257,4 @@ export class EmpresaIndexComponent implements OnInit {
             /*end subscribe*/
           });
     }
-
 }

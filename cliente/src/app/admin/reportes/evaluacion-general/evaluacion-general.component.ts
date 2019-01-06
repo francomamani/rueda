@@ -76,8 +76,10 @@ export class EvaluacionGeneralComponent implements OnInit {
       });
   }
 
-    json : any;
-  descargar(){
-    this.reportesService.exportAsExcelFile(this.json,'Evaluacion General');
+  descargar() {
+    this.evaluacionGeneralService.excelGeneral()
+      .subscribe((json: any) => {
+        this.reportesService.exportAsExcelFile(json,'Evaluación General');
+      });
   }
 }

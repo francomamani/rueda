@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\EvaluacionReunion;
-use Illuminate\Http\Request;
 
 class EvaluacionReunionController extends Controller
 {
@@ -45,5 +44,25 @@ class EvaluacionReunionController extends Controller
             ->get();
         return response()->json($comentarios, 200);
     }
+    public function excelReunion() {
+        $excel = [];
+        $evaluaciones = EvaluacionReunion::join('empresas',
+            'empresas.empresa_id', '=', 'evaluacion_reuniones.empresa_id')
+            ->orderBy('empresas.nombre')
+            ->get();
+        foreach ($evaluaciones as $evaluacion) {
+            array_push($excel, [
+                'Empresa' => $evaluacion->nombre,
+                '1.- Reunión con la empresa:' => $evaluacion->uno,
+                '2.- La reunión se ejecutó:' => $evaluacion->dos,
+                '3.- La Probabilidad de concretar operaciones comerciales con la empresa es:' => $evaluacion->tres,
+                '4.- Características de la operación' => $evaluacion->cuatro,
+                '5.- Monto estimado de la operación (en dólares americanos)' => $evaluacion->cinco,
+                '6.- Plazo estimado de realización del negocio' => $evaluacion->seis,
+                '7.- Comentario de la reunión' => $evaluacion->siete,
+            ]);
+        }
+        return response()->json($excel,200);
 
+    }
 }

@@ -1,11 +1,13 @@
 <div class="row">
   <div class="col-md-12">
     <nb-card>
-      <nb-card-header>Usuarios registrados</nb-card-header>
+      <nb-card-header>Usuarios Registrados</nb-card-header>
       <nb-card-body>
-        <form (submit)="buscar()" class="rueda-search" [formGroup]="buscarGroup">
+        <form (submit)="buscar()"
+              class="rueda-search"
+              [formGroup]="buscarGroup">
           <input type="search" formControlName="search" name="search" placeholder="Buscar">
-          <button> Buscar </button>
+          <button type="submit">Buscar</button>
         </form>
         <br><br>
 
@@ -18,6 +20,7 @@
               <th>Empresa</th>
               <th>Nombres</th>
               <th>Apellidos</th>
+              <th>Correo Electrónico</th>
               <th>Tipo de Usuario</th>
               <th>Acciones</th>
             </tr>
@@ -29,6 +32,7 @@
               <td><a *ngIf="usuario.empresa != null" (click)="info(usuario.empresa)" class="info">{{usuario.empresa.nombre | uppercase }}</a></td>
               <td>{{usuario.nombres}}</td>
               <td>{{usuario.apellidos}}</td>
+              <td>{{usuario.email}}</td>
               <td>
                 <span *ngIf="usuario.tipo_usuario === 'administrador'" class="text-info">Administrador</span>
                 <span *ngIf="usuario.tipo_usuario === 'empresa'" class="text-primary">Empresa</span>

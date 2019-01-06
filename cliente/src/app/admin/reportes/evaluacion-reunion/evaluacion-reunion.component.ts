@@ -62,8 +62,10 @@ export class EvaluacionReunionComponent implements OnInit {
         this.chart.data = res;
       });
   }
-  json : any;
-  descargar(){
-      this.reporteService.exportAsExcelFile(this.json,'Evaluacion General');
+  descargar() {
+    this.evaluacionReunionesService.excelReunion()
+      .subscribe((json: any) => {
+        this.reporteService.exportAsExcelFile(json,'Evaluación de Reuniones');
+      });
   }
 }

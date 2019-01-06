@@ -72,3 +72,6 @@ Route::post('subir-comprobante/{empresa_id}', 'EmpresaController@subirComprobant
 
 Route::get('mi-lista-habilitados/{empresa_id}', 'EmpresaController@miListaHabilitados');
 Route::get('agendas', 'EmpresaController@agendas');
+
+Route::get('excel-general', 'EvaluacionGeneralController@excelGeneral');
+Route::get('excel-reunion', 'EvaluacionReunionController@excelReunion');

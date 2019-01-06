@@ -30,7 +30,10 @@ export class UsuarioCreateComponent implements OnInit {
         this.usuarioGroup = this.fb.group({
             'nombres': new FormControl('', Validators.required),
             'apellidos': new FormControl('', Validators.required),
-            'email': new FormControl('', Validators.required),
+            'cuenta': new FormControl('', Validators.required),
+            'email': new FormControl(''),
+            'telefono_celular': new FormControl('', Validators.required),
+            'whatsapp': new FormControl('', Validators.required),
             'password': new FormControl('', Validators.required),
             'repeated_password': new FormControl('', Validators.required),
         });

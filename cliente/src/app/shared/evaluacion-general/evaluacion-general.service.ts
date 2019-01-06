@@ -21,4 +21,7 @@ export class EvaluacionGeneralService {
   reporteGeneral(parametro) {
     return this.http.get(this.base + 'reporte-general/' + parametro);
   }
+  excelGeneral() {
+    return this.http.get(this.base + 'excel-general');
+  }
 }

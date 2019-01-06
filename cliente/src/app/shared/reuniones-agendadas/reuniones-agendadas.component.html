@@ -13,15 +13,18 @@
   <div class="col-md-12">
     <nb-card>
       <nb-card-header>
-        <h4>Reuniones Agendadas</h4>
+        <h5>Reuniones Agendadas
         <a class="download-pdf" title="Descargar Agenda" (click)="pdf_agenda()">
           Descargar Agenda <i class="fa fa-download"></i>
         </a>
+        </h5>
       </nb-card-header>
       <nb-card-body>
         <h5 class="texto-ayuda">En esta sección, puede ver todas sus reuniones agendadas, evaluar la reunión y cancelar una o varias reuniones agendadas<br></h5>
+        <h5 *ngIf="mi_empresa !== null"><b>{{ mi_empresa | uppercase }}</b></h5>
 
-        <h5><b>{{mi_empresa}}</b></h5>
+        <h6 *ngIf="rubro !== null"><b>{{ rubro | uppercase }}</b></h6>
+
         <div *ngIf="reuniones !== null && reuniones.length === 0" class="alerta">
           No existen reuniones agendadas
           <br><br>
@@ -42,9 +45,9 @@
             <tbody>
             <tr *ngFor="let reunion of reuniones; let i = index">
               <td>
-                <a class="info" (click)="info(reunion.empresa_solicitante, reunion.fecha_hora_registro_reunion)">{{reunion.empresa_solicitante.nombre }}</a></td>
+                <a class="info" (click)="info(reunion.empresa_solicitante, reunion.fecha_hora_registro_reunion)">{{reunion.empresa_solicitante.nombre | uppercase }}</a></td>
               <td>
-                <a class="info" (click)="info(reunion.empresa_demandada, reunion.fecha_hora_registro_reunion)">{{ reunion.empresa_demandada.nombre }}</a>
+                <a class="info" (click)="info(reunion.empresa_demandada, reunion.fecha_hora_registro_reunion)">{{ reunion.empresa_demandada.nombre | uppercase }}</a>
               </td>
               <td>{{reunion.mesa}}</td>
               <td>{{reunion.desde | date: 'dd MMM. yyy HH:mm'}} - {{reunion.hasta | date: 'HH:mm'}}</td>

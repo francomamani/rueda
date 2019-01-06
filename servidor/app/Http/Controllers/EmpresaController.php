@@ -58,7 +58,12 @@ class EmpresaController extends Controller
     }
 
     public function listar() {
-        return response()->json(Empresa::with('usuario')->orderBy('nombre')->get(), 200);
+        $empresas = Empresa::join('rubros', 'rubros.rubro_id', '=', 'empresas.rubro_id')
+                            ->with('usuario')
+                            ->orderBy('empresas.nombre')
+                            ->selectRaw('rubros.nombre as rubro, empresas.*')
+                            ->get();
+        return response()->json($empresas, 200);
     }
 
     /**
@@ -175,7 +180,10 @@ class EmpresaController extends Controller
      */
     public function show($id)
     {
-        return response()->json(Empresa::find($id));
+        $empresa = Empresa::join('rubros', 'rubros.rubro_id', '=', 'empresas.rubro_id')
+                            ->selectRaw('rubros.nombre as rubro, empresas.*')
+                            ->find($id);
+        return response()->json($empresa, 200);
 
     }
 
@@ -737,16 +745,31 @@ class EmpresaController extends Controller
                     ->join('empresas', 'empresas.empresa_id', '=', 'reuniones.empresa_demandada_id')
                     ->join('rubros', 'rubros.rubro_id', '=', 'empresas.rubro_id')
                     ->where('reuniones.empresa_solicitante_id', $empresa->empresa_id)
+                    ->orWhere('reuniones.empresa_demandada_id', $empresa->empresa_id)
                     ->selectRaw('empresas.nombre as empresa, 
-                                    mesas.numero as mesa, 
-                                   reuniones.desde, 
-                                   reuniones.hasta,
-                                   rubros.nombre as rubro')
+                                mesas.numero as mesa, 
+                                reuniones.empresa_solicitante_id, 
+                                reuniones.empresa_demandada_id, 
+                                reuniones.desde, 
+                                reuniones.hasta,
+                                rubros.nombre as rubro')
                     ->orderBy('reuniones.desde')
                     ->get();
+            $reuniones = [];
+            foreach ($data as $record) {
+                array_push($reuniones, [
+                   'empresa' => strtoupper($record->empresa),
+                   'mesa' => strtoupper($record->mesa),
+                   'desde' => $record->desde,
+                   'hasta' => $record->hasta,
+                   'rubro' => strtoupper($record->rubro),
+                   'empresa_solicitante' => strtoupper(Empresa::find($record->empresa_solicitante_id)->nombre),
+                   'empresa_demandada' => strtoupper(Empresa::find($record->empresa_demandada_id)->nombre),
+                ]);
+            }
             array_push($agendas, [
                 'empresa' => $empresa,
-                'reuniones' => $data
+                'reuniones' => $reuniones
             ]);
         }
         return response()->json([

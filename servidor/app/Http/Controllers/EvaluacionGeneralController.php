@@ -57,4 +57,28 @@ class EvaluacionGeneralController extends Controller
                             ->get();
         return response()->json($comentarios, 200);
     }
+
+    public function excelGeneral() {
+        $excel = [];
+        $evaluaciones = EvaluacionGeneral::join('empresas',
+                                                'empresas.empresa_id', '=',
+                                                'evaluaciones_generales.empresa_id')
+                                            ->orderBy('empresas.nombre')
+                                            ->get();
+        foreach ($evaluaciones as $evaluacion) {
+            array_push($excel, [
+                'Empresa' => $evaluacion->nombre,
+                '1.- La atención brindada por los organizadores' => $evaluacion->uno,
+                '2.- El servicio de acreditación' => $evaluacion->dos,
+                '3.- La organización de las reuniones' => $evaluacion->tres,
+                '4.- La calidad de la información recibida antes del evento' => $evaluacion->cuatro,
+                '5.- La calidad de la informción recibida durante el evento' => $evaluacion->cinco,
+                '6.- Su empresa es' => $evaluacion->seis,
+                '7.- ¿A través de que medio de comunicación tomó conocimiento de la realización del evento?' => $evaluacion->siete,
+                '8.- ¿Participaría nuevamente en un evento de este tipo?' => $evaluacion->ocho,
+                '9.- Comentario de la empresa'=> $evaluacion->nueve,
+            ]);
+        }
+        return response()->json($excel,200);
+    }
 }

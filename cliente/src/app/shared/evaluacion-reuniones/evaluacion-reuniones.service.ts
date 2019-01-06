@@ -19,4 +19,7 @@ export class EvaluacionReunionesService {
   reporteReunion(parametro) {
     return this.http.get(this.base + 'reporte-reunion/' + parametro);
   }
+  excelReunion() {
+    return this.http.get(this.base + 'excel-reunion');
+  }
 }

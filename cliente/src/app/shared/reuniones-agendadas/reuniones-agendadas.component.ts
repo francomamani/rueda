@@ -20,6 +20,7 @@ export class ReunionesAgendadasComponent implements OnInit {
   reuniones: any = null;
   empresa_id = null;
   mi_empresa = null;
+  rubro = null;
   habilitado = null;
   admin: boolean = null;
   constructor(private empresaService: EmpresaService,
@@ -34,6 +35,7 @@ export class ReunionesAgendadasComponent implements OnInit {
         this.empresaService.show(parseInt(params.empresa_id, 10))
           .subscribe((res: any) => {
             this.mi_empresa = res.nombre;
+            this.rubro = res.rubro;
             this.habilitado  = res.habilitado;
             this.admin = true;
 
@@ -50,8 +52,6 @@ export class ReunionesAgendadasComponent implements OnInit {
     this.empresaService.misReuniones(this.empresa_id)
       .subscribe((res: any) => {
         this.reuniones = res;
-        console.log(this.reuniones);
-
       });
   }
 
@@ -109,9 +109,8 @@ export class ReunionesAgendadasComponent implements OnInit {
       return horas + ':' + minutos;
   }
 
-  pdf_agenda(){
-
-    if(this.reuniones.length>0) {
+  pdf_agenda() {
+    if ( this.reuniones.length > 0 ) {
         const doc = new jsPDF();
 
         doc.setFontSize(11);
@@ -119,25 +118,27 @@ export class ReunionesAgendadasComponent implements OnInit {
         doc.text('AGENDA', 100, 20);
         doc.text('EMPRESA', 25, 30);
         doc.setFontStyle('normal');
-        doc.text(this.reuniones[0].empresa_solicitante.nombre.toUpperCase(), 50, 30);
+        doc.text(this.mi_empresa.toUpperCase(), 50, 30);
         doc.setFontStyle('bold');
-        //doc.text('RUBRO', 25, 40);
+        doc.text('RUBRO', 25, 40);
         doc.setFontStyle('normal');
-       /* if (this.reuniones[0].empresa_solicitante.nombre.length < 50) {
-            doc.text(agenda.empresa.rubro.toUpperCase(), 50, 40);
+        if (this.rubro.toUpperCase().length < 50) {
+            doc.text(this.rubro.toUpperCase(), 50, 40);
         } else {
-            const parte1 = agenda.empresa.rubro.toUpperCase().substring(0, 53);
-            const parte2 = agenda.empresa.rubro.toUpperCase().substring(53);
+            const parte1 = this.rubro.toUpperCase().substring(0, 53);
+            const parte2 = this.rubro.toUpperCase().substring(53);
             doc.text(parte1, 50, 40);
             doc.text(parte2, 50, 48);
-        }*/
+        }
 
         doc.setFontStyle('bold');
         doc.line(25, 55, 200, 55);
         doc.text('HORARIO', 30, 60);
-        doc.text('MESA', 90, 60);
-        doc.text('EMPRESA', 120, 60);
+        doc.text('MESA', 75, 60);
+        doc.text('SOLICITANTE', 95, 60);
+        doc.text('DEMANDADA', 150, 60);
         doc.line(25, 65, 200, 65);
+
         const x = 30;
         let y = 70;
         doc.setFontStyle('normal');
@@ -146,8 +147,9 @@ export class ReunionesAgendadasComponent implements OnInit {
             doc.text(this.formatDate(new Date(reunion.desde)) + ' ' +
                 this.formatTime(new Date(reunion.desde)) + '-' +
                 this.formatTime(new Date(reunion.hasta)), x, y);
-            doc.text(reunion.mesa, x + 60, y);
-            doc.text(reunion.empresa_demandada.nombre.toUpperCase(), x + 90, y);
+            doc.text(reunion.mesa, x + 45, y);
+            doc.text(reunion.empresa_solicitante.nombre.toUpperCase(), x + 65, y);
+            doc.text(reunion.empresa_demandada.nombre.toUpperCase(), x + 120, y);
             doc.line(x - 5, y + 5, 200, y + 5);
             y += 10;
         });
