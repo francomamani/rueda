@@ -149,10 +149,6 @@
       <change afterPath="$PROJECT_DIR$/../../../meg/laravel5.4/resources/views/Materias/crear.blade.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../meg/laravel5.4/resources/views/Materias/editar.blade.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../meg/laravel5.4/resources/views/Materias/listar.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../web/sem22018/clase04-27092018/css/estilos.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../web/sem22018/clase04-27092018/index.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../web/sem22018/clase04-27092018/js/script.js" afterDir="false" />
@@ -208,7 +204,7 @@
     <session id="1797789093">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="33" />
+          <entry key="project.closed" value="34" />
           <entry key="project.open.time.0" value="8" />
           <entry key="project.open.time.1" value="11" />
           <entry key="project.open.time.11" value="2" />
@@ -371,7 +367,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cliente/src/environments/environment.prod.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="77">
+            <state relative-caret-position="264">
               <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
             </state>
           </provider>
@@ -695,12 +691,12 @@
       <workItem from="1546469427087" duration="31137000" />
       <workItem from="1546617153025" duration="18004000" />
       <workItem from="1546645163627" duration="19000" />
-      <workItem from="1546793927134" duration="258000" />
+      <workItem from="1546793927134" duration="513000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="409980000" />
+    <option name="totallyTimeSpent" value="410235000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="6" />
@@ -719,7 +715,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="TypeScript" order="10" weight="0.3294271" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.6953125" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.6953125" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.32902297" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.50143677" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -1105,7 +1101,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cliente/src/environments/environment.prod.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
+        <state relative-caret-position="264">
           <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
         </state>
       </provider>
