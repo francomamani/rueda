@@ -1,158 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/cliente/src/app/shared/empresa-create/empresa-create.component.ts" line="48" />
-    <bookmark url="file://$PROJECT_DIR$/cliente/src/app/@theme/components/header/header.component.scss" line="224" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab89094b-3109-471f-8ab0-f44ae9596c5a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../CURSOS/estudiantes/laravel5.4/resources/views/Persona/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../CURSOS/estudiantes/laravel5.4/resources/views/Persona/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ax/curso-laravel/gestion_documentos/public/css/estilos.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ax/curso-laravel/gestion_documentos/resources/views/Documento/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ax/curso-laravel/gestion_documentos/resources/views/TipoDocumento/crear.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ax/curso-laravel/gestion_documentos/resources/views/TipoDocumento/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ax/curso-laravel/gestion_documentos/resources/views/TipoDocumento/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ax/laravel-angular/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ax/laravel-angular/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/css/estilos.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/css/all.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/css/all.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/css/brands.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/css/brands.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/css/fontawesome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/css/regular.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/css/regular.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/css/solid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/css/solid.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/css/svg-with-js.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/css/svg-with-js.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/css/v4-shims.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/css/v4-shims.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/js/all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/js/all.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/js/brands.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/js/brands.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/js/fontawesome.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/js/fontawesome.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/js/regular.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/js/regular.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/js/solid.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/js/solid.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/js/v4-shims.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/js/v4-shims.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/less/_animated.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/less/_bordered-pulled.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/less/_core.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/less/_fixed-width.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/less/_icons.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/less/_larger.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/less/_list.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/less/_mixins.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/less/_rotated-flipped.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/less/_screen-reader.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/less/_shims.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/less/_stacked.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/less/_variables.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/less/brands.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/less/fontawesome.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/less/regular.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/less/solid.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/less/v4-shims.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/scss/_animated.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/scss/_bordered-pulled.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/scss/_core.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/scss/_fixed-width.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/scss/_icons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/scss/_larger.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/scss/_list.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/scss/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/scss/_rotated-flipped.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/scss/_screen-reader.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/scss/_shims.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/scss/_stacked.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/scss/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/scss/brands.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/scss/regular.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/scss/solid.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/scss/v4-shims.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/ad.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/ankh.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/at.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/atom.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/ban.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/bars.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/bath.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/bed.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/beer.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/bell.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/bold.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/bolt.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/bomb.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/bone.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/bong.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/book.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/box.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/bug.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/burn.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/bus.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/car.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/cat.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/city.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/code.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/cog.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/cogs.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/copy.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/crop.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/crow.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/cube.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/cut.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/deaf.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/dice.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/dna.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/dog.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/dove.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/drum.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/edit.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/eye.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/fax.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/file.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/fill.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/film.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/fire.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/gem.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/hdd.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/key.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/map.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/meh.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/om.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/paw.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/pen.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/poo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/rss.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/spa.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/sun.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/tag.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/th.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/tty.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/public/node_modules/@fortawesome/fontawesome-free/svgs/solid/tv.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/resources/views/CategoriaProducto/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/resources/views/CategoriaProducto/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/resources/views/CategoriaProducto/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/resources/views/Producto/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/resources/views/Producto/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/resources/views/Producto/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de desarrollo de software/sem22018/proyecto/resources/views/documentos/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../fni/taller de graduacion 2/sisinf/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../meg/laravel5.4/resources/views/Materias/crear.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../meg/laravel5.4/resources/views/Materias/editar.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../meg/laravel5.4/resources/views/Materias/listar.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../web/sem22018/clase04-27092018/css/estilos.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../web/sem22018/clase04-27092018/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../web/sem22018/clase04-27092018/js/script.js" afterDir="false" />
+    <list default="true" id="40408e9e-7b60-4657-b5f7-5872be4999db" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/561a95f3-aac1-421b-9a44-f5bf16b6ec78.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/rueda.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/rueda.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/environments/environment.prod.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/index.html" afterDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/../cealm/cliente/node_modules/" />
+    <ignored path="$PROJECT_DIR$/cliente/node_modules/" />
+    <ignored path="$PROJECT_DIR$/../tribunal/oficialia/cliente/node_modules/" />
+    <ignored path="$PROJECT_DIR$/../tribunal/trep/cliente/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +27,9 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/servidor/composer.json</pharConfigPath>
-    <executablePath>composer</executablePath>
+    <execution>
+      <executable />
+    </execution>
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -188,226 +56,142 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="rueda@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="rueda: schema" type="c314c289:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="rueda@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="rueda: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="usuarios: table" type="98d5ac3d:MysqlImplModel$Table" />
+        <item name="rueda: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
     </expand>
     <select />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1797789093">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="34" />
-          <entry key="project.open.time.0" value="8" />
-          <entry key="project.open.time.1" value="11" />
-          <entry key="project.open.time.11" value="2" />
-          <entry key="project.open.time.13" value="4" />
-          <entry key="project.open.time.14" value="3" />
-          <entry key="project.open.time.15" value="3" />
-          <entry key="project.open.time.16" value="2" />
-          <entry key="project.open.time.17" value="4" />
-          <entry key="project.open.time.18" value="3" />
-          <entry key="project.open.time.19" value="3" />
-          <entry key="project.open.time.2" value="1" />
-          <entry key="project.open.time.22" value="1" />
-          <entry key="project.open.time.23" value="3" />
-          <entry key="project.open.time.24" value="1" />
-          <entry key="project.open.time.26" value="2" />
-          <entry key="project.open.time.28" value="1" />
-          <entry key="project.open.time.31" value="1" />
-          <entry key="project.open.time.32" value="1" />
-          <entry key="project.open.time.35" value="1" />
-          <entry key="project.open.time.6" value="2" />
-          <entry key="project.open.time.7" value="3" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="63" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="SCHEMA:rueda" value="9" />
-          <entry key="agendas" value="3" />
-          <entry key="empresas" value="25" />
-          <entry key="env" value="6" />
-          <entry key="horarios" value="3" />
-          <entry key="horarios_ocupados" value="9" />
-          <entry key="htaccess" value="1" />
-          <entry key="html" value="970" />
-          <entry key="jpeg" value="1" />
-          <entry key="js" value="4" />
-          <entry key="json" value="21" />
-          <entry key="mesas" value="1" />
-          <entry key="participantes" value="4" />
-          <entry key="php" value="848" />
-          <entry key="png" value="8" />
-          <entry key="reuniones" value="6" />
-          <entry key="rnc" value="2" />
-          <entry key="rubros" value="1" />
-          <entry key="scss" value="286" />
-          <entry key="sql" value="23" />
-          <entry key="ts" value="1532" />
-          <entry key="users" value="2" />
-          <entry key="usuarios" value="13" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key=".env file" value="6" />
-          <entry key="Database Element" value="67" />
-          <entry key="HTML" value="970" />
-          <entry key="Image" value="9" />
-          <entry key="JSON" value="21" />
-          <entry key="JavaScript" value="4" />
-          <entry key="PHP" value="848" />
-          <entry key="RNG Compact" value="2" />
-          <entry key="SCSS" value="286" />
-          <entry key="Scratch" value="23" />
-          <entry key="TypeScript" value="1532" />
-          <entry key="UML" value="9" />
-          <entry key="htaccess" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.js.language.service.starts">
-        <counts>
-          <entry key="Angular2LanguageService" value="51" />
-          <entry key="TsLintLanguageService" value="47" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="cell" value="22" />
-          <entry key="cell_2" value="88" />
-          <entry key="env" value="2" />
-          <entry key="html" value="23298" />
-          <entry key="json" value="9" />
-          <entry key="php" value="31232" />
-          <entry key="scss" value="4047" />
-          <entry key="sql" value="233" />
-          <entry key="ts" value="30890" />
-          <entry key="txt" value="13" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key=".env file" value="2" />
-          <entry key="HTML" value="23326" />
-          <entry key="JSON" value="9" />
-          <entry key="JavaScript" value="1" />
-          <entry key="PHP" value="31232" />
-          <entry key="PLAIN_TEXT" value="13" />
-          <entry key="SCSS" value="4047" />
-          <entry key="Scratch" value="343" />
-          <entry key="TypeScript" value="30861" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.php.composer.actions">
-        <counts>
-          <entry key="install_from_ComposerEditorNotificationPanel" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="195647006">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.open.time.15" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.js.language.service.starts">
-        <counts>
-          <entry key="Angular2LanguageService" value="1" />
-          <entry key="TsLintLanguageService" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="empresas" value="1" />
-          <entry key="html" value="6" />
-          <entry key="php" value="4" />
-          <entry key="ts" value="15" />
-          <entry key="usuarios" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="Database Element" value="2" />
-          <entry key="HTML" value="6" />
-          <entry key="PHP" value="4" />
-          <entry key="TypeScript" value="15" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="cell_2" value="7" />
-          <entry key="html" value="162" />
-          <entry key="php" value="45" />
-          <entry key="ts" value="204" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="HTML" value="162" />
-          <entry key="PHP" value="45" />
-          <entry key="Scratch" value="7" />
-          <entry key="TypeScript" value="204" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cliente/src/environments/environment.prod.ts">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cliente/src/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+            <state relative-caret-position="187">
+              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cliente/src/app/app.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cliente/src/app/app.module.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="49" selection-start-line="49" selection-end-line="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cliente/angular.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cliente/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="64">
+              <caret line="106" column="33" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4c5874cc-bc82-44e3-b5dd-0e9300fd838d/console.sql">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="uml://DATABASE/4c5874cc-bc82-44e3-b5dd-0e9300fd838d.SCHEMA:rueda">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>DATABASE</ID>
+              <OriginalElement>4c5874cc-bc82-44e3-b5dd-0e9300fd838d.SCHEMA:rueda</OriginalElement>
+              <nodes>
+                <node x="284.0" y="441.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.horarios</node>
+                <node x="1067.0" y="0.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.agendas</node>
+                <node x="0.0" y="794.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.reuniones</node>
+                <node x="608.8333333333333" y="298.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.empresas</node>
+                <node x="592.0" y="838.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.oferta_demandas</node>
+                <node x="829.0" y="805.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.participantes</node>
+                <node x="6.0" y="452.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.mesas</node>
+                <node x="431.0" y="1109.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.password_resets</node>
+                <node x="801.5" y="44.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.rubros</node>
+                <node x="513.5" y="0.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.usuarios</node>
+                <node x="354.0" y="849.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.horarios_ocupados</node>
+                <node x="242.0" y="1109.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.migrations</node>
+                <node x="0.0" y="1109.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.users</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.participantes" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.empresas">
+                  <point x="0.0" y="-124.0" />
+                  <point x="925.5" y="769.0" />
+                  <point x="785.5" y="769.0" />
+                  <point x="70.66666666666663" y="223.0" />
+                </edge>
+                <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.empresas" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.rubros">
+                  <point x="53.0" y="-223.0" />
+                  <point x="767.8333333333333" y="273.0" />
+                  <point x="882.5" y="273.0" />
+                  <point x="0.0" y="80.0" />
+                </edge>
+                <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.oferta_demandas" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.empresas">
+                  <point x="0.0" y="-91.0" />
+                  <point x="700.5" y="769.0" />
+                  <point x="714.8333333333333" y="769.0" />
+                  <point x="0.0" y="223.0" />
+                </edge>
+                <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.empresas" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.usuarios">
+                  <point x="-53.0" y="-223.0" />
+                  <point x="661.8333333333333" y="273.0" />
+                  <point x="647.5" y="273.0" />
+                  <point x="0.0" y="124.0" />
+                </edge>
+                <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.horarios_ocupados" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.horarios">
+                  <point x="-54.5" y="-80.0" />
+                  <point x="41.5" y="80.0" />
+                </edge>
+                <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.reuniones" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.horarios">
+                  <point x="83.5" y="-135.0" />
+                  <point x="250.5" y="769.0" />
+                  <point x="325.5" y="769.0" />
+                  <point x="-41.5" y="80.0" />
+                </edge>
+                <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.horarios_ocupados" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.empresas">
+                  <point x="54.5" y="-80.0" />
+                  <point x="517.5" y="769.0" />
+                  <point x="644.1666666666667" y="769.0" />
+                  <point x="-70.66666666666663" y="223.0" />
+                </edge>
+                <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.reuniones" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.mesas">
+                  <point x="-83.5" y="-135.0" />
+                  <point x="0.0" y="69.0" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="1.1366091522880721" x="1446.5869737199923" y="737.51960879041" />
+              <SelectedNodes />
+              <Categories>
+                <Category>Key columns</Category>
+                <Category>Columns</Category>
+              </Categories>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>ayuda</find>
-      <find>todos</find>
-      <find>canccelar</find>
-      <find>misReunion</find>
-      <find>cancel</find>
-      <find>canele</find>
-      <find>una de</find>
-      <find>la reunion se a</find>
-      <find>agendo</find>
-      <find>con e</find>
-      <find>upda</find>
-      <find>CUENTA</find>
-      <find>UPDATE</find>
-      <find>exti</find>
-      <find>exito</find>
-      <find>espe</find>
-      <find>mis</find>
-      <find>participantes</find>
-      <find>participa</find>
-      <find>mis-</find>
-      <find>empresasreg</find>
-      <find>regis</find>
-      <find>listar</find>
-      <find>buscar</find>
-      <find>agenda</find>
-      <find>mis-reunio</find>
-      <find>misreunion</find>
-      <find>agendas</find>
-      <find>show</find>
-      <find>reuniones</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -415,196 +199,139 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/servidor/app/Http/Controllers/HorarioOcupadoController.php" />
-        <option value="$PROJECT_DIR$/servidor/database/migrations/2018_10_11_022030_create_reunions_table.php" />
-        <option value="C:/wamp64/www/prueba/fechas.php" />
-        <option value="$PROJECT_DIR$/servidor/database/migrations/2018_10_11_001137_create_empresas_table.php" />
-        <option value="$PROJECT_DIR$/servidor/app/Empresa.php" />
-        <option value="$PROJECT_DIR$/cliente/src/app/shared/empresa-create/empresa-create.component.html" />
-        <option value="$PROJECT_DIR$/cliente/src/app/comprobante/comprobante.component.html" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/voucher-modal/voucher-modal.component.html" />
-        <option value="$PROJECT_DIR$/cliente/src/app/comprobante/comprobante.component.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/shared/empresa-create/empresa-create.component.ts" />
-        <option value="$PROJECT_DIR$/servidor/app/Horario.php" />
-        <option value="$PROJECT_DIR$/servidor/app/Http/Controllers/HorarioController.php" />
-        <option value="$PROJECT_DIR$/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.html" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/561a95f3-aac1-421b-9a44-f5bf16b6ec78/console.sql" />
-        <option value="$PROJECT_DIR$/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/admin.module.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/empresa/empresa-index/excel-service.service.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/shared/ayuda-modal/ayuda-modal.component.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/login/login.component.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/shared/empresas-registradas/empresas-registradas.component.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/shared/usuario-edit/usuario-edit.component.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/shared/usuario-edit/usuario-edit.component.html" />
-        <option value="$PROJECT_DIR$/cliente/src/app/empresa/empresa-menu.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/shared/empresa-edit/empresa-edit.component.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.html" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.scss" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/usuario/usuario.service.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/shared/perfil/perfil.component.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/shared/participante/participante.component.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/shared/participante/participante.component.html" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/admin-menu.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/empresa/empresa.service.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/shared/evaluacion-general/evaluacion-general.component.html" />
-        <option value="$PROJECT_DIR$/cliente/src/app/shared/evaluacion-reuniones/evaluacion-reuniones.component.html" />
-        <option value="$PROJECT_DIR$/servidor/app/Http/Controllers/EvaluacionReunionController.php" />
-        <option value="$PROJECT_DIR$/servidor/routes/api.php" />
-        <option value="$PROJECT_DIR$/servidor/app/Http/Controllers/EvaluacionGeneralController.php" />
-        <option value="$PROJECT_DIR$/cliente/src/app/shared/evaluacion-general/evaluacion-general.service.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/reportes/evaluacion-general/evaluacion-general.component.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/reportes/evaluacion-reunion/evaluacion-reunion.component.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/shared/evaluacion-reuniones/evaluacion-reuniones.service.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/usuario/usuario-create/usuario-create.component.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/usuario/usuario-create/usuario-create.component.html" />
-        <option value="$PROJECT_DIR$/servidor/app/Http/Controllers/UsuarioController.php" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/usuario/usuario-index/usuario-index.component.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/usuario/usuario-index/usuario-index.component.html" />
-        <option value="$PROJECT_DIR$/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.ts" />
-        <option value="$PROJECT_DIR$/servidor/app/Http/Controllers/EmpresaController.php" />
-        <option value="$PROJECT_DIR$/cliente/src/app/shared/reuniones-agendadas/reuniones-agendadas.component.ts" />
-        <option value="$PROJECT_DIR$/cliente/src/app/shared/reuniones-agendadas/reuniones-agendadas.component.html" />
-        <option value="$PROJECT_DIR$/cliente/src/environments/environment.prod.ts" />
+        <option value="$PROJECT_DIR$/cliente/src/index.html" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/cliente/node_modules" />
-  </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths>
-      <path value="$PROJECT_DIR$/cliente/package.json" />
-      <path value="$PROJECT_DIR$/servidor/package.json" />
-    </packageJsonPaths>
-  </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
-      <path value="$PROJECT_DIR$/servidor/vendor/league/flysystem" />
-      <path value="$PROJECT_DIR$/servidor/vendor/ramsey/uuid" />
-      <path value="$PROJECT_DIR$/servidor/vendor/fideloper/proxy" />
-      <path value="$PROJECT_DIR$/servidor/vendor/nunomaduro/collision" />
-      <path value="$PROJECT_DIR$/servidor/vendor/paragonie/random_compat" />
-      <path value="$PROJECT_DIR$/servidor/vendor/theseer/tokenizer" />
-      <path value="$PROJECT_DIR$/servidor/vendor/symfony/console" />
-      <path value="$PROJECT_DIR$/servidor/vendor/symfony/process" />
-      <path value="$PROJECT_DIR$/servidor/vendor/symfony/debug" />
-      <path value="$PROJECT_DIR$/servidor/vendor/sebastian/global-state" />
-      <path value="$PROJECT_DIR$/servidor/vendor/symfony/var-dumper" />
-      <path value="$PROJECT_DIR$/servidor/vendor/sebastian/comparator" />
-      <path value="$PROJECT_DIR$/servidor/vendor/phpdocumentor/reflection-docblock" />
-      <path value="$PROJECT_DIR$/servidor/vendor/phpdocumentor/type-resolver" />
-      <path value="$PROJECT_DIR$/servidor/vendor/monolog/monolog" />
-      <path value="$PROJECT_DIR$/servidor/vendor/phpdocumentor/reflection-common" />
-      <path value="$PROJECT_DIR$/servidor/vendor/filp/whoops" />
-      <path value="$PROJECT_DIR$/servidor/vendor/symfony/css-selector" />
-      <path value="$PROJECT_DIR$/servidor/vendor/sebastian/object-reflector" />
-      <path value="$PROJECT_DIR$/servidor/vendor/mockery/mockery" />
-      <path value="$PROJECT_DIR$/servidor/vendor/phar-io/manifest" />
-      <path value="$PROJECT_DIR$/servidor/vendor/symfony/event-dispatcher" />
-      <path value="$PROJECT_DIR$/servidor/vendor/sebastian/resource-operations" />
-      <path value="$PROJECT_DIR$/servidor/vendor/phar-io/version" />
-      <path value="$PROJECT_DIR$/servidor/vendor/symfony/polyfill-ctype" />
-      <path value="$PROJECT_DIR$/servidor/vendor/sebastian/code-unit-reverse-lookup" />
-      <path value="$PROJECT_DIR$/servidor/vendor/symfony/translation" />
-      <path value="$PROJECT_DIR$/servidor/vendor/sebastian/diff" />
-      <path value="$PROJECT_DIR$/servidor/vendor/symfony/polyfill-php72" />
-      <path value="$PROJECT_DIR$/servidor/vendor/sebastian/environment" />
-      <path value="$PROJECT_DIR$/servidor/vendor/symfony/http-kernel" />
-      <path value="$PROJECT_DIR$/servidor/vendor/sebastian/exporter" />
-      <path value="$PROJECT_DIR$/servidor/vendor/symfony/finder" />
-      <path value="$PROJECT_DIR$/servidor/vendor/sebastian/recursion-context" />
-      <path value="$PROJECT_DIR$/servidor/vendor/symfony/routing" />
-      <path value="$PROJECT_DIR$/servidor/vendor/sebastian/object-enumerator" />
-      <path value="$PROJECT_DIR$/servidor/vendor/nesbot/carbon" />
-      <path value="$PROJECT_DIR$/servidor/vendor/symfony/polyfill-mbstring" />
-      <path value="$PROJECT_DIR$/servidor/vendor/sebastian/version" />
-      <path value="$PROJECT_DIR$/servidor/vendor/symfony/http-foundation" />
-      <path value="$PROJECT_DIR$/servidor/vendor/laravel/tinker" />
-      <path value="$PROJECT_DIR$/servidor/vendor/laravel/framework" />
-      <path value="$PROJECT_DIR$/servidor/vendor/composer" />
-      <path value="$PROJECT_DIR$/servidor/vendor/phpunit/php-file-iterator" />
-      <path value="$PROJECT_DIR$/servidor/vendor/webmozart/assert" />
-      <path value="$PROJECT_DIR$/servidor/vendor/swiftmailer/swiftmailer" />
-      <path value="$PROJECT_DIR$/servidor/vendor/phpunit/phpunit" />
-      <path value="$PROJECT_DIR$/servidor/vendor/doctrine/lexer" />
-      <path value="$PROJECT_DIR$/servidor/vendor/phpunit/php-timer" />
-      <path value="$PROJECT_DIR$/servidor/vendor/phpunit/php-text-template" />
-      <path value="$PROJECT_DIR$/servidor/vendor/phpunit/php-token-stream" />
-      <path value="$PROJECT_DIR$/servidor/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/servidor/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/servidor/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/servidor/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/servidor/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/servidor/vendor/doctrine/inflector" />
       <path value="$PROJECT_DIR$/servidor/vendor/beyondcode/laravel-dump-server" />
       <path value="$PROJECT_DIR$/servidor/vendor/phpunit/php-code-coverage" />
-      <path value="$PROJECT_DIR$/servidor/vendor/doctrine/inflector" />
-      <path value="$PROJECT_DIR$/servidor/vendor/phpspec/prophecy" />
       <path value="$PROJECT_DIR$/servidor/vendor/tijsverkoyen/css-to-inline-styles" />
-      <path value="$PROJECT_DIR$/servidor/vendor/vlucas/phpdotenv" />
-      <path value="$PROJECT_DIR$/servidor/vendor/fzaninotto/faker" />
-      <path value="$PROJECT_DIR$/servidor/vendor/opis/closure" />
-      <path value="$PROJECT_DIR$/servidor/vendor/dnoegel/php-xdg-base-dir" />
-      <path value="$PROJECT_DIR$/servidor/vendor/psr/container" />
-      <path value="$PROJECT_DIR$/servidor/vendor/psr/log" />
-      <path value="$PROJECT_DIR$/servidor/vendor/psr/simple-cache" />
-      <path value="$PROJECT_DIR$/servidor/vendor/nikic/php-parser" />
-      <path value="$PROJECT_DIR$/servidor/vendor/egulias/email-validator" />
-      <path value="$PROJECT_DIR$/servidor/vendor/myclabs/deep-copy" />
-      <path value="$PROJECT_DIR$/servidor/vendor/hamcrest/hamcrest-php" />
-      <path value="$PROJECT_DIR$/servidor/vendor/dragonmantank/cron-expression" />
-      <path value="$PROJECT_DIR$/servidor/vendor/jakub-onderka/php-console-highlighter" />
-      <path value="$PROJECT_DIR$/servidor/vendor/jakub-onderka/php-console-color" />
-      <path value="$PROJECT_DIR$/servidor/vendor/psy/psysh" />
-      <path value="$PROJECT_DIR$/servidor/vendor/erusev/parsedown" />
-      <path value="$PROJECT_DIR$/servidor/vendor/symfony/polyfill-php56" />
-      <path value="$PROJECT_DIR$/servidor/vendor/symfony/polyfill-util" />
-      <path value="$PROJECT_DIR$/servidor/vendor/namshi/jose" />
-      <path value="$PROJECT_DIR$/servidor/vendor/tymon/jwt-auth" />
+      <path value="$PROJECT_DIR$/servidor/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/servidor/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/servidor/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/servidor/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/servidor/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/servidor/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/servidor/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/servidor/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/servidor/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/servidor/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/servidor/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/servidor/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/servidor/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/servidor/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/servidor/vendor/composer" />
+      <path value="$PROJECT_DIR$/servidor/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/servidor/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/servidor/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/servidor/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/servidor/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/servidor/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/servidor/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/servidor/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/servidor/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/servidor/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/servidor/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/servidor/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/servidor/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/servidor/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/servidor/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/servidor/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/servidor/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/servidor/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/servidor/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/servidor/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/servidor/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/servidor/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/servidor/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/servidor/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/servidor/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/servidor/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/servidor/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/servidor/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/servidor/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/servidor/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/servidor/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/servidor/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/servidor/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/servidor/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/servidor/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/servidor/vendor/mtdowling/jmespath.php" />
+      <path value="$PROJECT_DIR$/servidor/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/servidor/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/servidor/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/servidor/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/servidor/vendor/fideloper/proxy" />
+      <path value="$PROJECT_DIR$/servidor/vendor/guzzlehttp/psr7" />
       <path value="$PROJECT_DIR$/servidor/vendor/psr/http-message" />
-      <path value="$PROJECT_DIR$/servidor/vendor/paulvl/backup" />
+      <path value="$PROJECT_DIR$/servidor/vendor/tymon/jwt-auth" />
       <path value="$PROJECT_DIR$/servidor/vendor/aws/aws-sdk-php" />
       <path value="$PROJECT_DIR$/servidor/vendor/league/flysystem-aws-s3-v3" />
-      <path value="$PROJECT_DIR$/servidor/vendor/guzzlehttp/guzzle" />
-      <path value="$PROJECT_DIR$/servidor/vendor/mtdowling/jmespath.php" />
-      <path value="$PROJECT_DIR$/servidor/vendor/guzzlehttp/promises" />
-      <path value="$PROJECT_DIR$/servidor/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/servidor/vendor/paulvl/backup" />
+      <path value="$PROJECT_DIR$/servidor/vendor/erusev/parsedown" />
+      <path value="$PROJECT_DIR$/servidor/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/servidor/vendor/namshi/jose" />
+      <path value="$PROJECT_DIR$/servidor/vendor/symfony/polyfill-php56" />
+      <path value="$PROJECT_DIR$/servidor/vendor/symfony/polyfill-util" />
+      <path value="$PROJECT_DIR$/servidor/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/servidor/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/servidor/vendor/jakub-onderka/php-console-highlighter" />
+      <path value="$PROJECT_DIR$/servidor/vendor/jakub-onderka/php-console-color" />
+      <path value="$PROJECT_DIR$/servidor/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/servidor/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/servidor/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/servidor/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/servidor/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/servidor/vendor/nikic/php-parser" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="1540" />
     <option name="height" value="865" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="rueda" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rueda" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rueda" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rueda" type="462c0819:PsiDirectoryNode" />
+              <item name="cliente" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="SearchEverywhereHistoryKey" value="envir&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/environments/environment.prod.ts&#10;empresacontro&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/EmpresaController.php&#10;reunion&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/reuniones-agendadas/reuniones-agendadas.component.html&#10;envi&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/environments/environment.prod.ts&#10;empresaindex&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.ts&#10;empresasregistr&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/empresas-registradas/empresas-registradas.component.ts&#10;empresasregi&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.html&#10;api&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/routes/api.php&#10;reunionesage&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/reuniones-agendadas/reuniones-agendadas.component.html&#10;api.ph&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/routes/api.php&#10;.env&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/.env&#10;usuarioin&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/usuario/usuario-index/usuario-index.component.html&#10;usuariocont&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/UsuarioController.php&#10;empresainde&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.ts&#10;usuarioindex&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/usuario/usuario-index/usuario-index.component.html&#10;usuarioinde&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/usuario/usuario-index/usuario-index.component.ts&#10;usuariocontro&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/UsuarioController.php&#10;usuariotable&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_10_211740_create_usuarios_table.php&#10;usuarioc&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/UsuarioController.php&#10;usuariocreate&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/usuario/usuario-create/usuario-create.component.ts&#10;evaluaciongenera&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/reportes/evaluacion-general/evaluacion-general.component.ts&#10;evaluacionreunionhtml&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/reportes/evaluacion-reunion/evaluacion-reunion.component.html&#10;Evaluacionreunionts&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/evaluacion-reuniones/evaluacion-reuniones.component.ts&#10;evaluacionreunionser&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/evaluacion-reuniones/evaluacion-reuniones.service.ts&#10;evaluaciongeneralservi&#9;null&#9;null&#10;evaluaciongeneralhtml&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/reportes/evaluacion-general/evaluacion-general.component.html&#10;evaluaciongeneralts&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/evaluacion-general/evaluacion-general.component.ts&#10;general&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/EvaluacionGeneralController.php&#10;evaluacionreuniontabl&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/database/migrations/2018_10_19_180028_create_evaluacion_reunions_table.php&#10;evaluacionreunion&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/reportes/evaluacion-reunion/evaluacion-reunion.component.html&#10;evaluacionreunioncon&#9;null&#9;null&#10;api.php&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/routes/api.php&#10;evaluaciontable&#9;null&#9;null&#10;evaluaciongeneracontro&#9;null&#9;null&#10;empresaser&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa.service.ts&#10;admin-menu&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/admin-menu.ts&#10;Empresacontro&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/EmpresaController.php&#10;participan&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/participante/participante.component.ts&#10;empresame&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/empresa-menu.ts&#10;perfil&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/perfil/perfil.component.ts&#10;empresaserv&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/empresa/empresa.service.ts&#10;usuarioser&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/admin/usuario/usuario.service.ts&#10;authcontro&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Http/Controllers/AuthController.php&#10;authser&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/auth.service.ts&#10;login&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/login/login.component.ts&#10;empresaedi&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/shared/empresa-edit/empresa-edit.component.ts&#10;empresamenu&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/cliente/src/app/empresa/empresa-menu.ts&#10;usuario.php&#9;FILE&#9;file://C:/Users/HP User/Documents/trabajos/campoferial/rueda/servidor/app/Usuario.php&#10;usuarioedit&#9;null&#9;null" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="database.console.LAST_STATE" value="false" />
-    <property name="full.screen.before.presentation.mode" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/cliente/src/app/shared" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.tslint" value="C:\Users\HP User\Documents\trabajos\campoferial\rueda\cliente\node_modules\tslint" />
+    <property name="editor.config.ad.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.stylelint" value="true" />
+    <property name="node.js.path.for.package.stylelint" value="project" />
+    <property name="node.js.selected.package.stylelint" value="$PROJECT_DIR$/cliente/node_modules/stylelint" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="watcher.settings" />
-    <property name="ts.external.directory.path" value="C:\Users\HP User\Documents\trabajos\campoferial\rueda\cliente\node_modules\typescript\lib" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\HP User\Documents\trabajos\campoferial\rueda\cliente\src\app\shared" />
-      <recent name="C:\Users\HP User\Documents\trabajos\campoferial\rueda\cliente\src\app\empresa\agenda" />
-    </key>
+    <property name="ts.external.directory.path" value="C:\Users\HP User\Documents\trabajos\gotasoft\rueda\cliente\node_modules\typescript\lib" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -623,90 +350,29 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ab89094b-3109-471f-8ab0-f44ae9596c5a" name="Default Changelist" comment="" />
-      <created>1539230364906</created>
+      <changelist id="40408e9e-7b60-4657-b5f7-5872be4999db" name="Default Changelist" comment="" />
+      <created>1571193776102</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1539230364906</updated>
-      <workItem from="1539230368069" duration="1358000" />
-      <workItem from="1539287759690" duration="1145000" />
-      <workItem from="1539308898496" duration="16531000" />
-      <workItem from="1539352426705" duration="15963000" />
-      <workItem from="1539369731169" duration="6014000" />
-      <workItem from="1539405712373" duration="8811000" />
-      <workItem from="1539434142404" duration="3840000" />
-      <workItem from="1539562355543" duration="6660000" />
-      <workItem from="1539570033015" duration="709000" />
-      <workItem from="1539571047687" duration="28701000" />
-      <workItem from="1539655223759" duration="5516000" />
-      <workItem from="1539711757665" duration="12392000" />
-      <workItem from="1539731598913" duration="28241000" />
-      <workItem from="1539783768018" duration="4191000" />
-      <workItem from="1539792259594" duration="6743000" />
-      <workItem from="1539813182487" duration="1611000" />
-      <workItem from="1539891127220" duration="14150000" />
-      <workItem from="1539956180129" duration="8093000" />
-      <workItem from="1539964809096" duration="4982000" />
-      <workItem from="1539970583704" duration="38493000" />
-      <workItem from="1540172525573" duration="1997000" />
-      <workItem from="1540177703551" duration="1695000" />
-      <workItem from="1540220249501" duration="20000" />
-      <workItem from="1540326316388" duration="14158000" />
-      <workItem from="1540340712169" duration="278000" />
-      <workItem from="1540347457440" duration="1868000" />
-      <workItem from="1540392572124" duration="6288000" />
-      <workItem from="1540409517241" duration="189000" />
-      <workItem from="1540410100649" duration="129000" />
-      <workItem from="1540412570989" duration="6034000" />
-      <workItem from="1540487482473" duration="4948000" />
-      <workItem from="1540497607635" duration="1317000" />
-      <workItem from="1540502702513" duration="1574000" />
-      <workItem from="1540522158825" duration="14000" />
-      <workItem from="1540561267924" duration="9896000" />
-      <workItem from="1540586776525" duration="3220000" />
-      <workItem from="1540591609069" duration="1033000" />
-      <workItem from="1541422019124" duration="6426000" />
-      <workItem from="1541515998282" duration="3574000" />
-      <workItem from="1541685811909" duration="78000" />
-      <workItem from="1541695680969" duration="3515000" />
-      <workItem from="1541855956492" duration="3135000" />
-      <workItem from="1541946301544" duration="15000" />
-      <workItem from="1542026307129" duration="5866000" />
-      <workItem from="1542061596181" duration="8743000" />
-      <workItem from="1542111546179" duration="1408000" />
-      <workItem from="1542113433029" duration="1249000" />
-      <workItem from="1542132821105" duration="11000" />
-      <workItem from="1542136374775" duration="1281000" />
-      <workItem from="1542154304460" duration="59000" />
-      <workItem from="1542155541603" duration="517000" />
-      <workItem from="1542157351908" duration="29000" />
-      <workItem from="1542245346093" duration="115000" />
-      <workItem from="1542728366507" duration="631000" />
-      <workItem from="1544125942683" duration="280000" />
-      <workItem from="1544190612774" duration="151000" />
-      <workItem from="1546010934357" duration="19403000" />
-      <workItem from="1546034488726" duration="1870000" />
-      <workItem from="1546117019178" duration="541000" />
-      <workItem from="1546375607832" duration="32863000" />
-      <workItem from="1546469427087" duration="31137000" />
-      <workItem from="1546617153025" duration="18004000" />
-      <workItem from="1546645163627" duration="19000" />
-      <workItem from="1546793927134" duration="513000" />
+      <updated>1571193776102</updated>
+      <workItem from="1571193777430" duration="1317000" />
+      <workItem from="1571242817848" duration="457000" />
+      <workItem from="1571980044650" duration="1412000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="410235000" />
+    <option name="totallyTimeSpent" value="3186000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="768" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.26625386" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.24963397" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.24963397" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.69401044" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -714,395 +380,130 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="TypeScript" order="10" weight="0.3294271" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.6953125" />
-      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.32902297" />
-      <window_info anchor="bottom" id="Database Console" order="13" weight="0.50143677" />
+      <window_info anchor="bottom" id="TypeScript" order="10" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.62085307" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" weight="0.3477306" />
+      <window_info anchor="right" id="Database" order="3" weight="0.329429" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.26626325" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.24963397" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.69401044" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="TypeScript" order="10" weight="0.3294271" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.6968391" />
-      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.32902297" />
-      <window_info anchor="bottom" id="Database Console" order="13" weight="0.50143677" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.34795764" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-    <option name="exactExcludedFiles">
-      <list>
-        <option value="$PROJECT_DIR$/cliente/node_modules/karma/config.tpl.js" />
-      </list>
-    </option>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/ayuda-modal/ayuda-modal.component.html">
+    <entry file="file://$PROJECT_DIR$/cliente/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/angular.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="106" column="33" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4c5874cc-bc82-44e3-b5dd-0e9300fd838d/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/node_modules/@ng-bootstrap/ng-bootstrap/modal/modal-ref.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/ayuda-modal/ayuda-modal.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/app/Usuario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/usuario-edit/usuario-edit.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/usuario-edit/usuario-edit.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/empresa-edit/empresa-edit.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="72" column="52" selection-start-line="72" selection-start-column="52" selection-end-line="72" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="44" column="12" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/login/login.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="84" column="60" selection-start-line="84" selection-start-column="60" selection-end-line="84" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/auth.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/app/Http/Controllers/AuthController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/perfil/perfil.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="21" column="63" selection-start-line="21" selection-start-column="63" selection-end-line="21" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/perfil/perfil.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="924">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/empresa/empresa-menu.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1089">
-          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/participante/participante.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2607">
-          <caret line="79" column="39" selection-start-line="79" selection-start-column="39" selection-end-line="79" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/participante/participante.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/admin-menu.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="74" column="6" selection-start-line="53" selection-start-column="2" selection-end-line="74" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/database/migrations/2018_10_19_121153_create_evaluacion_generals_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/evaluacion-general/evaluacion-general.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="127" column="21" selection-start-line="127" selection-start-column="21" selection-end-line="127" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/database/migrations/2018_10_19_180028_create_evaluacion_reunions_table.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/evaluacion-reuniones/evaluacion-reuniones.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="166" column="29" lean-forward="true" selection-start-line="166" selection-start-column="29" selection-end-line="166" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/app/Http/Controllers/EvaluacionReunionController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="56" column="65" lean-forward="true" selection-start-line="56" selection-start-column="65" selection-end-line="56" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/app/Http/Controllers/EvaluacionGeneralController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="78" column="45" selection-start-line="78" selection-start-column="45" selection-end-line="78" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/reportes/evaluacion-general/evaluacion-general.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="67" selection-start-line="5" selection-start-column="67" selection-end-line="5" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/evaluacion-general/evaluacion-general.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/evaluacion-reuniones/evaluacion-reuniones.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="84" selection-start-line="84" selection-end-line="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/reportes/evaluacion-reunion/evaluacion-reunion.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="70" selection-start-line="4" selection-start-column="70" selection-end-line="4" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/evaluacion-general/evaluacion-general.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="107" selection-start-line="107" selection-end-line="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/reportes/evaluacion-general/evaluacion-general.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="81" column="51" selection-start-line="81" selection-start-column="51" selection-end-line="81" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/evaluacion-reuniones/evaluacion-reuniones.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/reportes/evaluacion-reunion/evaluacion-reunion.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="68" column="9" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/usuario/usuario.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/database/migrations/2018_10_10_211740_create_usuarios_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/usuario/usuario-create/usuario-create.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/usuario/usuario-create/usuario-create.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="54" column="63" selection-start-line="54" selection-start-column="63" selection-end-line="54" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="56" column="43" selection-start-line="56" selection-start-column="43" selection-end-line="56" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/app/Http/Controllers/UsuarioController.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/usuario/usuario-index/usuario-index.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="47" column="16" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/usuario/usuario-index/usuario-index.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1221">
-          <caret line="37" column="22" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/empresa/empresa.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2013">
-          <caret line="63" column="4" selection-start-line="63" selection-start-column="4" selection-end-line="63" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/app/Http/Controllers/EmpresaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5709">
-          <caret line="183" column="65" selection-start-line="183" selection-start-column="65" selection-end-line="183" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/reuniones-agendadas/reuniones-agendadas.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/reuniones-agendadas/reuniones-agendadas.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1320">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/reuniones-agendadas/reuniones-agendadas.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="957">
-          <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7722">
-          <caret line="245" column="44" selection-start-line="245" selection-start-column="44" selection-end-line="245" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/empresa/agenda/empresas-registradas/empresas-registradas.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1452">
-          <caret line="44" column="53" selection-start-line="44" selection-start-column="53" selection-end-line="44" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/shared/empresas-registradas/empresas-registradas.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
+    <entry file="uml://DATABASE/4c5874cc-bc82-44e3-b5dd-0e9300fd838d.SCHEMA:rueda">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/environments/environment.prod.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <ID>DATABASE</ID>
+          <OriginalElement>4c5874cc-bc82-44e3-b5dd-0e9300fd838d.SCHEMA:rueda</OriginalElement>
+          <nodes>
+            <node x="284.0" y="441.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.horarios</node>
+            <node x="1067.0" y="0.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.agendas</node>
+            <node x="0.0" y="794.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.reuniones</node>
+            <node x="608.8333333333333" y="298.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.empresas</node>
+            <node x="592.0" y="838.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.oferta_demandas</node>
+            <node x="829.0" y="805.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.participantes</node>
+            <node x="6.0" y="452.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.mesas</node>
+            <node x="431.0" y="1109.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.password_resets</node>
+            <node x="801.5" y="44.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.rubros</node>
+            <node x="513.5" y="0.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.usuarios</node>
+            <node x="354.0" y="849.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.horarios_ocupados</node>
+            <node x="242.0" y="1109.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.migrations</node>
+            <node x="0.0" y="1109.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.users</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.participantes" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.empresas">
+              <point x="0.0" y="-124.0" />
+              <point x="925.5" y="769.0" />
+              <point x="785.5" y="769.0" />
+              <point x="70.66666666666663" y="223.0" />
+            </edge>
+            <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.empresas" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.rubros">
+              <point x="53.0" y="-223.0" />
+              <point x="767.8333333333333" y="273.0" />
+              <point x="882.5" y="273.0" />
+              <point x="0.0" y="80.0" />
+            </edge>
+            <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.oferta_demandas" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.empresas">
+              <point x="0.0" y="-91.0" />
+              <point x="700.5" y="769.0" />
+              <point x="714.8333333333333" y="769.0" />
+              <point x="0.0" y="223.0" />
+            </edge>
+            <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.empresas" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.usuarios">
+              <point x="-53.0" y="-223.0" />
+              <point x="661.8333333333333" y="273.0" />
+              <point x="647.5" y="273.0" />
+              <point x="0.0" y="124.0" />
+            </edge>
+            <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.horarios_ocupados" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.horarios">
+              <point x="-54.5" y="-80.0" />
+              <point x="41.5" y="80.0" />
+            </edge>
+            <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.reuniones" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.horarios">
+              <point x="83.5" y="-135.0" />
+              <point x="250.5" y="769.0" />
+              <point x="325.5" y="769.0" />
+              <point x="-41.5" y="80.0" />
+            </edge>
+            <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.horarios_ocupados" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.empresas">
+              <point x="54.5" y="-80.0" />
+              <point x="517.5" y="769.0" />
+              <point x="644.1666666666667" y="769.0" />
+              <point x="-70.66666666666663" y="223.0" />
+            </edge>
+            <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.reuniones" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.mesas">
+              <point x="-83.5" y="-135.0" />
+              <point x="0.0" y="69.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.1366091522880721" x="1446.5869737199923" y="737.51960879041" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
         </state>
       </provider>
     </entry>
