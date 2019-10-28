@@ -791,7 +791,11 @@ class EmpresaController extends Controller
     }
     public function conMaterial($empresa_id) {
         $empresa = Empresa::find($empresa_id);
-        $empresa->con_material = 'si';
+        if($empresa->con_material === 'si') {
+            $empresa->con_material = 'no';
+        } else {
+            $empresa->con_material = 'si';
+        }
         $empresa->save();
         return response()->json([
             'exito' => 'Con material'

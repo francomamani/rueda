@@ -258,11 +258,22 @@ export class EmpresaIndexComponent implements OnInit {
           });
     }
     conMaterial(empresa: any) {
-      if (confirm(`¿Esta seguro de asignar materiales a ${empresa.nombre}?`)) {
-        this.empresaService.conMaterial(empresa.empresa_id)
-          .subscribe((res: any) => {
-            this.toastr.success('Asignación exitosa de materiales', 'Éxito');
-          });
+      if (empresa.con_material === 'si') {
+        if (confirm(`¿Esta seguro de la devolución de material de ${empresa.nombre}?`)) {
+          this.empresaService.conMaterial(empresa.empresa_id)
+            .subscribe((res: any) => {
+              this.reload();
+              this.toastr.success('Asignación exitosa de materiales', 'Éxito');
+            });
+        }
+      } else {
+        if (confirm(`¿Esta seguro de asignar materiales a ${empresa.nombre}?`)) {
+          this.empresaService.conMaterial(empresa.empresa_id)
+            .subscribe((res: any) => {
+              this.reload();
+              this.toastr.success('Asignación exitosa de materiales', 'Éxito');
+            });
+        }
       }
     }
 }
