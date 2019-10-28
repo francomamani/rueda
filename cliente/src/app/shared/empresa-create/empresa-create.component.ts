@@ -19,8 +19,8 @@ export class EmpresaCreateComponent implements OnInit {
   @ViewChild('voucher') voucher;
   rubros: any = null;
   empresaGroup: FormGroup;
-  mensaje = '';
-  error = '';
+  mensaje = null;
+  error = null;
   constructor(private rubroService: RubroService,
               private empresaService: EmpresaService,
               private authService: AuthService,
@@ -80,12 +80,15 @@ export class EmpresaCreateComponent implements OnInit {
 
   store() {
       const activeModal = this.modalService.open(LoadModalComponent, { size: 'sm', container: 'nb-layout' });
+      this.empresaGroup.patchValue({
+        password: this.empresaGroup.value.nit,
+        repeated_password: this.empresaGroup.value.nit
+      });
       if ( this.empresaGroup.value.password === this.empresaGroup.value.repeated_password) {
           this.empresaGroup.patchValue({
               'habilitado': this.empresaGroup.value.habilitado === 1 ? '1' : '0',
               'especial': this.empresaGroup.value.especial === 1 ? '1' : '0',
           });
-
         if (this.logo.nativeElement.files[0]) {
           const formData = new FormData();
           if (this.voucher.nativeElement.files[0]) {
@@ -192,7 +195,7 @@ export class EmpresaCreateComponent implements OnInit {
                       activeModal.dismiss();
                   });
           }
-      }else {
+      } else {
           this.mensaje = '';
           this.error = 'Las contraseñas no coinciden';
           this.toastr.danger('Las contraseñas no coinciden', 'Error de Registro');

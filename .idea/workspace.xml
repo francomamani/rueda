@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="40408e9e-7b60-4657-b5f7-5872be4999db" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/environments/environment.prod.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servidor/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/shared/empresa-create/empresa-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/shared/empresa-create/empresa-create.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/shared/empresa-create/empresa-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/shared/empresa-create/empresa-create.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servidor/app/Http/Controllers/EmpresaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/app/Http/Controllers/EmpresaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servidor/database/migrations/2018_10_10_211740_create_usuarios_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/database/migrations/2018_10_10_211740_create_usuarios_table.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,6 +46,13 @@
         <item name="rueda@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="rueda: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="rueda@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="rueda: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="empresas: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -200,7 +209,7 @@
       <workItem from="1571193777430" duration="1317000" />
       <workItem from="1571242817848" duration="457000" />
       <workItem from="1571980044650" duration="1412000" />
-      <workItem from="1572224865191" duration="7953000" />
+      <workItem from="1572224865191" duration="10268000" />
     </task>
     <servers />
   </component>

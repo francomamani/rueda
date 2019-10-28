@@ -17,7 +17,7 @@ class CreateUsuariosTable extends Migration
             $table->increments('usuario_id');
             $table->string('nombres');
             $table->string('apellidos');
-            $table->string('cuenta')->unique();
+            $table->string('cuenta');
             $table->string('email')->nullable();
             $table->string('telefono_celular');
             $table->string('whatsapp');

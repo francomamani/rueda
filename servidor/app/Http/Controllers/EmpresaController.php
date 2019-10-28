@@ -75,14 +75,14 @@ class EmpresaController extends Controller
     public function store(Request $request)
     {
         $usuario = [
-            'nombres' => $request->input('nombres'),
-            'apellidos' => $request->input('apellidos'),
+            'nombres' => $request->input('p1_nombres'),
+            'apellidos' => $request->input('p1_apellidos'),
             'email' => $request->input('email'),
-            'cuenta' => $request->input('cuenta'),
-            'telefono_celular' => $request->input('telefono_celular'),
-            'whatsapp' => $request->input('whatsapp'),
+            'cuenta' => $request->input('p1_carnet'),
+            'telefono_celular' => $request->input('p1_celular'),
+            'whatsapp' => $request->input('p1_celular'),
             'tipo_usuario' => 'empresa',
-            'password' => Hash::make($request->input('password')),
+            'password' => Hash::make($request->input('nit')),
         ];
 
         if ($request->hasFile('logo')){
