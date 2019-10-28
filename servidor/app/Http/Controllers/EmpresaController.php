@@ -716,9 +716,8 @@ class EmpresaController extends Controller
         return response()->json($empresa, 200);
     }
 
-    public function voucher($empresa_id) {
-        $empresa = Empresa::find($empresa_id);
-        return response()->file(storage_path('app/' . $empresa->voucher));
+    public function voucher($voucher) {
+        return response()->file(storage_path('app/' . $voucher));
     }
 
     public function subirComprobante($empresa_id) {

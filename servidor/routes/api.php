@@ -68,7 +68,7 @@ Route::post('agendar', 'EmpresaController@agendar');
 
 
 Route::get('habilitar/{empresa_id}', 'EmpresaController@habilitar');
-Route::get('voucher/{empresa_id}', 'EmpresaController@voucher');
+Route::get('voucher/{voucher}', 'EmpresaController@voucher');
 Route::post('subir-comprobante/{empresa_id}', 'EmpresaController@subirComprobante');
 
 Route::get('mi-lista-habilitados/{empresa_id}', 'EmpresaController@miListaHabilitados');
