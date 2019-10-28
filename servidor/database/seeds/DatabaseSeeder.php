@@ -168,26 +168,26 @@ class DatabaseSeeder extends Seeder
             ]);
         }
         $usuarioAdmin = [
-            'nombres' => 'Franco Jesus',
-            'apellidos' => 'Mamani Pozo',
-            'email' => 'admin@admin.com',
-            'cuenta' => '7275047',
-            'telefono_celular' => '76137653',
-            'whatsapp' => '76137653',
-            'password' => Hash::make('7275047016')
+            'nombres' => 'Andrea Luisa',
+            'apellidos' => 'Silvestre Lobo',
+            'email' => 'asilvestre@campoferial3dejulio.com',
+            'cuenta' => 'andrea',
+            'telefono_celular' => '61836193',
+            'whatsapp' => '61836193',
+            'password' => Hash::make('7287697')
         ];
         Usuario::create($usuarioAdmin);
 
 
         $usuario = [
-            'nombres' => 'Alizon Dayana',
-            'apellidos' => 'Luna Sullcata',
-            'email' => 'aliday@gmail.com',
+            'nombres' => 'Andrea Luisa',
+            'apellidos' => 'Silvestre Lobo',
+            'email' => 'asilvestre@campoferial3dejulio.com',
             'tipo_usuario' => 'empresa',
-            'cuenta' => 'empresa',
-            'telefono_celular' => '7355655',
-            'whatsapp' => '7355655',
-            'password' => Hash::make('7355655')
+            'cuenta' => 'luisa',
+            'telefono_celular' => '61836193',
+            'whatsapp' => '61836193',
+            'password' => Hash::make('7287697')
         ];
 
         $empresa = [
@@ -195,34 +195,34 @@ class DatabaseSeeder extends Seeder
             'usuario_id' => Usuario::create($usuario)->usuario_id,
             'nombre' => 'Campo Ferial 3 de Julio',
             'logo' => null,
-            'direccion' => 'Calle Hugo Bohero #650',
-            'telefono' => '(591) 761 37653',
-            'pagina_web' => 'www.francomamani.com',
+            'direccion' => 'AV. CIRCUNVALACIÓN Y PROLONGACIÓN ESPAÑA',
+            'telefono' => '5266111',
+            'pagina_web' => 'campoferial3dejulio.com',
             'ciudad_localidad' => 'Oruro',
-            'nit' => '7275047016',
-            'representante_legal' => 'Franco Jesus Mamani Pozo',
+            'nit' => '281488020',
+            'representante_legal' => 'ROCIO VILLCA QUISPE',
             'habilitado' => true,
             'max_participantes' => 2,
-            'oferta' => 'Servicios Software',
-            'demanda' => 'Requerimientos empresariales',
+            'oferta' => 'Otros',
+            'demanda' => 'Empresas',
             'especial' => true,
         ];
         $empresaModel = Empresa::create($empresa);
         Participante::create([
             'empresa_id' => $empresaModel->empresa_id,
-            'nombres' => 'Marcelo',
-            'apellidos' => 'Zenteno Rafael',
-            'carnet' => '123456789',
-            'celular' => '69586290',
-            'cargo' => 'Admnistrador Gerente',
+            'nombres' => 'Andrea Luisa',
+            'apellidos' => 'Silvestre Lobo',
+            'carnet' => '7287697',
+            'celular' => '61836193',
+            'cargo' => 'SISTEMAS',
         ]);
-        Participante::create([
+/*        Participante::create([
             'empresa_id' => $empresaModel->empresa_id,
             'nombres' => 'Pamela',
             'apellidos' => 'León Mamani',
             'carnet' => '123456789',
             'celular' => '74464355',
             'cargo' => 'Administrativo',
-        ]);
+        ]);*/
     }
 }
