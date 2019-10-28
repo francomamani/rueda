@@ -17,4 +17,8 @@ export class OfertaDemandaService {
   demandas() {
     return this.http.get(`${this.base}demandas`);
   }
+
+  store(data: any) {
+    return this.http.post(`${this.base}oferta-demandas`, data);
+  }
 }

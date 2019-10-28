@@ -10,11 +10,11 @@
       </legend>
       <div class="form-group">
         <label for="cuenta">Cuenta</label>
-        <input type="text" id="cuenta" #cuenta class="form-control" formControlName="cuenta" name="cuenta" id="cuenta" placeholder="Cuenta">
+        <input type="text" id="cuenta" #cuenta class="form-control" formControlName="cuenta" name="cuenta" id="cuenta" placeholder="Ingrese su primer nombre en minúsculas">
       </div>
       <div class="form-group">
         <label for="password">Contraseña</label>
-        <input type="password" id="password" class="form-control" formControlName="password" name="password" id="password" placeholder="Contraseña">
+        <input type="password" id="password" class="form-control" formControlName="password" name="password" id="password" placeholder="Ingrese su número de carnet">
       </div>
       <div class="text-center">
         <button type="submit" [disabled]="loginGroup.status === 'INVALID'" class="btn-login">Ingresar</button>

@@ -1,7 +1,7 @@
 <nb-card>
   <nb-card-header>
-    <span *ngIf="tipo === 'oferta'">Ofertas</span>
-    <span *ngIf="tipo === 'demanda'">Demandas</span>
+    <button class="btn btn-primary" (click)="getOfertas()" [disabled]="tipo === 'oferta'">Ofertas</button> &nbsp;&nbsp;
+    <button class="btn btn-warning" (click)="getDemandas()" [disabled]="tipo === 'demanda'">Demandas</button>
   </nb-card-header>
   <nb-card-body>
     <form (submit)="store()">
@@ -16,10 +16,8 @@
           </div>
         </div>
         <div class="col-lg-4">
-          <button class="btn btn-primary btn-block">GUARDAR
-            <span *ngIf="tipo === 'oferta'">OFERTA</span>
-            <span *ngIf="tipo === 'demanda'">DEMANDA</span>
-          </button>
+          <button type="submit" class="btn btn-primary btn-block" *ngIf="tipo === 'oferta'">GUARDAR OFERTA</button>
+          <button type="submit" class="btn btn-warning btn-block" *ngIf="tipo === 'demanda'">GUARDAR DEMANDA</button>
         </div>
       </div>
     </form>

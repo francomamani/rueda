@@ -19,18 +19,31 @@ export class OfertaDemandaComponent implements OnInit {
       });
   }
   ngOnInit() {
-    console.log(this.usuario);
   }
   getOfertas() {
-    this.ofertaDemandaService.ofertas()
-      .subscribe((res: any) => {
-        this.oferta_demandas = res;
-      });
+    if (confirm('¿Esta seguro de cambiar a ofertas?')) {
+      this.tipo = 'oferta';
+      this.ofertaDemandaService.ofertas()
+        .subscribe((res: any) => {
+          this.oferta_demandas = res;
+        });
+    }
   }
   getDemandas() {
-    this.ofertaDemandaService.demandas()
-      .subscribe((res: any) => {
-        this.oferta_demandas = res;
-      });
+    if (confirm('¿Esta seguro de cambiar a demandas?')) {
+      this.tipo = 'demanda';
+      this.ofertaDemandaService.demandas()
+        .subscribe((res: any) => {
+          this.oferta_demandas = res;
+        });
+    }
+  }
+
+  store() {
+    const data = {
+      empresa_id: this.usuario.empresa_id,
+      tipo: this.tipo,
+      descripcion: this.descripcion,
+    };
   }
 }

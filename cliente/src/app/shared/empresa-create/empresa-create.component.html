@@ -31,7 +31,7 @@
               </div>
               <div class="col-sm-4 form-group">
                 <label for="nombre">Nombre de la empresa</label>
-                <input type="text" id="nombre" class="form-control" formControlName="nombre" name="nombre" placeholder="Empresa">
+                <input type="text" oninput="this.value = this.value.toUpperCase()" id="nombre" class="form-control" formControlName="nombre" name="nombre" placeholder="Empresa">
                 <div class="alert alert-danger"
                      *ngIf="empresaGroup.get('nombre').status === 'INVALID' && empresaGroup.get('nombre').dirty">
                   <strong>El nombre de la empresa es obligatorio</strong>
@@ -39,7 +39,7 @@
               </div>
               <div class="col-sm-4 form-group">
                 <label for="nit">NIT</label>
-                <input type="text" id="nit" class="form-control" formControlName="nit" name="nit" placeholder="NIT">
+                <input type="text" oninput="this.value = this.value.toUpperCase()" id="nit" class="form-control" formControlName="nit" name="nit" placeholder="NIT">
                 <div class="alert alert-danger"
                      *ngIf="empresaGroup.get('nit').status === 'INVALID'&& empresaGroup.get('nit').dirty">
                   <strong>Registrar el NIT es obligatorio</strong>
@@ -53,7 +53,7 @@
               </div>
               <div class="col-sm-4 form-group">
                 <label for="ciudad_localidad">Ciudad/Localidad</label>
-                <input type="text" id="ciudad_localidad" class="form-control" formControlName="ciudad_localidad" name="ciudad_localidad" placeholder="Ciudad o Localidad">
+                <input type="text" oninput="this.value = this.value.toUpperCase()" id="ciudad_localidad" class="form-control" formControlName="ciudad_localidad" name="ciudad_localidad" placeholder="Ciudad o Localidad">
                 <div class="alert alert-danger"
                      *ngIf="empresaGroup.get('ciudad_localidad').status === 'INVALID' && empresaGroup.get('ciudad_localidad').dirty">
                   <strong>Ingresa la ciudad o localidad de la empresa</strong>
@@ -61,7 +61,7 @@
               </div>
               <div class="col-sm-4 form-group">
                 <label for="direccion">Dirección</label>
-                <input type="text" id="direccion" class="form-control" formControlName="direccion" name="direccion" placeholder="Direccion">
+                <input type="text" oninput="this.value = this.value.toUpperCase()" id="direccion" class="form-control" formControlName="direccion" name="direccion" placeholder="Direccion">
                 <div class="alert alert-danger"
                      *ngIf="empresaGroup.get('direccion').status === 'INVALID' && empresaGroup.get('direccion').dirty">
                   <strong>La direccion de la empresa es obligatoria</strong>
@@ -69,7 +69,7 @@
               </div>
               <div class="col-sm-6 form-group">
                 <label for="representante_legal">Representante legal</label>
-                <input type="text" id="representante_legal" class="form-control" formControlName="representante_legal" name="representante_legal" placeholder="Representante Legal">
+                <input type="text" oninput="this.value = this.value.toUpperCase()" id="representante_legal" class="form-control" formControlName="representante_legal" name="representante_legal" placeholder="Representante Legal">
                 <div class="alert alert-danger"
                      *ngIf="empresaGroup.get('representante_legal').status === 'INVALID' && empresaGroup.get('representante_legal').dirty">
                   <strong>El representante legal de la empresa es obligatoria</strong>
@@ -86,7 +86,7 @@
             <div class="row">
               <div class="col-sm-4 form-group">
                 <label for="p1_nombres">Nombres</label>
-                <input type="text" class="form-control" id="p1_nombres" formControlName="p1_nombres">
+                <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" id="p1_nombres" formControlName="p1_nombres">
                 <div class="alert alert-danger"
                      *ngIf="empresaGroup.get('p1_nombres').status === 'INVALID' && empresaGroup.get('p1_nombres').dirty">
                   <strong>Los nombres son obligatorios</strong>
@@ -94,7 +94,7 @@
               </div>
               <div class="col-sm-4 form-group">
                 <label for="p1_apellidos">Apellidos</label>
-                <input type="text" class="form-control" id="p1_apellidos" formControlName="p1_apellidos">
+                <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" id="p1_apellidos" formControlName="p1_apellidos">
                 <div class="alert alert-danger"
                      *ngIf="empresaGroup.get('p1_apellidos').status === 'INVALID' && empresaGroup.get('p1_apellidos').dirty">
                   <strong>Los apellidos son obligatorios</strong>
@@ -102,7 +102,7 @@
               </div>
               <div class="col-sm-4 form-group">
                 <label for="p1_carnet">Carnet</label>
-                <input type="text" class="form-control" id="p1_carnet" formControlName="p1_carnet">
+                <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" id="p1_carnet" formControlName="p1_carnet">
                 <div class="alert alert-danger"
                      *ngIf="empresaGroup.get('p1_carnet').status === 'INVALID' && empresaGroup.get('p1_carnet').dirty">
                   <strong>El carnet del participante es obligatorio</strong>
@@ -110,7 +110,7 @@
               </div>
               <div class="col-sm-4 form-group">
                 <label for="p1_celular">Celular</label>
-                <input type="text" class="form-control" id="p1_celular" formControlName="p1_celular">
+                <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" id="p1_celular" formControlName="p1_celular">
                 <div class="alert alert-danger"
                      *ngIf="empresaGroup.get('p1_celular').status === 'INVALID' && empresaGroup.get('p1_celular').dirty">
                   <strong>El celular del participante es obligatorio</strong>
@@ -118,7 +118,7 @@
               </div>
               <div class="col-sm-4 form-group">
                 <label for="p1_cargo">Cargo en la Empresa</label>
-                <input type="text" class="form-control" id="p1_cargo" formControlName="p1_cargo">
+                <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" id="p1_cargo" formControlName="p1_cargo">
                 <div class="alert alert-danger"
                      *ngIf="empresaGroup.get('p1_cargo').status === 'INVALID' && empresaGroup.get('p1_cargo').dirty">
                   <strong>El cargo del participante es obligatorio</strong>
@@ -132,7 +132,35 @@
                 <label for="max_participantes">Maximo de participantes</label>
                 <input type="number" id="max_participantes" class="form-control" formControlName="max_participantes" name="max_participantes" min="0" max="10" placeholder="Maximo de participantes">
               </div>
-
+            </div>
+          </nb-card-body>
+        </nb-card>
+        <nb-card>
+          <nb-card-header>Registrar Participante Adicional (Opcional)</nb-card-header>
+          <nb-card-body>
+            <div class="row">
+              <div class="col-sm-6 form-group">
+                <label for="p2_nombres">Nombres</label>
+                <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" id="p2_nombres" formControlName="p2_nombres">
+              </div>
+              <div class="col-sm-6">
+                <label for="p2_apellidos">Apellidos</label>
+                <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" id="p2_apellidos" formControlName="p2_apellidos">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4 form-group">
+                <label for="p2_carnet">Carnet</label>
+                <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" id="p2_carnet" formControlName="p2_carnet">
+              </div>
+              <div class="col-sm-4 form-group">
+                <label for="p2_celular">Celular</label>
+                <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" id="p2_celular" formControlName="p2_celular">
+              </div>
+              <div class="col-sm-4">
+                <label for="p2_cargo">Cargo</label>
+                <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" id="p2_cargo" formControlName="p2_cargo">
+              </div>
             </div>
           </nb-card-body>
         </nb-card>
@@ -145,11 +173,11 @@
             <div class="row">
               <div class="col-sm-4 form-group">
                 <label for="logo">Subir Logo (Opcional)</label>
-                <input type="file" id="logo" #logo title="Subir logo">
+                <input type="file" id="logo" #logo title="Subir logo" accept='image/*'>
               </div>
               <div class="col-sm-4 form-group">
                 <label for="voucher">Subir Voucher</label><br>
-                <input type="file" id="voucher" #voucher title="Subir voucher">
+                <input type="file" id="voucher" #voucher title="Subir voucher" accept='image/*'>
               </div>
               <div class="col-sm-4 form-group" *ngIf="router.url !== '/auth/signup'">
                 <nb-checkbox value=0 formControlName="especial" name="especial">Empresa Especial</nb-checkbox>
@@ -183,35 +211,6 @@
                      *ngIf="empresaGroup.get('demanda').status === 'INVALID' && empresaGroup.get('demanda').dirty">
                   <strong>La demanda de su producto es obligatoria</strong>
                 </div>
-              </div>
-            </div>
-          </nb-card-body>
-        </nb-card>
-        <nb-card>
-          <nb-card-header>Registrar Participante Adicional (Opcional)</nb-card-header>
-          <nb-card-body>
-            <div class="row">
-              <div class="col-sm-6 form-group">
-                <label for="p2_nombres">Nombres</label>
-                <input type="text" class="form-control" id="p2_nombres" formControlName="p2_nombres">
-              </div>
-              <div class="col-sm-6">
-                <label for="p2_apellidos">Apellidos</label>
-                <input type="text" class="form-control" id="p2_apellidos" formControlName="p2_apellidos">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-4 form-group">
-                <label for="p2_carnet">Carnet</label>
-                <input type="text" class="form-control" id="p2_carnet" formControlName="p2_carnet">
-              </div>
-              <div class="col-sm-4 form-group">
-                <label for="p2_celular">Celular</label>
-                <input type="text" class="form-control" id="p2_celular" formControlName="p2_celular">
-              </div>
-              <div class="col-sm-4">
-                <label for="p2_cargo">Cargo</label>
-                <input type="text" class="form-control" id="p2_cargo" formControlName="p2_cargo">
               </div>
             </div>
           </nb-card-body>
