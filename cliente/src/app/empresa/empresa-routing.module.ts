@@ -19,7 +19,8 @@ import {UsuarioEditComponent} from '../shared/usuario-edit/usuario-edit.componen
 import {EmpresaEditComponent} from '../shared/empresa-edit/empresa-edit.component';
 import {EvaluacionReunionesComponent} from '../shared/evaluacion-reuniones/evaluacion-reuniones.component';
 import {CambiarPasswordComponent} from '../shared/cambiar-password/cambiar-password.component';
-import {EmpresasRegistradasComponent} from "../shared/empresas-registradas/empresas-registradas.component";
+import {EmpresasRegistradasComponent} from '../shared/empresas-registradas/empresas-registradas.component';
+import {OfertaDemandaComponent} from '../shared/oferta-demanda/oferta-demanda.component';
 
 const routes: Routes = [
   {
@@ -71,6 +72,10 @@ const routes: Routes = [
       {
         path: 'mis-participantes/:empresa_id',
         component: ParticipanteComponent,
+      },
+      {
+        path: 'ofertas-demandas',
+        component: OfertaDemandaComponent,
       },
       {
         path: 'perfil',

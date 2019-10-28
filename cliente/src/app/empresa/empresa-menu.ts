@@ -7,6 +7,11 @@ export const EMPRESA_ITEMS: NbMenuItem[] = [
     link: '/empresa/home',
   },
   {
+    title: 'Mis Ofertas y Demandas',
+    icon: 'nb-checkmark',
+    link: '/empresa/ofertas-demandas',
+  },
+  {
     title: 'Crear Reuniones',
     icon: 'nb-plus',
     link: '/empresa/mi-agenda/empresas-registradas',

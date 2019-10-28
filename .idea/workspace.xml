@@ -3,34 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="40408e9e-7b60-4657-b5f7-5872be4999db" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/node_modules/bootstrap/dist/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/node_modules/bootstrap/dist/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/@theme/components/footer/footer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/@theme/components/footer/footer.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/@theme/components/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/@theme/components/header/header.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/@theme/layouts/sample/sample.layout.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/@theme/layouts/sample/sample.layout.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/@theme/styles/themes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/@theme/styles/themes.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/horario/horario-index/horario-index.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/horario/horario-index/horario-index.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/reportes/evaluacion-general/evaluacion-general.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/reportes/evaluacion-general/evaluacion-general.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/reportes/evaluacion-reunion/evaluacion-reunion.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/reportes/evaluacion-reunion/evaluacion-reunion.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/reportes/evaluacion-reunion/evaluacion-reunion.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/reportes/evaluacion-reunion/evaluacion-reunion.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/reportes/opinion-general/opinion-general.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/reportes/opinion-general/opinion-general.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/reportes/opinion-reunion/opinion-reunion.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/reportes/opinion-reunion/opinion-reunion.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/usuario/usuario-index/usuario-index.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/usuario/usuario-index/usuario-index.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/empresa/agenda/agenda-create/agenda-create.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/empresa/agenda/agenda-create/agenda-create.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/empresa/empresa-menu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/empresa/empresa-menu.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cliente/src/app/empresa/empresa-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/empresa/empresa-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/empresa/home/home.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/empresa/home/home.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/login/login.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/login/login.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/shared/empresa-create/empresa-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/shared/empresa-create/empresa-create.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/shared/empresas-registradas/empresas-registradas.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/shared/empresas-registradas/empresas-registradas.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/shared/horarios-ocupados/horarios-ocupados-index/horarios-ocupados-index.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/shared/horarios-ocupados/horarios-ocupados-index/horarios-ocupados-index.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/shared/participante/participante.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/shared/participante/participante.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/shared/reuniones-agendadas/reuniones-agendadas.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/shared/reuniones-agendadas/reuniones-agendadas.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/expoteco.png" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/assets/images/expoteco.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/assets/images/rueda.png" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/assets/images/rueda.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servidor/database/migrations/2018_10_10_211740_create_usuarios_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/database/migrations/2018_10_10_211740_create_usuarios_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servidor/resources/sass/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/resources/sass/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/shared/perfil/perfil.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/shared/perfil/perfil.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/shared/perfil/perfil.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/shared/perfil/perfil.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/shared/shared.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/shared/shared.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servidor/app/Http/Controllers/OfertaDemandaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/app/Http/Controllers/OfertaDemandaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servidor/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -206,6 +185,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/cliente/node_modules/typescript/lib" />
   </component>
   <component name="RunDashboard">
@@ -234,7 +214,9 @@
       <workItem from="1571242817848" duration="457000" />
       <workItem from="1571980044650" duration="1412000" />
       <workItem from="1572224865191" duration="13025000" />
-      <workItem from="1572238105600" duration="5050000" />
+      <workItem from="1572238105600" duration="5926000" />
+      <workItem from="1572265740289" duration="186000" />
+      <workItem from="1572265942960" duration="2205000" />
     </task>
     <servers />
   </component>

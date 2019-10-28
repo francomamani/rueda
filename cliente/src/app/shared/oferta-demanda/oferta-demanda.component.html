@@ -1,0 +1,51 @@
+<nb-card>
+  <nb-card-header>
+    <span *ngIf="tipo === 'oferta'">Ofertas</span>
+    <span *ngIf="tipo === 'demanda'">Demandas</span>
+  </nb-card-header>
+  <nb-card-body>
+    <form (submit)="store()">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="form-group">
+            <input
+              [(ngModel)]="descripcion"
+              type="text"
+              name="descripcion" id="descripcion" class="form-control"
+              placeholder="Descripción de la {{tipo}}" aria-describedby="helpId">
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <button class="btn btn-primary btn-block">GUARDAR
+            <span *ngIf="tipo === 'oferta'">OFERTA</span>
+            <span *ngIf="tipo === 'demanda'">DEMANDA</span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </nb-card-body>
+</nb-card>
+<nb-card *ngIf="oferta_demandas !== null">
+  <nb-card-body>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>N.</th>
+          <th>Oferta</th>
+          <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let record of oferta_demandas; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ record.descripcion }}</td>
+          <td>
+            <button class="btn btn-sm btn-danger">Eliminar</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </nb-card-body>
+</nb-card>

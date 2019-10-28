@@ -25,6 +25,7 @@ import { LoadModalComponent } from './load-modal/load-modal.component';
 import { LottieAnimationViewModule } from 'ng-lottie';
 import { AyudaModalComponent } from './ayuda-modal/ayuda-modal.component';
 import { EmpresasRegistradasComponent } from './empresas-registradas/empresas-registradas.component';
+import { OfertaDemandaComponent } from './oferta-demanda/oferta-demanda.component';
 
 @NgModule({
   imports: [
@@ -55,7 +56,8 @@ import { EmpresasRegistradasComponent } from './empresas-registradas/empresas-re
                   RegistroExitosoComponent,
                   LoadModalComponent,
                   AyudaModalComponent,
-                  EmpresasRegistradasComponent],
+                  EmpresasRegistradasComponent,
+                  OfertaDemandaComponent],
   exports: [PerfilComponent,
             HorariosOcupadosComponent,
             HorariosOcupadosCreateComponent,
