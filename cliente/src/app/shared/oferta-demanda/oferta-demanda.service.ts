@@ -3,7 +3,7 @@ import {environment} from '../../../environments/environment.prod';
 import {HttpClient} from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class OfertaDemandaService {
 
@@ -20,5 +20,9 @@ export class OfertaDemandaService {
 
   store(data: any) {
     return this.http.post(`${this.base}oferta-demandas`, data);
+  }
+
+  destroy(id: any) {
+    return this.http.delete(`${this.base}oferta-demandas/${id}`);
   }
 }

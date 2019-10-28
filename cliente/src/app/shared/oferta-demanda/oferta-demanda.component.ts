@@ -24,22 +24,18 @@ export class OfertaDemandaComponent implements OnInit {
   ngOnInit() {
   }
   getOfertas() {
-    if (confirm('¿Esta seguro de cambiar a ofertas?')) {
-      this.tipo = 'oferta';
-      this.ofertaDemandaService.ofertas()
-        .subscribe((res: any) => {
-          this.oferta_demandas = res;
-        });
-    }
+    this.tipo = 'oferta';
+    this.ofertaDemandaService.ofertas()
+      .subscribe((res: any) => {
+        this.oferta_demandas = res;
+      });
   }
   getDemandas() {
-    if (confirm('¿Esta seguro de cambiar a demandas?')) {
-      this.tipo = 'demanda';
-      this.ofertaDemandaService.demandas()
-        .subscribe((res: any) => {
-          this.oferta_demandas = res;
-        });
-    }
+    this.tipo = 'demanda';
+    this.ofertaDemandaService.demandas()
+      .subscribe((res: any) => {
+        this.oferta_demandas = res;
+      });
   }
 
   store() {
@@ -51,7 +47,25 @@ export class OfertaDemandaComponent implements OnInit {
     };
     this.ofertaDemandaService.store(data)
       .subscribe((res: any) => {
+        if (this.tipo === 'oferta') {
+          this.getOfertas();
+        } else {
+          this.getDemandas();
+        }
         this.toastr.primary(`Se registro exitosamente la ${this.tipo}`, `Registro de ${this.tipo}`);
       });
+  }
+  destroy(oferta_demanda_id: number) {
+    if (`¿Esta seguro de eliminar la ${this.tipo}?`) {
+      this.ofertaDemandaService.destroy(oferta_demanda_id)
+        .subscribe((res: any) => {
+          if (this.tipo === 'oferta') {
+            this.getOfertas();
+          } else {
+            this.getDemandas();
+          }
+          this.toastr.success('', `${this.tipo} eliminado exitosamente`);
+        });
+    }
   }
 }

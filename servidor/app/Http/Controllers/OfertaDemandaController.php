@@ -90,8 +90,10 @@ class OfertaDemandaController extends Controller
      * @param  \App\OfertaDemanda  $ofertaDemanda
      * @return \Illuminate\Http\Response
      */
-    public function destroy(OfertaDemanda $ofertaDemanda)
+    public function destroy($id)
     {
-        //
+        $oferta_demanda = OfertaDemanda::find($id);
+        $oferta_demanda->delete();
+        return  response()->json($oferta_demanda, 200);
     }
 }

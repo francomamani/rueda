@@ -8,7 +8,7 @@
       <div class="row">
         <div class="col-lg-4">
           <div class="form-group">
-            <select name="producto_servicio" id="producto_servicio" formControlName="producto_servicio" class="form-control">
+            <select name="producto_servicio" id="producto_servicio" [(ngModel)]="producto_servicio" class="form-control">
               <option value="producto">Producto</option>
               <option value="servicio">Servicio</option>
             </select>
@@ -18,7 +18,9 @@
           <div class="form-group">
             <input
               [(ngModel)]="descripcion"
+              oninput="this.value = this.value.toUpperCase()"
               type="text"
+              maxlength="50"
               name="descripcion" id="descripcion" class="form-control"
               placeholder="Descripción de la {{tipo}}" aria-describedby="helpId">
           </div>
@@ -38,16 +40,18 @@
         <thead>
         <tr>
           <th>N.</th>
-          <th>Oferta</th>
+          <th>Producto/Servicio</th>
+          <th>{{ tipo | titlecase }}</th>
           <th>Acciones</th>
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let record of oferta_demandas; let i = index">
           <td>{{ i + 1 }}</td>
+          <td>{{ record.producto_servicio }}</td>
           <td>{{ record.descripcion }}</td>
           <td>
-            <button class="btn btn-sm btn-danger">Eliminar</button>
+            <a title="Eliminar {{tipo}}" class="text-danger" (click)="destroy(record.oferta_demanda_id)"><i class="fa fa-trash"></i></a>
           </td>
         </tr>
         </tbody>
