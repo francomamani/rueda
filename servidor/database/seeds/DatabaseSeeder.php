@@ -171,10 +171,10 @@ class DatabaseSeeder extends Seeder
             'nombres' => 'Franco Jesus',
             'apellidos' => 'Mamani Pozo',
             'email' => 'admin@admin.com',
-            'cuenta' => 'admin',
+            'cuenta' => '7275047',
             'telefono_celular' => '76137653',
             'whatsapp' => '76137653',
-            'password' => Hash::make('123456789')
+            'password' => Hash::make('7275047016')
         ];
         Usuario::create($usuarioAdmin);
 

@@ -2,23 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40408e9e-7b60-4657-b5f7-5872be4999db" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/561a95f3-aac1-421b-9a44-f5bf16b6ec78.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/rueda.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/rueda.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cliente/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cliente/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/shared/empresa-create/empresa-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/shared/empresa-create/empresa-create.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cliente/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/environments/environment.prod.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servidor/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/database/seeds/DatabaseSeeder.php" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/../cealm/cliente/node_modules/" />
-    <ignored path="$PROJECT_DIR$/cliente/node_modules/" />
-    <ignored path="$PROJECT_DIR$/../tribunal/oficialia/cliente/node_modules/" />
-    <ignored path="$PROJECT_DIR$/../tribunal/trep/cliente/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,149 +51,24 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="rueda: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="rueda@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="rueda: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="usuarios: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
     </expand>
     <select />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cliente/src/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cliente/src/app/app.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cliente/src/app/app.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="49" selection-start-line="49" selection-end-line="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cliente/angular.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cliente/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="106" column="33" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4c5874cc-bc82-44e3-b5dd-0e9300fd838d/console.sql">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="uml://DATABASE/4c5874cc-bc82-44e3-b5dd-0e9300fd838d.SCHEMA:rueda">
-          <provider selected="true" editor-type-id="UmlEditorProvider">
-            <state>
-              <ID>DATABASE</ID>
-              <OriginalElement>4c5874cc-bc82-44e3-b5dd-0e9300fd838d.SCHEMA:rueda</OriginalElement>
-              <nodes>
-                <node x="284.0" y="441.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.horarios</node>
-                <node x="1067.0" y="0.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.agendas</node>
-                <node x="0.0" y="794.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.reuniones</node>
-                <node x="608.8333333333333" y="298.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.empresas</node>
-                <node x="592.0" y="838.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.oferta_demandas</node>
-                <node x="829.0" y="805.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.participantes</node>
-                <node x="6.0" y="452.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.mesas</node>
-                <node x="431.0" y="1109.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.password_resets</node>
-                <node x="801.5" y="44.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.rubros</node>
-                <node x="513.5" y="0.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.usuarios</node>
-                <node x="354.0" y="849.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.horarios_ocupados</node>
-                <node x="242.0" y="1109.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.migrations</node>
-                <node x="0.0" y="1109.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.users</node>
-              </nodes>
-              <notes />
-              <edges>
-                <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.participantes" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.empresas">
-                  <point x="0.0" y="-124.0" />
-                  <point x="925.5" y="769.0" />
-                  <point x="785.5" y="769.0" />
-                  <point x="70.66666666666663" y="223.0" />
-                </edge>
-                <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.empresas" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.rubros">
-                  <point x="53.0" y="-223.0" />
-                  <point x="767.8333333333333" y="273.0" />
-                  <point x="882.5" y="273.0" />
-                  <point x="0.0" y="80.0" />
-                </edge>
-                <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.oferta_demandas" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.empresas">
-                  <point x="0.0" y="-91.0" />
-                  <point x="700.5" y="769.0" />
-                  <point x="714.8333333333333" y="769.0" />
-                  <point x="0.0" y="223.0" />
-                </edge>
-                <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.empresas" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.usuarios">
-                  <point x="-53.0" y="-223.0" />
-                  <point x="661.8333333333333" y="273.0" />
-                  <point x="647.5" y="273.0" />
-                  <point x="0.0" y="124.0" />
-                </edge>
-                <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.horarios_ocupados" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.horarios">
-                  <point x="-54.5" y="-80.0" />
-                  <point x="41.5" y="80.0" />
-                </edge>
-                <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.reuniones" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.horarios">
-                  <point x="83.5" y="-135.0" />
-                  <point x="250.5" y="769.0" />
-                  <point x="325.5" y="769.0" />
-                  <point x="-41.5" y="80.0" />
-                </edge>
-                <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.horarios_ocupados" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.empresas">
-                  <point x="54.5" y="-80.0" />
-                  <point x="517.5" y="769.0" />
-                  <point x="644.1666666666667" y="769.0" />
-                  <point x="-70.66666666666663" y="223.0" />
-                </edge>
-                <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.reuniones" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.mesas">
-                  <point x="-83.5" y="-135.0" />
-                  <point x="0.0" y="69.0" />
-                </edge>
-              </edges>
-              <settings layout="Hierarchic Group" zoom="1.1366091522880721" x="1446.5869737199923" y="737.51960879041" />
-              <SelectedNodes />
-              <Categories>
-                <Category>Key columns</Category>
-                <Category>Columns</Category>
-              </Categories>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/cliente/src/index.html" />
-      </list>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
@@ -292,46 +160,26 @@
       <path value="$PROJECT_DIR$/servidor/vendor/nikic/php-parser" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="width" value="1540" />
-    <option name="height" value="865" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="rueda" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rueda" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rueda" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rueda" type="462c0819:PsiDirectoryNode" />
-              <item name="cliente" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
-  </component>
+  <component name="ProjectId" id="1SoL9slmfICkwFZNslHLBmQwMpO" />
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.stylelint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.stylelint" value="$PROJECT_DIR$/cliente/node_modules/stylelint" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="ts.external.directory.path" value="C:\Users\HP User\Documents\trabajos\gotasoft\rueda\cliente\node_modules\typescript\lib" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/cliente/node_modules/typescript/lib" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -358,154 +206,22 @@
       <workItem from="1571193777430" duration="1317000" />
       <workItem from="1571242817848" duration="457000" />
       <workItem from="1571980044650" duration="1412000" />
+      <workItem from="1572224865191" duration="5301000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3186000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24963397" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="TypeScript" order="10" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.62085307" />
-      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" weight="0.329429" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cliente/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/angular.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="106" column="33" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4c5874cc-bc82-44e3-b5dd-0e9300fd838d/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="uml://DATABASE/4c5874cc-bc82-44e3-b5dd-0e9300fd838d.SCHEMA:rueda">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DATABASE</ID>
-          <OriginalElement>4c5874cc-bc82-44e3-b5dd-0e9300fd838d.SCHEMA:rueda</OriginalElement>
-          <nodes>
-            <node x="284.0" y="441.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.horarios</node>
-            <node x="1067.0" y="0.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.agendas</node>
-            <node x="0.0" y="794.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.reuniones</node>
-            <node x="608.8333333333333" y="298.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.empresas</node>
-            <node x="592.0" y="838.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.oferta_demandas</node>
-            <node x="829.0" y="805.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.participantes</node>
-            <node x="6.0" y="452.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.mesas</node>
-            <node x="431.0" y="1109.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.password_resets</node>
-            <node x="801.5" y="44.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.rubros</node>
-            <node x="513.5" y="0.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.usuarios</node>
-            <node x="354.0" y="849.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.horarios_ocupados</node>
-            <node x="242.0" y="1109.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.migrations</node>
-            <node x="0.0" y="1109.0">4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.users</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.participantes" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.empresas">
-              <point x="0.0" y="-124.0" />
-              <point x="925.5" y="769.0" />
-              <point x="785.5" y="769.0" />
-              <point x="70.66666666666663" y="223.0" />
-            </edge>
-            <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.empresas" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.rubros">
-              <point x="53.0" y="-223.0" />
-              <point x="767.8333333333333" y="273.0" />
-              <point x="882.5" y="273.0" />
-              <point x="0.0" y="80.0" />
-            </edge>
-            <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.oferta_demandas" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.empresas">
-              <point x="0.0" y="-91.0" />
-              <point x="700.5" y="769.0" />
-              <point x="714.8333333333333" y="769.0" />
-              <point x="0.0" y="223.0" />
-            </edge>
-            <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.empresas" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.usuarios">
-              <point x="-53.0" y="-223.0" />
-              <point x="661.8333333333333" y="273.0" />
-              <point x="647.5" y="273.0" />
-              <point x="0.0" y="124.0" />
-            </edge>
-            <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.horarios_ocupados" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.horarios">
-              <point x="-54.5" y="-80.0" />
-              <point x="41.5" y="80.0" />
-            </edge>
-            <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.reuniones" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.horarios">
-              <point x="83.5" y="-135.0" />
-              <point x="250.5" y="769.0" />
-              <point x="325.5" y="769.0" />
-              <point x="-41.5" y="80.0" />
-            </edge>
-            <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.horarios_ocupados" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.empresas">
-              <point x="54.5" y="-80.0" />
-              <point x="517.5" y="769.0" />
-              <point x="644.1666666666667" y="769.0" />
-              <point x="-70.66666666666663" y="223.0" />
-            </edge>
-            <edge source="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.reuniones" target="4c5874cc-bc82-44e3-b5dd-0e9300fd838d.TABLE:rueda.mesas">
-              <point x="-83.5" y="-135.0" />
-              <point x="0.0" y="69.0" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.1366091522880721" x="1446.5869737199923" y="737.51960879041" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Key columns</Category>
-            <Category>Columns</Category>
-          </Categories>
-        </state>
-      </provider>
-    </entry>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
