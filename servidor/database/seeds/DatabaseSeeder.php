@@ -180,14 +180,14 @@ class DatabaseSeeder extends Seeder
 
 
         $usuario = [
-            'nombres' => 'Andrea Megan',
-            'apellidos' => 'Lafuente Rocha',
-            'email' => 'empresa@empresa.com',
+            'nombres' => 'Alizon Dayana',
+            'apellidos' => 'Luna Sullcata',
+            'email' => 'aliday@gmail.com',
             'tipo_usuario' => 'empresa',
             'cuenta' => 'empresa',
-            'telefono_celular' => '76137653',
-            'whatsapp' => '76137653',
-            'password' => Hash::make('123456789')
+            'telefono_celular' => '7355655',
+            'whatsapp' => '7355655',
+            'password' => Hash::make('7355655')
         ];
 
         $empresa = [
