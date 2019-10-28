@@ -42,7 +42,6 @@ export class EmpresaCreateComponent implements OnInit {
       'logo': new FormControl(''),
       'voucher': new FormControl(''),
       'direccion': new FormControl('', Validators.required),
-      'telefono': new FormControl('', Validators.required),
       'pagina_web': new FormControl(''),
       'ciudad_localidad': new FormControl('', Validators.required),
       'nit': new FormControl('', Validators.required),
@@ -52,14 +51,7 @@ export class EmpresaCreateComponent implements OnInit {
       'oferta': new FormControl('', Validators.required),
       'demanda': new FormControl('', Validators.required),
       'especial': new FormControl(0, Validators.required),
-      'nombres': new FormControl('', Validators.required),
-      'apellidos': new FormControl('', Validators.required),
       'email': new FormControl(''),
-      'cuenta': new FormControl('', Validators.required),
-      'telefono_celular': new FormControl('', Validators.required),
-      'whatsapp': new FormControl('', Validators.required),
-      'password': new FormControl('', Validators.required),
-      'repeated_password': new FormControl('', Validators.required),
 
       'p1_nombres': new FormControl('', Validators.required),
       'p1_apellidos': new FormControl('', Validators.required),
@@ -80,10 +72,6 @@ export class EmpresaCreateComponent implements OnInit {
 
   store() {
       const activeModal = this.modalService.open(LoadModalComponent, { size: 'sm', container: 'nb-layout' });
-      this.empresaGroup.patchValue({
-        password: this.empresaGroup.value.nit,
-        repeated_password: this.empresaGroup.value.nit
-      });
       if ( this.empresaGroup.value.password === this.empresaGroup.value.repeated_password) {
           this.empresaGroup.patchValue({
               'habilitado': this.empresaGroup.value.habilitado === 1 ? '1' : '0',
@@ -100,7 +88,6 @@ export class EmpresaCreateComponent implements OnInit {
               formData.append('nombre', this.empresaGroup.value.nombre);
               formData.append('logo', this.logo.nativeElement.files[0]);
               formData.append('direccion', this.empresaGroup.value.direccion);
-              formData.append('telefono', this.empresaGroup.value.telefono);
               formData.append('pagina_web', this.empresaGroup.value.pagina_web);
               formData.append('ciudad_localidad', this.empresaGroup.value.ciudad_localidad);
               formData.append('nit', this.empresaGroup.value.nit);
@@ -110,14 +97,7 @@ export class EmpresaCreateComponent implements OnInit {
               formData.append('oferta', this.empresaGroup.value.oferta);
               formData.append('demanda', this.empresaGroup.value.demanda);
               formData.append('especial', this.empresaGroup.value.especial);
-              formData.append('nombres', this.empresaGroup.value.nombres);
-              formData.append('apellidos', this.empresaGroup.value.apellidos);
-              formData.append('cuenta', this.empresaGroup.value.cuenta);
-              formData.append('telefono_celular', this.empresaGroup.value.telefono_celular);
-              formData.append('whatsapp', this.empresaGroup.value.whatsapp);
               formData.append('email', this.empresaGroup.value.email);
-              formData.append('password', this.empresaGroup.value.password);
-              formData.append('repeated_password', this.empresaGroup.value.repeated_password);
 
               formData.append('p1_nombres', this.empresaGroup.value.p1_nombres);
               formData.append('p1_apellidos', this.empresaGroup.value.p1_apellidos);
@@ -143,24 +123,14 @@ export class EmpresaCreateComponent implements OnInit {
                         this.router.navigate(['/auth']);
                         this.ayuda('Usuario creado',
                           'La cuenta para su empresa fue creada exitosamente', '');
-/*                          if (!this.authService.isLoggedIn()) {
-                              this.authService.login(credenciales)
-                                  .subscribe((resLogin: any) => {
-                                    this.toastr.success(resLogin.mensaje, 'Iniciando Sesion');
-                                      if (resLogin.usuario.tipo_usuario === 'administrador') {
-                                          this.router.navigate(['/admin']);
-                                      } else {
-                                          this.router.navigate(['/empresa']);
-                                      }
-                                  });
-                          } else {
-                              this.router.navigate(['/empresa']);
-                          }*/
                       } else {
                           this.router.navigate(['/admin/empresa/listar']);
                       }
                       this.empresaGroup.reset();
                       activeModal.dismiss();
+                  }, (error: any) => {
+                    this.toastr.danger('La cuenta ya existe', 'Registro duplicado');
+                    activeModal.dismiss();
                   });
           } else {
               this.empresaService.store(this.empresaGroup.value)
@@ -172,27 +142,13 @@ export class EmpresaCreateComponent implements OnInit {
                           this.router.navigate(['/auth']);
                           this.ayuda('Usuario creado',
                             'La cuenta para su empresa fue creada exitosamente', '');
-                          /*if (!this.authService.isLoggedIn()) {
-                              this.authService.login({
-                                  cuenta: this.empresaGroup.value.cuenta,
-                                  password: this.empresaGroup.value.password,
-                              }).subscribe((resLogin: any) => {
-                                this.toastr.success(resLogin.mensaje, 'Iniciando Sesion');
-                                  if (resLogin.usuario.tipo_usuario === 'administrador') {
-                                      this.router.navigate(['/admin']);
-                                  } else {
-                                      this.router.navigate(['/empresa']);
-                                  }
-                              });
-                              this.empresaGroup.reset();
-                          } else {
-                              this.empresaGroup.reset();
-                              this.router.navigate(['/empresa']);
-                          }*/
                       } else {
                           this.router.navigate(['/admin/empresa/listar']);
                       }
                       activeModal.dismiss();
+                  }, (error: any) => {
+                    this.toastr.danger('La cuenta ya existe', 'Registro duplicado');
+                    activeModal.dismiss();
                   });
           }
       } else {

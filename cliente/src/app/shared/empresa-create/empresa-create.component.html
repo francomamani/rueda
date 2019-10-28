@@ -48,14 +48,6 @@
             </div>
             <div class="row">
               <div class="col-sm-4 form-group">
-                <label for="telefono">Telefono</label>
-                <input type="text" id="telefono" class="form-control" formControlName="telefono" name="telefono" placeholder="Telefono">
-                <div class="alert alert-danger"
-                     *ngIf="empresaGroup.get('telefono').status === 'INVALID' && empresaGroup.get('telefono').dirty">
-                  <strong>El numero de telefono es obligatorio</strong>
-                </div>
-              </div>
-              <div class="col-sm-4 form-group">
                 <label for="pagina_web">Página web (Opcional)</label>
                 <input type="url" id="pagina_web" class="form-control" formControlName="pagina_web" name="pagina_web" placeholder="Pagina Web">
               </div>
@@ -67,9 +59,7 @@
                   <strong>Ingresa la ciudad o localidad de la empresa</strong>
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-6 form-group">
+              <div class="col-sm-4 form-group">
                 <label for="direccion">Dirección</label>
                 <input type="text" id="direccion" class="form-control" formControlName="direccion" name="direccion" placeholder="Direccion">
                 <div class="alert alert-danger"
@@ -81,7 +71,7 @@
                 <label for="representante_legal">Representante legal</label>
                 <input type="text" id="representante_legal" class="form-control" formControlName="representante_legal" name="representante_legal" placeholder="Representante Legal">
                 <div class="alert alert-danger"
-                     *ngIf="empresaGroup.get('nombres').status === 'INVALID' && empresaGroup.get('nombres').dirty">
+                     *ngIf="empresaGroup.get('representante_legal').status === 'INVALID' && empresaGroup.get('representante_legal').dirty">
                   <strong>El representante legal de la empresa es obligatoria</strong>
                 </div>
               </div>
@@ -94,44 +84,6 @@
           </nb-card-header>
           <nb-card-body>
             <div class="row">
-<!--              <div class="col-sm-4 form-group">
-                <label for="cuenta">Cuenta (no debe contener espacios y estar en minúscula)</label>
-                <input type="cuenta" id="cuenta" class="form-control" formControlName="cuenta" name="cuenta" placeholder="Cuenta">
-              </div>
-              <div class="col-sm-4 form-group">
-                <label for="password">Contraseña (no debe contener espacios)</label>
-                <input type="password"
-                       id="password"
-                       class="form-control"
-                       formControlName="password"
-                       name="password"
-                       placeholder="Contraseña">
-              </div>
-              <div class="col-sm-4 form-group">
-                <label for="password">Re ingrese su contraseña (no debe contener espacios)</label>
-                <input type="password"
-                       id="repeated_password"
-                       class="form-control"
-                       formControlName="repeated_password"
-                       name="repeated_password"
-                       placeholder="Re ingrese contraseña">
-              </div>-->
-<!--              <div class="col-sm-4 form-group">
-                <label for="nombres">Nombres del usuario</label>
-                <input type="text" id="nombres" class="form-control" formControlName="nombres" name="nombres" placeholder="Nombres">
-              </div>
-              <div class="col-sm-4 form-group">
-                <label for="apellidos">Apellidos del usuario</label>
-                <input type="text" id="apellidos" class="form-control" formControlName="apellidos" name="apellidos" placeholder="Apellidos">
-              </div>
-              <div class="col-sm-4 form-group">
-                <label for="telefono_celular">Telefono/celular</label>
-                <input type="text" id="telefono_celular" class="form-control" formControlName="telefono_celular" name="apellidos" placeholder="Telefono/Celular">
-              </div>
-              <div class="col-sm-4 form-group">
-                <label for="whatsapp">Whatsapp</label>
-                <input type="text" id="whatsapp" class="form-control" formControlName="whatsapp" name="apellidos" placeholder="Whatsapp">
-              </div>-->
               <div class="col-sm-4 form-group">
                 <label for="p1_nombres">Nombres</label>
                 <input type="text" class="form-control" id="p1_nombres" formControlName="p1_nombres">

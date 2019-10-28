@@ -6,7 +6,6 @@
       <change beforePath="$PROJECT_DIR$/cliente/src/app/shared/empresa-create/empresa-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/shared/empresa-create/empresa-create.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cliente/src/app/shared/empresa-create/empresa-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/shared/empresa-create/empresa-create.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/servidor/app/Http/Controllers/EmpresaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/app/Http/Controllers/EmpresaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servidor/database/migrations/2018_10_10_211740_create_usuarios_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/database/migrations/2018_10_10_211740_create_usuarios_table.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -209,7 +208,7 @@
       <workItem from="1571193777430" duration="1317000" />
       <workItem from="1571242817848" duration="457000" />
       <workItem from="1571980044650" duration="1412000" />
-      <workItem from="1572224865191" duration="10268000" />
+      <workItem from="1572224865191" duration="12106000" />
     </task>
     <servers />
   </component>
