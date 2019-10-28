@@ -13,6 +13,7 @@ class OfertaDemanda extends Model
     protected $fillable = [
         'empresa_id',
         'descripcion',
+        'producto_servicio',
         'tipo',
     ];
     protected $dates = ['deleted_at'];

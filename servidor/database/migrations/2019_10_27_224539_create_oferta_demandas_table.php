@@ -21,6 +21,7 @@ class CreateOfertaDemandasTable extends Migration
                     ->on('empresas')
                     ->onDelete('cascade');
             $table->text('descripcion');
+            $table->string('producto_servicio');
             $table->enum('tipo', ['oferta', 'demanda']);
             $table->softDeletes();
             $table->timestamps();

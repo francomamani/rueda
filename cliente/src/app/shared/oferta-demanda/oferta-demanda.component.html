@@ -6,7 +6,15 @@
   <nb-card-body>
     <form (submit)="store()">
       <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-4">
+          <div class="form-group">
+            <select name="producto_servicio" id="producto_servicio" formControlName="producto_servicio" class="form-control">
+              <option value="producto">Producto</option>
+              <option value="servicio">Servicio</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-lg-4">
           <div class="form-group">
             <input
               [(ngModel)]="descripcion"
