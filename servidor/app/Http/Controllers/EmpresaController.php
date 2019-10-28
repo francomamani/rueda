@@ -717,7 +717,7 @@ class EmpresaController extends Controller
     }
 
     public function voucher($voucher) {
-        return response()->file(storage_path('app/' . $voucher));
+        return response()->file(storage_path('app/vouchers/' . $voucher));
     }
 
     public function subirComprobante($empresa_id) {

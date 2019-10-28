@@ -128,7 +128,7 @@ export class EmpresaIndexComponent implements OnInit {
       const compModal = this.modalService.open(VoucherModalComponent, { size: 'lg', container: 'nb-layout' });
       compModal.componentInstance.id_empresa = empresa.empresa_id;
       if (empresa.voucher !== null)
-        compModal.componentInstance.comp = environment.base + 'voucher/' + empresa.voucher;
+        compModal.componentInstance.comp = environment.base + 'voucher/' + empresa.voucher.split('/')[1];
       compModal.result.then(() => {
         this.reload();
       });
