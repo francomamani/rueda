@@ -84,7 +84,7 @@ class EmpresaController extends Controller
             'telefono_celular' => $request->input('p1_celular'),
             'whatsapp' => $request->input('p1_celular'),
             'tipo_usuario' => 'empresa',
-            'password' => Hash::make($request->input('carnet')),
+            'password' => Hash::make($request->input('p1_carnet')),
         ];
 
         if ($request->hasFile('logo')){
