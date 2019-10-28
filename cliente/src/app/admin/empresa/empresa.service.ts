@@ -83,4 +83,7 @@ export class EmpresaService {
     uploadVoucher(empresa_id: number, data) {
       return this.http.post(this.base + 'upload-voucher/' + empresa_id, data);
     }
+    conMaterial(empresa_id: number) {
+      return this.http.post(this.base + 'con-material/' + empresa_id, null);
+    }
 }

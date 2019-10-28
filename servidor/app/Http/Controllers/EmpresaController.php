@@ -789,4 +789,12 @@ class EmpresaController extends Controller
             'exito' => 'Voucher subido'
         ], 200);
     }
+    public function conMaterial($empresa_id) {
+        $empresa = Empresa::find($empresa_id);
+        $empresa->con_material = 'si';
+        $empresa->save();
+        return response()->json([
+            'exito' => 'Con material'
+        ], 200);
+    }
 }

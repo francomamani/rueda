@@ -79,6 +79,7 @@
                        (change)="cambiarLogo($event, empresa)"
                        [id]="empresa.empresa_id"
                        class="hidden">
+                <a class="text-info" title="Asignar materiales" (click)="conMaterial(empresa)"><i class="fa fa-paperclip"></i></a>
                 <a class="text-info" title="Comprobante de pago" (click)="comprobante(empresa)"><i class="fa fa-file-image"></i></a>
                 <a class="text-primary" title="Listar de participantes" [routerLink]="['/admin/empresa/participantes/', empresa.empresa_id]"><i class="fa fa-user"></i></a>
                 <a class="text-success" title="Editar empresa" [routerLink]="['/admin/empresa/editar/'+empresa.empresa_id]"><i class="fa fa-edit"></i></a>

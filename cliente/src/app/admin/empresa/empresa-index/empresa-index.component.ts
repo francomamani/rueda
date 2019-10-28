@@ -257,4 +257,12 @@ export class EmpresaIndexComponent implements OnInit {
             /*end subscribe*/
           });
     }
+    conMaterial(empresa: any) {
+      if (confirm(`¿Esta seguro de asignar materiales a ${empresa.nombre}?`)) {
+        this.empresaService.conMaterial(empresa.empresa_id)
+          .subscribe((res: any) => {
+            this.toastr.success('Asignación exitosa de materiales', 'Éxito');
+          });
+      }
+    }
 }

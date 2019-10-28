@@ -27,6 +27,7 @@ class Empresa extends Model
         'demanda',
         'especial',
         'voucher',
+        'con_material',
     ];
     protected $dates = ['deleted_at'];
 
