@@ -3,8 +3,7 @@
     <nb-card>
       <nb-card-header>Editar Usuario</nb-card-header>
       <nb-card-body *ngIf="usuario !== null">
-        {{ usuario | json }}
-<!--        <form (submit)="update()"
+        <form (submit)="update()"
               [formGroup]="usuarioGroup">
           <div class="form-group">
             <label for="nombres">Nombres</label>
@@ -27,8 +26,8 @@
             <input type="text" id="whatsapp" class="form-control" formControlName="whatsapp" name="whatsapp">
           </div>
           <button class="btn btn-success" type="submit">Actualizar</button>
-        </form>-->
-        <form action="">
+        </form>
+<!--        <form action="">
           <div class="form-group">
             <label for="nombres">Nombres</label>
             <input type="text"  class="form-control" oninput="this.value = this.value.toUpperCase()" name="nombres" id="nombres" formControlName="nombres" required autofocus>
@@ -52,7 +51,7 @@
           <div class="form-group">
             <button class="btn btn-primary">ACTUALIZAR</button>
           </div>
-        </form>
+        </form>-->
       </nb-card-body>
     </nb-card>
   </div>

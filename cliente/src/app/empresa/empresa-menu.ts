@@ -7,6 +7,11 @@ export const EMPRESA_ITEMS: NbMenuItem[] = [
     link: '/empresa/home',
   },
   {
+    title: 'Perfil de Empresa',
+    icon: 'nb-person',
+    link: '/empresa/perfil',
+  },
+  {
     title: 'Mis Ofertas y Demandas',
     icon: 'nb-checkmark',
     link: '/empresa/ofertas-demandas',
