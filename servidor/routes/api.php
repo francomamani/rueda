@@ -22,6 +22,7 @@ Route::get('empresas-listar', 'EmpresaController@listar');
 Route::get('empresas-listar-habilitados', 'EmpresaController@listarHabilitados');
 Route::resource('usuarios', 'UsuarioController');
 Route::resource('empresas', 'EmpresaController');
+Route::resource('oferta-demandas', 'OfertaDemandaController');
 Route::resource('participantes', 'ParticipanteController');
 Route::resource('rubros', 'RubroController');
 Route::resource('horarios', 'HorarioController');
