@@ -85,3 +85,4 @@ Route::get('producto-ofertas/{empresa_id}', 'OfertaDemandaController@productoOfe
 Route::get('servicio-ofertas/{empresa_id}', 'OfertaDemandaController@servicioOfertas');
 Route::get('producto-demandas/{empresa_id}', 'OfertaDemandaController@productoDemandas');
 Route::get('servicio-demandas/{empresa_id}', 'OfertaDemandaController@servicioDemandas');
+Route::post('upload-voucher/{empresa_id}', 'EmpresaController@uploadVoucher');

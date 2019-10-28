@@ -17,39 +17,39 @@ export class EmpresaModalComponent implements OnInit {
   tipo = 'oferta';
   constructor(private activeModal: NgbActiveModal,
               private ofertaDemandaService: OfertaDemandaService) {
-    this.ofertaDemandaService.productoOfertas()
-      .subscribe((res: any) => {
-        this.productos = res;
-      });
-    this.ofertaDemandaService.servicioOfertas()
-      .subscribe((res: any) => {
-        this.servicios = res;
-      });
   }
 
   ngOnInit() {
+    this.ofertaDemandaService.productoOfertas(this.empresa.empresa_id)
+      .subscribe((res: any) => {
+        this.productos = res;
+      });
+    this.ofertaDemandaService.servicioOfertas(this.empresa.empresa_id)
+      .subscribe((res: any) => {
+        this.servicios = res;
+      });
   }
   closeModal() {
     this.activeModal.close();
   }
   getOfertas() {
     this.tipo = 'oferta';
-    this.ofertaDemandaService.productoOfertas()
+    this.ofertaDemandaService.productoOfertas(this.empresa.empresa_id)
       .subscribe((res: any) => {
         this.productos = res;
       });
-    this.ofertaDemandaService.servicioOfertas()
+    this.ofertaDemandaService.servicioOfertas(this.empresa.empresa_id)
       .subscribe((res: any) => {
         this.servicios = res;
       });
   }
   getDemandas() {
     this.tipo = 'demanda';
-    this.ofertaDemandaService.productoDemandas()
+    this.ofertaDemandaService.productoDemandas(this.empresa.empresa_id)
       .subscribe((res: any) => {
         this.productos = res;
       });
-    this.ofertaDemandaService.servicioDemandas()
+    this.ofertaDemandaService.servicioDemandas(this.empresa.empresa_id)
       .subscribe((res: any) => {
         this.servicios = res;
       });

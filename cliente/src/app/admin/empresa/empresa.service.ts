@@ -80,4 +80,7 @@ export class EmpresaService {
     agendas() {
       return this.http.get(this.base + 'agendas');
     }
+    uploadVoucher(empresa_id: number, data) {
+      return this.http.post(this.base + 'upload-voucher/' + empresa_id, data);
+    }
 }

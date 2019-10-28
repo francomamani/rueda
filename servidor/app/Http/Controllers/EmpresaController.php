@@ -779,4 +779,15 @@ class EmpresaController extends Controller
             'agendas' => $agendas
         ], 200);
     }
+    public function uploadVoucher($empresa_id) {
+        if (request()->file('voucher')) {
+            $path_voucher = request()->file('voucher')->store('vouchers');
+            $empresa = Empresa::find($empresa_id);
+            $empresa->voucher = $path_voucher;
+            $empresa->save();
+        }
+        return response()->json([
+            'exito' => 'Voucher subido'
+        ], 200);
+    }
 }

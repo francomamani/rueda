@@ -43,15 +43,13 @@
             <thead>
             <tr>
               <th>N.</th>
-              <th>Producto</th>
-              <th>{{ tipo | titlecase }}</th>
+              <th>{{ tipo | titlecase }}s de Productos</th>
               <th>Acciones</th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let record of productos; let i = index">
               <td>{{ i + 1 }}</td>
-              <td>{{ record.producto_servicio }}</td>
               <td>
                 <span *ngIf="record.edit === false">{{ record.descripcion }}</span>
                 <input *ngIf="record.edit === true" type="text" oninput="this.value = this.value.toUpperCase()" [(ngModel)]="record.descripcion" value="{{record.descripcion}}" class="form-control">
@@ -83,17 +81,13 @@
             <thead>
             <tr>
               <th>N.</th>
-              <th>Servicio</th>
-              <th>{{ tipo | titlecase }}</th>
+              <th>{{ tipo | titlecase }}s de Servicios</th>
               <th>Acciones</th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let record of servicios; let i = index">
               <td>{{ i + 1 }}</td>
-              <td>
-                {{ record.producto_servicio }}
-              </td>
               <td>
                 <span *ngIf="record.edit === false">{{ record.descripcion }}</span>
                 <input *ngIf="record.edit === true" type="text" oninput="this.value = this.value.toUpperCase()" [(ngModel)]="record.descripcion" value="{{record.descripcion}}" class="form-control">

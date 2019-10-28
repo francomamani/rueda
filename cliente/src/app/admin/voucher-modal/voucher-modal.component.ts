@@ -35,8 +35,18 @@ export class VoucherModalComponent implements OnInit {
     });
   }
 
-    closeModal() {
-      this.activeModal.close();
-    }
+  closeModal() {
+    this.activeModal.close();
+  }
 
+  uploadVoucher(event) {
+    const formData = new FormData();
+    if (event.srcElement.files[0]) {
+      formData.append('voucher', event.srcElement.files[0]);
+      this.empresaService.uploadVoucher(this.id_empresa, formData)
+        .subscribe((res: any) => {
+          this.activeModal.close();
+        });
+    }
+  }
 }

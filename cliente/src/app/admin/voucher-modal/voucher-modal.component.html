@@ -8,5 +8,15 @@
 
   <h5 *ngIf="comp === null"><div class="alert-warning">Esta empresa no subió su comprobante</div></h5>
   <img *ngIf="comp !== null" [src]="comp" height="70%" width="100%">
-  <button (click)="habilitar()" class="btn-login">HABILITAR</button>
+  <div class="row">
+    <div class="col-lg-6">
+      <button (click)="habilitar()" class="btn-login">HABILITAR</button>
+    </div>
+    <div class="col-lg-6">
+      <label for="voucher" class="btn-login">SUBIR VOUCHER</label><br>
+      <input type="file" id="voucher"
+             (change)="uploadVoucher($event)"
+             class="voucher" #voucher title="Subir voucher" accept='image/*'>
+    </div>
+  </div>
 </div>
