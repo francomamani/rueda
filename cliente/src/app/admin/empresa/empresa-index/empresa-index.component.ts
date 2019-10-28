@@ -263,7 +263,7 @@ export class EmpresaIndexComponent implements OnInit {
           this.empresaService.conMaterial(empresa.empresa_id)
             .subscribe((res: any) => {
               this.reload();
-              this.toastr.success('Asignación exitosa de materiales', 'Éxito');
+              this.toastr.success('Devolución exitosa de materiales', 'Éxito');
             });
         }
       } else {
