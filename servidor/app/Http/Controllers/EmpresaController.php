@@ -114,7 +114,7 @@ class EmpresaController extends Controller
                     'nombre' => $request->input('nombre'),
                     'logo' => $path_logo,
                     'direccion' => $request->input('direccion'),
-                    'telefono' => $request->input('telefono'),
+                    'telefono' => $request->input('p1_celular'),
                     'pagina_web' => $request->input('pagina_web'),
                     'ciudad_localidad' => $request->input('ciudad_localidad'),
                     'nit' => $request->input('nit'),
