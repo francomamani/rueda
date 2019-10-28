@@ -28,26 +28,30 @@ class OfertaDemandaController extends Controller
                                 ->orderBy('oferta_demanda_id', 'desc')->get();
         return response()->json($ofertas, 200);
     }
-    public function productoOfertas() {
+    public function productoOfertas($empresa_id) {
         $ofertas = OfertaDemanda::where('tipo', '=', 'oferta')
+                                ->where('empresa_id', '=', $empresa_id)
                                 ->where('producto_servicio', '=', 'producto')
                                 ->orderBy('oferta_demanda_id', 'desc')->get();
         return response()->json($ofertas, 200);
     }
-    public function servicioOfertas() {
+    public function servicioOfertas($empresa_id) {
         $ofertas = OfertaDemanda::where('tipo', '=', 'oferta')
+                                ->where('empresa_id', '=', $empresa_id)
                                 ->where('producto_servicio', '=', 'servicio')
                                 ->orderBy('oferta_demanda_id', 'desc')->get();
         return response()->json($ofertas, 200);
     }
-    public function productoDemandas() {
+    public function productoDemandas($empresa_id) {
         $ofertas = OfertaDemanda::where('tipo', '=', 'demanda')
+                                ->where('empresa_id', '=', $empresa_id)
                                 ->where('producto_servicio', '=', 'producto')
                                 ->orderBy('oferta_demanda_id', 'desc')->get();
         return response()->json($ofertas, 200);
     }
-    public function servicioDemandas() {
+    public function servicioDemandas($empresa_id) {
         $ofertas = OfertaDemanda::where('tipo', '=', 'demanda')
+                                ->where('empresa_id', '=', $empresa_id)
                                 ->where('producto_servicio', '=', 'servicio')
                                 ->orderBy('oferta_demanda_id', 'desc')->get();
         return response()->json($ofertas, 200);

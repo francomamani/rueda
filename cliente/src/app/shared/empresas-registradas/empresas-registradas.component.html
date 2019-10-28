@@ -43,7 +43,14 @@
               <td>{{ empresa.telefono }}</td>
               <td>{{ empresa.direccion}}</td>
               <td>
-                <button class="asignar" (click)="agendar(empresa.empresa_id)">Agendar Reunión</button>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <button class="asignar" (click)="agendar(empresa.empresa_id)">Agendar Reunión</button>
+                  </div>
+                  <div class="col-lg-6">
+                    <button class="asignar" (click)="info(empresa)">Ofertas y Demandas</button>
+                  </div>
+                </div>
               </td>
             </tr>
             </tbody>

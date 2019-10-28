@@ -17,17 +17,17 @@ export class OfertaDemandaService {
   demandas() {
     return this.http.get(`${this.base}demandas`);
   }
-  productoOfertas() {
-    return this.http.get(`${this.base}producto-ofertas`);
+  productoOfertas(id: number) {
+    return this.http.get(`${this.base}producto-ofertas/${id}`);
   }
-  productoDemandas() {
-    return this.http.get(`${this.base}producto-demandas`);
+  productoDemandas(id: number) {
+    return this.http.get(`${this.base}producto-demandas/${id}`);
   }
-  servicioOfertas() {
-    return this.http.get(`${this.base}servicio-ofertas`);
+  servicioOfertas(id: number) {
+    return this.http.get(`${this.base}servicio-ofertas/${id}`);
   }
-  servicioDemandas() {
-    return this.http.get(`${this.base}servicio-demandas`);
+  servicioDemandas(id: number) {
+    return this.http.get(`${this.base}servicio-demandas/${id}`);
   }
   store(data: any) {
     return this.http.post(`${this.base}oferta-demandas`, data);

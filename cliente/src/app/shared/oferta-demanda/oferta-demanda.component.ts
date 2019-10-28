@@ -14,17 +14,19 @@ export class OfertaDemandaComponent implements OnInit {
   producto_servicio = 'producto';
   productos = null;
   servicios = null;
-  usuario = JSON.parse(atob(localStorage.getItem('rueda-usuario')));
+  usuario = null;
   constructor(private ofertaDemandaService: OfertaDemandaService,
               private toastr: NbToastrService) {
-    this.ofertaDemandaService.productoOfertas()
+    this.usuario = JSON.parse(atob(localStorage.getItem('rueda-usuario')));
+
+    this.ofertaDemandaService.productoOfertas(this.usuario.empresa_id)
       .subscribe((res: any) => {
         this.productos = res;
         this.productos.forEach((record) => {
           record.edit = false;
         });
       });
-    this.ofertaDemandaService.servicioOfertas()
+    this.ofertaDemandaService.servicioOfertas(this.usuario.empresa_id)
       .subscribe((res: any) => {
         this.servicios = res;
         this.servicios.forEach((record) => {
@@ -36,14 +38,14 @@ export class OfertaDemandaComponent implements OnInit {
   }
   getOfertas() {
     this.tipo = 'oferta';
-    this.ofertaDemandaService.productoOfertas()
+    this.ofertaDemandaService.productoOfertas(this.usuario.empresa_id)
       .subscribe((res: any) => {
         this.productos = res;
         this.productos.forEach((record) => {
           record.edit = false;
         });
       });
-    this.ofertaDemandaService.servicioOfertas()
+    this.ofertaDemandaService.servicioOfertas(this.usuario.empresa_id)
       .subscribe((res: any) => {
         this.servicios = res;
         this.servicios.forEach((record) => {
@@ -53,14 +55,14 @@ export class OfertaDemandaComponent implements OnInit {
   }
   getDemandas() {
     this.tipo = 'demanda';
-    this.ofertaDemandaService.productoDemandas()
+    this.ofertaDemandaService.productoDemandas(this.usuario.empresa_id)
       .subscribe((res: any) => {
         this.productos = res;
         this.productos.forEach((record) => {
           record.edit = false;
         });
       });
-    this.ofertaDemandaService.servicioDemandas()
+    this.ofertaDemandaService.servicioDemandas(this.usuario.empresa_id)
       .subscribe((res: any) => {
         this.servicios = res;
         this.servicios.forEach((record) => {
@@ -68,7 +70,6 @@ export class OfertaDemandaComponent implements OnInit {
         });
       });
   }
-
   store() {
     const data = {
       empresa_id: this.usuario.empresa_id,
@@ -83,6 +84,7 @@ export class OfertaDemandaComponent implements OnInit {
         } else {
           this.getDemandas();
         }
+        this.descripcion = '';
         this.toastr.primary(`Se registro exitosamente la ${this.tipo}`, `Registro de ${this.tipo}`);
       });
   }
