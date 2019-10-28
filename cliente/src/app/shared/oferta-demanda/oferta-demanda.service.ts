@@ -32,7 +32,9 @@ export class OfertaDemandaService {
   store(data: any) {
     return this.http.post(`${this.base}oferta-demandas`, data);
   }
-
+  update(data: any) {
+    return this.http.put(`${this.base}oferta-demandas/${data.oferta_demanda_id}`, data);
+  }
   destroy(id: any) {
     return this.http.delete(`${this.base}oferta-demandas/${id}`);
   }

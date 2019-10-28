@@ -36,7 +36,7 @@
 <div class="row">
   <div class="col-lg-6">
     <nb-card *ngIf="productos !== null">
-      <nb-card-header>PRODUCTOS</nb-card-header>
+      <nb-card-header>{{ tipo | uppercase }} DE PRODUCTOS</nb-card-header>
       <nb-card-body>
         <div class="table-responsive">
           <table class="table">
@@ -52,10 +52,20 @@
             <tr *ngFor="let record of productos; let i = index">
               <td>{{ i + 1 }}</td>
               <td>{{ record.producto_servicio }}</td>
-              <td>{{ record.descripcion }}</td>
               <td>
+                <span *ngIf="record.edit === false">{{ record.descripcion }}</span>
+                <input *ngIf="record.edit === true" type="text" value="{{record.descripcion}}" class="form-control">
+              </td>
+              <td>
+                <a title="Editar {{tipo}}" class="text-warning"
+                   *ngIf="record.edit === false"
+                        (click)="edit(record)"><i class="fa fa-edit"></i></a>
                 <a title="Eliminar {{tipo}}" class="text-danger"
+                   *ngIf="record.edit === false"
                    (click)="destroy(record.oferta_demanda_id)"><i class="fa fa-trash"></i></a>
+                <a title="Actualizar {{tipo}}" class="text-success"
+                   (click)="update(record)"
+                   *ngIf="record.edit === true"><i class="fa fa-check"></i></a>
               </td>
             </tr>
             </tbody>
@@ -66,7 +76,7 @@
   </div>
   <div class="col-lg-6">
     <nb-card *ngIf="servicios !== null">
-      <nb-card-header>SERVICIOS</nb-card-header>
+      <nb-card-header>{{ tipo | uppercase }} DE  SERVICIOS</nb-card-header>
       <nb-card-body>
         <div class="table-responsive">
           <table class="table">
@@ -81,11 +91,23 @@
             <tbody>
             <tr *ngFor="let record of servicios; let i = index">
               <td>{{ i + 1 }}</td>
-              <td>{{ record.producto_servicio }}</td>
-              <td>{{ record.descripcion }}</td>
               <td>
+                {{ record.producto_servicio }}
+              </td>
+              <td>
+                <span *ngIf="record.edit === false">{{ record.descripcion }}</span>
+                <input *ngIf="record.edit === true" type="text" value="{{record.descripcion}}" class="form-control">
+              </td>
+              <td>
+                <a title="Editar {{tipo}}" class="text-warning"
+                   *ngIf="record.edit === false"
+                   (click)="edit(record)"><i class="fa fa-edit"></i></a>
                 <a title="Eliminar {{tipo}}" class="text-danger"
+                   *ngIf="record.edit === false"
                    (click)="destroy(record.oferta_demanda_id)"><i class="fa fa-trash"></i></a>
+                <a title="Actualizar {{tipo}}" class="text-success"
+                   (click)="update(record)"
+                   *ngIf="record.edit === true"><i class="fa fa-check"></i></a>
               </td>
             </tr>
             </tbody>

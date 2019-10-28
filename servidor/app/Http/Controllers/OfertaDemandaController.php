@@ -103,9 +103,12 @@ class OfertaDemandaController extends Controller
      * @param  \App\OfertaDemanda  $ofertaDemanda
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, OfertaDemanda $ofertaDemanda)
+    public function update(Request $request, $id)
     {
-        //
+        $input = request()->all();
+        $oferta_demanda = OfertaDemanda::find($id);
+        $oferta_demanda->update($input);
+        return  response()->json($oferta_demanda, 200);
     }
 
     /**

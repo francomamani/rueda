@@ -7,7 +7,6 @@
       <change beforePath="$PROJECT_DIR$/cliente/src/app/shared/oferta-demanda/oferta-demanda.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/shared/oferta-demanda/oferta-demanda.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cliente/src/app/shared/oferta-demanda/oferta-demanda.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/shared/oferta-demanda/oferta-demanda.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/servidor/app/Http/Controllers/OfertaDemandaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/app/Http/Controllers/OfertaDemandaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servidor/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -208,7 +207,7 @@
       <workItem from="1572238105600" duration="5926000" />
       <workItem from="1572265740289" duration="186000" />
       <workItem from="1572265942960" duration="4566000" />
-      <workItem from="1572273647934" duration="9388000" />
+      <workItem from="1572273647934" duration="10922000" />
     </task>
     <servers />
   </component>
