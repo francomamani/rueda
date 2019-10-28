@@ -12,29 +12,42 @@ export class OfertaDemandaComponent implements OnInit {
   tipo = 'oferta';
   descripcion = '';
   producto_servicio = 'producto';
-  oferta_demandas = null;
+  productos = null;
+  servicios = null;
   usuario = JSON.parse(atob(localStorage.getItem('rueda-usuario')));
   constructor(private ofertaDemandaService: OfertaDemandaService,
               private toastr: NbToastrService) {
-    this.ofertaDemandaService.ofertas()
+    this.ofertaDemandaService.productoOfertas()
       .subscribe((res: any) => {
-        this.oferta_demandas = res;
+        this.productos = res;
+      });
+    this.ofertaDemandaService.servicioOfertas()
+      .subscribe((res: any) => {
+        this.servicios = res;
       });
   }
   ngOnInit() {
   }
   getOfertas() {
     this.tipo = 'oferta';
-    this.ofertaDemandaService.ofertas()
+    this.ofertaDemandaService.productoOfertas()
       .subscribe((res: any) => {
-        this.oferta_demandas = res;
+        this.productos = res;
+      });
+    this.ofertaDemandaService.servicioOfertas()
+      .subscribe((res: any) => {
+        this.servicios = res;
       });
   }
   getDemandas() {
     this.tipo = 'demanda';
-    this.ofertaDemandaService.demandas()
+    this.ofertaDemandaService.productoDemandas()
       .subscribe((res: any) => {
-        this.oferta_demandas = res;
+        this.productos = res;
+      });
+    this.ofertaDemandaService.servicioDemandas()
+      .subscribe((res: any) => {
+        this.servicios = res;
       });
   }
 
@@ -56,7 +69,7 @@ export class OfertaDemandaComponent implements OnInit {
       });
   }
   destroy(oferta_demanda_id: number) {
-    if (`¿Esta seguro de eliminar la ${this.tipo}?`) {
+    if (confirm(`¿Esta seguro de eliminar la ${this.tipo}?`)) {
       this.ofertaDemandaService.destroy(oferta_demanda_id)
         .subscribe((res: any) => {
           if (this.tipo === 'oferta') {
@@ -64,6 +77,7 @@ export class OfertaDemandaComponent implements OnInit {
           } else {
             this.getDemandas();
           }
+          this.descripcion = '';
           this.toastr.success('', `${this.tipo} eliminado exitosamente`);
         });
     }

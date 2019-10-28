@@ -17,7 +17,18 @@ export class OfertaDemandaService {
   demandas() {
     return this.http.get(`${this.base}demandas`);
   }
-
+  productoOfertas() {
+    return this.http.get(`${this.base}producto-ofertas`);
+  }
+  productoDemandas() {
+    return this.http.get(`${this.base}producto-demandas`);
+  }
+  servicioOfertas() {
+    return this.http.get(`${this.base}servicio-ofertas`);
+  }
+  servicioDemandas() {
+    return this.http.get(`${this.base}servicio-demandas`);
+  }
   store(data: any) {
     return this.http.post(`${this.base}oferta-demandas`, data);
   }

@@ -28,6 +28,30 @@ class OfertaDemandaController extends Controller
                                 ->orderBy('oferta_demanda_id', 'desc')->get();
         return response()->json($ofertas, 200);
     }
+    public function productoOfertas() {
+        $ofertas = OfertaDemanda::where('tipo', '=', 'oferta')
+                                ->where('producto_servicio', '=', 'producto')
+                                ->orderBy('oferta_demanda_id', 'desc')->get();
+        return response()->json($ofertas, 200);
+    }
+    public function servicioOfertas() {
+        $ofertas = OfertaDemanda::where('tipo', '=', 'oferta')
+                                ->where('producto_servicio', '=', 'servicio')
+                                ->orderBy('oferta_demanda_id', 'desc')->get();
+        return response()->json($ofertas, 200);
+    }
+    public function productoDemandas() {
+        $ofertas = OfertaDemanda::where('tipo', '=', 'demanda')
+                                ->where('producto_servicio', '=', 'producto')
+                                ->orderBy('oferta_demanda_id', 'desc')->get();
+        return response()->json($ofertas, 200);
+    }
+    public function servicioDemandas() {
+        $ofertas = OfertaDemanda::where('tipo', '=', 'demanda')
+                                ->where('producto_servicio', '=', 'servicio')
+                                ->orderBy('oferta_demanda_id', 'desc')->get();
+        return response()->json($ofertas, 200);
+    }
     /**
      * Show the form for creating a new resource.
      *

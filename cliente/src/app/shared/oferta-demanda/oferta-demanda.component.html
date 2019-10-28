@@ -33,29 +33,65 @@
     </form>
   </nb-card-body>
 </nb-card>
-<nb-card *ngIf="oferta_demandas !== null">
-  <nb-card-body>
-    <div class="table-responsive">
-      <table class="table">
-        <thead>
-        <tr>
-          <th>N.</th>
-          <th>Producto/Servicio</th>
-          <th>{{ tipo | titlecase }}</th>
-          <th>Acciones</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let record of oferta_demandas; let i = index">
-          <td>{{ i + 1 }}</td>
-          <td>{{ record.producto_servicio }}</td>
-          <td>{{ record.descripcion }}</td>
-          <td>
-            <a title="Eliminar {{tipo}}" class="text-danger" (click)="destroy(record.oferta_demanda_id)"><i class="fa fa-trash"></i></a>
-          </td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
-  </nb-card-body>
-</nb-card>
+<div class="row">
+  <div class="col-lg-6">
+    <nb-card *ngIf="productos !== null">
+      <nb-card-header>PRODUCTOS</nb-card-header>
+      <nb-card-body>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+            <tr>
+              <th>N.</th>
+              <th>Producto</th>
+              <th>{{ tipo | titlecase }}</th>
+              <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let record of productos; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ record.producto_servicio }}</td>
+              <td>{{ record.descripcion }}</td>
+              <td>
+                <a title="Eliminar {{tipo}}" class="text-danger"
+                   (click)="destroy(record.oferta_demanda_id)"><i class="fa fa-trash"></i></a>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-lg-6">
+    <nb-card *ngIf="servicios !== null">
+      <nb-card-header>SERVICIOS</nb-card-header>
+      <nb-card-body>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+            <tr>
+              <th>N.</th>
+              <th>Servicio</th>
+              <th>{{ tipo | titlecase }}</th>
+              <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let record of servicios; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ record.producto_servicio }}</td>
+              <td>{{ record.descripcion }}</td>
+              <td>
+                <a title="Eliminar {{tipo}}" class="text-danger"
+                   (click)="destroy(record.oferta_demanda_id)"><i class="fa fa-trash"></i></a>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

@@ -79,3 +79,9 @@ Route::get('excel-reunion', 'EvaluacionReunionController@excelReunion');
 
 Route::get('ofertas', 'OfertaDemandaController@ofertas');
 Route::get('demandas', 'OfertaDemandaController@demandas');
+
+
+Route::get('producto-ofertas', 'OfertaDemandaController@productoOfertas');
+Route::get('servicio-ofertas', 'OfertaDemandaController@servicioOfertas');
+Route::get('producto-demandas', 'OfertaDemandaController@productoDemandas');
+Route::get('servicio-demandas', 'OfertaDemandaController@servicioDemandas');
