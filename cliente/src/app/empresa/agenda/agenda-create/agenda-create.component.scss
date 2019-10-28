@@ -1,5 +1,6 @@
-$dark-primary: #00796B;
-$primary: #009688;
+$primary: #3490dc;
+$dark-primary: darken($primary, 5%);
+$light-primary: lighten($primary, 5%);
 $primary-text: #212121;
 $white: #eee;
 

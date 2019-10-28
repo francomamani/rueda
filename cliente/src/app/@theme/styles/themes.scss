@@ -6,6 +6,8 @@
 // which themes you what to enable (empty to enable all)
 $nb-enabled-themes: (default, cosmic, corporate);
 
+$primary: #3490dc;
+
 $nb-themes: nb-register-theme((
  // app wise variables for each theme
   sidebar-header-gap: 2rem,
@@ -17,7 +19,7 @@ $nb-themes: nb-register-theme((
 
   switcher-background: #ebeff5,
   switcher-background-percentage: 50%,
-  drops-icon-line-gadient: -webkit-linear-gradient(#01dbb5, #0bbb79),
+  drops-icon-line-gadient: -webkit-linear-gradient($primary, darken($primary, 5%)),
 
   list-item-border-width: 1px,
 
@@ -33,7 +35,7 @@ $nb-themes: nb-register-theme((
 
   ecommerce-card-border-width: 1px,
 
-  progress-bar-background: linear-gradient(90deg, #3edd81 0%, #3bddaf 100%),
+  progress-bar-background: linear-gradient(90deg, $primary 0%, darken($primary, 5%) 100%),
 ), default, default);
 
 $nb-themes: nb-register-theme((
@@ -63,7 +65,7 @@ $nb-themes: nb-register-theme((
 
   ecommerce-card-border-width: 1px,
 
-  progress-bar-background: linear-gradient(90deg, #00c7c7 0%, #00d977 100%),
+  progress-bar-background: linear-gradient(90deg, $primary 0%, darken($primary, 5%) 100%),
 ), cosmic, cosmic);
 
 $nb-themes: nb-register-theme((

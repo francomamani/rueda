@@ -1,5 +1,6 @@
-$dark-primary: #00796B;
-$primary: #009688;
+$primary: #3490dc;
+$dark-primary: darken($primary, 5%);
+$light-primary: lighten($primary, 5%);
 $primary-text: #212121;
 $white: #eee;
 $accent: #E91E63;
@@ -140,15 +141,15 @@ $accent: #E91E63;
   z-index: 10000;
 }
 
-.texto-ayuda{
+.texto-ayuda {
   margin-bottom: 10px;
   color: $dark-primary;
 }
 
-.disponible{
+.disponible {
   color: $dark-primary;
 }
-.ocupado{
+.ocupado {
   margin-bottom: 30px;
   color: $accent;
 }

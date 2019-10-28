@@ -1,6 +1,6 @@
-$dark-primary: #00796B;
-$light-primary: #B2DFDB;
-$primary: #009688;
+$primary: #3490dc;
+$dark-primary: darken($primary, 5%);
+$light-primary: lighten($primary, 5%);
 $accent: #FF9800;
 $text: #ffffff;
 $primary-text: #212121;
@@ -46,7 +46,7 @@ $divider: #BDBDBD;
   cursor: pointer;
 }
 a.info, a.info:hover, a.info:active{
-  color: #41c15d;
+  color: $light-primary;
   text-decoration: underline;
   cursor: pointer;
 }

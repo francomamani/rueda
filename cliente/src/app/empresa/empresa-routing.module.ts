@@ -13,7 +13,6 @@ import {ReunionesAgendadasComponent} from '../shared/reuniones-agendadas/reunion
 import {
   EvaluacionGeneralEmpresaComponent
 } from '../shared/evaluacion-general/evaluacion-general.component';
-//import {EmpresasRegistradasComponent} from './agenda/empresas-registradas/empresas-registradas.component';
 import {SolicitudSalienteComponent} from '../shared/solicitud-saliente/solicitud-saliente.component';
 import {AgendaCreateComponent} from './agenda/agenda-create/agenda-create.component';
 import {UsuarioEditComponent} from '../shared/usuario-edit/usuario-edit.component';

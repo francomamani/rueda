@@ -1,12 +1,12 @@
-<img [src]="campo_ferial" alt="Campo Ferial" height="72" class="logo-left-top">
-<img [src]="expoteco" alt="Expoteco" height="72" class="logo-right-top">
+<img src="../../assets/images/campo_ferial.png" alt="Campo Ferial" height="72" class="logo-left-top">
+<img src="../../assets/images/expoteco.png" alt="Expoteco" height="72" class="logo-right-top">
 <div class="row">
   <div class="col-sm-12">
     <form (submit)="login()" [formGroup]="loginGroup" role="form">
       <legend class="legend-login">
         <h2><span>RUEDA</span>LOGIN</h2>
-        <img [src]="logo" alt="Rueda de Negocios" height="94">
-        <h4 *ngIf="mensaje.length > 0"><div class="alert-danger">{{mensaje}}</div></h4>
+        <img src="../../assets/images/rueda.png" alt="Rueda de Negocios" height="94">
+        <h4 *ngIf="mensaje.length > 0"><div class="alert-danger">{{ mensaje }}</div></h4>
       </legend>
       <div class="form-group">
         <label for="cuenta">Cuenta</label>

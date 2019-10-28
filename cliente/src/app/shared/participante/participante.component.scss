@@ -1,6 +1,6 @@
-$dark-primary: #00796B;
-$light-primary: #B2DFDB;
-$primary: #009688;
+$primary: #3490dc;
+$dark-primary: darken($primary, 5%);
+$light-primary: lighten($primary, 5%);
 $accent: #FF9800;
 $text: #ffffff;
 $primary-text: #212121;
@@ -8,13 +8,13 @@ $secondary-text: #757575;
 $divider: #BDBDBD;
 
 table {
-  animation: up .4s ease-out;
+  animation: up 0.4s ease-out;
 }
 table thead tr {
   background-color: $dark-primary;
   color: $text;
 }
-.texto-ayuda{
+.texto-ayuda {
   margin-bottom: 30px;
   color: $dark-primary;
 }

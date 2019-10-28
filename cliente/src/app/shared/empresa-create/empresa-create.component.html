@@ -216,7 +216,7 @@
             </div>
           </nb-card-body>
         </nb-card>
-        <button type="submit" [disabled]="empresaGroup.status === 'INVALID' || empresaGroup.untouched" class="btn btn-success">Registrar usuario</button>&nbsp;&nbsp;
+        <button type="submit" [disabled]="empresaGroup.status === 'INVALID' || empresaGroup.untouched" class="btn btn-primary">Registrar usuario</button>&nbsp;&nbsp;
         <a routerLink="login" class="btn btn-danger" *ngIf="router.url === '/auth/signup'">Cancelar</a>
       </form>
     </div>

@@ -20,9 +20,9 @@ export class LoginComponent {
   @ViewChild('cuenta') cuenta;
   mensaje = '';
   loginGroup: FormGroup;
-  logo = environment.base + environment.usuario_logo;
+/*  logo = environment.base + environment.usuario_logo;
   expoteco = environment.base + environment.load_logo + 'expoteco';
-  campo_ferial = environment.base + environment.load_logo + 'campo_ferial';
+  campo_ferial = environment.base + environment.load_logo + 'campo_ferial';*/
   constructor(private authService: AuthService,
               private toastr: NbToastrService,
               private router: Router,

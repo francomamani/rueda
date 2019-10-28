@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {EvaluacionReunionesService} from '../../../shared/evaluacion-reuniones/evaluacion-reuniones.service';
-import { ReportesService } from '../reportes.service'
+import { ReportesService } from '../reportes.service';
 
 @Component({
   selector: 'ngx-evaluacion-reunion',
