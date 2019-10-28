@@ -74,7 +74,7 @@ class EmpresaController extends Controller
      */
     public function store(Request $request)
     {
-        $nombres = $request->input('p1_nombres');
+        $nombres = strtolower($request->input('p1_nombres'));
         $cuenta = explode(" ", $nombres)[0];
         $usuario = [
             'nombres' => $request->input('p1_nombres'),
