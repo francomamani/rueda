@@ -32,6 +32,7 @@ Route::resource('reuniones', 'ReunionController');
 Route::resource('agendas', 'AgendaController');
 Route::resource('evaluaciones-generales', 'EvaluacionGeneralController');
 Route::resource('evaluacion-reuniones', 'EvaluacionReunionController');
+Route::resource('noticias', 'NoticiaController');
 Route::get('evaluacion-registrada/{empresa_id}', 'EvaluacionGeneralController@registrado');
 Route::get('empresa/{empresa_id}/participantes', 'EmpresaController@participantes');
 Route::get('horarios-disponibles/{empresa_solicitante_id}/{empresa_demandada_id}', 'EmpresaController@horariosDisponibles');
