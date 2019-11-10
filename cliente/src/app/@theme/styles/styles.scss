@@ -32,3 +32,30 @@
   }
   @include bootstrap-rtl();
 };
+
+$dark-primary: #2484d2;
+$primary: #3490dc;
+table {
+  width: 100%;
+}
+table {
+  thead {
+    tr {
+      th {
+        background-color: $dark-primary;
+        color: white;
+        padding: 0.5em;
+      }
+    }
+  }
+  tbody {
+    tr {
+      &:nth-child(odd) {
+        background-color: whitesmoke;
+      }
+      td {
+        padding: 0.5em;
+      }
+    }
+  }
+}

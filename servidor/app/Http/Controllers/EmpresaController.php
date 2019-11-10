@@ -7,6 +7,7 @@ use App\Empresa;
 use App\Horario;
 use App\HorarioOcupado;
 use App\Mesa;
+use App\OfertaDemanda;
 use App\Participante;
 use App\Reunion;
 use App\Usuario;
@@ -63,6 +64,30 @@ class EmpresaController extends Controller
                             ->orderBy('empresas.nombre')
                             ->selectRaw('rubros.nombre as rubro, empresas.*')
                             ->get();
+        return response()->json($empresas, 200);
+    }
+
+    public function buscar() {
+        $rubro_id = (int)request()->input('rubro_id');
+        $search = request()->input('search');
+        $empresas = null;
+        $empresas_ids = OfertaDemanda::where('descripcion', 'like', "%{$search}%")->pluck('empresa_id');
+        if ($rubro_id === 0) {
+            $empresas = Empresa::join('rubros', 'rubros.rubro_id', '=', 'empresas.rubro_id')
+                ->whereIn('empresa_id', $empresas_ids)
+                ->with('usuario')
+                ->orderBy('empresas.nombre')
+                ->selectRaw('rubros.nombre as rubro, empresas.*')
+                ->get();
+        } else {
+            $empresas = Empresa::join('rubros', 'rubros.rubro_id', '=', 'empresas.rubro_id')
+                ->where('rubro_id', '=', $rubro_id)
+                ->whereIn('empresa_id', $empresas_ids)
+                ->with('usuario')
+                ->orderBy('empresas.nombre')
+                ->selectRaw('rubros.nombre as rubro, empresas.*')
+                ->get();
+        }
         return response()->json($empresas, 200);
     }
 
@@ -324,7 +349,7 @@ class EmpresaController extends Controller
         return response()->json($data, 200);
     }
 
-    public function buscar() {
+/*    public function buscar() {
         $rubro_id = request()->input('rubro_id');
         $search = request()->input('search');
         $empresas = null;
@@ -356,7 +381,7 @@ class EmpresaController extends Controller
                 ->get();
         }
         return response()->json($empresas, 200);
-    }
+    }*/
 
     public function logo($empresa_id) {
         $logo_url = Empresa::find($empresa_id)->logo;

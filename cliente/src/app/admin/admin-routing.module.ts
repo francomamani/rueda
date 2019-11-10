@@ -40,6 +40,10 @@ import {ReunionesAgendadasComponent} from '../shared/reuniones-agendadas/reunion
 import {EvaluacionReunionesComponent} from '../shared/evaluacion-reuniones/evaluacion-reuniones.component';
 import { EvaluacionGeneralEmpresaComponent } from '../shared/evaluacion-general/evaluacion-general.component';
 import {EmpresasRegistradasComponent} from "../shared/empresas-registradas/empresas-registradas.component";
+import {NoticiaComponent} from './noticia/noticia.component';
+import {NoticiaIndexComponent} from './noticia/noticia-index/noticia-index.component';
+import {NoticiaCreateComponent} from './noticia/noticia-create/noticia-create.component';
+import {NoticiaEditComponent} from './noticia/noticia-edit/noticia-edit.component';
 
 const routes: Routes = [
   {
@@ -117,6 +121,29 @@ const routes: Routes = [
           redirectTo: 'listar',
           pathMatch: 'full',
         }],
+      },
+      {
+        path: 'noticias',
+        component: NoticiaComponent,
+        children: [
+          {
+            path: 'listar',
+            component: NoticiaIndexComponent,
+          },
+          {
+            path: 'crear',
+            component: NoticiaCreateComponent,
+          },
+          {
+            path: 'editar/:id',
+            component: NoticiaEditComponent,
+          },
+          {
+            path: '',
+            redirectTo: 'listar',
+            pathMatch: 'full',
+          },
+        ],
       },
         {
           path: 'usuario',

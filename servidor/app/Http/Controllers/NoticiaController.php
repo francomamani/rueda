@@ -14,7 +14,7 @@ class NoticiaController extends Controller
      */
     public function index()
     {
-        $noticias = Noticia::get();
+        $noticias = Noticia::orderBy('id', 'desc')->get();
         return response()->json($noticias, 200);
     }
 

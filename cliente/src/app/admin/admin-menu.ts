@@ -12,6 +12,11 @@ export const ADMIN_ITEMS: NbMenuItem[] = [
       link: '/admin/empresa',
       children: [
         {
+          title: 'Noticias',
+          icon: 'nb-compose',
+          link: '/admin/noticias/listar',
+        },
+        {
           title: 'Busqueda',
           icon: 'nb-search',
           link: '/admin/empresa/listar',
@@ -47,8 +52,7 @@ export const ADMIN_ITEMS: NbMenuItem[] = [
     },
     {
         title: 'Mesas',
-        icon: 'nb-keypad' +
-          '',
+        icon: 'nb-keypad' + '',
         link: '/admin/mesa',
     },
 /*    {

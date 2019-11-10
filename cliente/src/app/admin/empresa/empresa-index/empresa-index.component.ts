@@ -34,14 +34,14 @@ export class EmpresaIndexComponent implements OnInit {
               private fb: FormBuilder,
               private toastr: NbToastrService,
               private excelService: ExcelServiceService,
-              @Inject('Window') private window: Window,) {
+              @Inject('Window') private window: Window) {
     this.createForm();
       const loadModal = this.modalService.open(LoadModalComponent, { size: 'sm', container: 'nb-layout' });
     this.empresaService.empresasListar()
       .subscribe((res: any) => {
         this.empresas = res;
         this.empresasBK = this.empresas;
-        loadModal.dismiss()
+        loadModal.dismiss();
       },error => {
         loadModal.dismiss();
       });
@@ -62,6 +62,19 @@ export class EmpresaIndexComponent implements OnInit {
   }
 
   buscar() {
+    const search = this.buscarGroup.value.search;
+    this.empresas = this.empresasBK;
+    if (search === '') {
+      this.empresas = this.empresasBK;
+    } else {
+      this.empresaService.buscar(this.buscarGroup.value)
+        .subscribe((res: any) => {
+          this.empresas = res;
+        });
+    }
+  }
+
+/*  buscar() {
     const search = this.buscarGroup.value.search;
     const rubro_id = Number(this.buscarGroup.value.rubro_id);
     this.empresas = this.empresasBK;
@@ -90,7 +103,7 @@ export class EmpresaIndexComponent implements OnInit {
         });
       }
     }
-  }
+  }*/
 
   reload() {
     this.empresaService.empresasListar()

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from "../../auth.service";
-import {Router} from "@angular/router";
+import {NoticiaService} from '../../admin/noticia/noticia.service';
 
 @Component({
   selector: 'ngx-home',
@@ -196,10 +195,13 @@ export class HomeComponent implements OnInit {
     },
   ];
   search = '';
-  constructor() {
+  noticias = null;
+  constructor(private noticiaService: NoticiaService) {
   }
 
   ngOnInit() {
+    this.noticiaService.index()
+      .subscribe(noticias => this.noticias = noticias);
   }
 
 }

@@ -15,7 +15,9 @@
           <select formControlName="rubro_id" name="rubro_id">
             <option value="0">TODOS LOS RUBROS</option>
             <option [value]="rubro.rubro_id"
-                    *ngFor="let rubro of rubros">{{rubro.nombre}}</option>
+                    *ngFor="let rubro of rubros">
+              {{ rubro.nombre }}
+            </option>
           </select>
           <input type="search" formControlName="search" name="search" placeholder="buscar">
           <button class="search"> Buscar </button>
@@ -28,6 +30,7 @@
             <tr>
               <th>N.</th>
               <th>Logo</th>
+              <th>Fecha de Registro</th>
               <th>Empresa</th>
               <th>Cuenta</th>
               <th>NIT</th>
@@ -51,6 +54,9 @@
                      height="48"
                      src="{{logo_default}}{{empresa.empresa_id}}"
                      alt="{{empresa.nombre}}">
+              </td>
+              <td>
+                {{ empresa.created_at | date: 'dd/MM/y'}}
               </td>
               <td><a (click)="info(empresa)" class="info">{{empresa.nombre | uppercase }}</a></td>
               <td>{{empresa.usuario.cuenta}}</td>

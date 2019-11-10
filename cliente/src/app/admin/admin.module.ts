@@ -47,6 +47,12 @@ import { VoucherModalComponent } from './voucher-modal/voucher-modal.component';
 import {EmpresaModalComponent} from '../shared/empresa-modal/empresa-modal.component';
 import {LoadModalComponent} from '../shared/load-modal/load-modal.component';
 import {AyudaModalComponent} from '../shared/ayuda-modal/ayuda-modal.component';
+import { NoticiaComponent } from './noticia/noticia.component';
+import { NoticiaCreateComponent } from './noticia/noticia-create/noticia-create.component';
+import { NoticiaIndexComponent } from './noticia/noticia-index/noticia-index.component';
+import { NoticiaEditComponent } from './noticia/noticia-edit/noticia-edit.component';
+import {CKEditorModule} from 'ng2-ckeditor';
+import {EditorsModule} from '../pages/editors/editors.module';
 
 @NgModule({
   imports: [
@@ -59,11 +65,13 @@ import {AyudaModalComponent} from '../shared/ayuda-modal/ayuda-modal.component';
     ReactiveFormsModule,
     SharedModule,
     AngularDateTimePickerModule,
-      ChartModule,
-      NgxEchartsModule,
-      NgxChartsModule,
-      LeafletModule,
-      GoogleChartsModule,
+    ChartModule,
+    NgxEchartsModule,
+    NgxChartsModule,
+    LeafletModule,
+    GoogleChartsModule,
+    CKEditorModule,
+    EditorsModule,
   ],
   declarations: [RubroComponent,
                  AdminComponent,
@@ -92,6 +100,10 @@ import {AyudaModalComponent} from '../shared/ayuda-modal/ayuda-modal.component';
                  OpinionGeneralComponent,
                  OpinionReunionComponent,
                  VoucherModalComponent,
+                 NoticiaComponent,
+                 NoticiaCreateComponent,
+                 NoticiaIndexComponent,
+                 NoticiaEditComponent,
   ],
   providers: [ RubroService, DatePipe],
     entryComponents: [EmpresaModalComponent, LoadModalComponent,AyudaModalComponent,VoucherModalComponent],
