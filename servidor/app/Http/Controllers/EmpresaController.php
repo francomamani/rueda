@@ -81,7 +81,7 @@ class EmpresaController extends Controller
                 ->get();
         } else {
             $empresas = Empresa::join('rubros', 'rubros.rubro_id', '=', 'empresas.rubro_id')
-                ->where('rubro_id', '=', $rubro_id)
+                ->where('empresas.rubro_id', '=', $rubro_id)
                 ->whereIn('empresa_id', $empresas_ids)
                 ->with('usuario')
                 ->orderBy('empresas.nombre')

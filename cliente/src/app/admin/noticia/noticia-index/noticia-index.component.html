@@ -26,6 +26,7 @@
               <th>N.</th>
               <th>Titulo</th>
               <th>Contenido</th>
+              <th>Fecha de Publicación</th>
               <th>Acciones</th>
             </tr>
             </thead>
@@ -36,6 +37,7 @@
                 <td>
                   <div [innerHTML]="noticia.contenido.substring(0, 250)"></div>
                 </td>
+                <td>{{ noticia.created_at | date: 'dd/MM/y'}}</td>
                 <td class="btn-acciones">
                   <a class="text-info" title="Editar noticia" routerLink="/admin/noticias/editar/{{noticia.id}}"><i class="fa fa-edit"></i></a>
                   <a class="text-danger" title="Eliminar noticia" (click)="destroy(noticia)" ><i class="fa fa-trash"></i></a>

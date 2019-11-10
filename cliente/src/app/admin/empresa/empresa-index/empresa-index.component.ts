@@ -64,14 +64,10 @@ export class EmpresaIndexComponent implements OnInit {
   buscar() {
     const search = this.buscarGroup.value.search;
     this.empresas = this.empresasBK;
-    if (search === '') {
-      this.empresas = this.empresasBK;
-    } else {
-      this.empresaService.buscar(this.buscarGroup.value)
-        .subscribe((res: any) => {
-          this.empresas = res;
-        });
-    }
+    this.empresaService.buscar(this.buscarGroup.value)
+      .subscribe((res: any) => {
+        this.empresas = res;
+      });
   }
 
 /*  buscar() {
