@@ -85,7 +85,7 @@
           <nb-card-body>
             <div class="row">
               <div class="col-sm-4 form-group">
-                <label for="p1_nombres">Nombres</label>
+                <label for="p1_nombres">Nombres <strong>(tu primer nombre en minúsculas es tu cuenta)</strong></label>
                 <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" id="p1_nombres" formControlName="p1_nombres">
                 <div class="alert alert-danger"
                      *ngIf="empresaGroup.get('p1_nombres').status === 'INVALID' && empresaGroup.get('p1_nombres').dirty">
@@ -101,7 +101,7 @@
                 </div>
               </div>
               <div class="col-sm-4 form-group">
-                <label for="p1_carnet">Carnet</label>
+                <label for="p1_carnet">Número de Carnet <strong>(Esta será tu contraseña)</strong></label>
                 <input type="text" oninput="this.value = this.value.toUpperCase();this.value = this.value.replace(/[A-Za-z ]/g, '')" class="form-control" id="p1_carnet" formControlName="p1_carnet">
                 <div class="alert alert-danger"
                      *ngIf="empresaGroup.get('p1_carnet').status === 'INVALID' && empresaGroup.get('p1_carnet').dirty">

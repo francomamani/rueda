@@ -26,6 +26,7 @@ import { LottieAnimationViewModule } from 'ng-lottie';
 import { AyudaModalComponent } from './ayuda-modal/ayuda-modal.component';
 import { EmpresasRegistradasComponent } from './empresas-registradas/empresas-registradas.component';
 import { OfertaDemandaComponent } from './oferta-demanda/oferta-demanda.component';
+import {TooltipModule} from '@swimlane/ngx-charts';
 
 @NgModule({
   imports: [
@@ -37,6 +38,7 @@ import { OfertaDemandaComponent } from './oferta-demanda/oferta-demanda.componen
     ReactiveFormsModule,
     AngularDateTimePickerModule,
     LottieAnimationViewModule.forRoot(),
+    TooltipModule,
   ],
   declarations: [ PerfilComponent,
                   HorariosOcupadosComponent,

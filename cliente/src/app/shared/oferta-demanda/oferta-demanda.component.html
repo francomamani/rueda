@@ -1,14 +1,23 @@
 <nb-card>
-  <nb-card-header>
-    <button class="btn btn-primary" (click)="getOfertas()" [disabled]="tipo === 'oferta'">Ofertas</button> &nbsp;&nbsp;
-    <button class="btn btn-warning" (click)="getDemandas()" [disabled]="tipo === 'demanda'">Demandas</button>
+  <nb-card-header *ngIf="tipo !== null">
+    MIS {{tipo | uppercase}}S
   </nb-card-header>
   <nb-card-body>
+    <button class="btn btn-primary"
+            title="Elija para ofertar productos o servicios"
+            (click)="getOfertas()" [disabled]="tipo === 'oferta'">Ofertas</button> &nbsp;&nbsp;
+    <button class="btn btn-warning"
+            title="Elija para demandar(solicitar) productos o servicios"
+            (click)="getDemandas()" [disabled]="tipo === 'demanda'">Demandas</button>
+    <br>
+    <br>
     <form (submit)="store()">
       <div class="row">
         <div class="col-lg-4">
           <div class="form-group">
-            <select name="producto_servicio" id="producto_servicio" [(ngModel)]="producto_servicio" class="form-control">
+            <select name="producto_servicio"
+                    nbPopover="Seleccione el producto o servicio que desea registrar" nbPopoverMode="hint" nbPopoverPlacement="top"
+                    id="producto_servicio" [(ngModel)]="producto_servicio" class="form-control">
               <option value="producto">Producto</option>
               <option value="servicio">Servicio</option>
             </select>
@@ -19,6 +28,7 @@
             <input
               [(ngModel)]="descripcion"
               oninput="this.value = this.value.toUpperCase()"
+              nbPopover="Escriba la descripción de la {{tipo}}" nbPopoverMode="hint" nbPopoverPlacement="top"
               type="text"
               maxlength="50"
               name="descripcion" id="descripcion" class="form-control"
@@ -54,14 +64,17 @@
                 <span *ngIf="record.edit === false">{{ record.descripcion }}</span>
                 <input *ngIf="record.edit === true" type="text" oninput="this.value = this.value.toUpperCase()" [(ngModel)]="record.descripcion" value="{{record.descripcion}}" class="form-control">
               </td>
-              <td>
-                <a title="Editar {{tipo}}" class="text-warning"
+              <td class="btn-acciones">
+                <a class="text-warning"
                    *ngIf="record.edit === false"
-                        (click)="edit(record)"><i class="fa fa-edit"></i></a>
-                <a title="Eliminar {{tipo}}" class="text-danger"
+                   nbPopover="Editar {{tipo}}" nbPopoverMode="hover" nbPopoverPlacement="top"
+                   (click)="edit(record)"><i class="fa fa-edit"></i></a>
+                <a class="text-danger"
+                   nbPopover="Eliminar {{tipo}}" nbPopoverMode="hover" nbPopoverPlacement="top"
                    *ngIf="record.edit === false"
                    (click)="destroy(record.oferta_demanda_id)"><i class="fa fa-trash"></i></a>
-                <a title="Actualizar {{tipo}}" class="text-success"
+                <a class="text-success"
+                   nbPopover="Actualizar {{tipo}}" nbPopoverMode="hover" nbPopoverPlacement="top"
                    (click)="update(record)"
                    *ngIf="record.edit === true"><i class="fa fa-check"></i></a>
               </td>
@@ -92,14 +105,17 @@
                 <span *ngIf="record.edit === false">{{ record.descripcion }}</span>
                 <input *ngIf="record.edit === true" type="text" oninput="this.value = this.value.toUpperCase()" [(ngModel)]="record.descripcion" value="{{record.descripcion}}" class="form-control">
               </td>
-              <td>
-                <a title="Editar {{tipo}}" class="text-warning"
+              <td class="btn-acciones">
+                <a class="text-warning"
+                   nbPopover="Editar {{tipo}}" nbPopoverMode="hover" nbPopoverPlacement="top"
                    *ngIf="record.edit === false"
                    (click)="edit(record)"><i class="fa fa-edit"></i></a>
-                <a title="Eliminar {{tipo}}" class="text-danger"
+                <a class="text-danger"
+                   nbPopover="Eliminar {{tipo}}" nbPopoverMode="hover" nbPopoverPlacement="top"
                    *ngIf="record.edit === false"
                    (click)="destroy(record.oferta_demanda_id)"><i class="fa fa-trash"></i></a>
-                <a title="Actualizar {{tipo}}" class="text-success"
+                <a class="text-success"
+                   nbPopover="Actualizar {{tipo}}" nbPopoverMode="hover" nbPopoverPlacement="top"
                    (click)="update(record)"
                    *ngIf="record.edit === true"><i class="fa fa-check"></i></a>
               </td>
