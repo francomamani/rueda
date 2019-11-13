@@ -26,6 +26,9 @@ export class EmpresaService {
     empresasListarHabilitados() {
         return this.http.get(this.base + 'empresas-listar-habilitados');
     }
+    buscarMiListaHabilitados(request: any) {
+      return this.http.post(`${this.base}buscar-mi-lista-habilitados`, request);
+    }
     miListaHabilitados(empresa_id) {
       return this.http.get(this.base + 'mi-lista-habilitados/' + empresa_id);
     }

@@ -75,8 +75,13 @@ export class EmpresasRegistradasComponent implements OnInit {
         if (rubro_id === 0) {
           this.empresas = this.empresasBK;
         } else {
-          this.empresas = this.empresas.filter((empresa) => {
-            return empresa.rubro_id === rubro_id;
+          const request = {
+            rubro_id: rubro_id,
+            search: search,
+            empresa_id: this.empresa_id,
+          };
+          this.empresaService.buscarMiListaHabilitados(request).subscribe((empresas: any) => {
+            this.empresas = empresas;
           });
         }
       } else {

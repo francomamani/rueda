@@ -54,6 +54,38 @@ class EmpresaController extends Controller
         }
         return response()->json($habilitados, 200);
     }
+
+    public function buscarMiListaHabilitados() {
+        $empresa_id = request()->input('empresa_id');
+        $search = request()->input('search');
+        $rubro_id = request()->input('rubro_id');
+        $empresas_agendadas = [];
+        $r_solicitante = Reunion::where('empresa_solicitante_id', $empresa_id)->get();
+        $r_demandada = Reunion::where('empresa_demandada_id', $empresa_id)->get();
+        foreach ($r_solicitante as $record) {
+            array_push($empresas_agendadas, $record->empresa_demandada_id);
+        }
+        foreach ($r_demandada as $record) {
+            array_push($empresas_agendadas, $record->empresa_solicitante_id);
+        }
+        array_push($empresas_agendadas, $empresa_id);
+
+        $ofertas_demandas = OfertaDemanda::where('descripcion', 'like', $search)->pluck('empresa_id');
+        $empresas_habilitadas = Empresa::where('habilitado', true)
+                            ->where('rubro_id', $rubro_id)
+                            ->whereIn('empresa_id', $ofertas_demandas)
+                            ->whereNotIn('empresa_id', $empresas_agendadas)
+                            ->orderBy('nombre', 'asc')
+                            ->get();
+/*        $empresas = Empresa::all()->except($empresas_agendadas);
+        $habilitados = [];
+        foreach ($empresas as $empresa) {
+            if ($empresa->habilitado == true) {
+                array_push($habilitados, $empresa);
+            }
+        }*/
+        return response()->json($empresas_habilitadas, 200);
+    }
     public function listarHabilitados() {
         return response()->json(Empresa::where('habilitado', true)->orderBy('nombre')->get(), 200);
     }

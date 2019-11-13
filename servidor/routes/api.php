@@ -73,6 +73,7 @@ Route::get('voucher/{voucher}', 'EmpresaController@voucher');
 Route::post('subir-comprobante/{empresa_id}', 'EmpresaController@subirComprobante');
 
 Route::get('mi-lista-habilitados/{empresa_id}', 'EmpresaController@miListaHabilitados');
+Route::post('buscar-mi-lista-habilitados', 'EmpresaController@buscarMiListaHabilitados');
 Route::get('agendas', 'EmpresaController@agendas');
 
 Route::get('excel-general', 'EvaluacionGeneralController@excelGeneral');
