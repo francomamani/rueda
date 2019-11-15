@@ -1,5 +1,6 @@
-$dark-primary: #00796B;
-$primary: #009688;
+$primary: #3490dc;
+$dark-primary: darken($primary, 5%);
+$light-primary: lighten($primary, 5%);
 $primary-text: #212121;
 $white: #eee;
 .legend-login{
@@ -41,7 +42,7 @@ $white: #eee;
 a.create-account {
   display: block;
   margin-top: 1em;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   color: $dark-primary;
   text-decoration: underline;
   cursor: pointer;
@@ -53,7 +54,7 @@ a.create-account:hover {
 a.ayuda {
   display: block;
   margin-top: 1em;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   color: $dark-primary;
   text-decoration: underline;
   cursor: pointer;

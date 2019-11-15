@@ -8,7 +8,7 @@ import {AuthService} from '../../auth.service';
 import {LoadModalComponent} from '../load-modal/load-modal.component';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {AyudaModalComponent} from '../ayuda-modal/ayuda-modal.component';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'ngx-empresa-create',
   templateUrl: './empresa-create.component.html',
@@ -48,8 +48,8 @@ export class EmpresaCreateComponent implements OnInit {
       'representante_legal': new FormControl('', Validators.required),
       'habilitado': new FormControl(false, Validators.required),
       'max_participantes': new FormControl(2, Validators.required),
-      'oferta': new FormControl('', Validators.required),
-      'demanda': new FormControl('', Validators.required),
+      'oferta': new FormControl('ofertas'),
+      'demanda': new FormControl('demandas'),
       'especial': new FormControl(0, Validators.required),
       'email': new FormControl(''),
 
@@ -120,9 +120,15 @@ export class EmpresaCreateComponent implements OnInit {
                           password: this.empresaGroup.value.password,
                       };
                       if (this.router.url === '/auth/signup') {
-                        this.router.navigate(['/auth']);
-                        this.ayuda('Usuario creado',
-                          'La cuenta para su empresa fue creada exitosamente', '');
+                        Swal.fire({
+                          title: '¡Empresa registrada!',
+html: `Su cuenta es: <strong> ${this.empresaGroup.value.p1_nombres.toLowerCase().split(' ')[0]}</strong> y su contraseña es: <strong>${this.empresaGroup.value.p1_carnet}</strong>`,
+                          icon: 'success',
+                          confirmButtonText: 'Esta bien',
+                        });
+                        this.router.navigate(['/auth/login']);
+/*                        this.ayuda('Usuario creado',
+                          'La cuenta para su empresa fue creada exitosamente', '');*/
                       } else {
                           this.router.navigate(['/admin/empresa/listar']);
                       }
@@ -164,4 +170,5 @@ export class EmpresaCreateComponent implements OnInit {
     modalAyuda.componentInstance.mensaje = mess;
     modalAyuda.componentInstance.mensaje_importante = mess_i;
   }
+
 }

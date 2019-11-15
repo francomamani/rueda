@@ -188,7 +188,7 @@
             </div>
           </nb-card-body>
         </nb-card>
-        <nb-card>
+<!--        <nb-card>
           <nb-card-header>
             Ofertas y Demandas Empresariales
           </nb-card-header>
@@ -214,10 +214,11 @@
               </div>
             </div>
           </nb-card-body>
-        </nb-card>
+        </nb-card>-->
         <button type="submit" [disabled]="empresaGroup.status === 'INVALID' || empresaGroup.untouched" class="btn btn-primary">Registrar usuario</button>&nbsp;&nbsp;
         <a routerLink="login" class="btn btn-danger" *ngIf="router.url === '/auth/signup'">Cancelar</a>
       </form>
     </div>
   </div>
 </div>
+

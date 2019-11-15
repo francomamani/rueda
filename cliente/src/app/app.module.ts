@@ -20,8 +20,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SharedModule} from './shared/shared.module';
 import { AutenticacionComponent } from './autenticacion/autenticacion.component';
 import {LoadModalComponent} from './shared/load-modal/load-modal.component';
-import {AyudaModalComponent} from "./shared/ayuda-modal/ayuda-modal.component";
+import {AyudaModalComponent} from './shared/ayuda-modal/ayuda-modal.component';
 import { ComprobanteComponent } from './comprobante/comprobante.component';
+
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, AutenticacionComponent, ComprobanteComponent],
@@ -34,9 +35,9 @@ import { ComprobanteComponent } from './comprobante/comprobante.component';
     NgbModule.forRoot(),
     ThemeModule.forRoot(),
     CoreModule.forRoot(),
+
     SharedModule,
     FormsModule,
-      SharedModule,
     ReactiveFormsModule,
   ],
   bootstrap: [AppComponent],
