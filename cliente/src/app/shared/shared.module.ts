@@ -27,6 +27,7 @@ import { AyudaModalComponent } from './ayuda-modal/ayuda-modal.component';
 import { EmpresasRegistradasComponent } from './empresas-registradas/empresas-registradas.component';
 import { OfertaDemandaComponent } from './oferta-demanda/oferta-demanda.component';
 import {TooltipModule} from '@swimlane/ngx-charts';
+import { OfertademandaComponent } from './ofertademanda/ofertademanda.component';
 
 @NgModule({
   imports: [
@@ -59,7 +60,8 @@ import {TooltipModule} from '@swimlane/ngx-charts';
                   LoadModalComponent,
                   AyudaModalComponent,
                   EmpresasRegistradasComponent,
-                  OfertaDemandaComponent],
+                  OfertaDemandaComponent,
+                  OfertademandaComponent],
   exports: [PerfilComponent,
             HorariosOcupadosComponent,
             HorariosOcupadosCreateComponent,
