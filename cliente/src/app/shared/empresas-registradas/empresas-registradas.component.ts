@@ -75,31 +75,19 @@ export class EmpresasRegistradasComponent implements OnInit {
         if (rubro_id === 0) {
           this.empresas = this.empresasBK;
         } else {
-          const request = {
-            rubro_id: rubro_id,
-            search: search,
-            empresa_id: this.empresa_id,
-          };
-          this.empresaService.buscarMiListaHabilitados(request).subscribe((empresas: any) => {
+          this.empresaService.miListaHabilitados(this.empresa_id).subscribe((empresas: any) => {
             this.empresas = empresas;
           });
         }
       } else {
-        if (rubro_id === 0) {
-          this.empresas = this.empresas.filter((empresa) => {
-            return empresa.nombre.toLowerCase().indexOf(search) > -1 ||
-              empresa.direccion.toLowerCase().indexOf(search) > -1 ||
-              empresa.nit.toLowerCase().indexOf(search) > -1 ||
-              empresa.telefono.toLowerCase().indexOf(search) > -1;
-          });
-        } else {
-          this.empresas = this.empresas.filter((empresa) => {
-            return (empresa.nombre.toLowerCase().indexOf(search) > -1 && empresa.rubro_id === rubro_id ) ||
-              (empresa.direccion.toLowerCase().indexOf(search) > -1 && empresa.rubro_id === rubro_id) ||
-              (empresa.nit.toLowerCase().indexOf(search) > -1 && empresa.rubro_id === rubro_id) ||
-              (empresa.telefono.toLowerCase().indexOf(search) > -1 && empresa.rubro_id === rubro_id);
-          });
-        }
+        const request = {
+          rubro_id: rubro_id,
+          search: search,
+          empresa_id: this.empresa_id,
+        };
+        this.empresaService.buscarMiListaHabilitados(request).subscribe((empresas: any) => {
+          this.empresas = empresas;
+        });
       }
     }
 

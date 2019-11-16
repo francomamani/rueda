@@ -71,12 +71,22 @@ class EmpresaController extends Controller
         array_push($empresas_agendadas, $empresa_id);
 
         $ofertas_demandas = OfertaDemanda::where('descripcion', 'like', $search)->pluck('empresa_id');
-        $empresas_habilitadas = Empresa::where('habilitado', true)
-                            ->where('rubro_id', $rubro_id)
-                            ->whereIn('empresa_id', $ofertas_demandas)
-                            ->whereNotIn('empresa_id', $empresas_agendadas)
-                            ->orderBy('nombre', 'asc')
-                            ->get();
+        $empresas_habilitadas = [];
+        if($rubro_id == 0) {
+            $empresas_habilitadas = Empresa::where('habilitado', true)
+                ->whereIn('empresa_id', $ofertas_demandas)
+                ->whereNotIn('empresa_id', $empresas_agendadas)
+                ->orderBy('nombre', 'asc')
+                ->get();
+
+        } else {
+            $empresas_habilitadas = Empresa::where('habilitado', true)
+                ->where('rubro_id', $rubro_id)
+                ->whereIn('empresa_id', $ofertas_demandas)
+                ->whereNotIn('empresa_id', $empresas_agendadas)
+                ->orderBy('nombre', 'asc')
+                ->get();
+        }
 /*        $empresas = Empresa::all()->except($empresas_agendadas);
         $habilitados = [];
         foreach ($empresas as $empresa) {
