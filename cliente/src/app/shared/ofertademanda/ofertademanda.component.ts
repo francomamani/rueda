@@ -20,7 +20,7 @@ import {NbToastrService} from '@nebular/theme';
 })
 export class OfertademandaComponent implements OnInit {
 
-  @Output () ofertas_demandas = new EventEmitter<any>();
+  @Output() ofertas_demandas = new EventEmitter<Array<any>>();
   tipo: string = 'oferta';
   descripcion = '';
   producto_servicio = 'producto';
@@ -55,11 +55,7 @@ export class OfertademandaComponent implements OnInit {
 
   send() {
     this.data = [];
-    this.data.concat(this.ofertas.productos);
-    this.data.concat(this.ofertas.servicios);
-    this.data.concat(this.demandas.productos);
-    this.data.concat(this.demandas.servicios);
-    this.ofertas_demandas.emit(this.data);
+    this.ofertas_demandas.emit(this.data.concat(this.ofertas.productos, this.ofertas.servicios, this.demandas.productos, this.demandas.servicios));
   }
   store() {
     const data = {

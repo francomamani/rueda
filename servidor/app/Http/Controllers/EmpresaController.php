@@ -229,10 +229,10 @@ class EmpresaController extends Controller
             Participante::create($participante2);
         }
 
-        $ofertas_demandas = $request->input('ofertas_demandas');
-        foreach ($ofertas_demandas as $ofertas_demanda) {
-            $ofertas_demanda['empresa_id'] = $empresaModel->empresa_id;
-            OfertaDemanda::create($ofertas_demanda);
+        $ofertas_demandas = json_decode($request->input('ofertas_demandas'), true);
+        foreach ($ofertas_demandas as $oferta_demanda) {
+            $oferta_demanda['empresa_id'] = $empresaModel->empresa_id;
+            OfertaDemanda::create($oferta_demanda);
         }
         return response()->json($empresaModel, 201);
     }

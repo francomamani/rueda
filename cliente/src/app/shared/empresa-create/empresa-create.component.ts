@@ -21,7 +21,7 @@ export class EmpresaCreateComponent implements OnInit {
   empresaGroup: FormGroup;
   mensaje = null;
   error = null;
-  ofertas_demandas = null;
+  data = null;
   constructor(private rubroService: RubroService,
               private empresaService: EmpresaService,
               private authService: AuthService,
@@ -111,7 +111,7 @@ export class EmpresaCreateComponent implements OnInit {
               formData.append('p2_carnet', this.empresaGroup.value.p2_carnet);
               formData.append('p2_celular', this.empresaGroup.value.p2_celular);
               formData.append('p2_cargo', this.empresaGroup.value.p2_cargo);
-              formData.append('ofertas_demandas', this.ofertas_demandas);
+              formData.append('ofertas_demandas', JSON.stringify(this.data));
               this.empresaService.store(formData)
                   .subscribe((res: any) => {
                       this.mensaje = 'La empresa ' + res.nombre + ' fue registrada exitosamente';
@@ -171,7 +171,7 @@ html: `Su cuenta es: <strong> ${this.empresaGroup.value.p1_nombres.toLowerCase()
     modalAyuda.componentInstance.mensaje = mess;
     modalAyuda.componentInstance.mensaje_importante = mess_i;
   }
-  setData(data: any) {
-    this.ofertas_demandas = data;
+  setData(event) {
+    this.data = event;
   }
 }
