@@ -56,6 +56,11 @@ class OfertaDemandaController extends Controller
                                 ->orderBy('oferta_demanda_id', 'desc')->get();
         return response()->json($ofertas, 200);
     }
+
+    public function ofertasDemandas($empresa_id) {
+        $data = OfertaDemanda::where('empresa_id', $empresa_id)->get();
+        return response()->json($data, 200);
+    }
     /**
      * Show the form for creating a new resource.
      *

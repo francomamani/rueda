@@ -108,7 +108,7 @@
             Ofertas y Demandas Empresariales
           </nb-card-header>
           <nb-card-body>
-            <div class="row">
+ <!--           <div class="row">
               <div class="col-md-6 form-group">
                 <label for="oferta">Oferta</label>
                 <textarea formControlName="oferta" id="oferta" name="oferta" class="form-control" cols="30" rows="7"
@@ -127,7 +127,8 @@
                   <strong>La demanda de su producto es obligatoria</strong>
                 </div>
               </div>
-            </div>
+            </div>-->
+            <ngx-ofertademanda [list]="list"></ngx-ofertademanda>
           </nb-card-body>
         </nb-card>
         <button type="submit" [disabled]="empresaGroup.status === 'INVALID'" class="btn btn-success">Guardar</button>&nbsp;&nbsp;

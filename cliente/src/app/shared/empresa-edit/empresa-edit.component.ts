@@ -5,6 +5,7 @@ import {EmpresaService} from '../../admin/empresa/empresa.service';
 import {Router, ActivatedRoute} from '@angular/router';
 import {NbToastrService} from '@nebular/theme';
 import {AuthService} from '../../auth.service';
+import {OfertaDemandaService} from '../oferta-demanda/oferta-demanda.service';
 
 @Component({
     selector: 'ngx-empresa-edit',
@@ -17,11 +18,13 @@ export class EmpresaEditComponent implements OnInit {
     empresaGroup: FormGroup;
     emp: any = null;
     empresa_id: any;
+    list: any[] = null;
 
     ruta_admin = '';
 
     constructor(private rubroService: RubroService,
                 private empresaService: EmpresaService,
+                private ofertaDemandaService: OfertaDemandaService,
                 public router: Router,
                 public route: ActivatedRoute,
                 private authService: AuthService,
@@ -40,6 +43,8 @@ export class EmpresaEditComponent implements OnInit {
                 this.emp = res;
                 this.createForm();
             });
+        this.ofertaDemandaService.list(this.empresa_id)
+          .subscribe((res: any) => this.list = res);
     }
 
     createForm() {
@@ -65,20 +70,19 @@ export class EmpresaEditComponent implements OnInit {
     }
 
     store() {
-        this.empresaService.update(this.empresaGroup.value, this.empresa_id)
-            .subscribe((res: any) => {
-                this.toastr.success(
-                           'Los datos de la empresa '
-                              + res.nombre + ' fueron actualizadas',
-                              'Actualización exitosa');
-                if (this.router.url === this.ruta_admin) {
-                    this.router.navigate(['/admin/empresa/listar']);
-                } else {
-                  this.authService.setUsuario(res);
-                  this.router.navigate(['/empresa/perfil']);
-                }
-            });
-
+      this.empresaService.update(this.empresaGroup.value, this.empresa_id)
+          .subscribe((res: any) => {
+              this.toastr.success(
+                         'Los datos de la empresa '
+                            + res.nombre + ' fueron actualizadas',
+                            'Actualización exitosa');
+              if (this.router.url === this.ruta_admin) {
+                  this.router.navigate(['/admin/empresa/listar']);
+              } else {
+                this.authService.setUsuario(res);
+                this.router.navigate(['/empresa/perfil']);
+              }
+          });
     }
     cancelar() {
         if (this.router.url === this.ruta_admin) {

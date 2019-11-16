@@ -1,6 +1,8 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {OfertaDemandaService} from '../oferta-demanda/oferta-demanda.service';
 import {NbToastrService} from '@nebular/theme';
+import {from} from 'rxjs';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'ngx-ofertademanda',
@@ -21,6 +23,7 @@ import {NbToastrService} from '@nebular/theme';
 export class OfertademandaComponent implements OnInit {
 
   @Output() ofertas_demandas = new EventEmitter<Array<any>>();
+  @Input() list = null;
   tipo: string = 'oferta';
   descripcion = '';
   producto_servicio = 'producto';
@@ -40,6 +43,28 @@ export class OfertademandaComponent implements OnInit {
   constructor(private ofertaDemandaService: OfertaDemandaService,
               private toastr: NbToastrService) {}
   ngOnInit() {
+    if (this.list !== null) {
+      const source = from(this.list);
+      source.pipe(map( (item: any) => {
+        if (item.tipo === 'oferta') {
+          if (item.producto_servicio === 'producto') {
+            this.ofertas.productos.unshift(item);
+          }
+          if (item.producto_servicio === 'servicio') {
+            this.ofertas.servicios.unshift(item);
+          }
+        }
+        if (item === 'demanda') {
+          if (item.producto_servicio === 'producto') {
+            this.demandas.productos.unshift(item);
+          }
+          if (item.producto_servicio === 'servicio') {
+            this.demandas.servicios.unshift(item);
+          }
+        }
+        return item;
+      }));
+    }
   }
 
   getOfertas() {

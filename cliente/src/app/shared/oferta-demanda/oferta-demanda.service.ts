@@ -38,4 +38,7 @@ export class OfertaDemandaService {
   destroy(id: any) {
     return this.http.delete(`${this.base}oferta-demandas/${id}`);
   }
+  list(empresa_id: number) {
+    return this.http.get(`${this.base}mis-ofertas-demandas/${empresa_id}`);
+  }
 }
