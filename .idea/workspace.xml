@@ -5,10 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cliente/src/app/shared/empresa-edit/empresa-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/shared/empresa-edit/empresa-edit.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cliente/src/app/shared/empresa-edit/empresa-edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/shared/empresa-edit/empresa-edit.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/app/shared/oferta-demanda/oferta-demanda.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/shared/oferta-demanda/oferta-demanda.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cliente/src/app/shared/ofertademanda/ofertademanda.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/shared/ofertademanda/ofertademanda.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/servidor/app/Http/Controllers/OfertaDemandaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/app/Http/Controllers/OfertaDemandaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servidor/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -220,7 +218,7 @@
       <workItem from="1573673211474" duration="21847000" />
       <workItem from="1573913412941" duration="3661000" />
       <workItem from="1573917446649" duration="1071000" />
-      <workItem from="1573944167770" duration="3209000" />
+      <workItem from="1573944167770" duration="6796000" />
     </task>
     <servers />
   </component>

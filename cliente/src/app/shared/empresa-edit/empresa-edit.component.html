@@ -128,7 +128,7 @@
                 </div>
               </div>
             </div>-->
-            <ngx-ofertademanda [list]="list"></ngx-ofertademanda>
+            <ngx-ofertademanda *ngIf="list !== null" [list]="list" (ofertas_demandas)="updateOfertasDemandas($event)"></ngx-ofertademanda>
           </nb-card-body>
         </nb-card>
         <button type="submit" [disabled]="empresaGroup.status === 'INVALID'" class="btn btn-success">Guardar</button>&nbsp;&nbsp;

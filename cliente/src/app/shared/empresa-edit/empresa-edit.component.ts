@@ -63,12 +63,18 @@ export class EmpresaEditComponent implements OnInit {
             'oferta': new FormControl(this.emp.oferta, Validators.required),
             'demanda': new FormControl(this.emp.demanda, Validators.required),
             'especial': new FormControl(this.emp.especial, Validators.required),
+            'ofertas_demandas': new FormControl(this.list, Validators.required),
         });
     }
 
     ngOnInit() {
     }
 
+    updateOfertasDemandas(event) {
+      this.empresaGroup.patchValue({
+        ofertas_demandas: JSON.stringify(event),
+      });
+    }
     store() {
       this.empresaService.update(this.empresaGroup.value, this.empresa_id)
           .subscribe((res: any) => {

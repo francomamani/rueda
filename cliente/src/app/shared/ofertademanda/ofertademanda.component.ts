@@ -45,7 +45,16 @@ export class OfertademandaComponent implements OnInit {
   ngOnInit() {
     if (this.list !== null) {
       const source = from(this.list);
-      source.pipe(map( (item: any) => {
+      const mapped = source.pipe(map((item: any) => {
+        return {
+          oferta_demanda_id: item.oferta_demanda_id,
+          tipo: item.tipo,
+          descripcion: item.descripcion,
+          producto_servicio: item.producto_servicio,
+          edit: false,
+        };
+      }));
+      mapped.subscribe((item: any) => {
         if (item.tipo === 'oferta') {
           if (item.producto_servicio === 'producto') {
             this.ofertas.productos.unshift(item);
@@ -54,7 +63,7 @@ export class OfertademandaComponent implements OnInit {
             this.ofertas.servicios.unshift(item);
           }
         }
-        if (item === 'demanda') {
+        if (item.tipo === 'demanda') {
           if (item.producto_servicio === 'producto') {
             this.demandas.productos.unshift(item);
           }
@@ -62,8 +71,14 @@ export class OfertademandaComponent implements OnInit {
             this.demandas.servicios.unshift(item);
           }
         }
-        return item;
-      }));
+      });
+      if (this.tipo === 'oferta') {
+        this.getOfertas();
+      }
+      if (this.tipo === 'demanda') {
+        this.getDemandas();
+      }
+
     }
   }
 
