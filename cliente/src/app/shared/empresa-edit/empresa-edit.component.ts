@@ -63,7 +63,7 @@ export class EmpresaEditComponent implements OnInit {
             'oferta': new FormControl(this.emp.oferta, Validators.required),
             'demanda': new FormControl(this.emp.demanda, Validators.required),
             'especial': new FormControl(this.emp.especial, Validators.required),
-            'ofertas_demandas': new FormControl(this.list, Validators.required),
+            'ofertas_demandas': new FormControl(this.list),
         });
     }
 

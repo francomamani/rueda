@@ -51,6 +51,7 @@ export class OfertademandaComponent implements OnInit {
           tipo: item.tipo,
           descripcion: item.descripcion,
           producto_servicio: item.producto_servicio,
+          empresa_id: item.empresa_id,
           edit: false,
         };
       }));

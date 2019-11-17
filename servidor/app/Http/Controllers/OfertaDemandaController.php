@@ -117,16 +117,6 @@ class OfertaDemandaController extends Controller
         $input = request()->all();
         $oferta_demanda = OfertaDemanda::find($id);
         $oferta_demanda->update($input);
-
-        $ofertas_demandas = json_decode($request->input('ofertas_demandas'), true);
-        foreach ($ofertas_demandas as $ofertas_demanda) {
-            if (isset($ofertas_demanda['oferta_demanda_id'])) {
-                $item = OfertaDemanda::find($ofertas_demanda);
-                $item->update($item);
-            } else {
-                OfertaDemanda::create($ofertas_demanda);
-            }
-        }
         return  response()->json($oferta_demanda, 200);
     }
 

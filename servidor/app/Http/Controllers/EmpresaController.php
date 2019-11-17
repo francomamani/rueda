@@ -273,6 +273,19 @@ class EmpresaController extends Controller
     {
         $empresa = Empresa::find($id);
         $empresa->update($request->all());
+        $ofertas_demandas = json_decode($request->input('ofertas_demandas'), true);
+        foreach ($ofertas_demandas as $oferta_demanda) {
+            if (isset($oferta_demanda['oferta_demanda_id'])) {
+                $item = OfertaDemanda::find($oferta_demanda['oferta_demanda_id']);
+                $item->update($oferta_demanda);
+            } else {
+                $data = $oferta_demanda;
+                $data['empresa_id'] = $id;
+                OfertaDemanda::create($data);
+            }
+        }
+
+
         $usuario = Usuario::join('empresas', 'empresas.usuario_id', '=','usuarios.usuario_id')
             ->join('rubros', 'rubros.rubro_id', '=','empresas.rubro_id')
             ->with('empresa.participantes')
