@@ -156,31 +156,47 @@ export class OfertademandaComponent implements OnInit {
         this.toastr.success('', `${this.tipo} actualizada exitosamente`);
       });*/
   }
+  remove(oferta_demanda: any, index: number) {
+    if (oferta_demanda.tipo === 'oferta') {
+      if (oferta_demanda.producto_servicio === 'producto') {
+        this.ofertas.productos.splice(index, 1);
+        this.productos = this.ofertas.productos;
+        this.send();
+      }
+      if (oferta_demanda.producto_servicio === 'servicio') {
+        this.ofertas.servicios.splice(index, 1);
+        this.servicios = this.ofertas.productos;
+        this.send();
+      }
+    }
+    if (oferta_demanda.tipo === 'demanda') {
+      if (oferta_demanda.producto_servicio === 'producto') {
+        this.demandas.productos.splice(index, 1);
+        this.productos = this.demandas.productos;
+        this.send();
+      }
+      if (oferta_demanda.producto_servicio === 'servicio') {
+        this.demandas.servicios.splice(index, 1);
+        this.servicios = this.demandas.servicios;
+        this.send();
+      }
+    }
+  }
   destroy(oferta_demanda: any, index: number ) {
     if (confirm(`¿Esta seguro de eliminar la ${this.tipo}?`)) {
-      if (oferta_demanda.tipo === 'oferta') {
-        if (oferta_demanda.producto_servicio === 'producto') {
-          this.ofertas.productos.splice(index, 1);
-          this.productos = this.ofertas.productos;
-          this.send();
-        }
-        if (oferta_demanda.producto_servicio === 'servicio') {
-          this.ofertas.servicios.splice(index, 1);
-          this.servicios = this.ofertas.productos;
-          this.send();
-        }
-      }
-      if (oferta_demanda.tipo === 'demanda') {
-        if (oferta_demanda.producto_servicio === 'producto') {
-          this.demandas.productos.splice(index, 1);
-          this.productos = this.demandas.productos;
-          this.send();
-        }
-        if (oferta_demanda.producto_servicio === 'servicio') {
-          this.demandas.servicios.splice(index, 1);
-          this.servicios = this.demandas.servicios;
-          this.send();
-        }
+      if (oferta_demanda.oferta_demanda_id !== undefined) {
+        this.ofertaDemandaService.destroy(oferta_demanda.oferta_demanda_id)
+          .subscribe(() => {
+            this.remove(oferta_demanda, index);
+            if (this.tipo === 'oferta') {
+              this.getOfertas();
+            }
+            if (this.tipo === 'demanda') {
+              this.getDemandas();
+            }
+          });
+      } else {
+        this.remove(oferta_demanda, index);
       }
 /*      this.ofertaDemandaService.destroy(oferta_demanda_id)
         .subscribe((res: any) => {
