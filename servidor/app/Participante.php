@@ -17,6 +17,7 @@ class Participante extends Model
         'carnet',
         'celular',
         'cargo',
+        'es_usuario',
     ];
     protected $dates = ['deleted_at'];
 

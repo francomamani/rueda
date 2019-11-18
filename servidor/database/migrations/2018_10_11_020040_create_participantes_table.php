@@ -25,6 +25,7 @@ class CreateParticipantesTable extends Migration
             $table->string('carnet');
             $table->string('celular');
             $table->string('cargo');
+            $table->boolean('es_usuario')->default(false);
             $table->softDeletes();
             $table->timestamps();
         });

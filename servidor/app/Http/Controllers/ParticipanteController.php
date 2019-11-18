@@ -68,5 +68,4 @@ class ParticipanteController extends Controller
             'mensaje' => 'Participante: ' . $participante->nombres . ' '. $participante->apellidos . ' eliminado exitosamente'
         ], 200);
     }
-
 }
