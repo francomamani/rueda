@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {LocalDataSource} from 'ng2-smart-table';
 import {ActivatedRoute} from '@angular/router';
 import {EmpresaService} from '../../admin/empresa/empresa.service';
 import {AyudaModalComponent} from '../ayuda-modal/ayuda-modal.component';
@@ -14,51 +13,6 @@ import {AuthService} from '../../auth.service';
 })
 export class ParticipanteComponent implements OnInit {
 
-  settings = {
-    actions: {
-      columnTitle: '',
-    },
-    add: {
-      addButtonContent: '<i class="nb-plus"></i>',
-      createButtonContent: '<i class="nb-checkmark"></i>',
-      cancelButtonContent: '<i class="nb-close"></i>',
-      confirmCreate: true,
-    },
-    edit: {
-      editButtonContent: '<i class="nb-edit"></i>',
-      saveButtonContent: '<i class="nb-checkmark"></i>',
-      cancelButtonContent: '<i class="nb-close"></i>',
-      confirmSave: true,
-    },
-    delete: {
-      deleteButtonContent: '<i class="nb-trash"></i>',
-      confirmDelete: true,
-    },
-    columns: {
-      nombres: {
-        title: 'Nombres',
-        type: 'string',
-      },
-      apellidos: {
-        title: 'Apellidos',
-        type: 'string',
-      },
-      carnet: {
-        title: 'Carnet',
-        type: 'string',
-      },
-      celular: {
-        title: 'Celular',
-        type: 'string',
-      },
-      cargo: {
-        title: 'Cargo',
-        type: 'string',
-      },
-    },
-  };
-
-  source: LocalDataSource = new LocalDataSource();
   id_empresa: any;
   empresa: any = null;
   participantes: any = null;
@@ -72,21 +26,20 @@ export class ParticipanteComponent implements OnInit {
       } else {
           this.id_empresa = this.authService.getUsuario().empresa_id;
       }
+  }
+
+  ngOnInit() {
     this.empresaService.show(this.id_empresa)
       .subscribe((res: any) => {
         this.empresa = res;
       });
     this.empresaService.indexParticipantes(this.id_empresa).subscribe((data: any[]) => {
-      this.participantes = data.length;
-      this.source.load(data);
+      this.participantes = data;
     });
   }
 
-  ngOnInit() {
-  }
 
-
-  onDeleteConfirm(event): void {
+/*  onDeleteConfirm(event): void {
     if (window.confirm('¿Esta seguro que quiere eliminar este registro?')) {
       event.confirm.resolve();
       this.empresaService.destroyParticipantes(event.data.participante_id).subscribe(res=>{
@@ -98,7 +51,7 @@ export class ParticipanteComponent implements OnInit {
     } else {
       event.confirm.reject();
     }
-  }
+  }*/
 
   datos: any;
 
@@ -116,11 +69,8 @@ export class ParticipanteComponent implements OnInit {
                 cargo: event.newData.cargo,
             };
             this.empresaService.storeParticipantes(this.datos).subscribe(res => {
-             /* console.log(res);
-              this.participantes++;*/
                 this.empresaService.indexParticipantes(this.id_empresa).subscribe((data: any[]) => {
                     this.participantes = data.length;
-                    this.source.load(data);
                 });
                 loadModal.dismiss();
             }, error1 => {
@@ -132,15 +82,19 @@ export class ParticipanteComponent implements OnInit {
     }
     else{
         const modalAyuda=this.modalService.open(AyudaModalComponent, { size: 'lg', container: 'nb-layout' });
-        modalAyuda.componentInstance.titulo="Cantidad de participantes";
-        modalAyuda.componentInstance.mensaje="El número de participantes excedió su límite de "+this.empresa.max_participantes
-            + " participantes, Para incrementar la cantidad de participantes comuniquese con la administración del campo ferial al número de teléfono";
-        modalAyuda.componentInstance.mensaje_importante="52 66111";
+        modalAyuda.componentInstance.titulo = 'Cantidad de participantes';
+        modalAyuda.componentInstance.mensaje= `
+        El número de participantes excedió su límite de ${this.empresa.max_participantes} participantes, 
+        Para incrementar la cantidad de participantes comuniquese con la administración del campo ferial al número de teléfono
+        `;
+        modalAyuda.componentInstance.mensaje_importante = '52 66111';
     }
 
   }
   update(event): void {
-    if (window.confirm('¿Esta seguro de cambiar los datos de este registro?')) {
+    if (window.confirm(`
+    ¿Esta seguro de cambiar los datos de ${event.newData.nombres} ${event.newData.apellidos}?
+    `)) {
       event.confirm.resolve();
       this.datos = {
         empresa_id: this.id_empresa,

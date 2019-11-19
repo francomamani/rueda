@@ -1,20 +1,68 @@
 <nb-card>
   <nb-card-header>
-    <h4><span *ngIf="empresa !== null">Participantes de {{empresa.nombre}}</span></h4>
+    <span *ngIf="empresa !== null">Participantes de {{ empresa.nombre }}</span>
+    <a class="download-pdf"
+       routerLink="/admin/noticias/crear"
+       title="Crear Nuevo Participante">
+      Crear Participante <i class="fa fa-user-plus"></i>
+    </a>
   </nb-card-header>
 
   <nb-card-body>
-
     <h5 class="texto-ayuda" *ngIf="empresa !== null">
-      Registre a sus participantes, que asistiran a la rueda de negocios en representación de su empresa.<br>
-      Solo puede registrar un máximo de <strong>{{empresa.max_participantes}} participantes </strong>,
-      si desea registrar mas, comuniquese con el Campo ferial 3 de julio.
+      Registre a sus participantes, que asistirán a la rueda de negocios en representación de su empresa.<br>
+      Solo puede registrar un máximo de <strong> {{ empresa.max_participantes }} participantes </strong>,
+      si desea registrar más, comuniquese con el Campo ferial 3 de Julio.
     </h5>
-
-    <ng2-smart-table [settings]="settings" [source]="source"
-                     (createConfirm)="store($event)"
-                     (deleteConfirm)="onDeleteConfirm($event)"
-                     (editConfirm)="update($event)">
-    </ng2-smart-table>
+    <div class="table-responsive" *ngIf="participantes !== null">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>N.</th>
+          <th>Es Usuario</th>
+          <th>Cuenta</th>
+          <th>Nombres</th>
+          <th>Apellidos</th>
+          <th>Carnet</th>
+          <th>Celular</th>
+          <th>Cargo</th>
+          <th *ngIf="authService.getTipoUsuario() === 'administrador'">Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let participante of participantes; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td class="text-center">
+            <span class="text-primary fa fa-check" *ngIf="participante.es_usuario == 1"></span>
+            <span class="text-danger fa fa-times" *ngIf="participante.es_usuario == 0"></span>
+          </td>
+          <td>
+            <span *ngIf="participante.es_usuario == 1">
+              {{ participante.nombres.toLocaleLowerCase().split(" ")[0] }}
+            </span>
+          </td>
+          <td>{{ participante.nombres }}</td>
+          <td>{{ participante.apellidos }}</td>
+          <td>{{ participante.carnet }}</td>
+          <td>{{ participante.celular }}</td>
+          <td>{{ participante.cargo }}</td>
+          <td class="btn-acciones" *ngIf="authService.getTipoUsuario() === 'administrador'">
+            <a class="text-info"
+               nbPopover="Editar participante" nbPopoverMode="hint" nbPopoverPlacement="top">
+            <span class="fa fa-edit"></span>
+            </a>
+            <a class="text-danger"
+               nbPopover="Eliminar participante" nbPopoverMode="hint" nbPopoverPlacement="top">
+              <span class="fa fa-trash"></span>
+            </a>
+            <a class="text-success"
+               nbPopover="Establecer como usuario del sistema" nbPopoverMode="hint" nbPopoverPlacement="top">
+              <span class="fa fa-user-plus"></span>
+            </a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
   </nb-card-body>
 </nb-card>

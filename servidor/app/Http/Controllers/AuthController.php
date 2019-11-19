@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Empresa;
+use App\Participante;
+use App\User;
 use App\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -77,5 +80,36 @@ class AuthController extends Controller
         }
 
         return response()->json(['mensaje' => $mensaje], 200);
+    }
+
+    private function createCuenta($nombres, $carnet) {
+        $cuenta = strtolower($nombres);
+        return explode(" ", $cuenta)[0] . $carnet;
+    }
+    public function setUsuario() {
+        $participante_id = request()->input('participante_id');
+        $participante = Participante::find($participante_id);
+        $usuario_id = Empresa::find($participante['empresa_id'])->usuario_id;
+        $usuario = null;
+        if ($usuario_id === 0) {
+            $usuario = new Usuario();
+            $usuario->nombres = $participante['nombres'];
+            $usuario->apellidos = $participante['apellidos'];
+            $usuario->cuenta = $this->createCuenta($participante['nombres'], $participante['carnet']);
+            $usuario->password = Hash::make($participante['carnet']);
+            $usuario->tipo_usuario = 'empresa';
+            $usuario->save();
+        } else {
+            $usuario = Usuario::find($usuario_id);
+            $usuario->nombres = $participante['nombres'];
+            $usuario->apellidos = $participante['apellidos'];
+            $usuario->cuenta = $this->createCuenta($participante['nombres'], $participante['carnet']);
+            $usuario->password = Hash::make($participante['carnet']);
+            $usuario->tipo_usuario = 'empresa';
+            $usuario->save();
+        }
+        return response()->json([
+            'success' => $usuario
+        ], 200);
     }
 }

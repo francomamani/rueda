@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40408e9e-7b60-4657-b5f7-5872be4999db" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4c5874cc-bc82-44e3-b5dd-0e9300fd838d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4c5874cc-bc82-44e3-b5dd-0e9300fd838d.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/admin/empresa/empresa-index/empresa-index.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/shared/participante/participante.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/shared/participante/participante.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/shared/participante/participante.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/shared/participante/participante.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/shared/participante/participante.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/shared/participante/participante.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servidor/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/app/Http/Controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servidor/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,34 +49,6 @@
         <item name="rueda@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="rueda: schema" type="76f4a085:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="rueda@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="rueda: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="participantes: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="rueda@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="rueda: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="reuniones: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="rueda@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="rueda: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="rubros: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="rueda@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="rueda: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="users: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -244,7 +223,9 @@
       <workItem from="1573917446649" duration="1071000" />
       <workItem from="1573944167770" duration="10419000" />
       <workItem from="1574004981858" duration="1113000" />
-      <workItem from="1574111403642" duration="1970000" />
+      <workItem from="1574111403642" duration="4629000" />
+      <workItem from="1574130904279" duration="32000" />
+      <workItem from="1574193344963" duration="6478000" />
     </task>
     <servers />
   </component>
