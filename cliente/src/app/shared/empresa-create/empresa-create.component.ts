@@ -66,6 +66,7 @@ export class EmpresaCreateComponent implements OnInit {
       'p2_celular': new FormControl(''),
       'p2_cargo': new FormControl(''),
 
+      'ofertas_demandas': new FormControl(''),
     });
   }
   ngOnInit() {
@@ -111,7 +112,7 @@ export class EmpresaCreateComponent implements OnInit {
               formData.append('p2_carnet', this.empresaGroup.value.p2_carnet);
               formData.append('p2_celular', this.empresaGroup.value.p2_celular);
               formData.append('p2_cargo', this.empresaGroup.value.p2_cargo);
-              formData.append('ofertas_demandas', JSON.stringify(this.data));
+              formData.append('ofertas_demandas', this.empresaGroup.value.ofertas_demandas);
               this.empresaService.store(formData)
                   .subscribe((res: any) => {
                       this.mensaje = 'La empresa ' + res.nombre + ' fue registrada exitosamente';
@@ -120,16 +121,15 @@ export class EmpresaCreateComponent implements OnInit {
                           cuenta: this.empresaGroup.value.cuenta,
                           password: this.empresaGroup.value.password,
                       };
-                      if (this.router.url === '/auth/signup') {
+                      if (this.router.url.search('/auth') !== -1) {
                         Swal.fire({
                           title: '¡Empresa registrada!',
-html: `Su cuenta es: <strong> ${this.empresaGroup.value.p1_nombres.toLowerCase().split(' ')[0]}</strong> y su contraseña es: <strong>${this.empresaGroup.value.p1_carnet}</strong>`,
+                          html: `Su cuenta es: <strong> ${this.empresaGroup.value.p1_nombres.toLowerCase().split(' ')[0]}${this.empresaGroup.value.p1_carnet} </strong>
+                                 y su contraseña es: <strong>  ${this.empresaGroup.value.p1_carnet} </strong>`,
                           icon: 'success',
                           confirmButtonText: 'Esta bien',
                         });
                         this.router.navigate(['/auth/login']);
-/*                        this.ayuda('Usuario creado',
-                          'La cuenta para su empresa fue creada exitosamente', '');*/
                       } else {
                           this.router.navigate(['/admin/empresa/listar']);
                       }
@@ -172,6 +172,8 @@ html: `Su cuenta es: <strong> ${this.empresaGroup.value.p1_nombres.toLowerCase()
     modalAyuda.componentInstance.mensaje_importante = mess_i;
   }
   setData(event) {
-    this.data = event;
+    this.empresaGroup.patchValue({
+      'ofertas_demandas': JSON.stringify(event),
+    });
   }
 }

@@ -142,7 +142,7 @@ class EmpresaController extends Controller
     public function store(Request $request)
     {
         $nombres = strtolower($request->input('p1_nombres'));
-        $cuenta = explode(" ", $nombres)[0];
+        $cuenta = explode(" ", $nombres)[0] . $request->input('p1_carnet');
         $usuario = [
             'nombres' => $request->input('p1_nombres'),
             'apellidos' => $request->input('p1_apellidos'),
@@ -224,6 +224,7 @@ class EmpresaController extends Controller
             'carnet' => $request->input('p1_carnet'),
             'celular' => $request->input('p1_celular'),
             'cargo' => $request->input('p1_cargo'),
+            'es_usuario' => true,
         ];
         Participante::create($participante1);
         $p2_nombres =$request->input('p2_nombres');

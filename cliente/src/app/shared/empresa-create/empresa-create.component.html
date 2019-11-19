@@ -80,12 +80,15 @@
         </nb-card>
         <nb-card>
           <nb-card-header>
-            Mi Cuenta de Acceso
+            Mi Cuenta de Acceso <br>
+            <strong>Cuenta:</strong> Tu primer nombre en minúsculas y carnet es tu cuenta. <strong style="color: blue;">Ej. manuel7587458</strong>
+            <br>
+            <strong>Contraseña: </strong> El número de carnet. <strong style="color: blue;">Ej. 7587458</strong>
           </nb-card-header>
           <nb-card-body>
             <div class="row">
               <div class="col-sm-4 form-group">
-                <label for="p1_nombres">Nombres <strong>(tu primer nombre en minúsculas es tu cuenta)</strong></label>
+                <label for="p1_nombres">Nombres</label>
                 <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" id="p1_nombres" formControlName="p1_nombres">
                 <div class="alert alert-danger"
                      *ngIf="empresaGroup.get('p1_nombres').status === 'INVALID' && empresaGroup.get('p1_nombres').dirty">
