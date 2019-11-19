@@ -35,9 +35,14 @@
               placeholder="Descripción de la {{tipo}}" aria-describedby="helpId">
           </div>
         </div>
+
         <div class="col-lg-4">
-          <button type="submit" class="btn btn-primary btn-block" *ngIf="tipo === 'oferta'">GUARDAR OFERTA</button>
-          <button type="submit" class="btn btn-warning btn-block" *ngIf="tipo === 'demanda'">GUARDAR DEMANDA</button>
+          <button type="submit"
+                  [disabled]="descripcion.length === 0"
+                  class="btn btn-primary btn-block" *ngIf="tipo === 'oferta'">GUARDAR OFERTA</button>
+          <button type="submit"
+                  [disabled]="descripcion.length === 0"
+                  class="btn btn-warning btn-block" *ngIf="tipo === 'demanda'">GUARDAR DEMANDA</button>
         </div>
       </div>
     </form>

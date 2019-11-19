@@ -66,7 +66,7 @@ export class EmpresaCreateComponent implements OnInit {
       'p2_celular': new FormControl(''),
       'p2_cargo': new FormControl(''),
 
-      'ofertas_demandas': new FormControl(''),
+      'ofertas_demandas': new FormControl(null, Validators.required),
     });
   }
   ngOnInit() {
@@ -121,7 +121,7 @@ export class EmpresaCreateComponent implements OnInit {
                           cuenta: this.empresaGroup.value.cuenta,
                           password: this.empresaGroup.value.password,
                       };
-                      if (this.router.url.search('/auth') !== -1) {
+                      if (this.router.url === '/auth/signup') {
                         Swal.fire({
                           title: '¡Empresa registrada!',
                           html: `Su cuenta es: <strong> ${this.empresaGroup.value.p1_nombres.toLowerCase().split(' ')[0]}${this.empresaGroup.value.p1_carnet} </strong>
@@ -147,8 +147,13 @@ export class EmpresaCreateComponent implements OnInit {
                           this.error = '';
                           this.toastr.success('La empresa ' + res.nombre + ' fue registrada', 'Registro exitoso');
                           this.router.navigate(['/auth']);
-                          this.ayuda('Usuario creado',
-                            'La cuenta para su empresa fue creada exitosamente', '');
+                          Swal.fire({
+                            title: '¡Empresa registrada!',
+                            html: `Su cuenta es: <strong> ${this.empresaGroup.value.p1_nombres.toLowerCase().split(' ')[0]}${this.empresaGroup.value.p1_carnet} </strong>
+                                   y su contraseña es: <strong>  ${this.empresaGroup.value.p1_carnet} </strong>`,
+                            icon: 'success',
+                            confirmButtonText: 'Esta bien',
+                          });
                       } else {
                           this.router.navigate(['/admin/empresa/listar']);
                       }
@@ -172,8 +177,14 @@ export class EmpresaCreateComponent implements OnInit {
     modalAyuda.componentInstance.mensaje_importante = mess_i;
   }
   setData(event) {
-    this.empresaGroup.patchValue({
-      'ofertas_demandas': JSON.stringify(event),
-    });
+    if(event.length === 0) {
+      this.empresaGroup.patchValue({
+        'ofertas_demandas': null,
+      });
+    } else {
+      this.empresaGroup.patchValue({
+        'ofertas_demandas': JSON.stringify(event),
+      });
+    }
   }
 }
