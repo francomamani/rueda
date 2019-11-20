@@ -55,4 +55,7 @@ export class AuthService {
   generarBackup() {
     return this.base + 'generar-backup';
   }
+  setUsuarioParticipante(req) {
+    return this.http.post(`${this.base}set-usuario`, req);
+  }
 }

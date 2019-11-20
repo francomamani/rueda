@@ -89,6 +89,8 @@ class AuthController extends Controller
     public function setUsuario() {
         $participante_id = request()->input('participante_id');
         $participante = Participante::find($participante_id);
+        $participante->es_usuario = true;
+        $participante->save();
         $usuario_id = Empresa::find($participante['empresa_id'])->usuario_id;
         $usuario = null;
         if ($usuario_id === 0) {

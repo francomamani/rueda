@@ -52,9 +52,10 @@
                      alt="{{empresa.nombre}}">
                 <img *ngIf="empresa.logo === null"
                      height="48"
-                     src="{{logo_default}}{{empresa.empresa_id}}"
+                     src="assets/images/enterprise.png"
                      alt="{{empresa.nombre}}">
               </td>
+
               <td>
                 {{ empresa.created_at | date: 'dd/MM/y'}}
               </td>

@@ -5,6 +5,7 @@ import {AyudaModalComponent} from '../ayuda-modal/ayuda-modal.component';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {LoadModalComponent} from '../load-modal/load-modal.component';
 import {AuthService} from '../../auth.service';
+import {NbToastrService} from '@nebular/theme';
 
 @Component({
   selector: 'ngx-participante',
@@ -19,8 +20,8 @@ export class ParticipanteComponent implements OnInit {
   constructor(private empresaService: EmpresaService,
               private route: ActivatedRoute,
               private modalService: NgbModal,
+              private toastr: NbToastrService,
               private authService: AuthService) {
-
       if (this.authService.getTipoUsuario() === 'administrador') {
           this.id_empresa = this.route.snapshot.paramMap.get('empresa_id');
       } else {
@@ -38,7 +39,11 @@ export class ParticipanteComponent implements OnInit {
     });
   }
 
-
+  loadParticipantes() {
+    this.empresaService.indexParticipantes(this.id_empresa).subscribe((data: any[]) => {
+      this.participantes = data;
+    });
+  }
 /*  onDeleteConfirm(event): void {
     if (window.confirm('¿Esta seguro que quiere eliminar este registro?')) {
       event.confirm.resolve();
@@ -79,8 +84,7 @@ export class ParticipanteComponent implements OnInit {
         } else {
             event.confirm.reject();
         }
-    }
-    else{
+    } else {
         const modalAyuda=this.modalService.open(AyudaModalComponent, { size: 'lg', container: 'nb-layout' });
         modalAyuda.componentInstance.titulo = 'Cantidad de participantes';
         modalAyuda.componentInstance.mensaje= `
@@ -108,5 +112,17 @@ export class ParticipanteComponent implements OnInit {
     } else {
       event.confirm.reject();
     }
+  }
+
+  setUsuario(participante: any) {
+    const req = {
+      participante_id: participante.participante_id,
+    };
+    this.authService.setUsuarioParticipante(req)
+      .subscribe(() => {
+        this.loadParticipantes();
+        this.toastr.success(`El participante ${participante.nombres} ${participante.apellidos}
+        se definió como usuario de la empresa`, 'Usuario establecido');
+      });
   }
 }

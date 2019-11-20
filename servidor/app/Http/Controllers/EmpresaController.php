@@ -239,7 +239,6 @@ class EmpresaController extends Controller
             ];
             Participante::create($participante2);
         }
-
         $ofertas_demandas = json_decode($request->input('ofertas_demandas'), true);
         foreach ($ofertas_demandas as $oferta_demanda) {
             $oferta_demanda['empresa_id'] = $empresaModel->empresa_id;
@@ -307,7 +306,6 @@ class EmpresaController extends Controller
         $empresa = Empresa::find($id);
         Usuario::destroy($empresa->usuario_id);
         $empresa->delete();
-
         return response()->json([
             'mensaje' => 'Empresa: ' . $empresa->nombre . ' eliminado exitosamente'
         ], 200);

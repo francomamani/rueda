@@ -47,6 +47,11 @@
           <td>{{ participante.celular }}</td>
           <td>{{ participante.cargo }}</td>
           <td class="btn-acciones" *ngIf="authService.getTipoUsuario() === 'administrador'">
+            <a class="text-success"
+               (click)="setUsuario(participante)"
+               nbPopover="Establecer como usuario del sistema" nbPopoverMode="hint" nbPopoverPlacement="top">
+              <span class="fa fa-user-plus"></span>
+            </a>
             <a class="text-info"
                nbPopover="Editar participante" nbPopoverMode="hint" nbPopoverPlacement="top">
             <span class="fa fa-edit"></span>
@@ -54,10 +59,6 @@
             <a class="text-danger"
                nbPopover="Eliminar participante" nbPopoverMode="hint" nbPopoverPlacement="top">
               <span class="fa fa-trash"></span>
-            </a>
-            <a class="text-success"
-               nbPopover="Establecer como usuario del sistema" nbPopoverMode="hint" nbPopoverPlacement="top">
-              <span class="fa fa-user-plus"></span>
             </a>
           </td>
         </tr>
