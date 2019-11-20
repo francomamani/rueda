@@ -28,6 +28,8 @@ import { EmpresasRegistradasComponent } from './empresas-registradas/empresas-re
 import { OfertaDemandaComponent } from './oferta-demanda/oferta-demanda.component';
 import {TooltipModule} from '@swimlane/ngx-charts';
 import { OfertademandaComponent } from './ofertademanda/ofertademanda.component';
+import { ParticipanteAddComponent } from './participante-add/participante-add.component';
+import { ParticipanteEditComponent } from './participante-edit/participante-edit.component';
 
 @NgModule({
   imports: [
@@ -61,7 +63,9 @@ import { OfertademandaComponent } from './ofertademanda/ofertademanda.component'
                   AyudaModalComponent,
                   EmpresasRegistradasComponent,
                   OfertaDemandaComponent,
-                  OfertademandaComponent],
+                  OfertademandaComponent,
+                  ParticipanteAddComponent,
+                  ParticipanteEditComponent],
   exports: [PerfilComponent,
             HorariosOcupadosComponent,
             HorariosOcupadosCreateComponent,

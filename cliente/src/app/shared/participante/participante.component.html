@@ -1,8 +1,8 @@
-<nb-card>
+<nb-card *ngIf="state === 'index'">
   <nb-card-header>
     <span *ngIf="empresa !== null">Participantes de {{ empresa.nombre }}</span>
     <a class="download-pdf"
-       routerLink="/admin/noticias/crear"
+       (click)="reducer('add')"
        title="Crear Nuevo Participante">
       Crear Participante <i class="fa fa-user-plus"></i>
     </a>
@@ -38,7 +38,7 @@
           </td>
           <td>
             <span *ngIf="participante.es_usuario == 1">
-              {{ participante.nombres.toLocaleLowerCase().split(" ")[0] }}
+              {{ participante.nombres.toLocaleLowerCase().split(" ")[0] }}{{ participante.carnet }}
             </span>
           </td>
           <td>{{ participante.nombres }}</td>
@@ -67,3 +67,5 @@
     </div>
   </nb-card-body>
 </nb-card>
+<ngx-participante-add *ngIf="state === 'add'" [empresa_id]="id_empresa" (action)="state = $event" ></ngx-participante-add>
+<ngx-participante-edit *ngIf="state === 'edit'"></ngx-participante-edit>

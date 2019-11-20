@@ -86,12 +86,22 @@ class AuthController extends Controller
         $cuenta = strtolower($nombres);
         return explode(" ", $cuenta)[0] . $carnet;
     }
+    private function resetParticipantes($empresa_id) {
+        $participantes = Empresa::find($empresa_id)->participantes()->get();
+        foreach ($participantes as $participante) {
+            $p = Participante::find($participante['participante_id']);
+            $p->es_usuario = false;
+            $p->save();
+        }
+    }
     public function setUsuario() {
         $participante_id = request()->input('participante_id');
+        $empresa_id = request()->input('empresa_id');
+        $this->resetParticipantes($empresa_id);
         $participante = Participante::find($participante_id);
         $participante->es_usuario = true;
         $participante->save();
-        $usuario_id = Empresa::find($participante['empresa_id'])->usuario_id;
+        $usuario_id = Empresa::find($empresa_id)->usuario_id;
         $usuario = null;
         if ($usuario_id === 0) {
             $usuario = new Usuario();

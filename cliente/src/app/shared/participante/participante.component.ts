@@ -17,6 +17,7 @@ export class ParticipanteComponent implements OnInit {
   id_empresa: any;
   empresa: any = null;
   participantes: any = null;
+  state = 'index';
   constructor(private empresaService: EmpresaService,
               private route: ActivatedRoute,
               private modalService: NgbModal,
@@ -117,6 +118,7 @@ export class ParticipanteComponent implements OnInit {
   setUsuario(participante: any) {
     const req = {
       participante_id: participante.participante_id,
+      empresa_id: this.id_empresa,
     };
     this.authService.setUsuarioParticipante(req)
       .subscribe(() => {
@@ -124,5 +126,8 @@ export class ParticipanteComponent implements OnInit {
         this.toastr.success(`El participante ${participante.nombres} ${participante.apellidos}
         se definió como usuario de la empresa`, 'Usuario establecido');
       });
+  }
+  reducer(action: string) {
+    this.state = action;
   }
 }
