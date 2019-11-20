@@ -26,7 +26,7 @@
           <th>Carnet</th>
           <th>Celular</th>
           <th>Cargo</th>
-          <th *ngIf="authService.getTipoUsuario() === 'administrador'">Acciones</th>
+          <th>Acciones</th>
         </tr>
         </thead>
         <tbody>
@@ -46,7 +46,7 @@
           <td>{{ participante.carnet }}</td>
           <td>{{ participante.celular }}</td>
           <td>{{ participante.cargo }}</td>
-          <td class="btn-acciones" *ngIf="authService.getTipoUsuario() === 'administrador'">
+          <td class="btn-acciones">
             <a class="text-success"
                (click)="setUsuario(participante)"
                nbPopover="Establecer como usuario del sistema" nbPopoverMode="hint" nbPopoverPlacement="top">
@@ -57,6 +57,7 @@
             <span class="fa fa-edit"></span>
             </a>
             <a class="text-danger"
+               (click)="destroy(participante)"
                nbPopover="Eliminar participante" nbPopoverMode="hint" nbPopoverPlacement="top">
               <span class="fa fa-trash"></span>
             </a>
@@ -67,5 +68,8 @@
     </div>
   </nb-card-body>
 </nb-card>
-<ngx-participante-add *ngIf="state === 'add'" [empresa_id]="id_empresa" (action)="state = $event" ></ngx-participante-add>
-<ngx-participante-edit *ngIf="state === 'edit'"></ngx-participante-edit>
+<ngx-participante-add *ngIf="state === 'add'"
+                      [cantidad]="participantes.length"
+                      [empresa]="empresa" (action)="setState($event)" ></ngx-participante-add>
+<ngx-participante-edit *ngIf="state === 'edit'"
+                       [participante]="participante" (action)="setState($event)"></ngx-participante-edit>

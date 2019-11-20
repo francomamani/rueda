@@ -6,6 +6,7 @@ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {LoadModalComponent} from '../load-modal/load-modal.component';
 import {AuthService} from '../../auth.service';
 import {NbToastrService} from '@nebular/theme';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'ngx-participante',
@@ -61,6 +62,7 @@ export class ParticipanteComponent implements OnInit {
 
   datos: any;
 
+/*
   store(event): void {
     if(this.participantes < this.empresa.max_participantes) {
         if (window.confirm('¿Esta seguro de crear nuevo registro?')) {
@@ -89,14 +91,15 @@ export class ParticipanteComponent implements OnInit {
         const modalAyuda=this.modalService.open(AyudaModalComponent, { size: 'lg', container: 'nb-layout' });
         modalAyuda.componentInstance.titulo = 'Cantidad de participantes';
         modalAyuda.componentInstance.mensaje= `
-        El número de participantes excedió su límite de ${this.empresa.max_participantes} participantes, 
+        El número de participantes excedió su límite de ${this.empresa.max_participantes} participantes,
         Para incrementar la cantidad de participantes comuniquese con la administración del campo ferial al número de teléfono
         `;
         modalAyuda.componentInstance.mensaje_importante = '52 66111';
     }
 
   }
-  update(event): void {
+*/
+/*  update(event): void {
     if (window.confirm(`
     ¿Esta seguro de cambiar los datos de ${event.newData.nombres} ${event.newData.apellidos}?
     `)) {
@@ -113,7 +116,7 @@ export class ParticipanteComponent implements OnInit {
     } else {
       event.confirm.reject();
     }
-  }
+  }*/
 
   setUsuario(participante: any) {
     const req = {
@@ -129,5 +132,30 @@ export class ParticipanteComponent implements OnInit {
   }
   reducer(action: string) {
     this.state = action;
+  }
+
+  destroy(participante: any) {
+    if(confirm(`¿Esta seguro de eliminar al participante ${participante.nombres} ${participante.apellidos}?`)) {
+      if(participante.es_usuario) {
+        Swal.fire({
+          title: '¡El participante es un usuario!',
+          html: `El participante <strong>${participante.nombres} ${participante.apellidos}</strong> es usuario de la empresa y
+                <strong> no puede ser eliminado></strong>.<br/>
+               Seleccione otro participante como usuario antes de eliminarlo.`,
+          icon: 'error',
+          confirmButtonText: 'Esta bien',
+        });
+      } else {
+        this.empresaService.destroyParticipantes(participante.participante_id)
+          .subscribe(() => {
+            this.loadParticipantes();
+          });
+      }
+    }
+  }
+
+  setState(event) {
+    this.state = event;
+    this.loadParticipantes();
   }
 }

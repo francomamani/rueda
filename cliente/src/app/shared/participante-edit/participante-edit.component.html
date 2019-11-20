@@ -1,3 +1,49 @@
-<p>
-  participante-edit works!
-</p>
+<nb-card>
+  <nb-card-header>
+    REGISTRO DE PARTICIPANTE
+  </nb-card-header>
+  <nb-card-body>
+    <form (submit)="update()"  [formGroup]="participanteGroup" class="form">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label for="nombres">Nombres</label>
+            <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control"
+                   #nombres
+                   formControlName="nombres" name="nombres" id="nombres" required autofocus>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label for="apellidos">Apellidos</label>
+            <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" formControlName="apellidos" name="apellidos" id="apellidos" required>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label for="carnet">Numero de Carnet</label>
+            <input type="text" oninput="this.value = this.value.toUpperCase(); this.value = this.value.replace(/[A-Z]/g, '')" class="form-control" formControlName="carnet" name="carnet" id="carnet" required>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label for="celular">Celular</label>
+            <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" formControlName="celular" name="celular" id="celular" required>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label for="cargo">Cargo</label>
+            <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" formControlName="cargo" name="cargo" id="cargo" required>
+          </div>
+        </div>
+      </div>
+      <div class="form-group text-right">
+        <button class="btn btn-primary"
+                [disabled]="participanteGroup.status === 'INVALID'"
+                type="submit">ACTUALIZAR</button>&nbsp;&nbsp;
+        <a class="btn btn-default" (click)="cancelar()">CANCELAR</a>
+      </div>
+    </form>
+  </nb-card-body>
+</nb-card>

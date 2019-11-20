@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Empresa;
 use App\Participante;
+use App\Usuario;
 use Illuminate\Http\Request;
 
 class ParticipanteController extends Controller
@@ -40,6 +42,11 @@ class ParticipanteController extends Controller
 
     }
 
+    private function createCuenta($nombres, $carnet) {
+        $cuenta = strtolower($nombres);
+        return explode(" ", $cuenta)[0] . $carnet;
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -50,6 +57,17 @@ class ParticipanteController extends Controller
     public function update(Request $request, $id)
     {
         $participante = Participante::find($id);
+        $data = $request->all();
+        if ($participante['es_usuario'] === 1) {
+            $empresa = Empresa::find($participante['empresa_id']);
+            $usuario = Usuario::find($empresa['usuario_id']);
+            $usuario->nombres = $data['nombres'];
+            $usuario->apellidos = $data['apellidos'];
+            $usuario->cuenta = $this->createCuenta($data['nombres'], $data['carnet']);
+            $usuario->telefono_celular = $data['celular'];
+            $usuario->whatsapp = $data['celular'];
+            $usuario->save();
+        }
         $participante->update($request->all());
         return response()->json($participante, 200);
     }
