@@ -6,6 +6,7 @@ use App\Empresa;
 use App\Participante;
 use App\Usuario;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class ParticipanteController extends Controller
 {
@@ -64,6 +65,7 @@ class ParticipanteController extends Controller
             $usuario->nombres = $data['nombres'];
             $usuario->apellidos = $data['apellidos'];
             $usuario->cuenta = $this->createCuenta($data['nombres'], $data['carnet']);
+            $usuario->password = Hash::make($data['carnet']);
             $usuario->telefono_celular = $data['celular'];
             $usuario->whatsapp = $data['celular'];
             $usuario->save();

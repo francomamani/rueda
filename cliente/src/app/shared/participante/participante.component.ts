@@ -17,6 +17,7 @@ export class ParticipanteComponent implements OnInit {
 
   id_empresa: any;
   empresa: any = null;
+  participante: any = null;
   participantes: any = null;
   state = 'index';
   constructor(private empresaService: EmpresaService,
@@ -157,5 +158,10 @@ export class ParticipanteComponent implements OnInit {
   setState(event) {
     this.state = event;
     this.loadParticipantes();
+  }
+
+  edit(participante: any) {
+    this.state = 'edit';
+    this.participante = participante;
   }
 }

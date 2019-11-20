@@ -33,18 +33,15 @@ export class ParticipanteEditComponent implements OnInit {
 
   update() {
     this.empresaService.updateParticipantes(this.participanteGroup.value, this.participante.participante_id)
-      .subscribe(() => {
-
+      .subscribe((participante: any) => {
+        Swal.fire({
+          title: '¡Participante actualizado!',
+          html: `Participante <strong>${participante.nombres} ${participante.apellidos}</strong> actualizado exitosamente`,
+          icon: 'success',
+          confirmButtonText: 'Esta bien',
+        });
+        this.action.emit('index');
       });
-/*
-    Swal.fire({
-      title: '¡Máximo de participantes lleno!',
-      html: `Su empresa <strong>${this.empresa.nombre}</strong> ya tiene el máximo de participantes permitidos </strong><br/>
-               Si desea registrar más participantes, comuniquese con administración al <strong>52 66111</strong>`,
-      icon: 'error',
-      confirmButtonText: 'Esta bien',
-    });
-*/
   }
 
   cancelar() {
