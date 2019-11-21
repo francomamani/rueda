@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {LocalDataSource} from 'ng2-smart-table';
 import {EmpresaService} from './empresa.service';
-import {RubroService} from "../rubro/rubro.service";
+import {RubroService} from '../rubro/rubro.service';
 
 @Component({
   selector: 'ngx-empresa',
@@ -10,12 +10,8 @@ import {RubroService} from "../rubro/rubro.service";
 })
 export class EmpresaComponent implements OnInit {
 
-
     rubros: any[];
-
-
-    ngOnInit() {
-    }
+    ngOnInit() {}
 
     settings = {
         add: {
@@ -114,13 +110,9 @@ export class EmpresaComponent implements OnInit {
     };
 
     constructor(private empresa: EmpresaService, private rubroService: RubroService) {
-        /* this.empresa.index().subscribe((data: any[]) => {
-             this.source.load(data);
-         });*/
         this.rubroService.index().subscribe((data:any[]) => {
             this.rubros = data;
             this.settings.columns.rubro_id.editor.config.completer.data=data;
-            console.log(data);
         });
     }
 
@@ -153,5 +145,4 @@ export class EmpresaComponent implements OnInit {
             event.confirm.reject();
         }
     }
-
 }
