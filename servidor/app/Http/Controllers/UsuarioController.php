@@ -25,10 +25,12 @@ class UsuarioController extends Controller
     public function searchAdministradores() {
         $value = \request()->input('value');
         $usuarios = Usuario::where('tipo_usuario', 'administrador')
-                            ->where('nombres', 'like', "%{$value}%")
-                            ->orWhere('apellidos', 'like', "%{$value}%")
-                            ->orWhere('cuenta', 'like', "%{$value}%")
-                            ->orWhere('telefono_celular', 'like', "%{$value}%")
+                            ->where(function ($query) use ($value){
+                                $query->orWhere('nombres', 'like', "%{$value}%");
+                                $query->orWhere('apellidos', 'like', "%{$value}%");
+                                $query->orWhere('cuenta', 'like', "%{$value}%");
+                                $query->orWhere('telefono_celular', 'like', "%{$value}%");
+                            })
                             ->orderBy('cuenta')->get();
         return response()->json($usuarios, 200);
     }

@@ -28,6 +28,6 @@ export class UsuarioService {
       return this.http.get(`${this.base}administradores`);
     }
     searchAdministradores(req: any) {
-      return this.http.get(`${this.base}search-administradores`, req);
+      return this.http.post(`${this.base}search-administradores`, req);
     }
 }
