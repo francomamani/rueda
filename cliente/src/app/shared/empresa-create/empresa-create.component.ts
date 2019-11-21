@@ -53,6 +53,7 @@ export class EmpresaCreateComponent implements OnInit {
       'demanda': new FormControl('demandas'),
       'especial': new FormControl(0, Validators.required),
       'email': new FormControl(''),
+      'telefono': new FormControl('', Validators.required),
 
       'p1_nombres': new FormControl('', Validators.required),
       'p1_apellidos': new FormControl('', Validators.required),
@@ -100,6 +101,7 @@ export class EmpresaCreateComponent implements OnInit {
               formData.append('demanda', this.empresaGroup.value.demanda);
               formData.append('especial', this.empresaGroup.value.especial);
               formData.append('email', this.empresaGroup.value.email);
+              formData.append('telefono', this.empresaGroup.value.telefono);
 
               formData.append('p1_nombres', this.empresaGroup.value.p1_nombres);
               formData.append('p1_apellidos', this.empresaGroup.value.p1_apellidos);

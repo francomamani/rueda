@@ -39,7 +39,7 @@
               </div>
               <div class="col-sm-4 form-group">
                 <label for="nit">NIT</label>
-                <input type="text" oninput="this.value = this.value.toUpperCase()" id="nit" class="form-control" formControlName="nit" name="nit" placeholder="NIT">
+                <input type="text" oninput="this.value = this.value.toUpperCase(); this.value = this.value.replace(/[0-9 ]/g, '')" id="nit" class="form-control" formControlName="nit" name="nit" placeholder="NIT">
                 <div class="alert alert-danger"
                      *ngIf="empresaGroup.get('nit').status === 'INVALID'&& empresaGroup.get('nit').dirty">
                   <strong>Registrar el NIT es obligatorio</strong>
@@ -69,10 +69,18 @@
               </div>
               <div class="col-sm-6 form-group">
                 <label for="representante_legal">Representante legal</label>
-                <input type="text" oninput="this.value = this.value.toUpperCase()" id="representante_legal" class="form-control" formControlName="representante_legal" name="representante_legal" placeholder="Representante Legal">
+                <input type="text" oninput="this.value = this.value.toUpperCase(); this.value = this.value.replacer(/[\W0-9 ]/g, '')" id="representante_legal" class="form-control" formControlName="representante_legal" name="representante_legal" placeholder="Representante Legal">
                 <div class="alert alert-danger"
                      *ngIf="empresaGroup.get('representante_legal').status === 'INVALID' && empresaGroup.get('representante_legal').dirty">
                   <strong>El representante legal de la empresa es obligatoria</strong>
+                </div>
+              </div>
+              <div class="col-sm-6 form-group">
+                <label for="telefono">Telefono/Celular</label>
+                <input type="text" oninput="this.value = this.value.toUpperCase()" id="telefono" class="form-control" formControlName="telefono" name="telefono" placeholder="Telefono/Celular">
+                <div class="alert alert-danger"
+                     *ngIf="empresaGroup.get('telefono').status === 'INVALID' && empresaGroup.get('telefono').dirty">
+                  <strong>El teléfono o celular de la empresa es obligatoria</strong>
                 </div>
               </div>
             </div>
