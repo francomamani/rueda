@@ -70,7 +70,7 @@ export class UsuarioIndexComponent implements OnInit {
         if (window.confirm(`¿Esta seguro que desea restablecer la contraseña de ${usuario.cuenta} a ${usuario.cuenta}?`)) {
               this.usuarioService.reset(usuario.usuario_id)
                   .subscribe((res: any) => {
-                      this.toastr.success(`La nueva contraseña es ${res.cuenta}`, 'Contraseña actualizada');
+                    alert(`La nueva contraseña es ${res.cuenta}`);
                   });
         }
     }
