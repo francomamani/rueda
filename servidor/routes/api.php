@@ -93,3 +93,5 @@ Route::post('con-material/{empresa_id}', 'EmpresaController@conMaterial');
 
 Route::get('mis-ofertas-demandas/{empresa_id}', 'OfertaDemandaController@ofertasDemandas');
 Route::post('set-usuario', 'AuthController@setUsuario');
+Route::get('administradores', 'UsuarioController@administradores');
+Route::post('search-administradores', 'UsuarioController@searchAdministradores');

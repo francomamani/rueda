@@ -18,6 +18,21 @@ class UsuarioController extends Controller
         return response()->json(Usuario::with('empresa')->orderBy('cuenta')->get(), 200);
     }
 
+    public function administradores() {
+        $usuarios = Usuario::where('tipo_usuario', 'administrador')->orderBy('cuenta')->get();
+        return response()->json($usuarios);
+    }
+    public function searchAdministradores() {
+        $value = \request()->input('value');
+        $usuarios = Usuario::where('tipo_usuario', 'administrador')
+                            ->where('nombres', 'like', "%{$value}%")
+                            ->orWhere('apellidos', 'like', "%{$value}%")
+                            ->orWhere('cuenta', 'like', "%{$value}%")
+                            ->orWhere('telefono_celular', 'like', "%{$value}%")
+                            ->orderBy('cuenta')->get();
+        return response()->json($usuarios, 200);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -116,10 +131,8 @@ class UsuarioController extends Controller
 
     public function resetPassword($usuario_id) {
         $usuario = Usuario::find($usuario_id);
-        $usuario->password = Hash::make($usuario->email);
+        $usuario->password = Hash::make($usuario->cuenta);
         $usuario->save();
-        return response()->json([
-            'mensaje' => 'Contraseña actualizada exitosamente'
-        ], 200);
+        return response()->json($usuario, 200);
     }
 }

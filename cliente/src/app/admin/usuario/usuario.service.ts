@@ -24,4 +24,10 @@ export class UsuarioService {
     reset(id) {
         return this.http.get(this.base + 'reset-password/' + id);
     }
+    administradores() {
+      return this.http.get(`${this.base}administradores`);
+    }
+    searchAdministradores(req: any) {
+      return this.http.get(`${this.base}search-administradores`, req);
+    }
 }

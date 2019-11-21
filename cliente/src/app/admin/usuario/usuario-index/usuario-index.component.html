@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-12">
     <nb-card>
-      <nb-card-header>Usuarios Registrados</nb-card-header>
+      <nb-card-header>Administradores</nb-card-header>
       <nb-card-body>
         <form (submit)="buscar()"
               class="rueda-search"
@@ -17,16 +17,27 @@
             <tr>
               <th>N.</th>
               <th>Cuenta</th>
-              <th>Empresa</th>
               <th>Nombres</th>
               <th>Apellidos</th>
+              <th>Telefono/Celular</th>
               <th>Correo Electrónico</th>
-              <th>Tipo de Usuario</th>
               <th>Acciones</th>
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let usuario of usuarios; let i = index">
+              <tr *ngFor="let administrador of administradores; let i = index">
+                <td>{{ i + 1}}</td>
+                <td>{{ administrador.cuenta }}</td>
+                <td>{{ administrador.nombres }}</td>
+                <td>{{ administrador.apellidos }}</td>
+                <td>{{ administrador.telefono_celular }}</td>
+                <td>{{ administrador.email }}</td>
+                <td class="btn-acciones-2">
+                  <a class="text-primary" title="Restablecer contraseña a nombre de cuenta" (click)="onResetConfirm(administrador)"  ><i class="fa fa-lock"></i></a>
+                  <a title="Eliminar administrador" class="text-danger" (click)="onDeleteConfirm(administrador, i)"><i class="fa fa-trash"></i></a>
+                </td>
+              </tr>
+<!--            <tr *ngFor="let usuario of usuarios; let i = index">
               <td>{{ i + 1 }}</td>
               <td>{{usuario.cuenta}}</td>
               <td><a *ngIf="usuario.empresa != null" (click)="info(usuario.empresa)" class="info">{{usuario.empresa.nombre | uppercase }}</a></td>
@@ -42,7 +53,7 @@
                 <a class="text-success" title="Editar usuario" [routerLink]="['/admin/usuario/actualizar-usuario/', usuario.usuario_id]"><i class="fa fa-edit"></i></a>
                 <a  *ngIf="usuario.tipo_usuario === 'administrador'" title="Eliminar usuario" class="text-danger" (click)="onDeleteConfirm(usuario, i)"><i class="fa fa-trash"></i></a>
               </td>
-            </tr>
+            </tr>-->
             </tbody>
           </table>
         </div>

@@ -16,19 +16,20 @@ export class UsuarioIndexComponent implements OnInit {
     buscarGroup: FormGroup;
     usuarios: any;
     usuariosBK: any;
+    administradores: any;
     constructor(private usuarioService: UsuarioService,
                 private modalService: NgbModal,
                 private fb: FormBuilder,
                 private toastr: NbToastrService) {
         this.createForm();
         const loadModal = this.modalService.open(LoadModalComponent, { size: 'sm', container: 'nb-layout' });
-        this.usuarioService.index().subscribe((res: any) => {
-            this.usuarios = res;
-            this.usuariosBK = this.usuarios;
+        this.usuarioService.administradores()
+          .subscribe((administradores: any) => {
+            this.administradores = administradores;
             loadModal.dismiss();
-        },(error: any) => {
+          }, () => {
             loadModal.dismiss();
-        });
+          });
     }
 
     ngOnInit() {
@@ -40,24 +41,15 @@ export class UsuarioIndexComponent implements OnInit {
         });
     }
     buscar() {
-      this.usuarios = this.usuariosBK;
-      console.log(this.usuarios);
-      const search = this.buscarGroup.value.search.toLowerCase();
-      if ( search !== '') {
-          this.usuarios = this.usuarios.filter((usuario: any) => {
-            if (usuario.tipo_usuario === 'empresa') {
-              return  usuario.nombres.toLowerCase().indexOf(search) >  -1 ||
-                usuario.cuenta.toLowerCase().indexOf(search) >  -1 ||
-                usuario.apellidos.toLowerCase().indexOf(search) >  -1 ||
-                usuario.tipo_usuario.toLowerCase().indexOf(search) >  -1 ||
-                usuario.empresa.nombre.toLowerCase().indexOf(search) >  -1;
-            } else {
-              return  usuario.nombres.toLowerCase().indexOf(search) >  -1 ||
-                usuario.cuenta.toLowerCase().indexOf(search) >  -1 ||
-                usuario.apellidos.toLowerCase().indexOf(search) >  -1 ||
-                usuario.tipo_usuario.toLowerCase().indexOf(search) >  -1;
-            }
+      if (this.buscarGroup.value.search === '') {
+        this.usuarioService.administradores()
+          .subscribe((administradores: any) => {
+            this.administradores = administradores;
           });
+      } else {
+        this.usuarioService.searchAdministradores({
+          value: this.buscarGroup.value.search,
+        }).subscribe((administradores) => this.administradores = administradores);
       }
     }
     info(empresa) {
@@ -66,7 +58,7 @@ export class UsuarioIndexComponent implements OnInit {
         activeModal.componentInstance.empresa = empresa;
     }
     onDeleteConfirm(usuario, index): void {
-        if (window.confirm('¿Esta seguro que quiere eliminar a ' + usuario.email + '?')) {
+        if (window.confirm('¿Esta seguro que quiere eliminar a ' + usuario.cuenta + '?')) {
             this.usuarioService.destroy(usuario.usuario_id)
                 .subscribe((res: any) => {
                     this.usuarios.splice(index, 1);
@@ -75,10 +67,10 @@ export class UsuarioIndexComponent implements OnInit {
         }
     }
     onResetConfirm(usuario): void {
-        if (window.confirm('¿Esta seguro que desea restablecer la contraseña de ' + usuario.email + '?')) {
+        if (window.confirm('¿Esta seguro que desea restablecer la contraseña de ' + usuario.cuenta + '?')) {
               this.usuarioService.reset(usuario.usuario_id)
                   .subscribe((res: any) => {
-                      this.toastr.success('La nueva contraseña es su nombre de cuenta', res.mensaje);
+                      this.toastr.success(`La nueva contraseña es su cuenta ${res.cuenta}`, res.mensaje);
                   });
         }
     }
