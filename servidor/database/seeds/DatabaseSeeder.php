@@ -171,10 +171,10 @@ class DatabaseSeeder extends Seeder
             'nombres' => 'Andrea Luisa',
             'apellidos' => 'Silvestre Lobo',
             'email' => 'asilvestre@campoferial3dejulio.com',
-            'cuenta' => 'andrea',
+            'cuenta' => 'admin123456789',
             'telefono_celular' => '61836193',
             'whatsapp' => '61836193',
-            'password' => Hash::make('7287697')
+            'password' => Hash::make('123456789')
         ];
         Usuario::create($usuarioAdmin);
 

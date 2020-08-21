@@ -2,7 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angula
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {NbToastrService} from '@nebular/theme';
 import {EmpresaService} from '../../admin/empresa/empresa.service';
-import Swal from 'sweetalert2';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'ngx-participante-edit',
@@ -15,9 +15,11 @@ export class ParticipanteEditComponent implements OnInit {
   @Output() action = new EventEmitter<string>();
   @ViewChild('nombres') nombres;
   participanteGroup: FormGroup;
+
   constructor(private fb: FormBuilder,
               private toastr: NbToastrService,
-              private empresaService: EmpresaService) { }
+              private empresaService: EmpresaService) {
+  }
 
   ngOnInit() {
     this.participanteGroup = this.fb.group({
@@ -34,12 +36,13 @@ export class ParticipanteEditComponent implements OnInit {
   update() {
     this.empresaService.updateParticipantes(this.participanteGroup.value, this.participante.participante_id)
       .subscribe((participante: any) => {
-        Swal.fire({
-          title: '¡Participante actualizado!',
-          html: `Participante <strong>${participante.nombres} ${participante.apellidos}</strong> actualizado exitosamente`,
-          icon: 'success',
-          confirmButtonText: 'Esta bien',
-        });
+        swal('¡Participante actualizado!', `Participante ${participante.nombres} ${participante.apellidos} actualizado exitosamente`, 'success');
+        /*        Swal.fire({
+                  title: '¡Participante actualizado!',
+                  html: `Participante <strong>${participante.nombres} ${participante.apellidos}</strong> actualizado exitosamente`,
+                  icon: 'success',
+                  confirmButtonText: 'Esta bien',
+                });*/
         this.action.emit('index');
       });
   }
