@@ -168,26 +168,26 @@ class DatabaseSeeder extends Seeder
             ]);
         }
         $usuarioAdmin = [
-            'nombres' => 'Andrea Luisa',
-            'apellidos' => 'Silvestre Lobo',
-            'email' => 'asilvestre@campoferial3dejulio.com',
+            'nombres' => 'Ebeliz',
+            'apellidos' => 'Fuentes Claros',
+            'email' => 'ebelizfuentes@gmail.com',
             'cuenta' => 'admin123456789',
-            'telefono_celular' => '61836193',
-            'whatsapp' => '61836193',
+            'telefono_celular' => '71100743',
+            'whatsapp' => '71100743',
             'password' => Hash::make('123456789')
         ];
         Usuario::create($usuarioAdmin);
 
 
         $usuario = [
-            'nombres' => 'Andrea Luisa',
-            'apellidos' => 'Silvestre Lobo',
-            'email' => 'asilvestre@campoferial3dejulio.com',
+            'nombres' => 'Ebeliz',
+            'apellidos' => 'Fuentes Claros',
+            'email' => 'ebelizfuentes@gmail.com',
             'tipo_usuario' => 'empresa',
-            'cuenta' => 'luisa',
-            'telefono_celular' => '61836193',
-            'whatsapp' => '61836193',
-            'password' => Hash::make('7287697')
+            'cuenta' => 'ebelizfuentes',
+            'telefono_celular' => '71100743',
+            'whatsapp' => '71100743',
+            'password' => Hash::make('71100743')
         ];
 
         $empresa = [
