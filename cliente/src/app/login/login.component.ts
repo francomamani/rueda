@@ -14,7 +14,7 @@ import {AyudaModalComponent} from '../shared/ayuda-modal/ayuda-modal.component';
 })
 export class LoginComponent {
   @ViewChild('cuenta') cuenta;
-  mensaje = '';
+  mensaje: string = '';
   loginGroup: FormGroup;
 
   /*  logo = environment.base + environment.usuario_logo;
