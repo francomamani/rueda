@@ -4,22 +4,29 @@
       <div class="col-md-12">
         <nb-card>
           <nb-card-body class="perfil-acciones">
-            <label for="logo-file" class="logo-file-label" *ngIf="usuario.tipo_usuario === 'empresa'">
+            <label *ngIf="usuario.tipo_usuario === 'empresa'" class="logo-file-label" for="logo-file">
               <i class="nb-edit"></i>
             </label>
-            <input type="file" id="logo-file" #logoFile (change)="cambiarLogo()">
-            <img [src]="logo" [alt]="usuario.nombre" *ngIf="usuario.tipo_usuario === 'empresa'">
-            <img src="{{usuarioLogo}}" alt="{{usuario.nombres}} {{usuario.apellidos}}" *ngIf="usuario.tipo_usuario === 'administrador'">
+            <input #logoFile (change)="cambiarLogo()" id="logo-file" type="file">
+            <img *ngIf="usuario.tipo_usuario === 'empresa'" [alt]="usuario.nombre" [src]="logo">
+            <img *ngIf="usuario.tipo_usuario === 'administrador'" alt="{{usuario.nombres}} {{usuario.apellidos}}"
+                 src="{{usuarioLogo}}">
             <h4 *ngIf="usuario.tipo_usuario === 'administrador'">{{ usuario.nombres }} {{ usuario.apellidos }}</h4>
             <h4 *ngIf="usuario.tipo_usuario === 'empresa'">{{ usuario.nombre }}</h4>
-            <button *ngIf="usuario.tipo_usuario === 'administrador'" class="btn-perfil" routerLink="/admin/actualizar-usuario/{{usuario.usuario_id}}">Editar Usuario</button>
-            <button *ngIf="usuario.tipo_usuario === 'empresa'" class="btn-perfil" routerLink="/empresa/actualizar-usuario/{{usuario.usuario_id}}">Editar Usuario</button>
-            <button class="btn-perfil" *ngIf="usuario.tipo_usuario === 'empresa'" [routerLink]="['/empresa/editar/'+usuario.empresa_id]">Editar Empresa</button>
+            <button *ngIf="usuario.tipo_usuario === 'administrador'" class="btn-perfil"
+                    routerLink="/admin/actualizar-usuario/{{usuario.usuario_id}}">Editar Usuario
+            </button>
+            <button *ngIf="usuario.tipo_usuario === 'empresa'" class="btn-perfil"
+                    routerLink="/empresa/actualizar-usuario/{{usuario.usuario_id}}">Editar Usuario
+            </button>
+            <button *ngIf="usuario.tipo_usuario === 'empresa'" [routerLink]="['/empresa/editar/'+usuario.empresa_id]"
+                    class="btn-perfil">Editar Empresa
+            </button>
           </nb-card-body>
         </nb-card>
       </div>
       <ng-template ngIf="participantes !== null">
-        <div class="col-md-12" *ngFor="let participante of participantes">
+        <div *ngFor="let participante of participantes" class="col-md-12">
           <nb-card>
             <nb-card-header>Participante {{participante.nombres}} {{participante.apellidos}}</nb-card-header>
             <nb-card-body>
@@ -79,7 +86,7 @@
         </nb-card>
       </div>
     </div>
-    <div class="row" *ngIf="usuario.tipo_usuario === 'empresa'">
+    <div *ngIf="usuario.tipo_usuario === 'empresa'" class="row">
       <div class="col-md-12">
         <nb-card>
           <nb-card-header>Perfil de Empresa</nb-card-header>
@@ -89,8 +96,10 @@
               <tr>
                 <td><strong>Estado</strong></td>
                 <td>
-                  <span *ngIf="usuario.habilitado === 1" class="text-success">Habilitado para la rueda de negocios</span>
-                  <span *ngIf="usuario.habilitado === 0" class="text-danger">No habilitado para la rueda de negocios</span>
+                  <span *ngIf="usuario.habilitado === 1"
+                        class="text-success">Habilitado para la rueda de negocios</span>
+                  <span *ngIf="usuario.habilitado === 0"
+                        class="text-danger">No habilitado para la rueda de negocios</span>
                 </td>
               </tr>
               <tr>

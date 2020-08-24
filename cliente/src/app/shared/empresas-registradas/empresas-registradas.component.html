@@ -6,22 +6,24 @@
         <h5>Empresas Registradas para agendar reuniones</h5>
       </nb-card-header>
       <nb-card-body class="card-body">
-        <h5 class="texto-ayuda">En esta sección, puede agendar reuniones con las distintas empresas participes de la rueda de negocios<br>
-          Puede realizar la búsqueda de una empresa mediante el rubro al que pertenece y/o nombre, características de la empresa</h5>
-        <form (submit)="buscar()" class="rueda-search" [formGroup]="buscarGroup">
+        <h5 class="texto-ayuda">En esta sección, puede agendar reuniones con las distintas empresas participes de la
+          rueda de negocios<br>
+          Puede realizar la búsqueda de una empresa mediante el rubro al que pertenece y/o nombre, características de la
+          empresa</h5>
+        <form (submit)="buscar()" [formGroup]="buscarGroup" class="rueda-search">
           <select formControlName="rubro_id" name="rubro_id">
             <option value="0">TODOS LOS RUBROS</option>
-            <option [value]="rubro.rubro_id"
-                    *ngFor="let rubro of rubros">{{rubro.nombre}}</option>
+            <option *ngFor="let rubro of rubros"
+                    [value]="rubro.rubro_id">{{rubro.nombre}}</option>
           </select>
-          <input type="search" formControlName="search" name="search" placeholder="Buscar ofertas y demandas">
-          <button class="search"> Buscar </button>
+          <input formControlName="search" name="search" placeholder="Buscar ofertas y demandas" type="search">
+          <button class="search"> Buscar</button>
         </form>
         <br><br>
         <div *ngIf="empresas !== null && empresas.length === 0" class="sin-coincidencias">
           No se encontraron coincidencias
         </div>
-        <div class="table-responsive" *ngIf="empresas !== null && empresas.length > 0">
+        <div *ngIf="empresas !== null && empresas.length > 0" class="table-responsive">
           <table class="table table-hover">
             <thead>
             <tr>
@@ -37,7 +39,7 @@
             <tbody>
             <tr *ngFor="let empresa of empresas; let i = index">
               <td>{{ i + 1 }}</td>
-              <td><img height="48" src="{{logo}}{{empresa.empresa_id}}" alt="{{empresa.nombre}}"></td>
+              <td><img alt="{{empresa.nombre}}" height="48" src="{{logo}}{{empresa.empresa_id}}"></td>
               <td><a (click)="info(empresa)" class="info">{{ empresa.nombre | uppercase }}</a></td>
               <td>{{ empresa.nit }}</td>
               <td>{{ empresa.telefono }}</td>
@@ -45,10 +47,10 @@
               <td>
                 <div class="row">
                   <div class="col-lg-6">
-                    <button class="asignar" (click)="agendar(empresa.empresa_id)">Agendar Reunión</button>
+                    <button (click)="agendar(empresa.empresa_id)" class="asignar">Agendar Reunión</button>
                   </div>
                   <div class="col-lg-6">
-                    <button class="asignar" (click)="info(empresa)">Ofertas y Demandas</button>
+                    <button (click)="info(empresa)" class="asignar">Ofertas y Demandas</button>
                   </div>
                 </div>
               </td>

@@ -162,7 +162,7 @@ class DatabaseSeeder extends Seeder
             \App\Rubro::create($rubro);
         }
         /*fin de rubros*/
-        for ($i = 0; $i < 20; $i++){
+        for ($i = 0; $i < 5; $i++){
             \App\Mesa::create([
                 "numero" => $i + 1
             ]);

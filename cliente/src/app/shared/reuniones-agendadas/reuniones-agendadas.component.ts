@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {ActivatedRoute, Router} from '@angular/router';
 import {EmpresaService} from '../../admin/empresa/empresa.service';
@@ -12,7 +12,7 @@ import * as jsPDF from 'jspdf'
   templateUrl: './reuniones-agendadas.component.html',
   styleUrls: ['./reuniones-agendadas.component.scss'],
   providers: [
-      { provide: 'Window',  useValue: window },
+    {provide: 'Window', useValue: window},
   ],
 })
 export class ReunionesAgendadasComponent implements OnInit {
@@ -23,22 +23,25 @@ export class ReunionesAgendadasComponent implements OnInit {
   rubro = null;
   habilitado = null;
   admin: boolean = null;
+
   constructor(private empresaService: EmpresaService,
               private route: ActivatedRoute,
               private reunionService: ReunionService,
               private router: Router,
               private authService: AuthService,
               private modalService: NgbModal) {
+  }
+
+  ngOnInit() {
     this.route.params.subscribe(params => {
       if (params.empresa_id) {
         this.empresa_id = parseInt(params.empresa_id, 10);
-        this.empresaService.show(parseInt(params.empresa_id, 10))
+        this.empresaService.mostrar(parseInt(params.empresa_id, 10))
           .subscribe((res: any) => {
             this.mi_empresa = res.nombre;
             this.rubro = res.rubro;
-            this.habilitado  = res.habilitado;
+            this.habilitado = res.habilitado;
             this.admin = true;
-
           });
       } else {
         this.empresa_id = this.authService.getUsuario().empresa_id;
@@ -47,19 +50,14 @@ export class ReunionesAgendadasComponent implements OnInit {
         this.admin = false;
       }
     });
-
-
     this.empresaService.misReuniones(this.empresa_id)
       .subscribe((res: any) => {
         this.reuniones = res;
       });
   }
 
-  ngOnInit() {
-  }
-
   info(empresa, fecha_hora_registro_reunion) {
-    const activeModal = this.modalService.open(EmpresaModalComponent, { size: 'lg', container: 'nb-layout' });
+    const activeModal = this.modalService.open(EmpresaModalComponent, {size: 'lg', container: 'nb-layout'});
     activeModal.componentInstance.modalHeader = 'Empresa: ' + empresa.nombre;
     activeModal.componentInstance.empresa = empresa;
     activeModal.componentInstance.fecha_hora_registro_reunion = fecha_hora_registro_reunion;
@@ -74,7 +72,7 @@ export class ReunionesAgendadasComponent implements OnInit {
   }
 
   cancelar(reunion_id, index) {
-    if ( confirm('¿Esta seguro de eliminar esta reunión?') ) {
+    if (confirm('¿Esta seguro de eliminar esta reunión?')) {
       this.reunionService.destroy(reunion_id)
         .subscribe(res => {
           this.empresaService.misReuniones(this.empresa_id)
@@ -86,74 +84,91 @@ export class ReunionesAgendadasComponent implements OnInit {
   }
 
   formatDate(date) {
-      let dia = date.getDate();
-      let mes = date.getMonth() + 1;
-      const anio = date.getFullYear();
-      if (mes < 10) {
-          mes = '0' + mes;
-      }
-      if (dia < 10) {
-          dia = '0' + dia;
-      }
-      return dia + '/' + mes + '/' + anio;
+    let dia = date.getDate();
+    let mes = date.getMonth() + 1;
+    const anio = date.getFullYear();
+    if (mes < 10) {
+      mes = '0' + mes;
+    }
+    if (dia < 10) {
+      dia = '0' + dia;
+    }
+    return dia + '/' + mes + '/' + anio;
   }
+
   formatTime(time) {
-      let horas = time.getHours();
-      let minutos = time.getMinutes();
-      if (horas < 10) {
-          horas = '0' + horas;
-      }
-      if (minutos < 10) {
-          minutos = '0' + minutos;
-      }
-      return horas + ':' + minutos;
+    let horas = time.getHours();
+    let minutos = time.getMinutes();
+    if (horas < 10) {
+      horas = '0' + horas;
+    }
+    if (minutos < 10) {
+      minutos = '0' + minutos;
+    }
+    return horas + ':' + minutos;
   }
 
   pdf_agenda() {
-    if ( this.reuniones.length > 0 ) {
-        const doc = new jsPDF();
+    this.empresaService.mostrar(this.empresa_id)
+      .subscribe((empresa: any) => {
+        if (this.reuniones.length > 0) {
+          const doc = new jsPDF('landscape', 'mm', 'letter');
 
-        doc.setFontSize(11);
-        doc.setFontStyle('bold');
-        doc.text('AGENDA', 100, 20);
-        doc.text('EMPRESA', 25, 30);
-        doc.setFontStyle('normal');
-        doc.text(this.mi_empresa.toUpperCase(), 50, 30);
-        doc.setFontStyle('bold');
-        doc.text('RUBRO', 25, 40);
-        doc.setFontStyle('normal');
-        if (this.rubro.toUpperCase().length < 50) {
-            doc.text(this.rubro.toUpperCase(), 50, 40);
-        } else {
-            const parte1 = this.rubro.toUpperCase().substring(0, 53);
-            const parte2 = this.rubro.toUpperCase().substring(53);
-            doc.text(parte1, 50, 40);
-            doc.text(parte2, 50, 48);
-        }
+          const logo = new Image();
+          logo.src = 'assets/images/bioseguridad.jpeg';
+          doc.addImage(logo, 'JPEG', 206.9, 20, 52.5, 12.5);
+          doc.setFontSize(10);
+          doc.setFontStyle('bold');
+          doc.text('AGENDA DE REUNIONES BIOSEGURIDAD', 139.7, 20, 'center');
+          doc.text('EMPRESA', 20, 30);
+          doc.setFontStyle('normal');
+          doc.text(this.mi_empresa.toUpperCase(), 50, 30);
+          doc.setFontStyle('bold');
+          doc.text('RUBRO', 20, 37);
 
-        doc.setFontStyle('bold');
-        doc.line(25, 55, 200, 55);
-        doc.text('HORARIO', 30, 60);
-        doc.text('MESA', 75, 60);
-        doc.text('SOLICITANTE', 95, 60);
-        doc.text('DEMANDADA', 150, 60);
-        doc.line(25, 65, 200, 65);
+          doc.setFontStyle('bold');
+          doc.text('REUNIONES', 139.7, 44, 'center');
+          doc.setFontStyle('normal');
 
-        const x = 30;
-        let y = 70;
-        doc.setFontStyle('normal');
-        this.reuniones.forEach((reunion: any) => {
-            doc.line(x - 5, y - 5, 200, y - 5);
+          if (empresa.rubro.nombre.toUpperCase().length < 50) {
+            doc.text(empresa.rubro.nombre.toUpperCase(), 50, 37);
+          } else {
+            const parte1 = empresa.rubro.nombre.toUpperCase().substring(0, 53);
+            const parte2 = empresa.rubro.nombre.toUpperCase().substring(53);
+            doc.text(parte1, 50, 37);
+            doc.text(parte2, 50, 44);
+          }
+
+          doc.setFontStyle('bold');
+          doc.line(20, 50, 259.4, 50);
+          doc.text('HORARIO', 25, 57);
+          doc.text('MESA', 65, 57);
+          doc.text('SOLICITANTE', 80, 57);
+          doc.text('DEMANDADA', 135, 57);
+          doc.text('REUNIÓN ZOOM', 210, 57);
+          doc.line(20, 62, 259.4, 62);
+          /*          doc.line(x - 5, y - 5, 259.4, y - 5);*/
+          const x = 25;
+          let y = 68;
+          doc.setFontStyle('normal');
+          this.reuniones.forEach((reunion: any) => {
+            doc.setTextColor(0, 0, 0);
+            doc.setFontStyle('normal');
             doc.text(this.formatDate(new Date(reunion.desde)) + ' ' +
-                this.formatTime(new Date(reunion.desde)) + '-' +
-                this.formatTime(new Date(reunion.hasta)), x, y);
+              this.formatTime(new Date(reunion.desde)) + '-' +
+              this.formatTime(new Date(reunion.hasta)), x, y);
             doc.text(reunion.mesa, x + 45, y);
-            doc.text(reunion.empresa_solicitante.nombre.toUpperCase(), x + 65, y);
-            doc.text(reunion.empresa_demandada.nombre.toUpperCase(), x + 120, y);
-            doc.line(x - 5, y + 5, 200, y + 5);
+            doc.text(reunion.empresa_solicitante.nombre.toUpperCase(), x + 55, y);
+            doc.text(reunion.empresa_demandada.nombre.toUpperCase(), x + 110, y);
+            doc.setTextColor(0, 0, 255);
+            doc.setFontStyle('bold');
+            doc.text(reunion.url, x + 165, y);
+            doc.setTextColor(0, 0, 0);
+            doc.line(x - 5, y + 4, 259.4, y + 4);
             y += 10;
-        });
-        doc.save('agenda.pdf');
-    }
+          });
+          doc.save(`AGENDA ${this.mi_empresa.toUpperCase()}.pdf`);
+        }
+      });
   }
 }

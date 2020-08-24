@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Empresa extends Model
 {
     use SoftDeletes;
+
     protected $table = 'empresas';
     protected $primaryKey = 'empresa_id';
     protected $fillable = [
@@ -30,34 +31,47 @@ class Empresa extends Model
         'con_material',
     ];
     protected $dates = ['deleted_at'];
+    protected $appends = ['rubro'];
 
-    public function usuario() {
+    public function getRubroAttribute()
+    {
+        return Rubro::find($this->rubro_id);
+    }
+
+    public function usuario()
+    {
         return $this->belongsTo(Usuario::class, 'usuario_id');
     }
 
-    public function rubro() {
+    public function rubro()
+    {
         return $this->belongsTo(Rubro::class, 'rubro_id');
     }
 
-    public function participantes() {
+    public function participantes()
+    {
         return $this->hasMany(Participante::class, 'empresa_id');
     }
 
-    public function horariosOcupados() {
+    public function horariosOcupados()
+    {
         return $this->hasMany(HorarioOcupado::class, 'empresa_id');
     }
 
-    public function evaluacionGeneral() {
+    public function evaluacionGeneral()
+    {
         return $this->hasOne(EvaluacionGeneral::class, 'empresa_id');
     }
 
-    public function evaluacionReuniones() {
+    public function evaluacionReuniones()
+    {
         return $this->hasMany(EvaluacionGeneral::class, 'empresa_id');
     }
+
     public static function boot()
     {
         parent::boot();
-        static::deleting(function($padre) {
+        static::deleting(function ($padre) {
             $padre->participantes()->delete();
             $padre->horariosOcupados()->delete();
             $padre->evaluacionGeneral()->delete();

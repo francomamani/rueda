@@ -28,12 +28,12 @@
           <tbody>
           <tr *ngFor="let horario of horarios; let i = index">
             <td>
-              <span *ngIf="!horario.edit"> {{ horario.inicio | date: 'dd LLL HH:mm' }} </span>
-              <input *ngIf="horario.edit" type="datetime-local" [(ngModel)]="horario.inicio">
+              <span> {{ horario.inicio | date: 'dd LLL HH:mm' }} </span>
+              <input *ngIf="horario.edit" type="datetime-local" [(ngModel)]="horario.inicio" [value]="horario.inicio">
             </td>
             <td>
-              <span *ngIf="!horario.edit"> {{ horario.fin | date: 'dd LLL HH:mm'}} </span>
-              <input *ngIf="horario.edit" type="datetime-local" [(ngModel)]="horario.fin">
+              <span> {{ horario.fin | date: 'dd LLL HH:mm'}} </span>
+              <input *ngIf="horario.edit" type="datetime-local" [(ngModel)]="horario.fin" [value]="horario.fin">
             </td>
             <td class="acciones">
               <a class="text-success" title="Editar horario"

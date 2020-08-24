@@ -37,6 +37,10 @@ export class MesaComponent implements OnInit {
                 title: 'Número de mesa',
                 type: 'string',
             },
+            url: {
+                title: 'Reunión Zoom',
+                type: 'string',
+            },
         },
     };
 

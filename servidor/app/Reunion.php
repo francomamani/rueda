@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Reunion extends Model
 {
     use SoftDeletes;
+
     protected $table = 'reuniones';
     protected $primaryKey = 'reunion_id';
     protected $fillable = [
@@ -22,18 +23,32 @@ class Reunion extends Model
     ];
     protected $dates = ['deleted_at'];
 
-    public function mesa() {
+    protected $appends = ['empresa_solicitante', 'empresa_demandada'];
+
+    public function getEmpresaSolicitanteAttribute()
+    {
+        return Empresa::find($this->empresa_solicitante_id);
+    }
+
+    public function getEmpresaDemandadaAttribute()
+    {
+        return Empresa::find($this->empresa_demandada_id);
+    }
+
+    public function mesa()
+    {
         return $this->belongsTo(Mesa::class, 'mesa_id');
     }
 
-    public function evaluacionReuniones() {
+    public function evaluacionReuniones()
+    {
         return $this->hasMany(EvaluacionReunion::class, 'reunion_id');
     }
 
     public static function boot()
     {
         parent::boot();
-        static::deleting(function($padre) {
+        static::deleting(function ($padre) {
             $padre->evaluacionReuniones()->delete();
         });
     }

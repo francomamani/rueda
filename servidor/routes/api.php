@@ -18,6 +18,8 @@ use Illuminate\Http\Request;
 });*/
 
 Route::post('login', 'AuthController@login');
+
+Route::get('empresas-mostrar/{empresa_id}', 'EmpresaController@mostrar');
 Route::get('empresas-listar', 'EmpresaController@listar');
 Route::get('empresas-listar-habilitados', 'EmpresaController@listarHabilitados');
 Route::resource('usuarios', 'UsuarioController');
@@ -95,3 +97,5 @@ Route::get('mis-ofertas-demandas/{empresa_id}', 'OfertaDemandaController@ofertas
 Route::post('set-usuario', 'AuthController@setUsuario');
 Route::get('administradores', 'UsuarioController@administradores');
 Route::post('search-administradores', 'UsuarioController@searchAdministradores');
+
+Route::post('agendas-mesa', 'ReunionController@agendasMesa');

@@ -2,25 +2,28 @@
   <div class="col-md-12">
     <nb-card>
       <nb-card-header>Empresas Registradas
-        <a class="download" title="Descargar en excel" (click)="descargar()">
+        <a (click)="descargar()" class="download" title="Descargar en excel">
           ( Descargar en excel <i class="fa fa-download"></i> )
         </a>
 
-        <a class="download-pdf" title="Descargar Agendas" (click)="pdf_agendas()">
-          Descargar Agendas <i class="fa fa-download"></i>
+        <a (click)="agendasMesaOpen(content)" class="download-pdf" title="Descargar Agendas por Mesa">
+          Agendas por Mesa <i class="fa fa-table"></i>
+        </a>
+        <a (click)="pdf_agendas()" class="download-pdf mr-4" title="Descargar Agendas por Empresa">
+          Agendas por Empresa <i class="fa fa-download"></i>
         </a>
       </nb-card-header>
       <nb-card-body>
-        <form (submit)="buscar()" class="rueda-search" [formGroup]="buscarGroup">
+        <form (submit)="buscar()" [formGroup]="buscarGroup" class="rueda-search">
           <select formControlName="rubro_id" name="rubro_id">
             <option value="0">TODOS LOS RUBROS</option>
-            <option [value]="rubro.rubro_id"
-                    *ngFor="let rubro of rubros">
+            <option *ngFor="let rubro of rubros"
+                    [value]="rubro.rubro_id">
               {{ rubro.nombre }}
             </option>
           </select>
-          <input type="search" formControlName="search" name="search" placeholder="Buscar ofertas y demandas">
-          <button class="search"> Buscar </button>
+          <input formControlName="search" name="search" placeholder="Buscar ofertas y demandas" type="search">
+          <button class="search"> Buscar</button>
         </form>
         <br><br>
 
@@ -47,13 +50,13 @@
               <td>{{ i + 1 }}</td>
               <td>
                 <img *ngIf="empresa.logo !== null"
+                     alt="{{empresa.nombre}}"
                      height="48"
-                     src="{{logo}}{{empresa.logo.split('/')[1]}}"
-                     alt="{{empresa.nombre}}">
+                     src="{{logo}}{{empresa.logo.split('/')[1]}}">
                 <img *ngIf="empresa.logo === null"
+                     alt="{{empresa.nombre}}"
                      height="48"
-                     src="assets/images/enterprise.png"
-                     alt="{{empresa.nombre}}">
+                     src="assets/images/enterprise.png">
               </td>
 
               <td>
@@ -64,10 +67,10 @@
               <td>{{empresa.nit}}</td>
               <td>{{empresa.telefono}}</td>
               <td>{{empresa.max_participantes}}</td>
-<!--              <td class="text-center">
-                <span *ngIf="empresa.especial === 1" class="text-success"><i class="fa fa-check"></i></span>
-                <span *ngIf="empresa.especial === 0" class="text-danger"><i class="fa fa-times"></i></span>
-              </td>-->
+              <!--              <td class="text-center">
+                              <span *ngIf="empresa.especial === 1" class="text-success"><i class="fa fa-check"></i></span>
+                              <span *ngIf="empresa.especial === 0" class="text-danger"><i class="fa fa-times"></i></span>
+                            </td>-->
               <td class="text-center">
                 <span *ngIf="empresa.habilitado === 1" class="text-success">
                   <i class="fa fa-check"></i>
@@ -85,26 +88,38 @@
                 </span>
               </td>
               <td class="btn-acciones">
-                <a class="text-info" title="Asignar materiales" (click)="conMaterial(empresa)"><i class="fa fa-paperclip"></i></a>
+                <a (click)="conMaterial(empresa)" class="text-info" title="Asignar materiales"><i
+                  class="fa fa-paperclip"></i></a>
                 <label [for]="empresa.empresa_id"
-                       title="Subir logo"
-                       class="logo-upload">
+                       class="logo-upload"
+                       title="Subir logo">
                   <i class="fa fa-upload"></i>
                 </label>
-                <input type="file"
-                       (change)="cambiarLogo($event, empresa)"
+                <input (change)="cambiarLogo($event, empresa)"
                        [id]="empresa.empresa_id"
-                       class="hidden">
-                <a class="text-info" title="Comprobante de pago" (click)="comprobante(empresa)"><i class="fa fa-file-image"></i></a>
-                <a class="text-primary" title="Listar de participantes" [routerLink]="['/admin/empresa/participantes/', empresa.empresa_id]"><i class="fa fa-user"></i></a>
-                <a class="text-success" title="Editar empresa" [routerLink]="['/admin/empresa/editar/'+empresa.empresa_id]"><i class="fa fa-edit"></i></a>
-              <!--  <a class="text-primary" title="Solicitudes salientes" [routerLink]="['/admin/empresa/solicitudes-salientes/'+empresa.empresa_id]"><i class="fa fa-arrow-circle-right"></i></a>
-                <a class="text-primary" title="Solicitudes entrantes" [routerLink]="['/admin/empresa/solicitudes-entrantes/'+empresa.empresa_id]"><i class="fa fa-arrow-circle-left"></i></a>-->
-                <a class="text-info"    title="Evaluacion General" [routerLink]="['/admin/empresa/evaluacion-general-empresa/'+empresa.empresa_id]"><i class="fa fa-home"></i></a>
-                <a class="text-info" title="Agendar reuniones" [routerLink]="['/admin/empresa/crear-agenda/'+empresa.empresa_id]"><i class="fa fa-clipboard-list"></i></a>
-                <a class="text-default" title="Reuniones Agendadas" [routerLink]="['/admin/empresa/reuniones-agendadas/'+empresa.empresa_id]"><i class="fa fa-list"></i></a>
-                <a title="Horarios no disponibles" [routerLink]="['/admin/horarios-ocupados/listar/admin/', empresa.empresa_id]"><i class="fa fa-clock"></i></a>
-                <a title="Eliminar empresa" class="text-danger" (click)="onDeleteConfirm(empresa, i)"><i class="fa fa-trash"></i></a>
+                       class="hidden"
+                       type="file">
+                <a (click)="comprobante(empresa)" class="text-info" title="Comprobante de pago"><i
+                  class="fa fa-file-image"></i></a>
+                <a [routerLink]="['/admin/empresa/participantes/', empresa.empresa_id]" class="text-primary"
+                   title="Listar de participantes"><i class="fa fa-user"></i></a>
+                <a [routerLink]="['/admin/empresa/editar/'+empresa.empresa_id]" class="text-success"
+                   title="Editar empresa"><i class="fa fa-edit"></i></a>
+                <!--  <a class="text-primary" title="Solicitudes salientes" [routerLink]="['/admin/empresa/solicitudes-salientes/'+empresa.empresa_id]"><i class="fa fa-arrow-circle-right"></i></a>
+                  <a class="text-primary" title="Solicitudes entrantes" [routerLink]="['/admin/empresa/solicitudes-entrantes/'+empresa.empresa_id]"><i class="fa fa-arrow-circle-left"></i></a>-->
+                <a [routerLink]="['/admin/empresa/evaluacion-general-empresa/'+empresa.empresa_id]" class="text-info"
+                   title="Evaluacion General"><i
+                  class="fa fa-home"></i></a>
+                <a [routerLink]="['/admin/empresa/crear-agenda/'+empresa.empresa_id]" class="text-info"
+                   title="Agendar reuniones"><i
+                  class="fa fa-clipboard-list"></i></a>
+                <a [routerLink]="['/admin/empresa/reuniones-agendadas/'+empresa.empresa_id]" class="text-default"
+                   title="Reuniones Agendadas"><i class="fa fa-list"></i></a>
+                <a [routerLink]="['/admin/horarios-ocupados/listar/admin/', empresa.empresa_id]"
+                   title="Horarios no disponibles"><i
+                  class="fa fa-clock"></i></a>
+                <a (click)="onDeleteConfirm(empresa, i)" class="text-danger" title="Eliminar empresa"><i
+                  class="fa fa-trash"></i></a>
               </td>
             </tr>
             </tbody>
@@ -114,3 +129,22 @@
     </nb-card>
   </div>
 </div>
+
+<ng-template #content>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">AGENDA POR MESA</h4>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="fecha">Seleccione una fecha</label>
+        <div class="input-group">
+          <input [(ngModel)]="agendasMesaFecha" class="form-control" id="fecha" name="fecha" required type="date">
+        </div>
+      </div>
+      <div class="text-right">
+        <button (click)="agendasMesa()" class="btn-modal" type="button">GENERAR AGENDA</button>
+      </div>
+    </form>
+  </div>
+</ng-template>

@@ -11,12 +11,14 @@ $divider: #bdbdbd;
   display: flex;
   flex-direction: row;
 }
+
 .rueda-search select {
   min-width: 200px;
   border: 1px solid $divider;
   margin-right: 1em;
   outline: none;
 }
+
 .rueda-search input {
   width: 250px;
   padding: .5em .5em;
@@ -26,6 +28,7 @@ $divider: #bdbdbd;
   border-left: 1px solid $divider;
   outline: none;
 }
+
 .rueda-search button.search {
   background-color: $primary;
   color: $text;
@@ -35,47 +38,57 @@ $divider: #bdbdbd;
   cursor: pointer;
   outline: none;
 }
+
 .download {
   color: $primary;
   cursor: pointer;
   text-decoration: underline;
 }
+
 .download-pdf {
   color: $primary;
   cursor: pointer;
   float: right;
   text-decoration: underline;
 }
+
 .btn-acciones {
   text-align: center;
   width: 220px;
 }
+
 .btn-acciones a {
   display: inline-block;
   font-size: 1.3em;
   padding: 0 0.1em;
   cursor: pointer;
 }
+
 a.info, a.info:hover, a.info:active {
   color: $light-primary;
   text-decoration: underline;
   cursor: pointer;
 }
+
 table {
   animation: up .4s ease-out;
 }
+
 .hidden {
   display: none;
 }
+
 .logo-upload {
   color: #ffc345;
   cursor: pointer;
   font-size: 1.2em;
   margin: 0 .25em;
 }
+
 .logo-upload:hover {
   color: #e69c3f;
 }
+
 @keyframes up {
   0% {
     opacity: 0;
@@ -84,5 +97,22 @@ table {
   100% {
     opacity: 1;
     transform: translate(0);
+  }
+}
+
+
+.btn-modal {
+  outline: none;
+  margin-left: auto;
+  box-sizing: border-box;
+  border: none;
+  background-color: #2484d2;
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: darken(#2484d2, 10%);
+    transition: 0.2s ease-in-out;
   }
 }

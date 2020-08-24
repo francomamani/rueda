@@ -2,27 +2,42 @@
   <div class="col-sm-12">
     <form (submit)="subir()" [formGroup]="compGroup" role="form">
       <legend class="legend-login">
-        <h4 *ngIf="voucher!==null"><div class="alert-success">Ya subió su comprobante, se lo esta revisando para su habilitación en el sistema</div></h4>
-        <h5 *ngIf="voucher!==null"><div>Si usted cree que subió otra imagen y no su comprobante, puede volver a subirlo</div></h5>
-        <h5 *ngIf="voucher!==null"><div>Si usted ya lleva esperando mucho tiempo su habilitación, puede comunicarse con la administración al 52 66111</div></h5>
-        <h4 *ngIf="voucher===null"><div class="alert alert-danger">Debe subir una foto del comprobante de pago o de la transfererencia correspondiente de la inscripción a la <strong>"Rueda de Negocios"</strong></div></h4>
+        <h4 *ngIf="voucher!==null">
+          <div class="alert-success">Ya subió su comprobante, se lo esta revisando para su habilitación en el sistema
+          </div>
+        </h4>
+        <h5 *ngIf="voucher!==null">
+          <div>Si usted cree que subió otra imagen y no su comprobante, puede volver a subirlo</div>
+        </h5>
+        <h5 *ngIf="voucher!==null">
+          <div>Si usted ya lleva esperando mucho tiempo su habilitación, puede comunicarse con la administración al 52
+            66111
+          </div>
+        </h5>
+        <h4 *ngIf="voucher===null">
+          <div class="alert alert-danger">Debe subir una foto del comprobante de pago o de la transfererencia
+            correspondiente de la inscripción a la <strong>"Rueda de Negocios de Bioseguridad 2020"</strong></div>
+        </h4>
         <nb-card>
           <nb-card-header>
             ¿Cuál es el coste?
           </nb-card-header>
           <nb-card-body>
             <p>
-              Todas las empresas podrán inscribirse a la <strong>"Rueda de Negocios 2019"</strong> con un costo referencial de Bs. 250 y para empresas con stand en la <strong>Feria de Expoteco 2019</strong> a un costo de Bs. 150.
+              Todas las empresas podrán inscribirse a la <strong>"Rueda de Negocios de Bioseguridad 2020"</strong> con
+              un costo referencial de Bs. 250 para empresas ofertantes, en caso de ser una empresa <strong>demandante</strong>
+              contactarse con nuestras encargadas comerciales para optar a <strong>Becas Empresariales</strong>.
             </p>
           </nb-card-body>
         </nb-card>
       </legend>
       <div class="form-group">
         <label for="comprobante">Comprobante</label>
-        <input type="file" #comprobante class="form-control" formControlName="comprobante" name="comprobante" id="comprobante">
+        <input #comprobante class="form-control" formControlName="comprobante" id="comprobante" name="comprobante"
+               type="file">
       </div>
       <div class="text-center">
-        <button type="submit" [disabled]="compGroup.status === 'INVALID'" class="btn-login">Subir Comprobante</button>
+        <button [disabled]="compGroup.status === 'INVALID'" class="btn-login" type="submit">Subir Comprobante</button>
       </div>
     </form>
   </div>

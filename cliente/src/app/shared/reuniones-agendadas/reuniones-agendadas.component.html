@@ -38,6 +38,7 @@
               <th>N. Mesa</th>
               <th>Horario</th>
               <th>Estado de Reunión</th>
+              <th>Reunión por Zoom</th>
               <th>Evaluacion</th>
               <th>Cancelar Reunion</th>
             </tr>
@@ -52,6 +53,7 @@
               <td>{{reunion.mesa}}</td>
               <td>{{reunion.desde | date: 'dd MMM. yyy HH:mm'}} - {{reunion.hasta | date: 'HH:mm'}}</td>
               <td>{{reunion.resultado}}</td>
+              <td><a [href]="reunion.url" target="_blank">{{reunion.url}}</a></td>
               <td>
                 <button
                   class="btn btn-sm btn-success"

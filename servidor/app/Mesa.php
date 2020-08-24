@@ -11,7 +11,8 @@ class Mesa extends Model
     protected $table = 'mesas';
     protected $primaryKey = 'mesa_id';
     protected $fillable = [
-        'numero'
+        'numero',
+        'url'
     ];
     protected $dates = ['deleted_at'];
 

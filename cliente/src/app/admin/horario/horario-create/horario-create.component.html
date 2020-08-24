@@ -10,19 +10,17 @@
             <div class="col-md-6">
               <label for="inicio">Desde</label>
               <br>
-              <input type="datetime-local" id="inicio" [value]="ini" (change)="ini=$event.target.value"/>
-
+              <input (change)="ini=$event.target.value" [value]="ini" id="inicio" type="datetime-local"/>
             </div>
             <div class="col-md-6">
               <label for="fin">Hasta</label>
               <br>
-              <input type="datetime-local" id="fin" [value]="fi" (change)="fi=$event.target.value"/>
-
+              <input (change)="fi=$event.target.value" [value]="fi" id="fin" type="datetime-local"/>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-12">
-              <button class="btn btn-sm btn-success group" (click)="store()">Guardar</button>
+            <div class="col-md-12 text-right">
+              <button (click)="store()" class="ml-auto btn btn-sm btn-info group">Guardar</button>
             </div>
           </div>
         </form>

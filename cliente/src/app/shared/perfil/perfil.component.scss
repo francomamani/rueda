@@ -4,12 +4,15 @@
   justify-content: center;
   align-items: center;
 }
+
 .perfil-acciones img {
   width: 250px;
 }
+
 .perfil-acciones h4 {
   margin-top: 1em;
 }
+
 .btn-perfil {
   display: block;
   width: 250px;
@@ -21,9 +24,11 @@
   background-color: #e63e5c;
   color: white;
 }
+
 #logo-file {
   display: none;
 }
+
 .logo-file-label {
   display: flex;
   justify-content: center;
@@ -39,10 +44,12 @@
   cursor: pointer;
   border-radius: 5px;
 }
+
 .logo-file-label:hover {
   opacity: 1;
 }
-.logo-file-label i{
+
+.logo-file-label i {
   font-size: 1.5em;
   font-weight: 800;
 }
