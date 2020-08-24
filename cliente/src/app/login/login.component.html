@@ -1,27 +1,28 @@
-<img src="assets/images/campo_feria_virtual.png" alt="Campo Ferial 3 de Julio Virtual" height="72" class="logo-left-top">
-<img src="assets/images/bioseguridad.jpeg" alt="Feria de Bioseguridad" height="72" class="logo-right-top">
+<img alt="Campo Ferial 3 de Julio Virtual" class="logo-left-top" height="72"
+     src="assets/images/campo_feria_virtual.png">
+<img alt="Feria Internacional de la Minería" class="logo-right-top" height="92" src="assets/images/fimem.jpeg">
 <div class="row">
   <div class="col-sm-12">
     <form (submit)="login()" [formGroup]="loginGroup" role="form">
       <legend class="legend-login">
-        <img src="assets/images/rueda-before.png" alt="Rueda de Negocios" height="150">
+        <img alt="Rueda de Negocios" height="150" src="assets/images/rueda-before.png">
         <h4 *ngIf="mensaje.length > 0">
           <div class="alert-danger">{{ mensaje }}</div>
         </h4>
       </legend>
       <div class="form-group">
         <label for="cuenta">Cuenta</label>
-        <input type="text" id="cuenta" oninput="this.value = this.value.toLowerCase();" #cuenta class="form-control"
-               formControlName="cuenta" name="cuenta" id="cuenta"
-               placeholder="Ingrese su primer nombre y carnet en minúsculas. Ej. manuel7578458">
+        <input #cuenta class="form-control" formControlName="cuenta" id="cuenta" id="cuenta"
+               name="cuenta" oninput="this.value = this.value.toLowerCase();" placeholder="Ingrese su primer nombre y carnet en minúsculas. Ej. manuel7578458"
+               type="text">
       </div>
       <div class="form-group">
         <label for="password">Contraseña</label>
-        <input type="password" id="password" class="form-control" formControlName="password" name="password"
-               id="password" placeholder="Ingrese su número de carnet">
+        <input class="form-control" formControlName="password" id="password" id="password" name="password"
+               placeholder="Ingrese su número de carnet" type="password">
       </div>
       <div class="text-center">
-        <button type="submit" [disabled]="loginGroup.status === 'INVALID'" class="btn-login">Ingresar</button>
+        <button [disabled]="loginGroup.status === 'INVALID'" class="btn-login" type="submit">Ingresar</button>
 
       </div>
     </form>
@@ -30,9 +31,9 @@
 </div>
 <div class="row">
   <div class="col-sm-6">
-    <a class="ayuda" (click)="ayuda()">Olvide mi contraseña</a>
+    <a (click)="ayuda()" class="ayuda">Olvide mi contraseña</a>
   </div>
   <div class="col-sm-6">
-    <a routerLink="/auth/signup" class="create-account">No tengo una cuenta</a>
+    <a class="create-account" routerLink="/auth/signup">No tengo una cuenta</a>
   </div>
 </div>

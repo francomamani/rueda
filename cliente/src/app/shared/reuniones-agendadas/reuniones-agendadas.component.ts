@@ -115,11 +115,13 @@ export class ReunionesAgendadasComponent implements OnInit {
           const doc = new jsPDF('landscape', 'mm', 'letter');
 
           const logo = new Image();
-          logo.src = 'assets/images/bioseguridad.jpeg';
-          doc.addImage(logo, 'JPEG', 206.9, 20, 52.5, 12.5);
+          logo.src = 'assets/images/fimem.jpeg';
+          doc.addImage(logo, 'JPEG', 220, 20, 50, 20);
           doc.setFontSize(10);
           doc.setFontStyle('bold');
-          doc.text('AGENDA DE REUNIONES BIOSEGURIDAD', 139.7, 20, 'center');
+
+
+          doc.text('AGENDA DE REUNIONES FIMEM BOLIVIA', 20, 20);
           doc.text('EMPRESA', 20, 30);
           doc.setFontStyle('normal');
           doc.text(this.mi_empresa.toUpperCase(), 50, 30);

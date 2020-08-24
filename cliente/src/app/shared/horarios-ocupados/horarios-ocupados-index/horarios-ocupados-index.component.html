@@ -3,24 +3,27 @@
     <nb-card>
       <nb-card-header>
         <h4>Horarios no disponibles</h4>
-<!--        <button class="btn-green" (click)="crear()">ACTUALIZAR</button>-->
-<!--        <button class="btn-green" (click)="updateHorariosOcupados()">ACTUALIZAR</button>-->
+        <!--        <button class="btn-green" (click)="crear()">ACTUALIZAR</button>-->
+        <!--        <button class="btn-green" (click)="updateHorariosOcupados()">ACTUALIZAR</button>-->
       </nb-card-header>
       <nb-card-body class="bg-white">
         <h5 class="texto-ayuda">Aqui puede ver los horarios habilitados para las reuniones en la rueda de negocios<br>
-        Seleccione los horarios en los que no pueda asistir a las reuniones, para que no se le agenden reuniones en estos horarios<br></h5>
-        <h5 class="disponible">Si el horario esta en color verde, ese horario esta disponible para que se le agenden reuniones<br></h5>
-        <h5 class="ocupado">Si el horario esta de color rojo, ese horario se considera ocupado, el cual no se tomara en cuenta al agendar reuniones</h5>
+          Seleccione los horarios en los que no pueda asistir a las reuniones, para que no se le agenden reuniones en
+          estos horarios<br></h5>
+        <h5 class="disponible">Si el horario esta en color celeste, ese horario esta disponible para que se le agenden
+          reuniones<br></h5>
+        <h5 class="ocupado">Si el horario esta de color rojo, ese horario se considera ocupado, el cual no se tomará en
+          cuenta al agendar reuniones</h5>
 
         <div class="layout bg-white">
-          <div class="schedule-card"
+          <div *ngFor="let horario of horarios"
                [class.busy]="horario.ocupado"
                [class.free]="!horario.ocupado"
-               *ngFor="let horario of horarios">
-            <input type="checkbox" [checked]="horario.ocupado"
-                   (click)="updateHorario(horario)"
+               class="schedule-card">
+            <input (click)="updateHorario(horario)" [checked]="horario.ocupado"
+                   [value]="horario.ocupado"
                    class="checkbox"
-                   [value]="horario.ocupado">
+                   type="checkbox">
 
             <label class="container-check">
               <span *ngIf="horario.ocupado">Horario no disponible</span>
@@ -31,29 +34,29 @@
             <h3 class="time">{{horario.inicio | date: 'HH:mm:ss'}} - {{horario.fin | date: 'HH:mm:ss'}}</h3>
           </div>
         </div>
-<!--        <div class="table-responsive">
-          <table class="table table-hover">
-            <thead>
-            <tr>
-              <th>Acciones</th>
-              <th>N.</th>
-              <th>Inicio</th>
-              <th>Fin</th>
+        <!--        <div class="table-responsive">
+                  <table class="table table-hover">
+                    <thead>
+                    <tr>
+                      <th>Acciones</th>
+                      <th>N.</th>
+                      <th>Inicio</th>
+                      <th>Fin</th>
 
-            </tr>
-            </thead>
-            <tbody>
-            <tr *ngFor="let horario of horarios; let i = index">
-              <td class="btn-acciones">
-                <a class="text-danger" (click)="onDeleteConfirm(horario, i)"><i class="fa fa-trash"></i></a>
-              </td>
-              <td>{{ i + 1 }}</td>
-              <td>{{horario.horario.inicio}}</td>
-              <td>{{horario.horario.fin}}</td>
-            </tr>
-            </tbody>
-          </table>
-        </div>-->
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let horario of horarios; let i = index">
+                      <td class="btn-acciones">
+                        <a class="text-danger" (click)="onDeleteConfirm(horario, i)"><i class="fa fa-trash"></i></a>
+                      </td>
+                      <td>{{ i + 1 }}</td>
+                      <td>{{horario.horario.inicio}}</td>
+                      <td>{{horario.horario.fin}}</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>-->
       </nb-card-body>
     </nb-card>
   </div>

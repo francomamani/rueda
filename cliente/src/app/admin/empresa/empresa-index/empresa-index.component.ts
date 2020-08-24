@@ -190,7 +190,7 @@ export class EmpresaIndexComponent implements OnInit {
     this.empresaService.agendas()
       .subscribe(res => {
         const logo = new Image();
-        logo.src = 'assets/images/bioseguridad.jpeg';
+        logo.src = 'assets/images/fimem.jpeg';
         this.agendas = res;
         const doc = new jsPDF('landscape', 'mm', 'letter');
         const ll = this.agendas.agendas;
@@ -206,9 +206,9 @@ export class EmpresaIndexComponent implements OnInit {
           if (this.cont > 0)
             doc.addPage();
           doc.setFontSize(10);
-          doc.addImage(logo, 'JPEG', 190, 15, 65, 20);
+          doc.addImage(logo, 'JPEG', 220, 15, 50, 20);
           doc.setFontStyle('bold');
-          doc.text('AGENDA RUEDA DE NEGOCIOS BIOSEGURIDAD', 20, 20);
+          doc.text('AGENDA RUEDA DE NEGOCIOS FIMEM BOLIVIA', 20, 20);
           doc.text('EMPRESA', 20, 30);
           doc.setFontStyle('normal');
           doc.text(agenda.empresa.nombre.toUpperCase(), 50, 30);
@@ -253,11 +253,9 @@ export class EmpresaIndexComponent implements OnInit {
             doc.line(x - 5, y + 4, 259.4, y + 4);
             y += 10;
           });
-
           this.cont++;
         });
-
-        doc.save('agendas-bioseguridad.pdf');
+        doc.save('agendas-fimem-bolivia.pdf');
         /*end subscribe*/
       });
   }
@@ -271,7 +269,7 @@ export class EmpresaIndexComponent implements OnInit {
 
   agendasMesa() {
     const logo = new Image();
-    logo.src = 'assets/images/bioseguridad.jpeg';
+    logo.src = 'assets/images/fimem.jpeg';
 
     this.reunionService.agendasMesa({
       fecha: this.agendasMesaFecha
@@ -283,7 +281,7 @@ export class EmpresaIndexComponent implements OnInit {
           count++;
           doc.setFontSize(10);
           doc.setFontStyle('bold');
-          doc.text('REUNIONES DE LA RUEDA DE NEGOCIOS DE BIOSEGURIDAD', 20, 15);
+          doc.text('REUNIONES DE LA RUEDA DE NEGOCIOS DE FIMEM BOLIVIA', 20, 15);
           doc.text('MESA', 20, 22);
           doc.text('REUNIÓN DE ZOOM', 20, 29);
           doc.text('FECHA', 20, 36);
@@ -296,7 +294,7 @@ export class EmpresaIndexComponent implements OnInit {
           doc.setFontStyle('normal');
           doc.setTextColor(0, 0, 0);
           doc.text(`: ${DateTime.fromSQL(agenda.fecha).toLocaleString(DateTime.DATE_HUGE)}`, 55, 36);
-          doc.addImage(logo, 'JPEG', 190, 15, 65, 20);
+          doc.addImage(logo, 'JPEG', 220, 15, 50, 20);
           doc.line(20, 50, 260, 50);
           doc.setFontStyle('bold');
           doc.text('N.', 25, 56);
