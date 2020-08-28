@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="40408e9e-7b60-4657-b5f7-5872be4999db" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/environments/environment.prod.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/src/app/comprobante/comprobante.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/app/comprobante/comprobante.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +238,7 @@
       <workItem from="1597976086272" duration="3073000" />
       <workItem from="1598036603309" duration="25231000" />
       <workItem from="1598223182472" duration="26163000" />
-      <workItem from="1598575504878" duration="5492000" />
+      <workItem from="1598575504878" duration="6834000" />
     </task>
     <servers />
   </component>
@@ -266,10 +266,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1598317340854" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1598581454042">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1598584039699">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1280.680@0.0.1366.728" timestamp="1598580575960" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1598581454042" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1598584039699" />
   </component>
 </project>
