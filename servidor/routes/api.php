@@ -53,7 +53,7 @@ Route::get('evaluacion-reunion-registrada/{reunion_id}/{empresa_id}/', 'Evaluaci
 Route::get('reporte-general/{parametro}', 'EvaluacionGeneralController@reporteGeneral');
 Route::get('reporte-reunion/{parametro}', 'EvaluacionReunionController@reporteReunion');
 
-Route::post('cambiar-logo/{empresa_id}', 'EmpresaController@cambiarLogo');
+Route::post('cambiar-logo/{empresa_~id}', 'EmpresaController@cambiarLogo');
 Route::get('mostrar-logo/{logo_path}', 'EmpresaController@mostrarLogo');
 
 Route::post('cancelar-cita/{agenda_id}', 'AgendaController@cancelarCita');
@@ -99,3 +99,5 @@ Route::get('administradores', 'UsuarioController@administradores');
 Route::post('search-administradores', 'UsuarioController@searchAdministradores');
 
 Route::post('agendas-mesa', 'ReunionController@agendasMesa');
+
+Route::post('upload-rubros', 'RubroController@upload');

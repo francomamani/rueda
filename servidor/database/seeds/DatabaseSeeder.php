@@ -1,7 +1,9 @@
 <?php
 
 use App\Empresa;
+use App\Mesa;
 use App\Participante;
+use App\Rubro;
 use App\Usuario;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -17,153 +19,193 @@ class DatabaseSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
         /*inicio de rubros*/
-        $rubros = [
-        [
-            "nombre" => 'AGRÍCOLA, PECUARIO Y HORTOFRUTICOLA',
-        ],
-        [
-            "nombre" => 'ALIMENTOS Y BEBIDAS',
-        ],
-        [
-            "nombre" => 'PRODUCTOS PARA LA CONTRUCCIÓN Y DECORACIÓN',
-        ],
-        [
-            "nombre" => 'PLÁSTICOS O AFINES',
-        ],
-        [
-            "nombre" => 'ENVASES, EMBALAJES Y AFINES',
-        ],
-        [
-            "nombre" => 'QUÍMICOS',
-        ],
-        [
-            "nombre" => 'FARMACIA, MEDICAMENTOS',
-        ],
-        [
-            "nombre" => 'EQUIPOS ELÉCTRICOS',
-        ],
-        [
-            "nombre" => 'MINERÍA',
-        ],
-        [
-            "nombre" => 'INDUSTRIA DE LA MADERA Y MUEBLES EN GENERAL',
-        ],
-        [
-            "nombre" => 'INDUSTRIA TEXTIL, CONFECCIONES Y MODA',
-        ],
-        [
-            "nombre" => 'CUERO CALZADO Y MANUFACTURAS DE CUERO',
-        ],
-        [
-            "nombre" => 'INDUSTRIA PAPELERA Y GRÁFICA',
-        ],
-        [
-            "nombre" => 'VEHÍCULOS AUTOMOTORES, PIEZAS, PARTES',
-        ],
-        [
-            "nombre" => 'EQUIPOS E IMPLEMENTOS HIDRAHULICOS',
-        ],
-        [
-            "nombre" => 'TECNOLOGÍAS DE LA INFORMACIÓN Y COMUNICACIÓN',
-        ],
-        [
-            "nombre" => 'ELECTRODOMÉSTICOS Y LÍNEA BLANCA',
-        ],
-        [
-            "nombre" => 'ARTESANIAS',
-        ],
-        [
-            "nombre" => 'JOYERÍA. BISUTERÍA Y ORFEBRERÍA',
-        ],
-        [
-            "nombre" => 'COSMÉTICOS, BELLEZA Y SALUD',
-        ],
-        [
-            "nombre" => 'METALMECÁNICA Y ELECTROMECÁNICA',
-        ],
-        [
-            "nombre" => 'EQUIPOS DE TECNÓLOGÍA PARA LA INDUSTRIA MINERA, GAS, PETROLIO O SIMILARES',
-        ],
-        [
-            "nombre" => 'PETROLEO, GAS Y PETROQUÍMICA',
-        ],
-        [
-            "nombre" => 'ARTÍCULOS, IMPLEMENTOS Y EQUIPOS DE SEGURIDAD',
-        ],
-        [
-            "nombre" => 'ARTÍCULOS DE LIMPIEZA PARA EL HOGAR',
-        ],
-        [
-            "nombre" => 'JUGUETERÍA Y ARTÍCULOS DE ENTRETENIMIENTO',
-        ],
-        [
-            "nombre" => 'FERRETERÍA Y HERRAMIENTAS',
-        ],
-        [
-            "nombre" => 'ENERGÍA',
-        ],
-        [
-            "nombre" => 'ECOLÓGÍA Y PROTECCIÓN DE MEDIO AMBIENTE',
-        ],
-        [
-            "nombre" => 'TECNOLOGÍA Y EQUIPAMIENTO PARA AGROPECUARIA E INDUSTRIA',
-        ],
-        [
-            "nombre" => 'OTROS',
-        ],
-        [
-            "nombre" => 'COMPAÑÍA DE TRADING',
-        ],
-        [
-            "nombre" => 'BANCOS Y FINANCIERAS',
-        ],
-        [
-            "nombre" => 'FLETES Y TRANSPORTE',
-        ],
-        [
-            "nombre" => 'SERVICIOS ADUANEROS',
-        ],
-        [
-            "nombre" => 'ALMACENAMIENTO Y DISTRIBUCIÓN',
-        ],
-        [
-            "nombre" => 'SEGUROS',
-        ],
-        [
-            "nombre" => 'TURISMO',
-        ],
-        [
-            "nombre" => 'SERVICIOS EMPRESARIALES',
-        ],
-        [
-            "nombre" => 'SERVICIOS DE COSTRUCCIÓN E INGENIERÍA',
-        ],
-        [
-            "nombre" => 'SERVICIOS INFORMÁTICOS Y DE TELECOMUNICACIÓN',
-        ],
-        [
-            "nombre" => 'SERVICIOS PARA LA AGROINDUSTRIA',
-        ],
-        [
-            "nombre" => 'OTROS SERVICIOS',
-        ],
-        [
-            "nombre" => 'GOBIERNO Y SUS ORGANISMOS',
-        ],
-        [
-            "nombre" => 'ORGANISMOS INTERNACIONALES',
-        ],
-        [
-            "nombre" => 'CÁMARAS Y ORGANIZACIONES EMPRESARIALES',
-        ],
-      ];
 
+        $rubros = [
+            [
+                "nombre" => "AGRÍCOLA"
+            ],
+            [
+                "nombre" => "ALIMENTOS Y BEBIDAS"
+            ],
+            [
+                "nombre" => "ALMACENAMIENTO Y DISTRIBUCIÓN"
+            ],
+            [
+                "nombre" => "ARTES ESCENICAS"
+            ],
+            [
+                "nombre" => "ARTES LITERARIAS"
+            ],
+            [
+                "nombre" => "ARTES MUSICALES"
+            ],
+            [
+                "nombre" => "ARTES PLASTICAS"
+            ],
+            [
+                "nombre" => "ARTESANIAS"
+            ],
+            [
+                "nombre" => "ARTÍCULOS DE LIMPIEZA Y DESINFECCION"
+            ],
+            [
+                "nombre" => "ARTÍCULOS"
+            ],
+            [
+                "nombre" => "BANCOS Y FINANCIERAS"
+            ],
+            [
+                "nombre" => "CÁMARAS Y ORGANIZACIONES EMPRESARIALES"
+            ],
+            [
+                "nombre" => "COMPAÑÍA DE TRADING"
+            ],
+            [
+                "nombre" => "COSMÉTICOS"
+            ],
+            [
+                "nombre" => "CUERO CALZADO Y MANUFACTURAS DE CUERO"
+            ],
+            [
+                "nombre" => "ELECTRODOMÉSTICOS Y LÍNEA BLANCA"
+            ],
+            [
+                "nombre" => "ENVASES"
+            ],
+            [
+                "nombre" => "EQUIPOS DE TECNÓLOGÍA PARA LA INDUSTRIA MINERA"
+            ],
+            [
+                "nombre" => "EQUIPOS E IMPLEMENTOS HIDRAULICOS"
+            ],
+            [
+                "nombre" => "EQUIPOS ELÉCTRICOS"
+            ],
+            [
+                "nombre" => "FARMACIA"
+            ],
+            [
+                "nombre" => "FERRETERÍA Y HERRAMIENTAS"
+            ],
+            [
+                "nombre" => "FLETES Y TRANSPORTE"
+            ],
+            [
+                "nombre" => "GOBIERNO Y SUS ORGANISMOS"
+            ],
+            [
+                "nombre" => "HIDROCARBUROS"
+            ],
+            [
+                "nombre" => "INDUSTRIA DE ENERGIAS LIMPIAS"
+            ],
+            [
+                "nombre" => "INDUSTRIA DE LA MADERA Y MUEBLES EN GENERAL"
+            ],
+            [
+                "nombre" => "INDUSTRIA ENERGETICA"
+            ],
+            [
+                "nombre" => "INDUSTRIA METALURGICA"
+            ],
+            [
+                "nombre" => "INDUSTRIA PAPELERA Y GRÁFICA"
+            ],
+            [
+                "nombre" => "INDUSTRIA TEXTIL"
+            ],
+            [
+                "nombre" => "JOYERÍA. BISUTERÍA Y ORFEBRERÍA"
+            ],
+            [
+                "nombre" => "JUGUETERÍA Y ARTÍCULOS DE ENTRETENIMIENTO"
+            ],
+            [
+                "nombre" => "MERCADOTECNIA"
+            ],
+            [
+                "nombre" => "METALMECÁNICA Y ELECTROMECÁNICA"
+            ],
+            [
+                "nombre" => "MINERIA ENERGETICA"
+            ],
+            [
+                "nombre" => "MINERIA METALURGICA"
+            ],
+            [
+                "nombre" => "MINERIA NO METALURGICA"
+            ],
+            [
+                "nombre" => "ORGANISMOS INTERNACIONALES"
+            ],
+            [
+                "nombre" => "ORGANIZACIONES DE ECOLÓGÍA Y PROTECCIÓN DE MEDIO AMBIENTE"
+            ],
+            [
+                "nombre" => "OTROS"
+            ],
+            [
+                "nombre" => "OTROS SERVICIOS"
+            ],
+            [
+                "nombre" => "PLÁSTICOS O AFINES"
+            ],
+            [
+                "nombre" => "PRODUCCION AUDIOVISUAL"
+            ],
+            [
+                "nombre" => "PRODUCTOS PARA LA CONTRUCCIÓN Y DECORACIÓN"
+            ],
+            [
+                "nombre" => "QUÍMICOS Y REACTIVOS"
+            ],
+            [
+                "nombre" => "SEGUROS"
+            ],
+            [
+                "nombre" => "SERVICIOS ADUANEROS"
+            ],
+            [
+                "nombre" => "SERVICIOS DE CONSULTORIA AMBIENTAL"
+            ],
+            [
+                "nombre" => "SERVICIOS DE CONSULTORIA EN SEGURIDAD INDUSTRIAL"
+            ],
+            [
+                "nombre" => "SERVICIOS DE COSTRUCCIÓN E INGENIERÍA"
+            ],
+            [
+                "nombre" => "SERVICIOS EMPRESARIALES"
+            ],
+            [
+                "nombre" => "SERVICIOS INFORMÁTICOS Y DE TELECOMUNICACIÓN"
+            ],
+            [
+                "nombre" => "SERVICIOS PARA LA AGROINDUSTRIA"
+            ],
+            [
+                "nombre" => "SERVICIOS Y ORGANIZACION DE EVENTOS"
+            ],
+            [
+                "nombre" => "TECNOLOGÍA Y EQUIPAMIENTO PARA AGROPECUARIA E INDUSTRIA"
+            ],
+            [
+                "nombre" => "TECNOLOGÍAS DE LA INFORMACIÓN Y COMUNICACIÓN"
+            ],
+            [
+                "nombre" => "TURISMO"
+            ],
+            [
+                "nombre" => "VEHÍCULOS AUTOMOTORES"
+            ]
+        ];
         foreach ($rubros as $rubro) {
-            \App\Rubro::create($rubro);
+            Rubro::create($rubro);
         }
+
         /*fin de rubros*/
-        for ($i = 0; $i < 5; $i++){
-            \App\Mesa::create([
+        for ($i = 0; $i < 5; $i++) {
+            Mesa::create([
                 "numero" => $i + 1
             ]);
         }
@@ -216,13 +258,13 @@ class DatabaseSeeder extends Seeder
             'celular' => '61836193',
             'cargo' => 'SISTEMAS',
         ]);
-/*        Participante::create([
-            'empresa_id' => $empresaModel->empresa_id,
-            'nombres' => 'Pamela',
-            'apellidos' => 'León Mamani',
-            'carnet' => '123456789',
-            'celular' => '74464355',
-            'cargo' => 'Administrativo',
-        ]);*/
+        /*        Participante::create([
+                    'empresa_id' => $empresaModel->empresa_id,
+                    'nombres' => 'Pamela',
+                    'apellidos' => 'León Mamani',
+                    'carnet' => '123456789',
+                    'celular' => '74464355',
+                    'cargo' => 'Administrativo',
+                ]);*/
     }
 }

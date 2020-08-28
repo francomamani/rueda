@@ -32,7 +32,7 @@ export const EMPRESA_ITEMS: NbMenuItem[] = [
     link: '/empresa/mi-agenda/reuniones-agendadas',
   },
   {
-    title: 'Horarios Ocupados',
+    title: 'Horarios Disponibles',
     icon: 'nb-keypad',
     link: '/empresa/horarios-ocupados/listar/empresa/'
       + JSON.parse(atob(localStorage.getItem('rueda-usuario'))).empresa_id,

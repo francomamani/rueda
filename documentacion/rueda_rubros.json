@@ -1,0 +1,370 @@
+[
+  {
+    "rubro_id": 1,
+    "nombre": "AGRÍCOLA, PECUARIO Y HORTOFRUTICOLA",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 2,
+    "nombre": "ALIMENTOS Y BEBIDAS",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 3,
+    "nombre": "PRODUCTOS PARA LA CONTRUCCIÓN Y DECORACIÓN",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 4,
+    "nombre": "PLÁSTICOS O AFINES",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 5,
+    "nombre": "ENVASES, EMBALAJES Y AFINES",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 6,
+    "nombre": "QUÍMICOS",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 7,
+    "nombre": "FARMACIA, MEDICAMENTOS",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 8,
+    "nombre": "EQUIPOS ELÉCTRICOS",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 9,
+    "nombre": "MINERÍA",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 10,
+    "nombre": "INDUSTRIA DE LA MADERA Y MUEBLES EN GENERAL",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 11,
+    "nombre": "INDUSTRIA TEXTIL, CONFECCIONES Y MODA",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 12,
+    "nombre": "CUERO CALZADO Y MANUFACTURAS DE CUERO",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 13,
+    "nombre": "INDUSTRIA PAPELERA Y GRÁFICA",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 14,
+    "nombre": "VEHÍCULOS AUTOMOTORES, PIEZAS, PARTES",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 15,
+    "nombre": "EQUIPOS E IMPLEMENTOS HIDRAHULICOS",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 16,
+    "nombre": "TECNOLOGÍAS DE LA INFORMACIÓN Y COMUNICACIÓN",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 17,
+    "nombre": "ELECTRODOMÉSTICOS Y LÍNEA BLANCA",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 18,
+    "nombre": "ARTESANIAS",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 19,
+    "nombre": "JOYERÍA. BISUTERÍA Y ORFEBRERÍA",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 20,
+    "nombre": "COSMÉTICOS, BELLEZA Y SALUD",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 21,
+    "nombre": "METALMECÁNICA Y ELECTROMECÁNICA",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 22,
+    "nombre": "EQUIPOS DE TECNÓLOGÍA PARA LA INDUSTRIA MINERA, GAS, PETROLIO O SIMILARES",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 23,
+    "nombre": "PETROLEO, GAS Y PETROQUÍMICA",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 24,
+    "nombre": "ARTÍCULOS, IMPLEMENTOS Y EQUIPOS DE SEGURIDAD",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 25,
+    "nombre": "ARTÍCULOS DE LIMPIEZA PARA EL HOGAR",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 26,
+    "nombre": "JUGUETERÍA Y ARTÍCULOS DE ENTRETENIMIENTO",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 27,
+    "nombre": "FERRETERÍA Y HERRAMIENTAS",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 28,
+    "nombre": "ENERGÍA",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 29,
+    "nombre": "ECOLÓGÍA Y PROTECCIÓN DE MEDIO AMBIENTE",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 30,
+    "nombre": "TECNOLOGÍA Y EQUIPAMIENTO PARA AGROPECUARIA E INDUSTRIA",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 31,
+    "nombre": "OTROS",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 32,
+    "nombre": "COMPAÑÍA DE TRADING",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 33,
+    "nombre": "BANCOS Y FINANCIERAS",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 34,
+    "nombre": "FLETES Y TRANSPORTE",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 35,
+    "nombre": "SERVICIOS ADUANEROS",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 36,
+    "nombre": "ALMACENAMIENTO Y DISTRIBUCIÓN",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 37,
+    "nombre": "SEGUROS",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 38,
+    "nombre": "TURISMO",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 39,
+    "nombre": "SERVICIOS EMPRESARIALES",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 40,
+    "nombre": "SERVICIOS DE COSTRUCCIÓN E INGENIERÍA",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 41,
+    "nombre": "SERVICIOS INFORMÁTICOS Y DE TELECOMUNICACIÓN",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 42,
+    "nombre": "SERVICIOS PARA LA AGROINDUSTRIA",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 43,
+    "nombre": "OTROS SERVICIOS",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 44,
+    "nombre": "GOBIERNO Y SUS ORGANISMOS",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 45,
+    "nombre": "ORGANISMOS INTERNACIONALES",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  },
+  {
+    "rubro_id": 46,
+    "nombre": "CÁMARAS Y ORGANIZACIONES EMPRESARIALES",
+    "descripcion": null,
+    "deleted_at": null,
+    "created_at": "2020-08-21 17:03:09",
+    "updated_at": "2020-08-21 17:03:09"
+  }
+]
