@@ -7,9 +7,8 @@
       </nb-card-header>
       <nb-card-body class="card-body">
         <h5 class="texto-ayuda">En esta sección, puede agendar reuniones con las distintas empresas participes de la
-          rueda de negocios<br>
-          Puede realizar la búsqueda de una empresa mediante el rubro al que pertenece y/o nombre, características de la
-          empresa</h5>
+          rueda de negocios.<br>
+          Puede realizar la búsqueda en función de las ofertas y/o demandas de las empresas.</h5>
         <form (submit)="buscar()" [formGroup]="buscarGroup" class="rueda-search">
           <select formControlName="rubro_id" name="rubro_id">
             <option value="0">TODOS LOS RUBROS</option>
@@ -31,7 +30,9 @@
               <th>Logo</th>
               <th>Empresa</th>
               <th>NIT</th>
-              <th>Telefono</th>
+              <th>Pais</th>
+              <th>Ciudad/Localidad</th>
+              <th *ngIf="rueda?.habilitado">Telefono</th>
               <th>Direccion</th>
               <th>Acciones</th>
             </tr>
@@ -42,7 +43,9 @@
               <td><img alt="{{empresa.nombre}}" height="48" src="{{logo}}{{empresa.empresa_id}}"></td>
               <td><a (click)="info(empresa)" class="info">{{ empresa.nombre | uppercase }}</a></td>
               <td>{{ empresa.nit }}</td>
-              <td>{{ empresa.telefono }}</td>
+              <td>{{ empresa.pais }}</td>
+              <td>{{ empresa.ciudad_localidad }}</td>
+              <td *ngIf="rueda?.habilitado">{{ empresa.telefono }}</td>
               <td>{{ empresa.direccion}}</td>
               <td>
                 <div class="row">

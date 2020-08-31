@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {EmpresaComponent} from './empresa.component';
 import {PerfilComponent} from '../shared/perfil/perfil.component';
@@ -26,7 +26,7 @@ const routes: Routes = [
   {
     path: '',
     component: EmpresaComponent,
-    children : [
+    children: [
       {
         path: 'home',
         component: HomeComponent,
@@ -60,8 +60,8 @@ const routes: Routes = [
             component: ReunionesAgendadasComponent,
           },
           {
-              path: 'crear',
-              component: AgendaCreateComponent,
+            path: 'crear',
+            component: AgendaCreateComponent,
           }, {
             path: '',
             redirectTo: 'reuniones-agendadas',
@@ -97,19 +97,19 @@ const routes: Routes = [
           },
         ],
       },
-        {
-          path: 'evaluacion-general',
-          component: EvaluacionGeneralEmpresaComponent,
-        },
-        {
-          path: 'evaluacion-reunion/:reunion_id/:empresa_id',
-          component: EvaluacionReunionesComponent,
-        },
-        {
-          path: 'editar/:empresa_id',
-          component: EmpresaEditComponent,
-        },
-        {
+      {
+        path: 'evaluacion-general',
+        component: EvaluacionGeneralEmpresaComponent,
+      },
+      {
+        path: 'evaluacion-reunion/:reunion_id/:empresa_id',
+        component: EvaluacionReunionesComponent,
+      },
+      {
+        path: 'editar/:empresa_id',
+        component: EmpresaEditComponent,
+      },
+      {
         path: '',
         redirectTo: 'home',
         pathMatch: 'full',
@@ -122,4 +122,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class EmpresaRoutingModule { }
+export class EmpresaRoutingModule {
+}

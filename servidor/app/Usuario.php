@@ -7,10 +7,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 
-class Usuario extends  Authenticatable
+class Usuario extends Authenticatable
 {
     use Notifiable;
     use SoftDeletes;
+
     protected $table = 'usuarios';
     protected $primaryKey = 'usuario_id';
     protected $fillable = [
@@ -25,13 +26,16 @@ class Usuario extends  Authenticatable
     ];
     protected $hidden = ['password'];
     protected $dates = ['deleted_at'];
-    public function empresa() {
+
+    public function empresa()
+    {
         return $this->hasOne(Empresa::class, 'usuario_id');
     }
+
     public static function boot()
     {
         parent::boot();
-        static::deleting(function($padre) {
+        static::deleting(function ($padre) {
             $padre->empresa()->delete();
         });
     }

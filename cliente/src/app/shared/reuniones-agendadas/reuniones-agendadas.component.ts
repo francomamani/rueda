@@ -151,12 +151,20 @@ export class ReunionesAgendadasComponent implements OnInit {
           doc.text('MESA', 65, 57);
           doc.text('SOLICITANTE', 80, 57);
           doc.text('DEMANDADA', 135, 57);
-          doc.text('REUNIÓN ZOOM', 210, 57);
+          doc.text('REUNIÓN ZOOM', 205, 57);
           doc.line(20, 62, 259.4, 62);
           /*          doc.line(x - 5, y - 5, 259.4, y - 5);*/
-          const x = 25;
+          let x = 25;
           let y = 68;
+          let ln = false;
+          /*test*/
+/*          const reunionesBK = this.reuniones[0];
+          for (let i = 0; i < 100; i++) {
+            this.reuniones.push(reunionesBK);
+          }*/
+          /*end test*/
           doc.setFontStyle('normal');
+          let page = 1;
           this.reuniones.forEach((reunion: any) => {
             doc.setTextColor(0, 0, 0);
             doc.setFontStyle('normal');
@@ -164,14 +172,88 @@ export class ReunionesAgendadasComponent implements OnInit {
               this.formatTime(new Date(reunion.desde)) + '-' +
               this.formatTime(new Date(reunion.hasta)), x, y);
             doc.text(reunion.mesa, x + 45, y);
-            doc.text(reunion.empresa_solicitante.nombre.toUpperCase(), x + 55, y);
-            doc.text(reunion.empresa_demandada.nombre.toUpperCase(), x + 110, y);
+
+            ln = false;
+            const yBase = y;
+            if (reunion.empresa_solicitante.nombre.length < 26) {
+              doc.text(reunion.empresa_solicitante.nombre.toUpperCase(), x + 55, y);
+            } else {
+              doc.text(reunion.empresa_solicitante.nombre.toUpperCase().substring(0, 25), x + 55, y);
+              doc.text(reunion.empresa_solicitante.nombre.toUpperCase().substring(25), x + 55, y + 7);
+              ln = true;
+            }
+
+            if (reunion.empresa_demandada.nombre.length < 26) {
+              doc.text(reunion.empresa_demandada.nombre.toUpperCase(), x + 110, y);
+            } else {
+              doc.text(reunion.empresa_demandada.nombre.toUpperCase().substring(0, 25), x + 110, y);
+              doc.text(reunion.empresa_demandada.nombre.toUpperCase().substring(25), x + 110, y + 7);
+              ln = true;
+            }
+
+            if (ln) {
+              y += 7;
+            }
+
             doc.setTextColor(0, 0, 255);
             doc.setFontStyle('bold');
-            doc.text(reunion.url, x + 165, y);
+            doc.setFontSize(8);
+            doc.text(reunion.url, x + 180, yBase);
+            doc.setFontSize(10);
             doc.setTextColor(0, 0, 0);
             doc.line(x - 5, y + 4, 259.4, y + 4);
             y += 10;
+            doc.text(`${page}`, 255, 205.9);
+            if (y >= 195.9) {
+              doc.addPage();
+              page++;
+              /*begin*/
+              /*          logo.src = 'assets/images/fimem.jpeg';*/
+              doc.addImage(logo, 'JPEG', 215, 22, 45, 15);
+              /*          doc.addImage(logo, 'JPEG', 220, 15, 35, 20);*/
+
+
+              doc.setFontSize(10);
+              doc.setFontStyle('bold');
+
+              /*          doc.text('AGENDA DE REUNIONES FIMEM BOLIVIA', 20, 20);*/
+              doc.text('AGENDA DE REUNIONES BIOSEGURIDAD 2020', 20, 20);
+              doc.text('EMPRESA', 20, 30);
+              doc.setFontStyle('normal');
+              doc.text(this.mi_empresa.toUpperCase(), 50, 30);
+              doc.setFontStyle('bold');
+              doc.text('RUBRO', 20, 37);
+
+              doc.setFontStyle('bold');
+              doc.text('REUNIONES', 139.7, 44, 'center');
+              doc.setFontStyle('normal');
+
+              if (empresa.rubro.nombre.toUpperCase().length < 50) {
+                doc.text(empresa.rubro.nombre.toUpperCase(), 50, 37);
+              } else {
+                const parte1 = empresa.rubro.nombre.toUpperCase().substring(0, 53);
+                const parte2 = empresa.rubro.nombre.toUpperCase().substring(53);
+                doc.text(parte1, 50, 37);
+                doc.text(parte2, 50, 44);
+              }
+
+              doc.setFontStyle('bold');
+              doc.line(20, 50, 259.4, 50);
+              doc.text('HORARIO', 25, 57);
+              doc.text('MESA', 65, 57);
+              doc.text('SOLICITANTE', 80, 57);
+              doc.text('DEMANDADA', 135, 57);
+              doc.text('REUNIÓN ZOOM', 205, 57);
+              doc.line(20, 62, 259.4, 62);
+              /*          doc.line(x - 5, y - 5, 259.4, y - 5);*/
+              x = 25;
+              y = 68;
+              ln = false;
+
+              doc.setFontStyle('normal');
+
+              /*end*/
+            }
           });
           doc.save(`AGENDA ${this.mi_empresa.toUpperCase()}.pdf`);
         }

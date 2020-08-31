@@ -37,6 +37,14 @@
         <td><strong>{{empresa.direccion}}</strong></td>
       </tr>
       <tr>
+        <td>Pais</td>
+        <td><strong>{{empresa.pais}}</strong></td>
+      </tr>
+      <tr>
+        <td>Ciudad/Localidad</td>
+        <td><strong>{{empresa.ciudad_localidad}}</strong></td>
+      </tr>
+      <tr *ngIf="rueda?.habilitado">
         <td>Telefono</td>
         <td><strong>{{empresa.telefono}}</strong></td>
       </tr>

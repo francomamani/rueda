@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Usuario;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
 
 class UsuarioController extends Controller
@@ -11,35 +12,38 @@ class UsuarioController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
         return response()->json(Usuario::with('empresa')->orderBy('cuenta')->get(), 200);
     }
 
-    public function administradores() {
+    public function administradores()
+    {
         $usuarios = Usuario::where('tipo_usuario', 'administrador')->orderBy('cuenta')->get();
         return response()->json($usuarios);
     }
-    public function searchAdministradores() {
+
+    public function searchAdministradores()
+    {
         $value = \request()->input('value');
         $usuarios = Usuario::where('tipo_usuario', 'administrador')
-                            ->where(function ($query) use ($value){
-                                $query->orWhere('nombres', 'like', "%{$value}%");
-                                $query->orWhere('apellidos', 'like', "%{$value}%");
-                                $query->orWhere('cuenta', 'like', "%{$value}%");
-                                $query->orWhere('telefono_celular', 'like', "%{$value}%");
-                            })
-                            ->orderBy('cuenta')->get();
+            ->where(function ($query) use ($value) {
+                $query->orWhere('nombres', 'like', "%{$value}%");
+                $query->orWhere('apellidos', 'like', "%{$value}%");
+                $query->orWhere('cuenta', 'like', "%{$value}%");
+                $query->orWhere('telefono_celular', 'like', "%{$value}%");
+            })
+            ->orderBy('cuenta')->get();
         return response()->json($usuarios, 200);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Response
      */
     public function store(Request $request)
     {
@@ -60,8 +64,8 @@ class UsuarioController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Usuario  $tipoUsuario
-     * @return \Illuminate\Http\Response
+     * @param Usuario $tipoUsuario
+     * @return Response
      */
     public function show($id)
     {
@@ -72,9 +76,9 @@ class UsuarioController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Usuario  $tipoUsuario
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param Usuario $tipoUsuario
+     * @return Response
      */
     public function update(Request $request, $id)
     {
@@ -87,11 +91,11 @@ class UsuarioController extends Controller
         $usuario->save();
 
         $response = null;
-        if($usuario->tipo_usuario === 'administrador') {
+        if ($usuario->tipo_usuario === 'administrador') {
             $response = $usuario;
         } else {
-            $response = Usuario::join('empresas', 'empresas.usuario_id', '=','usuarios.usuario_id')
-                ->join('rubros', 'rubros.rubro_id', '=','empresas.rubro_id')
+            $response = Usuario::join('empresas', 'empresas.usuario_id', '=', 'usuarios.usuario_id')
+                ->join('rubros', 'rubros.rubro_id', '=', 'empresas.rubro_id')
                 ->with('empresa.participantes')
                 ->where('usuarios.email', $usuario->email)
                 ->selectRaw('usuarios.*, empresas.*, rubros.nombre as rubro')
@@ -103,8 +107,8 @@ class UsuarioController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Usuario  $tipoUsuario
-     * @return \Illuminate\Http\Response
+     * @param Usuario $tipoUsuario
+     * @return Response
      */
     public function destroy($id)
     {
@@ -115,10 +119,13 @@ class UsuarioController extends Controller
         ], 200);
     }
 
-    public function logo() {
+    public function logo()
+    {
         return response()->file(storage_path('app/logos/usuario.png'));
     }
-    public function loadLogo($tipo) {
+
+    public function loadLogo($tipo)
+    {
         $file = null;
         switch ($tipo) {
             case 'expoteco' :
@@ -131,7 +138,8 @@ class UsuarioController extends Controller
         return response()->file($file);
     }
 
-    public function resetPassword($usuario_id) {
+    public function resetPassword($usuario_id)
+    {
         $usuario = Usuario::find($usuario_id);
         $usuario->password = Hash::make($usuario->cuenta);
         $usuario->save();

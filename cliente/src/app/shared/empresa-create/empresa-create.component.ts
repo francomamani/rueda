@@ -8,10 +8,13 @@ import {AuthService} from '../../auth.service';
 import {LoadModalComponent} from '../load-modal/load-modal.component';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {AyudaModalComponent} from '../ayuda-modal/ayuda-modal.component';
-/*import Swal from 'sweetalert2';*/
 import swal from 'sweetalert';
-import {Observable} from 'rxjs';
-import {timeout} from 'rxjs/operators';
+
+interface Pais {
+  nombre: string;
+  codigo_marcado: string;
+  codigo: string;
+}
 
 @Component({
   selector: 'ngx-empresa-create',
@@ -26,6 +29,8 @@ export class EmpresaCreateComponent implements OnInit {
   mensaje = null;
   error = null;
   data = null;
+
+  paises: Pais[] = [];
 
   constructor(private rubroService: RubroService,
               private empresaService: EmpresaService,
@@ -49,6 +54,7 @@ export class EmpresaCreateComponent implements OnInit {
       'voucher': new FormControl(''),
       'direccion': new FormControl('', Validators.required),
       'pagina_web': new FormControl(''),
+      'pais': new FormControl('Bolivia, Estado Plurinacional de', Validators.required),
       'ciudad_localidad': new FormControl('', Validators.required),
       'nit': new FormControl('', Validators.required),
       'representante_legal': new FormControl('', Validators.required),
@@ -77,6 +83,11 @@ export class EmpresaCreateComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.empresaService.paises()
+      .subscribe((paises: Pais[]) => {
+        console.log(paises);
+        this.paises = paises;
+      });
   }
 
   store() {

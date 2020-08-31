@@ -35,6 +35,10 @@ export class EmpresaIndexComponent implements OnInit {
   lista: any[];
   cont = 0;
 
+  rueda: {
+    habilitado: boolean
+  };
+
   constructor(private empresaService: EmpresaService,
               private reunionService: ReunionService,
               private rubroService: RubroService,
@@ -43,6 +47,9 @@ export class EmpresaIndexComponent implements OnInit {
               private toastr: NbToastrService,
               private excelService: ExcelServiceService,
               @Inject('Window') private window: Window) {
+    this.empresaService.ruedaMostrar().subscribe((rueda: any) => {
+      this.rueda = rueda;
+    });
     this.createForm();
     const loadModal = this.modalService.open(LoadModalComponent, {size: 'sm', container: 'nb-layout'});
     this.empresaService.empresasListar()
@@ -66,6 +73,18 @@ export class EmpresaIndexComponent implements OnInit {
     this.buscarGroup = this.fb.group({
       'rubro_id': new FormControl(0, [Validators.required]),
       'search': new FormControl('', [Validators.required]),
+    });
+  }
+
+  habilitarRueda() {
+    this.empresaService.ruedaHabilitar().subscribe((rueda: any) => {
+      this.rueda = rueda;
+    });
+  }
+
+  deshabilitarRueda() {
+    this.empresaService.ruedaDeshabilitar().subscribe((rueda: any) => {
+      this.rueda = rueda;
     });
   }
 
@@ -190,7 +209,7 @@ export class EmpresaIndexComponent implements OnInit {
     this.empresaService.agendas()
       .subscribe(res => {
         const logo = new Image();
-/*        logo.src = 'assets/images/fimem.jpeg';*/
+        /*        logo.src = 'assets/images/fimem.jpeg';*/
         logo.src = 'assets/images/bioseguridad.jpeg';
         this.agendas = res;
         const doc = new jsPDF('landscape', 'mm', 'letter');
@@ -210,7 +229,7 @@ export class EmpresaIndexComponent implements OnInit {
           /*          doc.addImage(logo, 'JPEG', 220, 15, 50, 20);*/
           doc.addImage(logo, 'JPEG', 215, 25, 45, 15);
           doc.setFontStyle('bold');
-/*          doc.text('AGENDA RUEDA DE NEGOCIOS FIMEM BOLIVIA', 20, 20);*/
+          /*          doc.text('AGENDA RUEDA DE NEGOCIOS FIMEM BOLIVIA', 20, 20);*/
           doc.text('AGENDA RUEDA DE NEGOCIOS DE BIOSEGURIDAD 2020', 20, 20);
           doc.text('EMPRESA', 20, 30);
           doc.setFontStyle('normal');
@@ -234,27 +253,97 @@ export class EmpresaIndexComponent implements OnInit {
           doc.text('MESA', 70, 61);
           doc.text('SOLICITANTE', 90, 61);
           doc.text('DEMANDADA', 145, 61);
-          doc.text('REUNIÓN DE ZOOM', 200, 61);
+          doc.text('REUNIÓN DE ZOOM', 205, 61);
           doc.line(20, 64, 259.4, 64);
-          const x = 25;
+          let x = 25;
           let y = 70;
           doc.setFontStyle('normal');
           doc.setFontSize(9);
+          /*test*/
+/*          const reunion = agenda.reuniones[0];
+          for (let i = 0; i < 100; i++) {
+            agenda.reuniones.push(reunion);
+          }*/
+          /*end test*/
+          let page = 1;
           agenda.reuniones.forEach((reunion: any) => {
             /*            doc.line(x - 5, y - 6, 259.4, y - 6);*/
+            let ln = false;
+
             doc.text(this.formatDate(new Date(reunion.desde)) + ' ' +
               this.formatTime(new Date(reunion.desde)) + '-' +
               this.formatTime(new Date(reunion.hasta)), x, y);
             doc.text(reunion.mesa, x + 45, y);
-            doc.text(reunion.empresa_solicitante, x + 65, y);
-            doc.text(reunion.empresa_demandada, x + 120, y);
+            if (reunion.empresa_solicitante.length < 26) {
+              doc.text(reunion.empresa_solicitante, x + 65, y);
+            } else {
+              ln = true;
+              doc.text(reunion.empresa_solicitante.substring(0, 25), x + 65, y);
+              doc.text(reunion.empresa_solicitante.substring(25), x + 65, y + 7);
+            }
+            if (reunion.empresa_demandada.length < 26) {
+              doc.text(reunion.empresa_demandada, x + 120, y);
+            } else {
+              ln = true;
+              doc.text(reunion.empresa_demandada.substring(0, 25), x + 120, y);
+              doc.text(reunion.empresa_demandada.substring(25), x + 120, y + 7);
+            }
+            let yBase = y;
+            if (ln) {
+              y += 7;
+            }
+
             doc.setTextColor(0, 0, 255);
             doc.setFontStyle('bold');
-            doc.text(`${reunion.url}`, x + 175, y);
+            doc.setFontSize(8);
+            doc.text(`${reunion.url}`, x + 180, yBase);
+            doc.setFontSize(9);
             doc.setFontStyle('normal');
             doc.setTextColor(0, 0, 0);
             doc.line(x - 5, y + 4, 259.4, y + 4);
             y += 10;
+            doc.text(`${page}`, 255, 205.9);
+            if (y >= 195.9) {
+              doc.addPage();
+              page++;
+              /*start*/
+              doc.setFontSize(10);
+              /*          doc.addImage(logo, 'JPEG', 220, 15, 50, 20);*/
+              doc.addImage(logo, 'JPEG', 215, 25, 45, 15);
+              doc.setFontStyle('bold');
+              /*          doc.text('AGENDA RUEDA DE NEGOCIOS FIMEM BOLIVIA', 20, 20);*/
+              doc.text('AGENDA RUEDA DE NEGOCIOS DE BIOSEGURIDAD 2020', 20, 20);
+              doc.text('EMPRESA', 20, 30);
+              doc.setFontStyle('normal');
+              doc.text(agenda.empresa.nombre.toUpperCase(), 50, 30);
+              doc.setFontStyle('bold');
+              doc.text('RUBRO', 20, 37);
+              doc.setFontStyle('bold');
+              doc.text('REUNIONES', 139.7, 50, 'center');
+              doc.setFontStyle('normal');
+              if (agenda.empresa.rubro.nombre.length < 50) {
+                doc.text(agenda.empresa.rubro.nombre.toUpperCase(), 50, 37);
+              } else {
+                const parte1 = agenda.empresa.rubro.nombre.toUpperCase().substring(0, 53);
+                const parte2 = agenda.empresa.rubro.nombre.toUpperCase().substring(53);
+                doc.text(parte1, 50, 37);
+                doc.text(parte2, 50, 42);
+              }
+              doc.setFontStyle('bold');
+              doc.line(20, 55, 259.4, 55);
+              doc.text('HORARIO', 25, 61);
+              doc.text('MESA', 70, 61);
+              doc.text('SOLICITANTE', 90, 61);
+              doc.text('DEMANDADA', 145, 61);
+              doc.text('REUNIÓN DE ZOOM', 205, 61);
+              doc.line(20, 64, 259.4, 64);
+              x = 25;
+              y = 70;
+              doc.setFontStyle('normal');
+              doc.setFontSize(9);
+
+              /*end*/
+            }
           });
           this.cont++;
         });
@@ -272,7 +361,7 @@ export class EmpresaIndexComponent implements OnInit {
 
   agendasMesa() {
     const logo = new Image();
-/*    logo.src = 'assets/images/fimem.jpeg';*/
+    /*    logo.src = 'assets/images/fimem.jpeg';*/
     logo.src = 'assets/images/bioseguridad.jpeg';
 
     this.reunionService.agendasMesa({
@@ -285,7 +374,7 @@ export class EmpresaIndexComponent implements OnInit {
           count++;
           doc.setFontSize(10);
           doc.setFontStyle('bold');
-/*          doc.text('REUNIONES DE LA RUEDA DE NEGOCIOS DE FIMEM BOLIVIA', 20, 15);*/
+          /*          doc.text('REUNIONES DE LA RUEDA DE NEGOCIOS DE FIMEM BOLIVIA', 20, 15);*/
           doc.text('REUNIONES DE LA RUEDA DE NEGOCIOS DE BIOSEGURIDAD 2020', 20, 15);
           doc.text('MESA', 20, 22);
           doc.text('REUNIÓN DE ZOOM', 20, 29);
@@ -299,7 +388,7 @@ export class EmpresaIndexComponent implements OnInit {
           doc.setFontStyle('normal');
           doc.setTextColor(0, 0, 0);
           doc.text(`: ${DateTime.fromSQL(agenda.fecha).toLocaleString(DateTime.DATE_HUGE)}`, 55, 36);
-/*          doc.addImage(logo, 'JPEG', 220, 15, 50, 20);*/
+          /*          doc.addImage(logo, 'JPEG', 220, 15, 50, 20);*/
           doc.addImage(logo, 'JPEG', 215, 15, 45, 15);
           doc.line(20, 50, 260, 50);
           doc.setFontStyle('bold');
@@ -312,14 +401,80 @@ export class EmpresaIndexComponent implements OnInit {
           doc.line(20, 60, 260, 60);
           let x = 22.5;
           let y = 67;
+          /*test*/
+/*          if (agenda.reuniones.length > 0) {
+            const reunionBK = agenda.reuniones[0];
+            for (let i = 0; i < 100; i++) {
+              agenda.reuniones.push(reunionBK);
+            }
+          }*/
+          /*end test*/
+          let page = 1;
           agenda.reuniones.map((reunion: any, index: number) => {
-            doc.text(`${index + 1}`, 25, y);
             doc.text(`${DateTime.fromSQL(reunion.desde).toLocaleString(DateTime.TIME_24_SIMPLE)} - ${DateTime.fromSQL(reunion.hasta).toLocaleString(DateTime.TIME_24_SIMPLE)}`, 35, y);
-            doc.text(`${reunion.empresa_solicitante.nombre.toUpperCase()}`, 70, y);
-            doc.text(`${reunion.empresa_demandada.nombre.toUpperCase()}`, 140, y);
-            doc.text('', 210, y);
+            let ln = false;
+
+            if (reunion.empresa_solicitante.nombre.length < 26) {
+              doc.text(`${reunion.empresa_solicitante.nombre.toUpperCase()}`, 70, y);
+            } else {
+              ln = true;
+              doc.text(`${reunion.empresa_solicitante.nombre.toUpperCase().substring(0, 25)}`, 70, y);
+              doc.text(`${reunion.empresa_solicitante.nombre.toUpperCase().substring(25)}`, 70, y + 7);
+            }
+
+            if (reunion.empresa_demandada.nombre < 26) {
+              doc.text(`${reunion.empresa_demandada.nombre.toUpperCase()}`, 140, y);
+            } else {
+              ln = true;
+              doc.text(`${reunion.empresa_demandada.nombre.toUpperCase().substring(0, 25)}`, 140, y);
+              doc.text(`${reunion.empresa_demandada.nombre.toUpperCase().substring(25)}`, 140, y + 7);
+            }
+
+            if (ln) {
+              y += 7;
+            }
+
             doc.line(20, y + 5, 260, y + 5);
             y += 12;
+            doc.text(`${page}`, 255, 205.9);
+            /*            doc.text(`${index + 1}`, 25, y);*/
+            if (y >= 195.9) {
+              doc.addPage();
+              page++;
+              /*begin*/
+              doc.setFontSize(10);
+              doc.setFontStyle('bold');
+              /*          doc.text('REUNIONES DE LA RUEDA DE NEGOCIOS DE FIMEM BOLIVIA', 20, 15);*/
+              doc.text('REUNIONES DE LA RUEDA DE NEGOCIOS DE BIOSEGURIDAD 2020', 20, 15);
+              doc.text('MESA', 20, 22);
+              doc.text('REUNIÓN DE ZOOM', 20, 29);
+              doc.text('FECHA', 20, 36);
+              doc.text('HORARIOS', 139.7, 45, 'center');
+              doc.setFontStyle('normal');
+              doc.text(`: ${agenda.numero}`, 55, 22);
+              doc.setTextColor(0, 0, 255);
+              doc.setFontStyle('bold');
+              doc.text(`: ${agenda.url}`, 55, 29);
+              doc.setFontStyle('normal');
+              doc.setTextColor(0, 0, 0);
+              doc.text(`: ${DateTime.fromSQL(agenda.fecha).toLocaleString(DateTime.DATE_HUGE)}`, 55, 36);
+              /*          doc.addImage(logo, 'JPEG', 220, 15, 50, 20);*/
+              doc.addImage(logo, 'JPEG', 215, 15, 45, 15);
+              doc.line(20, 50, 260, 50);
+              doc.setFontStyle('bold');
+              doc.text('N.', 25, 56);
+              doc.text('HORARIO', 35, 56);
+              doc.text('EMPRESA SOLICITANTE', 70, 56);
+              doc.text('EMPRESA DEMANDADA', 140, 56);
+              doc.text('OBSERVACIONES', 210, 56);
+              doc.setFontStyle('normal');
+              doc.line(20, 60, 260, 60);
+              x = 22.5;
+              y = 67;
+
+              /*end*/
+            }
+
           });
           console.log(responses);
           if (count < responses.length) {

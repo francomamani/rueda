@@ -4,6 +4,7 @@ use App\Empresa;
 use App\Mesa;
 use App\Participante;
 use App\Rubro;
+use App\Rueda;
 use App\Usuario;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -240,6 +241,7 @@ class DatabaseSeeder extends Seeder
             'direccion' => 'AV. CIRCUNVALACIÓN Y PROLONGACIÓN ESPAÑA',
             'telefono' => '5266111',
             'pagina_web' => 'campoferial3dejulio.com',
+            'pais' => 'Bolivia, Estado Plurinacional de',
             'ciudad_localidad' => 'Oruro',
             'nit' => '281488020',
             'representante_legal' => 'ROCIO VILLCA QUISPE',
@@ -257,6 +259,10 @@ class DatabaseSeeder extends Seeder
             'carnet' => '7287697',
             'celular' => '61836193',
             'cargo' => 'SISTEMAS',
+        ]);
+
+        Rueda::create([
+            'habilitado' => false
         ]);
         /*        Participante::create([
                     'empresa_id' => $empresaModel->empresa_id,

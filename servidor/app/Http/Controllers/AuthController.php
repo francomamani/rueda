@@ -6,14 +6,17 @@ use App\Empresa;
 use App\Participante;
 use App\User;
 use App\Usuario;
+use Config;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use Validator;
+
 class AuthController extends Controller
 {
-    public function login() {
+    public function login()
+    {
         $credentials = request()->only('cuenta', 'password');
         $rules = [
             'cuenta' => 'required',
@@ -27,7 +30,7 @@ class AuthController extends Controller
             ], 500);
         }
         try {
-            \Config::set('auth.providers.users.model', \App\Usuario::class);
+            Config::set('auth.providers.users.model', Usuario::class);
             if (!$token = JWTAuth::attempt($credentials)) {
                 return response()->json([
                     'autenticado' => false,
@@ -42,15 +45,15 @@ class AuthController extends Controller
         }
         $usuario = null;
         $usuarioModel = Usuario::where('cuenta', request()->input('cuenta'))->first();
-        if($usuarioModel->tipo_usuario === 'administrador') {
+        if ($usuarioModel->tipo_usuario === 'administrador') {
             $usuario = $usuarioModel;
         } else {
             $usuario = Usuario::with('empresa.participantes')
-                    ->join('empresas', 'empresas.usuario_id', '=','usuarios.usuario_id')
-                    ->join('rubros', 'rubros.rubro_id', '=','empresas.rubro_id')
-                    ->where('usuarios.cuenta', request()->input('cuenta'))
-                    ->selectRaw('usuarios.*, empresas.*, rubros.nombre as rubro')
-                    ->first();
+                ->join('empresas', 'empresas.usuario_id', '=', 'usuarios.usuario_id')
+                ->join('rubros', 'rubros.rubro_id', '=', 'empresas.rubro_id')
+                ->where('usuarios.cuenta', request()->input('cuenta'))
+                ->selectRaw('usuarios.*, empresas.*, rubros.nombre as rubro')
+                ->first();
         }
         return response()->json([
             'autenticado' => true,
@@ -60,7 +63,8 @@ class AuthController extends Controller
         ], 200);
     }
 
-    public function cambiarPassword($usuario_id) {
+    public function cambiarPassword($usuario_id)
+    {
         $current_password = request()->input('current_password');
         $new_password = request()->input('new_password');
         $repeat_new_password = request()->input('repeat_new_password');
@@ -71,9 +75,9 @@ class AuthController extends Controller
             if ($new_password === $repeat_new_password) {
                 $usuario->password = Hash::make($new_password);
                 $usuario->save();
-                $mensaje  = "Contraseña actualizada exitosamente";
+                $mensaje = "Contraseña actualizada exitosamente";
             } else {
-                $mensaje  = "Las nuevas contraseñas no coinciden";
+                $mensaje = "Las nuevas contraseñas no coinciden";
             }
         } else {
             $mensaje = "Por favor ingresa nuevamente su contraseña actual";
@@ -82,11 +86,14 @@ class AuthController extends Controller
         return response()->json(['mensaje' => $mensaje], 200);
     }
 
-    private function createCuenta($nombres, $carnet) {
+    private function createCuenta($nombres, $carnet)
+    {
         $cuenta = strtolower($nombres);
         return explode(" ", $cuenta)[0] . $carnet;
     }
-    private function resetParticipantes($empresa_id) {
+
+    private function resetParticipantes($empresa_id)
+    {
         $participantes = Empresa::find($empresa_id)->participantes()->get();
         foreach ($participantes as $participante) {
             $p = Participante::find($participante['participante_id']);
@@ -94,7 +101,9 @@ class AuthController extends Controller
             $p->save();
         }
     }
-    public function setUsuario() {
+
+    public function setUsuario()
+    {
         $participante_id = request()->input('participante_id');
         $empresa_id = request()->input('empresa_id');
         $this->resetParticipantes($empresa_id);

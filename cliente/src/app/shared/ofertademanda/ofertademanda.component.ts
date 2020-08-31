@@ -8,16 +8,17 @@ import {map} from 'rxjs/operators';
   selector: 'ngx-ofertademanda',
   templateUrl: './ofertademanda.component.html',
   styles: [`
-      .btn-acciones {
-          text-align: center;
-          width: 220px;
-      }
-      .btn-acciones a {
-          display: inline-block;
-          font-size: 1.3em;
-          padding: 0 0.1em;
-          cursor: pointer;
-      }
+    .btn-acciones {
+      text-align: center;
+      width: 220px;
+    }
+
+    .btn-acciones a {
+      display: inline-block;
+      font-size: 1.3em;
+      padding: 0 0.1em;
+      cursor: pointer;
+    }
   `],
 })
 export class OfertademandaComponent implements OnInit {
@@ -40,8 +41,11 @@ export class OfertademandaComponent implements OnInit {
     servicios: [],
   };
   data = null;
+
   constructor(private ofertaDemandaService: OfertaDemandaService,
-              private toastr: NbToastrService) {}
+              private toastr: NbToastrService) {
+  }
+
   ngOnInit() {
     if (this.list !== null) {
       const source = from(this.list);
@@ -88,6 +92,7 @@ export class OfertademandaComponent implements OnInit {
     this.productos = this.ofertas.productos;
     this.servicios = this.ofertas.servicios;
   }
+
   getDemandas() {
     this.tipo = 'demanda';
     this.productos = this.demandas.productos;
@@ -98,6 +103,7 @@ export class OfertademandaComponent implements OnInit {
     this.data = [];
     this.ofertas_demandas.emit(this.data.concat(this.ofertas.productos, this.ofertas.servicios, this.demandas.productos, this.demandas.servicios));
   }
+
   store() {
     const data = {
       tipo: this.tipo,
@@ -144,18 +150,21 @@ export class OfertademandaComponent implements OnInit {
         this.toastr.primary(`Se registro exitosamente la ${this.tipo}`, `Registro de ${this.tipo}`);
       });*/
   }
+
   edit(oferta_demanda: any) {
     oferta_demanda.edit = true;
   }
+
   update(oferta_demanda: any) {
     oferta_demanda.edit = false;
     this.send();
     this.toastr.success('', `${this.tipo} actualizada exitosamente`);
-/*    this.ofertaDemandaService.update(oferta_demanda)
-      .subscribe((res: any) => {
-        this.toastr.success('', `${this.tipo} actualizada exitosamente`);
-      });*/
+    /*    this.ofertaDemandaService.update(oferta_demanda)
+          .subscribe((res: any) => {
+            this.toastr.success('', `${this.tipo} actualizada exitosamente`);
+          });*/
   }
+
   remove(oferta_demanda: any, index: number) {
     if (oferta_demanda.tipo === 'oferta') {
       if (oferta_demanda.producto_servicio === 'producto') {
@@ -182,7 +191,8 @@ export class OfertademandaComponent implements OnInit {
       }
     }
   }
-  destroy(oferta_demanda: any, index: number ) {
+
+  destroy(oferta_demanda: any, index: number) {
     if (confirm(`¿Esta seguro de eliminar la ${this.tipo}?`)) {
       if (oferta_demanda.oferta_demanda_id !== undefined) {
         this.ofertaDemandaService.destroy(oferta_demanda.oferta_demanda_id)
@@ -198,16 +208,16 @@ export class OfertademandaComponent implements OnInit {
       } else {
         this.remove(oferta_demanda, index);
       }
-/*      this.ofertaDemandaService.destroy(oferta_demanda_id)
-        .subscribe((res: any) => {
-          if (this.tipo === 'oferta') {
-            this.getOfertas();
-          } else {
-            this.getDemandas();
-          }
-          this.descripcion = '';
-          this.toastr.success('', `${this.tipo} eliminado exitosamente`);
-        });*/
+      /*      this.ofertaDemandaService.destroy(oferta_demanda_id)
+              .subscribe((res: any) => {
+                if (this.tipo === 'oferta') {
+                  this.getOfertas();
+                } else {
+                  this.getDemandas();
+                }
+                this.descripcion = '';
+                this.toastr.success('', `${this.tipo} eliminado exitosamente`);
+              });*/
     }
   }
 }

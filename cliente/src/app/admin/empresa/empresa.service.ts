@@ -103,4 +103,20 @@ export class EmpresaService {
   conMaterial(empresa_id: number) {
     return this.http.post(this.base + 'con-material/' + empresa_id, null);
   }
+
+  paises() {
+    return this.http.get(`${this.base}paises`);
+  }
+
+  ruedaHabilitar() {
+    return this.http.post(`${this.base}rueda-habilitar`, null);
+  }
+
+  ruedaDeshabilitar() {
+    return this.http.post(`${this.base}rueda-deshabilitar`, null);
+  }
+
+  ruedaMostrar() {
+    return this.http.get(`${this.base}rueda-mostrar`);
+  }
 }

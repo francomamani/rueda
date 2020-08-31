@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {environment} from '../../../environments/environment.prod';
 import {RubroService} from '../../admin/rubro/rubro.service';
@@ -17,120 +17,125 @@ import {LoadModalComponent} from '../load-modal/load-modal.component';
 })
 export class EmpresasRegistradasComponent implements OnInit {
 
-    rubros: any = null;
-    buscarGroup: FormGroup;
-    empresas: any = null;
-    empresasBK: any = null;
-    empresa_id: any;
-    emp: any = null;
-    logo = environment.base + environment.empresa_logo;
-    constructor(private rubroService: RubroService,
-                private empresaService: EmpresaService,
-                private modalService: NgbModal,
-                private authService: AuthService,
-                private fb: FormBuilder,
-                public route: ActivatedRoute) {
-        this.createForm();
+  rubros: any = null;
+  buscarGroup: FormGroup;
+  empresas: any = null;
+  empresasBK: any = null;
+  rueda: any = null;
+  empresa_id: any;
+  emp: any = null;
+  logo = environment.base + environment.empresa_logo;
 
-        if (this.authService.getTipoUsuario() === 'administrador') {
-            this.empresa_id = this.route.snapshot.paramMap.get('empresa_id');
-            this.empresaService.show(this.empresa_id).subscribe(res => {
-                this.emp = res;
-            });
-        } else {
-            this.empresa_id = this.authService.getUsuario().empresa_id;
-        }
-        this.rubroService.index().subscribe(res => {
-            this.rubros = res;
-        });
-        const empresa_id = this.authService.getUsuario().empresa_id;
-        this.empresaService.miListaHabilitados(empresa_id)
-          .subscribe((res: any) => {
-            this.empresas = res;
-            this.empresasBK = this.empresas;
-          });
+  constructor(private rubroService: RubroService,
+              private empresaService: EmpresaService,
+              private modalService: NgbModal,
+              private authService: AuthService,
+              private fb: FormBuilder,
+              public route: ActivatedRoute) {
+    this.createForm();
+
+    if (this.authService.getTipoUsuario() === 'administrador') {
+      this.empresa_id = this.route.snapshot.paramMap.get('empresa_id');
+      this.empresaService.show(this.empresa_id).subscribe(res => {
+        this.emp = res;
+      });
+    } else {
+      this.empresa_id = this.authService.getUsuario().empresa_id;
     }
+    this.rubroService.index().subscribe(res => {
+      this.rubros = res;
+    });
+    const empresa_id = this.authService.getUsuario().empresa_id;
+    this.empresaService.miListaHabilitados(empresa_id)
+      .subscribe((res: any) => {
+        this.empresas = res;
+        this.empresasBK = this.empresas;
+      });
+    this.empresaService.ruedaMostrar().subscribe((rueda: any) => {
+      this.rueda = rueda;
+    });
+  }
 
-    ngOnInit() {
-    }
+  ngOnInit() {
+  }
 
-    createForm() {
-        this.buscarGroup = this.fb.group({
-            'rubro_id': new FormControl(0, [Validators.required]),
-            'search': new FormControl('', [Validators.required]),
-        });
-    }
+  createForm() {
+    this.buscarGroup = this.fb.group({
+      'rubro_id': new FormControl(0, [Validators.required]),
+      'search': new FormControl('', [Validators.required]),
+    });
+  }
 
-/*    buscar() {
-        this.empresaService.buscar(this.buscarGroup.value)
-            .subscribe((res: any) => {
-                this.empresas = res;
-            });
-    }*/
-    buscar() {
-      const search = this.buscarGroup.value.search;
-      const rubro_id = Number(this.buscarGroup.value.rubro_id);
-      this.empresas = this.empresasBK;
-      if (search === '') {
-        if (rubro_id === 0) {
-          this.empresas = this.empresasBK;
-        } else {
-          this.empresaService.miListaHabilitados(this.empresa_id).subscribe((empresas: any) => {
-            this.empresas = empresas;
-          });
-        }
+  /*    buscar() {
+          this.empresaService.buscar(this.buscarGroup.value)
+              .subscribe((res: any) => {
+                  this.empresas = res;
+              });
+      }*/
+  buscar() {
+    const search = this.buscarGroup.value.search;
+    const rubro_id = Number(this.buscarGroup.value.rubro_id);
+    this.empresas = this.empresasBK;
+    if (search === '') {
+      if (rubro_id === 0) {
+        this.empresas = this.empresasBK;
       } else {
-        const request = {
-          rubro_id: rubro_id,
-          search: search,
-          empresa_id: this.empresa_id,
-        };
-        this.empresaService.buscarMiListaHabilitados(request).subscribe((empresas: any) => {
+        this.empresaService.miListaHabilitados(this.empresa_id).subscribe((empresas: any) => {
           this.empresas = empresas;
         });
       }
+    } else {
+      const request = {
+        rubro_id: rubro_id,
+        search: search,
+        empresa_id: this.empresa_id,
+      };
+      this.empresaService.buscarMiListaHabilitados(request).subscribe((empresas: any) => {
+        this.empresas = empresas;
+      });
     }
+  }
 
-    info(empresa) {
-        const activeModal = this.modalService.open(EmpresaModalComponent, { size: 'lg', container: 'nb-layout' });
-        activeModal.componentInstance.modalHeader = 'Empresa: ' + empresa.nombre;
-        activeModal.componentInstance.empresa = empresa;
-    }
+  info(empresa) {
+    const activeModal = this.modalService.open(EmpresaModalComponent, {size: 'lg', container: 'nb-layout'});
+    activeModal.componentInstance.modalHeader = 'Empresa: ' + empresa.nombre;
+    activeModal.componentInstance.empresa = empresa;
+  }
 
-    agendar(empresa_id) {
-        const loadModal = this.modalService.open(LoadModalComponent, { size: 'sm', container: 'nb-layout' });
-        const data = {
-            empresa_solicitante_id : this.empresa_id,
-            empresa_demandada_id : empresa_id,
-        };
-        this.empresaService.agendar(data)
-            .subscribe((res: any) => {
-                loadModal.dismiss();
-                let message = '';
-                res.message.forEach(m => {
-                  message = m + '. ';
-                });
-                if (res.status) {
-                  this.ayuda('Reunión agendada', res.message, '');
-                  const mi_empresa_id = this.authService.getUsuario().empresa_id;
-                  this.empresaService.miListaHabilitados(mi_empresa_id)
-                    .subscribe((response: any) => {
-                      this.empresas = response;
-                      this.empresasBK = this.empresas;
-                    });
-                } else {
-                  this.ayuda('No fue posible agendar', message, '');
-                }
-            }, (error: any) => {
-                    this.ayuda('No se puedo agendar',
-                                  'No se pudo agendar la reunión con esta empresa', '');
+  agendar(empresa_id) {
+    const loadModal = this.modalService.open(LoadModalComponent, {size: 'sm', container: 'nb-layout'});
+    const data = {
+      empresa_solicitante_id: this.empresa_id,
+      empresa_demandada_id: empresa_id,
+    };
+    this.empresaService.agendar(data)
+      .subscribe((res: any) => {
+        loadModal.dismiss();
+        let message = '';
+        res.message.forEach(m => {
+          message = m + '. ';
+        });
+        if (res.status) {
+          this.ayuda('Reunión agendada', res.message, '');
+          const mi_empresa_id = this.authService.getUsuario().empresa_id;
+          this.empresaService.miListaHabilitados(mi_empresa_id)
+            .subscribe((response: any) => {
+              this.empresas = response;
+              this.empresasBK = this.empresas;
             });
-    }
+        } else {
+          this.ayuda('No fue posible agendar', message, '');
+        }
+      }, (error: any) => {
+        this.ayuda('No se puedo agendar',
+          'No se pudo agendar la reunión con esta empresa', '');
+      });
+  }
 
-    ayuda(tit, mess, mess_i) {
-        const modalAyuda = this.modalService.open(AyudaModalComponent, { size: 'lg', container: 'nb-layout' });
-        modalAyuda.componentInstance.titulo = tit;
-        modalAyuda.componentInstance.mensaje = mess;
-        modalAyuda.componentInstance.mensaje_importante = mess_i;
-    }
+  ayuda(tit, mess, mess_i) {
+    const modalAyuda = this.modalService.open(AyudaModalComponent, {size: 'lg', container: 'nb-layout'});
+    modalAyuda.componentInstance.titulo = tit;
+    modalAyuda.componentInstance.mensaje = mess;
+    modalAyuda.componentInstance.mensaje_importante = mess_i;
+  }
 }

@@ -1,13 +1,17 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {environment} from '../environments/environment.prod';
 import {HttpClient} from '@angular/common/http';
 import 'rxjs/add/operator/map';
+
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   base = environment.base;
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient) {
+  }
+
   login(req) {
     return this.http.post(this.base + 'login', req)
       .map((data: any) => {
@@ -21,16 +25,20 @@ export class AuthService {
         return data;
       });
   }
+
   logout() {
     localStorage.removeItem('rueda-token');
     localStorage.removeItem('rueda-usuario');
   }
+
   getTipoUsuario() {
     return JSON.parse(atob(localStorage.getItem('rueda-usuario'))).tipo_usuario;
   }
+
   getUsuario() {
     return JSON.parse(atob(localStorage.getItem('rueda-usuario')));
   }
+
   isLoggedIn() {
     if (localStorage.getItem('rueda-token')) {
       return true;
@@ -38,23 +46,29 @@ export class AuthService {
       return false;
     }
   }
+
   setUsuario(req) {
     const usuario = btoa(JSON.stringify(req));
     localStorage.removeItem('rueda-usuario');
     localStorage.setItem('rueda-usuario', usuario);
   }
+
   showUsuario(id) {
     return this.http.get(this.base + 'usuarios/' + id);
   }
+
   updateUsuario(id, req) {
     return this.http.put(this.base + 'usuarios/' + id, req);
   }
+
   cambiarPassword(usuario_id, req) {
     return this.http.post(this.base + 'cambiar-password/' + usuario_id, req);
   }
+
   generarBackup() {
     return this.base + 'generar-backup';
   }
+
   setUsuarioParticipante(req) {
     return this.http.post(`${this.base}set-usuario`, req);
   }

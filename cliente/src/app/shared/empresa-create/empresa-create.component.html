@@ -2,14 +2,14 @@
   <div class="row">
     <div class="col-md-12">
       <form (submit)="store()"
-            role="form"
+            *ngIf="rubros !== null"
             [formGroup]="empresaGroup"
-            *ngIf="rubros !== null">
+            role="form">
         <h3 class="signup-title">Registro de Empresa</h3>
-        <div class="alert alert-success" *ngIf="mensaje !== null">
+        <div *ngIf="mensaje !== null" class="alert alert-success">
           <strong>{{ mensaje }}</strong>
         </div>
-        <div class="alert alert-danger" *ngIf="error !== null">
+        <div *ngIf="error !== null" class="alert alert-danger">
           <strong>{{ error }}</strong>
         </div>
         <br><br>
@@ -21,27 +21,32 @@
             <div class="row">
               <div class="col-lg-4 form-group">
                 <label for="rubro_id">Lista de rubros</label>
-                <select name="rubro_id" id="rubro_id" formControlName="rubro_id" class="form-control">
-                  <option [value]="rubro.rubro_id" *ngFor="let rubro of rubros">{{ rubro.nombre }}</option>
+                <select class="form-control" formControlName="rubro_id" id="rubro_id" name="rubro_id">
+                  <option *ngFor="let rubro of rubros" [value]="rubro.rubro_id">{{ rubro.nombre }}</option>
                 </select>
-                <div class="alert alert-danger"
-                     *ngIf="empresaGroup.get('rubro_id').status === 'INVALID' && empresaGroup.get('rubro_id').dirty">
+                <div *ngIf="empresaGroup.get('rubro_id').status === 'INVALID' && empresaGroup.get('rubro_id').dirty"
+                     class="alert alert-danger">
                   <strong>Elija un rubro</strong>
                 </div>
               </div>
               <div class="col-lg-4 form-group">
                 <label for="nombre">Nombre de la empresa</label>
-                <input type="text" oninput="this.value = this.value.toUpperCase()" id="nombre" class="form-control" formControlName="nombre" name="nombre" placeholder="Empresa">
-                <div class="alert alert-danger"
-                     *ngIf="empresaGroup.get('nombre').status === 'INVALID' && empresaGroup.get('nombre').dirty">
+                <input class="form-control" formControlName="nombre" id="nombre" name="nombre"
+                       oninput="this.value = this.value.toUpperCase()" placeholder="Empresa" type="text">
+                <div *ngIf="empresaGroup.get('nombre').status === 'INVALID' && empresaGroup.get('nombre').dirty"
+                     class="alert alert-danger">
                   <strong>El nombre de la empresa es obligatorio</strong>
                 </div>
               </div>
               <div class="col-lg-4 form-group">
                 <label for="nit">NIT</label>
-                <input type="text" oninput="this.value = this.value.toUpperCase(); this.value = this.value.replace(/[A-Za-z\W ]/g, '')" id="nit" class="form-control" formControlName="nit" name="nit" placeholder="NIT">
-                <div class="alert alert-danger"
-                     *ngIf="empresaGroup.get('nit').status === 'INVALID'&& empresaGroup.get('nit').dirty">
+                <input class="form-control"
+                       formControlName="nit"
+                       id="nit" name="nit"
+                       oninput="this.value = this.value.toUpperCase(); this.value = this.value.replace(/[A-Za-z\W ]/g, '')"
+                       placeholder="NIT" type="text">
+                <div *ngIf="empresaGroup.get('nit').status === 'INVALID'&& empresaGroup.get('nit').dirty"
+                     class="alert alert-danger">
                   <strong>Registrar el NIT es obligatorio</strong>
                 </div>
               </div>
@@ -49,39 +54,68 @@
             <div class="row">
               <div class="col-lg-4 form-group">
                 <label for="pagina_web">Página web (Opcional)</label>
-                <input type="url" id="pagina_web" class="form-control" formControlName="pagina_web" name="pagina_web" placeholder="Pagina Web">
+                <input class="form-control" formControlName="pagina_web" id="pagina_web" name="pagina_web"
+                       placeholder="Pagina Web"
+                       type="url">
+              </div>
+              <div class="col-lg-4 form-group">
+                <label for="pais">Pais</label>
+                <select class="form-control" formControlName="pais" id="pais" name="pais">
+                  <option *ngFor="let pais of paises" [value]="pais.nombre">{{ pais.nombre }}</option>
+                </select>
+                <!--                <input class="form-control" formControlName="pais" id="pais" name="pais"
+                                       oninput="this.value = this.value.toUpperCase()" placeholder="País" type="text">-->
+                <div *ngIf="empresaGroup.get('pais').status === 'INVALID' && empresaGroup.get('pais').dirty"
+                     class="alert alert-danger">
+                  <strong>Seleccione el país de la empresa</strong>
+                </div>
               </div>
               <div class="col-lg-4 form-group">
                 <label for="ciudad_localidad">Ciudad/Localidad</label>
-                <input type="text" oninput="this.value = this.value.toUpperCase()" id="ciudad_localidad" class="form-control" formControlName="ciudad_localidad" name="ciudad_localidad" placeholder="Ciudad o Localidad">
-                <div class="alert alert-danger"
-                     *ngIf="empresaGroup.get('ciudad_localidad').status === 'INVALID' && empresaGroup.get('ciudad_localidad').dirty">
+                <input class="form-control" formControlName="ciudad_localidad" id="ciudad_localidad"
+                       name="ciudad_localidad" oninput="this.value = this.value.toUpperCase()"
+                       placeholder="Ciudad o Localidad"
+                       type="text">
+                <div
+                  *ngIf="empresaGroup.get('ciudad_localidad').status === 'INVALID' && empresaGroup.get('ciudad_localidad').dirty"
+                  class="alert alert-danger">
                   <strong>Ingresa la ciudad o localidad de la empresa</strong>
                 </div>
               </div>
               <div class="col-lg-4 form-group">
                 <label for="direccion">Dirección</label>
-                <input type="text" oninput="this.value = this.value.toUpperCase()" id="direccion" class="form-control" formControlName="direccion" name="direccion" placeholder="Direccion">
-                <div class="alert alert-danger"
-                     *ngIf="empresaGroup.get('direccion').status === 'INVALID' && empresaGroup.get('direccion').dirty">
+                <input class="form-control" formControlName="direccion" id="direccion" name="direccion"
+                       oninput="this.value = this.value.toUpperCase()" placeholder="Direccion" type="text">
+                <div *ngIf="empresaGroup.get('direccion').status === 'INVALID' && empresaGroup.get('direccion').dirty"
+                     class="alert alert-danger">
                   <strong>La direccion de la empresa es obligatoria</strong>
                 </div>
               </div>
-              <div class="col-lg-6 form-group">
+              <div class="col-lg-4 form-group">
                 <label for="representante_legal">Representante legal</label>
-                <input type="text" oninput="this.value = this.value.toUpperCase(); this.value = this.value.replace(/[0-9]/g, '')" id="representante_legal" class="form-control" formControlName="representante_legal" name="representante_legal" placeholder="Representante Legal">
-                <div class="alert alert-danger"
-                     *ngIf="empresaGroup.get('representante_legal').status === 'INVALID' && empresaGroup.get('representante_legal').dirty">
+                <input class="form-control"
+                       formControlName="representante_legal"
+                       id="representante_legal" name="representante_legal"
+                       oninput="this.value = this.value.toUpperCase(); this.value = this.value.replace(/[0-9]/g, '')"
+                       placeholder="Representante Legal" type="text">
+                <div
+                  *ngIf="empresaGroup.get('representante_legal').status === 'INVALID' && empresaGroup.get('representante_legal').dirty"
+                  class="alert alert-danger">
                   <strong>El representante legal de la empresa es obligatoria</strong>
                 </div>
               </div>
 
 
-              <div class="col-lg-6 form-group">
+              <div class="col-lg-4 form-group">
                 <label for="telefono">Telefono ó Celular</label>
-                <input type="text" oninput="this.value = this.value.toUpperCase(); this.value = this.value.replace(/[A-Za-z\W ]/g, '')" id="telefono" class="form-control" formControlName="telefono" name="telefono" placeholder="Telefono ó Celular">
-                <div class="alert alert-danger"
-                     *ngIf="empresaGroup.get('telefono').status === 'INVALID' && empresaGroup.get('telefono').dirty">
+                <input class="form-control"
+                       formControlName="telefono"
+                       id="telefono" name="telefono"
+                       oninput="this.value = this.value.toUpperCase(); this.value = this.value.replace(/[A-Za-z\W ]/g, '')"
+                       placeholder="Telefono ó Celular"
+                       type="text">
+                <div *ngIf="empresaGroup.get('telefono').status === 'INVALID' && empresaGroup.get('telefono').dirty"
+                     class="alert alert-danger">
                   <strong>El teléfono o celular de la empresa es obligatoria</strong>
                 </div>
               </div>
@@ -91,7 +125,8 @@
         <nb-card>
           <nb-card-header>
             Mi Cuenta de Acceso <br>
-            <strong>Cuenta:</strong> Tu primer nombre en minúsculas y carnet es tu cuenta. <strong style="color: blue;">Ej. manuel7587458</strong>
+            <strong>Cuenta:</strong> Tu primer nombre en minúsculas y carnet es tu cuenta. <strong style="color: blue;">Ej.
+            manuel7587458</strong>
             <br>
             <strong>Contraseña: </strong> El número de carnet. <strong style="color: blue;">Ej. 7587458</strong>
           </nb-card-header>
@@ -99,51 +134,66 @@
             <div class="row">
               <div class="col-lg-4 form-group">
                 <label for="p1_nombres">Nombres</label>
-                <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" id="p1_nombres" formControlName="p1_nombres">
-                <div class="alert alert-danger"
-                     *ngIf="empresaGroup.get('p1_nombres').status === 'INVALID' && empresaGroup.get('p1_nombres').dirty">
+                <input class="form-control" formControlName="p1_nombres" id="p1_nombres"
+                       oninput="this.value = this.value.toUpperCase()"
+                       type="text">
+                <div *ngIf="empresaGroup.get('p1_nombres').status === 'INVALID' && empresaGroup.get('p1_nombres').dirty"
+                     class="alert alert-danger">
                   <strong>Los nombres son obligatorios</strong>
                 </div>
               </div>
               <div class="col-lg-4 form-group">
                 <label for="p1_apellidos">Apellidos</label>
-                <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" id="p1_apellidos" formControlName="p1_apellidos">
-                <div class="alert alert-danger"
-                     *ngIf="empresaGroup.get('p1_apellidos').status === 'INVALID' && empresaGroup.get('p1_apellidos').dirty">
+                <input class="form-control" formControlName="p1_apellidos" id="p1_apellidos"
+                       oninput="this.value = this.value.toUpperCase()" type="text">
+                <div
+                  *ngIf="empresaGroup.get('p1_apellidos').status === 'INVALID' && empresaGroup.get('p1_apellidos').dirty"
+                  class="alert alert-danger">
                   <strong>Los apellidos son obligatorios</strong>
                 </div>
               </div>
               <div class="col-lg-4 form-group">
                 <label for="p1_carnet">Número de Carnet <strong>(Esta será tu contraseña)</strong></label>
-                <input type="text" oninput="this.value = this.value.toUpperCase();this.value = this.value.replace(/[A-Za-z ]/g, '')" class="form-control" id="p1_carnet" formControlName="p1_carnet">
-                <div class="alert alert-danger"
-                     *ngIf="empresaGroup.get('p1_carnet').status === 'INVALID' && empresaGroup.get('p1_carnet').dirty">
+                <input class="form-control"
+                       formControlName="p1_carnet"
+                       id="p1_carnet"
+                       oninput="this.value = this.value.toUpperCase();this.value = this.value.replace(/[A-Za-z ]/g, '')"
+                       type="text">
+                <div *ngIf="empresaGroup.get('p1_carnet').status === 'INVALID' && empresaGroup.get('p1_carnet').dirty"
+                     class="alert alert-danger">
                   <strong>El carnet del participante es obligatorio</strong>
                 </div>
               </div>
               <div class="col-lg-4 form-group">
                 <label for="p1_celular">Celular</label>
-                <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" id="p1_celular" formControlName="p1_celular">
-                <div class="alert alert-danger"
-                     *ngIf="empresaGroup.get('p1_celular').status === 'INVALID' && empresaGroup.get('p1_celular').dirty">
+                <input class="form-control" formControlName="p1_celular" id="p1_celular"
+                       oninput="this.value = this.value.toUpperCase()"
+                       type="text">
+                <div *ngIf="empresaGroup.get('p1_celular').status === 'INVALID' && empresaGroup.get('p1_celular').dirty"
+                     class="alert alert-danger">
                   <strong>El celular del participante es obligatorio</strong>
                 </div>
               </div>
               <div class="col-lg-4 form-group">
                 <label for="p1_cargo">Cargo en la Empresa</label>
-                <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" id="p1_cargo" formControlName="p1_cargo">
-                <div class="alert alert-danger"
-                     *ngIf="empresaGroup.get('p1_cargo').status === 'INVALID' && empresaGroup.get('p1_cargo').dirty">
+                <input class="form-control" formControlName="p1_cargo" id="p1_cargo"
+                       oninput="this.value = this.value.toUpperCase()"
+                       type="text">
+                <div *ngIf="empresaGroup.get('p1_cargo').status === 'INVALID' && empresaGroup.get('p1_cargo').dirty"
+                     class="alert alert-danger">
                   <strong>El cargo del participante es obligatorio</strong>
                 </div>
               </div>
               <div class="col-lg-4 form-group">
                 <label for="email">Correo Electrónico (Opcional)</label>
-                <input type="email" id="email" class="form-control" formControlName="email" name="email" placeholder="Correo Electronico">
+                <input class="form-control" formControlName="email" id="email" name="email"
+                       placeholder="Correo Electronico"
+                       type="email">
               </div>
-              <div class="col-lg-4 form-group" *ngIf="router.url !== '/auth/signup'">
+              <div *ngIf="router.url !== '/auth/signup'" class="col-lg-4 form-group">
                 <label for="max_participantes">Maximo de participantes</label>
-                <input type="number" id="max_participantes" class="form-control" formControlName="max_participantes" name="max_participantes" min="0" max="10" placeholder="Maximo de participantes">
+                <input class="form-control" formControlName="max_participantes" id="max_participantes" max="10"
+                       min="0" name="max_participantes" placeholder="Maximo de participantes" type="number">
               </div>
             </div>
           </nb-card-body>
@@ -154,25 +204,36 @@
             <div class="row">
               <div class="col-lg-6 form-group">
                 <label for="p2_nombres">Nombres</label>
-                <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" id="p2_nombres" formControlName="p2_nombres">
+                <input class="form-control" formControlName="p2_nombres" id="p2_nombres"
+                       oninput="this.value = this.value.toUpperCase()"
+                       type="text">
               </div>
               <div class="col-lg-6">
                 <label for="p2_apellidos">Apellidos</label>
-                <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" id="p2_apellidos" formControlName="p2_apellidos">
+                <input class="form-control" formControlName="p2_apellidos" id="p2_apellidos"
+                       oninput="this.value = this.value.toUpperCase()" type="text">
               </div>
             </div>
             <div class="row">
               <div class="col-lg-4 form-group">
                 <label for="p2_carnet">Carnet</label>
-                <input type="text" oninput="this.value = this.value.toUpperCase();this.value = this.value.replace(/[A-Za-z ]/g, '')" class="form-control" id="p2_carnet" formControlName="p2_carnet">
+                <input class="form-control"
+                       formControlName="p2_carnet"
+                       id="p2_carnet"
+                       oninput="this.value = this.value.toUpperCase();this.value = this.value.replace(/[A-Za-z ]/g, '')"
+                       type="text">
               </div>
               <div class="col-lg-4 form-group">
                 <label for="p2_celular">Celular</label>
-                <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" id="p2_celular" formControlName="p2_celular">
+                <input class="form-control" formControlName="p2_celular" id="p2_celular"
+                       oninput="this.value = this.value.toUpperCase()"
+                       type="text">
               </div>
               <div class="col-lg-4">
                 <label for="p2_cargo">Cargo</label>
-                <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" id="p2_cargo" formControlName="p2_cargo">
+                <input class="form-control" formControlName="p2_cargo" id="p2_cargo"
+                       oninput="this.value = this.value.toUpperCase()"
+                       type="text">
               </div>
             </div>
           </nb-card-body>
@@ -186,53 +247,55 @@
             <div class="row">
               <div class="col-lg-4 form-group">
                 <label for="logo">Subir Logo (Opcional)</label>
-                <input type="file" id="logo" #logo title="Subir logo" accept='image/*'>
+                <input #logo accept='image/*' id="logo" title="Subir logo" type="file">
               </div>
               <div class="col-lg-4 form-group">
                 <label for="voucher">Subir Voucher</label><br>
-                <input type="file" id="voucher" #voucher title="Subir voucher" accept='image/*'>
+                <input #voucher accept='image/*' id="voucher" title="Subir voucher" type="file">
               </div>
-              <div class="col-lg-4 form-group" *ngIf="router.url !== '/auth/signup'">
-                <nb-checkbox value=0 formControlName="especial" name="especial">Empresa Especial</nb-checkbox>
+              <div *ngIf="router.url !== '/auth/signup'" class="col-lg-4 form-group">
+                <nb-checkbox formControlName="especial" name="especial" value=0>Empresa Especial</nb-checkbox>
               </div>
-              <div class="col-lg-4 form-group" *ngIf="router.url !== '/auth/signup'">
-                <nb-checkbox value=1 formControlName="habilitado" name="habilitado">Empresa Habilitada</nb-checkbox>
+              <div *ngIf="router.url !== '/auth/signup'" class="col-lg-4 form-group">
+                <nb-checkbox formControlName="habilitado" name="habilitado" value=1>Empresa Habilitada</nb-checkbox>
               </div>
             </div>
           </nb-card-body>
         </nb-card>
         <nb-card>
-          <ngx-ofertademanda (ofertas_demandas)="setData($event)" ></ngx-ofertademanda>
+          <ngx-ofertademanda (ofertas_demandas)="setData($event)"></ngx-ofertademanda>
         </nb-card>
-<!--        <nb-card>
-          <nb-card-header>
-            Ofertas y Demandas Empresariales
-          </nb-card-header>
-          <nb-card-body>
-            <div class="row">
-              <div class="col-md-6 form-group">
-                <label for="oferta">Resumen de Oferta</label>
-                <textarea formControlName="oferta" id="oferta" name="oferta" class="form-control" cols="30" rows="7"
-                          placeholder="Que productos o servicios ofrece su empresa"></textarea>
-                <div class="alert alert-danger"
-                     *ngIf="empresaGroup.get('oferta').status === 'INVALID' && empresaGroup.get('oferta').dirty">
-                  <strong>La oferta de su producto es obligatoria</strong>
-                </div>
-              </div>
-              <div class="col-md-6 form-group">
-                <label for="demanda">Resumen de Demanda</label>
-                <textarea formControlName="demanda" id="demanda" name="demanda" class="form-control" cols="30" rows="7"
-                          placeholder="Que productos o servicios necesita su empresa"></textarea>
-                <div class="alert alert-danger"
-                     *ngIf="empresaGroup.get('demanda').status === 'INVALID' && empresaGroup.get('demanda').dirty">
-                  <strong>La demanda de su producto es obligatoria</strong>
-                </div>
-              </div>
-            </div>
-          </nb-card-body>
-        </nb-card>-->
-        <button type="submit" [disabled]="empresaGroup.status === 'INVALID' || empresaGroup.untouched" class="btn btn-primary">Registrar usuario</button>&nbsp;&nbsp;
-        <a routerLink="login" class="btn btn-danger" *ngIf="router.url === '/auth/signup'">Cancelar</a>
+        <!--        <nb-card>
+                  <nb-card-header>
+                    Ofertas y Demandas Empresariales
+                  </nb-card-header>
+                  <nb-card-body>
+                    <div class="row">
+                      <div class="col-md-6 form-group">
+                        <label for="oferta">Resumen de Oferta</label>
+                        <textarea formControlName="oferta" id="oferta" name="oferta" class="form-control" cols="30" rows="7"
+                                  placeholder="Que productos o servicios ofrece su empresa"></textarea>
+                        <div class="alert alert-danger"
+                             *ngIf="empresaGroup.get('oferta').status === 'INVALID' && empresaGroup.get('oferta').dirty">
+                          <strong>La oferta de su producto es obligatoria</strong>
+                        </div>
+                      </div>
+                      <div class="col-md-6 form-group">
+                        <label for="demanda">Resumen de Demanda</label>
+                        <textarea formControlName="demanda" id="demanda" name="demanda" class="form-control" cols="30" rows="7"
+                                  placeholder="Que productos o servicios necesita su empresa"></textarea>
+                        <div class="alert alert-danger"
+                             *ngIf="empresaGroup.get('demanda').status === 'INVALID' && empresaGroup.get('demanda').dirty">
+                          <strong>La demanda de su producto es obligatoria</strong>
+                        </div>
+                      </div>
+                    </div>
+                  </nb-card-body>
+                </nb-card>-->
+        <button [disabled]="empresaGroup.status === 'INVALID' || empresaGroup.untouched" class="btn btn-primary"
+                type="submit">Registrar usuario
+        </button>&nbsp;&nbsp;
+        <a *ngIf="router.url === '/auth/signup'" class="btn btn-danger" routerLink="login">Cancelar</a>
       </form>
     </div>
   </div>

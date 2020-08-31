@@ -10,7 +10,7 @@ import {NbToastrService} from '@nebular/theme';
   styleUrls: ['./usuario-edit.component.scss'],
 })
 export class UsuarioEditComponent implements OnInit {
-
+  
   usuario_id = null;
   usuarioGroup: FormGroup;
   usuario = null;

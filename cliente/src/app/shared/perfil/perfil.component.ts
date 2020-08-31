@@ -15,15 +15,16 @@ export class PerfilComponent implements OnInit {
   usuarioLogo = environment.base + environment.usuario_logo;
   participantes: any = null;
   usuario = JSON.parse(atob(localStorage.getItem('rueda-usuario')));
+
   constructor(public router: Router,
               private authService: AuthService,
               private empresaService: EmpresaService) {
     if (this.usuario.tipo_usuario === 'empresa') {
       if (this.usuario.logo !== null) {
-        const logo_path = environment.base  + 'mostrar-logo/' + this.usuario.logo.split('/')[1];
+        const logo_path = environment.base + 'mostrar-logo/' + this.usuario.logo.split('/')[1];
         this.logo = logo_path;
       } else {
-        const logo_path = environment.base  + 'mostrar-logo/empresa.png';
+        const logo_path = environment.base + 'mostrar-logo/empresa.png';
         this.logo = logo_path;
       }
       this.empresaService.indexParticipantes(this.usuario.empresa.empresa_id)
@@ -43,7 +44,7 @@ export class PerfilComponent implements OnInit {
       this.empresaService.cambiarLogo(this.usuario.empresa_id, formData)
         .subscribe((res: any) => {
           this.authService.setUsuario(res);
-          this.logo = environment.base  + 'mostrar-logo/' + res.logo.split('/')[1];
+          this.logo = environment.base + 'mostrar-logo/' + res.logo.split('/')[1];
         });
     }
   }

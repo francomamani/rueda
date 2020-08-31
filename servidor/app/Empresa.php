@@ -19,6 +19,7 @@ class Empresa extends Model
         'direccion',
         'telefono',
         'pagina_web',
+        'pais',
         'ciudad_localidad',
         'nit',
         'representante_legal',

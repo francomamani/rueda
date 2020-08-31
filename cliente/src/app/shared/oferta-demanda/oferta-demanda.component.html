@@ -3,21 +3,25 @@
     MIS {{tipo | uppercase}}S
   </nb-card-header>
   <nb-card-body>
-    <button class="btn btn-primary"
-            title="Elija para ofertar productos o servicios"
-            (click)="getOfertas()" [disabled]="tipo === 'oferta'">Ofertas</button> &nbsp;&nbsp;
-    <button class="btn btn-warning"
-            title="Elija para demandar(solicitar) productos o servicios"
-            (click)="getDemandas()" [disabled]="tipo === 'demanda'">Demandas</button>
+    <button (click)="getOfertas()"
+            [disabled]="tipo === 'oferta'"
+            class="btn btn-primary" title="Elija para ofertar productos o servicios">Ofertas
+    </button> &nbsp;&nbsp;
+    <button (click)="getDemandas()"
+            [disabled]="tipo === 'demanda'"
+            class="btn btn-warning" title="Elija para demandar(solicitar) productos o servicios">Demandas
+    </button>
     <br>
     <br>
     <form (submit)="store()">
       <div class="row">
         <div class="col-lg-4">
           <div class="form-group">
-            <select name="producto_servicio"
-                    nbPopover="Seleccione el producto o servicio que desea registrar" nbPopoverMode="hint" nbPopoverPlacement="top"
-                    id="producto_servicio" [(ngModel)]="producto_servicio" class="form-control">
+            <select [(ngModel)]="producto_servicio"
+                    class="form-control" id="producto_servicio"
+                    name="producto_servicio"
+                    nbPopover="Seleccione el producto o servicio que desea registrar" nbPopoverMode="hint"
+                    nbPopoverPlacement="top">
               <option value="producto">Producto</option>
               <option value="servicio">Servicio</option>
             </select>
@@ -27,17 +31,18 @@
           <div class="form-group">
             <input
               [(ngModel)]="descripcion"
-              oninput="this.value = this.value.toUpperCase()"
-              nbPopover="Escriba la descripción de la {{tipo}}" nbPopoverMode="hint" nbPopoverPlacement="top"
-              type="text"
+              aria-describedby="helpId"
+              class="form-control" id="descripcion"
               maxlength="50"
-              name="descripcion" id="descripcion" class="form-control"
-              placeholder="Descripción de la {{tipo}}" aria-describedby="helpId">
+              name="descripcion"
+              nbPopover="Escriba el nombre del {{ producto_servicio }} de la {{tipo}}"
+              nbPopoverMode="hint" nbPopoverPlacement="top" oninput="this.value = this.value.toUpperCase()"
+              placeholder="Nombre del {{ producto_servicio }} de la {{tipo}}" type="text">
           </div>
         </div>
         <div class="col-lg-4">
-          <button type="submit" class="btn btn-primary btn-block" *ngIf="tipo === 'oferta'">GUARDAR OFERTA</button>
-          <button type="submit" class="btn btn-warning btn-block" *ngIf="tipo === 'demanda'">GUARDAR DEMANDA</button>
+          <button *ngIf="tipo === 'oferta'" class="btn btn-primary btn-block" type="submit">GUARDAR OFERTA</button>
+          <button *ngIf="tipo === 'demanda'" class="btn btn-warning btn-block" type="submit">GUARDAR DEMANDA</button>
         </div>
       </div>
     </form>
@@ -62,21 +67,22 @@
               <td>{{ i + 1 }}</td>
               <td>
                 <span *ngIf="record.edit === false">{{ record.descripcion }}</span>
-                <input *ngIf="record.edit === true" type="text" oninput="this.value = this.value.toUpperCase()" [(ngModel)]="record.descripcion" value="{{record.descripcion}}" class="form-control">
+                <input *ngIf="record.edit === true" [(ngModel)]="record.descripcion" class="form-control"
+                       oninput="this.value = this.value.toUpperCase()" type="text" value="{{record.descripcion}}">
               </td>
               <td class="btn-acciones">
-                <a class="text-warning"
+                <a (click)="edit(record)"
                    *ngIf="record.edit === false"
-                   nbPopover="Editar {{tipo}}" nbPopoverMode="hover" nbPopoverPlacement="top"
-                   (click)="edit(record)"><i class="fa fa-edit"></i></a>
-                <a class="text-danger"
-                   nbPopover="Eliminar {{tipo}}" nbPopoverMode="hover" nbPopoverPlacement="top"
-                   *ngIf="record.edit === false"
-                   (click)="destroy(record.oferta_demanda_id)"><i class="fa fa-trash"></i></a>
-                <a class="text-success"
-                   nbPopover="Actualizar {{tipo}}" nbPopoverMode="hover" nbPopoverPlacement="top"
-                   (click)="update(record)"
-                   *ngIf="record.edit === true"><i class="fa fa-check"></i></a>
+                   class="text-warning" nbPopover="Editar {{tipo}}" nbPopoverMode="hover"
+                   nbPopoverPlacement="top"><i class="fa fa-edit"></i></a>
+                <a (click)="destroy(record.oferta_demanda_id)"
+                   *ngIf="record.edit === false" class="text-danger" nbPopover="Eliminar {{tipo}}"
+                   nbPopoverMode="hover"
+                   nbPopoverPlacement="top"><i class="fa fa-trash"></i></a>
+                <a (click)="update(record)"
+                   *ngIf="record.edit === true" class="text-success" nbPopover="Actualizar {{tipo}}"
+                   nbPopoverMode="hover"
+                   nbPopoverPlacement="top"><i class="fa fa-check"></i></a>
               </td>
             </tr>
             </tbody>
@@ -87,7 +93,7 @@
   </div>
   <div class="col-lg-6">
     <nb-card *ngIf="servicios !== null">
-      <nb-card-header>{{ tipo | uppercase }} DE  SERVICIOS</nb-card-header>
+      <nb-card-header>{{ tipo | uppercase }} DE SERVICIOS</nb-card-header>
       <nb-card-body>
         <div class="table-responsive">
           <table class="table">
@@ -103,21 +109,22 @@
               <td>{{ i + 1 }}</td>
               <td>
                 <span *ngIf="record.edit === false">{{ record.descripcion }}</span>
-                <input *ngIf="record.edit === true" type="text" oninput="this.value = this.value.toUpperCase()" [(ngModel)]="record.descripcion" value="{{record.descripcion}}" class="form-control">
+                <input *ngIf="record.edit === true" [(ngModel)]="record.descripcion" class="form-control"
+                       oninput="this.value = this.value.toUpperCase()" type="text" value="{{record.descripcion}}">
               </td>
               <td class="btn-acciones">
-                <a class="text-warning"
-                   nbPopover="Editar {{tipo}}" nbPopoverMode="hover" nbPopoverPlacement="top"
-                   *ngIf="record.edit === false"
-                   (click)="edit(record)"><i class="fa fa-edit"></i></a>
-                <a class="text-danger"
-                   nbPopover="Eliminar {{tipo}}" nbPopoverMode="hover" nbPopoverPlacement="top"
-                   *ngIf="record.edit === false"
-                   (click)="destroy(record.oferta_demanda_id)"><i class="fa fa-trash"></i></a>
-                <a class="text-success"
-                   nbPopover="Actualizar {{tipo}}" nbPopoverMode="hover" nbPopoverPlacement="top"
-                   (click)="update(record)"
-                   *ngIf="record.edit === true"><i class="fa fa-check"></i></a>
+                <a (click)="edit(record)"
+                   *ngIf="record.edit === false" class="text-warning" nbPopover="Editar {{tipo}}"
+                   nbPopoverMode="hover"
+                   nbPopoverPlacement="top"><i class="fa fa-edit"></i></a>
+                <a (click)="destroy(record.oferta_demanda_id)"
+                   *ngIf="record.edit === false" class="text-danger" nbPopover="Eliminar {{tipo}}"
+                   nbPopoverMode="hover"
+                   nbPopoverPlacement="top"><i class="fa fa-trash"></i></a>
+                <a (click)="update(record)"
+                   *ngIf="record.edit === true" class="text-success" nbPopover="Actualizar {{tipo}}"
+                   nbPopoverMode="hover"
+                   nbPopoverPlacement="top"><i class="fa fa-check"></i></a>
               </td>
             </tr>
             </tbody>

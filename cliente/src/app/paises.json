@@ -1,0 +1,1207 @@
+[
+  {
+    "nombre": "Bolivia, Estado Plurinacional de",
+    "codigo_marcado": "+591",
+    "codigo": "BO"
+  },
+  {
+    "nombre": "Afghanistan",
+    "codigo_marcado": "+93",
+    "codigo": "AF"
+  },
+  {
+    "nombre": "Albania",
+    "codigo_marcado": "+355",
+    "codigo": "AL"
+  },
+  {
+    "nombre": "Algeria",
+    "codigo_marcado": "+213",
+    "codigo": "DZ"
+  },
+  {
+    "nombre": "AmericanSamoa",
+    "codigo_marcado": "+1 684",
+    "codigo": "AS"
+  },
+  {
+    "nombre": "Andorra",
+    "codigo_marcado": "+376",
+    "codigo": "AD"
+  },
+  {
+    "nombre": "Angola",
+    "codigo_marcado": "+244",
+    "codigo": "AO"
+  },
+  {
+    "nombre": "Anguilla",
+    "codigo_marcado": "+1 264",
+    "codigo": "AI"
+  },
+  {
+    "nombre": "Antigua and Barbuda",
+    "codigo_marcado": "+1268",
+    "codigo": "AG"
+  },
+  {
+    "nombre": "Argentina",
+    "codigo_marcado": "+54",
+    "codigo": "AR"
+  },
+  {
+    "nombre": "Armenia",
+    "codigo_marcado": "+374",
+    "codigo": "AM"
+  },
+  {
+    "nombre": "Aruba",
+    "codigo_marcado": "+297",
+    "codigo": "AW"
+  },
+  {
+    "nombre": "Australia",
+    "codigo_marcado": "+61",
+    "codigo": "AU"
+  },
+  {
+    "nombre": "Austria",
+    "codigo_marcado": "+43",
+    "codigo": "AT"
+  },
+  {
+    "nombre": "Azerbaijan",
+    "codigo_marcado": "+994",
+    "codigo": "AZ"
+  },
+  {
+    "nombre": "Bahamas",
+    "codigo_marcado": "+1 242",
+    "codigo": "BS"
+  },
+  {
+    "nombre": "Bahrain",
+    "codigo_marcado": "+973",
+    "codigo": "BH"
+  },
+  {
+    "nombre": "Bangladesh",
+    "codigo_marcado": "+880",
+    "codigo": "BD"
+  },
+  {
+    "nombre": "Barbados",
+    "codigo_marcado": "+1 246",
+    "codigo": "BB"
+  },
+  {
+    "nombre": "Belarus",
+    "codigo_marcado": "+375",
+    "codigo": "BY"
+  },
+  {
+    "nombre": "Belgium",
+    "codigo_marcado": "+32",
+    "codigo": "BE"
+  },
+  {
+    "nombre": "Belize",
+    "codigo_marcado": "+501",
+    "codigo": "BZ"
+  },
+  {
+    "nombre": "Benin",
+    "codigo_marcado": "+229",
+    "codigo": "BJ"
+  },
+  {
+    "nombre": "Bermuda",
+    "codigo_marcado": "+1 441",
+    "codigo": "BM"
+  },
+  {
+    "nombre": "Bhutan",
+    "codigo_marcado": "+975",
+    "codigo": "BT"
+  },
+  {
+    "nombre": "Bosnia and Herzegovina",
+    "codigo_marcado": "+387",
+    "codigo": "BA"
+  },
+  {
+    "nombre": "Botswana",
+    "codigo_marcado": "+267",
+    "codigo": "BW"
+  },
+  {
+    "nombre": "Brazil",
+    "codigo_marcado": "+55",
+    "codigo": "BR"
+  },
+  {
+    "nombre": "British Indian Ocean Territory",
+    "codigo_marcado": "+246",
+    "codigo": "IO"
+  },
+  {
+    "nombre": "Bulgaria",
+    "codigo_marcado": "+359",
+    "codigo": "BG"
+  },
+  {
+    "nombre": "Burkina Faso",
+    "codigo_marcado": "+226",
+    "codigo": "BF"
+  },
+  {
+    "nombre": "Burundi",
+    "codigo_marcado": "+257",
+    "codigo": "BI"
+  },
+  {
+    "nombre": "Cambodia",
+    "codigo_marcado": "+855",
+    "codigo": "KH"
+  },
+  {
+    "nombre": "Cameroon",
+    "codigo_marcado": "+237",
+    "codigo": "CM"
+  },
+  {
+    "nombre": "Canada",
+    "codigo_marcado": "+1",
+    "codigo": "CA"
+  },
+  {
+    "nombre": "Cape Verde",
+    "codigo_marcado": "+238",
+    "codigo": "CV"
+  },
+  {
+    "nombre": "Cayman Islands",
+    "codigo_marcado": "+ 345",
+    "codigo": "KY"
+  },
+  {
+    "nombre": "Central African Republic",
+    "codigo_marcado": "+236",
+    "codigo": "CF"
+  },
+  {
+    "nombre": "Chad",
+    "codigo_marcado": "+235",
+    "codigo": "TD"
+  },
+  {
+    "nombre": "Chile",
+    "codigo_marcado": "+56",
+    "codigo": "CL"
+  },
+  {
+    "nombre": "China",
+    "codigo_marcado": "+86",
+    "codigo": "CN"
+  },
+  {
+    "nombre": "Christmas Island",
+    "codigo_marcado": "+61",
+    "codigo": "CX"
+  },
+  {
+    "nombre": "Colombia",
+    "codigo_marcado": "+57",
+    "codigo": "CO"
+  },
+  {
+    "nombre": "Comoros",
+    "codigo_marcado": "+269",
+    "codigo": "KM"
+  },
+  {
+    "nombre": "Congo",
+    "codigo_marcado": "+242",
+    "codigo": "CG"
+  },
+  {
+    "nombre": "Cook Islands",
+    "codigo_marcado": "+682",
+    "codigo": "CK"
+  },
+  {
+    "nombre": "Costa Rica",
+    "codigo_marcado": "+506",
+    "codigo": "CR"
+  },
+  {
+    "nombre": "Croatia",
+    "codigo_marcado": "+385",
+    "codigo": "HR"
+  },
+  {
+    "nombre": "Cuba",
+    "codigo_marcado": "+53",
+    "codigo": "CU"
+  },
+  {
+    "nombre": "Cyprus",
+    "codigo_marcado": "+537",
+    "codigo": "CY"
+  },
+  {
+    "nombre": "Czech Republic",
+    "codigo_marcado": "+420",
+    "codigo": "CZ"
+  },
+  {
+    "nombre": "Denmark",
+    "codigo_marcado": "+45",
+    "codigo": "DK"
+  },
+  {
+    "nombre": "Djibouti",
+    "codigo_marcado": "+253",
+    "codigo": "DJ"
+  },
+  {
+    "nombre": "Dominica",
+    "codigo_marcado": "+1 767",
+    "codigo": "DM"
+  },
+  {
+    "nombre": "Dominican Republic",
+    "codigo_marcado": "+1 849",
+    "codigo": "DO"
+  },
+  {
+    "nombre": "Ecuador",
+    "codigo_marcado": "+593",
+    "codigo": "EC"
+  },
+  {
+    "nombre": "Egypt",
+    "codigo_marcado": "+20",
+    "codigo": "EG"
+  },
+  {
+    "nombre": "El Salvador",
+    "codigo_marcado": "+503",
+    "codigo": "SV"
+  },
+  {
+    "nombre": "Equatorial Guinea",
+    "codigo_marcado": "+240",
+    "codigo": "GQ"
+  },
+  {
+    "nombre": "Eritrea",
+    "codigo_marcado": "+291",
+    "codigo": "ER"
+  },
+  {
+    "nombre": "Estonia",
+    "codigo_marcado": "+372",
+    "codigo": "EE"
+  },
+  {
+    "nombre": "Ethiopia",
+    "codigo_marcado": "+251",
+    "codigo": "ET"
+  },
+  {
+    "nombre": "Faroe Islands",
+    "codigo_marcado": "+298",
+    "codigo": "FO"
+  },
+  {
+    "nombre": "Fiji",
+    "codigo_marcado": "+679",
+    "codigo": "FJ"
+  },
+  {
+    "nombre": "Finland",
+    "codigo_marcado": "+358",
+    "codigo": "FI"
+  },
+  {
+    "nombre": "France",
+    "codigo_marcado": "+33",
+    "codigo": "FR"
+  },
+  {
+    "nombre": "French Guiana",
+    "codigo_marcado": "+594",
+    "codigo": "GF"
+  },
+  {
+    "nombre": "French Polynesia",
+    "codigo_marcado": "+689",
+    "codigo": "PF"
+  },
+  {
+    "nombre": "Gabon",
+    "codigo_marcado": "+241",
+    "codigo": "GA"
+  },
+  {
+    "nombre": "Gambia",
+    "codigo_marcado": "+220",
+    "codigo": "GM"
+  },
+  {
+    "nombre": "Georgia",
+    "codigo_marcado": "+995",
+    "codigo": "GE"
+  },
+  {
+    "nombre": "Germany",
+    "codigo_marcado": "+49",
+    "codigo": "DE"
+  },
+  {
+    "nombre": "Ghana",
+    "codigo_marcado": "+233",
+    "codigo": "GH"
+  },
+  {
+    "nombre": "Gibraltar",
+    "codigo_marcado": "+350",
+    "codigo": "GI"
+  },
+  {
+    "nombre": "Greece",
+    "codigo_marcado": "+30",
+    "codigo": "GR"
+  },
+  {
+    "nombre": "Greenland",
+    "codigo_marcado": "+299",
+    "codigo": "GL"
+  },
+  {
+    "nombre": "Grenada",
+    "codigo_marcado": "+1 473",
+    "codigo": "GD"
+  },
+  {
+    "nombre": "Guadeloupe",
+    "codigo_marcado": "+590",
+    "codigo": "GP"
+  },
+  {
+    "nombre": "Guam",
+    "codigo_marcado": "+1 671",
+    "codigo": "GU"
+  },
+  {
+    "nombre": "Guatemala",
+    "codigo_marcado": "+502",
+    "codigo": "GT"
+  },
+  {
+    "nombre": "Guinea",
+    "codigo_marcado": "+224",
+    "codigo": "GN"
+  },
+  {
+    "nombre": "Guinea-Bissau",
+    "codigo_marcado": "+245",
+    "codigo": "GW"
+  },
+  {
+    "nombre": "Guyana",
+    "codigo_marcado": "+595",
+    "codigo": "GY"
+  },
+  {
+    "nombre": "Haiti",
+    "codigo_marcado": "+509",
+    "codigo": "HT"
+  },
+  {
+    "nombre": "Honduras",
+    "codigo_marcado": "+504",
+    "codigo": "HN"
+  },
+  {
+    "nombre": "Hungary",
+    "codigo_marcado": "+36",
+    "codigo": "HU"
+  },
+  {
+    "nombre": "Iceland",
+    "codigo_marcado": "+354",
+    "codigo": "IS"
+  },
+  {
+    "nombre": "India",
+    "codigo_marcado": "+91",
+    "codigo": "IN"
+  },
+  {
+    "nombre": "Indonesia",
+    "codigo_marcado": "+62",
+    "codigo": "ID"
+  },
+  {
+    "nombre": "Iraq",
+    "codigo_marcado": "+964",
+    "codigo": "IQ"
+  },
+  {
+    "nombre": "Ireland",
+    "codigo_marcado": "+353",
+    "codigo": "IE"
+  },
+  {
+    "nombre": "Israel",
+    "codigo_marcado": "+972",
+    "codigo": "IL"
+  },
+  {
+    "nombre": "Italy",
+    "codigo_marcado": "+39",
+    "codigo": "IT"
+  },
+  {
+    "nombre": "Jamaica",
+    "codigo_marcado": "+1 876",
+    "codigo": "JM"
+  },
+  {
+    "nombre": "Japan",
+    "codigo_marcado": "+81",
+    "codigo": "JP"
+  },
+  {
+    "nombre": "Jordan",
+    "codigo_marcado": "+962",
+    "codigo": "JO"
+  },
+  {
+    "nombre": "Kazakhstan",
+    "codigo_marcado": "+7 7",
+    "codigo": "KZ"
+  },
+  {
+    "nombre": "Kenya",
+    "codigo_marcado": "+254",
+    "codigo": "KE"
+  },
+  {
+    "nombre": "Kiribati",
+    "codigo_marcado": "+686",
+    "codigo": "KI"
+  },
+  {
+    "nombre": "Kuwait",
+    "codigo_marcado": "+965",
+    "codigo": "KW"
+  },
+  {
+    "nombre": "Kyrgyzstan",
+    "codigo_marcado": "+996",
+    "codigo": "KG"
+  },
+  {
+    "nombre": "Latvia",
+    "codigo_marcado": "+371",
+    "codigo": "LV"
+  },
+  {
+    "nombre": "Lebanon",
+    "codigo_marcado": "+961",
+    "codigo": "LB"
+  },
+  {
+    "nombre": "Lesotho",
+    "codigo_marcado": "+266",
+    "codigo": "LS"
+  },
+  {
+    "nombre": "Liberia",
+    "codigo_marcado": "+231",
+    "codigo": "LR"
+  },
+  {
+    "nombre": "Liechtenstein",
+    "codigo_marcado": "+423",
+    "codigo": "LI"
+  },
+  {
+    "nombre": "Lithuania",
+    "codigo_marcado": "+370",
+    "codigo": "LT"
+  },
+  {
+    "nombre": "Luxembourg",
+    "codigo_marcado": "+352",
+    "codigo": "LU"
+  },
+  {
+    "nombre": "Madagascar",
+    "codigo_marcado": "+261",
+    "codigo": "MG"
+  },
+  {
+    "nombre": "Malawi",
+    "codigo_marcado": "+265",
+    "codigo": "MW"
+  },
+  {
+    "nombre": "Malaysia",
+    "codigo_marcado": "+60",
+    "codigo": "MY"
+  },
+  {
+    "nombre": "Maldives",
+    "codigo_marcado": "+960",
+    "codigo": "MV"
+  },
+  {
+    "nombre": "Mali",
+    "codigo_marcado": "+223",
+    "codigo": "ML"
+  },
+  {
+    "nombre": "Malta",
+    "codigo_marcado": "+356",
+    "codigo": "MT"
+  },
+  {
+    "nombre": "Marshall Islands",
+    "codigo_marcado": "+692",
+    "codigo": "MH"
+  },
+  {
+    "nombre": "Martinique",
+    "codigo_marcado": "+596",
+    "codigo": "MQ"
+  },
+  {
+    "nombre": "Mauritania",
+    "codigo_marcado": "+222",
+    "codigo": "MR"
+  },
+  {
+    "nombre": "Mauritius",
+    "codigo_marcado": "+230",
+    "codigo": "MU"
+  },
+  {
+    "nombre": "Mayotte",
+    "codigo_marcado": "+262",
+    "codigo": "YT"
+  },
+  {
+    "nombre": "Mexico",
+    "codigo_marcado": "+52",
+    "codigo": "MX"
+  },
+  {
+    "nombre": "Monaco",
+    "codigo_marcado": "+377",
+    "codigo": "MC"
+  },
+  {
+    "nombre": "Mongolia",
+    "codigo_marcado": "+976",
+    "codigo": "MN"
+  },
+  {
+    "nombre": "Montenegro",
+    "codigo_marcado": "+382",
+    "codigo": "ME"
+  },
+  {
+    "nombre": "Montserrat",
+    "codigo_marcado": "+1664",
+    "codigo": "MS"
+  },
+  {
+    "nombre": "Morocco",
+    "codigo_marcado": "+212",
+    "codigo": "MA"
+  },
+  {
+    "nombre": "Myanmar",
+    "codigo_marcado": "+95",
+    "codigo": "MM"
+  },
+  {
+    "nombre": "Namibia",
+    "codigo_marcado": "+264",
+    "codigo": "NA"
+  },
+  {
+    "nombre": "Nauru",
+    "codigo_marcado": "+674",
+    "codigo": "NR"
+  },
+  {
+    "nombre": "Nepal",
+    "codigo_marcado": "+977",
+    "codigo": "NP"
+  },
+  {
+    "nombre": "Netherlands",
+    "codigo_marcado": "+31",
+    "codigo": "NL"
+  },
+  {
+    "nombre": "Netherlands Antilles",
+    "codigo_marcado": "+599",
+    "codigo": "AN"
+  },
+  {
+    "nombre": "New Caledonia",
+    "codigo_marcado": "+687",
+    "codigo": "NC"
+  },
+  {
+    "nombre": "New Zealand",
+    "codigo_marcado": "+64",
+    "codigo": "NZ"
+  },
+  {
+    "nombre": "Nicaragua",
+    "codigo_marcado": "+505",
+    "codigo": "NI"
+  },
+  {
+    "nombre": "Niger",
+    "codigo_marcado": "+227",
+    "codigo": "NE"
+  },
+  {
+    "nombre": "Nigeria",
+    "codigo_marcado": "+234",
+    "codigo": "NG"
+  },
+  {
+    "nombre": "Niue",
+    "codigo_marcado": "+683",
+    "codigo": "NU"
+  },
+  {
+    "nombre": "Norfolk Island",
+    "codigo_marcado": "+672",
+    "codigo": "NF"
+  },
+  {
+    "nombre": "Northern Mariana Islands",
+    "codigo_marcado": "+1 670",
+    "codigo": "MP"
+  },
+  {
+    "nombre": "Norway",
+    "codigo_marcado": "+47",
+    "codigo": "NO"
+  },
+  {
+    "nombre": "Oman",
+    "codigo_marcado": "+968",
+    "codigo": "OM"
+  },
+  {
+    "nombre": "Pakistan",
+    "codigo_marcado": "+92",
+    "codigo": "PK"
+  },
+  {
+    "nombre": "Palau",
+    "codigo_marcado": "+680",
+    "codigo": "PW"
+  },
+  {
+    "nombre": "Panama",
+    "codigo_marcado": "+507",
+    "codigo": "PA"
+  },
+  {
+    "nombre": "Papua New Guinea",
+    "codigo_marcado": "+675",
+    "codigo": "PG"
+  },
+  {
+    "nombre": "Paraguay",
+    "codigo_marcado": "+595",
+    "codigo": "PY"
+  },
+  {
+    "nombre": "Peru",
+    "codigo_marcado": "+51",
+    "codigo": "PE"
+  },
+  {
+    "nombre": "Philippines",
+    "codigo_marcado": "+63",
+    "codigo": "PH"
+  },
+  {
+    "nombre": "Poland",
+    "codigo_marcado": "+48",
+    "codigo": "PL"
+  },
+  {
+    "nombre": "Portugal",
+    "codigo_marcado": "+351",
+    "codigo": "PT"
+  },
+  {
+    "nombre": "Puerto Rico",
+    "codigo_marcado": "+1 939",
+    "codigo": "PR"
+  },
+  {
+    "nombre": "Qatar",
+    "codigo_marcado": "+974",
+    "codigo": "QA"
+  },
+  {
+    "nombre": "Romania",
+    "codigo_marcado": "+40",
+    "codigo": "RO"
+  },
+  {
+    "nombre": "Rwanda",
+    "codigo_marcado": "+250",
+    "codigo": "RW"
+  },
+  {
+    "nombre": "Samoa",
+    "codigo_marcado": "+685",
+    "codigo": "WS"
+  },
+  {
+    "nombre": "San Marino",
+    "codigo_marcado": "+378",
+    "codigo": "SM"
+  },
+  {
+    "nombre": "Saudi Arabia",
+    "codigo_marcado": "+966",
+    "codigo": "SA"
+  },
+  {
+    "nombre": "Senegal",
+    "codigo_marcado": "+221",
+    "codigo": "SN"
+  },
+  {
+    "nombre": "Serbia",
+    "codigo_marcado": "+381",
+    "codigo": "RS"
+  },
+  {
+    "nombre": "Seychelles",
+    "codigo_marcado": "+248",
+    "codigo": "SC"
+  },
+  {
+    "nombre": "Sierra Leone",
+    "codigo_marcado": "+232",
+    "codigo": "SL"
+  },
+  {
+    "nombre": "Singapore",
+    "codigo_marcado": "+65",
+    "codigo": "SG"
+  },
+  {
+    "nombre": "Slovakia",
+    "codigo_marcado": "+421",
+    "codigo": "SK"
+  },
+  {
+    "nombre": "Slovenia",
+    "codigo_marcado": "+386",
+    "codigo": "SI"
+  },
+  {
+    "nombre": "Solomon Islands",
+    "codigo_marcado": "+677",
+    "codigo": "SB"
+  },
+  {
+    "nombre": "South Africa",
+    "codigo_marcado": "+27",
+    "codigo": "ZA"
+  },
+  {
+    "nombre": "South Georgia and the South Sandwich Islands",
+    "codigo_marcado": "+500",
+    "codigo": "GS"
+  },
+  {
+    "nombre": "Spain",
+    "codigo_marcado": "+34",
+    "codigo": "ES"
+  },
+  {
+    "nombre": "Sri Lanka",
+    "codigo_marcado": "+94",
+    "codigo": "LK"
+  },
+  {
+    "nombre": "Sudan",
+    "codigo_marcado": "+249",
+    "codigo": "SD"
+  },
+  {
+    "nombre": "Suripais",
+    "codigo_marcado": "+597",
+    "codigo": "SR"
+  },
+  {
+    "nombre": "Swaziland",
+    "codigo_marcado": "+268",
+    "codigo": "SZ"
+  },
+  {
+    "nombre": "Sweden",
+    "codigo_marcado": "+46",
+    "codigo": "SE"
+  },
+  {
+    "nombre": "Switzerland",
+    "codigo_marcado": "+41",
+    "codigo": "CH"
+  },
+  {
+    "nombre": "Tajikistan",
+    "codigo_marcado": "+992",
+    "codigo": "TJ"
+  },
+  {
+    "nombre": "Thailand",
+    "codigo_marcado": "+66",
+    "codigo": "TH"
+  },
+  {
+    "nombre": "Togo",
+    "codigo_marcado": "+228",
+    "codigo": "TG"
+  },
+  {
+    "nombre": "Tokelau",
+    "codigo_marcado": "+690",
+    "codigo": "TK"
+  },
+  {
+    "nombre": "Tonga",
+    "codigo_marcado": "+676",
+    "codigo": "TO"
+  },
+  {
+    "nombre": "Trinidad and Tobago",
+    "codigo_marcado": "+1 868",
+    "codigo": "TT"
+  },
+  {
+    "nombre": "Tunisia",
+    "codigo_marcado": "+216",
+    "codigo": "TN"
+  },
+  {
+    "nombre": "Turkey",
+    "codigo_marcado": "+90",
+    "codigo": "TR"
+  },
+  {
+    "nombre": "Turkmenistan",
+    "codigo_marcado": "+993",
+    "codigo": "TM"
+  },
+  {
+    "nombre": "Turks and Caicos Islands",
+    "codigo_marcado": "+1 649",
+    "codigo": "TC"
+  },
+  {
+    "nombre": "Tuvalu",
+    "codigo_marcado": "+688",
+    "codigo": "TV"
+  },
+  {
+    "nombre": "Uganda",
+    "codigo_marcado": "+256",
+    "codigo": "UG"
+  },
+  {
+    "nombre": "Ukraine",
+    "codigo_marcado": "+380",
+    "codigo": "UA"
+  },
+  {
+    "nombre": "United Arab Emirates",
+    "codigo_marcado": "+971",
+    "codigo": "AE"
+  },
+  {
+    "nombre": "United Kingdom",
+    "codigo_marcado": "+44",
+    "codigo": "GB"
+  },
+  {
+    "nombre": "United States",
+    "codigo_marcado": "+1",
+    "codigo": "US"
+  },
+  {
+    "nombre": "Uruguay",
+    "codigo_marcado": "+598",
+    "codigo": "UY"
+  },
+  {
+    "nombre": "Uzbekistan",
+    "codigo_marcado": "+998",
+    "codigo": "UZ"
+  },
+  {
+    "nombre": "Vanuatu",
+    "codigo_marcado": "+678",
+    "codigo": "VU"
+  },
+  {
+    "nombre": "Wallis and Futuna",
+    "codigo_marcado": "+681",
+    "codigo": "WF"
+  },
+  {
+    "nombre": "Yemen",
+    "codigo_marcado": "+967",
+    "codigo": "YE"
+  },
+  {
+    "nombre": "Zambia",
+    "codigo_marcado": "+260",
+    "codigo": "ZM"
+  },
+  {
+    "nombre": "Zimbabwe",
+    "codigo_marcado": "+263",
+    "codigo": "ZW"
+  },
+  {
+    "nombre": "land Islands",
+    "codigo_marcado": "",
+    "codigo": "AX"
+  },
+  {
+    "nombre": "Antarctica",
+    "codigo_marcado": null,
+    "codigo": "AQ"
+  },
+  {
+    "nombre": "Brunei Darussalam",
+    "codigo_marcado": "+673",
+    "codigo": "BN"
+  },
+  {
+    "nombre": "Cocos (Keeling) Islands",
+    "codigo_marcado": "+61",
+    "codigo": "CC"
+  },
+  {
+    "nombre": "Congo, The Democratic Republic of the",
+    "codigo_marcado": "+243",
+    "codigo": "CD"
+  },
+  {
+    "nombre": "Cote d'Ivoire",
+    "codigo_marcado": "+225",
+    "codigo": "CI"
+  },
+  {
+    "nombre": "Falkland Islands (Malvinas)",
+    "codigo_marcado": "+500",
+    "codigo": "FK"
+  },
+  {
+    "nombre": "Guernsey",
+    "codigo_marcado": "+44",
+    "codigo": "GG"
+  },
+  {
+    "nombre": "Holy See (Vatican City State)",
+    "codigo_marcado": "+379",
+    "codigo": "VA"
+  },
+  {
+    "nombre": "Hong Kong",
+    "codigo_marcado": "+852",
+    "codigo": "HK"
+  },
+  {
+    "nombre": "Iran, Islamic Republic of",
+    "codigo_marcado": "+98",
+    "codigo": "IR"
+  },
+  {
+    "nombre": "Isle of Man",
+    "codigo_marcado": "+44",
+    "codigo": "IM"
+  },
+  {
+    "nombre": "Jersey",
+    "codigo_marcado": "+44",
+    "codigo": "JE"
+  },
+  {
+    "nombre": "Korea, Democratic People's Republic of",
+    "codigo_marcado": "+850",
+    "codigo": "KP"
+  },
+  {
+    "nombre": "Korea, Republic of",
+    "codigo_marcado": "+82",
+    "codigo": "KR"
+  },
+  {
+    "nombre": "Lao People's Democratic Republic",
+    "codigo_marcado": "+856",
+    "codigo": "LA"
+  },
+  {
+    "nombre": "Libyan Arab Jamahiriya",
+    "codigo_marcado": "+218",
+    "codigo": "LY"
+  },
+  {
+    "nombre": "Macao",
+    "codigo_marcado": "+853",
+    "codigo": "MO"
+  },
+  {
+    "nombre": "Macedonia, The Former Yugoslav Republic of",
+    "codigo_marcado": "+389",
+    "codigo": "MK"
+  },
+  {
+    "nombre": "Micronesia, Federated States of",
+    "codigo_marcado": "+691",
+    "codigo": "FM"
+  },
+  {
+    "nombre": "Moldova, Republic of",
+    "codigo_marcado": "+373",
+    "codigo": "MD"
+  },
+  {
+    "nombre": "Mozambique",
+    "codigo_marcado": "+258",
+    "codigo": "MZ"
+  },
+  {
+    "nombre": "Palestinian Territory, Occupied",
+    "codigo_marcado": "+970",
+    "codigo": "PS"
+  },
+  {
+    "nombre": "Pitcairn",
+    "codigo_marcado": "+872",
+    "codigo": "PN"
+  },
+  {
+    "nombre": "Réunion",
+    "codigo_marcado": "+262",
+    "codigo": "RE"
+  },
+  {
+    "nombre": "Russia",
+    "codigo_marcado": "+7",
+    "codigo": "RU"
+  },
+  {
+    "nombre": "Saint Barthélemy",
+    "codigo_marcado": "+590",
+    "codigo": "BL"
+  },
+  {
+    "nombre": "Saint Helena, Ascension and Tristan Da Cunha",
+    "codigo_marcado": "+290",
+    "codigo": "SH"
+  },
+  {
+    "nombre": "Saint Kitts and Nevis",
+    "codigo_marcado": "+1 869",
+    "codigo": "KN"
+  },
+  {
+    "nombre": "Saint Lucia",
+    "codigo_marcado": "+1 758",
+    "codigo": "LC"
+  },
+  {
+    "nombre": "Saint Martin",
+    "codigo_marcado": "+590",
+    "codigo": "MF"
+  },
+  {
+    "nombre": "Saint Pierre and Miquelon",
+    "codigo_marcado": "+508",
+    "codigo": "PM"
+  },
+  {
+    "nombre": "Saint Vincent and the Grenadines",
+    "codigo_marcado": "+1 784",
+    "codigo": "VC"
+  },
+  {
+    "nombre": "Sao Tome and Principe",
+    "codigo_marcado": "+239",
+    "codigo": "ST"
+  },
+  {
+    "nombre": "Somalia",
+    "codigo_marcado": "+252",
+    "codigo": "SO"
+  },
+  {
+    "nombre": "Svalbard and Jan Mayen",
+    "codigo_marcado": "+47",
+    "codigo": "SJ"
+  },
+  {
+    "nombre": "Syrian Arab Republic",
+    "codigo_marcado": "+963",
+    "codigo": "SY"
+  },
+  {
+    "nombre": "Taiwan, Province of China",
+    "codigo_marcado": "+886",
+    "codigo": "TW"
+  },
+  {
+    "nombre": "Tanzania, United Republic of",
+    "codigo_marcado": "+255",
+    "codigo": "TZ"
+  },
+  {
+    "nombre": "Timor-Leste",
+    "codigo_marcado": "+670",
+    "codigo": "TL"
+  },
+  {
+    "nombre": "Venezuela, Bolivarian Republic of",
+    "codigo_marcado": "+58",
+    "codigo": "VE"
+  },
+  {
+    "nombre": "Viet Nam",
+    "codigo_marcado": "+84",
+    "codigo": "VN"
+  },
+  {
+    "nombre": "Virgin Islands, British",
+    "codigo_marcado": "+1 284",
+    "codigo": "VG"
+  },
+  {
+    "nombre": "Virgin Islands, U.S.",
+    "codigo_marcado": "+1 340",
+    "codigo": "VI"
+  }
+]

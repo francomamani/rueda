@@ -1,11 +1,10 @@
-<div class="row">
+<div class="row" *ngIf="rueda !== null">
   <div class="col-md-12">
     <nb-card>
       <nb-card-header>Empresas Registradas
         <a (click)="descargar()" class="download" title="Descargar en excel">
           ( Descargar en excel <i class="fa fa-download"></i> )
         </a>
-
         <a (click)="agendasMesaOpen(content)" class="download-pdf" title="Descargar Agendas por Mesa">
           Agendas por Mesa <i class="fa fa-table"></i>
         </a>
@@ -14,19 +13,20 @@
         </a>
       </nb-card-header>
       <nb-card-body>
-        <form (submit)="buscar()" [formGroup]="buscarGroup" class="rueda-search">
+        <form [formGroup]="buscarGroup" class="rueda-search mb-4">
           <select formControlName="rubro_id" name="rubro_id">
             <option value="0">TODOS LOS RUBROS</option>
-            <option *ngFor="let rubro of rubros"
-                    [value]="rubro.rubro_id">
-              {{ rubro.nombre }}
-            </option>
+            <option *ngFor="let rubro of rubros" [value]="rubro.rubro_id"> {{ rubro.nombre }} </option>
           </select>
           <input formControlName="search" name="search" placeholder="Buscar ofertas y demandas" type="search">
-          <button class="search"> Buscar</button>
+          <button (click)="buscar()" class="search"> Buscar</button>
+          <button (click)="habilitarRueda()" *ngIf="!rueda?.habilitado" class="ml-auto btn btn-sm btn-outline-primary pointer">
+            MOSTRAR CELULARES
+          </button>
+          <button (click)="deshabilitarRueda()" *ngIf="rueda?.habilitado" class="ml-auto btn btn-sm btn-outline-danger pointer">
+            OCULTAR CELULARES
+          </button>
         </form>
-        <br><br>
-
         <div class="table-responsive">
           <table class="table table-hover">
             <thead>
