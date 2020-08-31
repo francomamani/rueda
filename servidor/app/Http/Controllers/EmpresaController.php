@@ -648,7 +648,7 @@ class EmpresaController extends Controller
             $cantidad_horarios = round($time / 1800);
             $total_horarios += $cantidad_horarios;
         }
-        return $total_horarios * $total_mesas / $total_empresas;
+        return $total_horarios * $total_mesas / ($total_empresas * 0.5);
     }
 
     /*

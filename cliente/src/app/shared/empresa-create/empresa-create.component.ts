@@ -109,6 +109,7 @@ export class EmpresaCreateComponent implements OnInit {
         formData.append('logo', this.logo.nativeElement.files[0]);
         formData.append('direccion', this.empresaGroup.value.direccion);
         formData.append('pagina_web', this.empresaGroup.value.pagina_web);
+        formData.append('pais', this.empresaGroup.value.pais);
         formData.append('ciudad_localidad', this.empresaGroup.value.ciudad_localidad);
         formData.append('nit', this.empresaGroup.value.nit);
         formData.append('representante_legal', this.empresaGroup.value.representante_legal);

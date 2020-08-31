@@ -260,10 +260,10 @@ export class EmpresaIndexComponent implements OnInit {
           doc.setFontStyle('normal');
           doc.setFontSize(9);
           /*test*/
-/*          const reunion = agenda.reuniones[0];
-          for (let i = 0; i < 100; i++) {
-            agenda.reuniones.push(reunion);
-          }*/
+          /*          const reunion = agenda.reuniones[0];
+                    for (let i = 0; i < 100; i++) {
+                      agenda.reuniones.push(reunion);
+                    }*/
           /*end test*/
           let page = 1;
           agenda.reuniones.forEach((reunion: any) => {
@@ -274,19 +274,19 @@ export class EmpresaIndexComponent implements OnInit {
               this.formatTime(new Date(reunion.desde)) + '-' +
               this.formatTime(new Date(reunion.hasta)), x, y);
             doc.text(reunion.mesa, x + 45, y);
-            if (reunion.empresa_solicitante.length < 26) {
+            if (reunion.empresa_solicitante.length < 25) {
               doc.text(reunion.empresa_solicitante, x + 65, y);
             } else {
               ln = true;
-              doc.text(reunion.empresa_solicitante.substring(0, 25), x + 65, y);
-              doc.text(reunion.empresa_solicitante.substring(25), x + 65, y + 7);
+              doc.text(reunion.empresa_solicitante.substring(0, 24), x + 65, y);
+              doc.text(reunion.empresa_solicitante.substring(24), x + 65, y + 7);
             }
-            if (reunion.empresa_demandada.length < 26) {
+            if (reunion.empresa_demandada.length < 25) {
               doc.text(reunion.empresa_demandada, x + 120, y);
             } else {
               ln = true;
-              doc.text(reunion.empresa_demandada.substring(0, 25), x + 120, y);
-              doc.text(reunion.empresa_demandada.substring(25), x + 120, y + 7);
+              doc.text(reunion.empresa_demandada.substring(0, 24), x + 120, y);
+              doc.text(reunion.empresa_demandada.substring(24), x + 120, y + 7);
             }
             let yBase = y;
             if (ln) {
@@ -402,32 +402,34 @@ export class EmpresaIndexComponent implements OnInit {
           let x = 22.5;
           let y = 67;
           /*test*/
-/*          if (agenda.reuniones.length > 0) {
-            const reunionBK = agenda.reuniones[0];
-            for (let i = 0; i < 100; i++) {
-              agenda.reuniones.push(reunionBK);
-            }
-          }*/
+          /*          if (agenda.reuniones.length > 0) {
+                      const reunionBK = agenda.reuniones[0];
+                      for (let i = 0; i < 100; i++) {
+                        agenda.reuniones.push(reunionBK);
+                      }
+                    }*/
           /*end test*/
           let page = 1;
+          let ln = false;
           agenda.reuniones.map((reunion: any, index: number) => {
+            doc.text(`${index + 1}`, 24, y);
             doc.text(`${DateTime.fromSQL(reunion.desde).toLocaleString(DateTime.TIME_24_SIMPLE)} - ${DateTime.fromSQL(reunion.hasta).toLocaleString(DateTime.TIME_24_SIMPLE)}`, 35, y);
-            let ln = false;
 
-            if (reunion.empresa_solicitante.nombre.length < 26) {
+            ln = false;
+            if (reunion.empresa_solicitante.nombre.length < 25) {
               doc.text(`${reunion.empresa_solicitante.nombre.toUpperCase()}`, 70, y);
             } else {
               ln = true;
-              doc.text(`${reunion.empresa_solicitante.nombre.toUpperCase().substring(0, 25)}`, 70, y);
-              doc.text(`${reunion.empresa_solicitante.nombre.toUpperCase().substring(25)}`, 70, y + 7);
+              doc.text(`${reunion.empresa_solicitante.nombre.toUpperCase().substring(0, 24)}`, 70, y);
+              doc.text(`${reunion.empresa_solicitante.nombre.toUpperCase().substring(24)}`, 70, y + 7);
             }
 
-            if (reunion.empresa_demandada.nombre < 26) {
+            if (reunion.empresa_demandada.nombre.length < 25) {
               doc.text(`${reunion.empresa_demandada.nombre.toUpperCase()}`, 140, y);
             } else {
               ln = true;
-              doc.text(`${reunion.empresa_demandada.nombre.toUpperCase().substring(0, 25)}`, 140, y);
-              doc.text(`${reunion.empresa_demandada.nombre.toUpperCase().substring(25)}`, 140, y + 7);
+              doc.text(`${reunion.empresa_demandada.nombre.toUpperCase().substring(0, 24)}`, 140, y);
+              doc.text(`${reunion.empresa_demandada.nombre.toUpperCase().substring(24)}`, 140, y + 7);
             }
 
             if (ln) {
@@ -476,7 +478,6 @@ export class EmpresaIndexComponent implements OnInit {
             }
 
           });
-          console.log(responses);
           if (count < responses.length) {
             doc.addPage();
           }

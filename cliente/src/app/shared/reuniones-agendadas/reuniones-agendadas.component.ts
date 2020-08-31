@@ -158,10 +158,10 @@ export class ReunionesAgendadasComponent implements OnInit {
           let y = 68;
           let ln = false;
           /*test*/
-/*          const reunionesBK = this.reuniones[0];
-          for (let i = 0; i < 100; i++) {
-            this.reuniones.push(reunionesBK);
-          }*/
+          /*          const reunionesBK = this.reuniones[0];
+                    for (let i = 0; i < 100; i++) {
+                      this.reuniones.push(reunionesBK);
+                    }*/
           /*end test*/
           doc.setFontStyle('normal');
           let page = 1;
@@ -175,19 +175,19 @@ export class ReunionesAgendadasComponent implements OnInit {
 
             ln = false;
             const yBase = y;
-            if (reunion.empresa_solicitante.nombre.length < 26) {
+            if (reunion.empresa_solicitante.nombre.length < 25) {
               doc.text(reunion.empresa_solicitante.nombre.toUpperCase(), x + 55, y);
             } else {
-              doc.text(reunion.empresa_solicitante.nombre.toUpperCase().substring(0, 25), x + 55, y);
-              doc.text(reunion.empresa_solicitante.nombre.toUpperCase().substring(25), x + 55, y + 7);
+              doc.text(reunion.empresa_solicitante.nombre.toUpperCase().substring(0, 24), x + 55, y);
+              doc.text(reunion.empresa_solicitante.nombre.toUpperCase().substring(24), x + 55, y + 7);
               ln = true;
             }
 
-            if (reunion.empresa_demandada.nombre.length < 26) {
+            if (reunion.empresa_demandada.nombre.length < 25) {
               doc.text(reunion.empresa_demandada.nombre.toUpperCase(), x + 110, y);
             } else {
-              doc.text(reunion.empresa_demandada.nombre.toUpperCase().substring(0, 25), x + 110, y);
-              doc.text(reunion.empresa_demandada.nombre.toUpperCase().substring(25), x + 110, y + 7);
+              doc.text(reunion.empresa_demandada.nombre.toUpperCase().substring(0, 24), x + 110, y);
+              doc.text(reunion.empresa_demandada.nombre.toUpperCase().substring(24), x + 110, y + 7);
               ln = true;
             }
 
