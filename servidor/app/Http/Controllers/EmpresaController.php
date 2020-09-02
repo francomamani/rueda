@@ -322,6 +322,9 @@ class EmpresaController extends Controller
     {
         $empresa = Empresa::find($id);
         Usuario::destroy($empresa->usuario_id);
+        Reunion::where('empresa_solicitante_id', $id)
+            ->orWhere('empresa_demandada_id', $id)
+            ->delete();
         $empresa->delete();
         return response()->json([
             'mensaje' => 'Empresa: ' . $empresa->nombre . ' eliminado exitosamente'
@@ -866,6 +869,8 @@ class EmpresaController extends Controller
     public function agendas()
     {
         $empresas = Empresa::join('rubros', 'rubros.rubro_id', '=', 'empresas.rubro_id')
+            ->whereNull('empresas.deleted_at')
+            ->whereNull('rubros.deleted_at')
             ->where('habilitado', true)
             ->orderBy('nombre')
             ->selectRaw('empresas.empresa_id, empresas.nombre, rubros.nombre as rubro, rubros.rubro_id')
@@ -875,6 +880,10 @@ class EmpresaController extends Controller
             $data = Reunion::join('mesas', 'mesas.mesa_id', '=', 'reuniones.mesa_id')
                 ->join('empresas', 'empresas.empresa_id', '=', 'reuniones.empresa_demandada_id')
                 ->join('rubros', 'rubros.rubro_id', '=', 'empresas.rubro_id')
+                ->whereNull('empresas.deleted_at')
+                ->whereNull('rubros.deleted_at')
+                ->whereNull('mesas.deleted_at')
+                ->whereNull('reuniones.deleted_at')
                 ->where('reuniones.empresa_solicitante_id', $empresa->empresa_id)
                 ->orWhere('reuniones.empresa_demandada_id', $empresa->empresa_id)
                 ->selectRaw('empresas.nombre as empresa,
@@ -888,6 +897,7 @@ class EmpresaController extends Controller
                 ->orderBy('reuniones.desde')
                 ->get();
             $reuniones = [];
+
             foreach ($data as $record) {
                 array_push($reuniones, [
                     'empresa' => strtoupper($record->empresa),
@@ -896,10 +906,11 @@ class EmpresaController extends Controller
                     'hasta' => $record->hasta,
                     'url' => $record->url,
                     'rubro' => strtoupper($record->rubro),
-                    'empresa_solicitante' => strtoupper(Empresa::find($record->empresa_solicitante_id)->nombre),
-                    'empresa_demandada' => strtoupper(Empresa::find($record->empresa_demandada_id)->nombre),
+                    'empresa_solicitante' => strtoupper(Empresa::find((int)$record->empresa_solicitante_id)->nombre),
+                    'empresa_demandada' => strtoupper(Empresa::find((int)$record->empresa_demandada_id)->nombre),
                 ]);
             }
+
             array_push($agendas, [
                 'empresa' => $empresa,
                 'reuniones' => $reuniones
@@ -909,6 +920,7 @@ class EmpresaController extends Controller
             'empresas' => sizeof($empresas),
             'agendas' => $agendas
         ], 200);
+
     }
 
     public function uploadVoucher($empresa_id)
