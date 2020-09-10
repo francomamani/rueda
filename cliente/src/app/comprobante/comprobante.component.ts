@@ -16,7 +16,8 @@ export class ComprobanteComponent implements OnInit {
   @ViewChild('comprobante') comprobante;
   compGroup: FormGroup;
   empresa_id = null;
-  voucher =null;
+  voucher = null;
+
   constructor(private fb: FormBuilder,
               private empresaService: EmpresaService,
               private route: ActivatedRoute,
@@ -35,29 +36,30 @@ export class ComprobanteComponent implements OnInit {
 
   ngOnInit() {
   }
-    createForm() {
-        this.compGroup = this.fb.group({
-            'comprobante': new FormControl('', Validators.required),
+
+  createForm() {
+    this.compGroup = this.fb.group({
+      'comprobante': new FormControl('', Validators.required),
+    });
+  }
+
+  subir() {
+    if (this.comprobante.nativeElement.files[0]) {
+      const formData = new FormData();
+      formData.append('comprobante', this.comprobante.nativeElement.files[0]);
+      const loadAyuda = this.modalService.open(LoadModalComponent, {size: 'sm', container: 'nb-layout'});
+      this.empresaService.subirComprobante(this.empresa_id, formData)
+        .subscribe(res => {
+          this.router.navigate(['/auth']);
+          loadAyuda.dismiss();
+          this.ayuda('Se subió con éxito',
+            'Se subió su comprobante, espere a que lo revisemos y habilitemos su cuenta', '');
+        }, error1 => {
+          this.ayuda('Ocurrio un error', 'No se pudo subir el comprobante, intente nuevamente', '');
+          loadAyuda.dismiss();
         });
     }
-
-    subir() {
-      if (this.comprobante.nativeElement.files[0]) {
-        const formData = new FormData();
-        formData.append('comprobante', this.comprobante.nativeElement.files[0]);
-          const loadAyuda=this.modalService.open(LoadModalComponent, { size: 'sm', container: 'nb-layout' });
-        this.empresaService.subirComprobante(this.empresa_id, formData)
-          .subscribe(res => {
-              this.router.navigate(['/auth']);
-              loadAyuda.dismiss();
-              this.ayuda('Se subió con éxito',
-                  'Se subió su comprobante, espere a que lo revisemos y habilitemos su cuenta', '');
-          }, error1 => {
-              this.ayuda('Ocurrio un error', 'No se pudo subir el comprobante, intente nuevamente', '');
-              loadAyuda.dismiss();
-          });
-      }
-    }
+  }
 
   /**
    * titulo
@@ -66,9 +68,9 @@ export class ComprobanteComponent implements OnInit {
    */
 
   ayuda(tit, mess, mess_i) {
-        const modalAyuda = this.modalService.open(AyudaModalComponent, { size: 'sm', container: 'nb-layout' });
-        modalAyuda.componentInstance.titulo = tit;
-        modalAyuda.componentInstance.mensaje = mess;
-        modalAyuda.componentInstance.mensaje_importante = mess_i;
+    const modalAyuda = this.modalService.open(AyudaModalComponent, {size: 'sm', container: 'nb-layout'});
+    modalAyuda.componentInstance.titulo = tit;
+    modalAyuda.componentInstance.mensaje = mess;
+    modalAyuda.componentInstance.mensaje_importante = mess_i;
   }
 }

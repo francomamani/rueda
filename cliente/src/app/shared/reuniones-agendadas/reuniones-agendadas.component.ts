@@ -115,8 +115,8 @@ export class ReunionesAgendadasComponent implements OnInit {
           const doc = new jsPDF('landscape', 'mm', 'letter');
 
           const logo = new Image();
-          /*          logo.src = 'assets/images/fimem.jpeg';*/
-          logo.src = 'assets/images/bioseguridad.jpeg';
+          logo.src = 'assets/images/fimem.jpeg';
+          /*          logo.src = 'assets/images/bioseguridad.jpeg';*/
           doc.addImage(logo, 'JPEG', 215, 22, 45, 15);
           /*          doc.addImage(logo, 'JPEG', 220, 15, 35, 20);*/
 
@@ -124,8 +124,8 @@ export class ReunionesAgendadasComponent implements OnInit {
           doc.setFontSize(10);
           doc.setFontStyle('bold');
 
-          /*          doc.text('AGENDA DE REUNIONES FIMEM BOLIVIA', 20, 20);*/
-          doc.text('AGENDA DE REUNIONES BIOSEGURIDAD 2020', 20, 20);
+          doc.text('AGENDA DE REUNIONES FIMEM BOLIVIA 2020', 20, 20);
+          /*          doc.text('AGENDA DE REUNIONES BIOSEGURIDAD 2020', 20, 20);*/
           doc.text('EMPRESA', 20, 30);
           doc.setFontStyle('normal');
           doc.text(this.mi_empresa.toUpperCase(), 50, 30);
@@ -216,8 +216,8 @@ export class ReunionesAgendadasComponent implements OnInit {
               doc.setFontSize(10);
               doc.setFontStyle('bold');
 
-              /*          doc.text('AGENDA DE REUNIONES FIMEM BOLIVIA', 20, 20);*/
-              doc.text('AGENDA DE REUNIONES BIOSEGURIDAD 2020', 20, 20);
+              doc.text('AGENDA DE REUNIONES FIMEM BOLIVIA 2020', 20, 20);
+              /*              doc.text('AGENDA DE REUNIONES BIOSEGURIDAD 2020', 20, 20);*/
               doc.text('EMPRESA', 20, 30);
               doc.setFontStyle('normal');
               doc.text(this.mi_empresa.toUpperCase(), 50, 30);
