@@ -45,6 +45,7 @@
   <component name="ChangeListManager">
     <list default="true" id="40408e9e-7b60-4657-b5f7-5872be4999db" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servidor/app/Http/Controllers/RubroController.php" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/app/Http/Controllers/RubroController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,7 +247,7 @@
       <workItem from="1598915629228" duration="166000" />
       <workItem from="1599011797558" duration="5821000" />
       <workItem from="1599082543849" duration="956000" />
-      <workItem from="1599768861930" duration="3070000" />
+      <workItem from="1599768861930" duration="4491000" />
     </task>
     <servers />
   </component>
@@ -274,11 +275,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1598798872505" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1599771132961">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1599831190297">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1280.680@0.0.1366.728" timestamp="1598580575960" />
     <state x="1852" y="70" width="945" height="969" key="search.everywhere.popup/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1598662374270" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1599771132961" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1599831190297" />
   </component>
 </project>

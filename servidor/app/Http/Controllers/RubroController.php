@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Rubro;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class RubroController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
@@ -20,8 +21,8 @@ class RubroController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Response
      */
     public function store(Request $request)
     {
@@ -31,8 +32,8 @@ class RubroController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Rubro  $tipoUsuario
-     * @return \Illuminate\Http\Response
+     * @param Rubro $tipoUsuario
+     * @return Response
      */
     public function show($id)
     {
@@ -43,9 +44,9 @@ class RubroController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Rubro  $tipoUsuario
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param Rubro $tipoUsuario
+     * @return Response
      */
     public function update(Request $request, $id)
     {
@@ -57,8 +58,8 @@ class RubroController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Rubro  $tipoUsuario
-     * @return \Illuminate\Http\Response
+     * @param Rubro $tipoUsuario
+     * @return Response
      */
     public function destroy($id)
     {
@@ -67,5 +68,16 @@ class RubroController extends Controller
         return response()->json([
             'mensaje' => 'Rubro: ' . $rubro->nombre . ' eliminado exitosamente'
         ], 200);
+    }
+
+    public function upload()
+    {
+        $rubros = \request()->all();
+        foreach ($rubros as $rubro) {
+            Rubro::create($rubro);
+        }
+        return response()->json([
+            'exito' => 'upload rubros updated!'
+        ]);
     }
 }
