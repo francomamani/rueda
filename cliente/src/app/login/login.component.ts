@@ -59,8 +59,8 @@ export class LoginComponent {
       .titulo = 'Olvide mi contraseña';
     modalAyuda
       .componentInstance
-      .mensaje = 'Para reestablecer su contraseña comuníquese con la administración del campo ferial al número de teléfono';
-    modalAyuda.componentInstance.mensaje_importante = '52 66111';
+      .mensaje = 'Para reestablecer su contraseña comuníquese con la administración del Campo Ferial al número de celular';
+    modalAyuda.componentInstance.mensaje_importante = '71100743';
   }
 
   login() {
