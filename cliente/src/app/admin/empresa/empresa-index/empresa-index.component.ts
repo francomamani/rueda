@@ -36,7 +36,7 @@ export class EmpresaIndexComponent implements OnInit {
   cont = 0;
 
   rueda: {
-    habilitado: boolean
+    habilitado: false,
   };
 
   constructor(private empresaService: EmpresaService,
@@ -229,7 +229,7 @@ export class EmpresaIndexComponent implements OnInit {
           /*          doc.addImage(logo, 'JPEG', 220, 15, 50, 20);*/
           doc.addImage(logo, 'JPEG', 215, 25, 45, 15);
           doc.setFontStyle('bold');
-          doc.text('AGENDA RUEDA DE NEGOCIOS FIMEM BOLIVIA 2020', 20, 20);
+          doc.text('AGENDA RUEDA DE NEGOCIOS FIMEM BOLIVIA 2021', 20, 20);
           /*          doc.text('AGENDA RUEDA DE NEGOCIOS DE BIOSEGURIDAD 2020', 20, 20);*/
           doc.text('EMPRESA', 20, 30);
           doc.setFontStyle('normal');
@@ -288,7 +288,7 @@ export class EmpresaIndexComponent implements OnInit {
               doc.text(reunion.empresa_demandada.substring(0, 24), x + 120, y);
               doc.text(reunion.empresa_demandada.substring(24), x + 120, y + 7);
             }
-            let yBase = y;
+            const yBase = y;
             if (ln) {
               y += 7;
             }
@@ -309,9 +309,9 @@ export class EmpresaIndexComponent implements OnInit {
               /*start*/
               doc.setFontSize(10);
               /*          doc.addImage(logo, 'JPEG', 220, 15, 50, 20);*/
-              doc.addImage(logo, 'JPEG', 215, 25, 45, 15);
+              doc.addImage(logo, 'JPEG', 220, 25, 40, 17);
               doc.setFontStyle('bold');
-              doc.text('AGENDA RUEDA DE NEGOCIOS FIMEM BOLIVIA 2020', 20, 20);
+              doc.text('AGENDA RUEDA DE NEGOCIOS FIMEM BOLIVIA 2021', 20, 20);
               /*              doc.text('AGENDA RUEDA DE NEGOCIOS DE BIOSEGURIDAD 2020', 20, 20);*/
               doc.text('EMPRESA', 20, 30);
               doc.setFontStyle('normal');
@@ -347,7 +347,7 @@ export class EmpresaIndexComponent implements OnInit {
           });
           this.cont++;
         });
-        doc.save('agendas-fimem-2020.pdf');
+        doc.save('agendas-fimem-2021.pdf');
         /*end subscribe*/
       });
   }
@@ -355,7 +355,7 @@ export class EmpresaIndexComponent implements OnInit {
   agendasMesaOpen(content) {
     this.modalReference = this.modalService.open(content, {
       size: 'sm',
-      container: 'nb-layout'
+      container: 'nb-layout',
     });
   }
 
@@ -365,7 +365,7 @@ export class EmpresaIndexComponent implements OnInit {
     /*    logo.src = 'assets/images/bioseguridad.jpeg';*/
 
     this.reunionService.agendasMesa({
-      fecha: this.agendasMesaFecha
+      fecha: this.agendasMesaFecha,
     })
       .subscribe((responses: any[]) => {
         const doc = new jsPDF('landscape', 'mm', 'letter');
@@ -374,7 +374,7 @@ export class EmpresaIndexComponent implements OnInit {
           count++;
           doc.setFontSize(10);
           doc.setFontStyle('bold');
-          doc.text('REUNIONES DE LA RUEDA DE NEGOCIOS DE FIMEM BOLIVIA 2020', 20, 15);
+          doc.text('REUNIONES DE LA RUEDA DE NEGOCIOS DE FIMEM BOLIVIA 2021', 20, 15);
           /*          doc.text('REUNIONES DE LA RUEDA DE NEGOCIOS DE BIOSEGURIDAD 2020', 20, 15);*/
           doc.text('MESA', 20, 22);
           doc.text('REUNIÓN DE ZOOM', 20, 29);
@@ -446,7 +446,7 @@ export class EmpresaIndexComponent implements OnInit {
               /*begin*/
               doc.setFontSize(10);
               doc.setFontStyle('bold');
-              doc.text('REUNIONES DE LA RUEDA DE NEGOCIOS DE FIMEM BOLIVIA 2020', 20, 15);
+              doc.text('REUNIONES DE LA RUEDA DE NEGOCIOS DE FIMEM BOLIVIA 2021', 20, 15);
               /*              doc.text('REUNIONES DE LA RUEDA DE NEGOCIOS DE BIOSEGURIDAD 2020', 20, 15);*/
               doc.text('MESA', 20, 22);
               doc.text('REUNIÓN DE ZOOM', 20, 29);

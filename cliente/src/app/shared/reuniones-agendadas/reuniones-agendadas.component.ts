@@ -5,7 +5,7 @@ import {EmpresaService} from '../../admin/empresa/empresa.service';
 import {AuthService} from '../../auth.service';
 import {EmpresaModalComponent} from '../empresa-modal/empresa-modal.component';
 import {ReunionService} from '../../admin/reunion/reunion.service';
-import * as jsPDF from 'jspdf'
+import * as jsPDF from 'jspdf';
 
 @Component({
   selector: 'ngx-reuniones-agendadas',
@@ -124,7 +124,7 @@ export class ReunionesAgendadasComponent implements OnInit {
           doc.setFontSize(10);
           doc.setFontStyle('bold');
 
-          doc.text('AGENDA DE REUNIONES FIMEM BOLIVIA 2020', 20, 20);
+          doc.text('AGENDA DE REUNIONES FIMEM BOLIVIA 2021', 20, 20);
           /*          doc.text('AGENDA DE REUNIONES BIOSEGURIDAD 2020', 20, 20);*/
           doc.text('EMPRESA', 20, 30);
           doc.setFontStyle('normal');
@@ -216,7 +216,7 @@ export class ReunionesAgendadasComponent implements OnInit {
               doc.setFontSize(10);
               doc.setFontStyle('bold');
 
-              doc.text('AGENDA DE REUNIONES FIMEM BOLIVIA 2020', 20, 20);
+              doc.text('AGENDA DE REUNIONES FIMEM BOLIVIA 2021', 20, 20);
               /*              doc.text('AGENDA DE REUNIONES BIOSEGURIDAD 2020', 20, 20);*/
               doc.text('EMPRESA', 20, 30);
               doc.setFontStyle('normal');

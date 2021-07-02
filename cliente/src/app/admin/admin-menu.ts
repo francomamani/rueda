@@ -17,14 +17,14 @@ export const ADMIN_ITEMS: NbMenuItem[] = [
           link: '/admin/noticias/listar',
         },
         {
+          title: 'Nueva Empresa',
+          icon: 'nb-plus',
+          link: '/admin/empresa/crear',
+        },
+        {
           title: 'Busqueda',
           icon: 'nb-search',
           link: '/admin/empresa/listar',
-        },
-        {
-          title: 'Nuevo Registro',
-          icon: 'nb-plus',
-          link: '/admin/empresa/crear',
         },
       ],
     },
@@ -33,15 +33,15 @@ export const ADMIN_ITEMS: NbMenuItem[] = [
         icon: 'nb-person',
         link: '/admin/usuario',
         children: [
+          {
+            title: 'Nuevo Admin',
+            icon: 'nb-plus',
+            link: '/admin/usuario/crear',
+          },
             {
-                title: 'Busqueda',
+                title: 'Búsqueda',
                 icon: 'nb-search',
                 link: '/admin/usuario/listar',
-            },
-            {
-                title: 'Nuevo admin',
-                icon: 'nb-plus',
-                link: '/admin/usuario/crear',
             },
         ],
     },
