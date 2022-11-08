@@ -115,7 +115,7 @@ export class ReunionesAgendadasComponent implements OnInit {
           const doc = new jsPDF('landscape', 'mm', 'letter');
 
           const logo = new Image();
-          logo.src = 'assets/images/fimem.jpeg';
+          logo.src = 'assets/images/expoteco_2022.png';
           /*          logo.src = 'assets/images/bioseguridad.jpeg';*/
           doc.addImage(logo, 'JPEG', 215, 22, 45, 15);
           /*          doc.addImage(logo, 'JPEG', 220, 15, 35, 20);*/
@@ -208,7 +208,7 @@ export class ReunionesAgendadasComponent implements OnInit {
               doc.addPage();
               page++;
               /*begin*/
-              /*          logo.src = 'assets/images/fimem.jpeg';*/
+              /*          logo.src = 'assets/images/expoteco_2022.png';*/
               doc.addImage(logo, 'JPEG', 215, 22, 45, 15);
               /*          doc.addImage(logo, 'JPEG', 220, 15, 35, 20);*/
 

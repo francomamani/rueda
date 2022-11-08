@@ -60,7 +60,7 @@ export class LoginComponent {
     modalAyuda
       .componentInstance
       .mensaje = 'Para reestablecer su contraseña comuníquese con la administración del Campo Ferial al número de celular';
-    modalAyuda.componentInstance.mensaje_importante = '71100743';
+    modalAyuda.componentInstance.mensaje_importante = '62809166';
   }
 
   login() {

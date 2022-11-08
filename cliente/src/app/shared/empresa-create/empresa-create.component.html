@@ -246,6 +246,13 @@
           <nb-card-body>
             <div class="row">
               <div class="col-lg-4 form-group">
+                <label for="tipo_empresa">Tipo de Empresa</label><br>
+                <select name="tipo_empresa" id="tipo_empresa" class="form-control form-control-sm" formControlName="tipo_empresa"><option value="VENDEDOR">VENDEDOR</option>
+                  <option value="COMPRADOR">COMPRADOR</option>
+                  <option value="COMPRADOR-VENDEDOR">COMPRADOR-VENDEDOR</option>
+                </select>
+              </div>
+              <div class="col-lg-4 form-group">
                 <label for="logo">Subir Logo (Opcional)</label>
                 <input #logo accept='image/*' id="logo" title="Subir logo" type="file">
               </div>

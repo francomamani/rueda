@@ -35,6 +35,7 @@
               <th>Logo</th>
               <th>Fecha de Registro</th>
               <th>Empresa</th>
+              <th>Tipo de Empresa</th>
               <th>Cuenta</th>
               <th>NIT</th>
               <th>Telefono</th>
@@ -63,6 +64,7 @@
                 {{ empresa.created_at | date: 'dd/MM/y'}}
               </td>
               <td><a (click)="info(empresa)" class="info">{{empresa.nombre | uppercase }}</a></td>
+              <td>{{ empresa.tipo_empresa | uppercase }}</td>
               <td>{{empresa.usuario.cuenta}}</td>
               <td>{{empresa.nit}}</td>
               <td>{{empresa.telefono}}</td>

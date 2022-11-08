@@ -159,6 +159,7 @@ export class EmpresaIndexComponent implements OnInit {
         n: i,
         rubro: empresa.rubro,
         empresa: empresa.nombre,
+        tipo_empresa: empresa.tipo_empresa,
         cuenta: empresa.usuario.cuenta,
         direccion: empresa.direccion,
         telefono: empresa.telefono,
@@ -209,7 +210,7 @@ export class EmpresaIndexComponent implements OnInit {
     this.empresaService.agendas()
       .subscribe(res => {
         const logo = new Image();
-        logo.src = 'assets/images/fimem.jpeg';
+        logo.src = 'assets/images/expoteco_2022.png';
         /*        logo.src = 'assets/images/bioseguridad.jpeg';*/
         this.agendas = res;
         const doc = new jsPDF('landscape', 'mm', 'letter');
@@ -227,25 +228,32 @@ export class EmpresaIndexComponent implements OnInit {
             doc.addPage();
           doc.setFontSize(10);
           /*          doc.addImage(logo, 'JPEG', 220, 15, 50, 20);*/
-          doc.addImage(logo, 'JPEG', 215, 25, 45, 15);
+          doc.addImage(logo, 'JPEG', 215, 0, 45, 45);
           doc.setFontStyle('bold');
-          doc.text('AGENDA RUEDA DE NEGOCIOS FIMEM BOLIVIA 2021', 20, 20);
+          doc.text('AGENDA RUEDA DE NEGOCIOS EXPOTECO 2022', 20, 20);
           /*          doc.text('AGENDA RUEDA DE NEGOCIOS DE BIOSEGURIDAD 2020', 20, 20);*/
           doc.text('EMPRESA', 20, 30);
           doc.setFontStyle('normal');
-          doc.text(agenda.empresa.nombre.toUpperCase(), 50, 30);
+          doc.text(agenda.empresa.nombre.toUpperCase(), 55, 30);
           doc.setFontStyle('bold');
-          doc.text('RUBRO', 20, 37);
+
+          doc.text('TIPO DE EMPRESA', 20, 37);
+          doc.setFontStyle('normal');
+          doc.text(agenda.empresa.tipo_empresa || '', 55, 37);
           doc.setFontStyle('bold');
+          doc.text('RUBRO', 20, 44);
+          doc.setFontStyle('bold');
+
           doc.text('REUNIONES', 139.7, 50, 'center');
           doc.setFontStyle('normal');
+
           if (agenda.empresa.rubro.nombre.length < 50) {
-            doc.text(agenda.empresa.rubro.nombre.toUpperCase(), 50, 37);
+            doc.text(agenda.empresa.rubro.nombre.toUpperCase(), 55, 44);
           } else {
             const parte1 = agenda.empresa.rubro.nombre.toUpperCase().substring(0, 53);
             const parte2 = agenda.empresa.rubro.nombre.toUpperCase().substring(53);
-            doc.text(parte1, 50, 37);
-            doc.text(parte2, 50, 42);
+            doc.text(parte1, 55, 44);
+            doc.text(parte2, 55, 49);
           }
           doc.setFontStyle('bold');
           doc.line(20, 55, 259.4, 55);
@@ -253,7 +261,7 @@ export class EmpresaIndexComponent implements OnInit {
           doc.text('MESA', 70, 61);
           doc.text('SOLICITANTE', 90, 61);
           doc.text('DEMANDADA', 145, 61);
-          doc.text('REUNIÓN DE ZOOM', 205, 61);
+          // doc.text('REUNIÓN DE ZOOM', 205, 61);
           doc.line(20, 64, 259.4, 64);
           let x = 25;
           let y = 70;
@@ -311,7 +319,7 @@ export class EmpresaIndexComponent implements OnInit {
               /*          doc.addImage(logo, 'JPEG', 220, 15, 50, 20);*/
               doc.addImage(logo, 'JPEG', 220, 25, 40, 17);
               doc.setFontStyle('bold');
-              doc.text('AGENDA RUEDA DE NEGOCIOS FIMEM BOLIVIA 2021', 20, 20);
+              doc.text('AGENDA RUEDA DE NEGOCIOS EXPOTECO 2022', 20, 20);
               /*              doc.text('AGENDA RUEDA DE NEGOCIOS DE BIOSEGURIDAD 2020', 20, 20);*/
               doc.text('EMPRESA', 20, 30);
               doc.setFontStyle('normal');
@@ -335,7 +343,7 @@ export class EmpresaIndexComponent implements OnInit {
               doc.text('MESA', 70, 61);
               doc.text('SOLICITANTE', 90, 61);
               doc.text('DEMANDADA', 145, 61);
-              doc.text('REUNIÓN DE ZOOM', 205, 61);
+              // doc.text('REUNIÓN DE ZOOM', 205, 61);
               doc.line(20, 64, 259.4, 64);
               x = 25;
               y = 70;
@@ -347,7 +355,7 @@ export class EmpresaIndexComponent implements OnInit {
           });
           this.cont++;
         });
-        doc.save('agendas-fimem-2021.pdf');
+        doc.save('agendas-expoteco-2022.pdf');
         /*end subscribe*/
       });
   }
@@ -361,7 +369,7 @@ export class EmpresaIndexComponent implements OnInit {
 
   agendasMesa() {
     const logo = new Image();
-    logo.src = 'assets/images/fimem.jpeg';
+    logo.src = 'assets/images/expoteco_2022.png';
     /*    logo.src = 'assets/images/bioseguridad.jpeg';*/
 
     this.reunionService.agendasMesa({
@@ -374,22 +382,22 @@ export class EmpresaIndexComponent implements OnInit {
           count++;
           doc.setFontSize(10);
           doc.setFontStyle('bold');
-          doc.text('REUNIONES DE LA RUEDA DE NEGOCIOS DE FIMEM BOLIVIA 2021', 20, 15);
+          doc.text('REUNIONES DE LA RUEDA DE NEGOCIOS EXPOTECO 2022', 20, 15);
           /*          doc.text('REUNIONES DE LA RUEDA DE NEGOCIOS DE BIOSEGURIDAD 2020', 20, 15);*/
-          doc.text('MESA', 20, 22);
-          doc.text('REUNIÓN DE ZOOM', 20, 29);
+          doc.text('MESA', 20, 29);
+          // doc.text('REUNIÓN DE ZOOM', 20, 29);
           doc.text('FECHA', 20, 36);
           doc.text('HORARIOS', 139.7, 45, 'center');
           doc.setFontStyle('normal');
-          doc.text(`: ${agenda.numero}`, 55, 22);
+          doc.text(`: ${agenda.numero}`, 55, 29);
           doc.setTextColor(0, 0, 255);
           doc.setFontStyle('bold');
-          doc.text(`: ${agenda.url}`, 55, 29);
+          // doc.text(`: ${agenda.url}`, 55, 29);
           doc.setFontStyle('normal');
           doc.setTextColor(0, 0, 0);
           doc.text(`: ${DateTime.fromSQL(agenda.fecha).toLocaleString(DateTime.DATE_HUGE)}`, 55, 36);
           /*          doc.addImage(logo, 'JPEG', 220, 15, 50, 20);*/
-          doc.addImage(logo, 'JPEG', 215, 15, 45, 15);
+          doc.addImage(logo, 'JPEG', 215, 0, 45, 45);
           doc.line(20, 50, 260, 50);
           doc.setFontStyle('bold');
           doc.text('N.', 25, 56);
@@ -446,22 +454,22 @@ export class EmpresaIndexComponent implements OnInit {
               /*begin*/
               doc.setFontSize(10);
               doc.setFontStyle('bold');
-              doc.text('REUNIONES DE LA RUEDA DE NEGOCIOS DE FIMEM BOLIVIA 2021', 20, 15);
+              doc.text('REUNIONES DE LA RUEDA DE NEGOCIOS EXPOTECO 2022', 20, 15);
               /*              doc.text('REUNIONES DE LA RUEDA DE NEGOCIOS DE BIOSEGURIDAD 2020', 20, 15);*/
-              doc.text('MESA', 20, 22);
-              doc.text('REUNIÓN DE ZOOM', 20, 29);
+              doc.text('MESA', 20, 29);
+              // doc.text('REUNIÓN DE ZOOM', 20, 29);
               doc.text('FECHA', 20, 36);
               doc.text('HORARIOS', 139.7, 45, 'center');
               doc.setFontStyle('normal');
-              doc.text(`: ${agenda.numero}`, 55, 22);
+              doc.text(`: ${agenda.numero}`, 55, 29);
               doc.setTextColor(0, 0, 255);
               doc.setFontStyle('bold');
-              doc.text(`: ${agenda.url}`, 55, 29);
+              // doc.text(`: ${agenda.url}`, 55, 29);
               doc.setFontStyle('normal');
               doc.setTextColor(0, 0, 0);
               doc.text(`: ${DateTime.fromSQL(agenda.fecha).toLocaleString(DateTime.DATE_HUGE)}`, 55, 36);
               /*          doc.addImage(logo, 'JPEG', 220, 15, 50, 20);*/
-              doc.addImage(logo, 'JPEG', 215, 15, 45, 15);
+              doc.addImage(logo, 'JPEG', 215, 0, 45, 45);
               doc.line(20, 50, 260, 50);
               doc.setFontStyle('bold');
               doc.text('N.', 25, 56);

@@ -65,6 +65,7 @@ export class EmpresaCreateComponent implements OnInit {
       'especial': new FormControl(0, Validators.required),
       'email': new FormControl(''),
       'telefono': new FormControl('', Validators.required),
+      'tipo_empresa': new FormControl('', Validators.required),
 
       'p1_nombres': new FormControl('', Validators.required),
       'p1_apellidos': new FormControl('', Validators.required),
@@ -85,7 +86,6 @@ export class EmpresaCreateComponent implements OnInit {
   ngOnInit() {
     this.empresaService.paises()
       .subscribe((paises: Pais[]) => {
-        console.log(paises);
         this.paises = paises;
       });
   }
@@ -138,11 +138,12 @@ export class EmpresaCreateComponent implements OnInit {
             this.mensaje = 'La empresa ' + res.nombre + ' fue registrada exitosamente';
             this.toastr.success('La empresa ' + res.nombre + ' fue registrada', 'Registro exitoso');
             const credenciales = {
-              cuenta: this.empresaGroup.value.cuenta,
-              password: this.empresaGroup.value.password,
+              cuenta: this.empresaGroup.value.cuenta, password: this.empresaGroup.value.password,
             };
             if (this.router.url === '/auth/signup') {
-              swal('¡Empresa registrada!', `Su cuenta es: ${this.empresaGroup.value.p1_nombres.toLowerCase().split(' ')[0]}${this.empresaGroup.value.p1_carnet} y su contraseña es: ${this.empresaGroup.value.p1_carnet}`, 'success');
+              const successMessage = `Su cuenta es:
+              ${this.empresaGroup.value.p1_nombres.toLowerCase().split(' ')[0]}${this.empresaGroup.value.p1_carnet} y su contraseña es: ${this.empresaGroup.value.p1_carnet}`;
+              swal('¡Empresa registrada!', successMessage, 'success');
               /*                        Swal.fire({
                                         title: '¡Empresa registrada!',
                                         html: `Su cuenta es: <strong> ${this.empresaGroup.value.p1_nombres.toLowerCase().split(' ')[0]}${this.empresaGroup.value.p1_carnet} </strong>
@@ -152,7 +153,7 @@ export class EmpresaCreateComponent implements OnInit {
                                       });*/
               setTimeout(() => {
                 this.router.navigate(['/auth/login']);
-              }, 5000)
+              }, 5000);
             } else {
               this.router.navigate(['/admin/empresa/listar']);
             }
@@ -169,10 +170,12 @@ export class EmpresaCreateComponent implements OnInit {
               this.mensaje = 'La empresa ' + res.nombre + ' fue registrada';
               this.error = '';
               /*this.toastr.success('La empresa ' + res.nombre + ' fue registrada', 'Registro exitoso');*/
-              swal('¡Empresa registrada!', `Su cuenta es: ${this.empresaGroup.value.p1_nombres.toLowerCase().split(' ')[0]}${this.empresaGroup.value.p1_carnet} y su contraseña es: ${this.empresaGroup.value.p1_carnet}`, 'success');
+              const successMessage = `Su cuenta es:
+              ${this.empresaGroup.value.p1_nombres.toLowerCase().split(' ')[0]}${this.empresaGroup.value.p1_carnet} y su contraseña es: ${this.empresaGroup.value.p1_carnet}`;
+              swal('¡Empresa registrada!', successMessage, 'success');
               setTimeout(() => {
                 this.router.navigate(['/auth']);
-              }, 5000)
+              }, 5000);
               /*                          Swal.fire({
                                           title: '¡Empresa registrada!',
                                           html: `Su cuenta es: <strong> ${this.empresaGroup.value.p1_nombres.toLowerCase().split(' ')[0]}${this.empresaGroup.value.p1_carnet} </strong>
