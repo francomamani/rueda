@@ -26,6 +26,7 @@ class CreateEmpresasTable extends Migration
                   ->on('usuarios')
                   ->onDelete('cascade');
             $table->string('nombre');
+            $table->string('tipo_empresa')->nullable();
             $table->string('logo')->nullable();
             $table->string('direccion');
             $table->string('telefono');

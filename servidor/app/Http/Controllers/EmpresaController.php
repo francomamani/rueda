@@ -169,6 +169,7 @@ class EmpresaController extends Controller
                     'rubro_id' => $request->input('rubro_id'),
                     'usuario_id' => Usuario::create($usuario)->usuario_id,
                     'nombre' => $request->input('nombre'),
+                    'tipo_empresa' => $request->input('tipo_empresa'),
                     'logo' => $path_logo,
                     'direccion' => $request->input('direccion'),
                     'telefono' => $request->input('telefono'),
@@ -189,6 +190,7 @@ class EmpresaController extends Controller
                     'rubro_id' => $request->input('rubro_id'),
                     'usuario_id' => Usuario::create($usuario)->usuario_id,
                     'nombre' => $request->input('nombre'),
+                    'tipo_empresa' => $request->input('tipo_empresa'),
                     'logo' => $path_logo,
                     'direccion' => $request->input('direccion'),
                     'telefono' => $request->input('telefono'),
@@ -210,6 +212,7 @@ class EmpresaController extends Controller
                 'rubro_id' => $request->input('rubro_id'),
                 'usuario_id' => Usuario::create($usuario)->usuario_id,
                 'nombre' => $request->input('nombre'),
+                'tipo_empresa' => $request->input('tipo_empresa'),
                 'logo' => null,
                 'direccion' => $request->input('direccion'),
                 'telefono' => $request->input('telefono'),
@@ -873,7 +876,7 @@ class EmpresaController extends Controller
             ->whereNull('rubros.deleted_at')
             ->where('habilitado', true)
             ->orderBy('nombre')
-            ->selectRaw('empresas.empresa_id, empresas.nombre, rubros.nombre as rubro, rubros.rubro_id')
+            ->selectRaw('empresas.empresa_id, empresas.nombre, empresas.tipo_empresa, rubros.nombre as rubro, rubros.rubro_id')
             ->get();
         $agendas = [];
         foreach ($empresas as $empresa) {

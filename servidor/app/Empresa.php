@@ -15,6 +15,7 @@ class Empresa extends Model
         'rubro_id',
         'usuario_id',
         'nombre',
+        'tipo_empresa',
         'logo',
         'direccion',
         'telefono',
